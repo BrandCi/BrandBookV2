@@ -27,5 +27,12 @@ namespace BrandBook.Web.Controllers
 
             return View(model);
         }
+
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
