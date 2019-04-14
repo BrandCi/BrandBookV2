@@ -13,10 +13,17 @@ namespace BrandBook.Web.Controllers
         #region Fields
 
         private SignInService _signInService;
-        private UserService _userManager;
+        private UserService _userService;
 
         #endregion
 
+        #region Constructor
+
+        public AuthorizationController() { }
+
+        #endregion
+
+        
 
 
         // GET: Authorization
