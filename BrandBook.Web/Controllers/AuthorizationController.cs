@@ -1,5 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using BrandBook.Core.Domain.User;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
@@ -21,9 +29,41 @@ namespace BrandBook.Web.Controllers
 
         public AuthorizationController() { }
 
-        #endregion
+        public AuthorizationController(UserService userService, SignInService signInService)
+        {
+            UserManager = userService;
+            SignInService = signInService;
+        }
 
+        #endregion
         
+        
+
+        public SignInService SignInService
+        {
+            get
+            {
+                return _signInService ?? HttpContext.GetOwinContext().Get<SignInService>();
+            }
+            private set
+            {
+                _signInService = value;
+            }
+        }
+
+        public UserService UserManager
+        {
+            get
+            { 
+                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserService>();
+            }
+            private set
+            {
+                _userService = value;
+            }
+        }
+
+
 
 
         // GET: Authorization
