@@ -77,6 +77,10 @@
       <Project>{095315a3-f944-4219-bbff-daaa4d214c03}</Project>
       <Name>BrandBook.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Infrastructure\BrandBook.Infrastructure.csproj">
+      <Project>{f7421c73-9fd6-4213-abaf-630d8428305e}</Project>
+      <Name>BrandBook.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
