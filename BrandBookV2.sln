@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Core", "BrandBook
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Infrastructure", "BrandBook.Infrastructure\BrandBook.Infrastructure.csproj", "{F7421C73-9FD6-4213-ABAF-630D8428305E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Services", "BrandBook.Services\BrandBook.Services.csproj", "{8C90C0CD-8087-4521-B92F-F2845BE4E5F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F7421C73-9FD6-4213-ABAF-630D8428305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7421C73-9FD6-4213-ABAF-630D8428305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7421C73-9FD6-4213-ABAF-630D8428305E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C90C0CD-8087-4521-B92F-F2845BE4E5F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C90C0CD-8087-4521-B92F-F2845BE4E5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C90C0CD-8087-4521-B92F-F2845BE4E5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C90C0CD-8087-4521-B92F-F2845BE4E5F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
