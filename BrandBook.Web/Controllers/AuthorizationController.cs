@@ -1,12 +1,24 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core.Domain.User;
+using BrandBook.Services.Authentication;
+using BrandBook.Services.Users;
 using BrandBook.Web.ViewModels.Authorization;
 
 namespace BrandBook.Web.Controllers
 {
     public class AuthorizationController : Controller
     {
+
+        #region Fields
+
+        private SignInService _signInService;
+        private UserService _userManager;
+
+        #endregion
+
+
+
         // GET: Authorization
         public ActionResult Index()
         {
