@@ -94,9 +94,14 @@ namespace BrandBook.Web.Controllers
             {
                 var user = new User {UserName = model.Username, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
-            return RedirectToAction("Index", "Home");
+            return View(model);
         }
     }
 }
