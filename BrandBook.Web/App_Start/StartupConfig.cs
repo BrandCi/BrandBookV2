@@ -15,6 +15,8 @@ namespace BrandBook.Web
         public void ConfigureAuth(IAppBuilder app)
         {
             app.CreatePerOwinContext(BrandBookDbContext.Create);
+            app.CreatePerOwinContext<UserService>(UserService.Create);
+            app.CreatePerOwinContext<SignInService>(SignInService.Create);
 
         }
     }
