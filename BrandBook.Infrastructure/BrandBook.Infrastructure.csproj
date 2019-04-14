@@ -77,5 +77,6 @@
       <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
