@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Infrastructure.Data
 {
-    class BrandBookDbContext : DbContext
+    public class BrandBookDbContext : DbContext
     {
+        public BrandBookDbContext()
+            : base("name=DefaultConnection")
+        {
+
+        }
+
     }
 }
