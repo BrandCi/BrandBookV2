@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core.Domain.User;
-using BrandBook.Services.Users;
 using BrandBook.Web.ViewModels.Authorization;
 
 namespace BrandBook.Web.Controllers
@@ -32,7 +28,7 @@ namespace BrandBook.Web.Controllers
 
 
         [HttpPost]
-        public ActionResult Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model)
         {
 
             if (ModelState.IsValid)
