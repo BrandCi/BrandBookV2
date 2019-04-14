@@ -180,6 +180,16 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
+      <Project>{095315a3-f944-4219-bbff-daaa4d214c03}</Project>
+      <Name>BrandBook.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Infrastructure\BrandBook.Infrastructure.csproj">
+      <Project>{f7421c73-9fd6-4213-abaf-630d8428305e}</Project>
+      <Name>BrandBook.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
