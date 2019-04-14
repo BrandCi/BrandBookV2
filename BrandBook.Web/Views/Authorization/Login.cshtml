@@ -5,3 +5,11 @@
 
 <h2>Login</h2>
 
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Login", "Authorization", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+        {
+            @Html.AntiForgeryToken()
+        }
+    </div>
+</div>
