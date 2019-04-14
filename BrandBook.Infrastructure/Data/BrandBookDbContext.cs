@@ -17,5 +17,10 @@ namespace BrandBook.Infrastructure.Data
 
         }
 
+        public static BrandBookDbContext Create()
+        {
+            return new BrandBookDbContext();
+        }
+
     }
 }

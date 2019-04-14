@@ -1,5 +1,7 @@
 ﻿using System;
 using BrandBook.Infrastructure.Data;
+using BrandBook.Services.Authentication;
+using BrandBook.Services.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -12,7 +14,7 @@ namespace BrandBook.Web
     {
         public void ConfigureAuth(IAppBuilder app)
         {
-
+            app.CreatePerOwinContext(BrandBookDbContext.Create);
 
         }
     }
