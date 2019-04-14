@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BrandBookDbContext.cs" />
+    <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.cs" />
+    <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
+      <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,6 +72,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.resx">
+      <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
