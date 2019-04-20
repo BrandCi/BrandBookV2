@@ -175,6 +175,7 @@
     <Content Include="Content\Fonts\bg-reg\stylesheet.css" />
     <Content Include="Content\Fonts\lovelo\stylesheet.css" />
     <Content Include="Content\Fonts\pn-reg\stylesheet.css" />
+    <Content Include="Content\Images\App\logo.png" />
     <Content Include="Content\Images\Home\shape-02.png" />
     <Content Include="Content\Images\Home\shape-01.png" />
     <Content Include="Content\Images\Home\background.png" />
