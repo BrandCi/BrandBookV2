@@ -1,6 +1,7 @@
 ﻿<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff">
     <a class="navbar-brand" href="@Url.Action("Index","Home")">
-        <img src="~/Content/Images/App/logo.png" height="50" alt="">
+        <img src="~/Content/Images/App/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        BrandCi
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +13,17 @@
 
             <li class="nav-item active">
                 <a class="nav-link" href="@Url.Action("Index","Home")">Startseite</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Funktionen
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Markenverwaltung</a>
+                    <a class="dropdown-item" href="#">Markenverbesserung (KI)</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Kommende Funktionen</a>
+                </div>
             </li>
 
         </ul>
