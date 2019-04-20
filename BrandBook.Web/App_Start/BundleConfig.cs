@@ -42,6 +42,26 @@ namespace BrandBook.Web
                         "~/Content/Custom/ColorStyle03.css"));
 
 
+            // Main Js File for Sales Frontend
+            bundles.Add(new ScriptBundle("~/bundles/Main").Include(
+                        "~/Scripts/Custom/theme.js"));
+
+            // Plugins for Sales Frontend
+            bundles.Add(new ScriptBundle("~/bundles/Plugins").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Plugins/popper.js/popper.min.js",
+                        "~/Scripts/bootstrap.js",
+                        "~/Plugins/jquery-easing/jquery.easing.min.js",
+                        "~/Plugins/language-switcher/jquery.polyglot.language.switcher.js",
+                        "~/Plugins/jquery.appear.js",
+                        "~/Plugins/jquery.countTo.js",
+                        "~/Plugins/fancybox/dist/jquery.fancybox.min.js",
+                        "~/Plugins/owl-carousel/owl.carousel.min.js",
+                        "~/Plugins/aos-next/dist/aos.js",
+                        "~/Plugins/roadmap/jquery.roadmap.js"));
+
+
+
         }
     }
 }
