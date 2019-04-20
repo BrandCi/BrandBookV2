@@ -44,67 +44,11 @@
             <!-- ********************** Theme Top Banne & Header ************************ -->
             <div class="theme-top-section">
                 <img src="~/Content/Images/Home/background.png" alt="" class="blue-shape">
-                <!-- ^^^^^^^^^^^^^^^^^ Theme Menu ^^^^^^^^^^^^^^^ -->
-                <header class="theme-main-menu color-white">
-                    <div class="container">
-                        <div class="menu-wrapper clearfix">
-                            <div class="logo">
-                                <a href="index.html"><img src="~/Content/Images/App/logo.png" width="50px" alt="Logo"></a>
-                            </div>
+               
+                <!-- Navigation -->
+                @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
+                <!-- ./ Navigation -->
 
-                            <ul class="right-widget celarfix">
-                                <li>
-                                    <div id="polyglotLanguageSwitcher">
-                                        <form action="#">
-                                            <select id="polyglot-language-options">
-                                                <option id="en" value="en" selected>En</option>
-                                                <option id="fr" value="fr">Fr</option>
-                                                <option id="de" value="de">Ger</option>
-                                                <option id="it" value="it">It</option>
-                                                <option id="es" value="es">Sp</option>
-                                            </select>
-                                        </form>
-                                    </div> <!-- End #polyglotLanguageSwitcher -->
-                                </li>
-                                <li class="login-button"><a href="#">Login <i class="flaticon-right-thin"></i></a></li>
-                            </ul> <!-- /.right-widget -->
-                            <!-- Navigation -->
-                            <nav class="navbar navbar-expand-lg dark-bg" id="mega-menu-holder">
-                                <div class="container">
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                            data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                                            aria-expanded="false" aria-label="Toggle navigation">
-                                        <i class="fa fa-bars" aria-hidden="true"></i>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                                        <ul class="navbar-nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#about">About</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#features">Features</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#token">Token</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#roadmap">Roadmap</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div> <!-- /.menu-wrapper -->
-                    </div> <!-- /.container -->
-                </header> <!-- /.theme-main-menu -->
-                <!-- Insertion End -->
-                <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
 
                 @RenderBody()
 
