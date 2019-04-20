@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'brandon_grotesquelight';
-    src: url('brandon_light-webfont.woff2') format('woff2'),
-         url('brandon_light-webfont.woff') format('woff');
+    src: url('~/Content/Fonts/bg-l/brandon_light-webfont.woff2') format('woff2'),
+         url('~/Content/Fonts/bg-l/brandon_light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

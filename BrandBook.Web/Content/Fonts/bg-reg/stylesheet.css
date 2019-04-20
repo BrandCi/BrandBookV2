@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'brandon_grotesque_regularRg';
-    src: url('brandon_reg-webfont.woff2') format('woff2'),
-         url('brandon_reg-webfont.woff') format('woff');
+    src: url('~/Content/Fonts/bg-reg/brandon_reg-webfont.woff2') format('woff2'),
+         url('~/Content/Fonts/bg-reg/brandon_reg-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
