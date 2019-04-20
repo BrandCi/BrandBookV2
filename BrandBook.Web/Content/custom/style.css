@@ -433,7 +433,11 @@ body .theme-button:hover span {opacity: 1;}
 .theme-banner-two .partner-slider .item img {opacity: 0.2;}
 .theme-banner-two .partner-slider .item img:hover {opacity: 1;}
 
-.theme-banner-two .main-text-wrapper h1 {color: #fff;}
+.theme-banner-two .main-text-wrapper h1 {
+    color: #fff;
+    font-weight: 900;
+
+}
 .theme-banner-two .main-text-wrapper p {
   color: rgba(255,255,255,0.8);
   font-size: 24px;
@@ -675,6 +679,7 @@ body .theme-button:hover span {opacity: 1;}
 }
     .our-feature-two .text .number {
         font-family: 'Open Sans', sans-serif;
+        font-weight: 900;
         font-size: 60px;
         color: #d8d8d8;
         position: relative;
