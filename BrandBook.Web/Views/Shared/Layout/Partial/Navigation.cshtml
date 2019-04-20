@@ -1,5 +1,5 @@
 ﻿<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="@Url.Action("Index","Home")">
         <img src="~/Content/Images/App/logo.png" height="50" alt="">
     </a>
 
@@ -11,10 +11,16 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="@Url.Action("Index","Home")">Startseite</a>
             </li>
 
         </ul>
+
+        <span class="navbar-text">
+            <a class="btn btn-outline-dark" href="@Url.Action("Login","Authorization")">Anmelden</a>
+            <a class="btn btn-outline-dark" href="@Url.Action("Register","Authorization")">Registrieren</a>
+        </span>
+
     </div>
 
 </nav>
