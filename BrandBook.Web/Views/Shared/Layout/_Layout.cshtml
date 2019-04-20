@@ -1,124 +1,76 @@
 ﻿<!-- Insertion -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Brand Management, BrandBook">
-    <meta name="author" content="Philipp C. Moser">
-    <meta name="description" content="Brand Book V2">
-    <meta name='og:image' content='images/home/ogg.png'>
-    <!-- For IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- For Resposive Device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Brand Management, BrandBook">
+        <meta name="author" content="Philipp C. Moser">
+        <meta name="description" content="Brand Book V2">
+        <meta name='og:image' content='images/home/ogg.png'>
+        <!-- For IE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- For Resposive Device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title | BrandBookV2</title>
+        <title>@ViewBag.Title | BrandBookV2</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
 
-    @Styles.Render("~/Content/Css/Main")
-    @Styles.Render("~/Content/Plugins")
-    @RenderSection("ColorStyle", required: true)
-    @RenderSection("styles", required: false)
+        @Styles.Render("~/Content/Css/Main")
+        @Styles.Render("~/Content/Plugins")
+        @RenderSection("ColorStyle", required: true)
+        @RenderSection("styles", required: false)
 
 
-    <!-- Fix Internet Explorer ______________________________________-->
-    <!--[if lt IE 9]>
-                        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-                        <script src="vendor/html5shiv.js"></script>
-                        <script src="vendor/respond.js"></script>
-                    <![endif]-->
+        <!-- Fix Internet Explorer ______________________________________-->
+        <!--[if lt IE 9]>
+                            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                            <script src="vendor/html5shiv.js"></script>
+                            <script src="vendor/respond.js"></script>
+                        <![endif]-->
 
-</head>
+    </head>
 
-<body>
-    <div class="main-page-wrapper">
+    <body>
+        <div class="main-page-wrapper">
 
-        <!-- ********************** Loading Transition ************************ -->
-        <div id="loader-wrapper">
-            <div id="loader"></div>
-        </div>
 
-        <div class="html-top-content">
-            <!-- ********************** Theme Top Banne & Header ************************ -->
-            <div class="theme-top-section">
-                <img src="~/Content/Images/Home/background.png" alt="" class="blue-shape">
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+            </div>
+
+            <div class="html-top-content">
+                <div class="theme-top-section">
+                    <img src="~/Content/Images/Home/background.png" alt="" class="blue-shape">
                
-                <!-- Navigation -->
-                @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
-                <!-- ./ Navigation -->
+                    <!-- Navigation -->
+                    @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
+                    <!-- ./ Navigation -->
 
 
-                @RenderBody()
-
-                <!-- ^^^^^^^^^^^^^^^ ./ Theme Banner ^^^^^^^^^^^^^^ -->
-                <!--
-                    =====================================================
-                        Footer
-                    =====================================================
-                    -->
-                <footer class="theme-footer dark-style">
-                    <div class="container">
-                        <div class="inner-wrapper">
-                            <div class="top-footer-data-wrapper">
-                                <div class="row">
-                                    <div class="col-lg-4 col-sm-6 footer-logo">
-                                        <div class="logo">
-                                            <a href="index.html">
-                                                <img src="images/logo/logo3.png"
-                                                     alt="Logo">
-                                            </a>
-                                        </div>
-                                        <a href="#" class="email">brandbook@philipp-moser.de</a>
-                                        <a href="#" class="mobile">12345</a>
-                                    </div> <!-- /.footer-logo -->
-                                    <div class="col-lg-2 col-sm-6 footer-list">
-                                        <h4 class="title">Quick Links</h4>
-                                        <ul>
-                                            <li><a href="#">How it Works</a></li>
-                                            <li><a href="#">Pricing</a></li>
-                                        </ul>
-                                    </div> <!-- /.footer-list -->
-                                    <div class="col-lg-3 col-sm-6 footer-list">
-                                        <h4 class="title">About Us</h4>
-                                        <ul>
-                                            <li><a href="#">Testimonials</a></li>
-                                            <li><a href="#">Blog</a></li>
-                                        </ul>
-                                    </div> <!-- /.footer-list -->
-                                </div> <!-- /.row -->
-                            </div> <!-- /.top-footer-data-wrapper -->
-
-                            <div class="bottom-footer clearfix">
-                                <p class="copyright">&copy; 2019 <a href="#">Philipp C. Moser</a> All Right Reserved</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div> <!-- /.bottom-footer -->
-                        </div>
-                    </div> <!-- /.container -->
-                </footer>
-
-            </div> <!-- /.html-top-content -->
-            <!-- Scroll Top Button -->
-            <button class="scroll-top tran3s color-one-bg">
-                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
-            </button>
+                    @RenderBody()
 
 
+                    <!-- Footer -->
+                    @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
+                    <!-- ./ Footer -->
+
+                </div> <!-- /.html-top-content -->
+
+                <!-- Scroll Top Button -->
+                <button class="scroll-top tran3s color-one-bg">
+                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                </button>
 
 
-            <!-- Js File_________________________________ -->
-            @Scripts.Render("~/bundles/Plugins")
-            @Scripts.Render("~/bundles/Main")
+                <!-- Js File_________________________________ -->
+                @Scripts.Render("~/bundles/Plugins")
+                @Scripts.Render("~/bundles/Main")
 
-            @RenderSection("scripts", required: false)
+                @RenderSection("scripts", required: false)
 
-
+            </div>
         </div> <!-- /.main-page-wrapper -->
-</body>
-
+    </body>
 </html>
