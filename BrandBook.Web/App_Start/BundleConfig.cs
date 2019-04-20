@@ -25,6 +25,23 @@ namespace BrandBook.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            // Bundles for Sales Frontend
+            bundles.Add(new StyleBundle("~/Content/Css/Main").Include(
+                        "~/Content/Custom/style.css",
+                        "~/Content/Custom/responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/Styling/01").Include(
+                        "~/Content/Custom/ColorStyle01.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/Styling/02").Include(
+                        "~/Content/Custom/ColorStyle02.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/Styling/03").Include(
+                        "~/Content/Custom/ColorStyle03.css"));
+
+
         }
     }
 }
