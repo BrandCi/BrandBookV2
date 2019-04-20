@@ -36,12 +36,12 @@
 * Importing necessary  Styles.
 **/
 /*--------- Fonts ----------*/
-@import url('../fonts/custom-font/pn-reg/stylesheet.css');
-@import url('../fonts/custom-font/bg-b/stylesheet.css');
-@import url('../fonts/custom-font/bg-md/stylesheet.css');
-@import url('../fonts/custom-font/bg-l/stylesheet.css');
-@import url('../fonts/custom-font/bg-reg/stylesheet.css');
-@import url('../fonts/custom-font/lovelo/stylesheet.css');
+@import url('~/Content/Fonts/pn-reg/stylesheet.css');
+@import url('~/Content/Fonts/bg-b/stylesheet.css');
+@import url('~/Content/Fonts/bg-md/stylesheet.css');
+@import url('~/Content/Fonts/bg-l/stylesheet.css');
+@import url('~/Content/Fonts/bg-reg/stylesheet.css');
+@import url('~/Content/Fonts/lovelo/stylesheet.css');
 
 /*----bootstrap css ----- */
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
@@ -50,21 +50,20 @@
     @import url('../fonts/font-awesome/css/fontawesome.min.css');    
 */
 /*----owl-carousel css----*/
-@import url('../vendor/owl-carousel/owl.carousel.css');
-@import url('../vendor/owl-carousel/owl.theme.css');
+
+@import url('~/Plugins/owl-carousel/owl.carousel.css');
+@import url('~/Plugins/owl-carousel/owl.theme.css');
 /*-------- AOS css ------*/
-@import url('../vendor/aos-next/dist/aos.css');
-/*--------- flat-icon ---------*/
-@import url('../fonts/icon/font/flaticon.css');
+@import url('~/Plugins/aos-next/dist/aos.css');
 /*----Language Switcher---*/
-@import url('../vendor/language-switcher/polyglot-language-switcher.css');
+@import url('~/Plugins/language-switcher/polyglot-language-switcher.css');
 /*----------- Fancybox css -------*/
-@import url('../vendor/fancybox/dist/jquery.fancybox.min.css');
+@import url('~/Plugins/fancybox/dist/jquery.fancybox.min.css');
 /*---------------- Roadmap CSS -------------*/
-@import url('../vendor//roadmap/jquery.roadmap.min.css');
+@import url('~/Plugins/roadmap/jquery.roadmap.min.css');
 /*---------------- Custom Animation -------------*/
-@import url('custom-animation.css');
-/*** 
+@import url('~/Content/Custom/custom-animation.css');
+/*** s
 
 ====================================================================
   Loading Transition
