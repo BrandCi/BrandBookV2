@@ -32,44 +32,6 @@
 
 
 
-/**
-* Importing necessary  Styles.
-**/
-/*--------- Fonts ----------*/
-@import url('~/Content/Fonts/pn-reg/stylesheet.css');
-@import url('~/Content/Fonts/bg-b/stylesheet.css');
-@import url('~/Content/Fonts/bg-md/stylesheet.css');
-@import url('~/Content/Fonts/bg-l/stylesheet.css');
-@import url('~/Content/Fonts/bg-reg/stylesheet.css');
-@import url('~/Content/Fonts/lovelo/stylesheet.css');
-
-/*----bootstrap css ----- */
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-/*----font awesome -------*/
-/* 
-    @import url('../fonts/font-awesome/css/fontawesome.min.css');    
-*/
-/*----owl-carousel css----*/
-
-@import url('~/Plugins/owl-carousel/owl.carousel.css');
-@import url('~/Plugins/owl-carousel/owl.theme.css');
-/*-------- AOS css ------*/
-@import url('~/Plugins/aos-next/dist/aos.css');
-/*----Language Switcher---*/
-@import url('~/Plugins/language-switcher/polyglot-language-switcher.css');
-/*----------- Fancybox css -------*/
-@import url('~/Plugins/fancybox/dist/jquery.fancybox.min.css');
-/*---------------- Roadmap CSS -------------*/
-@import url('~/Plugins/roadmap/jquery.roadmap.min.css');
-/*---------------- Custom Animation -------------*/
-@import url('~/Content/Custom/custom-animation.css');
-/*** s
-
-====================================================================
-  Loading Transition
-====================================================================
-
- ***/
 #loader-wrapper {
   position: fixed;
   top: 0;

@@ -27,10 +27,33 @@ namespace BrandBook.Web
                       "~/Content/site.css"));
 
 
+
+
+
             // Bundles for Sales Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Main").Include(
+                        "~/Content/bootstrap.min.css",
+                        "~/Content/Fonts/bg-b/stylesheet.css",
+                        "~/Content/Fonts/bg-l/stylesheet.css",
+                        "~/Content/Fonts/bg-md/stylesheet.css",
+                        "~/Content/Fonts/bg-reg/stylesheet.css",
+                        "~/Content/Fonts/lovelo/stylesheet.css",
+                        "~/Content/Fonts/pn-reg/stylesheet.css",
                         "~/Content/Custom/style.css",
                         "~/Content/Custom/responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Plugins").Include(
+                        "~/Plugins/owl-carousel/owl.carousel.css",
+                        "~/Plugins/owl-carousel/owl.carousel.css",
+                        "~/Plugins/owl-carousel/owl.theme.css",
+                        "~/Plugins/aos-next/dist/aos.css",
+                        "~/Plugins/language-switcher/polyglot-language-switcher.css",
+                        "~/Plugins/fancybox/dist/jquery.fancybox.min.css",
+                        "~/Plugins/roadmap/jquery.roadmap.min.css",
+                        "~/Content/Custom/custom-animation.css"));
+
+
+            
 
             bundles.Add(new StyleBundle("~/Content/Css/Styling/01").Include(
                         "~/Content/Custom/ColorStyle01.css"));
@@ -50,7 +73,7 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Plugins/popper.js/popper.min.js",
-                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/bootstrap.min.js",
                         "~/Plugins/jquery-easing/jquery.easing.min.js",
                         "~/Plugins/language-switcher/jquery.polyglot.language.switcher.js",
                         "~/Plugins/jquery.appear.js",
