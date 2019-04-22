@@ -1783,7 +1783,7 @@ body .theme-button:hover span {
   margin: 0; }
 
 .contact-us-one .overlay {
-  background: rgba(0, 0, 0, 0.53);
+  background: rgba(0, 0, 0, 0.1);
   padding: 110px 0 140px; }
 
 .contact-us-one .theme-title h2 {
