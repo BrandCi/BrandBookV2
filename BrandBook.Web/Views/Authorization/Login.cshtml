@@ -6,39 +6,63 @@
     @Styles.Render("~/Content/Css/Styling/02")
 }
 
-<h2>Login</h2>
 
-<div class="row">
-    <div class="col-md-12">
 
-        @using (Html.BeginForm("Login", "Authorization", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
+<div class="contact-us-one" id="contact">
+    <div class="overlay">
+        <div class="container">
+            <div class="theme-title text-center">
+                <h2>Anmelden</h2>
+                <p>Melde Dich an, um Deine Marken zu verwalten und zu verbessern.</p>
+            </div>
 
-            <div class="form-group">
-                <label for="username">
-                    Nutzername
-                </label>
-                <div class="col-md-10">
-                    <input type="text" id="username" class="form-control" placeholder="Nutzername" />
+            @using (Html.BeginForm("Login", "Authorization", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <label for="username">
+                        Nutzername
+                    </label>
+                    <div class="col-md-10">
+                        <input type="text" id="username" class="form-control" placeholder="Nutzername" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="password">
-                    Passwort
-                </label>
-                <div class="col-md-10">
-                    <input type="password" id="password" class="form-control" autocomplete="off" placeholder="Passwort" />
+                <div class="form-group">
+                    <label for="password">
+                        Passwort
+                    </label>
+                    <div class="col-md-10">
+                        <input type="password" id="password" class="form-control" autocomplete="off" placeholder="Passwort" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                    Anmelden
-                </button>
-            </div>
-        }
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Anmelden
+                    </button>
+                </div>
+            }
 
-    </div>
+            <!--Contact Form Validation Markup -->
+            <!-- Contact alert -->
+            <div class="alert-wrapper" id="alert-success">
+                <div id="success">
+                    <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <div class="wrapper">
+                        <p>Your message was sent successfully.</p>
+                    </div>
+                </div>
+            </div> <!-- End of .alert_wrapper -->
+            <div class="alert-wrapper" id="alert-error">
+                <div id="error">
+                    <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <div class="wrapper">
+                        <p>Sorry!Something Went Wrong.</p>
+                    </div>
+                </div>
+            </div> <!-- End of .alert_wrapper -->
+        </div>
+    </div> <!-- /.overlay -->
 </div>
