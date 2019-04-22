@@ -78,6 +78,34 @@ namespace BrandBook.Web.Controllers
         }
 
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var result = await SignInService.PasswordSignInAsync(model.Email, model.Password, false, shouldLockout: false);
+
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return RedirectToAction("Index", "Home");
+                
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
+                    return View(model);
+            }
+        }
+
+
+
+
+
         public ActionResult Register()
         {
             var model = new RegisterViewModel();
