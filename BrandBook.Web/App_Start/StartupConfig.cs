@@ -1,4 +1,5 @@
 ﻿using System;
+using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
@@ -17,6 +18,18 @@ namespace BrandBook.Web
             app.CreatePerOwinContext(BrandBookDbContext.Create);
             app.CreatePerOwinContext<UserService>(UserService.Create);
             app.CreatePerOwinContext<SignInService>(SignInService.Create);
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+                LoginPath = new PathString("/Authorization/Login"),
+                Provider = new CookieAuthenticationProvider
+                {
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserService, User>(
+                        validateInterval: TimeSpan.FromMinutes(30),
+                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+                }
+            });
 
         }
     }

@@ -79,7 +79,6 @@ namespace BrandBook.Web.Controllers
 
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
@@ -88,7 +87,7 @@ namespace BrandBook.Web.Controllers
                 return View(model);
             }
 
-            var result = await SignInService.PasswordSignInAsync(model.Email, model.Password, false, shouldLockout: false);
+            var result = await SignInService.PasswordSignInAsync(model.Email, model.Password, true, shouldLockout: false);
 
             switch (result)
             {
