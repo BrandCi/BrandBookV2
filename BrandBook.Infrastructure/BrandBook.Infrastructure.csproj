@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
       <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.cs" />
+    <Compile Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.Designer.cs">
+      <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.resx">
       <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.resx">
+      <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
