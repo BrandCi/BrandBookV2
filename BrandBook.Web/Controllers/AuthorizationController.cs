@@ -124,6 +124,7 @@ namespace BrandBook.Web.Controllers
 
                 if (result.Succeeded)
                 {
+                    await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     return RedirectToAction("Index", "Home");
                 }
             }

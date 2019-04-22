@@ -13,7 +13,12 @@
     <div class="container">
         <div class="theme-title text-center">
             <h2 class="strong-title-900">Registrieren</h2>
-            <p>Registriere Dich kostenlos um mit der Gestaltung Deiner Marke zu beginnen.</p>
+            <p>
+                Registriere Dich kostenlos um mit der Gestaltung Deiner Marke zu beginnen.
+            </p>
+            <p>
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+            </p>
         </div>
 
         @using (Html.BeginForm("Register", "Authorization", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
