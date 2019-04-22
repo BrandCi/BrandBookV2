@@ -553,6 +553,12 @@
     Author     : Philipp C. Moser.
    
 */
+h1.strong-title-900, h2.strong-title-900 {
+  font-weight: 900 !important; }
+
+h1.strong-title-600, h2.strong-title-600 {
+  font-weight: 600 !important; }
+
 .nav-button {
   color: #ffffff !important;
   font-weight: 600; }
@@ -1072,8 +1078,7 @@ body .theme-button:hover span {
   opacity: 1; }
 
 .theme-banner-two .main-text-wrapper h1 {
-  color: #fff;
-  font-weight: 900; }
+  color: #fff; }
 
 .theme-banner-two .main-text-wrapper p {
   color: rgba(255, 255, 255, 0.8);

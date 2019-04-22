@@ -5,6 +5,18 @@
 */
 
 
+h1, h2 {
+    &.strong-title-900 {
+        font-weight: 900 !important;
+    }
+
+    &.strong-title-600 {
+        font-weight: 600 !important;
+    }
+}
+
+
+
 .nav-button {
     color: #ffffff !important;
     font-weight: 600;

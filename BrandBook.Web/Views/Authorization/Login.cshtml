@@ -12,7 +12,7 @@
     <div class="overlay">
         <div class="container">
             <div class="theme-title text-center">
-                <h2>Anmelden</h2>
+                <h2 class="strong-title-900">Anmelden</h2>
                 <p>Melde Dich an, um Deine Marken zu verwalten und zu verbessern.</p>
             </div>
 
@@ -43,9 +43,18 @@
                         Anmelden
                     </button>
                 </div>
+                <br />
+                <text>
+                    Noch kein Account? <a href="@Url.Action("Register", "Authorization")">Hier registrieren</a>
+                </text>
+
+
+
+
+
             }
 
-            
+
             <div class="alert-wrapper" id="alert-error">
                 <div id="error">
                     <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
