@@ -22,3 +22,27 @@ h1, h2 {
     font-weight: 600;
 }
 
+
+
+
+/*  Pricing  */
+
+h1.pricing-title {
+    font-size: 40px;
+}
+
+.pricing-card {
+    background-color: transparent !important;
+}
+
+.pricing-body {
+    background-color: #ffffff;
+}
+
+.pricing-description {
+    min-height: 175px;
+}
+
+a.btn-pricing {
+    color: #ffffff !important; 
+}

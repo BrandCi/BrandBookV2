@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
+    <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Routes\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +192,10 @@
     <Content Include="Content\Images\Home\shape-02.png" />
     <Content Include="Content\Images\Home\shape-01.png" />
     <Content Include="Content\Images\Home\background-01.png" />
+    <Content Include="Content\Images\Pricing\03_Enterprise.svg" />
+    <Content Include="Content\Images\Pricing\04_Agencies.svg" />
+    <Content Include="Content\Images\Pricing\01_Personal.svg" />
+    <Content Include="Content\Images\Pricing\02_Professional.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -289,6 +294,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\Layout\Partial\Navigation.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\Footer.cshtml" />
+    <Content Include="Views\Pricing\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
