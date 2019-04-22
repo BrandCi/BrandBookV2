@@ -39,8 +39,7 @@ namespace BrandBook.Web
                         "~/Content/Fonts/bg-reg/stylesheet.css",
                         "~/Content/Fonts/lovelo/stylesheet.css",
                         "~/Content/Fonts/pn-reg/stylesheet.css",
-                        "~/Content/Custom/style.css",
-                        "~/Content/Custom/responsive.css"));
+                        "~/Content/Custom/Styles.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Plugins").Include(
                         "~/Plugins/owl-carousel/owl.carousel.css",
@@ -49,8 +48,7 @@ namespace BrandBook.Web
                         "~/Plugins/aos-next/dist/aos.css",
                         "~/Plugins/language-switcher/polyglot-language-switcher.css",
                         "~/Plugins/fancybox/dist/jquery.fancybox.min.css",
-                        "~/Plugins/roadmap/jquery.roadmap.min.css",
-                        "~/Content/Custom/custom-animation.css"));
+                        "~/Plugins/roadmap/jquery.roadmap.min.css"));
 
 
             

@@ -166,9 +166,12 @@
     <Content Include="Content\Custom\ColorStyle01.css" />
     <Content Include="Content\Custom\ColorStyle03.css" />
     <Content Include="Content\Custom\ColorStyle02.css" />
-    <Content Include="Content\Custom\custom-animation.css" />
-    <Content Include="Content\Custom\responsive.css" />
-    <Content Include="Content\Custom\style.css" />
+    <Content Include="Content\Custom\Styles.css">
+      <DependentUpon>Styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Custom\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
     <Content Include="Content\Fonts\bg-b\stylesheet.css" />
     <Content Include="Content\Fonts\bg-l\stylesheet.css" />
     <Content Include="Content\Fonts\bg-md\stylesheet.css" />
@@ -240,6 +243,14 @@
     <Content Include="Content\Fonts\pn-reg\proximanova-regular-webfont.woff" />
     <Content Include="Content\Fonts\pn-reg\proximanova-regular-webfont.woff2" />
     <Content Include="ConnectionStrings.config" />
+    <Content Include="Content\Custom\_Customize.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Custom\Styles.scss" />
+    <Content Include="Content\Custom\_Responsive.scss" />
+    <Content Include="Content\Custom\_CustomAnimation.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Custom\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
