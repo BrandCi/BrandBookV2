@@ -87,7 +87,7 @@ namespace BrandBook.Web.Controllers
                 return View(model);
             }
 
-            var result = await SignInService.PasswordSignInAsync(model.Email, model.Password, true, shouldLockout: false);
+            var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, true, shouldLockout: false);
 
             switch (result)
             {

@@ -9,9 +9,8 @@ namespace BrandBook.Web.ViewModels.Authorization
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "E-mail")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Nutzername")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

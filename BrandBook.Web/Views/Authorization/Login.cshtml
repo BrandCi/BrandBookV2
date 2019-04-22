@@ -22,10 +22,10 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-group">
-                        @Html.LabelFor(m => m.Email)
+                        @Html.LabelFor(m => m.UserName)
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -37,11 +37,9 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-4">
-                        <input type="submit" value="Anmelden" class="btn btn-success" />
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-primary">
+                    Anmelden
+                </button>
                 <br />
                 <text>
                     Noch kein Account? <a href="@Url.Action("Register", "Authorization")">Hier registrieren</a>
