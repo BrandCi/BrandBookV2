@@ -8,10 +8,13 @@
     @Styles.Render("~/Content/Css/Styling/02")
 }
 
-<h2>Register</h2>
-
-<div class="row">
-    <div class="col-md-12">
+<div class="contact-us-one" id="contact">
+<div class="overlay">
+    <div class="container">
+        <div class="theme-title text-center">
+            <h2>Registrieren</h2>
+            <p>Registriere Dich kostenlos um mit der Gestaltung Deiner Marke zu beginnen.</p>
+        </div>
 
         @using (Html.BeginForm("Register", "Authorization", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
@@ -51,6 +54,15 @@
                 </button>
             </div>
         }
-
+        
+        <div class="alert-wrapper" id="alert-error">
+            <div id="error">
+                <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="wrapper">
+                    <p>Bitte versuche es erneut.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</div> <!-- /.overlay -->
 </div>
