@@ -132,5 +132,18 @@ namespace BrandBook.Web.Controllers
 
             return View(model);
         }
+
+
+
+
+
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
     }
 }
