@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
+    <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Routes\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -299,6 +300,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\Users\" />
+    <Folder Include="Views\Legal\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
