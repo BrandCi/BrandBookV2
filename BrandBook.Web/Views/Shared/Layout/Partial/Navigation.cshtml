@@ -1,4 +1,5 @@
-﻿<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff;">
+﻿@using Microsoft.AspNet.Identity
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff;">
     <a class="navbar-brand" href="@Url.Action("Index","Home")">
         <img src="~/Content/Images/App/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         BrandCi
@@ -49,6 +50,15 @@
                     <a class="btn btn-dark nav-button" href="#">Verwaltung</a>
                 }
 
+                using (Html.BeginForm("LogOut", "Authorization", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                }
+             
             }
             else
             {
