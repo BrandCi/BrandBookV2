@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.Designer.cs">
       <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.cs" />
+    <Compile Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.Designer.cs">
+      <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.resx">
       <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.resx">
+      <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
