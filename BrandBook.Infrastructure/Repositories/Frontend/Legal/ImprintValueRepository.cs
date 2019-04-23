@@ -3,10 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.Domain.Frontend.Legal;
+using BrandBook.Core.RepositoryInterfaces.Frontend.Legal;
+using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.Frontend.Legal
 {
-    class ImprintValueRepository
+    public class ImprintValueRepository : IImprintValueRepository
     {
+
+        private BrandBookDbContext context;
+
+        public ImprintValueRepository(BrandBookDbContext context)
+        {
+            this.context = context;
+        }
+
+
+        public IEnumerable<ImprintValue> GetImprintValues()
+        {
+            return context.FeImprintValues.ToList();
+        }
+
+        public ImprintValue GetImprintValue(int imprintValueId)
+        {
+            return context.FeImprintValues.Find(imprintValueId);
+        }
+
+        public IEnumerable<ImprintValue> GetImprintValuesFromCategory(ImprintCategories imprintCategory)
+        {
+            return context.FeImprintValues.Where(i => i.Category == imprintCategory).ToList();
+        }
+
+
+
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
     }
 }
