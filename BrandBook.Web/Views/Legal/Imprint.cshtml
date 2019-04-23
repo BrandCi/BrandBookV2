@@ -3,7 +3,59 @@
 }
 @section ColorStyle
 {
-    @Styles.Render("~/Content/Css/Styling/02")
+    @Styles.Render("~/Content/Css/Styling/01")
 }
 
+<div class="theme-top-section">
 
+    <div class="theme-inner-banner">
+        <div class="container">
+            <h2 style="padding: 0 0 15% 0;">
+                Impressum
+            </h2>
+        </div> <!-- /.container -->
+    </div> <!-- /.theme-inner-banner -->
+
+
+    <div class="container inner-page-spacing">
+        <div class="row">
+            <div class="col-lg-12 col-12 blog-details">
+                <div class="clearfix">
+                    <div class="blog-main-post">
+                        <div>
+                            %Date%
+                        </div>
+                        <h4>
+                            Angaben gemäß §5 TMG
+                        </h4>
+                        <p>
+                            %FirstName% %LastName%
+                        </p>
+                        <p>
+                            %Street% %StreetNumber%
+                        </p>
+                        <p>
+                            %PostalCode% %City%
+                        </p>
+                        <p>
+                            %Country%
+                        </p>
+                        <br /><br />
+                        <h4>
+                            Kontakt
+                        </h4>
+                        <p>
+                            Telefon: %PhoneNumber%
+                        </p>
+                        <p>
+                            E-Mail: %EmailAddress%
+                        </p>
+                    </div> 
+                </div> 
+                
+            </div> 
+
+        </div>
+    </div> <!-- /.container -->
+
+</div> <!-- /.html-top-content -->
