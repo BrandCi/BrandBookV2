@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BrandBook.Web.ViewModels.Legal.ImprintViewModel
+@{
     ViewBag.Title = "Impressum";
 }
 @section ColorStyle
@@ -23,35 +24,19 @@
                 <div class="clearfix">
                     <div class="blog-main-post">
                         <div>
-                            %Date%
+                            23.04.2019
                         </div>
                         <h4>
                             Angaben gemäß §5 TMG
                         </h4>
-                        <p>
-                            %FirstName% %LastName%
-                        </p>
-                        <p>
-                            %Street% %StreetNumber%
-                        </p>
-                        <p>
-                            %PostalCode% %City%
-                        </p>
-                        <p>
-                            %Country%
-                        </p>
-                        <br /><br />
-                        <h4>
-                            Kontakt
-                        </h4>
-                        <p>
-                            Telefon: %PhoneNumber%
-                        </p>
-                        <p>
-                            E-Mail: %EmailAddress%
-                        </p>
+                        @foreach (var item in Model.ImprintValues)
+                        {
+                            <p>
+                                @item.Value
+                            </p>
+                        }
                     </div> 
-                </div> 
+                </div>
                 
             </div> 
 

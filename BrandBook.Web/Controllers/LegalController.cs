@@ -43,7 +43,7 @@ namespace BrandBook.Web.Controllers
             {
                 ImprintValues = imprintValueRepository.GetImprintValues()
             };
-            return View();
+            return View(model);
         }
 
         public ActionResult PrivacyPolicy()
