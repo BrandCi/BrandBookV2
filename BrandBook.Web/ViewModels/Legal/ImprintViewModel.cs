@@ -8,6 +8,6 @@ namespace BrandBook.Web.ViewModels.Legal
 {
     public class ImprintViewModel
     {
-        public List<ImprintValue> ImprintValues { get; set; }
+        public IEnumerable<ImprintValue> ImprintValues { get; set; }
     }
 }
