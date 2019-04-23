@@ -8,66 +8,72 @@
     @Styles.Render("~/Content/Css/Styling/02")
 }
 
-<div class="contact-us-one" id="contact">
-<div class="overlay">
-    <div class="container">
-        <div class="theme-title text-center">
-            <h2 class="strong-title-900">Registrieren</h2>
-            <p>
-                Registriere Dich kostenlos um mit der Gestaltung Deiner Marke zu beginnen.
-            </p>
-            <p>
-                @Html.ValidationSummary("", new { @class = "text-danger" })
-            </p>
-        </div>
 
-        @using (Html.BeginForm("Register", "Authorization", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email)
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Email, new { @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+<div class="theme-top-section">
+    <img src="~/Content/Images/Home/background-01.png" alt="" class="blue-shape">
+
+    <div class="contact-us-one" id="contact">
+        <div class="overlay">
+            <div class="container">
+                <div class="theme-title text-center">
+                    <h2 class="strong-title-900">Registrieren</h2>
+                    <p>
+                        Registriere Dich kostenlos um mit der Gestaltung Deiner Marke zu beginnen.
+                    </p>
+                    <p>
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                    </p>
+                </div>
+
+                @using (Html.BeginForm("Register", "Authorization", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email)
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Username)
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password)
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword)
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Registrieren
+                        </button>
+                    </div>
+                }
+
+                <div class="alert-wrapper" id="alert-error">
+                    <div id="error">
+                        <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <div class="wrapper">
+                            <p>Bitte versuche es erneut.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.Username)
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password)
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.ConfirmPassword)
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                    Registrieren
-                </button>
-            </div>
-        }
-        
-        <div class="alert-wrapper" id="alert-error">
-            <div id="error">
-                <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-                <div class="wrapper">
-                    <p>Bitte versuche es erneut.</p>
-                </div>
-            </div>
-        </div>
+        </div> <!-- /.overlay -->
     </div>
-</div> <!-- /.overlay -->
-</div>
+</div> <!-- /.html-top-content -->
