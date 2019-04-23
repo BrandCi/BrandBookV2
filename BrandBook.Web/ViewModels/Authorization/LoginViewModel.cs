@@ -16,5 +16,8 @@ namespace BrandBook.Web.ViewModels.Authorization
         [DataType(DataType.Password)]
         [Display(Name = "Passwort")]
         public string Password { get; set; }
+
+        [Display(Name = "Daten speichern")]
+        public bool RememberMe { get; set; }
     }
 }
