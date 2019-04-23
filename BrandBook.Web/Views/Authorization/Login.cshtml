@@ -22,18 +22,26 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-group">
-                        @Html.LabelFor(m => m.UserName)
-                    <div class="col-md-10">
+                    @Html.LabelFor(m => m.UserName)
+                    <div class="col-md-12">
                         @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                        @Html.LabelFor(m => m.Password)
-                    <div class="col-md-10">
+                    @Html.LabelFor(m => m.Password)
+                    <div class="col-md-12">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
                     </div>
                 </div>
 
@@ -51,11 +59,11 @@
 
             }
 
-         
-                        <p>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        </p>
-             
+
+            <p>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </p>
+
         </div>
     </div> <!-- /.overlay -->
 </div>
