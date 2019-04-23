@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Frontend\Legal\Imprint.cs" />
+    <Compile Include="Domain\Frontend\Legal\ImprintValue.cs" />
     <Compile Include="Domain\Frontend\Legal\ImprintCategories.cs" />
     <Compile Include="Domain\User\User.cs" />
     <Compile Include="Domain\User\UserRole.cs" />

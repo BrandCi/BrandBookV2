@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Frontend.Legal
 {
-    public class Imprint
+    public class ImprintValue
     {
         public int Id { get; set; }
         public string Name { get; set; }
