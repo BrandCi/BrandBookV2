@@ -328,6 +328,10 @@
       <Project>{8c90c0cd-8087-4521-b92f-f2845be4e5f6}</Project>
       <Name>BrandBook.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Web.Framework\BrandBook.Web.Framework.csproj">
+      <Project>{18ae69dc-669e-45af-a1c4-7d8dd44622a9}</Project>
+      <Name>BrandBook.Web.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
