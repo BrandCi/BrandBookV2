@@ -5,52 +5,60 @@
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
-Login
-
-
-@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-validation", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName)
-        <div class="col-md-12">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
-            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-        </div>
+<div class="img-holder">
+    <div class="bg"></div>
+    <div class="info-holder">
+        <img src="~/Areas/Auth/Content/Images/login_background.svg" alt="">
     </div>
+</div>
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Melden Sie sich an</h3>
+            <p></p>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        <div class="col-md-12">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
-            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-12">
-            <div class="checkbox">
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe)
+
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">Anmelden</button> 
+                    <a href="#">Passwort vergessen?</a>
+                </div>
+        
+            }
+                
+            <p>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </p>
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Register")">Nutzeraccount anlegen</a>
             </div>
         </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">
-        Anmelden
-    </button>
-    <br />
-    <text>
-        Noch kein Account? <a href="@Url.Action("Index", "Register")">Hier registrieren</a>
-    </text>
-
-
-
-
-
-}
-
-
-<p>
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-</p>
+</div>

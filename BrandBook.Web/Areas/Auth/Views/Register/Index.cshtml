@@ -5,47 +5,56 @@
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
-Register
+<div class="img-holder">
+    <div class="bg"></div>
+    <div class="info-holder">
+        <img src="~/Areas/Auth/Content/Images/login_background.svg" alt="">
+    </div>
+</div>
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Melden Sie sich an</h3>
+            <p></p>
 
-@using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
+            @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email)
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                    </div>
+                </div>
+
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">Registrieren</button> 
+                </div>
+
+            }
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Login")">Hier anmelden</a>
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Username)
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword)
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">
-            Registrieren
-        </button>
-    </div>
-
-    <text>
-        Bereits registriert? <a href="@Url.Action("Index", "Login")">Hier anmelden</a>
-    </text>
-}
+</div>

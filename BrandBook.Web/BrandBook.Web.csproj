@@ -161,6 +161,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Auth\Content\Images\login_background.svg" />
     <Content Include="Content\Auth\Styles.css">
       <DependentUpon>Styles.scss</DependentUpon>
     </Content>
@@ -292,7 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Auth\Content\Images\" />
     <Folder Include="Areas\Auth\Models\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
   </ItemGroup>

@@ -4,12 +4,12 @@
 1. General Styles.
 2. Responsive Styles.
 -------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800");
 /* -----------------------------------
     1 - General Styles
 ------------------------------------*/
 *, body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -19,7 +19,7 @@ html, body {
   height: 100%; }
 
 .form-body {
-  background-color: #0093FF;
+  background-color: #3bafda;
   height: 100%; }
 
 .form-body > .row {
@@ -227,7 +227,7 @@ html, body {
 
 .form-content {
   position: relative;
-  background-color: #0093FF; }
+  background-color: #3bafda; }
 
 .form-content .form-group {
   color: #fff;
@@ -421,7 +421,7 @@ html, body {
   top: 3px;
   left: 3px;
   font-size: 9px;
-  color: #0093FF;
+  color: #3bafda;
   line-height: 14px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
@@ -440,7 +440,7 @@ html, body {
   width: 5px;
   height: 5px;
   border-radius: 20px;
-  background-color: #0093FF;
+  background-color: #3bafda;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
 
@@ -1359,7 +1359,7 @@ html, body {
 
 .img-holder {
   width: 550px;
-  background-color: #152733; }
+  background-color: #323b44; }
 
 .img-holder .info-holder h3 {
   color: #fff; }
@@ -1438,7 +1438,7 @@ html, body {
   color: #000000; }
 
 .form-content input:hover, .form-content input:focus, .form-content .dropdown-toggle.btn-default:hover, .form-content .dropdown-toggle.btn-default:focus {
-  border: 1px solid #0093FF;
+  border: 1px solid #3bafda;
   background-color: #fff;
   color: #000000; }
 
@@ -1448,7 +1448,7 @@ html, body {
   color: #000000; }
 
 .form-content textarea:hover, .form-content textarea:focus {
-  border: 1px solid #0093FF;
+  border: 1px solid #3bafda;
   background-color: #fff;
   color: #000000; }
 
@@ -1483,7 +1483,7 @@ html, body {
   box-shadow: 0 3px 8px rgba(74, 230, 142, 0.35); }
 
 .form-content .form-button .ibtn {
-  background-color: #0093FF;
+  background-color: #3bafda;
   color: #fff;
   -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
   box-shadow: 0 0 0 rgba(80, 182, 255, 0.31); }
@@ -1645,7 +1645,7 @@ html, body {
   background-color: #0092FE; }
 
 .form-body.without-side .form-content .form-button .ibtn {
-  background-color: #0093FF;
+  background-color: #3bafda;
   color: #fff;
   -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
   box-shadow: 0 0 0 rgba(80, 182, 255, 0.31); }
