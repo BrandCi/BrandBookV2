@@ -33,13 +33,7 @@ namespace BrandBook.Web
             // Bundles for Sales Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        "~/Content/Fonts/bg-b/stylesheet.css",
-                        "~/Content/Fonts/bg-l/stylesheet.css",
-                        "~/Content/Fonts/bg-md/stylesheet.css",
-                        "~/Content/Fonts/bg-reg/stylesheet.css",
-                        "~/Content/Fonts/lovelo/stylesheet.css",
-                        "~/Content/Fonts/pn-reg/stylesheet.css",
-                        "~/Content/Custom/Styles.min.css"));
+                        "~/Content/Frontend/Styles.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Plugins").Include(
                         "~/Plugins/owl-carousel/owl.carousel.css",
@@ -54,13 +48,13 @@ namespace BrandBook.Web
             
 
             bundles.Add(new StyleBundle("~/Content/Css/Styling/01").Include(
-                        "~/Content/Custom/ColorStyle01.css"));
+                        "~/Content/Frontend/ColorStyle01.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Styling/02").Include(
-                        "~/Content/Custom/ColorStyle02.css"));
+                        "~/Content/Frontend/ColorStyle02.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Styling/03").Include(
-                        "~/Content/Custom/ColorStyle03.css"));
+                        "~/Content/Frontend/ColorStyle03.css"));
 
 
             // Main Js File for Sales Frontend
