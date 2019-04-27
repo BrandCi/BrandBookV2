@@ -1,6 +1,56 @@
-﻿
+﻿@model BrandBook.Web.ViewModels.Authorization.LoginViewModel
+
 @{
+    ViewBag.Title = "Login";
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
-Login - Page
+Login
+
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        <div class="col-md-12">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
+            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        <div class="col-md-12">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Anmelden
+    </button>
+    <br />
+    <text>
+        Noch kein Account? <a href="#">Hier registrieren</a>
+    </text>
+
+
+
+
+
+}
+
+
+<p>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</p>
