@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.Auth
 {
-    class RegisterViewModel
+    public class RegisterViewModel
     {
     }
 }
