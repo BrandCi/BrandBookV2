@@ -83,6 +83,20 @@ namespace BrandBook.Web
 
 
 
+
+
+            /*
+             *
+             * Styles
+             * Auth
+             *
+             */
+
+            bundles.Add(new StyleBundle("~/Content/Css/Auth/Main").Include(
+                        "~/Content/Auth/Styles.min.css"));
+
+
+
         }
     }
 }

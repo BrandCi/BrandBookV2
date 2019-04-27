@@ -161,6 +161,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Auth\Styles.css">
+      <DependentUpon>Styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Auth\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -245,6 +251,7 @@
     <Content Include="Content\Frontend\Styles.scss" />
     <Content Include="Content\Frontend\_Responsive.scss" />
     <Content Include="Content\Frontend\_CustomAnimation.scss" />
+    <Content Include="Content\Auth\Styles.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Custom\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
