@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
@@ -257,6 +258,7 @@
     <Content Include="Areas\Auth\Views\web.config" />
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
