@@ -50,7 +50,12 @@
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Legal\ImprintViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
+      <Project>{095315a3-f944-4219-bbff-daaa4d214c03}</Project>
+      <Name>BrandBook.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
