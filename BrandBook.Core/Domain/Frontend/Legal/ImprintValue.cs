@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Frontend.Legal
 {
-    public class ImprintValue
+    public class ImprintValue : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Value { get; set; }
         public ImprintCategories Category { get; set; }
