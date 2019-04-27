@@ -6,20 +6,15 @@ using System.Web;
 using System.Web.Mvc;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
+using BrandBook.Web.Framework.Bases.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : AuthControllerBase
     {
 
-        #region Fields
-
-        private SignInService _signInService;
-        private UserService _userService;
-
-        #endregion
 
         #region Constructor
 
