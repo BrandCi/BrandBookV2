@@ -50,7 +50,7 @@
                     <a class="btn btn-dark nav-button" href="#">Verwaltung</a>
                 }
 
-                using (Html.BeginForm("LogOut", "Authorization", FormMethod.Post, new { id = "logoutForm" }))
+                using (Html.BeginForm("Index", "Logout", new {area =  "Auth"}, FormMethod.Post, new { id = "logoutForm" }))
                 {
                     @Html.AntiForgeryToken()
 
@@ -62,8 +62,8 @@
             }
             else
             {
-                <a class="btn btn-outline-dark" href="@Url.Action("Login", "Authorization")">Anmelden</a>
-                <a class="btn btn-success nav-button" href="@Url.Action("Register", "Authorization")">Registrieren</a>
+                <a class="btn btn-outline-dark" href="@Url.Action("Index", "Login", new {area =  "Auth"})">Anmelden</a>
+                <a class="btn btn-success nav-button" href="@Url.Action("Index", "Register", new {area =  "Auth"})">Registrieren</a>
             }
         </span>
 
