@@ -1,16 +1,14 @@
-﻿@model BrandBook.Web.Framework.ViewModels.Auth.RegisterViewModel
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@model BrandBook.Web.Framework.ViewModels.Auth.RegisterViewModel
 
 @{
     ViewBag.Title = "Registrieren";
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
-<div class="img-holder">
-    <div class="bg"></div>
-    <div class="info-holder">
-        <img src="~/Areas/Auth/Content/Images/login_background.svg" alt="">
-    </div>
-</div>
+
+@AuthCustomHelper.RenderBackground("https://content.philipp-moser.de/wlo0t5byw6/b14828a6-69ac-4d63-a7e0-0f442729e318.svg")
+
 <div class="form-holder">
     <div class="form-content">
         <div class="form-items">
@@ -50,7 +48,7 @@
                 </div>
 
                 <div class="form-button">
-                    <button id="submit" type="submit" class="ibtn">Registrieren</button> 
+                    <button id="submit" type="submit" class="ibtn">Registrieren</button>
                 </div>
 
             }
