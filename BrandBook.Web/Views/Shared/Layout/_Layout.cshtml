@@ -15,8 +15,8 @@
     <title>@ViewBag.Title - BrandCi</title>
 
 
-    @Styles.Render("~/Content/Css/Main")
-    @Styles.Render("~/Content/Plugins")
+    @Styles.Render("~/Content/Css/Frontend/Main")
+    @Styles.Render("~/Content/Frontend/Plugins")
     @RenderSection("ColorStyle", required: true)
     @RenderSection("styles", required: false)
 
@@ -56,8 +56,8 @@
             
             
             <!-- Js File_________________________________ -->
-            @Scripts.Render("~/bundles/Plugins")
-            @Scripts.Render("~/bundles/Main")
+            @Scripts.Render("~/bundles/Frontend/Plugins")
+            @Scripts.Render("~/bundles/Frontend/Main")
 
             @RenderSection("scripts", required: false)
             <!-- ./ Footer -->

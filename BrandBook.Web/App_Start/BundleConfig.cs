@@ -29,13 +29,19 @@ namespace BrandBook.Web
 
 
 
+            /*
+             *
+             * Styles
+             * Frontend
+             *
+             */
 
-            // Bundles for Sales Frontend
-            bundles.Add(new StyleBundle("~/Content/Css/Main").Include(
+            // Bundles for Frontend
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
                         "~/Content/Frontend/Styles.min.css"));
 
-            bundles.Add(new StyleBundle("~/Content/Plugins").Include(
+            bundles.Add(new StyleBundle("~/Content/Frontend/Plugins").Include(
                         "~/Plugins/owl-carousel/owl.carousel.css",
                         "~/Plugins/owl-carousel/owl.carousel.css",
                         "~/Plugins/owl-carousel/owl.theme.css",
@@ -47,22 +53,22 @@ namespace BrandBook.Web
 
             
 
-            bundles.Add(new StyleBundle("~/Content/Css/Styling/01").Include(
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/01").Include(
                         "~/Content/Frontend/ColorStyle01.css"));
 
-            bundles.Add(new StyleBundle("~/Content/Css/Styling/02").Include(
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/02").Include(
                         "~/Content/Frontend/ColorStyle02.css"));
 
-            bundles.Add(new StyleBundle("~/Content/Css/Styling/03").Include(
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/03").Include(
                         "~/Content/Frontend/ColorStyle03.css"));
 
 
             // Main Js File for Sales Frontend
-            bundles.Add(new ScriptBundle("~/bundles/Main").Include(
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
                         "~/Scripts/Custom/theme.js"));
 
             // Plugins for Sales Frontend
-            bundles.Add(new ScriptBundle("~/bundles/Plugins").Include(
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Plugins").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Plugins/popper.js/popper.min.js",
                         "~/Scripts/bootstrap.min.js",
