@@ -7,7 +7,7 @@ using System.Web.UI;
 using BrandBook.Core.RepositoryInterfaces.Frontend.Legal;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend.Legal;
-using BrandBook.Web.Framework.Bases.Controllers;
+using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Frontend.Legal;
 
 namespace BrandBook.Web.Controllers

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
-namespace BrandBook.Web.Framework.Bases.Controllers
+namespace BrandBook.Core.Domain
 {
-    public class FrontendControllerBase : Controller
+    public class BaseEntity
     {
     }
 }
