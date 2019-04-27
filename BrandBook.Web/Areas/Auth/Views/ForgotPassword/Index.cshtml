@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Passwort vergessen";
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+<div class="img-holder">
+    <div class="bg"></div>
+    <div class="info-holder">
+        <img src="~/Areas/Auth/Content/Images/login_background.svg" alt="">
+    </div>
+</div>
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Passwort vergessen?</h3>
+            <p></p>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="text" placeholder="E-Mail Adresse" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="text" placeholder="Nutzername" class="form-control" />
+                </div>
+            </div>
+            
+            <div class="form-button">
+                <button id="submit" type="submit" class="ibtn">Passwort zurücksetzen</button>
+            </div>
+    
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Login")">Anmelden</a>
+            </div>
+
+        </div>
+    </div>
+</div>

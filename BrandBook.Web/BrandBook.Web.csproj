@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
+    <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
     <Compile Include="Areas\Auth\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
@@ -245,6 +246,7 @@
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Auth\Views\ForgotPassword\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
