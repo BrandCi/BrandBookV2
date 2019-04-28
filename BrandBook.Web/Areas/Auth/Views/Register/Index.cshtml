@@ -49,14 +49,16 @@
 
                 <div class="form-button">
                     <button id="submit" type="submit" class="ibtn">Registrieren</button>
+                    <a href="@Url.Action("Index", "Login")">Hier anmelden.</a>
                 </div>
 
             }
 
-
             <div class="page-links mt-5">
-                <a href="@Url.Action("Index", "Login")">Hier anmelden</a>
+                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;Zurück</a>
             </div>
+
+
         </div>
     </div>
 </div>
