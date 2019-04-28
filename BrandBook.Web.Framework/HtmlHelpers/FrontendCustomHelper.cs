@@ -59,8 +59,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             return new HtmlString(html.ToString());
 
         }
-
-
+        
 
         public static IHtmlString ImprintContent(string title, DateTime date, ImprintViewModel model)
         {
