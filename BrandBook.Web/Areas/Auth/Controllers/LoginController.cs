@@ -83,7 +83,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Index", "Home", new { area = ""} );
+                    return RedirectToAction("Index", "Dashboard", new { area = "App"} );
 
                 case SignInStatus.Failure:
                 default:
