@@ -47,17 +47,17 @@
 
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account"></i> <span>Profil</span>
+                                    <i class="fas fa-user"></i> <span>Profil</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-settings"></i> <span>Einstellungen</span>
+                                    <i class="fas fa-cogs"></i> <span>Einstellungen</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-logout"></i> <span>Abmelden</span>
+                                    <i class="fas fa-sign-out-alt"></i> <span>Abmelden</span>
                                 </a>
 
                             </div>
@@ -68,7 +68,7 @@
                     <ul class="list-inline menu-left mb-0">
                         <li class="float-left">
                             <button class="button-menu-mobile open-left waves-light waves-effect">
-                                <i class="mdi mdi-menu"></i>
+                                <i class="fas fa-bars"></i>
                             </button>
                         </li>
                     </ul>
@@ -87,14 +87,8 @@
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect waves-primary">
-                                    <i class="ti-home"></i><span> Dashboard </span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="typography.html" class="waves-effect waves-primary">
-                                    <i class="ti-infinite"></i><span> Typography </span>
+                                <a href="@Url.Action("Index", "Dashboard", new{ area = "App" })" class="waves-effect waves-primary">
+                                    <i class="fas fa-tachometer-alt"></i><span> Dashboard </span>
                                 </a>
                             </li>
 
@@ -119,8 +113,8 @@
                                     <h4 class="page-title">Dashboard</h4>
                                     <ol class="breadcrumb float-right hide-phone">
                                         <li class="breadcrumb-item"><a href="#">BrandBook</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
+                                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Index</li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>

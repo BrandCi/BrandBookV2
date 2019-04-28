@@ -109,7 +109,7 @@ namespace BrandBook.Web
             bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
                 "~/Plugins/switchery/switchery.min.css",
                 "~/Content/bootstrap.min.css",
-                "~/Content/App/Styles.min.css"));
+                "~/Content/App/style.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
