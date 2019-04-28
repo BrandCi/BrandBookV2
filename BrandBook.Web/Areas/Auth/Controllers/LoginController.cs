@@ -60,6 +60,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         // GET: Auth/Login
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home", new {area = ""});
+            }
+
             return View();
         }
 
