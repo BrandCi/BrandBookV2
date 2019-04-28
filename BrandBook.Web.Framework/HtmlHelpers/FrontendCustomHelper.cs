@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
-    public class FrontendCustomHelper
+    public static class FrontendCustomHelper
     {
 
 

@@ -100,8 +100,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\AuthControllerBase.cs" />
     <Compile Include="Controllers\FrontendControllerBase.cs" />
+    <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,6 +129,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\App\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -288,6 +288,7 @@
     <Folder Include="Areas\Auth\Content\" />
     <Folder Include="Areas\Auth\Models\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
+    <Folder Include="Content\App\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
