@@ -349,10 +349,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\App\Controllers\" />
-    <Folder Include="Areas\App\Models\" />
     <Folder Include="Areas\App\Views\Shared\Layout\Partial\" />
     <Folder Include="Areas\Auth\Content\" />
-    <Folder Include="Areas\Auth\Models\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>

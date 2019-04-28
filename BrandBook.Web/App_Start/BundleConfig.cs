@@ -98,6 +98,38 @@ namespace BrandBook.Web
 
 
 
+
+
+            /*
+             *
+             * Styles
+             * App
+             *
+             */
+            bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
+                "~/Plugins/switchery/switchery.min.css",
+                "~/Content/bootstrap.min.css",
+                "~/Content/App/Styles.min.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/popper.min.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/App/detect.js",
+                "~/Scripts/App/fastclick.js",
+                "~/Scripts/App/jquery.slimscroll.js",
+                "~/Scripts/App/jquery.blockUI.js",
+                "~/Scripts/App/waves.js",
+                "~/Scripts/App/wow.min.js",
+                "~/Scripts/App/jquery.nicescroll.js",
+                "~/Scripts/App/jquery.scrollTo.min.js",
+                "~/Plugins/switchery/switchery.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/App/Core").Include(
+                "~/Scripts/App/jquery.core.js",
+                "~/Scripts/App/jquery.app.js"));
+
         }
     }
 }

@@ -1,13 +1,157 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>@ViewBag.Title - App BrandBookV2</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Brand Management, BrandBook">
+        <meta name="author" content="Philipp C. Moser">
+        <meta name="description" content="Brand Book V2">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - BrandBook</title>
+        @Styles.Render("~/Content/Css/App/Main")
+        @RenderSection("styles", required: false)
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
-    <body>
-        <div>
-            @RenderBody()
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="#" class="logo">
+                            <i class="fa fa-rocket"></i> <span>BrandBook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <img src="https://content.philipp-moser.de/wlo0t5byw6/UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Philipp C. Moser</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account"></i> <span>Profil</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-settings"></i> <span>Einstellungen</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout"></i> <span>Abmelden</span>
+                                </a>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+                    </ul>
+
+                </nav>
+
+            </div>
+            <!-- Top Bar End -->
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li class="menu-title">Main</li>
+
+                            <li>
+                                <a href="index.html" class="waves-effect waves-primary">
+                                    <i class="ti-home"></i><span> Dashboard </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="typography.html" class="waves-effect waves-primary">
+                                    <i class="ti-infinite"></i><span> Typography </span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Dashboard</h4>
+                                    <ol class="breadcrumb float-right hide-phone">
+                                        <li class="breadcrumb-item"><a href="#">BrandBook</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        @RenderBody()
+
+
+                    </div>
+                    <!-- end container -->
+                </div>
+                <!-- end content -->
+
+                <footer class="footer">
+                    BrandBook v.2.0.0
+                </footer>
+
+            </div>
+            
         </div>
+        <!-- END wrapper -->
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        @Scripts.Render("~/bundles/App/Main")
+        @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/App/Core")
+
+
     </body>
 </html>
