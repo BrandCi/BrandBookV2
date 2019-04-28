@@ -216,6 +216,8 @@
     <Content Include="Plugins\popper.js\popper.min.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.min.css" />
+    <Content Include="Plugins\switchery\switchery.min.css" />
+    <Content Include="Plugins\switchery\switchery.min.js" />
     <Content Include="Scripts\App\detect.js" />
     <Content Include="Scripts\App\fastclick.js" />
     <Content Include="Scripts\App\jquery.app.js" />
