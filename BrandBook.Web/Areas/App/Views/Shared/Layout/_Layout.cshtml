@@ -78,27 +78,9 @@
             </div>
             <!-- Top Bar End -->
             <!-- ========== Left Sidebar Start ========== -->
-
-            <div class="left side-menu">
-                <div class="sidebar-inner slimscrollleft">
-                    <!--- Divider -->
-                    <div id="sidebar-menu">
-                        <ul>
-                            <li class="menu-title">Main</li>
-
-                            <li>
-                                <a href="@Url.Action("Index", "Dashboard", new{ area = "App" })" class="waves-effect waves-primary">
-                                    <i class="fas fa-tachometer-alt"></i><span> Dashboard </span>
-                                </a>
-                            </li>
-
-                        </ul>
-
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+            
+            @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_GeneralNavigation.cshtml")
+            
             <!-- Left Sidebar End -->
             
             <div class="content-page">
