@@ -227,6 +227,7 @@
     <Content Include="Scripts\App\Main\jquery.nicescroll.js" />
     <Content Include="Scripts\App\Main\jquery.scrollTo.min.js" />
     <Content Include="Scripts\App\Main\jquery.slimscroll.js" />
+    <Content Include="Scripts\App\Main\popper.min.js" />
     <Content Include="Scripts\App\Main\skycons.min.js" />
     <Content Include="Scripts\App\Main\waves.js" />
     <Content Include="Scripts\App\Main\wow.min.js" />
