@@ -22,17 +22,17 @@ namespace BrandBook.Infrastructure.Repositories.Frontend.Legal
 
         public IEnumerable<ImprintValue> GetImprintValues()
         {
-            return context.FeImprintValues.ToList();
+            return context.ImprintValues.ToList();
         }
 
         public ImprintValue GetImprintValue(int imprintValueId)
         {
-            return context.FeImprintValues.Find(imprintValueId);
+            return context.ImprintValues.Find(imprintValueId);
         }
 
-        public IEnumerable<ImprintValue> GetImprintValuesFromCategory(ImprintCategories imprintCategory)
+        public IEnumerable<ImprintValue> GetImprintValuesFromCategory(ImprintCategory imprintCategory)
         {
-            return context.FeImprintValues.Where(i => i.Category == imprintCategory).ToList();
+            return context.ImprintValues.Where(i => i.Category == imprintCategory).ToList();
         }
 
 

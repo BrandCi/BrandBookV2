@@ -12,12 +12,14 @@ namespace BrandBook.Infrastructure.Data
 {
     public class BrandBookDbContext : IdentityDbContext<User>
     {
-
-
         // Frontend Domain
-        public DbSet<ImprintValue> FeImprintValues { get; set; }
+        public DbSet<ImprintCategory> ImprintCategories { get; set; }
+        public DbSet<ImprintValue> ImprintValues { get; set; }
+
+        // Auth Domain
 
 
+        // App Domain
 
 
         public BrandBookDbContext()

@@ -10,6 +10,7 @@ namespace BrandBook.Core.Domain.Frontend.Legal
     {
         public string Name { get; set; }
         public string Value { get; set; }
-        public ImprintCategories Category { get; set; }
+        public int Position { get; set; }
+        public ImprintCategory Category { get; set; }
     }
 }

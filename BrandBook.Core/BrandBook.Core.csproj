@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
     <Compile Include="Domain\Frontend\Legal\ImprintValue.cs" />
-    <Compile Include="Domain\Frontend\Legal\ImprintCategories.cs" />
+    <Compile Include="Domain\Frontend\Legal\ImprintCategory.cs" />
     <Compile Include="Domain\User\User.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

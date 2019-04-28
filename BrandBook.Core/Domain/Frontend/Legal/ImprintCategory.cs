@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Frontend.Legal
 {
-    public enum ImprintCategories
+    public class ImprintCategory : BaseEntity
     {
-        General,
-        Contact
+        public string Name { get; set; }
+        public int Position { get; set; }
     }
 }

@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.Designer.cs">
       <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.cs" />
+    <Compile Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.Designer.cs">
+      <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Frontend\Legal\ImprintValueRepository.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.resx">
       <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.resx">
+      <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

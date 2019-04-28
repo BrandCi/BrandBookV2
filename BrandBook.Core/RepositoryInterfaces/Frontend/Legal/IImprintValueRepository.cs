@@ -12,7 +12,7 @@ namespace BrandBook.Core.RepositoryInterfaces.Frontend.Legal
 
         IEnumerable<ImprintValue> GetImprintValues();
         ImprintValue GetImprintValue(int imprintValueId);
-        IEnumerable<ImprintValue> GetImprintValuesFromCategory(ImprintCategories imprintCategory);
+        IEnumerable<ImprintValue> GetImprintValuesFromCategory(ImprintCategory imprintCategory);
 
     }
 }
