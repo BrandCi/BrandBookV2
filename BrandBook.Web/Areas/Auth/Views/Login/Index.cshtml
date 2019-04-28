@@ -35,21 +35,13 @@
                 </div>
               
 
-                <div class="form-group form-check">
-                    <div class="col-md-12">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        
-                    </div>
-                </div>
-
+                <label class="container">@Html.DisplayNameFor(m => m.RememberMe)
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    <span class="auth-custom-checkbox"></span>
+                </label>
                 
 
-
-
-
-
-                <div class="form-button">
+                <div class="form-button mt-5">
                     <button id="submit" type="submit" class="ibtn">Anmelden</button>
                     <a href="@Url.Action("Index", "ForgotPassword")">Passwort vergessen?</a>
                 </div>
