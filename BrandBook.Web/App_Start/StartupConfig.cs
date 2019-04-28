@@ -22,7 +22,7 @@ namespace BrandBook.Web
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Authorization/Login"),
+                LoginPath = new PathString("/Auth/Login/Index"),
                 Provider = new CookieAuthenticationProvider
                 {
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserService, User>(
