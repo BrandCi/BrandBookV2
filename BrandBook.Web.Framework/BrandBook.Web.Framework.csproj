@@ -103,6 +103,7 @@
     <Compile Include="Controllers\AuthControllerBase.cs" />
     <Compile Include="Controllers\FrontendControllerBase.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
+    <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
