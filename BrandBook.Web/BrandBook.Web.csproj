@@ -216,6 +216,17 @@
     <Content Include="Plugins\popper.js\popper.min.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.min.css" />
+    <Content Include="Scripts\App\detect.js" />
+    <Content Include="Scripts\App\fastclick.js" />
+    <Content Include="Scripts\App\jquery.app.js" />
+    <Content Include="Scripts\App\jquery.blockUI.js" />
+    <Content Include="Scripts\App\jquery.core.js" />
+    <Content Include="Scripts\App\jquery.nicescroll.js" />
+    <Content Include="Scripts\App\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\App\jquery.slimscroll.js" />
+    <Content Include="Scripts\App\skycons.min.js" />
+    <Content Include="Scripts\App\waves.js" />
+    <Content Include="Scripts\App\wow.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -341,7 +352,6 @@
     <Folder Include="Areas\Auth\Content\" />
     <Folder Include="Areas\Auth\Models\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
-    <Folder Include="Scripts\App\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
