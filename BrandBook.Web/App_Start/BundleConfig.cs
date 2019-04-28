@@ -116,15 +116,14 @@ namespace BrandBook.Web
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/popper.min.js",
                 "~/Scripts/bootstrap.min.js",
-                "~/Scripts/App/detect.js",
-                "~/Scripts/App/fastclick.js",
-                "~/Scripts/App/jquery.slimscroll.js",
-                "~/Scripts/App/jquery.blockUI.js",
-                "~/Scripts/App/waves.js",
-                "~/Scripts/App/wow.min.js",
-                "~/Scripts/App/jquery.nicescroll.js",
-                "~/Scripts/App/jquery.scrollTo.min.js",
-                "~/Plugins/switchery/switchery.min.js"));
+                "~/Scripts/App/Main/detect.js",
+                "~/Scripts/App/Main/fastclick.js",
+                "~/Scripts/App/Main/jquery.slimscroll.js",
+                "~/Scripts/App/Main/jquery.blockUI.js",
+                "~/Scripts/App/Main/waves.js",
+                "~/Scripts/App/Main/wow.min.js",
+                "~/Scripts/App/Main/jquery.nicescroll.js",
+                "~/Scripts/App/Main/jquery.scrollTo.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/App/Core").Include(
                 "~/Scripts/App/jquery.core.js",
