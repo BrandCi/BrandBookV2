@@ -34,12 +34,17 @@
                     <a href="#" class="dropdown-item notify-item">
                         <i class="fas fa-cogs"></i> <span>Einstellungen</span>
                     </a>
+                    
+                    @using (Html.BeginForm("Index", "Logout", new {area =  "Auth"}, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
 
-                    <!-- item-->
-                    <a href="#" class="dropdown-item notify-item">
-                        <i class="fas fa-sign-out-alt"></i> <span>Abmelden</span>
-                    </a>
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item notify-item">
+                            <i class="fas fa-sign-out-alt"></i> <span>Abmelden</span>
+                        </a>
+                    }
 
+                    
                 </div>
             </li>
 
