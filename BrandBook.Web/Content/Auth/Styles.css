@@ -37,7 +37,7 @@
   background-color: #ccc; }
 
 .container input:checked ~ .auth-custom-checkbox {
-  background-color: #3bafda; }
+  background-color: #191eae; }
 
 .auth-custom-checkbox:after {
   content: "";
@@ -889,7 +889,7 @@ html, body {
 
 .form-body.without-side .img-holder .info-holder img {
   display: none;
-  max-width: 700px;
+  max-width: 1000px;
   -webkit-animation: zoom-in-img 50s linear 0s infinite;
   -moz-animation: zoom-in-img 50s linear 0s infinite;
   -ms-animation: zoom-in-img 50s linear 0s infinite;
