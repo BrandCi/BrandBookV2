@@ -238,6 +238,7 @@
     <Content Include="Content\Frontend\_Responsive.scss" />
     <Content Include="Content\Frontend\_CustomAnimation.scss" />
     <Content Include="Content\Auth\Styles.scss" />
+    <Content Include="Content\Auth\_Customize.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Custom\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
