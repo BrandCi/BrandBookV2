@@ -261,7 +261,8 @@
     <Content Include="Areas\App\Views\web.config" />
     <Content Include="Areas\App\Views\Shared\Layout\_Layout.cshtml" />
     <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\App\Views\Shared\Layout\Partial\_GeneralNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Shared\Layout\Partial\_LeftNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
