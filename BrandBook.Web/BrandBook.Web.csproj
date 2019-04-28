@@ -232,6 +232,7 @@
     <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
     <Content Include="Areas\Auth\Views\ForgotPassword\Index.cshtml" />
     <Content Include="Areas\App\Views\web.config" />
+    <Content Include="Areas\App\Views\Shared\Layout\_Layout.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -283,7 +284,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\App\Controllers\" />
     <Folder Include="Areas\App\Models\" />
-    <Folder Include="Areas\App\Views\Shared\" />
+    <Folder Include="Areas\App\Views\Shared\Layout\Partial\" />
     <Folder Include="Areas\Auth\Content\" />
     <Folder Include="Areas\Auth\Models\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
