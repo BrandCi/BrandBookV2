@@ -11,7 +11,7 @@ namespace BrandBook.Web.Controllers
     public class CultureController : FrontendControllerBase
     {
 
-        public ActionResult SetCulture(string culture)
+        public ActionResult SetCulture(string culture, string currentAction, string currentController)
         {
             culture = CultureHelper.GetImplementedCulture(culture);
 
