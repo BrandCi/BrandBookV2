@@ -30,7 +30,7 @@ namespace BrandBook.Web.Controllers
 
             Response.Cookies.Add(cookie);
             
-            return RedirectToAction("Index", "Home", new{area = ""});
+            return RedirectToAction(currentAction, currentController, new{area = ""});
         }
     }
 }
