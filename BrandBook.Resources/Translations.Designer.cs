@@ -70,6 +70,33 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string auth_login_input_password {
+            get {
+                return ResourceManager.GetString("auth_login_input_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me.
+        /// </summary>
+        public static string auth_login_input_rememberme {
+            get {
+                return ResourceManager.GetString("auth_login_input_rememberme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string auth_login_input_username {
+            get {
+                return ResourceManager.GetString("auth_login_input_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string auth_login_login_button_title {
@@ -106,6 +133,42 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        public static string auth_register_input_confirmpassword {
+            get {
+                return ResourceManager.GetString("auth_register_input_confirmpassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail.
+        /// </summary>
+        public static string auth_register_input_email {
+            get {
+                return ResourceManager.GetString("auth_register_input_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string auth_register_input_password {
+            get {
+                return ResourceManager.GetString("auth_register_input_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string auth_register_input_username {
+            get {
+                return ResourceManager.GetString("auth_register_input_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login here.
         /// </summary>
         public static string auth_register_login_title {
@@ -129,6 +192,24 @@ namespace BrandBook.Resources {
         public static string auth_register_title {
             get {
                 return ResourceManager.GetString("auth_register_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail.
+        /// </summary>
+        public static string auth_resetpassword_input_email {
+            get {
+                return ResourceManager.GetString("auth_resetpassword_input_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string auth_resetpassword_input_username {
+            get {
+                return ResourceManager.GetString("auth_resetpassword_input_username", resourceCulture);
             }
         }
         

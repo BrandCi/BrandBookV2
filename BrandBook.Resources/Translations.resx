@@ -120,6 +120,15 @@
   <data name="auth_back_button_title" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="auth_login_input_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="auth_login_input_rememberme" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="auth_login_input_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
   <data name="auth_login_login_button_title" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -132,6 +141,18 @@
   <data name="auth_login_title" xml:space="preserve">
     <value>Log in</value>
   </data>
+  <data name="auth_register_input_confirmpassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="auth_register_input_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="auth_register_input_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="auth_register_input_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
   <data name="auth_register_login_title" xml:space="preserve">
     <value>Login here</value>
   </data>
@@ -140,6 +161,12 @@
   </data>
   <data name="auth_register_title" xml:space="preserve">
     <value>Register here</value>
+  </data>
+  <data name="auth_resetpassword_input_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="auth_resetpassword_input_username" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="auth_resetpassword_login_button_title" xml:space="preserve">
     <value>Login here</value>
