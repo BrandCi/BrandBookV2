@@ -18,6 +18,8 @@
 
     @Styles.Render("~/Content/Css/Frontend/Main")
     @Styles.Render("~/Content/Frontend/Plugins")
+    @Styles.Render("~/Content/Css/Flag-Icon")
+
     @RenderSection("ColorStyle", required: true)
     @RenderSection("styles", required: false)
 
@@ -50,11 +52,11 @@
             <div class="html-top-content">
 
                 @RenderBody()
-                
+
             </div>
+
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
-            
             
             <!-- Js File_________________________________ -->
             @Scripts.Render("~/bundles/Frontend/Plugins")
