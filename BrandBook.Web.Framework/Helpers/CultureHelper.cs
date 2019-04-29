@@ -34,5 +34,47 @@ namespace BrandBook.Web.Framework.Helpers
             "en-US",
             "de"
         };
+
+
+        public static string GetImplementedCulture(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return GetDefaultCulture();
+            }
+
+            if (_validCultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() == 0)
+            {
+                return GetDefaultCulture();
+            }
+
+            if (_cultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() > 0)
+            {
+                return name;
+            }
+
+
+            return GetDefaultCulture();
+        }
+
+
+
+
+        public static string GetDefaultCulture()
+        {
+            return _cultures[0];
+        }
+
+        public static string GetNeutralCulture(string name)
+        {
+            if (!name.Contains("-"))
+            {
+                return name;
+            }
+            else
+            {
+                return name.Split('-')[0];
+            }
+        }
     }
 }
