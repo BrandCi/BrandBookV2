@@ -59,7 +59,20 @@
             <!-- Js File_________________________________ -->
             @Scripts.Render("~/bundles/Frontend/Plugins")
             @Scripts.Render("~/bundles/Frontend/Main")
+            
+            
+            <!-- Language Switcher -->
+            <script type="text/javascript">
 
+                (function ($) {
+                    $("input[type = 'radio']").click(function () {
+                        $(this).parents("form").submit();
+                    });
+                })(jQuery);
+
+            </script>
+            
+            
             @RenderSection("scripts", required: false)
             <!-- ./ Footer -->
         </div> <!-- /.main-page-wrapper -->
