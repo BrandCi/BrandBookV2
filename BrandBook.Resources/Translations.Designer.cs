@@ -61,6 +61,105 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string auth_back_button_title {
+            get {
+                return ResourceManager.GetString("auth_back_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string auth_login_login_button_title {
+            get {
+                return ResourceManager.GetString("auth_login_login_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register now.
+        /// </summary>
+        public static string auth_login_register_button_title {
+            get {
+                return ResourceManager.GetString("auth_login_register_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot password?.
+        /// </summary>
+        public static string auth_login_resetpassword_title {
+            get {
+                return ResourceManager.GetString("auth_login_resetpassword_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in.
+        /// </summary>
+        public static string auth_login_title {
+            get {
+                return ResourceManager.GetString("auth_login_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login here.
+        /// </summary>
+        public static string auth_register_login_title {
+            get {
+                return ResourceManager.GetString("auth_register_login_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string auth_register_register_button_title {
+            get {
+                return ResourceManager.GetString("auth_register_register_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register here.
+        /// </summary>
+        public static string auth_register_title {
+            get {
+                return ResourceManager.GetString("auth_register_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login here.
+        /// </summary>
+        public static string auth_resetpassword_login_button_title {
+            get {
+                return ResourceManager.GetString("auth_resetpassword_login_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset password.
+        /// </summary>
+        public static string auth_resetpassword_resetpassword_button_title {
+            get {
+                return ResourceManager.GetString("auth_resetpassword_resetpassword_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot password?.
+        /// </summary>
+        public static string auth_resetpassword_title {
+            get {
+                return ResourceManager.GetString("auth_resetpassword_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Homepage.
         /// </summary>
         public static string frontend_navigation_homepage {
