@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Framework.Controllers
 {
@@ -35,6 +36,8 @@ namespace BrandBook.Web.Framework.Controllers
             }
 
 
+            cultureName = CultureHelper.GetImplementedCulture(cultureName);
+            
             Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
