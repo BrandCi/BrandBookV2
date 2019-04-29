@@ -345,6 +345,7 @@
     <Content Include="Content\Flag-Icon\_flag-icon-list.scss" />
     <Content Include="Content\Flag-Icon\_variables.scss" />
     <Content Include="AppSettings.config" />
+    <Content Include="Content\App\_Customize.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Frontend\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
