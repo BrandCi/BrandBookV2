@@ -20,11 +20,11 @@
             <input type="hidden" name="currentController" value="@routeData.Values["controller"].ToString()" />
             <label for="en-us" style="color: white;">
                 <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) />
-                English
+                <span class="flag-icon flag-icon-us"></span>
             </label>
             <label for="de" style="color: white;">
                 <input name="culture" id="de" value="de" type="radio" @selected("de", culture) />
-                Deutsch
+                <span class="flag-icon flag-icon-de"></span>
             </label>
         }
     </span>
