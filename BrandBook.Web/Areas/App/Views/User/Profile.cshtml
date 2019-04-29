@@ -45,25 +45,31 @@
                         <label for="Lastname">Nachname</label>
                         <input type="text" value="Moser" id="Lastname" class="form-control">
                     </div>
-                    <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Speichern</button>
+                    <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
+                        <i class="fas fa-save"></i>&nbsp;&nbsp;Speichern
+                    </button>
                 </form>
             </p>
         </div>
 
         <div class="card m-b-20 card-body">
             <p class="card-text">
-                <a href="" class="btn btn-primary waves-effect waves-light w-md">Passwort ändern</a>
-                <a href="" class="btn btn-primary waves-effect waves-light w-md">E-Mail Adresse ändern</a>
+                <a href="#changePasswordModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary waves-effect waves-light w-md mt-2 mb-2">
+                    <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort ändern
+                </a>
+                <a href="#changeEmailModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary waves-effect waves-light w-md mt-2 mb-2">
+                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse ändern
+                </a>
             </p>
         </div>
     </div>
 
-
 </div>
+
+
+
 
 
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/Modals")
 }
-
-
