@@ -19,23 +19,23 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Funktionen
+                    @Translations.frontend_navigation_functions
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Markenverwaltung</a>
-                    <a class="dropdown-item" href="#">Markenverbesserung (KI)</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandmanagement</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandimprovement</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Geplante Funktionen</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_function_plannedfeatures</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("Index", "Pricing")">
-                    Preise
+                    @Translations.frontend_navigation_pricing
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Kontakt
+                    @Translations.frontend_navigation_contact
                 </a>
             </li>
 
@@ -53,7 +53,9 @@
                         @User.Identity.GetUserName()
                     </small>
 
-                    <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">Zur App</a>
+                    <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
+                        @Translations.frontend_navigation_authorized_gotoapp
+                    </a>
 
                     <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
                         <i class="fas fa-sign-out-alt"></i>
@@ -63,8 +65,12 @@
             }
             else
             {
-                <a class="btn btn-outline-dark" href="@Url.Action("Index", "Login", new {area =  "Auth"})">Anmelden</a>
-                <a class="btn btn-success nav-button" href="@Url.Action("Index", "Register", new {area =  "Auth"})">Registrieren</a>
+                <a class="btn btn-outline-dark" href="@Url.Action("Index", "Login", new {area = "Auth"})">
+                    @Translations.frontend_navigation_login_button
+                </a>
+                <a class="btn btn-success nav-button" href="@Url.Action("Index", "Register", new {area = "Auth"})">
+                    @Translations.frontend_navigation_register_button
+                </a>
             }
         </span>
 
