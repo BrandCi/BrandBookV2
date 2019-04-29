@@ -241,6 +241,123 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imprint.
+        /// </summary>
+        public static string frontend_footer_legal_imprint {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_imprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy.
+        /// </summary>
+        public static string frontend_footer_legal_privacypolicy {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_privacypolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms and conditions.
+        /// </summary>
+        public static string frontend_footer_legal_terms {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_terms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legal.
+        /// </summary>
+        public static string frontend_footer_legal_title {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Documentation.
+        /// </summary>
+        public static string frontend_footer_product_documentation {
+            get {
+                return ResourceManager.GetString("frontend_footer_product_documentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Examples.
+        /// </summary>
+        public static string frontend_footer_product_examples {
+            get {
+                return ResourceManager.GetString("frontend_footer_product_examples", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pricing.
+        /// </summary>
+        public static string frontend_footer_product_pricing {
+            get {
+                return ResourceManager.GetString("frontend_footer_product_pricing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solutions.
+        /// </summary>
+        public static string frontend_footer_product_solutions {
+            get {
+                return ResourceManager.GetString("frontend_footer_product_solutions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string frontend_footer_product_title {
+            get {
+                return ResourceManager.GetString("frontend_footer_product_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string frontend_footer_support_contact {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forum.
+        /// </summary>
+        public static string frontend_footer_support_forum {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_forum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug.
+        /// </summary>
+        public static string frontend_footer_support_reportabug {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_reportabug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string frontend_footer_support_title {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {

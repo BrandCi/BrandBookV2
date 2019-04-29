@@ -207,4 +207,43 @@
   <data name="frontend_navigation_register_button" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="frontend_footer_legal_imprint" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
+  <data name="frontend_footer_legal_privacypolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="frontend_footer_legal_terms" xml:space="preserve">
+    <value>Terms and conditions</value>
+  </data>
+  <data name="frontend_footer_legal_title" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="frontend_footer_product_documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="frontend_footer_product_examples" xml:space="preserve">
+    <value>Examples</value>
+  </data>
+  <data name="frontend_footer_product_pricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="frontend_footer_product_solutions" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="frontend_footer_product_title" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="frontend_footer_support_contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_footer_support_forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="frontend_footer_support_reportabug" xml:space="preserve">
+    <value>Report a bug</value>
+  </data>
+  <data name="frontend_footer_support_title" xml:space="preserve">
+    <value>Support</value>
+  </data>
 </root>
