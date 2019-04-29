@@ -28,5 +28,11 @@ namespace BrandBook.Web.Framework.Helpers
             "sv-SE", "syr", "syr-SY", "tg-Cyrl-TJ", "tzm-Latn-DZ", "ta", "ta-IN", "tt", "tt-RU", "te", "te-IN", "th", "th-TH", "bo-CN", "tr", "tr-TR",
             "tk-TM", "ug-CN", "uk", "uk-UA", "wen-DE", "ur", "ur-PK", "uz", "uz-Cyrl-UZ", "uz-Latn-UZ", "vi", "vi-VN", "cy-GB", "wo-SN", "sah-RU", "ii-CN", "yo-NG"
         };
+
+        private static readonly List<string> _cultures = new List<string>
+        {
+            "en-US",
+            "de"
+        };
     }
 }
