@@ -67,6 +67,43 @@
 </div>
 
 
+<div id="changePasswordModal" class="modal-demo modal-lg">
+    <button type="button" class="close" onclick="Custombox.close();">
+        <span>&times;</span><span class="sr-only">Close</span>
+    </button>
+    <h4 class="custom-modal-title">Passwort ändern</h4>
+    <div class="custom-modal-text">
+        Bitte beachten Sie unsere Richtlinien zum Erstellen sicherer Passwörter!<br />
+        Das neue Passwort muss diesen Richtlinien entsprechen.
+        <br /><br />
+        <strong>
+            Das neue Passwort muss Folgendes enthalten
+        </strong>
+        <ul>
+            <li>Mindestens 8 Zeichen</li>
+            <li>Numerische Werte</li>
+            <li>Großbuchstaben</li>
+            <li>Kleinbuchstaben</li>
+        </ul>
+        <form role="form">
+            <div class="form-group mt-3">
+                <label for="currentpassword">Aktuelles Passwort</label>
+                <input type="password" value="" id="currentpassword" class="form-control">
+            </div>
+            <div class="form-group mt-5">
+                <label for="newpassword">Neues Passwort</label>
+                <input type="password" value="" id="newpassword" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirmnewpassword">Neues Passwort wiederholen</label>
+                <input type="password" value="" id="confirmnewpassword" class="form-control">
+            </div>
+            <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
+                <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
+            </button>
+        </form>
+    </div>
+</div>
 
 
 
