@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using BrandBook.Resources;
 
 namespace BrandBook.Web.Framework.ViewModels.Auth
 {
@@ -6,15 +7,15 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
     {
 
         [Required]
-        [Display(Name = "Nutzername")]
+        [Display(Name = "auth_login_input_username", ResourceType = typeof(Translations))]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Passwort")]
+        [Display(Name = "auth_login_input_password", ResourceType = typeof(Translations))]
         public string Password { get; set; }
 
-        [Display(Name = "Daten speichern")]
+        [Display(Name = "auth_login_input_rememberme", ResourceType = typeof(Translations))]
         public bool RememberMe { get; set; }
 
     }
