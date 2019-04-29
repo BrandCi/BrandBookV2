@@ -2,7 +2,7 @@
 
 namespace BrandBook.Web.Framework.Controllers
 {
-    public class FrontendControllerBase : Controller
+    public class FrontendControllerBase : BaseController
     {
     }
 }
