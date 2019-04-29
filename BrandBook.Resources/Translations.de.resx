@@ -207,4 +207,43 @@
   <data name="frontend_navigation_register_button" xml:space="preserve">
     <value>Registrieren</value>
   </data>
+  <data name="frontend_footer_legal_imprint" xml:space="preserve">
+    <value>Impressum</value>
+  </data>
+  <data name="frontend_footer_legal_privacypolicy" xml:space="preserve">
+    <value>Datenschutz</value>
+  </data>
+  <data name="frontend_footer_legal_terms" xml:space="preserve">
+    <value>AGB</value>
+  </data>
+  <data name="frontend_footer_legal_title" xml:space="preserve">
+    <value>Rechtliches</value>
+  </data>
+  <data name="frontend_footer_product_documentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
+  <data name="frontend_footer_product_examples" xml:space="preserve">
+    <value>Beispiele</value>
+  </data>
+  <data name="frontend_footer_product_pricing" xml:space="preserve">
+    <value>Preise</value>
+  </data>
+  <data name="frontend_footer_product_solutions" xml:space="preserve">
+    <value>Lösungen</value>
+  </data>
+  <data name="frontend_footer_product_title" xml:space="preserve">
+    <value>Produkt</value>
+  </data>
+  <data name="frontend_footer_support_contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="frontend_footer_support_forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="frontend_footer_support_reportabug" xml:space="preserve">
+    <value>Einen Fehler melden</value>
+  </data>
+  <data name="frontend_footer_support_title" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
 </root>
