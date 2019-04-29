@@ -25,6 +25,144 @@ namespace BrandBook.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
+                        "~/Content/Flag-Icon/flag-icon.min.css"));
+
+
+
+            /*
+             *
+             * Styles
+             * Frontend
+             *
+             */
+
+            // Bundles for Frontend
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
+                        "~/Content/bootstrap.min.css",
+                        "~/Content/Frontend/Styles.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Frontend/Plugins").Include(
+                        "~/Plugins/owl-carousel/owl.carousel.css",
+                        "~/Plugins/owl-carousel/owl.carousel.css",
+                        "~/Plugins/owl-carousel/owl.theme.css",
+                        "~/Plugins/aos-next/dist/aos.css",
+                        "~/Plugins/language-switcher/polyglot-language-switcher.css",
+                        "~/Plugins/fancybox/dist/jquery.fancybox.min.css",
+                        "~/Plugins/roadmap/jquery.roadmap.min.css"));
+
+
+            
+
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/01").Include(
+                        "~/Content/Frontend/ColorStyle01.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/02").Include(
+                        "~/Content/Frontend/ColorStyle02.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/03").Include(
+                        "~/Content/Frontend/ColorStyle03.css"));
+
+
+            // Main Js File for Sales Frontend
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
+                        "~/Scripts/Frontend/theme.js"));
+
+            // Plugins for Sales Frontend
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Plugins").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Plugins/popper.js/popper.min.js",
+                        "~/Scripts/bootstrap.min.js",
+                        "~/Plugins/jquery-easing/jquery.easing.min.js",
+                        "~/Plugins/language-switcher/jquery.polyglot.language.switcher.js",
+                        "~/Plugins/jquery.appear.js",
+                        "~/Plugins/jquery.countTo.js",
+                        "~/Plugins/fancybox/dist/jquery.fancybox.min.js",
+                        "~/Plugins/owl-carousel/owl.carousel.min.js",
+                        "~/Plugins/aos-next/dist/aos.js",
+                        "~/Plugins/roadmap/jquery.roadmap.js"));
+
+
+
+
+
+            /*
+             *
+             * Styles
+             * Auth
+             *
+             */
+
+            bundles.Add(new StyleBundle("~/Content/Css/Auth/Main").Include(
+                        "~/Content/bootstrap.min.css",
+                        "~/Content/Auth/Styles.min.css"));
+
+
+
+
+
+            /*
+             *
+             * Styles
+             * App
+             *
+             */
+            bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
+                "~/Plugins/switchery/switchery.min.css",
+                "~/Content/bootstrap.min.css",
+                "~/Content/App/style.min.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/App/Main/popper.min.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/App/Main/detect.js",
+                "~/Scripts/App/Main/fastclick.js",
+                "~/Scripts/App/Main/jquery.slimscroll.js",
+                "~/Scripts/App/Main/jquery.blockUI.js",
+                "~/Scripts/App/Main/waves.js",
+                "~/Scripts/App/Main/wow.min.js",
+                "~/Scripts/App/Main/jquery.nicescroll.js",
+                "~/Scripts/App/Main/jquery.scrollTo.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/App/Core").Include(
+                "~/Scripts/App/jquery.core.js",
+                "~/Scripts/App/jquery.app.js"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
+             *
+             *  Plugins
+             *
+             */
+
+            /*
+             * Modals
+             */
+            bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
+                    "~/Plugins/custombox/dist/custombox.min.css",
+                    "~/Plugins/morris/morris.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
+                "~/Plugins/custombox/dist/custombox.min.js",
+                "~/Plugins/custombox/dist/legacy.min.js"));
+
+
         }
     }
 }

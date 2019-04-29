@@ -1,0 +1,31 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@model BrandBook.Web.Framework.ViewModels.Frontend.Legal.ImprintViewModel
+@{
+    ViewBag.Title = "Impressum";
+}
+@section ColorStyle
+{
+    @Styles.Render("~/Content/Css/Frontend/Styling/01")
+}
+
+<div class="theme-top-section">
+
+    <div class="theme-inner-banner">
+        <div class="container">
+            <h2 style="padding: 0 0 15% 0;">
+                Impressum
+            </h2>
+        </div> <!-- /.container -->
+    </div> <!-- /.theme-inner-banner -->
+
+
+    <div class="container inner-page-spacing">
+        <div class="row">
+            <div class="col-lg-12 col-12 blog-details">
+                <div class="clearfix">
+                    @FrontendCustomHelper.ImprintContent("Angaben gemäß §5 TMG", new DateTime(2019, 03, 20), Model)
+                </div>
+            </div> 
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.html-top-content -->

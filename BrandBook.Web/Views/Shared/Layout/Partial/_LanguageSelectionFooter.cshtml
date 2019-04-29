@@ -1,0 +1,39 @@
+﻿@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    var routeData = ViewContext.RouteData;
+}
+
+@helper selected(string code, string culture)
+{
+    if (code == culture)
+    {
+        @:checked="checked" class="checked"
+    }
+}
+
+@helper selectedLabel(string code, string culture)
+{
+    if (code == culture)
+    {
+        @:class="checked"
+    }
+}
+
+<div class="bottom-footer clearfix">
+    <p class="copyright">&copy; 2019 <a href="#">Philipp C. Moser</a> All Right Reserved</p>
+    <div style="float: right" class="cultureSelection">
+        @using (Html.BeginForm("SetCulture", "Culture", new { area = "" }))
+        {
+            <input type="hidden" name="currentAction" value="@routeData.Values["action"].ToString()" />
+            <input type="hidden" name="currentController" value="@routeData.Values["controller"].ToString()" />
+            <label for="en-us" style="color: white;" @selectedLabel("en-us", culture)>
+                <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) />
+                <span class="flag-icon flag-icon-us"></span>
+            </label>
+            <label for="de-de" style="color: white;" @selectedLabel("de-de", culture)>
+                <input name="culture" id="de-de" value="de-de" type="radio" @selected("de-de", culture) />
+                <span class="flag-icon flag-icon-de"></span>
+            </label>
+        }
+    </div>
+</div>

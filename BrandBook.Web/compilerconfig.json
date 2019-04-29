@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "Content/Custom/Styles.css",
+    "inputFile": "Content/Custom/Styles.scss"
+  },
+  {
+    "outputFile": "Content/Auth/Styles.css",
+    "inputFile": "Content/Auth/Styles.scss"
+  },
+  {
+    "outputFile": "Content/App/style.css",
+    "inputFile": "Content/App/style.scss"
+  },
+  {
+    "outputFile": "Content/Flags/flag-icon.css",
+    "inputFile": "Content/Flags/flag-icon.scss"
+  },
+  {
+    "outputFile": "Content/Frontend/Styles.css",
+    "inputFile": "Content/Frontend/Styles.scss"
+  },
+  {
+    "outputFile": "Content/Flag-Icon/flag-icon.css",
+    "inputFile": "Content/Flag-Icon/flag-icon.scss"
+  }
+]

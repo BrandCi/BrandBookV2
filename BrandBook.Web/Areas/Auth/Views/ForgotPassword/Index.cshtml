@@ -1,0 +1,41 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers;
+@{
+    ViewBag.Title = @Translations.auth_resetpassword_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("https://content.philipp-moser.de/wlo0t5byw6/b14828a6-69ac-4d63-a7e0-0f442729e318.svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>@Translations.auth_resetpassword_title</h3>
+            <p></p>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="text" placeholder="E-Mail Adresse" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="text" placeholder="Nutzername" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button id="submit" type="submit" class="ibtn">@Translations.auth_resetpassword_resetpassword_button_title</button>
+            </div>
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
+                <a href="@Url.Action("Index", "Login")">@Translations.auth_resetpassword_login_button_title&nbsp;<i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            @Html.Partial("Partial/_VersionNumber")
+
+        </div>
+    </div>
+</div>

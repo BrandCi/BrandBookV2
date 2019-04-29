@@ -1,0 +1,72 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@model BrandBook.Web.Framework.ViewModels.Auth.RegisterViewModel
+
+@{
+    ViewBag.Title = @Translations.auth_register_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("https://content.philipp-moser.de/wlo0t5byw6/b14828a6-69ac-4d63-a7e0-0f442729e318.svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>@Translations.auth_register_title</h3>
+            <p></p>
+
+            @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @Value = Model.Email, @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Username, new { @Value = Model.Username, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
+                    <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
+                </div>
+
+            }
+            
+            <div class="other-links">
+                <div class="text">@Translations.auth_register_external_title</div>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
+            </div>
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
+            </div>
+
+            @Html.Partial("Partial/_VersionNumber")
+
+
+        </div>
+    </div>
+</div>

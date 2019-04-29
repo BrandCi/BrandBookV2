@@ -1,0 +1,66 @@
+﻿/* 
+    Description: Customization for BrandBook Frontend
+    Author     : Philipp C. Moser.
+   
+*/
+
+
+h1, h2 {
+    &.strong-title-900 {
+        font-weight: 900 !important;
+    }
+
+    &.strong-title-600 {
+        font-weight: 600 !important;
+    }
+}
+
+
+
+.nav-button {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+
+
+
+/*  Pricing  */
+
+h1.pricing-title {
+    font-size: 40px;
+}
+
+.pricing-card {
+    background-color: transparent !important;
+}
+
+.pricing-body {
+    background-color: #ffffff;
+}
+
+.pricing-description {
+    min-height: 175px;
+}
+
+a.btn-pricing {
+    color: #ffffff !important; 
+}
+
+
+
+
+.cultureSelection form input[type="radio"] {
+    display: none;
+}
+
+.cultureSelection label.checked {
+    border-bottom: 5px solid green;
+}

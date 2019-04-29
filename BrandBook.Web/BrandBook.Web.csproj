@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -18,13 +19,14 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +47,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -55,6 +96,24 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -72,35 +131,8 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -112,32 +144,210 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\App\AppAreaRegistration.cs" />
+    <Compile Include="Areas\App\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\App\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\App\Controllers\UserController.cs" />
+    <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
+    <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
+    <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Auth\Controllers\LogoutController.cs" />
+    <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\LegalController.cs" />
+    <Compile Include="Controllers\PricingController.cs" />
+    <Compile Include="Routes\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\App\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\App\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Auth\Styles.css">
+      <DependentUpon>Styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Auth\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Flag-Icon\flag-icon.css">
+      <DependentUpon>flag-icon.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Flag-Icon\flag-icon.min.css">
+      <DependentUpon>flag-icon.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Frontend\ColorStyle01.css" />
+    <Content Include="Content\Frontend\ColorStyle03.css" />
+    <Content Include="Content\Frontend\ColorStyle02.css" />
+    <Content Include="Content\Frontend\Styles.css">
+      <DependentUpon>Styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Frontend\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
+    <Content Include="Error\400.html" />
+    <Content Include="Error\401.html" />
+    <Content Include="Error\403.html" />
+    <Content Include="Error\404.html" />
+    <Content Include="Error\500.html" />
+    <Content Include="Error\resource\default-particles.js" />
+    <Content Include="Error\resource\default.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Compile Include="App_Start\StartupConfig.cs" />
+    <Content Include="Plugins\aos-next\dist\aos.css" />
+    <Content Include="Plugins\aos-next\dist\aos.js" />
+    <Content Include="Plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Plugins\custombox\dist\custombox.min.css" />
+    <Content Include="Plugins\custombox\dist\custombox.min.js" />
+    <Content Include="Plugins\custombox\dist\legacy.min.js" />
+    <Content Include="Plugins\custombox\src\css\custombox.css" />
+    <Content Include="Plugins\custombox\src\js\custombox.js" />
+    <Content Include="Plugins\custombox\src\js\legacy.js" />
+    <Content Include="Plugins\fancybox\dist\jquery.fancybox.css" />
+    <Content Include="Plugins\fancybox\dist\jquery.fancybox.js" />
+    <Content Include="Plugins\fancybox\dist\jquery.fancybox.min.css" />
+    <Content Include="Plugins\fancybox\dist\jquery.fancybox.min.js" />
+    <Content Include="Plugins\html5shiv.js" />
+    <Content Include="Plugins\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Plugins\jquery.2.2.3.min.js" />
+    <Content Include="Plugins\jquery.appear.js" />
+    <Content Include="Plugins\jquery.countTo.js" />
+    <Content Include="Plugins\language-switcher\jquery.polyglot.language.switcher.js" />
+    <Content Include="Plugins\language-switcher\polyglot-language-switcher.css" />
+    <Content Include="Plugins\menu\dist\css\slimmenu.css" />
+    <Content Include="Plugins\morris\morris.css" />
+    <Content Include="Plugins\morris\morris.js" />
+    <Content Include="Plugins\morris\morris.min.js" />
+    <Content Include="Plugins\owl-carousel\owl.carousel.css" />
+    <Content Include="Plugins\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Plugins\owl-carousel\owl.theme.css" />
+    <Content Include="Plugins\popper.js\popper.min.js" />
+    <Content Include="Plugins\roadmap\jquery.roadmap.js" />
+    <Content Include="Plugins\roadmap\jquery.roadmap.min.css" />
+    <Content Include="Plugins\switchery\switchery.min.css" />
+    <Content Include="Plugins\switchery\switchery.min.js" />
+    <Content Include="Scripts\App\Main\detect.js" />
+    <Content Include="Scripts\App\Main\fastclick.js" />
+    <Content Include="Scripts\App\jquery.app.js" />
+    <Content Include="Scripts\App\Main\jquery.blockUI.js" />
+    <Content Include="Scripts\App\jquery.core.js" />
+    <Content Include="Scripts\App\Main\jquery.nicescroll.js" />
+    <Content Include="Scripts\App\Main\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\App\Main\jquery.slimscroll.js" />
+    <Content Include="Scripts\App\Main\popper.min.js" />
+    <Content Include="Scripts\App\Main\skycons.min.js" />
+    <Content Include="Scripts\App\Main\waves.js" />
+    <Content Include="Scripts\App\Main\wow.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Content\Frontend\_Customize.scss" />
+    <Content Include="Areas\Auth\Views\web.config" />
+    <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Auth\Views\ForgotPassword\Index.cshtml" />
+    <Content Include="Areas\App\Views\web.config" />
+    <Content Include="Areas\App\Views\Shared\Layout\_Layout.cshtml" />
+    <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\App\Views\Shared\Layout\Partial\_LeftNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
+    <Content Include="Areas\App\Views\Brands\Overview.cshtml" />
+    <Content Include="Areas\Auth\Views\Shared\Partial\_VersionNumber.cshtml" />
+    <Content Include="Areas\App\Views\User\Profile.cshtml" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Frontend\Styles.scss" />
+    <Content Include="Content\Frontend\_Responsive.scss" />
+    <Content Include="Content\Frontend\_CustomAnimation.scss" />
+    <Content Include="Content\Auth\Styles.scss" />
+    <Content Include="Content\Auth\_Customize.scss" />
+    <Content Include="Content\App\style.scss" />
+    <Content Include="Content\App\_account-pages.scss" />
+    <Content Include="Content\App\_alerts.scss" />
+    <Content Include="Content\App\_animation.scss" />
+    <Content Include="Content\App\_badge.scss" />
+    <Content Include="Content\App\_bootstrap-reset.scss" />
+    <Content Include="Content\App\_buttons.scss" />
+    <Content Include="Content\App\_calendar.scss" />
+    <Content Include="Content\App\_carousel.scss" />
+    <Content Include="Content\App\_charts.scss" />
+    <Content Include="Content\App\_checkbox-radio.scss" />
+    <Content Include="Content\App\_common.scss" />
+    <Content Include="Content\App\_count-down.scss" />
+    <Content Include="Content\App\_demo-only.scss" />
+    <Content Include="Content\App\_email.scss" />
+    <Content Include="Content\App\_faq.scss" />
+    <Content Include="Content\App\_form-advanced.scss" />
+    <Content Include="Content\App\_form-elements.scss" />
+    <Content Include="Content\App\_form-upload.scss" />
+    <Content Include="Content\App\_form-validation.scss" />
+    <Content Include="Content\App\_form-wizard.scss" />
+    <Content Include="Content\App\_gallery.scss" />
+    <Content Include="Content\App\_helper.scss" />
+    <Content Include="Content\App\_kanban.scss" />
+    <Content Include="Content\App\_maintenance.scss" />
+    <Content Include="Content\App\_maps.scss" />
+    <Content Include="Content\App\_menu.scss" />
+    <Content Include="Content\App\_modal.scss" />
+    <Content Include="Content\App\_nestable.scss" />
+    <Content Include="Content\App\_notification.scss" />
+    <Content Include="Content\App\_pagination.scss" />
+    <Content Include="Content\App\_portlets.scss" />
+    <Content Include="Content\App\_pricing.scss" />
+    <Content Include="Content\App\_print.scss" />
+    <Content Include="Content\App\_progressbar.scss" />
+    <Content Include="Content\App\_responsive.scss" />
+    <Content Include="Content\App\_summernote.scss" />
+    <Content Include="Content\App\_sweetalert.scss" />
+    <Content Include="Content\App\_tables.scss" />
+    <Content Include="Content\App\_tabs.scss" />
+    <Content Include="Content\App\_timeline.scss" />
+    <Content Include="Content\App\_tooltips-popover.scss" />
+    <Content Include="Content\App\_treeview.scss" />
+    <Content Include="Content\App\_variables.scss" />
+    <Content Include="Content\App\_waves.scss" />
+    <Content Include="Content\App\_widgets.scss" />
+    <Content Include="Content\App\_wysiwig.scss" />
+    <Content Include="Content\Flag-Icon\flag-icon.scss" />
+    <Content Include="Content\Flag-Icon\_flag-icon-base.scss" />
+    <Content Include="Content\Flag-Icon\_flag-icon-list.scss" />
+    <Content Include="Content\Flag-Icon\_variables.scss" />
+    <Content Include="AppSettings.config" />
+    <Content Include="Content\App\_Customize.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Frontend\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -148,6 +358,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -158,33 +372,63 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\Layout\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\Layout\Partial\Navigation.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\Footer.cshtml" />
+    <Content Include="Views\Pricing\Index.cshtml" />
+    <Content Include="Views\Legal\Imprint.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_LanguageSelectionFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Scripts\Auth\" />
+    <Folder Include="Views\Culture\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
+      <Project>{095315a3-f944-4219-bbff-daaa4d214c03}</Project>
+      <Name>BrandBook.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Infrastructure\BrandBook.Infrastructure.csproj">
+      <Project>{f7421c73-9fd6-4213-abaf-630d8428305e}</Project>
+      <Name>BrandBook.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Resources\BrandBook.Resources.csproj">
+      <Project>{af550719-7734-4b5b-9c55-88ab5fd69f4a}</Project>
+      <Name>BrandBook.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Services\BrandBook.Services.csproj">
+      <Project>{8c90c0cd-8087-4521-b92f-f2845be4e5f6}</Project>
+      <Name>BrandBook.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Web.Framework\BrandBook.Web.Framework.csproj">
+      <Project>{18ae69dc-669e-45af-a1c4-7d8dd44622a9}</Project>
+      <Name>BrandBook.Web.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -198,7 +442,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52162</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52162/</IISUrl>
+          <IISUrl>https://localhost:44305/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -212,7 +456,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

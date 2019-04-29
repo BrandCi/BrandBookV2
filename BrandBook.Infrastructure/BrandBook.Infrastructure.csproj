@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7421C73-9FD6-4213-ABAF-630D8428305E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrandBook.Infrastructure</RootNamespace>
+    <AssemblyName>BrandBook.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\BrandBookDbContext.cs" />
+    <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.cs" />
+    <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
+      <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.cs" />
+    <Compile Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.Designer.cs">
+      <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.cs" />
+    <Compile Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.Designer.cs">
+      <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.cs" />
+    <Compile Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.Designer.cs">
+      <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Frontend\Legal\ImprintValueRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
+      <Project>{095315a3-f944-4219-bbff-daaa4d214c03}</Project>
+      <Name>BrandBook.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BrandBook.Web\ConnectionStrings.config">
+      <Link>ConnectionStrings.config</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.resx">
+      <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904221920086_SeedBuiltInUserWithBuiltInRoles.resx">
+      <DependentUpon>201904221920086_SeedBuiltInUserWithBuiltInRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231254433_AddFeDomainAndCreateTableForImprintValues.resx">
+      <DependentUpon>201904231254433_AddFeDomainAndCreateTableForImprintValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.resx">
+      <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

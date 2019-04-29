@@ -1,0 +1,81 @@
+﻿<!-- Insertion -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Brand Management, BrandBook">
+    <meta name="author" content="Philipp C. Moser">
+    <meta name="description" content="Brand Book V2">
+
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - BrandCi</title>
+
+
+    @Styles.Render("~/Content/Css/Frontend/Main")
+    @Styles.Render("~/Content/Frontend/Plugins")
+    @Styles.Render("~/Content/Css/Flag-Icon")
+
+    @RenderSection("ColorStyle", required: true)
+    @RenderSection("styles", required: false)
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="100x100" href="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584.png">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Fix Internet Explorer ______________________________________-->
+    <!--[if lt IE 9]>
+                        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                        <script src="vendor/html5shiv.js"></script>
+                        <script src="vendor/respond.js"></script>
+                    <![endif]-->
+
+</head>
+
+    <body>
+        <div class="main-page-wrapper">
+
+
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+            </div>
+            <!-- Navigation -->
+            @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
+            <!-- ./ Navigation -->
+
+            <div class="html-top-content">
+
+                @RenderBody()
+
+            </div>
+
+            <!-- Footer -->
+            @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
+            
+            <!-- Js File_________________________________ -->
+            @Scripts.Render("~/bundles/Frontend/Plugins")
+            @Scripts.Render("~/bundles/Frontend/Main")
+            
+            
+            <!-- Language Switcher -->
+            <script type="text/javascript">
+
+                (function ($) {
+                    $("input[type = 'radio']").click(function () {
+                        $(this).parents("form").submit();
+                    });
+                })(jQuery);
+
+            </script>
+            
+            
+            @RenderSection("scripts", required: false)
+            <!-- ./ Footer -->
+        </div> <!-- /.main-page-wrapper -->
+    </body>
+</html>

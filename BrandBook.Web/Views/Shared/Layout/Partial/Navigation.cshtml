@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNet.Identity
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff;">
+    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/06b354ec-78ad-4bac-bafa-5afcddb75de5.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        BrandCi
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index","Home")">
+                    @Translations.frontend_navigation_homepage
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @Translations.frontend_navigation_functions
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandmanagement</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandimprovement</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_function_plannedfeatures</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Pricing")">
+                    @Translations.frontend_navigation_pricing
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    @Translations.frontend_navigation_contact
+                </a>
+            </li>
+
+        </ul>
+
+        <span class="navbar-text">
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                using (Html.BeginForm("Index", "Logout", new { area = "Auth" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <small class="mr-4">
+                        @User.Identity.GetUserName()
+                    </small>
+
+                    <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
+                        @Translations.frontend_navigation_authorized_gotoapp
+                    </a>
+
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                }
+
+            }
+            else
+            {
+                <a class="btn btn-outline-dark" href="@Url.Action("Index", "Login", new {area = "Auth"})">
+                    @Translations.frontend_navigation_login_button
+                </a>
+                <a class="btn btn-success nav-button" href="@Url.Action("Index", "Register", new {area = "Auth"})">
+                    @Translations.frontend_navigation_register_button
+                </a>
+            }
+        </span>
+
+    </div>
+
+</nav>

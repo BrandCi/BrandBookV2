@@ -1,31 +1,154 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Startseite";
+}
+@section ColorStyle
+{
+    @Styles.Render("~/Content/Css/Frontend/Styling/02")
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div class="theme-top-section">
+    <img src="https://content.philipp-moser.de/wlo0t5byw6/6cf67f0e-7246-4e4d-9e77-97e28efb05b4.png" alt="" class="blue-shape">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
+    <div id="theme-banner" class="theme-banner-two">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/06c26687-81ec-445a-bc62-da21b1f50a12.png" alt="" class="cube-shape">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c.png" alt="" class="illustration">
+        <div class="container">
+            <div class="main-text-wrapper">
+                <h1 class="strong-title-900">
+                    Deine digitale Marke.
+                    <br>Dein Erfolg.
+                </h1>
+                <p>
+                    Verwalte und verbessere Deinen Markenauftritt.
+                </p>
+                <ul class="button-group clearfix">
+                    <li><a href="#">Entdecke BrandCi.</a></li>
+                    <li><a href="#">Teste BrandCi kostenfrei.</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> <!-- /.theme-banner-one -->
+
+
+    <div class="about-cryto" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-lg-last">
+                    <div class="theme-title">
+                        <div class="upper-heading">Was ist BrandCi?</div>
+                        <h2>Lass uns Dir BrandCi vorstellen.</h2>
+                    </div> <!-- /.theme-title -->
+                    <p class="sub-text">
+                        Lorem ipsum dolor sit amet, has at lorem utinam mucius, per at elitr dicam malorum.
+                    </p>
+                    <p class="text">Lorem ipsum dolor sit amet, has at lorem utinam mucius, per at elitr dicam malorum. Fugit convenire ei eam, adhuc putant eam et. Verear petentium vel an, nullam viderer eam an. Illud liber ad sed. Ea eos scripta iudicabit, dicit persius ponderum id nec.</p>
+                    <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Index", "Home")">Klick hier</a></p>
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <img src="https://content.philipp-moser.de/wlo0t5byw6/13fe82d4-3866-4ef2-819d-63b0fa438ffa.png" alt="" data-aos="zoom-out">
+                </div>
+            </div>
+        </div> <!-- /.container -->
+    </div> <!-- /.about-cryto -->
+    <!--
+    =====================================================
+        Our Feature Three
+    =====================================================
+    -->
+    <div class="our-features-three" id="features">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/e9addbec-6b22-4ab8-995d-74e0631ff456.png" alt="" class="main-bg-shape">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/af67d082-303a-4b2c-b9fe-6c62bfd58b8f.png" alt="" class="cube-shape" data-aos="fade-left" data-aos-duration="1500">
+        <div class="line-shape-one shape"></div>
+        <div class="line-shape-two shape"></div>
+        <div class="line-shape-three shape"></div>
+        <div class="line-shape-four shape"></div>
+        <div class="line-shape-five shape"></div>
+        <div class="line-shape-six shape"></div>
+        <div class="container">
+            <div class="theme-title text-center">
+                <h2>
+                    Warum BrandCi Deine Marke<br />
+                    zum Erfolg führt.
+                </h2>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-feature">
+                        <div class="icon-box">
+                            <img src="https://content.philipp-moser.de/wlo0t5byw6/e06b7899-c2d9-45c8-ac10-86007e4dcafb.png" alt="" class="primary-icon">
+                        </div>
+                        <h3>Zugriff auf Deine Marke. Von Überall.</h3>
+                        <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
+                    </div> <!-- /.single-feature -->
+                </div> <!-- /.col- -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-feature">
+                        <div class="icon-box">
+                            <img src="https://content.philipp-moser.de/wlo0t5byw6/b46e4b1c-42f8-4e27-9e94-41162ec1e32b.png" alt="" class="primary-icon">
+                        </div>
+                        <h3>Erweitere Deine Marke. Und zwar geplant.</h3>
+                        <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
+                    </div> <!-- /.single-feature -->
+                </div> <!-- /.col- -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-feature">
+                        <div class="icon-box">
+                            <img src="https://content.philipp-moser.de/wlo0t5byw6/7a5f43f7-a053-4ea8-afe2-f0598394f203.png" alt="" class="primary-icon">
+                        </div>
+                        <h3>Fortlaufende Verbesserung. Dank KI.</h3>
+                        <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
+                    </div> <!-- /.single-feature -->
+                </div> <!-- /.col- -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.our-features-three -->
+    <!--
+    =====================================================
+        Our Feature Two
+    =====================================================
+    -->
+    <div class="our-feature-two dark-bg" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text">
+                        <div class="number">01</div>
+                        <h2 class="title">Zugriff auf Deine Marke. Von Überall.</h2>
+                        <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
+                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                    </div> <!-- /.text -->
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/13fe82d4-3866-4ef2-819d-63b0fa438ffa.png" alt=""></div></div>
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-6 order-lg-last">
+                    <div class="text">
+                        <div class="number">02</div>
+                        <h2 class="title">Erweitere Deine Marke. Und zwar geplant.</h2>
+                        <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
+                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                    </div> <!-- /.text -->
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 order-lg-first img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/9f452dd3-10f8-4502-854e-7180cbab2ca9.png" alt=""></div></div>
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text">
+                        <div class="number">03</div>
+                        <h2 class="title">Fortlaufende Verbesserung. Dank KI.</h2>
+                        <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
+                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                    </div> <!-- /.text -->
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/47c47fd7-e6a3-4926-a637-a951b0e8ee67.png" alt=""></div></div>
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.our-feature-two -->
+
+</div> <!-- /.html-top-content -->
