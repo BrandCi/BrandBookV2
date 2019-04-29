@@ -27,7 +27,7 @@ namespace BrandBook.Web
                       "~/Content/site.css"));
 
 
-            bundles.Add(new StyleBundle("~/Content/Flag-Icon").Include(
+            bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
                         "~/Content/Flag-Icon/flag-icon.min.css"));
 
 
