@@ -154,6 +154,7 @@
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
     <Compile Include="Areas\Auth\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Routes\RouteConfig.cs" />
@@ -364,6 +365,7 @@
     <Folder Include="Areas\Auth\Content\" />
     <Folder Include="Areas\Auth\Views\Logout\" />
     <Folder Include="Scripts\Auth\" />
+    <Folder Include="Views\Culture\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
