@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/App/style.css",
     "inputFile": "Content/App/style.scss"
+  },
+  {
+    "outputFile": "Content/Flags/flag-icon.css",
+    "inputFile": "Content/Flags/flag-icon.scss"
   }
 ]
