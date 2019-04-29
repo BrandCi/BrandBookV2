@@ -54,11 +54,11 @@
             
             @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
             
-                <div class="other-links">
-                    <div class="text">Externe Anmeldungen</div>
-                    <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>Facebook (Bald möglich)</a>
-                    <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>Microsoft (Bald möglich)</a>
-                </div>
+            <div class="other-links">
+                <div class="text">@Translations.auth_register_external_title</div>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
+            </div>
 
 
             <div class="page-links mt-5">
