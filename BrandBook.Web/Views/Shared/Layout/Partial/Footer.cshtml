@@ -40,6 +40,19 @@
 
             <div class="bottom-footer clearfix">
                 <p class="copyright">&copy; 2019 <a href="#">Philipp C. Moser</a> All Right Reserved</p>
+                <span style="float: right">
+                    @using(Html.BeginForm("SetCulture", "Culture", new {area = ""}))
+                    {
+                        <label for="en-us" style="color: white;">
+                            <input name="culture" id="en-us" value="en-us" type="radio"/>
+                            English (United States)
+                        </label>
+                        <label for="de" style="color: white;">
+                            <input name="culture" id="de" value="de" type="radio"/>
+                            Deutsch
+                        </label>
+                    }
+                </span>
             </div> <!-- /.bottom-footer -->
         </div>
     </div> <!-- /.container -->
