@@ -376,7 +376,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Auth\Content\" />
-    <Folder Include="Areas\Auth\Views\Logout\" />
     <Folder Include="Scripts\Auth\" />
     <Folder Include="Views\Culture\" />
   </ItemGroup>
