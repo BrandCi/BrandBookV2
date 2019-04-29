@@ -241,11 +241,92 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open App.
+        /// </summary>
+        public static string frontend_navigation_authorized_gotoapp {
+            get {
+                return ResourceManager.GetString("frontend_navigation_authorized_gotoapp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string frontend_navigation_contact {
+            get {
+                return ResourceManager.GetString("frontend_navigation_contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planned Features.
+        /// </summary>
+        public static string frontend_navigation_function_plannedfeatures {
+            get {
+                return ResourceManager.GetString("frontend_navigation_function_plannedfeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functionality.
+        /// </summary>
+        public static string frontend_navigation_functions {
+            get {
+                return ResourceManager.GetString("frontend_navigation_functions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Improvement (AI).
+        /// </summary>
+        public static string frontend_navigation_functions_brandimprovement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_functions_brandimprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Management.
+        /// </summary>
+        public static string frontend_navigation_functions_brandmanagement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_functions_brandmanagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Homepage.
         /// </summary>
         public static string frontend_navigation_homepage {
             get {
                 return ResourceManager.GetString("frontend_navigation_homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string frontend_navigation_login_button {
+            get {
+                return ResourceManager.GetString("frontend_navigation_login_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pricing.
+        /// </summary>
+        public static string frontend_navigation_pricing {
+            get {
+                return ResourceManager.GetString("frontend_navigation_pricing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string frontend_navigation_register_button {
+            get {
+                return ResourceManager.GetString("frontend_navigation_register_button", resourceCulture);
             }
         }
     }

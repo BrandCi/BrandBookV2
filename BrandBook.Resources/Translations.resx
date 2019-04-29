@@ -177,7 +177,34 @@
   <data name="auth_resetpassword_title" xml:space="preserve">
     <value>Forgot password?</value>
   </data>
+  <data name="frontend_navigation_authorized_gotoapp" xml:space="preserve">
+    <value>Open App</value>
+  </data>
+  <data name="frontend_navigation_contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_navigation_functions" xml:space="preserve">
+    <value>Functionality</value>
+  </data>
+  <data name="frontend_navigation_functions_brandimprovement" xml:space="preserve">
+    <value>Brand Improvement (AI)</value>
+  </data>
+  <data name="frontend_navigation_functions_brandmanagement" xml:space="preserve">
+    <value>Brand Management</value>
+  </data>
+  <data name="frontend_navigation_function_plannedfeatures" xml:space="preserve">
+    <value>Planned Features</value>
+  </data>
   <data name="frontend_navigation_homepage" xml:space="preserve">
     <value>Homepage</value>
+  </data>
+  <data name="frontend_navigation_login_button" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="frontend_navigation_pricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="frontend_navigation_register_button" xml:space="preserve">
+    <value>Register</value>
   </data>
 </root>
