@@ -1,6 +1,15 @@
 ﻿@{
     var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
 }
+
+@helper selected(string code, string culture)
+{
+    if (code == culture)
+    {
+        @:checked="checked"
+    }
+}
+
 <footer class="theme-footer dark-style">
     <div class="container">
         <div class="inner-wrapper">
