@@ -1,0 +1,28 @@
+﻿@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string code, string culture)
+{
+    if (code == culture)
+    {
+        @:checked="checked"
+    }
+}
+
+<div class="bottom-footer clearfix">
+    <p class="copyright">&copy; 2019 <a href="#">Philipp C. Moser</a> All Right Reserved</p>
+    <span style="float: right">
+        @using (Html.BeginForm("SetCulture", "Culture", new { area = "" }))
+        {
+            <label for="en-us" style="color: white;">
+                <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) />
+                English (United States)
+            </label>
+            <label for="de" style="color: white;">
+                <input name="culture" id="de" value="de" type="radio" @selected("de", culture) />
+                Deutsch
+            </label>
+        }
+    </span>
+</div>
