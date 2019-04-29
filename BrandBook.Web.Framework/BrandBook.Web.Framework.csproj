@@ -120,6 +120,10 @@
       <Project>{f7421c73-9fd6-4213-abaf-630d8428305e}</Project>
       <Name>BrandBook.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BrandBook.Resources\BrandBook.Resources.csproj">
+      <Project>{af550719-7734-4b5b-9c55-88ab5fd69f4a}</Project>
+      <Name>BrandBook.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BrandBook.Services\BrandBook.Services.csproj">
       <Project>{8c90c0cd-8087-4521-b92f-f2845be4e5f6}</Project>
       <Name>BrandBook.Services</Name>
