@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\AuthControllerBase.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FrontendControllerBase.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
