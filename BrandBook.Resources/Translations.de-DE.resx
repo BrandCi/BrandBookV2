@@ -246,4 +246,28 @@
   <data name="frontend_footer_support_title" xml:space="preserve">
     <value>Hilfe</value>
   </data>
+  <data name="auth_login_external_facebook_title" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="auth_login_external_microsoft_title" xml:space="preserve">
+    <value>Microsoft</value>
+  </data>
+  <data name="auth_login_external_soonavailable" xml:space="preserve">
+    <value>(Bald verfügbar)</value>
+  </data>
+  <data name="auth_login_external_title" xml:space="preserve">
+    <value>Externe Anmeldung</value>
+  </data>
+  <data name="auth_register_external_facebook_title" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="auth_register_external_microsoft_title" xml:space="preserve">
+    <value>Microsoft</value>
+  </data>
+  <data name="auth_register_external_soonavailable" xml:space="preserve">
+    <value>(Bald verfügbar)</value>
+  </data>
+  <data name="auth_register_external_title" xml:space="preserve">
+    <value>Externe Anmeldung</value>
+  </data>
 </root>
