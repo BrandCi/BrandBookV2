@@ -14,5 +14,9 @@
   {
     "outputFile": "Content/Flags/flag-icon.css",
     "inputFile": "Content/Flags/flag-icon.scss"
+  },
+  {
+    "outputFile": "Content/Frontend/Styles.css",
+    "inputFile": "Content/Frontend/Styles.scss"
   }
 ]

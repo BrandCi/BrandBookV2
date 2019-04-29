@@ -53,3 +53,14 @@ h1.pricing-title {
 a.btn-pricing {
     color: #ffffff !important; 
 }
+
+
+
+
+.cultureSelection form input[type="radio"] {
+    display: none;
+}
+
+.cultureSelection label.checked {
+    border-bottom: 5px solid green;
+}
