@@ -4,6 +4,10 @@
     Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
 }
 
+@section styles
+{
+    @Styles.Render("~/Content/Plugins/Modals")
+}
 
 
 <div class="row">
@@ -56,3 +60,10 @@
 
 
 </div>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/Plugins/Modals")
+}
+
+

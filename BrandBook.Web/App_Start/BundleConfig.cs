@@ -160,7 +160,7 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
                 "~/Plugins/custombox/dist/custombox.min.js",
-                "custombox/dist/legacy.min.js"));
+                "~/Plugins/custombox/dist/legacy.min.js"));
 
 
         }
