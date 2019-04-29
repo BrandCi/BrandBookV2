@@ -5,34 +5,34 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6 footer-logo">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="@Url.Action("Index", "Home", new {area = ""})">
                                 <img src="https://content.philipp-moser.de/wlo0t5byw6/06b354ec-78ad-4bac-bafa-5afcddb75de5.png" height="150" alt="Logo">
                             </a>
                         </div>
                     </div> <!-- /.footer-logo -->
                     <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">BrandCi.</h4>
+                        <h4 class="title">@Translations.frontend_footer_product_title</h4>
                         <ul>
-                            <li><a href="#">Lösungen.</a></li>
-                            <li><a href="#">Preise.</a></li>
-                            <li><a href="#">Dokumentation.</a></li>
-                            <li><a href="#">Beispiele.</a></li>
+                            <li><a href="#">@Translations.frontend_footer_product_solutions</a></li>
+                            <li><a href="#">@Translations.frontend_footer_product_pricing</a></li>
+                            <li><a href="#">@Translations.frontend_footer_product_documentation</a></li>
+                            <li><a href="#">@Translations.frontend_footer_product_examples</a></li>
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">Support.</h4>
+                        <h4 class="title">@Translations.frontend_footer_support_title</h4>
                         <ul>
-                            <li><a href="#">Kontakt.</a></li>
-                            <li><a href="#">Forum.</a></li>
-                            <li><a href="#">Einen Fehler melden.</a></li>
+                            <li><a href="#">@Translations.frontend_footer_support_contact</a></li>
+                            <li><a href="#">@Translations.frontend_footer_support_forum</a></li>
+                            <li><a href="#">@Translations.frontend_footer_support_reportabug</a></li>
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">Rechtliches.</h4>
+                        <h4 class="title">@Translations.frontend_footer_legal_title</h4>
                         <ul>
-                            <li><a href="@Url.Action("Imprint", "Legal")">Impressum.</a></li>
-                            <li><a href="#">Datenschutz.</a></li>
-                            <li><a href="#">AGB.</a></li>
+                            <li><a href="@Url.Action("Imprint", "Legal")">@Translations.frontend_footer_legal_imprint</a></li>
+                            <li><a href="#">@Translations.frontend_footer_legal_privacypolicy</a></li>
+                            <li><a href="#">@Translations.frontend_footer_legal_terms</a></li>
                         </ul>
                     </div> <!-- /.footer-list -->
                 </div> <!-- /.row -->
