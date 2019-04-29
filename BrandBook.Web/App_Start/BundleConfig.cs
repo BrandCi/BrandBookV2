@@ -158,7 +158,9 @@ namespace BrandBook.Web
                     "~/Plugins/morris/morris.css"));
 
 
-            
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
+                "~/Plugins/custombox/dist/custombox.min.js",
+                "custombox/dist/legacy.min.js"));
 
 
         }
