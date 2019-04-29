@@ -149,6 +149,7 @@
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
     <Compile Include="Areas\App\Controllers\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\App\Controllers\UserController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
@@ -375,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\App\Views\User\" />
     <Folder Include="Scripts\Auth\" />
     <Folder Include="Views\Culture\" />
   </ItemGroup>
