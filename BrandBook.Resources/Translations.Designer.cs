@@ -70,6 +70,42 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        public static string auth_login_external_facebook_title {
+            get {
+                return ResourceManager.GetString("auth_login_external_facebook_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Microsoft.
+        /// </summary>
+        public static string auth_login_external_microsoft_title {
+            get {
+                return ResourceManager.GetString("auth_login_external_microsoft_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Soon available).
+        /// </summary>
+        public static string auth_login_external_soonavailable {
+            get {
+                return ResourceManager.GetString("auth_login_external_soonavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Login.
+        /// </summary>
+        public static string auth_login_external_title {
+            get {
+                return ResourceManager.GetString("auth_login_external_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string auth_login_input_password {
@@ -129,6 +165,42 @@ namespace BrandBook.Resources {
         public static string auth_login_title {
             get {
                 return ResourceManager.GetString("auth_login_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        public static string auth_register_external_facebook_title {
+            get {
+                return ResourceManager.GetString("auth_register_external_facebook_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Microsoft.
+        /// </summary>
+        public static string auth_register_external_microsoft_title {
+            get {
+                return ResourceManager.GetString("auth_register_external_microsoft_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Soon available).
+        /// </summary>
+        public static string auth_register_external_soonavailable {
+            get {
+                return ResourceManager.GetString("auth_register_external_soonavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Login.
+        /// </summary>
+        public static string auth_register_external_title {
+            get {
+                return ResourceManager.GetString("auth_register_external_title", resourceCulture);
             }
         }
         

@@ -118,133 +118,133 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="auth_back_button_title" xml:space="preserve">
-    <value>Back</value>
+    <value>Zurück</value>
   </data>
   <data name="auth_login_input_password" xml:space="preserve">
-    <value>Password</value>
+    <value>Passwort</value>
   </data>
   <data name="auth_login_input_rememberme" xml:space="preserve">
-    <value>Remember me</value>
+    <value>Daten speichern</value>
   </data>
   <data name="auth_login_input_username" xml:space="preserve">
-    <value>Username</value>
+    <value>Nutzername</value>
   </data>
   <data name="auth_login_login_button_title" xml:space="preserve">
-    <value>Login</value>
+    <value>Anmelden</value>
   </data>
   <data name="auth_login_register_button_title" xml:space="preserve">
-    <value>Register now</value>
+    <value>Nutzeraccount anlegen</value>
   </data>
   <data name="auth_login_resetpassword_title" xml:space="preserve">
-    <value>Forgot password?</value>
+    <value>Passwort vergessen?</value>
   </data>
   <data name="auth_login_title" xml:space="preserve">
-    <value>Log in</value>
+    <value>Melden Sie sich an</value>
   </data>
   <data name="auth_register_input_confirmpassword" xml:space="preserve">
-    <value>Confirm password</value>
+    <value>Passwort wiederholen</value>
   </data>
   <data name="auth_register_input_email" xml:space="preserve">
     <value>E-Mail</value>
   </data>
   <data name="auth_register_input_password" xml:space="preserve">
-    <value>Password</value>
+    <value>Passwort</value>
   </data>
   <data name="auth_register_input_username" xml:space="preserve">
-    <value>Username</value>
+    <value>Nutzername</value>
   </data>
   <data name="auth_register_login_title" xml:space="preserve">
-    <value>Login here</value>
+    <value>Hier anmelden</value>
   </data>
   <data name="auth_register_register_button_title" xml:space="preserve">
-    <value>Register</value>
+    <value>Registrieren</value>
   </data>
   <data name="auth_register_title" xml:space="preserve">
-    <value>Register here</value>
+    <value>Registrieren Sie sich</value>
   </data>
   <data name="auth_resetpassword_input_email" xml:space="preserve">
     <value>E-Mail</value>
   </data>
   <data name="auth_resetpassword_input_username" xml:space="preserve">
-    <value>Username</value>
+    <value>Nutzername</value>
   </data>
   <data name="auth_resetpassword_login_button_title" xml:space="preserve">
-    <value>Login here</value>
+    <value>Hier anmelden</value>
   </data>
   <data name="auth_resetpassword_resetpassword_button_title" xml:space="preserve">
-    <value>Reset password</value>
+    <value>Passwort zurücksetzen</value>
   </data>
   <data name="auth_resetpassword_title" xml:space="preserve">
-    <value>Forgot password?</value>
+    <value>Passwort vergessen?</value>
   </data>
   <data name="frontend_navigation_authorized_gotoapp" xml:space="preserve">
-    <value>Open App</value>
+    <value>Zur App</value>
   </data>
   <data name="frontend_navigation_contact" xml:space="preserve">
-    <value>Contact</value>
+    <value>Kontakt</value>
   </data>
   <data name="frontend_navigation_functions" xml:space="preserve">
-    <value>Functionality</value>
+    <value>Funktionen</value>
   </data>
   <data name="frontend_navigation_functions_brandimprovement" xml:space="preserve">
-    <value>Brand Improvement (AI)</value>
+    <value>Markenverbesserung (KI)</value>
   </data>
   <data name="frontend_navigation_functions_brandmanagement" xml:space="preserve">
-    <value>Brand Management</value>
+    <value>Markenverwaltung</value>
   </data>
   <data name="frontend_navigation_function_plannedfeatures" xml:space="preserve">
-    <value>Planned Features</value>
+    <value>Geplante Funktionen</value>
   </data>
   <data name="frontend_navigation_homepage" xml:space="preserve">
-    <value>Homepage</value>
+    <value>Startseite</value>
   </data>
   <data name="frontend_navigation_login_button" xml:space="preserve">
-    <value>Login</value>
+    <value>Anmelden</value>
   </data>
   <data name="frontend_navigation_pricing" xml:space="preserve">
-    <value>Pricing</value>
+    <value>Preise</value>
   </data>
   <data name="frontend_navigation_register_button" xml:space="preserve">
-    <value>Register</value>
+    <value>Registrieren</value>
   </data>
   <data name="frontend_footer_legal_imprint" xml:space="preserve">
-    <value>Imprint</value>
+    <value>Impressum</value>
   </data>
   <data name="frontend_footer_legal_privacypolicy" xml:space="preserve">
-    <value>Privacy Policy</value>
+    <value>Datenschutz</value>
   </data>
   <data name="frontend_footer_legal_terms" xml:space="preserve">
-    <value>Terms and conditions</value>
+    <value>AGB</value>
   </data>
   <data name="frontend_footer_legal_title" xml:space="preserve">
-    <value>Legal</value>
+    <value>Rechtliches</value>
   </data>
   <data name="frontend_footer_product_documentation" xml:space="preserve">
-    <value>Documentation</value>
+    <value>Dokumentation</value>
   </data>
   <data name="frontend_footer_product_examples" xml:space="preserve">
-    <value>Examples</value>
+    <value>Beispiele</value>
   </data>
   <data name="frontend_footer_product_pricing" xml:space="preserve">
-    <value>Pricing</value>
+    <value>Preise</value>
   </data>
   <data name="frontend_footer_product_solutions" xml:space="preserve">
-    <value>Solutions</value>
+    <value>Lösungen</value>
   </data>
   <data name="frontend_footer_product_title" xml:space="preserve">
-    <value>Product</value>
+    <value>Produkt</value>
   </data>
   <data name="frontend_footer_support_contact" xml:space="preserve">
-    <value>Contact</value>
+    <value>Kontakt</value>
   </data>
   <data name="frontend_footer_support_forum" xml:space="preserve">
     <value>Forum</value>
   </data>
   <data name="frontend_footer_support_reportabug" xml:space="preserve">
-    <value>Report a bug</value>
+    <value>Einen Fehler melden</value>
   </data>
   <data name="frontend_footer_support_title" xml:space="preserve">
-    <value>Support</value>
+    <value>Hilfe</value>
   </data>
   <data name="auth_login_external_facebook_title" xml:space="preserve">
     <value>Facebook</value>
@@ -253,10 +253,10 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_login_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(Bald verfügbar)</value>
   </data>
   <data name="auth_login_external_title" xml:space="preserve">
-    <value>External Login</value>
+    <value>Externe Anmeldung</value>
   </data>
   <data name="auth_register_external_facebook_title" xml:space="preserve">
     <value>Facebook</value>
@@ -265,9 +265,9 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_register_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(Bald verfügbar)</value>
   </data>
   <data name="auth_register_external_title" xml:space="preserve">
-    <value>External Login</value>
+    <value>Externe Anmeldung</value>
   </data>
 </root>

@@ -4642,3 +4642,10 @@ File: Responsive
     box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1); }
   .enlarged .side-menu.left {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important; } }
+
+.custombox-modal-wrapper,
+.modal-demo {
+  text-align: left !important; }
+
+.custom-modal-text {
+  padding: 50px; }

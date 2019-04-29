@@ -132,6 +132,37 @@ namespace BrandBook.Web
                 "~/Scripts/App/jquery.core.js",
                 "~/Scripts/App/jquery.app.js"));
 
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
+             *
+             *  Plugins
+             *
+             */
+
+            /*
+             * Modals
+             */
+            bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
+                    "~/Plugins/custombox/dist/custombox.min.css",
+                    "~/Plugins/morris/morris.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
+                "~/Plugins/custombox/dist/custombox.min.js",
+                "~/Plugins/custombox/dist/legacy.min.js"));
+
+
         }
     }
 }

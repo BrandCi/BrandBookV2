@@ -14,6 +14,8 @@
         <div class="form-items">
             <h3>@Translations.auth_login_title</h3>
             <p></p>
+            
+       
 
 
             @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-validation", role = "form" }))
@@ -47,16 +49,25 @@
                 </div>
 
             }
-
-            <p>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            </p>
+            
+            
+            
+            @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
+            
+            <div class="other-links">
+                <div class="text">@Translations.auth_login_external_title</div>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_login_external_facebook_title @Translations.auth_login_external_soonavailable</a>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_login_external_microsoft_title @Translations.auth_login_external_soonavailable</a>
+            </div>
 
 
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
                 <a href="@Url.Action("Index", "Register")">@Translations.auth_login_register_button_title&nbsp;<i class="fas fa-chevron-right"></i></a>
             </div>
+            
+            @Html.Partial("Partial/_VersionNumber")
+
         </div>
     </div>
 </div>

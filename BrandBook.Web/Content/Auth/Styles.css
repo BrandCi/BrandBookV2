@@ -58,6 +58,9 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
+.alert-summary.alert > ul > li {
+  list-style-type: none; }
+
 /* -----------------------------------
     1 - General Styles
 ------------------------------------*/
