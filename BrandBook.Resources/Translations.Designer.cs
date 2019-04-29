@@ -59,5 +59,14 @@ namespace BrandBook.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homepage.
+        /// </summary>
+        public static string frontend_navigation_homepage {
+            get {
+                return ResourceManager.GetString("frontend_navigation_homepage", resourceCulture);
+            }
+        }
     }
 }
