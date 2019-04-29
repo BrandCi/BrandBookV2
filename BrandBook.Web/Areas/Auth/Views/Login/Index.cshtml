@@ -2,7 +2,7 @@
 @model BrandBook.Web.Framework.ViewModels.Auth.LoginViewModel
 
 @{
-    ViewBag.Title = "Anmelden";
+    ViewBag.Title = @Translations.auth_login_title;
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,7 +12,7 @@
 <div class="form-holder">
     <div class="form-content">
         <div class="form-items">
-            <h3>Melden Sie sich an</h3>
+            <h3>@Translations.auth_login_title</h3>
             <p></p>
 
 
@@ -42,8 +42,8 @@
                 
 
                 <div class="form-button mt-5">
-                    <button id="submit" type="submit" class="ibtn">Anmelden</button>
-                    <a href="@Url.Action("Index", "ForgotPassword")">Passwort vergessen?</a>
+                    <button id="submit" type="submit" class="ibtn">@Translations.auth_login_login_button_title</button>
+                    <a href="@Url.Action("Index", "ForgotPassword")">@Translations.auth_login_resetpassword_title</a>
                 </div>
 
             }
@@ -54,8 +54,8 @@
 
 
             <div class="page-links mt-5">
-                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;Zurück</a>
-                <a href="@Url.Action("Index", "Register")">Nutzeraccount anlegen&nbsp;<i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
+                <a href="@Url.Action("Index", "Register")">@Translations.auth_login_register_button_title&nbsp;<i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </div>
