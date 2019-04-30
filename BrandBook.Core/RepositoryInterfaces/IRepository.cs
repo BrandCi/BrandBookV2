@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.RepositoryInterfaces
 {
-    interface IRepository
+    public interface IRepository<TEntity> where TEntity : class
     {
     }
 }
