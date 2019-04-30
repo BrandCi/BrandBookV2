@@ -601,7 +601,7 @@ div#cookieConsentBox {
   bottom: 15px;
   background-color: #ffffff;
   border-radius: 10px;
-  min-width: 75%;
+  width: 75%;
   z-index: 999999;
   font-size: 12px; }
   div#cookieConsentBox .content {
@@ -618,6 +618,12 @@ div#cookieConsentBox {
         border-color: #efd421;
         background-color: #efd421;
         color: #161616; }
+
+@media only screen and (min-width: 1500px) {
+  div#cookieConsentBox {
+    left: 25%;
+    right: 25%;
+    width: 50%; } }
 
 #loader-wrapper {
   position: fixed;
