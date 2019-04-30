@@ -14,30 +14,9 @@ namespace BrandBook.Web.Controllers
 {
     public class LegalController : FrontendControllerBase
     {
-
-        #region Fields
-
-        private IImprintValueRepository imprintValueRepository;
-
-        #endregion
-
-        #region Constructor
-
-        public LegalController()
-        {
-            this.imprintValueRepository = new ImprintValueRepository(new BrandBookDbContext());
-        }
-
-        #endregion
-
-
         public ActionResult Imprint()
         {
-            ImprintViewModel model = new ImprintViewModel()
-            {
-                ImprintValues = imprintValueRepository.GetImprintValues()
-            };
-            return View(model);
+            return View();
         }
 
         public ActionResult PrivacyPolicy()
