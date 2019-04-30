@@ -8,5 +8,6 @@ namespace BrandBook.Core.RepositoryInterfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
+        List<TEntity> GetAll();
     }
 }
