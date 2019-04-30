@@ -31,13 +31,6 @@ namespace BrandBook.Web.Controllers
         #endregion
 
 
-
-        // GET: Legal
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult Imprint()
         {
             ImprintViewModel model = new ImprintViewModel()
