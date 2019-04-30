@@ -313,6 +313,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cookie Terms.
+        /// </summary>
+        public static string frontend_footer_legal_cookieterms {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_cookieterms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Imprint.
         /// </summary>
         public static string frontend_footer_legal_imprint {
