@@ -386,6 +386,7 @@
     <Content Include="Views\Legal\Imprint.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_LanguageSelectionFooter.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_CookieConsent.cshtml" />
+    <Content Include="Views\Legal\PrivacyPolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
