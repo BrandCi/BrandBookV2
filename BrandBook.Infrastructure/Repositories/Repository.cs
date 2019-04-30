@@ -25,13 +25,20 @@ namespace BrandBook.Infrastructure.Repositories
             {
                 return _set ?? (_set = _context.Set<TEntity>());
             }
-
         }
+
+
+
 
 
         public List<TEntity> GetAll()
         {
             return Set.ToList();
+        }
+
+        public Task<List<TEntity>> GetAllAsync()
+        {
+            return Set.ToListAsync();
         }
 
     }
