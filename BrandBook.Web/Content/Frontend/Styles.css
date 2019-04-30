@@ -625,6 +625,16 @@ div#cookieConsentBox {
     right: 25%;
     width: 50%; } }
 
+/*
+    Legal Pages
+*/
+.privacy-policy h3 {
+  font-size: 20px;
+  margin: 5% 0 1% 0; }
+
+.privacy-policy p {
+  font-size: 15px; }
+
 #loader-wrapper {
   position: fixed;
   top: 0;
