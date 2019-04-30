@@ -62,10 +62,6 @@
                     <!-- Cookie-Consent -->
                 }
 
-
-
-
-
             </div>
 
 
@@ -94,7 +90,7 @@
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
                 $("#acceptCookiesButton").click(function() {
-                    $.cookie("_cookieConsent", 1);
+                    $.cookie("_cookieConsent", 1, {expires: 365});
                     $("#cookieConsentBox").fadeOut(400);
                 });
             </script>
