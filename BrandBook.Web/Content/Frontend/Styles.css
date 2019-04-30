@@ -628,11 +628,13 @@ div#cookieConsentBox {
 /*
     Legal Pages
 */
-.privacy-policy h3 {
+.privacy-policy h3,
+.cookie-terms h3 {
   font-size: 20px;
   margin: 5% 0 1% 0; }
 
-.privacy-policy p {
+.privacy-policy p,
+.cookie-terms p {
   font-size: 15px; }
 
 #loader-wrapper {
