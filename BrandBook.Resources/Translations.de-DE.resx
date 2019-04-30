@@ -279,4 +279,7 @@
   <data name="frontend_legal_cookieconsent_text" xml:space="preserve">
     <value>Diese Seite verwendet Cookies, um Ihnen die beste Nutzungserfahrung auf der Website zu bieten. Wenn Sie mehr dazu wissen möchten, klicken Sie bitte auf den folgenden Link:</value>
   </data>
+  <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
+    <value>Cookie Richtlinien</value>
+  </data>
 </root>
