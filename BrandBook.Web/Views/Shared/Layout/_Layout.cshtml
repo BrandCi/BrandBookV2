@@ -1,4 +1,7 @@
-﻿<!-- Insertion -->
+﻿@{
+    HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
+}
+<!-- Insertion -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,54 +41,58 @@
 </head>
 
     <body>
-    <div class="main-page-wrapper">
+        <div class="main-page-wrapper">
 
-        <div id="loader-wrapper">
-            <div id="loader"></div>
-        </div>
-        <!-- Navigation -->
-        @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
-        <!-- ./ Navigation -->
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+            </div>
+            <!-- Navigation -->
+            @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
+            <!-- ./ Navigation -->
 
-        <div class="html-top-content">
+            <div class="html-top-content">
 
-            @RenderBody()
-
-            
-            
-            <!-- Cookie-Consent -->
-            @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
-            <!-- Cookie-Consent -->
-
-            
+                @RenderBody()
 
 
-        </div>
-        
-        
-
-        <!-- Footer -->
-        @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
-
-        <!-- Js File_________________________________ -->
-        @Scripts.Render("~/bundles/Frontend/Plugins")
-        @Scripts.Render("~/bundles/Frontend/Main")
+                @if (cookieConsent == null)
+                {
+                    <!-- Cookie-Consent -->
+                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                    <!-- Cookie-Consent -->
+                }
 
 
-        <!-- Language Switcher -->
-        <script type="text/javascript">
-
-            (function($) {
-                $("input[type = 'radio']").click(function() {
-                    $(this).parents("form").submit();
-                });
-            })(jQuery);
-
-        </script>
 
 
-        @RenderSection("scripts", required: false)
-        <!-- ./ Footer -->
-    </div> <!-- /.main-page-wrapper -->
+
+            </div>
+
+
+
+            <!-- Footer -->
+            @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
+
+            <!-- Js File_________________________________ -->
+            @Scripts.Render("~/bundles/Frontend/Plugins")
+            @Scripts.Render("~/bundles/Frontend/Main")
+
+
+            <!-- Culture Switcher -->
+            <script type="text/javascript">
+
+                (function ($) {
+                    $("input[type = 'radio']").click(function () {
+                        $(this).parents("form").submit();
+                    });
+                })(jQuery);
+
+            </script>
+            <!-- ./ Culture Switcher-->
+
+
+            @RenderSection("scripts", required: false)
+            <!-- ./ Footer -->
+        </div> <!-- /.main-page-wrapper -->
     </body>
 </html>
