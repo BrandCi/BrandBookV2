@@ -430,6 +430,33 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string frontend_legal_cookieconsent_accept_button_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_accept_button_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find out more here.
+        /// </summary>
+        public static string frontend_legal_cookieconsent_link_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_link_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our cookie policy..
+        /// </summary>
+        public static string frontend_legal_cookieconsent_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {
