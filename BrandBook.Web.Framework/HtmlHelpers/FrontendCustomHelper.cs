@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using BrandBook.Web.Framework.ViewModels.Frontend.Legal;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -69,29 +68,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         }
         
-
-        public static IHtmlString ImprintContent(string title, DateTime date, ImprintViewModel model)
-        {
-            StringBuilder html = new StringBuilder();
-
-            html.Append("<div class=\"blog-main-post\">");
-
-                html.Append("<div>" + date.ToString("dd.MM.yyyy") + "</div>");
-                html.Append("<h4>" + title + "</h4>");
-
-                foreach(var item in model.ImprintValues)
-                {
-                    html.Append("<p>");
-                        html.Append(item.Value);
-                    html.Append("</p>");
-                }
-
-            html.Append("</div>");
-
-
-
-            return new HtmlString(html.ToString());
-        }
         
     }
 }
