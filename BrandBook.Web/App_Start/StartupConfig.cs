@@ -25,7 +25,7 @@ namespace BrandBook.Web
                 LoginPath = new PathString("/Auth/Login/Index"),
                 Provider = new CookieAuthenticationProvider
                 {
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserService, User>(
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserService, AppUser>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }

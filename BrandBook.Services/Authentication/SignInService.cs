@@ -12,16 +12,16 @@ using Microsoft.Owin.Security;
 
 namespace BrandBook.Services.Authentication
 {
-    public class SignInService : SignInManager<User, string>
+    public class SignInService : SignInManager<AppUser, string>
     {
         public SignInService(UserService userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(AppUser appUser)
         {
-            return user.GenerateUserIdentityAsync((UserService)UserManager);
+            return appUser.GenerateUserIdentityAsync((UserService)UserManager);
         }
 
         public static SignInService Create(IdentityFactoryOptions<SignInService> options, IOwinContext context)

@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.Domain.User;
 using BrandBook.Core.RepositoryInterfaces.User;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.User
 {
-    internal class UserRepository : Repository<Core.Domain.User.User>, IUserRepository
+    internal class AppAppUserRepository : Repository<AppUser>, IAppUserRepository
     {
-        internal UserRepository(BrandBookDbContext context)
+        internal AppAppUserRepository(BrandBookDbContext context)
             : base(context)
         {
         }
 
 
-        public Core.Domain.User.User FindByUsername(string username)
+        public AppUser FindByUsername(string username)
         {
             return Set.FirstOrDefault(x => x.UserName == username);
         }

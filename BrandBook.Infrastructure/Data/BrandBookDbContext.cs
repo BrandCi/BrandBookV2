@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BrandBook.Infrastructure.Data
 {
-    public class BrandBookDbContext : IdentityDbContext<User>
+    public class BrandBookDbContext : IdentityDbContext<AppUser>
     {
         // Frontend Domain
         public DbSet<ImprintCategory> ImprintCategories { get; set; }

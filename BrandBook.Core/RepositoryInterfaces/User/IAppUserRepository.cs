@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.Domain.User;
 
 namespace BrandBook.Core.RepositoryInterfaces.User
 {
-    public interface IUserRepository : IRepository<Domain.User.User>
+    public interface IAppUserRepository : IRepository<AppUser>
     {
-        Domain.User.User FindByUsername(string username);
+        AppUser FindByUsername(string username);
     }
 }
