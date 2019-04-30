@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.RepositoryInterfaces.User
 {
-    interface IUserRepository
+    public interface IUserRepository : IRepository<Domain.User.User>
     {
+        Domain.User.User FindByUsername(string username);
     }
 }
