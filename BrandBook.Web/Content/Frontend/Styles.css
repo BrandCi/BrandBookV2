@@ -591,6 +591,64 @@ a.btn-pricing {
 .cultureSelection label.checked {
   border-bottom: 5px solid green; }
 
+/*
+    Cookie-Consent
+*/
+div#cookieConsentBox {
+  position: fixed;
+  left: 12.5%;
+  right: 12.5%;
+  bottom: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 75%;
+  z-index: 999999;
+  font-size: 12px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2); }
+  div#cookieConsentBox .content {
+    padding: 4%; }
+    div#cookieConsentBox .content a.btn-cookie-acceptance {
+      line-height: 35px;
+      border: 1px solid #193357;
+      background-color: transparent;
+      border-radius: .25rem;
+      color: #193357;
+      padding: 0 20px;
+      font-size: 12px; }
+      div#cookieConsentBox .content a.btn-cookie-acceptance:hover {
+        border-color: #efd421;
+        background-color: #efd421;
+        color: #161616; }
+
+@media only screen and (min-width: 1500px) {
+  div#cookieConsentBox {
+    left: 25%;
+    right: 25%;
+    width: 50%; } }
+
+/*
+    Legal Pages
+*/
+.privacy-policy h3,
+.cookie-terms h3 {
+  font-size: 20px;
+  margin: 5% 0 1% 0; }
+
+.privacy-policy p,
+.cookie-terms p {
+  font-size: 15px; }
+
+.privacy-policy table,
+.cookie-terms table {
+  margin: 2.5% 0 2.5% 0; }
+
+.privacy-policy table th, .privacy-policy table td,
+.cookie-terms table th,
+.cookie-terms table td {
+  font-size: 15px; }
+
 #loader-wrapper {
   position: fixed;
   top: 0;

@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Cookie Richtlinie";
+}
+@section ColorStyle
+{
+    @Styles.Render("~/Content/Css/Frontend/Styling/01")
+}
+
+<div class="theme-top-section">
+
+    <div class="theme-inner-banner">
+        <div class="container">
+            <h2 style="padding: 0 0 15% 0;">
+                Cookie Richtlinien
+            </h2>
+        </div> <!-- /.container -->
+    </div> <!-- /.theme-inner-banner -->
+
+
+    <div class="container inner-page-spacing">
+        <div class="row">
+            <div class="col-lg-12 col-12 blog-details">
+                <div class="clearfix cookie-terms">
+                    
+                    <p>
+                        Cookies sind kleine Textdateien, welche von den Websites erstellt werden, die Sie besucht haben. Sie werden verwendet, um moderne Websiten optimal bedienbar zu machen oder dem Betreiber bestimmte Informationen zur Website zu liefern.
+                    </p>
+                    
+                    
+                    <h3>Technisch notwendige Cookies</h3>
+                    <p>In dieser Applikation werden folgende Cookies verwendet.</p>
+                    <p>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    Name
+                                </th>
+                                <th scope="col">
+                                    Speicherdauer
+                                </th>
+                                <th scope="col">
+                                    Beschreibung
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        .AspNet.ApplicationCookie
+                                    </td>
+                                    <td>
+                                        Wird beim Schließen des Browsers gelöscht.
+                                    </td>
+                                    <td>
+                                        Zur Identifizierung des aktuell angemeldeten Nutzers.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        __RequestVerificationToken
+                                    </td>
+                                    <td>
+                                        Wird beim Schließen des Browsers gelöscht.
+                                    </td>
+                                    <td>
+                                        Zum technischen Schutz vor unbefugtem Versand von Formularen.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        _culture
+                                    </td>
+                                    <td>
+                                        1 Jahr ab letzter Änderung
+                                    </td>
+                                    <td>
+                                        In dem Cookie '_culture' wird die durch den Nutzer selektierte Sprache gespeichert. Mögliche Werte sind z.B. 'de-DE' oder 'en-US'.<br />
+                                        Wird die Sprache durch den Nutzer nicht verändert, ist dieser Cookie nicht notwendig, es wird die im Browser als bevorzugte Sprache angegebene verwendet.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        _cookieConsent
+                                    </td>
+                                    <td>
+                                        1 Jahr
+                                    </td>
+                                    <td>
+                                        Zur Speicherung der Einverständniserklärung zur Verwendung von Cookies.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.html-top-content -->

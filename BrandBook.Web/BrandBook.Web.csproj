@@ -347,6 +347,7 @@
     <Content Include="AppSettings.config" />
     <Content Include="Content\App\_Customize.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Frontend\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -384,11 +385,13 @@
     <Content Include="Views\Pricing\Index.cshtml" />
     <Content Include="Views\Legal\Imprint.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_LanguageSelectionFooter.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_CookieConsent.cshtml" />
+    <Content Include="Views\Legal\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Legal\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Auth\" />
-    <Folder Include="Views\Culture\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

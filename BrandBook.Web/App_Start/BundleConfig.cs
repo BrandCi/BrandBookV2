@@ -68,7 +68,8 @@ namespace BrandBook.Web
 
             // Main Js File for Sales Frontend
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
-                        "~/Scripts/Frontend/theme.js"));
+                        "~/Scripts/Frontend/theme.js",
+                        "~/Scripts/Frontend/jquery.cookie.js"));
 
             // Plugins for Sales Frontend
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Plugins").Include(

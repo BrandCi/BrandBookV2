@@ -1,4 +1,7 @@
-﻿<!-- Insertion -->
+﻿@{
+    HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
+}
+<!-- Insertion -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +43,6 @@
     <body>
         <div class="main-page-wrapper">
 
-
             <div id="loader-wrapper">
                 <div id="loader"></div>
             </div>
@@ -52,17 +54,27 @@
 
                 @RenderBody()
 
+
+                @if (cookieConsent == null)
+                {
+                    <!-- Cookie-Consent -->
+                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                    <!-- Cookie-Consent -->
+                }
+
             </div>
+
+
 
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
-            
+
             <!-- Js File_________________________________ -->
             @Scripts.Render("~/bundles/Frontend/Plugins")
             @Scripts.Render("~/bundles/Frontend/Main")
-            
-            
-            <!-- Language Switcher -->
+
+
+            <!-- Culture Switcher -->
             <script type="text/javascript">
 
                 (function ($) {
@@ -72,8 +84,19 @@
                 })(jQuery);
 
             </script>
+            <!-- ./ Culture Switcher-->
             
-            
+
+            <!-- Set Cookie-Acceptance Cookie -->
+            <script type="text/javascript">
+                $("#acceptCookiesButton").click(function() {
+                    $.cookie("_cookieConsent", 1, {expires: 365});
+                    $("#cookieConsentBox").fadeOut(400);
+                });
+            </script>
+            <!-- ./Set Cookie-Acceptance Cookie -->
+
+
             @RenderSection("scripts", required: false)
             <!-- ./ Footer -->
         </div> <!-- /.main-page-wrapper -->

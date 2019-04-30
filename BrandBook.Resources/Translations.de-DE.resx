@@ -270,4 +270,16 @@
   <data name="auth_register_external_title" xml:space="preserve">
     <value>Externe Anmeldung</value>
   </data>
+  <data name="frontend_legal_cookieconsent_accept_button_text" xml:space="preserve">
+    <value>Akzeptieren</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_link_text" xml:space="preserve">
+    <value>Weiterführende Informationen</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_text" xml:space="preserve">
+    <value>Diese Seite verwendet Cookies, um Ihnen die beste Nutzungserfahrung auf der Website zu bieten. Wenn Sie mehr dazu wissen möchten, klicken Sie bitte auf den folgenden Link:</value>
+  </data>
+  <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
+    <value>Cookie Richtlinien</value>
+  </data>
 </root>
