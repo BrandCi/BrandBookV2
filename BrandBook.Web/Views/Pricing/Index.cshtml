@@ -14,41 +14,37 @@
             <h2>Unsere Preisstruktur</h2>
             <p>Dein Team und Du können die einzelnen Versionen jeweils 7 Tage lang kostenlos testen.</p>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5" style="padding-bottom: 15%;">
             
             @FrontendCustomHelper.PricingItem("Professional",
                 "https://content.philipp-moser.de/wlo0t5byw6/78ac03fb-5a19-410b-85c2-cc4c9733cb9e.svg",
                 5.00,
                 true,
                 new List<string>() {"Eine Marke", "5 Benutzer", "500 MB Speicherplatz"},
-                "Kostenlos testen")
+                "Kostenlos testen", false)
             
             @FrontendCustomHelper.PricingItem("Professional",
                 "https://content.philipp-moser.de/wlo0t5byw6/e24d2d3c-0ee7-44fb-80c5-ef55a9f55518.svg",
                 10.00,
                 true,
                 new List<string>() {"Eine Marke", "10 Benutzer", "1 GB Speicherplatz", "Öffentliche Freigabe"},
-                "Kostenlos testen")
+                "Kostenlos testen", false)
             
             @FrontendCustomHelper.PricingItem("Unternehmen",
                 "https://content.philipp-moser.de/wlo0t5byw6/addb504b-5edc-4de8-a2f5-4c7996deb10c.svg",
                 25.00,
                 true,
                 new List<string>() {"2 Marken", "50 Benutzer", "10 GB Speicherplatz", "Öffentliche Freigabe", "Analytics"},
-                "Kostenlos testen")
+                "Kostenlos testen", false)
                 
-        </div>
-        <div class="row">
-            
-                @FrontendCustomHelper.PricingItem("Agenturen",
-                                                    "https://content.philipp-moser.de/wlo0t5byw6/48df6de6-ed3f-4cd8-bce7-592639601425.svg",
-                                                    00.00,
-                                                    false,
-                                                    new List<string>() {"Unbegrenzte Marken", "50+ Benutzer", "10+ GB Speicherplatz", "Private Cloud"},
-                                                    "Kontakt")
+            @FrontendCustomHelper.PricingItem("Agenturen",
+                "https://content.philipp-moser.de/wlo0t5byw6/48df6de6-ed3f-4cd8-bce7-592639601425.svg",
+                00.00,
+                false,
+                new List<string>() {"Unbegrenzte Marken", "50+ Benutzer", "10+ GB Speicherplatz", "Private Cloud"},
+                "Kontakt", true)
             
         </div>
-
 
     </div>
 </div>

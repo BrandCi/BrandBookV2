@@ -12,11 +12,17 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
 
 
-        public static IHtmlString PricingItem(string title, string image, double pricePerMonth, bool termBasedPayment, List<string> featureList, string buttonTitle)
+        public static IHtmlString PricingItem(string title, string image, double pricePerMonth, bool termBasedPayment, List<string> featureList, string buttonTitle, bool isFullWidth)
         {
+            string gridSetup = "col-xs-12 col-md-6 col-lg-4";
+            if (isFullWidth)
+            {
+                gridSetup = "col-xs-12 col-md-12 col-lg-12";
+            }
+
             StringBuilder html = new StringBuilder();
 
-            html.Append("<div class=\"col-xs-12 col-md-6 col-lg-4\">");
+            html.Append("<div class=\"" + gridSetup + "\">");
 
             html.Append("<div class=\"card mb-4\">");
 
