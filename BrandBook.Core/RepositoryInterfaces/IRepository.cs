@@ -14,5 +14,10 @@ namespace BrandBook.Core.RepositoryInterfaces
 
         TEntity FindById(object id);
         Task<TEntity> FindByIdAsync(object id);
+
+
+        void Add(TEntity entity);
+        void Update(TEntity entity);
+        void Remove(TEntity entity);
     }
 }

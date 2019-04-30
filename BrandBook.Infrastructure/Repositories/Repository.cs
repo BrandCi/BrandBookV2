@@ -42,6 +42,7 @@ namespace BrandBook.Infrastructure.Repositories
         }
 
 
+
         public TEntity FindById(object id)
         {
             return Set.Find(id);
@@ -51,6 +52,31 @@ namespace BrandBook.Infrastructure.Repositories
         {
             return Set.FindAsync(id);
         }
+
+
+
+        public void Add(TEntity entity)
+        {
+            Set.Add(entity);
+        }
+
+        public void Update(TEntity entity)
+        {
+            var entry = _context.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                Set.Attach(entity);
+                entry = _context.Entry(entity);
+            }
+
+            entry.State = EntityState.Modified;
+        }
+
+        public void Remove(TEntity entity)
+        {
+            Set.Remove(entity);
+        }
+
 
     }
 }
