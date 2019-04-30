@@ -16,7 +16,9 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         {
             StringBuilder html = new StringBuilder();
 
-            html.Append("<!--LMT--><div class=\"card mb-4\">");
+            html.Append("<div class=\"col-xs-12 col-md-6 col-lg-4\">");
+
+            html.Append("<div class=\"card mb-4\">");
 
             html.Append("<div class=\"card-header\">");
             html.Append("<img src=\"" + image + "\" />");
@@ -52,7 +54,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append(buttonTitle);
             html.Append("</a>");
             html.Append("</div>");
-            html.Append("</div><!--LMT-->");
+            html.Append("</div>");
+            html.Append("</div>");
 
 
 

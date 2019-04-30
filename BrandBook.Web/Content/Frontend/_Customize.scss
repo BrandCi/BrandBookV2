@@ -33,6 +33,17 @@ h1, h2 {
 
 
 /*  Pricing  */
+.pricing-container {
+    font-size: 15px;
+
+
+    .pricing-title {
+        font-size: 30px;
+    }
+}
+
+
+
 
 h1.pricing-title {
     font-size: 40px;
@@ -64,6 +75,11 @@ a.btn-pricing {
 .cultureSelection label.checked {
     border-bottom: 5px solid green;
 }
+
+
+
+
+
 
 
 
