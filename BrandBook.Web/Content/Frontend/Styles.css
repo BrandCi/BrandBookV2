@@ -628,6 +628,12 @@ div#cookieConsentBox {
     right: 25%;
     width: 50%; } }
 
+@media only screen and (max-width: 375px) {
+  div#cookieConsentBox {
+    left: 2.5%;
+    right: 2.5%;
+    width: 95%; } }
+
 /*
     Legal Pages
 */
