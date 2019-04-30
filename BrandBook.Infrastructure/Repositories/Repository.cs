@@ -41,5 +41,16 @@ namespace BrandBook.Infrastructure.Repositories
             return Set.ToListAsync();
         }
 
+
+        public TEntity FindById(object id)
+        {
+            return Set.Find(id);
+        }
+
+        public Task<TEntity> FindByIdAsync(object id)
+        {
+            return Set.FindAsync(id);
+        }
+
     }
 }

@@ -10,5 +10,9 @@ namespace BrandBook.Core.RepositoryInterfaces
     {
         List<TEntity> GetAll();
         Task<List<TEntity>> GetAllAsync();
+
+
+        TEntity FindById(object id);
+        Task<TEntity> FindByIdAsync(object id);
     }
 }
