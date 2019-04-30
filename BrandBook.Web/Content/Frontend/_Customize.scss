@@ -81,6 +81,10 @@ div#cookieConsentBox {
     z-index: 999999;
     font-size: 12px;
 
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.20);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.20);
+
     .content {
         padding: 4%;
 
@@ -126,6 +130,14 @@ div#cookieConsentBox {
     }
 
     p {
+        font-size: 15px;
+    }
+
+    table {
+        margin: 2.5% 0 2.5% 0;
+    }
+
+    table th, table td {
         font-size: 15px;
     }
 }

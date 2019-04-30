@@ -603,7 +603,10 @@ div#cookieConsentBox {
   border-radius: 10px;
   width: 75%;
   z-index: 999999;
-  font-size: 12px; }
+  font-size: 12px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2); }
   div#cookieConsentBox .content {
     padding: 4%; }
     div#cookieConsentBox .content a.btn-cookie-acceptance {
@@ -635,6 +638,15 @@ div#cookieConsentBox {
 
 .privacy-policy p,
 .cookie-terms p {
+  font-size: 15px; }
+
+.privacy-policy table,
+.cookie-terms table {
+  margin: 2.5% 0 2.5% 0; }
+
+.privacy-policy table th, .privacy-policy table td,
+.cookie-terms table th,
+.cookie-terms table td {
   font-size: 15px; }
 
 #loader-wrapper {
