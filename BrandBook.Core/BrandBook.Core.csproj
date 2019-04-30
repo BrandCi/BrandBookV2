@@ -61,6 +61,7 @@
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\Frontend\Legal\IImprintValueRepository.cs" />
+    <Compile Include="RepositoryInterfaces\User\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
