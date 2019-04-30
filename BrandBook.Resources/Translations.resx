@@ -253,7 +253,7 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_login_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(available soon)</value>
   </data>
   <data name="auth_login_external_title" xml:space="preserve">
     <value>External Login</value>
@@ -265,7 +265,7 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_register_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(available soon)</value>
   </data>
   <data name="auth_register_external_title" xml:space="preserve">
     <value>External Login</value>

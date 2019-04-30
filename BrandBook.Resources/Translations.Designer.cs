@@ -88,7 +88,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Soon available).
+        ///   Looks up a localized string similar to (available soon).
         /// </summary>
         public static string auth_login_external_soonavailable {
             get {
@@ -187,7 +187,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Soon available).
+        ///   Looks up a localized string similar to (available soon).
         /// </summary>
         public static string auth_register_external_soonavailable {
             get {
