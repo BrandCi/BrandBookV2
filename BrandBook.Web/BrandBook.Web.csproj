@@ -384,6 +384,7 @@
     <Content Include="Views\Pricing\Index.cshtml" />
     <Content Include="Views\Legal\Imprint.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_LanguageSelectionFooter.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_CookieConsent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
