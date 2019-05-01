@@ -17,5 +17,11 @@ namespace BrandBook.Core
         #endregion
 
 
+
+        #region Methods
+
+        int SaveChanges();
+
+        #endregion
     }
 }
