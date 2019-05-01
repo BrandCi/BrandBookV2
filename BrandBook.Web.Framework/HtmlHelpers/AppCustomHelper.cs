@@ -57,19 +57,19 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             string contentSrv = "https://content.philipp-moser.de/wlo0t5byw6";
             StringBuilder html = new StringBuilder();
 
-            foreach (var item in model)
+            foreach (var brand in model)
             {
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
 
-                html.Append("<img class=\"card-img-top img-fluid\" src=\"" + contentSrv + item + "\" alt=\"Card image cap\">");
+                html.Append("<img class=\"card-img-top img-fluid\" src=\"" + contentSrv + brand.Image + "\" alt=\"" + brand.Name + "\">");
                 html.Append("<div class=\"card-body\">");
-                html.Append("<h2 class=\"card-title\">" + item + "</h2>");
+                html.Append("<h2 class=\"card-title\">" + brand.Name + "</h2>");
                 html.Append("<p class=\"card-text\">");
-                html.Append(item);
+                html.Append(brand.Description);
                 html.Append("</p>");
 
-                html.Append("<a href=\"" + item + "\" class=\"btn btn-primary\" style=\"background-color: #" + item + "; border: none;\">");
+                html.Append("<a href=\"" + "#" + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainColor + "; border: none;\">");
                 html.Append("Marke öffnen");
                 html.Append("</a>");
                 html.Append("</div></div></div>");
