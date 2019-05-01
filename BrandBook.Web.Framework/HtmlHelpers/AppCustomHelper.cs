@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.WebPages;
+using BrandBook.Web.Framework.ViewModels.App.Brand;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -51,7 +52,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString BrandOverviewItem(List<List<string>> model)
+        public static IHtmlString BrandOverviewItem(BrandOverviewViewModel model)
         {
             string contentSrv = "https://content.philipp-moser.de/wlo0t5byw6";
             StringBuilder html = new StringBuilder();
