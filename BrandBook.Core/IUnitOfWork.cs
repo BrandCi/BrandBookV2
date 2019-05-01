@@ -11,9 +11,11 @@ namespace BrandBook.Core
     {
 
         #region Fileds
+
         IAppUserRepository UserRepository { get; }
         IUserRoleRepository UserRoleRepository { get; }
         IRolePermissionRepository RolePermissionRepository { get; }
+
         #endregion
 
 
