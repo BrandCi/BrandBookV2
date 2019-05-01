@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand
 {
-    class Brand
+    public class Brand : BaseEntity
     {
+
     }
 }
