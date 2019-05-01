@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201904302151448_RemoveFrontendDomainTables.Designer.cs">
       <DependentUpon>201904302151448_RemoveFrontendDomainTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs" />
+    <Compile Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.Designer.cs">
+      <DependentUpon>201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repository.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904302151448_RemoveFrontendDomainTables.resx">
       <DependentUpon>201904302151448_RemoveFrontendDomainTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.resx">
+      <DependentUpon>201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
