@@ -85,6 +85,7 @@
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
