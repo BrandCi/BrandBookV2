@@ -61,6 +61,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Brand.
+        /// </summary>
+        public static string app_brandoverview_openbrand_button_title {
+            get {
+                return ResourceManager.GetString("app_brandoverview_openbrand_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {

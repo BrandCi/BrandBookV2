@@ -282,4 +282,7 @@
   <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
     <value>Cookie Terms</value>
   </data>
+  <data name="app_brandoverview_openbrand_button_title" xml:space="preserve">
+    <value>Open Brand</value>
+  </data>
 </root>
