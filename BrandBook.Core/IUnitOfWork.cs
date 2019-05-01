@@ -12,7 +12,7 @@ namespace BrandBook.Core
 
         #region Fileds
 
-        IAppUserRepository UserRepository { get; }
+        IAppUserRepository AppUserRepository { get; }
         IUserRoleRepository UserRoleRepository { get; }
         IRolePermissionRepository RolePermissionRepository { get; }
 
