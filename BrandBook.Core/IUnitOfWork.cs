@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
     }
 }
