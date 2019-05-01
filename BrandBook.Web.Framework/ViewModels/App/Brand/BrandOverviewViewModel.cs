@@ -8,5 +8,6 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
     public class BrandOverviewViewModel
     {
+        public List<SingleBrandOverviewViewModel> Brands { get; set; }
     }
 }
