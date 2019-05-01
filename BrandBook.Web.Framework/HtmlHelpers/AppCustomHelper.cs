@@ -50,6 +50,12 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             
         }
 
+
+        public static IHtmlString BrandOverviewItem()
+        {
+            return new HtmlString("");
+        }
+
     }
 
 }
