@@ -7,12 +7,24 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Services.Authentication;
+using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Framework.Controllers
 {
     public class BaseController : Controller
     {
+        #region Fields
+
+        public SignInService _signInService;
+        public UserService _userService;
+        public RoleService _roleService;
+
+        #endregion
+        
+
+
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {

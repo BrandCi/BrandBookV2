@@ -6,17 +6,5 @@ namespace BrandBook.Web.Framework.Controllers
 {
     public class AuthControllerBase : BaseController
     {
-
-        #region Fields
-
-        public SignInService _signInService;
-        public UserService _userService;
-        public RoleService _roleService;
-
-        #endregion
-
-
-
-
     }
 }
