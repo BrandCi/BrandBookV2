@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrandBook.Web.Framework.ViewModels.App
+namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
-    class BrandOverviewViewModel
+    public class BrandOverviewViewModel
     {
     }
 }
