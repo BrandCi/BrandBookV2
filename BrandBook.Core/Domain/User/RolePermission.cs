@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.User
 {
-    public class RolePermission
+    public class RolePermission : BaseEntity
     {
 
-        public int Id { get; set; }
         public string Key { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
