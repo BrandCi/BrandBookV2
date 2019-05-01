@@ -20,7 +20,14 @@ namespace BrandBook.Infrastructure
 
         #endregion
 
+        #region Constructor
 
+        public UnitOfWork()
+        {
+            _context = new BrandBookDbContext();
+        }
+
+        #endregion
 
 
 
