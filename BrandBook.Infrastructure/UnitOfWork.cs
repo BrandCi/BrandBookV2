@@ -61,5 +61,18 @@ namespace BrandBook.Infrastructure
 
         #endregion
 
+
+        #region IDisposable Member
+
+        public void Dispose()
+        {
+            _appUserRepository = null;
+            _userRoleRepository = null;
+            _rolePermissionRepository = null;
+            _context.Dispose();
+        }
+
+        #endregion
+
     }
 }
