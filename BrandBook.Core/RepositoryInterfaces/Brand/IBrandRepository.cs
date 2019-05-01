@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.RepositoryInterfaces.Brand
 {
-    interface IBrandRepository
+    public interface IBrandRepository : IRepository<Domain.Brand.Brand>
     {
     }
 }
