@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\Brand\Brand.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
