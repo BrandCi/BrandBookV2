@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BrandBook.Core;
 using BrandBook.Core.RepositoryInterfaces.User;
 using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.User;
 
 namespace BrandBook.Infrastructure
 {
@@ -29,7 +30,28 @@ namespace BrandBook.Infrastructure
 
         #endregion
 
+        #region Member from IUnitOfWork
 
+        public IAppUserRepository AppUserRepository
+        {
+            get { return _appUserRepository ?? (_appUserRepository = new AppUserRepository(_context)); }
+        }
+
+        public IUserRoleRepository UserRoleRepository
+        {
+            get { return _userRoleRepository ?? (_userRoleRepository = new UserRoleRepository(_context)); }
+        }
+
+        public IRolePermissionRepository RolePermissionRepository
+        {
+            get { return _rolePermissionRepository ?? (_rolePermissionRepository = new RolePermissionRepository(_context)); }
+        }
+
+
+
+
+
+        #endregion
 
     }
 }
