@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.WebPages;
+using BrandBook.Resources;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
@@ -70,7 +71,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("</p>");
 
                 html.Append("<a href=\"" + "#" + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainColor + "; border: none;\">");
-                html.Append("Marke öffnen");
+                html.Append(Translations.app_brandoverview_openbrand_button_title);
                 html.Append("</a>");
                 html.Append("</div></div></div>");
 
