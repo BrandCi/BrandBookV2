@@ -12,7 +12,7 @@ namespace BrandBook.Infrastructure.Data
     public class BrandBookDbContext : IdentityDbContext<AppUser>
     {
         
-
+        public DbSet<RolePermission> RolePermissions { get; set; }
 
 
 
