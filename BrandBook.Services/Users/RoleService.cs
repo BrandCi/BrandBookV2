@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Services.Users
 {
-    class RoleService
+    public class RoleService
     {
     }
 }
