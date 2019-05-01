@@ -49,7 +49,15 @@ namespace BrandBook.Infrastructure
 
 
 
+        public int SaveChanges()
+        {
+            return _context.SaveChanges();
+        }
 
+        public Task<int> SaveChangesAsync()
+        {
+            return _context.SaveChangesAsync();
+        }
 
         #endregion
 
