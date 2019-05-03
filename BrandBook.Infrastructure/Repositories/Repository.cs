@@ -9,12 +9,12 @@ using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories
 {
-    internal class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private BrandBookDbContext _context;
         private DbSet<TEntity> _set;
 
-        internal Repository(BrandBookDbContext context)
+        public Repository(BrandBookDbContext context)
         {
             _context = context;
         }

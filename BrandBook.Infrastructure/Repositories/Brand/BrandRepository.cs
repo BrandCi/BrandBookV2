@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.RepositoryInterfaces.Brand;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.Brand
 {
-    internal class BrandRepository : Repository<Core.Domain.Brand.Brand>
+    public class BrandRepository : Repository<Core.Domain.Brand.Brand>, IBrandRepository
     {
-        internal BrandRepository(BrandBookDbContext context)
+        public BrandRepository(BrandBookDbContext context)
             : base(context)
         {
         }
