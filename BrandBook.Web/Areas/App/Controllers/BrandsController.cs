@@ -34,6 +34,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
                 {
+                    Id = singleBrand.Id,
                     Name = singleBrand.Name,
                     Image = singleBrand.Image,
                     Description = singleBrand.Description,
