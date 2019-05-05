@@ -69,6 +69,10 @@ namespace BrandBook.Web.Api
                 return NotFound();
             }
 
+            Mapper.Map(brandDto, brand);
+
+            brandRepository.Update(brand);
+
             return Ok();
         }
 
