@@ -37,5 +37,20 @@ namespace BrandBook.Web.Api
             return Ok(brand);
         }
 
+
+        public IHttpActionResult CreateBrand(BrandDto brandDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var brand = Mapper.Map<BrandDto, Brand>(brandDto);
+            brandRepository.Add(brand);
+
+            return Ok();
+
+        }
+
     }
 }
