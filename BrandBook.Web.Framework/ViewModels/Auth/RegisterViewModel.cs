@@ -29,7 +29,7 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
         public string ConfirmPassword { get; set; }
 
         
-        [Required]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Sie müssen die Datenschutzerklärung akzeptieren.")]
         [Display(Name = "Ich habe die Datenschutzerklärung gelesen und aktzeptiere diese.")]
         public bool PrivacyPolicyAccepted { get; set; }
 
