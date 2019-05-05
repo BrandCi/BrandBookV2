@@ -163,7 +163,7 @@
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
     <Compile Include="Areas\App\Controllers\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
-    <Compile Include="Areas\App\Controllers\UserController.cs" />
+    <Compile Include="Areas\App\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
@@ -297,7 +297,7 @@
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\App\Views\Brands\Overview.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\Partial\_VersionNumber.cshtml" />
-    <Content Include="Areas\App\Views\User\Profile.cshtml" />
+    <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
