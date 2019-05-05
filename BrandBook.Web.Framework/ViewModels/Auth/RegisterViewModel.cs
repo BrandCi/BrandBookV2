@@ -28,5 +28,10 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
         [Compare("Password", ErrorMessage = "Die Passwörter stimmen nicht überein")]
         public string ConfirmPassword { get; set; }
 
+        
+        [Required]
+        [Display(Name = "Ich habe die Datenschutzerklärung gelesen und aktzeptiere diese.")]
+        public bool PrivacyPolicyAccepted { get; set; }
+
     }
 }
