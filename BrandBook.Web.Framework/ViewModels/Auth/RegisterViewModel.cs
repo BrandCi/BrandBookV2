@@ -30,7 +30,7 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
         public string ConfirmPassword { get; set; }
 
         
-        [Range(typeof(bool), "true", "true", ErrorMessage = "auth_register_checkbox_privacypolicy_validation", ErrorMessageResourceType = typeof(Translations))]
+        [Range(typeof(bool), "true", "true", ErrorMessageResourceName = "auth_register_checkbox_privacypolicy_validation", ErrorMessageResourceType = typeof(Translations))]
         [Display(Name = "auth_register_checkbox_privacypolicy_title", ResourceType = typeof(Translations))]
         public bool PrivacyPolicyAccepted { get; set; }
 
