@@ -22,9 +22,18 @@ namespace BrandBook.Web.Api
 
 
 
-        public IEnumerable<BrandDto> GetBrands()
+        public IHttpActionResult GetBrands()
         {
-            return brandRepository.GetAll().Select(Mapper.Map<Brand, BrandDto>);
+            var allBrands = brandRepository.GetAll().Select(Mapper.Map<Brand, BrandDto>);
+
+            return Ok(allBrands);
+        }
+
+        public IHttpActionResult GetBrand(int id)
+        {
+            var brand = brandRepository.FindById(id);
+
+            return Ok(brand);
         }
 
     }
