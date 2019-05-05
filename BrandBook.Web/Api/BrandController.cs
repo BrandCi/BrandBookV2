@@ -39,6 +39,7 @@ namespace BrandBook.Web.Api
         }
 
 
+        [HttpPost]
         public IHttpActionResult CreateBrand(BrandDto brandDto)
         {
             if (!ModelState.IsValid)
