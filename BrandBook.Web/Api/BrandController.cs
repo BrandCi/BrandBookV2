@@ -58,6 +58,17 @@ namespace BrandBook.Web.Api
         [HttpPut]
         public IHttpActionResult UpdateBrand(int id, BrandDto brandDto)
         {
+            if (!ModelState.IsValid){
+                return BadRequest();
+            }
+
+            var brand = brandRepository.FindById(id);
+
+            if (brand == null)
+            {
+                return NotFound();
+            }
+
             return Ok();
         }
 
