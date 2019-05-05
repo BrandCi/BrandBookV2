@@ -58,12 +58,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
 
         // GET: Auth/Login
-        public ActionResult Index()
+        public ActionResult Index(string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Home", new {area = ""});
             }
+
+            ViewBag.ReturnUrl = returnUrl;
 
             return View();
         }
@@ -77,24 +79,31 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 return View(model);
             }
-
+            
             var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
 
-            if (result == SignInStatus.Success)
+            switch (result)
             {
-                if (Url.IsLocalUrl(returnUrl))
-                {
-                    return Redirect(returnUrl);
-                }
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
 
-                return RedirectToAction("Index", "Dashboard", new { area = "App"} );
-            }
-            else
-            {
-                ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
-                return View(model);
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
+                    return View(model);
             }
 
+        }
+
+
+
+        public ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", "Dashboard", new { area = "App" });
         }
     }
 }
