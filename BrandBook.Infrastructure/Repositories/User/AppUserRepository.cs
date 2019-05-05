@@ -9,9 +9,9 @@ using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.User
 {
-    internal class AppUserRepository : Repository<AppUser>, IAppUserRepository
+    public class AppUserRepository : Repository<AppUser>, IAppUserRepository
     {
-        internal AppUserRepository(BrandBookDbContext context)
+        public AppUserRepository(BrandBookDbContext context)
             : base(context)
         {
         }
