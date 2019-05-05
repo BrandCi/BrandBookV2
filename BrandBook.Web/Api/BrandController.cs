@@ -53,5 +53,12 @@ namespace BrandBook.Web.Api
             return Created(new Uri(Request.RequestUri + "/" + brand.Id), brandDto);
         }
 
+
+        [HttpDelete]
+        public IHttpActionResult DeleteBrand(int id)
+        {
+            return Ok();
+        }
+
     }
 }
