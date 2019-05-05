@@ -64,6 +64,8 @@ namespace BrandBook.Web.Api
                 return NotFound();
             }
 
+            brandRepository.Remove(brand);
+
             return Ok();
         }
 
