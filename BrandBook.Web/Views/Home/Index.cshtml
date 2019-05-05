@@ -25,7 +25,11 @@
                 </p>
                 <ul class="button-group clearfix">
                     <li><a href="#">Entdecke BrandCi.</a></li>
-                    <li><a href="#">Teste BrandCi kostenfrei.</a></li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="@Url.Action("Index", "Register", new {area = "Auth"})">Teste BrandCi kostenfrei.</a></li>
+                    }
+                        
                 </ul>
             </div>
         </div>
