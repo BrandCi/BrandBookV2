@@ -61,6 +61,11 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             foreach (var brand in model)
             {
+                if (brand.MainHexColor == null || brand.MainHexColor == "ffffff")
+                {
+                    brand.MainHexColor = "193357";
+                }
+
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
 
