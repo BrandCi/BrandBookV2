@@ -61,6 +61,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Brand.
+        /// </summary>
+        public static string app_brandoverview_openbrand_button_title {
+            get {
+                return ResourceManager.GetString("app_brandoverview_openbrand_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {
@@ -165,6 +174,24 @@ namespace BrandBook.Resources {
         public static string auth_login_title {
             get {
                 return ResourceManager.GetString("auth_login_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_title {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_validation {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_validation", resourceCulture);
             }
         }
         

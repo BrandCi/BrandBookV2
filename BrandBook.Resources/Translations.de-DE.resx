@@ -282,4 +282,13 @@
   <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
     <value>Cookie Richtlinien</value>
   </data>
+  <data name="app_brandoverview_openbrand_button_title" xml:space="preserve">
+    <value>Marke öffnen</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_title" xml:space="preserve">
+    <value>Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
+    <value>Sei müssen die Datenschutzerklärung akzeptieren.</value>
+  </data>
 </root>

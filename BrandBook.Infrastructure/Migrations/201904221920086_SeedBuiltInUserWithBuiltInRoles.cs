@@ -8,7 +8,7 @@ namespace BrandBook.Infrastructure.Migrations
         public override void Up()
         {
             // Create Built In Roles
-            Sql("INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [Discriminator]) VALUES (N'4f46d978-9b05-4d97-83ad-71b4cde6ec40', N'User', N'IdentityRole')");
+            Sql("INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [Discriminator]) VALUES (N'4f46d978-9b05-4d97-83ad-71b4cde6ec40', N'AppUser', N'IdentityRole')");
             Sql("INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [Discriminator]) VALUES (N'2abda22b-00ac-4e03-b878-49631a42c4c2', N'Administrator', N'IdentityRole')");
 
             // Create Built In Admin

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Domain.User;
+using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
@@ -15,15 +15,21 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
+        private IAppUserRepository appUserRepository;
 
+       
         #region Constructor
 
-        public RegisterController() { }
+        public RegisterController()
+        {
+            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+        }
 
         public RegisterController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
+            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
         }
 
         #endregion
@@ -75,12 +81,13 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Username, Email = model.Email };
+                var user = new AppUser { UserName = model.Username, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    await UserManager.AddToRoleAsync(user.Id, "User");
+                    await UserManager.AddToRoleAsync(user.Id, "AppUser");
+
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     return RedirectToAction("Index", "Home", new {area = ""});
                 }

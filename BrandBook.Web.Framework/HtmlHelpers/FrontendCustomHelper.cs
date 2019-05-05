@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using BrandBook.Web.Framework.ViewModels.Frontend.Legal;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -12,11 +11,19 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
 
 
-        public static IHtmlString PricingItem(string title, string image, double pricePerMonth, bool termBasedPayment, List<string> featureList, string buttonTitle)
+        public static IHtmlString PricingItem(string title, string image, double pricePerMonth, bool termBasedPayment, List<string> featureList, string buttonTitle, bool isFullWidth)
         {
+            string gridSetup = "col-xs-12 col-md-6 col-lg-4";
+            if (isFullWidth)
+            {
+                gridSetup = "col-xs-12 col-md-12 col-lg-12";
+            }
+
             StringBuilder html = new StringBuilder();
 
-            html.Append("<!--LMT--><div class=\"card mb-4\">");
+            html.Append("<div class=\"" + gridSetup + "\">");
+
+            html.Append("<div class=\"card mb-4\">");
 
             html.Append("<div class=\"card-header\">");
             html.Append("<img src=\"" + image + "\" />");
@@ -52,7 +59,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append(buttonTitle);
             html.Append("</a>");
             html.Append("</div>");
-            html.Append("</div><!--LMT-->");
+            html.Append("</div>");
+            html.Append("</div>");
 
 
 
@@ -60,29 +68,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         }
         
-
-        public static IHtmlString ImprintContent(string title, DateTime date, ImprintViewModel model)
-        {
-            StringBuilder html = new StringBuilder();
-
-            html.Append("<div class=\"blog-main-post\">");
-
-                html.Append("<div>" + date.ToString("dd.MM.yyyy") + "</div>");
-                html.Append("<h4>" + title + "</h4>");
-
-                foreach(var item in model.ImprintValues)
-                {
-                    html.Append("<p>");
-                        html.Append(item.Value);
-                    html.Append("</p>");
-                }
-
-            html.Append("</div>");
-
-
-
-            return new HtmlString(html.ToString());
-        }
         
     }
 }

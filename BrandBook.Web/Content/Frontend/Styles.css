@@ -570,6 +570,11 @@ h1.strong-title-600, h2.strong-title-600 {
   vertical-align: middle; }
 
 /*  Pricing  */
+.pricing-container {
+  font-size: 15px; }
+  .pricing-container .pricing-title {
+    font-size: 30px; }
+
 h1.pricing-title {
   font-size: 40px; }
 
@@ -627,6 +632,12 @@ div#cookieConsentBox {
     left: 25%;
     right: 25%;
     width: 50%; } }
+
+@media only screen and (max-width: 375px) {
+  div#cookieConsentBox {
+    left: 2.5%;
+    right: 2.5%;
+    width: 95%; } }
 
 /*
     Legal Pages
@@ -1928,7 +1939,7 @@ body .theme-button:hover span {
 
 .contact-us-one.bg-color {
   position: relative;
-  background: linear-gradient(29deg, #4a02c7 0%, #7501d1 100%);
+  background: linear-gradient(29deg, #193357 0%, #2429b3 100%);
   padding: 300px 0 50px;
   overflow: hidden;
   z-index: 1; }
