@@ -47,13 +47,20 @@
                     </div>
                 </div>
 
-                <div class="form-button">
-                    <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
-                    <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
-                </div>
+                <label class="container">
+                    @Html.DisplayNameFor(m => m.PrivacyPolicyAccepted)
+                    @Html.CheckBoxFor(m => m.PrivacyPolicyAccepted)
+                    <span class="auth-custom-checkbox"></span>
+                </label>
 
-            }
-            
+
+            <div class="form-button">
+                <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
+                <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
+            </div>
+
+        }
+
             <div class="other-links">
                 <div class="text">@Translations.auth_register_external_title</div>
                 <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
