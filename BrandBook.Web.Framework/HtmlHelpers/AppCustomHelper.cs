@@ -61,6 +61,11 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             foreach (var brand in model)
             {
+                if (brand.MainHexColor == null || brand.MainHexColor == "ffffff")
+                {
+                    brand.MainHexColor = "193357";
+                }
+
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
 
@@ -71,7 +76,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append(brand.Description);
                 html.Append("</p>");
 
-                html.Append("<a href=\"" + "#" + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainColor + "; border: none;\">");
+                html.Append("<a href=\"" + "#" + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
                 html.Append(Translations.app_brandoverview_openbrand_button_title);
                 html.Append("</a>");
                 html.Append("</div></div></div>");

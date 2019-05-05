@@ -36,9 +36,9 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {
                     Id = singleBrand.Id,
                     Name = singleBrand.Name,
-                    Image = singleBrand.Image,
+                    Image = singleBrand.ImageName + "." + singleBrand.ImageType,
                     Description = singleBrand.Description,
-                    MainColor = singleBrand.MainColor
+                    MainHexColor = singleBrand.MainHexColor
                 });
             }
 

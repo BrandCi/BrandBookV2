@@ -12,6 +12,6 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         public string Name { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
-        public string MainColor { get; set; }
+        public string MainHexColor { get; set; }
     }
 }
