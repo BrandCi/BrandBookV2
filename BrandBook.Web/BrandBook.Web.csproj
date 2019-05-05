@@ -390,6 +390,7 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
