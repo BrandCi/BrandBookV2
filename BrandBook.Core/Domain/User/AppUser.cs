@@ -12,6 +12,8 @@ namespace BrandBook.Core.Domain.User
     public class AppUser : IdentityUser
     {
 
+        public bool PrivacyPolicyAccepted { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
