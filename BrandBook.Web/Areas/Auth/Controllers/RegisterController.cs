@@ -88,8 +88,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 {
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
-                    if (user.PrivacyPolicyAccepted == true){ }
-
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     return RedirectToAction("Index", "Home", new {area = ""});
                 }
