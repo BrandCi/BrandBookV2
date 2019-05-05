@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
 using BrandBook.Resources;
 
 namespace BrandBook.Web.Framework.ViewModels.Auth
@@ -30,7 +31,7 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
 
         
         [Range(typeof(bool), "true", "true", ErrorMessage = "Sie müssen die Datenschutzerklärung akzeptieren.")]
-        [Display(Name = "Ich habe die Datenschutzerklärung gelesen und aktzeptiere diese.")]
+        [Display(Name = "auth_register_checkbox_privacypolicy_title", ResourceType = typeof(Translations))]
         public bool PrivacyPolicyAccepted { get; set; }
 
     }
