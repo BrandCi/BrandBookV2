@@ -52,14 +52,15 @@
                     @Html.CheckBoxFor(m => m.PrivacyPolicyAccepted)
                     <span class="auth-custom-checkbox"></span>
                 </label>
+                @Html.ValidationMessageFor(m => m.PrivacyPolicyAccepted, "", new { @class = "text-danger" })
 
 
-            <div class="form-button">
-                <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
-                <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
-            </div>
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
+                    <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
+                </div>
 
-        }
+            }
 
             <div class="other-links">
                 <div class="text">@Translations.auth_register_external_title</div>
