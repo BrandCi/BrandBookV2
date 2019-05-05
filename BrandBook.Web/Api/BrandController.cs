@@ -54,6 +54,15 @@ namespace BrandBook.Web.Api
         }
 
 
+
+        [HttpPut]
+        public IHttpActionResult UpdateBrand(int id, BrandDto brandDto)
+        {
+            return Ok();
+        }
+
+
+
         [HttpDelete]
         public IHttpActionResult DeleteBrand(int id)
         {
