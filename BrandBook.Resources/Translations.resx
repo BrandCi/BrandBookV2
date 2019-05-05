@@ -285,4 +285,10 @@
   <data name="app_brandoverview_openbrand_button_title" xml:space="preserve">
     <value>Open Brand</value>
   </data>
+  <data name="auth_register_checkbox_privacypolicy_title" xml:space="preserve">
+    <value>I have read and accept the Privacy Policy</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
+    <value>You need to accept the Privacy Policy</value>
+  </data>
 </root>

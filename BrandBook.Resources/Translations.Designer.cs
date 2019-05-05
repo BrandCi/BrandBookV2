@@ -178,6 +178,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_title {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_validation {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Facebook.
         /// </summary>
         public static string auth_register_external_facebook_title {
