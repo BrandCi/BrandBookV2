@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201905011410128_AddBrandsTableWithInitialColumns.Designer.cs">
       <DependentUpon>201905011410128_AddBrandsTableWithInitialColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs" />
+    <Compile Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.Designer.cs">
+      <DependentUpon>201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905011410128_AddBrandsTableWithInitialColumns.resx">
       <DependentUpon>201905011410128_AddBrandsTableWithInitialColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.resx">
+      <DependentUpon>201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
