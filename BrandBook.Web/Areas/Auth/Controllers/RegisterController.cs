@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Domain.User;
+using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
@@ -15,15 +15,21 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
+        private IAppUserRepository appUserRepository;
 
+       
         #region Constructor
 
-        public RegisterController() { }
+        public RegisterController()
+        {
+            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+        }
 
         public RegisterController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
+            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
         }
 
         #endregion
@@ -82,10 +88,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 {
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
-                    if (user.PrivacyPolicyAccepted == true)
-                    {
-                        
-                    }
+                    if (user.PrivacyPolicyAccepted == true){ }
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     return RedirectToAction("Index", "Home", new {area = ""});
