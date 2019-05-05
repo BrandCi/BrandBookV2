@@ -1,4 +1,9 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+using AutoMapper;
+using BrandBook.Core.Domain.Brand;
+using BrandBook.Core.Dtos.Brand;
 using BrandBook.Core.RepositoryInterfaces.Brand;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
@@ -15,6 +20,12 @@ namespace BrandBook.Web.Api
             this.brandRepository = new BrandRepository(new BrandBookDbContext());
         }
 
+
+
+        public IEnumerable<BrandDto> GetBrands()
+        {
+            return brandRepository.GetAll().Select(Mapper.Map<Brand, BrandDto>);
+        }
 
     }
 }
