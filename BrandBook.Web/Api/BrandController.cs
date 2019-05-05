@@ -10,6 +10,7 @@ using BrandBook.Infrastructure.Repositories.Brand;
 
 namespace BrandBook.Web.Api
 {
+    [Authorize]
     public class BrandController : ApiController
     {
 
