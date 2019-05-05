@@ -71,7 +71,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(LoginViewModel model)
+        public async Task<ActionResult> Index(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -80,16 +80,21 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
 
-            switch (result)
+            if (result == SignInStatus.Success)
             {
-                case SignInStatus.Success:
-                    return RedirectToAction("Index", "Dashboard", new { area = "App"} );
+                if (Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
 
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
-                    return View(model);
+                return RedirectToAction("Index", "Dashboard", new { area = "App"} );
             }
+            else
+            {
+                ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
+                return View(model);
+            }
+
         }
     }
 }
