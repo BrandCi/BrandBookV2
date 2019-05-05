@@ -15,33 +15,47 @@
                         <ul>
                             <li><a href="#">@Translations.frontend_footer_product_solutions</a></li>
                             <li><a href="#">@Translations.frontend_footer_product_pricing</a></li>
+                            <!--
                             <li><a href="#">@Translations.frontend_footer_product_documentation</a></li>
                             <li><a href="#">@Translations.frontend_footer_product_examples</a></li>
+                            -->
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
                         <h4 class="title">@Translations.frontend_footer_support_title</h4>
                         <ul>
                             <li><a href="#">@Translations.frontend_footer_support_contact</a></li>
+                            <!--
                             <li><a href="#">@Translations.frontend_footer_support_forum</a></li>
                             <li><a href="#">@Translations.frontend_footer_support_reportabug</a></li>
+                            -->
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
                         <h4 class="title">@Translations.frontend_footer_legal_title</h4>
                         <ul>
-                            <li><a href="@Url.Action("Imprint", "Legal")">
-                                @Translations.frontend_footer_legal_imprint
-                            </a></li>
-                            <li><a href="@Url.Action("PrivacyPolicy", "Legal", new {area = ""})">
-                                @Translations.frontend_footer_legal_privacypolicy
-                            </a></li>
-                            <li><a href="#">
-                                @Translations.frontend_footer_legal_terms
-                            </a></li>
-                            <li><a href="@Url.Action("Cookie", "Legal", new {area = ""})">
-                                @Translations.frontend_footer_legal_cookieterms
-                            </a></li>
+                            <li>
+                                <a href="@Url.Action("Imprint", "Legal")">
+                                    @Translations.frontend_footer_legal_imprint
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("PrivacyPolicy", "Legal", new {area = ""})">
+                                    @Translations.frontend_footer_legal_privacypolicy
+                                </a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#">
+                                    @Translations.frontend_footer_legal_terms
+                                </a>
+                            </li>
+                            -->
+                            <li>
+                                <a href="@Url.Action("Cookie", "Legal", new {area = ""})">
+                                    @Translations.frontend_footer_legal_cookieterms
+                                </a>
+                            </li>
                         </ul>
                     </div> <!-- /.footer-list -->
                 </div> <!-- /.row -->
