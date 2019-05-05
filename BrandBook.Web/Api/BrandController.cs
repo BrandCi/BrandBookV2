@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper;
@@ -48,8 +49,7 @@ namespace BrandBook.Web.Api
             var brand = Mapper.Map<BrandDto, Brand>(brandDto);
             brandRepository.Add(brand);
 
-            return Ok();
-
+            return Created(new Uri(Request.RequestUri + "/" + brand.Id), brandDto);
         }
 
     }
