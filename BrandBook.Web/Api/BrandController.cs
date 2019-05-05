@@ -57,6 +57,13 @@ namespace BrandBook.Web.Api
         [HttpDelete]
         public IHttpActionResult DeleteBrand(int id)
         {
+            var brand = brandRepository.FindById(id);
+
+            if (brand == null)
+            {
+                return NotFound();
+            }
+
             return Ok();
         }
 
