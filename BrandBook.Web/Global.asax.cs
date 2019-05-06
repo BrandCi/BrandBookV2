@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations.Design;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -25,6 +26,8 @@ namespace BrandBook.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BrandBookDbContext, Infrastructure.Migrations.Configuration>());
+            BrandBookDbContext migrateDb = new BrandBookDbContext();
+            migrateDb.Database.Initialize(true);
 
         }
     }
