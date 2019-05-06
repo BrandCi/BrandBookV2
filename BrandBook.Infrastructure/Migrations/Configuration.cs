@@ -5,7 +5,7 @@ namespace BrandBook.Infrastructure.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BrandBook.Infrastructure.Data.BrandBookDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<BrandBook.Infrastructure.Data.BrandBookDbContext>
     {
         public Configuration()
         {
