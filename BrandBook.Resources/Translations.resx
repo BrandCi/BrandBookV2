@@ -253,7 +253,7 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_login_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(available soon)</value>
   </data>
   <data name="auth_login_external_title" xml:space="preserve">
     <value>External Login</value>
@@ -265,9 +265,30 @@
     <value>Microsoft</value>
   </data>
   <data name="auth_register_external_soonavailable" xml:space="preserve">
-    <value>(Soon available)</value>
+    <value>(available soon)</value>
   </data>
   <data name="auth_register_external_title" xml:space="preserve">
     <value>External Login</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_accept_button_text" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_link_text" xml:space="preserve">
+    <value>Find out more here</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_text" xml:space="preserve">
+    <value>We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our cookie policy.</value>
+  </data>
+  <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
+    <value>Cookie Terms</value>
+  </data>
+  <data name="app_brandoverview_openbrand_button_title" xml:space="preserve">
+    <value>Open Brand</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_title" xml:space="preserve">
+    <value>I have read and accept the Privacy Policy</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
+    <value>You need to accept the Privacy Policy</value>
   </data>
 </root>

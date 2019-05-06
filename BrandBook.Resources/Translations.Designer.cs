@@ -61,6 +61,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Brand.
+        /// </summary>
+        public static string app_brandoverview_openbrand_button_title {
+            get {
+                return ResourceManager.GetString("app_brandoverview_openbrand_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {
@@ -88,7 +97,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Soon available).
+        ///   Looks up a localized string similar to (available soon).
         /// </summary>
         public static string auth_login_external_soonavailable {
             get {
@@ -169,6 +178,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_title {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to accept the Privacy Policy.
+        /// </summary>
+        public static string auth_register_checkbox_privacypolicy_validation {
+            get {
+                return ResourceManager.GetString("auth_register_checkbox_privacypolicy_validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Facebook.
         /// </summary>
         public static string auth_register_external_facebook_title {
@@ -187,7 +214,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Soon available).
+        ///   Looks up a localized string similar to (available soon).
         /// </summary>
         public static string auth_register_external_soonavailable {
             get {
@@ -313,6 +340,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cookie Terms.
+        /// </summary>
+        public static string frontend_footer_legal_cookieterms {
+            get {
+                return ResourceManager.GetString("frontend_footer_legal_cookieterms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Imprint.
         /// </summary>
         public static string frontend_footer_legal_imprint {
@@ -426,6 +462,33 @@ namespace BrandBook.Resources {
         public static string frontend_footer_support_title {
             get {
                 return ResourceManager.GetString("frontend_footer_support_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string frontend_legal_cookieconsent_accept_button_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_accept_button_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find out more here.
+        /// </summary>
+        public static string frontend_legal_cookieconsent_link_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_link_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our cookie policy..
+        /// </summary>
+        public static string frontend_legal_cookieconsent_text {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookieconsent_text", resourceCulture);
             }
         }
         

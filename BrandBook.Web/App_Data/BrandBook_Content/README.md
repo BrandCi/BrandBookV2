@@ -1,0 +1,1 @@
+Items Stored on an external Content Server

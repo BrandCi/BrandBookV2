@@ -58,12 +58,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
 
         // GET: Auth/Login
-        public ActionResult Index()
+        public ActionResult Index(string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Home", new {area = ""});
             }
+
+            ViewBag.ReturnUrl = returnUrl;
 
             return View();
         }
@@ -71,25 +73,37 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(LoginViewModel model)
+        public async Task<ActionResult> Index(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-
+            
             var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
 
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Index", "Dashboard", new { area = "App"} );
+                    return RedirectToLocal(returnUrl);
 
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
                     return View(model);
             }
+
+        }
+
+
+
+        public ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", "Dashboard", new { area = "App" });
         }
     }
 }

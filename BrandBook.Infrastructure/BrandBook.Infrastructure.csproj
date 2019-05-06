@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BrandBookDbContext.cs" />
+    <Compile Include="MappingProfile.cs" />
     <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.cs" />
     <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
       <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
@@ -71,9 +75,34 @@
     <Compile Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.Designer.cs">
       <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904302151448_RemoveFrontendDomainTables.cs" />
+    <Compile Include="Migrations\201904302151448_RemoveFrontendDomainTables.Designer.cs">
+      <DependentUpon>201904302151448_RemoveFrontendDomainTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs" />
+    <Compile Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.Designer.cs">
+      <DependentUpon>201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011410128_AddBrandsTableWithInitialColumns.cs" />
+    <Compile Include="Migrations\201905011410128_AddBrandsTableWithInitialColumns.Designer.cs">
+      <DependentUpon>201905011410128_AddBrandsTableWithInitialColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs" />
+    <Compile Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.Designer.cs">
+      <DependentUpon>201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.cs" />
+    <Compile Include="Migrations\201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.Designer.cs">
+      <DependentUpon>201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Frontend\Legal\ImprintValueRepository.cs" />
+    <Compile Include="Repositories\Brand\BrandRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\User\AppUserRepository.cs" />
+    <Compile Include="Repositories\User\RolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\UserRoleRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
@@ -100,6 +129,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904281133119_CreateNewCategoriesTableForImprint.resx">
       <DependentUpon>201904281133119_CreateNewCategoriesTableForImprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904302151448_RemoveFrontendDomainTables.resx">
+      <DependentUpon>201904302151448_RemoveFrontendDomainTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.resx">
+      <DependentUpon>201905011026344_AddNewRolePermissionsTableAndLinkWithRolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011410128_AddBrandsTableWithInitialColumns.resx">
+      <DependentUpon>201905011410128_AddBrandsTableWithInitialColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.resx">
+      <DependentUpon>201905051443206_AddColumnPrivacyPolicyAcceptedToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.resx">
+      <DependentUpon>201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

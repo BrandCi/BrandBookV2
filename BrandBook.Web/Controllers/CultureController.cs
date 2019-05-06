@@ -20,6 +20,7 @@ namespace BrandBook.Web.Controllers
             if (cookie != null)
             {
                 cookie.Value = culture;
+                cookie.Expires = DateTime.Now.AddYears(1);
             }
             else
             {
