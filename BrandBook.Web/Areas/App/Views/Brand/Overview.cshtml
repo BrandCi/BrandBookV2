@@ -5,9 +5,14 @@
     Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
 }
 
+@section styles
+{
+    @Styles.Render("~/Content/Plugins/Modals")
+}
+
 <div class="row mb-3">
     <div class="col-md-4">
-        <a href="#" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
+        <a href="#" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5" data-toggle="modal" data-target=".modal-add-brand">
             <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
         </a>
     </div>
@@ -17,3 +22,26 @@
     @AppCustomHelper.BrandOverviewItem(Model)
 </div>
 
+@section scripts {
+    @Scripts.Render("~/bundles/Plugins/Modals")
+}
+
+
+
+
+<!--  Modal content for adding a new Brand -->
+<div class="modal fade modal-add-brand" tabindex="-1" role="dialog" aria-labelledby="addBrandModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="addBrandModalLabel">
+
+                </h4>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
