@@ -8,7 +8,11 @@ namespace BrandBook.Core.Domain.System
 {
     public class Setting : BaseEntity
     {
+        public string Key { get; set; }
+        public string Value { get; set; }
 
+        public int Category { get; set; }
+        public int AccessLevel { get; set; }
 
 
     }
