@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.System
 {
-    class Setting
+    public class Setting : BaseEntity
     {
+
+
+
     }
 }
