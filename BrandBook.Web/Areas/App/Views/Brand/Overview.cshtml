@@ -42,7 +42,7 @@
             <div class="modal-body">
                 <form>
 
-                    <div class="input-group mb-4">
+                    <div class="form-group input-group mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="brand-name-addon">
                                 <i class="fas fa-chess-rook"></i>
@@ -50,6 +50,23 @@
                         </div>
                         <input type="text" class="form-control" placeholder="Name der Marke" aria-label="BrandName" aria-describedby="brand-name-addon">
                     </div>
+
+                    <div class="form-group input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="brand-color-addon">
+                                <i class="fas fa-palette"></i>
+                            </span>
+                        </div>
+                        <input type="color" class="form-control" placeholder="Primärfarbe der Marke" aria-label="BrandColor" aria-describedby="brand-color-addon">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="BrandDescription">Beschreibung</label>
+                        <textarea class="form-control" id="BrandDescription" rows="2"></textarea>
+                    </div>
+                    
+                    
+
                     <div class="input-group">
                         <button type="submit" class="btn btn-success btn-custom waves-effect w-md waves-light m-b-5">Marke anlegen</button>
                     </div>
