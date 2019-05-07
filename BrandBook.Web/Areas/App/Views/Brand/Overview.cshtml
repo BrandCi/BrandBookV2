@@ -60,12 +60,31 @@
                         <input type="color" class="form-control" placeholder="Primärfarbe der Marke" aria-label="BrandColor" aria-describedby="brand-color-addon">
                     </div>
 
-                    <div class="form-group">
-                        <label for="BrandDescription">Beschreibung</label>
-                        <textarea class="form-control" id="BrandDescription" rows="2"></textarea>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="brand-image-addon">
+                                <i class="fas fa-images"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="BildKey Contentserver" aria-describedby="brand-image-addon" aria-label="Image Input with Imagetype selection">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Typ</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">.jpg</a>
+                                <a class="dropdown-item" href="#">.png</a>
+                                <a class="dropdown-item" href="#">.svg</a>
+                            </div>
+                        </div>
                     </div>
-                    
-                    
+
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-info"></i>
+                            </span>
+                        </div>
+                        <textarea class="form-control" aria-label="Brand Description"></textarea>
+                    </div>
 
                     <div class="input-group">
                         <button type="submit" class="btn btn-success btn-custom waves-effect w-md waves-light m-b-5">Marke anlegen</button>
