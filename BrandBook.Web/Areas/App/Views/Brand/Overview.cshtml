@@ -5,7 +5,13 @@
     Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
 }
 
-
+<div class="row mb-3">
+    <div class="col-md-4">
+        <a href="#" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
+            <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
+        </a>
+    </div>
+</div>
 
 <div class="row">
     @AppCustomHelper.BrandOverviewItem(Model)
