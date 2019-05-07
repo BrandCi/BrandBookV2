@@ -164,6 +164,7 @@
     <Compile Include="Areas\App\Controllers\BrandController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\App\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
@@ -941,6 +942,7 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\App\Views\Settings\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
