@@ -11,8 +11,8 @@ namespace BrandBook.Core.Domain.System
         public string Key { get; set; }
         public string Value { get; set; }
 
-        public int Category { get; set; }
-        public int AccessLevel { get; set; }
+        public Category Category { get; set; }
+        public AccessLevel AccessLevel { get; set; }
 
 
     }
