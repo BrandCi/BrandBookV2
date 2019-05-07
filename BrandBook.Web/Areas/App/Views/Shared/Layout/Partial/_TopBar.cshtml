@@ -34,10 +34,15 @@
                         <i class="fas fa-user"></i> <span>Profil</span>
                     </a>
 
-                    <!-- item-->
-                    <a href="#" class="dropdown-item notify-item">
-                        <i class="fas fa-cogs"></i> <span>Einstellungen</span>
-                    </a>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <!-- item-->
+                        <a href="@Url.Action("Index", "Settings", new {area = "App"})" class="dropdown-item notify-item">
+                            <i class="fas fa-cogs"></i> <span>Einstellungen</span>
+                        </a>
+                    }
+
+
 
                     <!-- item-->
                     <a href="@Url.Action("Index", "Home", new {area = ""})" class="dropdown-item notify-item">
