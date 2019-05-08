@@ -70,6 +70,42 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select your preferred language for the userinterface.
+        /// </summary>
+        public static string app_culturesetting_description {
+            get {
+                return ResourceManager.GetString("app_culturesetting_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string app_culturesetting_save_button_title {
+            get {
+                return ResourceManager.GetString("app_culturesetting_save_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language Selection.
+        /// </summary>
+        public static string app_culturesetting_title {
+            get {
+                return ResourceManager.GetString("app_culturesetting_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string app_culturesetting_value_active {
+            get {
+                return ResourceManager.GetString("app_culturesetting_value_active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string app_settings_back_button_title {
@@ -750,6 +786,42 @@ namespace BrandBook.Resources {
         public static string frontend_navigation_register_button {
             get {
                 return ResourceManager.GetString("frontend_navigation_register_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to de-DE.
+        /// </summary>
+        public static string system_culture_de_de {
+            get {
+                return ResourceManager.GetString("system_culture_de_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to German (Germany).
+        /// </summary>
+        public static string system_culture_de_de_full {
+            get {
+                return ResourceManager.GetString("system_culture_de_de_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to en-US.
+        /// </summary>
+        public static string system_culture_en_us {
+            get {
+                return ResourceManager.GetString("system_culture_en_us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English (United States).
+        /// </summary>
+        public static string system_culture_en_us_full {
+            get {
+                return ResourceManager.GetString("system_culture_en_us_full", resourceCulture);
             }
         }
     }
