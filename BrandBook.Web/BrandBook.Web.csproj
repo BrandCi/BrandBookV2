@@ -839,6 +839,7 @@
     <Content Include="Areas\App\Views\_ViewStart.cshtml" />
     <Content Include="Areas\App\Views\Settings\Index.cshtml" />
     <Content Include="Areas\App\Views\Settings\System.cshtml" />
+    <Content Include="Areas\App\Views\Settings\User.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
