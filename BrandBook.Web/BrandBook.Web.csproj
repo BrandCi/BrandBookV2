@@ -841,6 +841,7 @@
     <Content Include="Areas\App\Views\Settings\System.cshtml" />
     <Content Include="Areas\App\Views\Settings\User.cshtml" />
     <Content Include="Areas\App\Views\Settings\Media.cshtml" />
+    <Content Include="Areas\App\Views\Settings\Brand.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
