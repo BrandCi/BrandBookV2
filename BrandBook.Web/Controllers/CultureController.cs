@@ -11,7 +11,7 @@ namespace BrandBook.Web.Controllers
     public class CultureController : FrontendControllerBase
     {
 
-        public ActionResult SetCulture(string culture, string currentAction, string currentController, string currentArea = "")
+        public ActionResult SetCulture(string culture, string currentAction, string currentController)
         {
             culture = CultureHelper.GetImplementedCulture(culture);
 
@@ -31,7 +31,7 @@ namespace BrandBook.Web.Controllers
 
             Response.Cookies.Add(cookie);
             
-            return RedirectToAction(currentAction, currentController, new{area = currentArea});
+            return RedirectToAction(currentAction, currentController, new{area = ""});
         }
     }
 }
