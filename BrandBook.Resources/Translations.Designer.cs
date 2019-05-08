@@ -161,6 +161,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change the Email to specify from which E-Mail Address System-E-Mails should be sent..
+        /// </summary>
+        public static string app_settings_system_emailsender_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_emailsender_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail Sender.
+        /// </summary>
+        public static string app_settings_system_emailsender_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_emailsender_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects..
         /// </summary>
         public static string app_settings_system_systembaseurl_description {

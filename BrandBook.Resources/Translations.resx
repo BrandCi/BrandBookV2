@@ -322,6 +322,12 @@ Bei Fragen kontaktieren Sie bitte Ihren Administrator.</value>
   <data name="app_settings_system_description" xml:space="preserve">
     <value>Important System Settings</value>
   </data>
+  <data name="app_settings_system_emailsender_description" xml:space="preserve">
+    <value>Change the Email to specify from which E-Mail Address System-E-Mails should be sent.</value>
+  </data>
+  <data name="app_settings_system_emailsender_title" xml:space="preserve">
+    <value>E-Mail Sender</value>
+  </data>
   <data name="app_settings_system_systembaseurl_description" xml:space="preserve">
     <value>This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects.</value>
   </data>
