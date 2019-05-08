@@ -348,4 +348,28 @@
   <data name="app_settings_user_title" xml:space="preserve">
     <value>Nutzer Einstellungen</value>
   </data>
+  <data name="app_culturesetting_description" xml:space="preserve">
+    <value>Bitte wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche</value>
+  </data>
+  <data name="app_culturesetting_save_button_title" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="app_culturesetting_title" xml:space="preserve">
+    <value>Sprachauswahl</value>
+  </data>
+  <data name="app_culturesetting_value_active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="system_culture_de_de" xml:space="preserve">
+    <value>de-DE</value>
+  </data>
+  <data name="system_culture_de_de_full" xml:space="preserve">
+    <value>Deutsch (Deutschland)</value>
+  </data>
+  <data name="system_culture_en_us" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="system_culture_en_us_full" xml:space="preserve">
+    <value>Englisch (Vereinigte Staaten)</value>
+  </data>
 </root>
