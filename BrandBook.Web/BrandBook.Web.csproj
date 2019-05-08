@@ -162,6 +162,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
     <Compile Include="Areas\App\Controllers\BrandController.cs" />
+    <Compile Include="Areas\App\Controllers\CultureController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
     <Compile Include="Areas\App\Controllers\SettingsController.cs" />
@@ -948,6 +949,7 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\App\Views\Culture\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
