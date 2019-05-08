@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class CultureController : Controller
+    public class CultureController : AppControllerBase
     {
         // GET: App/Culture
         public ActionResult SetCulture(string culture, string currentAction, string currentController)
