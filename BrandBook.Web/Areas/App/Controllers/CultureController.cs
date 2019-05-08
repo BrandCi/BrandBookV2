@@ -18,7 +18,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
         // GET: App/Culture
-        public ActionResult SetCulture(string culture, string currentAction, string currentController)
+        public ActionResult SetCulture(string culture)
         {
             culture = CultureHelper.GetImplementedCulture(culture);
 
@@ -38,7 +38,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             Response.Cookies.Add(cookie);
 
-            return RedirectToAction(currentAction, currentController, new { area = "App" });
+            return RedirectToAction("Index", "Culture", new { area = "App" });
         }
     }
 }

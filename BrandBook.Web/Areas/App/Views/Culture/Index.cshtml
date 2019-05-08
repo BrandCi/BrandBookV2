@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Sprachauswahl";
+    var routeData = ViewContext.RouteData;
 }
 
 <div class="row">
@@ -29,8 +30,8 @@
             <div class="text-right">
                 <h3 class="text-dark mt-3"><b class="counter">Deutsch (Deutschland)</b></h3>
             </div>
-            <a href="#" class="btn btn-primary btn-custom mt-4">
-                Auswählen&nbsp;&nbsp;<i class="fas fa-globe"></i>
+            <a href="@Url.Action("SetCulture", "Culture", new {area = "App", culture = "de-de" })" class="btn btn-primary btn-custom mt-4">
+                @Translations.app_settings_update_button_title&nbsp;&nbsp;<i class="fas fa-globe"></i>
             </a>
             <div class="clearfix"></div>
         </div>
@@ -44,8 +45,8 @@
             <div class="text-right">
                 <h3 class="text-dark mt-3"><b class="counter">Englisch (United States)</b></h3>
             </div>
-            <a href="#" class="btn btn-primary btn-custom mt-4">
-                Auswählen&nbsp;&nbsp;<i class="fas fa-globe"></i>
+            <a href="@Url.Action("SetCulture", "Culture", new {area = "App", culture = "en-us" })" class="btn btn-primary btn-custom mt-4">
+                @Translations.app_settings_update_button_title&nbsp;&nbsp;<i class="fas fa-globe"></i>
             </a>
             <div class="clearfix"></div>
         </div>
