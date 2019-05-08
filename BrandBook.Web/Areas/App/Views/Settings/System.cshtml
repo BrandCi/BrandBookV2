@@ -1,4 +1,5 @@
-﻿
+﻿@using BrandBook.Resources
+
 @{
     ViewBag.Title = "SystemSettings";
 }
@@ -7,10 +8,10 @@
     <div class="col-12">
         <div class="card-box">
             <h4 class="m-t-0 header-title">
-                System Settings
+                @Translations.app_settings_system_title
             </h4>
             <p class="text-muted m-b-30 font-14">
-                
+                @Translations.app_settings_system_description
             </p>
 
             <div class="row">
@@ -19,12 +20,12 @@
                         <form class="form-horizontal" role="form">
 
                             <div class="form-group row">
-                                <label class="col-2 col-form-label">App Title</label>
+                                <label class="col-2 col-form-label">@Translations.app_settings_system_apptitle_title</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" value="Brand Ci" placeholder="App Title">
+                                    <input type="text" class="form-control" value="Brand Ci" placeholder="@Translations.app_settings_system_apptitle_title">
                                     <span class="help-block">
                                         <small>
-                                            The App Title will is shown in the Browser Tab.
+                                            @Translations.app_settings_system_apptitle_description
                                         </small>
                                     </span>
                                 </div>
@@ -32,13 +33,12 @@
 
 
                             <div class="form-group row">
-                                <label class="col-2 col-form-label">System Base Url</label>
+                                <label class="col-2 col-form-label">@Translations.app_settings_system_systembaseurl_title</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" placeholder="System Base Url" value="https://localhost:44305">
+                                    <input type="text" class="form-control" placeholder="@Translations.app_settings_system_systembaseurl_title" value="https://localhost:44305">
                                     <span class="help-block">
                                         <small>
-                                            This is the Base Url of the BrandBook Installation.
-                                            This setting is important for Systemmails and larger redirects.
+                                            @Translations.app_settings_system_systembaseurl_description
                                         </small>
                                     </span>
                                 </div>

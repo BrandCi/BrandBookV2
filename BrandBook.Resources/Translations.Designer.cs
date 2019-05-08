@@ -134,11 +134,47 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The App Title will is shown in the Browser Tab..
+        /// </summary>
+        public static string app_settings_system_apptitle_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_apptitle_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App Title.
+        /// </summary>
+        public static string app_settings_system_apptitle_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_apptitle_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Important System Settings.
         /// </summary>
         public static string app_settings_system_description {
             get {
                 return ResourceManager.GetString("app_settings_system_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects..
+        /// </summary>
+        public static string app_settings_system_systembaseurl_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_systembaseurl_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Base Url.
+        /// </summary>
+        public static string app_settings_system_systembaseurl_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_systembaseurl_title", resourceCulture);
             }
         }
         
