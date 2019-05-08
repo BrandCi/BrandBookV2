@@ -70,6 +70,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string app_settings_back_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_back_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings regarding the Brands.
         /// </summary>
         public static string app_settings_brand_description {
@@ -202,6 +211,15 @@ namespace BrandBook.Resources {
         public static string app_settings_system_title {
             get {
                 return ResourceManager.GetString("app_settings_system_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string app_settings_update_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_update_button_title", resourceCulture);
             }
         }
         
