@@ -30,8 +30,13 @@
                     </div>
 
                     <!-- item-->
-                    <a href="@Url.Action("Index", "Profile", new {area="App"})" class="dropdown-item notify-item">
+                    <a href="@Url.Action("Index", "Profile" , new {area="App" })" class="dropdown-item notify-item">
                         <i class="fas fa-user"></i> <span>Profil</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="@Url.Action("Index", "Profile", new {area="App"})" class="dropdown-item notify-item">
+                        <i class="fas fa-globe"></i> <span>Sprachauswahl</span>
                     </a>
 
                     @if (User.IsInRole("Administrator"))
