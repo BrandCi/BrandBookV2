@@ -10,6 +10,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class CultureController : AppControllerBase
     {
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
         // GET: App/Culture
         public ActionResult SetCulture(string culture, string currentAction, string currentController)
         {
