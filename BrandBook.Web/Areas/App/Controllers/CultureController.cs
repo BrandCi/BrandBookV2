@@ -31,7 +31,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             Response.Cookies.Add(cookie);
 
-            return RedirectToAction(currentAction, currentController, new { area = "" });
+            return RedirectToAction(currentAction, currentController, new { area = "App" });
         }
     }
 }
