@@ -3,3 +3,83 @@
     ViewBag.Title = "SystemSettings";
 }
 
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">
+                System Settings
+            </h4>
+            <p class="text-muted m-b-30 font-14">
+                
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+                        <form class="form-horizontal" role="form">
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">App Title</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" value="Brand Ci" placeholder="App Title">
+                                    <span class="help-block">
+                                        <small>
+                                            The App Title will is shown in the Browser Tab.
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">System Base Url</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" placeholder="System Base Url" value="https://localhost:44305">
+                                    <span class="help-block">
+                                        <small>
+                                            This is the Base Url of the BrandBook Installation.
+                                            This setting is important for Systemmails and larger redirects.
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label" for="example-email">E-Mail Sender</label>
+                                <div class="col-10">
+                                    <input type="email" id="example-email" name="example-email" class="form-control" value="brandbook@philipp-moser.de" placeholder="E-Mail Sender">
+                                    <span class="help-block">
+                                        <small>
+                                            Change the Email to specify from which E-Mail Address System-E-Mails should be sent.
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-5 mb-0">
+                                <a href="#" class="btn btn-danger btn-custom mr-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    &nbsp;
+                                    Back
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    Update
+                                </button>
+                            </div>
+                           
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>
