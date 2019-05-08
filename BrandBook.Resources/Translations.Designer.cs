@@ -88,7 +88,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand.
+        ///   Looks up a localized string similar to Brand Settings.
         /// </summary>
         public static string app_settings_brand_title {
             get {
@@ -106,7 +106,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Media.
+        ///   Looks up a localized string similar to Media Settings.
         /// </summary>
         public static string app_settings_media_title {
             get {
@@ -115,8 +115,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie finden hier alle für Sie möglichen Systemeinstellungen.
-        ///Bei Fragen kontaktieren Sie bitte Ihren Administrator..
+        ///   Looks up a localized string similar to On this page you find all relevant Settings. Please contact the administrator if you have questions..
         /// </summary>
         public static string app_settings_overview_description {
             get {
@@ -134,7 +133,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System Settings.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string app_settings_overview_title {
             get {
@@ -206,7 +205,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System.
+        ///   Looks up a localized string similar to System Settings.
         /// </summary>
         public static string app_settings_system_title {
             get {
@@ -233,7 +232,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User.
+        ///   Looks up a localized string similar to User Settings.
         /// </summary>
         public static string app_settings_user_title {
             get {
