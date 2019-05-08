@@ -70,6 +70,106 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings regarding the Brands.
+        /// </summary>
+        public static string app_settings_brand_description {
+            get {
+                return ResourceManager.GetString("app_settings_brand_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand.
+        /// </summary>
+        public static string app_settings_brand_title {
+            get {
+                return ResourceManager.GetString("app_settings_brand_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage of Media.
+        /// </summary>
+        public static string app_settings_media_description {
+            get {
+                return ResourceManager.GetString("app_settings_media_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media.
+        /// </summary>
+        public static string app_settings_media_title {
+            get {
+                return ResourceManager.GetString("app_settings_media_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sie finden hier alle für Sie möglichen Systemeinstellungen.
+        ///Bei Fragen kontaktieren Sie bitte Ihren Administrator..
+        /// </summary>
+        public static string app_settings_overview_description {
+            get {
+                return ResourceManager.GetString("app_settings_overview_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        public static string app_settings_overview_open_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_overview_open_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Settings.
+        /// </summary>
+        public static string app_settings_overview_title {
+            get {
+                return ResourceManager.GetString("app_settings_overview_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Important System Settings.
+        /// </summary>
+        public static string app_settings_system_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string app_settings_system_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Settings.
+        /// </summary>
+        public static string app_settings_user_description {
+            get {
+                return ResourceManager.GetString("app_settings_user_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string app_settings_user_title {
+            get {
+                return ResourceManager.GetString("app_settings_user_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {

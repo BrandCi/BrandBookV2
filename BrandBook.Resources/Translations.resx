@@ -291,4 +291,38 @@
   <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
     <value>You need to accept the Privacy Policy</value>
   </data>
+  <data name="app_settings_brand_description" xml:space="preserve">
+    <value>Settings regarding the Brands</value>
+  </data>
+  <data name="app_settings_brand_title" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="app_settings_media_description" xml:space="preserve">
+    <value>Usage of Media</value>
+  </data>
+  <data name="app_settings_media_title" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="app_settings_overview_description" xml:space="preserve">
+    <value>Sie finden hier alle für Sie möglichen Systemeinstellungen.
+Bei Fragen kontaktieren Sie bitte Ihren Administrator.</value>
+  </data>
+  <data name="app_settings_overview_open_button_title" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="app_settings_overview_title" xml:space="preserve">
+    <value>System Settings</value>
+  </data>
+  <data name="app_settings_system_description" xml:space="preserve">
+    <value>Important System Settings</value>
+  </data>
+  <data name="app_settings_system_title" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="app_settings_user_description" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="app_settings_user_title" xml:space="preserve">
+    <value>User</value>
+  </data>
 </root>
