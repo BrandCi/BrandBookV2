@@ -292,60 +292,60 @@
     <value>Sei müssen die Datenschutzerklärung akzeptieren.</value>
   </data>
   <data name="app_settings_back_button_title" xml:space="preserve">
-    <value>Back</value>
+    <value>Zurück</value>
   </data>
   <data name="app_settings_brand_description" xml:space="preserve">
-    <value>Settings regarding the Brands</value>
+    <value>Einstellungen bezüglich der Marken</value>
   </data>
   <data name="app_settings_brand_title" xml:space="preserve">
-    <value>Brand Settings</value>
+    <value>Marken Einstellungen</value>
   </data>
   <data name="app_settings_media_description" xml:space="preserve">
-    <value>Usage of Media</value>
+    <value>Verwendung von Medien</value>
   </data>
   <data name="app_settings_media_title" xml:space="preserve">
-    <value>Media Settings</value>
+    <value>Media Einstellungen</value>
   </data>
   <data name="app_settings_overview_description" xml:space="preserve">
-    <value>On this page you find all relevant Settings. Please contact the administrator if you have questions.</value>
+    <value>Hier finden Sie alle relevanten Einstellungen. Bei Fragen kontaktieren Sie bitte den Administrator.</value>
   </data>
   <data name="app_settings_overview_open_button_title" xml:space="preserve">
-    <value>Open</value>
+    <value>Öffnen</value>
   </data>
   <data name="app_settings_overview_title" xml:space="preserve">
-    <value>Settings</value>
+    <value>Einstellungen</value>
   </data>
   <data name="app_settings_system_apptitle_description" xml:space="preserve">
-    <value>The App Title will is shown in the Browser Tab.</value>
+    <value>Der App Titel wird in Browser Tabs angezeigt.</value>
   </data>
   <data name="app_settings_system_apptitle_title" xml:space="preserve">
-    <value>App Title</value>
+    <value>App Titel</value>
   </data>
   <data name="app_settings_system_description" xml:space="preserve">
-    <value>Important System Settings</value>
+    <value>Wichtige Systemeinstellungen</value>
   </data>
   <data name="app_settings_system_emailsender_description" xml:space="preserve">
-    <value>Change the Email to specify from which E-Mail Address System-E-Mails should be sent.</value>
+    <value>Ändern Sie die E-Mail Adresse um festzulegen, von welcher E-Mail Adresse Systemmails versendet werden sollen.</value>
   </data>
   <data name="app_settings_system_emailsender_title" xml:space="preserve">
-    <value>E-Mail Sender</value>
+    <value>System E-Mail Adresse</value>
   </data>
   <data name="app_settings_system_systembaseurl_description" xml:space="preserve">
-    <value>This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects.</value>
+    <value>Das ist die Basis Url dieser Brand Ci Installation</value>
   </data>
   <data name="app_settings_system_systembaseurl_title" xml:space="preserve">
-    <value>System Base Url</value>
+    <value>Basis Url</value>
   </data>
   <data name="app_settings_system_title" xml:space="preserve">
-    <value>System Settings</value>
+    <value>System Einstellungen</value>
   </data>
   <data name="app_settings_update_button_title" xml:space="preserve">
-    <value>Update</value>
+    <value>Speichern</value>
   </data>
   <data name="app_settings_user_description" xml:space="preserve">
-    <value>User Settings</value>
+    <value>Einstellungen zu neuen und bereits angelegten Nutzern</value>
   </data>
   <data name="app_settings_user_title" xml:space="preserve">
-    <value>User Settings</value>
+    <value>Nutzer Einstellungen</value>
   </data>
 </root>
