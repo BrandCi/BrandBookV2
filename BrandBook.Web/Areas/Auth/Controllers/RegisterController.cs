@@ -81,7 +81,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
-                if (model.PromotionCode != "Promo_E85D2C")
+                if (model.PromotionCode != "Promo_E85D2C" || model.PromotionCode != "Promo_292A8D" || model.PromotionCode != "Promo_5CEAE3")
                 {
                     ModelState.AddModelError("", "Please check the Promotioncode!");
                     return View(model);
