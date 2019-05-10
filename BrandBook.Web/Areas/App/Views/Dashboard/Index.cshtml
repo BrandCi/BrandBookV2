@@ -22,6 +22,47 @@
 </div>
 
 
+
+
+<div class="row">
+
+    <!-- Area Chart -->
+    <div class="col-lg-12">
+        <div class="portlet">
+            <!-- /primary heading -->
+            <div class="portlet-heading">
+                <h3 class="portlet-title text-dark"> Last year of activity </h3>
+                <div class="portlet-widgets">
+                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                    <span class="divider"></span>
+                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
+                    <span class="divider"></span>
+                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div id="portlet2" class="panel-collapse collapse show">
+                <div class="portlet-body">
+                    <div class="text-center">
+                        <ul class="list-inline chart-detail-list">
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle m-r-5" style="color: #3bafda;"></i>Brand A</h5>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle m-r-5" style="color: #80deea;"></i>Brand B</h5>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="last-activity-morris-area" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /Portlet -->
+    </div>
+</div>
+<!-- End row-->
+
+
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
@@ -93,4 +134,59 @@
 
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/MorrisChart")
+
+    <script type="text/javascript">
+
+        !function ($) {
+            "use strict";
+
+            var MorrisCharts = function () { };
+            
+                MorrisCharts.prototype.createAreaChartDotted = function (element, pointSize, lineWidth, data, xkey, ykeys, labels, Pfillcolor, Pstockcolor, lineColors) {
+                    Morris.Area({
+                        element: element,
+                        pointSize: 3,
+                        lineWidth: 1,
+                        data: data,
+                        xkey: xkey,
+                        ykeys: ykeys,
+                        labels: labels,
+                        hideHover: 'auto',
+                        pointFillColors: Pfillcolor,
+                        pointStrokeColors: Pstockcolor,
+                        resize: true,
+                        gridLineColor: '#eef0f2',
+                        lineColors: lineColors
+                    });
+                }
+                
+                MorrisCharts.prototype.init = function () {
+
+                    
+                    var $areaDotData = [
+                        { y: '2013', a: 10, b: 20 },
+                        { y: '2014', a: 75, b: 65 },
+                        { y: '2015', a: 50, b: 40 },
+                        { y: '2016', a: 75, b: 65 },
+                        { y: '2017', a: 50, b: 40 },
+                        { y: '2018', a: 75, b: 65 },
+                        { y: '2019', a: 90, b: 60 }
+                    ];
+                    this.createAreaChartDotted('last-activity-morris-area', 0, 0, $areaDotData, 'y', ['a', 'b'], ['Brand A', 'Brand B'], ['#ffffff'], ['#999999'], ["#26c6da", "#80deea"]);
+
+                   
+                },
+                //init
+                $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts
+        }(window.jQuery),
+
+            //initializing
+            function ($) {
+                "use strict";
+                $.MorrisCharts.init();
+            }(window.jQuery);
+
+
+    </script>
+
 }
