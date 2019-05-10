@@ -40,5 +40,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return RedirectToAction("Index", "Culture", new { area = "App" });
         }
+
+
+
+        public ActionResult ExportTranslationsByCulture()
+        {
+            return RedirectToAction("Index", "Culture", new {area = "App"});
+        }
     }
 }
