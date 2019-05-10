@@ -18,7 +18,13 @@ h1, h2 {
 /* Homepage Title-Image */
 @media(max-width:992px) {
     .theme-banner-two .main-text-wrapper {
-        padding: 600px 0 245px;
+        padding: 600px 0 245px !important;
+    }
+}
+
+@media(max-width: 375px) {
+    .theme-banner-two .main-text-wrapper {
+        padding: 400px 0 245px !important;
     }
 }
 
