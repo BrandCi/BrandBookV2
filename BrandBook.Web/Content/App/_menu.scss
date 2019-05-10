@@ -322,7 +322,6 @@ body.fixed-left {
         position: absolute;
         right: 20px;
         display: inline-block;
-        font-family: "Material Design Icons";
         text-rendering: auto;
         line-height: 24px;
         font-size: 16px;
@@ -332,11 +331,7 @@ body.fixed-left {
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
         transform: translate(0, 0);
-        color: $muted;
-
-        &:before {
-          content: "\F142";
-        }
+        color: $muted;       
       }
       a.subdrop .menu-arrow {
         -ms-transform: rotate(90deg);
