@@ -164,6 +164,17 @@ namespace BrandBook.Web
                 "~/Plugins/custombox/dist/legacy.min.js"));
 
 
+
+            bundles.Add(new StyleBundle("~/Content/Plugins/MorrisChart").Include(
+                "~/Plugins/morris/morris.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/MorrisChart").Include(
+                "~/Plugins/morris/morris.min.js",
+                "~/Plugins/raphael/raphael-min.js"));
+
+
+
         }
     }
 }
