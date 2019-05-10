@@ -34,5 +34,8 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
         [Display(Name = "auth_register_checkbox_privacypolicy_title", ResourceType = typeof(Translations))]
         public bool PrivacyPolicyAccepted { get; set; }
 
+        [Display(Name = "Promotioncode")]
+        public string PromotionCode { get; set; }
+
     }
 }
