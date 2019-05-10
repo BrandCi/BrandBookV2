@@ -31,7 +31,7 @@
         <div class="portlet">
             <!-- /primary heading -->
             <div class="portlet-heading">
-                <h3 class="portlet-title text-dark"> Last year of activity </h3>
+                <h3 class="portlet-title text-dark"> Your brand activity </h3>
                 <div class="portlet-widgets">
                     <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
                     <span class="divider"></span>
@@ -43,16 +43,6 @@
             </div>
             <div id="portlet2" class="panel-collapse collapse show">
                 <div class="portlet-body">
-                    <div class="text-center">
-                        <ul class="list-inline chart-detail-list">
-                            <li class="list-inline-item">
-                                <h5><i class="fa fa-circle m-r-5" style="color: #3bafda;"></i>Brand A</h5>
-                            </li>
-                            <li class="list-inline-item">
-                                <h5><i class="fa fa-circle m-r-5" style="color: #80deea;"></i>Brand B</h5>
-                            </li>
-                        </ul>
-                    </div>
                     <div id="last-activity-morris-area" style="height: 350px;"></div>
                 </div>
             </div>
@@ -84,43 +74,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>BrandBookV2</td>
-                            <td>10/05/2019</td>
-                            <td><span class="badge badge-info">Activity 01</span></td>
-                            <td>User01</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BrandBookV2</td>
-                            <td>10/05/2019</td>
-                            <td><span class="badge badge-success">Activity 02</span></td>
-                            <td>User01</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>BrandBookV2</td>
-                            <td>10/05/2019</td>
-                            <td><span class="badge badge-pink">Activity 03</span></td>
-                            <td>User01</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>BrandBookV2</td>
-                            <td>10/05/2019</td>
-                            <td>
-                                <span class="badge badge-purple">Activity 04</span>
+                            <td colspan="5" align="center">
+                                Currently no data available.
                             </td>
-                            <td>User01</td>
                         </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>BrandBookV2</td>
-                            <td>10/05/2019</td>
-                            <td><span class="badge badge-warning">Activity 05</span></td>
-                            <td>User01</td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -156,7 +113,8 @@
                         pointStrokeColors: Pstockcolor,
                         resize: true,
                         gridLineColor: '#eef0f2',
-                        lineColors: lineColors
+                        lineColors: lineColors,
+                        xLabels: "month"
                     });
                 }
                 
@@ -164,15 +122,13 @@
 
                     
                     var $areaDotData = [
-                        { y: '2013', a: 10, b: 20 },
-                        { y: '2014', a: 75, b: 65 },
-                        { y: '2015', a: 50, b: 40 },
-                        { y: '2016', a: 75, b: 65 },
-                        { y: '2017', a: 50, b: 40 },
-                        { y: '2018', a: 75, b: 65 },
-                        { y: '2019', a: 90, b: 60 }
+                        { y: '2019-01-01', a: 9 },
+                        { y: '2019-02-01', a: 5 },
+                        { y: '2019-03-01', a: 7 },
+                        { y: '2019-04-01', a: 17 },
+                        { y: '2019-05-01', a: 58 }
                     ];
-                    this.createAreaChartDotted('last-activity-morris-area', 0, 0, $areaDotData, 'y', ['a', 'b'], ['Brand A', 'Brand B'], ['#ffffff'], ['#999999'], ["#26c6da", "#80deea"]);
+                    this.createAreaChartDotted('last-activity-morris-area', 0, 0, $areaDotData, 'y', ['a'], ['Your Activity'], ['#ffffff'], ['#999999'], ["#80deea"]);
 
                    
                 },
