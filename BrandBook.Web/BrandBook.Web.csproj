@@ -791,6 +791,8 @@
     <Content Include="Plugins\owl-carousel\owl.carousel.min.js" />
     <Content Include="Plugins\owl-carousel\owl.theme.css" />
     <Content Include="Plugins\popper.js\popper.min.js" />
+    <Content Include="Plugins\raphael\raphael-min.js" />
+    <Content Include="Plugins\raphael\raphael.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.min.css" />
     <Content Include="Plugins\switchery\switchery.min.css" />
