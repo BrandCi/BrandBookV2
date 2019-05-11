@@ -52,18 +52,25 @@
             <div class="row">
                 <div class="col-lg-6 order-lg-last">
                     <div class="theme-title">
-                        <div class="upper-heading">Was ist BrandCi?</div>
-                        <h2>Lass uns Dir BrandCi vorstellen.</h2>
+                        <div class="upper-heading">
+                            @Translations.frontend_home_index_intro_subheading
+                        </div>
+                        <h2>
+                            @Translations.frontend_home_index_intro_heading
+                        </h2>
                     </div>
                     <p class="sub-text">
-
+                        @Translations.frontend_home_index_intro_subtext
                     </p>
                     <p class="text">
-
+                        @Translations.frontend_home_index_intro_text
                     </p>
-                    <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Overview", "Product", new {area = ""})">
-                        Klick hier
-                    </a></p>
+                    <p class="know-more">
+                        @Translations.frontend_home_index_intro_button_description
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                            @Translations.frontend_home_index_intro_button_title
+                        </a>
+                    </p>
                 </div>
                 <div class="col-lg-6 order-lg-first">
                     @CustomHelper.Image("FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f", "svg", "blue-shape", "", "data-aos=\"zoom-out\"")

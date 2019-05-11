@@ -408,8 +408,26 @@
   <data name="frontend_navigation_product_overview" xml:space="preserve">
     <value>Overview</value>
   </data>
+  <data name="frontend_home_index_intro_button_description" xml:space="preserve">
+    <value>Would you like to know more?</value>
+  </data>
+  <data name="frontend_home_index_intro_button_title" xml:space="preserve">
+    <value>Click here.</value>
+  </data>
+  <data name="frontend_home_index_intro_heading" xml:space="preserve">
+    <value>Let us introduce you BrandCi</value>
+  </data>
+  <data name="frontend_home_index_intro_subheading" xml:space="preserve">
+    <value>What is BrandCi?</value>
+  </data>
+  <data name="frontend_home_index_intro_subtext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_intro_text" xml:space="preserve">
+    <value />
+  </data>
   <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
-    <value>Discover Brand Ci</value>
+    <value>Discover BrandCi</value>
   </data>
   <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
     <value>Manage and improve your brand image.</value>

@@ -772,7 +772,61 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover Brand Ci.
+        ///   Looks up a localized string similar to Would you like to know more?.
+        /// </summary>
+        public static string frontend_home_index_intro_button_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_button_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click here..
+        /// </summary>
+        public static string frontend_home_index_intro_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let us introduce you BrandCi.
+        /// </summary>
+        public static string frontend_home_index_intro_heading {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_heading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is BrandCi?.
+        /// </summary>
+        public static string frontend_home_index_intro_subheading {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_subheading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_intro_subtext {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_subtext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_intro_text {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover BrandCi.
         /// </summary>
         public static string frontend_home_index_topsection_discover_button_title {
             get {
