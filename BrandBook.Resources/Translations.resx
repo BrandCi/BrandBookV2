@@ -409,7 +409,7 @@
     <value>Overview</value>
   </data>
   <data name="frontend_footer_allrightsreserved" xml:space="preserve">
-    <value>All Rights Reserved</value>
+    <value>All Rights Reserved.</value>
   </data>
   <data name="frontend_footer_copyright" xml:space="preserve">
     <value>Philipp C. Moser</value>

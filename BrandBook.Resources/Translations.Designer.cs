@@ -646,7 +646,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Rights Reserved.
+        ///   Looks up a localized string similar to All Rights Reserved..
         /// </summary>
         public static string frontend_footer_allrightsreserved {
             get {

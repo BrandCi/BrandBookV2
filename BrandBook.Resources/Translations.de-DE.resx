@@ -408,6 +408,12 @@
   <data name="frontend_navigation_product_overview" xml:space="preserve">
     <value>Übersicht</value>
   </data>
+  <data name="frontend_footer_allrightsreserved" xml:space="preserve">
+    <value>Alle Rechte vorbehalten.</value>
+  </data>
+  <data name="frontend_footer_copyright" xml:space="preserve">
+    <value>Philipp C. Moser</value>
+  </data>
   <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
     <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
   </data>
@@ -485,8 +491,5 @@
   </data>
   <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
     <value>Dein Erfolg.</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
 </root>
