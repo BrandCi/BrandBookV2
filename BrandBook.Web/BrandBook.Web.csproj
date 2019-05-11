@@ -846,6 +846,7 @@
     <Content Include="Areas\App\Views\Settings\Media.cshtml" />
     <Content Include="Areas\App\Views\Settings\Brand.cshtml" />
     <Content Include="Areas\App\Views\Culture\Index.cshtml" />
+    <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
