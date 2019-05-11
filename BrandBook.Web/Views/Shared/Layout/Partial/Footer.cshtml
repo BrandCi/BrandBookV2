@@ -14,8 +14,12 @@
                     <div class="col-lg-3 col-sm-6 footer-list">
                         <h4 class="title">@Translations.frontend_footer_product_title</h4>
                         <ul>
-                            <li><a href="#">@Translations.frontend_footer_product_solutions</a></li>
-                            <li><a href="@Url.Action("Index", "Pricing", new {area=""})">@Translations.frontend_footer_product_pricing</a></li>
+                            <li><a href="@Url.Action("Overview", "Product", new {area = ""})">
+                                @Translations.frontend_footer_product_solutions
+                            </a></li>
+                            <li><a href="@Url.Action("Index", "Pricing", new {area = ""})">
+                                @Translations.frontend_footer_product_pricing
+                            </a></li>
                             <!--
                             <li><a href="#">@Translations.frontend_footer_product_documentation</a></li>
                             <li><a href="#">@Translations.frontend_footer_product_examples</a></li>
