@@ -1,4 +1,5 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
     ViewBag.Title = "Startseite";
 }
 @section ColorStyle
@@ -7,33 +8,43 @@
 }
 
 <div class="theme-top-section">
-    <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4.png" alt="" class="blue-shape">
+    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
 
     <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
     <div id="theme-banner" class="theme-banner-two">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12.png" alt="" class="cube-shape">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c.svg" alt="" class="illustration">
+        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
+        @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
+        @CustomHelper.Image("FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c", "svg", "illustration d-none d-lg-block d-xl-block")
         <div class="container">
             <div class="main-text-wrapper">
                 <h1 class="strong-title-900">
-                    Deine digitale Marke.
-                    <br>Dein Erfolg.
+                    @Translations.frontend_home_index_topsection_title_l1
+                    <br>@Translations.frontend_home_index_topsection_title_l2
                 </h1>
                 <p>
-                    Verwalte und verbessere Deinen Markenauftritt.
+                    @Translations.frontend_home_index_topsection_subtitle
                 </p>
                 <ul class="button-group clearfix">
-                    <li><a href="#">Entdecke BrandCi.</a></li>
+                    <li>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                            @Translations.frontend_home_index_topsection_discover_button_title
+                        </a>
+                    </li>
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <li><a href="@Url.Action("Index", "Register", new {area = "Auth"})">Teste BrandCi kostenfrei.</a></li>
+                        <li>
+
+                            <a href="@Url.Action("Index", "Register", new {area = "Auth"})">
+                                @Translations.frontend_home_index_topsection_test_button_title
+                            </a>
+                        </li>
                     }
-                        
+
                 </ul>
             </div>
         </div>
-    </div> <!-- /.theme-banner-one -->
+    </div> 
 
 
     <div class="about-cryto" id="about">
@@ -41,28 +52,36 @@
             <div class="row">
                 <div class="col-lg-6 order-lg-last">
                     <div class="theme-title">
-                        <div class="upper-heading">Was ist BrandCi?</div>
-                        <h2>Lass uns Dir BrandCi vorstellen.</h2>
-                    </div> <!-- /.theme-title -->
+                        <div class="upper-heading">
+                            @Translations.frontend_home_index_intro_subheading
+                        </div>
+                        <h2>
+                            @Translations.frontend_home_index_intro_heading
+                        </h2>
+                    </div>
                     <p class="sub-text">
-                        Lorem ipsum dolor sit amet, has at lorem utinam mucius, per at elitr dicam malorum.
+                        @Translations.frontend_home_index_intro_subtext
                     </p>
-                    <p class="text">Lorem ipsum dolor sit amet, has at lorem utinam mucius, per at elitr dicam malorum. Fugit convenire ei eam, adhuc putant eam et. Verear petentium vel an, nullam viderer eam an. Illud liber ad sed. Ea eos scripta iudicabit, dicit persius ponderum id nec.</p>
-                    <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Index", "Home")">Klick hier</a></p>
+                    <p class="text">
+                        @Translations.frontend_home_index_intro_text
+                    </p>
+                    <p class="know-more">
+                        @Translations.frontend_home_index_intro_button_description
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                            @Translations.frontend_home_index_intro_button_title
+                        </a>
+                    </p>
                 </div>
                 <div class="col-lg-6 order-lg-first">
-                    <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f.svg" alt="" data-aos="zoom-out">
+                    @CustomHelper.Image("FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f", "svg", "blue-shape", "", "data-aos=\"zoom-out\"")
                 </div>
             </div>
         </div> <!-- /.container -->
-    </div> <!-- /.about-cryto -->
-    <!--
-    =====================================================
-        Our Feature Three
-    =====================================================
-    -->
+    </div>
+    
+
     <div class="our-features-three" id="features">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e9addbec-6b22-4ab8-995d-74e0631ff456.png" alt="" class="main-bg-shape">
+        @CustomHelper.Image("FrontendData/e9addbec-6b22-4ab8-995d-74e0631ff456", "png", "main-bg-shape")
         <div class="line-shape-one shape"></div>
         <div class="line-shape-two shape"></div>
         <div class="line-shape-three shape"></div>
@@ -72,8 +91,8 @@
         <div class="container">
             <div class="theme-title text-center">
                 <h2>
-                    Warum BrandCi Deine Marke<br />
-                    zum Erfolg führt.
+                    @Translations.frontend_home_index_features_title_l1<br />
+                    @Translations.frontend_home_index_features_title_l2
                 </h2>
             </div>
 
@@ -82,76 +101,115 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/13fe82d4-3866-4ef2-819d-63b0fa438ffa.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/13fe82d4-3866-4ef2-819d-63b0fa438ffa", "svg", "primary-icon")
                         </div>
-                        <h3>Zugriff auf Deine Marke. Von Überall.</h3>
-                        <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
-                    </div> <!-- /.single-feature -->
+                        <h3>
+                            @Translations.frontend_home_index_features_feature_01_title
+                        </h3>
+                        <p>
+                            @Translations.frontend_home_index_features_feature_01_description
+                        </p>
+                    </div>
                 </div> <!-- /.col- -->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/9f452dd3-10f8-4502-854e-7180cbab2ca9.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/9f452dd3-10f8-4502-854e-7180cbab2ca9", "svg", "primary-icon")
                         </div>
-                        <h3>Erweitere Deine Marke. Und zwar geplant.</h3>
-                        <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
-                    </div> <!-- /.single-feature -->
+                        <h3>
+                            @Translations.frontend_home_index_features_feature_02_title
+                        </h3>
+                        <p>
+                            @Translations.frontend_home_index_features_feature_02_description
+                        </p>
+                    </div>
                 </div> <!-- /.col- -->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/47c47fd7-e6a3-4926-a637-a951b0e8ee67.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/47c47fd7-e6a3-4926-a637-a951b0e8ee67", "svg", "primary-icon")
                         </div>
-                        <h3>Fortlaufende Verbesserung. Dank KI.</h3>
-                        <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
-                    </div> <!-- /.single-feature -->
+                        <h3>
+                            @Translations.frontend_home_index_features_feature_03_title
+                        </h3>
+                        <p>
+                            @Translations.frontend_home_index_features_feature_03_description
+                        </p>
+                    </div>
                 </div> <!-- /.col- -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
-    </div> <!-- /.our-features-three -->
-    <!--
-    =====================================================
-        Our Feature Two
-    =====================================================
-    -->
+    </div>
+    
+
     <div class="our-feature-two dark-bg" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text">
                         <div class="number">01</div>
-                        <h2 class="title">Zugriff auf Deine Marke. Von Überall.</h2>
-                        <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
-                    </div> <!-- /.text -->
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_01_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_01_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div>
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                <div class="col-lg-6 img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-6 order-lg-last">
                     <div class="text">
                         <div class="number">02</div>
-                        <h2 class="title">Erweitere Deine Marke. Und zwar geplant.</h2>
-                        <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
-                    </div> <!-- /.text -->
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_02_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_02_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div> 
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 order-lg-first img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                <div class="col-lg-6 order-lg-first img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text">
                         <div class="number">03</div>
-                        <h2 class="title">Fortlaufende Verbesserung. Dank KI.</h2>
-                        <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
-                    </div> <!-- /.text -->
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_03_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_03_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div> 
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203.svg" alt=""></div></div>
+                <div class="col-lg-6 img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
         </div> <!-- /.container -->
-    </div> <!-- /.our-feature-two -->
+    </div>
 
-</div> <!-- /.html-top-content -->
+</div> 

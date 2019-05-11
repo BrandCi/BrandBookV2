@@ -1,7 +1,8 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@using Microsoft.AspNet.Identity
 <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff;">
-    <a class="navbar-brand" href="@Url.Action("Index","Home")">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/06b354ec-78ad-4bac-bafa-5afcddb75de5.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+        @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"30\" height=\"30\"")
         BrandCi
     </a>
 
@@ -19,13 +20,16 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @Translations.frontend_navigation_functions
+                    @Translations.frontend_navigation_product
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandmanagement</a>
-                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_functions_brandimprovement</a>
+                    <a class="dropdown-item" href="@Url.Action("Overview", "Product", new {area = ""})">
+                        @Translations.frontend_navigation_product_overview
+                    </a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_product_brandmanagement</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_product_brandimprovement</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_function_plannedfeatures</a>
+                    <a class="dropdown-item" href="#">@Translations.frontend_navigation_product_plannedfeatures</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -34,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="@Url.Action("Contact", "Support", new {area = ""})">
                     @Translations.frontend_navigation_contact
                 </a>
             </li>

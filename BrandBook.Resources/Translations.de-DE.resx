@@ -183,16 +183,16 @@
   <data name="frontend_navigation_contact" xml:space="preserve">
     <value>Kontakt</value>
   </data>
-  <data name="frontend_navigation_functions" xml:space="preserve">
-    <value>Funktionen</value>
+  <data name="frontend_navigation_product" xml:space="preserve">
+    <value>Produkt</value>
   </data>
-  <data name="frontend_navigation_functions_brandimprovement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandimprovement" xml:space="preserve">
     <value>Markenverbesserung (KI)</value>
   </data>
-  <data name="frontend_navigation_functions_brandmanagement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandmanagement" xml:space="preserve">
     <value>Markenverwaltung</value>
   </data>
-  <data name="frontend_navigation_function_plannedfeatures" xml:space="preserve">
+  <data name="frontend_navigation_product_plannedfeatures" xml:space="preserve">
     <value>Geplante Funktionen</value>
   </data>
   <data name="frontend_navigation_homepage" xml:space="preserve">
@@ -229,7 +229,7 @@
     <value>Preise</value>
   </data>
   <data name="frontend_footer_product_solutions" xml:space="preserve">
-    <value>Lösungen</value>
+    <value>Funktionen</value>
   </data>
   <data name="frontend_footer_product_title" xml:space="preserve">
     <value>Produkt</value>
@@ -290,5 +290,206 @@
   </data>
   <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
     <value>Sei müssen die Datenschutzerklärung akzeptieren.</value>
+  </data>
+  <data name="app_settings_back_button_title" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="app_settings_brand_description" xml:space="preserve">
+    <value>Einstellungen bezüglich der Marken</value>
+  </data>
+  <data name="app_settings_brand_title" xml:space="preserve">
+    <value>Marken Einstellungen</value>
+  </data>
+  <data name="app_settings_media_description" xml:space="preserve">
+    <value>Verwendung von Medien</value>
+  </data>
+  <data name="app_settings_media_title" xml:space="preserve">
+    <value>Media Einstellungen</value>
+  </data>
+  <data name="app_settings_overview_description" xml:space="preserve">
+    <value>Hier finden Sie alle relevanten Einstellungen. Bei Fragen kontaktieren Sie bitte den Administrator.</value>
+  </data>
+  <data name="app_settings_overview_open_button_title" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="app_settings_overview_title" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="app_settings_system_apptitle_description" xml:space="preserve">
+    <value>Der App Titel wird in Browser Tabs angezeigt.</value>
+  </data>
+  <data name="app_settings_system_apptitle_title" xml:space="preserve">
+    <value>App Titel</value>
+  </data>
+  <data name="app_settings_system_description" xml:space="preserve">
+    <value>Wichtige Systemeinstellungen</value>
+  </data>
+  <data name="app_settings_system_emailsender_description" xml:space="preserve">
+    <value>Ändern Sie die E-Mail Adresse um festzulegen, von welcher E-Mail Adresse Systemmails versendet werden sollen.</value>
+  </data>
+  <data name="app_settings_system_emailsender_title" xml:space="preserve">
+    <value>System E-Mail Adresse</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_description" xml:space="preserve">
+    <value>Das ist die Basis Url dieser Brand Ci Installation</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_title" xml:space="preserve">
+    <value>Basis Url</value>
+  </data>
+  <data name="app_settings_system_title" xml:space="preserve">
+    <value>System Einstellungen</value>
+  </data>
+  <data name="app_settings_update_button_title" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="app_settings_user_description" xml:space="preserve">
+    <value>Einstellungen zu neuen und bereits angelegten Nutzern</value>
+  </data>
+  <data name="app_settings_user_title" xml:space="preserve">
+    <value>Nutzer Einstellungen</value>
+  </data>
+  <data name="app_culturesetting_description" xml:space="preserve">
+    <value>Bitte wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche</value>
+  </data>
+  <data name="app_culturesetting_save_button_title" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="app_culturesetting_title" xml:space="preserve">
+    <value>Sprachauswahl</value>
+  </data>
+  <data name="app_culturesetting_value_active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="system_culture_de_de" xml:space="preserve">
+    <value>de-DE</value>
+  </data>
+  <data name="system_culture_de_de_full" xml:space="preserve">
+    <value>Deutsch (Deutschland)</value>
+  </data>
+  <data name="system_culture_en_us" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="system_culture_en_us_full" xml:space="preserve">
+    <value>Englisch (Vereinigte Staaten)</value>
+  </data>
+  <data name="app_mainnavigation_dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_company" xml:space="preserve">
+    <value>Firmen</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_user" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_usermanagement" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="app_mainnavigation_yourbrands" xml:space="preserve">
+    <value>Ihre Marken</value>
+  </data>
+  <data name="app_usermenu_languageselection" xml:space="preserve">
+    <value>Sprachauswahl</value>
+  </data>
+  <data name="app_usermenu_leaveapp" xml:space="preserve">
+    <value>App verlassen</value>
+  </data>
+  <data name="app_usermenu_logout" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="app_usermenu_profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="app_usermenu_settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="frontend_navigation_product_overview" xml:space="preserve">
+    <value>Übersicht</value>
+  </data>
+  <data name="frontend_footer_allrightsreserved" xml:space="preserve">
+    <value>Alle Rechte vorbehalten.</value>
+  </data>
+  <data name="frontend_footer_copyright" xml:space="preserve">
+    <value>Philipp C. Moser</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
+    <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
+    <value>Zugriff auf Deine Marke. Von Überall.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
+    <value>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
+    <value>Erweitere Deine Marke. Und zwar geplant.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
+    <value>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
+    <value>Fortlaufende Verbesserung. Dank KI.</value>
+  </data>
+  <data name="frontend_home_index_features_title_l1" xml:space="preserve">
+    <value>Warum BrandCi Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_features_title_l2" xml:space="preserve">
+    <value>zum Erfolg führt.</value>
+  </data>
+  <data name="frontend_home_index_intro_button_description" xml:space="preserve">
+    <value>Möchtest Du mehr wissen?</value>
+  </data>
+  <data name="frontend_home_index_intro_button_title" xml:space="preserve">
+    <value>Klick hier</value>
+  </data>
+  <data name="frontend_home_index_intro_heading" xml:space="preserve">
+    <value>Lass uns Dir BrandCi vorstellen.</value>
+  </data>
+  <data name="frontend_home_index_intro_subheading" xml:space="preserve">
+    <value>Was ist BrandCi?</value>
+  </data>
+  <data name="frontend_home_index_intro_subtext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_intro_text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_services_button_title" xml:space="preserve">
+    <value>Mehr erfahren.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_description" xml:space="preserve">
+    <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
+    <value>Zugriff auf Deine Marke. Von Überall.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
+    <value>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
+    <value>Erweitere Deine Marke. Und zwar geplant.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
+    <value>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_title" xml:space="preserve">
+    <value>Fortlaufende Verbesserung. Dank KI.</value>
+  </data>
+  <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
+    <value>Entdecke BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
+    <value>Verwalte und verbessere Deinen Markenauftritt.</value>
+  </data>
+  <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
+    <value>Teste BrandCi kostenfrei.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
+    <value>Deine digitale Marke.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
+    <value>Dein Erfolg.</value>
   </data>
 </root>

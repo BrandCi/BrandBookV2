@@ -183,16 +183,16 @@
   <data name="frontend_navigation_contact" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="frontend_navigation_functions" xml:space="preserve">
-    <value>Functionality</value>
+  <data name="frontend_navigation_product" xml:space="preserve">
+    <value>Product</value>
   </data>
-  <data name="frontend_navigation_functions_brandimprovement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandimprovement" xml:space="preserve">
     <value>Brand Improvement (AI)</value>
   </data>
-  <data name="frontend_navigation_functions_brandmanagement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandmanagement" xml:space="preserve">
     <value>Brand Management</value>
   </data>
-  <data name="frontend_navigation_function_plannedfeatures" xml:space="preserve">
+  <data name="frontend_navigation_product_plannedfeatures" xml:space="preserve">
     <value>Planned Features</value>
   </data>
   <data name="frontend_navigation_homepage" xml:space="preserve">
@@ -229,7 +229,7 @@
     <value>Pricing</value>
   </data>
   <data name="frontend_footer_product_solutions" xml:space="preserve">
-    <value>Solutions</value>
+    <value>Functions</value>
   </data>
   <data name="frontend_footer_product_title" xml:space="preserve">
     <value>Product</value>
@@ -290,5 +290,206 @@
   </data>
   <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
     <value>You need to accept the Privacy Policy</value>
+  </data>
+  <data name="app_settings_back_button_title" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="app_settings_brand_description" xml:space="preserve">
+    <value>Settings regarding the Brands</value>
+  </data>
+  <data name="app_settings_brand_title" xml:space="preserve">
+    <value>Brand Settings</value>
+  </data>
+  <data name="app_settings_media_description" xml:space="preserve">
+    <value>Usage of Media</value>
+  </data>
+  <data name="app_settings_media_title" xml:space="preserve">
+    <value>Media Settings</value>
+  </data>
+  <data name="app_settings_overview_description" xml:space="preserve">
+    <value>On this page you find all relevant Settings. Please contact the administrator if you have questions.</value>
+  </data>
+  <data name="app_settings_overview_open_button_title" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="app_settings_overview_title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="app_settings_system_apptitle_description" xml:space="preserve">
+    <value>The App Title will is shown in the Browser Tab.</value>
+  </data>
+  <data name="app_settings_system_apptitle_title" xml:space="preserve">
+    <value>App Title</value>
+  </data>
+  <data name="app_settings_system_description" xml:space="preserve">
+    <value>Important System Settings</value>
+  </data>
+  <data name="app_settings_system_emailsender_description" xml:space="preserve">
+    <value>Change the Email to specify from which E-Mail Address System-E-Mails should be sent.</value>
+  </data>
+  <data name="app_settings_system_emailsender_title" xml:space="preserve">
+    <value>E-Mail Sender</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_description" xml:space="preserve">
+    <value>This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects.</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_title" xml:space="preserve">
+    <value>System Base Url</value>
+  </data>
+  <data name="app_settings_system_title" xml:space="preserve">
+    <value>System Settings</value>
+  </data>
+  <data name="app_settings_update_button_title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="app_settings_user_description" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="app_settings_user_title" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="app_culturesetting_description" xml:space="preserve">
+    <value>Please select your preferred language for the userinterface</value>
+  </data>
+  <data name="app_culturesetting_save_button_title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="app_culturesetting_title" xml:space="preserve">
+    <value>Language Selection</value>
+  </data>
+  <data name="app_culturesetting_value_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="system_culture_de_de" xml:space="preserve">
+    <value>de-DE</value>
+  </data>
+  <data name="system_culture_de_de_full" xml:space="preserve">
+    <value>German (Germany)</value>
+  </data>
+  <data name="system_culture_en_us" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="system_culture_en_us_full" xml:space="preserve">
+    <value>English (United States)</value>
+  </data>
+  <data name="app_mainnavigation_dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_company" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_user" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_usermanagement" xml:space="preserve">
+    <value>Usermanagement</value>
+  </data>
+  <data name="app_mainnavigation_yourbrands" xml:space="preserve">
+    <value>Your Brands</value>
+  </data>
+  <data name="app_usermenu_languageselection" xml:space="preserve">
+    <value>Languageselection</value>
+  </data>
+  <data name="app_usermenu_leaveapp" xml:space="preserve">
+    <value>Leave app</value>
+  </data>
+  <data name="app_usermenu_logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="app_usermenu_profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="app_usermenu_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="frontend_navigation_product_overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="frontend_footer_allrightsreserved" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="frontend_footer_copyright" xml:space="preserve">
+    <value>Philipp C. Moser</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
+    <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
+    <value>Access to your brand. From everywhere.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
+    <value>A redesign of your brand contributes to the brand's success through intelligent advance planning.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
+    <value>Expand your brand. Well planned.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
+    <value>Through the use of Artificial Intelligence, we provide you and your brand a steady improvement.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
+    <value>Continuous improvement. Thanks to AI.</value>
+  </data>
+  <data name="frontend_home_index_features_title_l1" xml:space="preserve">
+    <value>Why BrandCi leads your Brand</value>
+  </data>
+  <data name="frontend_home_index_features_title_l2" xml:space="preserve">
+    <value>to success</value>
+  </data>
+  <data name="frontend_home_index_intro_button_description" xml:space="preserve">
+    <value>Would you like to know more?</value>
+  </data>
+  <data name="frontend_home_index_intro_button_title" xml:space="preserve">
+    <value>Click here.</value>
+  </data>
+  <data name="frontend_home_index_intro_heading" xml:space="preserve">
+    <value>Let us introduce you BrandCi</value>
+  </data>
+  <data name="frontend_home_index_intro_subheading" xml:space="preserve">
+    <value>What is BrandCi?</value>
+  </data>
+  <data name="frontend_home_index_intro_subtext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_intro_text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_services_button_title" xml:space="preserve">
+    <value>Learn more.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_description" xml:space="preserve">
+    <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
+    <value>Access to your brand. From everywhere.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
+    <value>A redesign of your brand contributes to the brand's success through intelligent advance planning.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
+    <value>Expand your brand. Well planned.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
+    <value>Through the use of Artificial Intelligence, we provide you and your brand a steady improvement.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_title" xml:space="preserve">
+    <value>Continuous improvement. Thanks to AI.</value>
+  </data>
+  <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
+    <value>Discover BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
+    <value>Manage and improve your brand image.</value>
+  </data>
+  <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
+    <value>Test Brand Ci for free</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
+    <value>Your digital brand.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
+    <value>Your success.</value>
   </data>
 </root>

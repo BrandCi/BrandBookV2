@@ -1,0 +1,54 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
+    ViewBag.Title = "Contact";
+}
+@section ColorStyle
+{
+    @Styles.Render("~/Content/Css/Frontend/Styling/02")
+}
+
+<div class="theme-top-section">
+    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
+
+
+    <div class="contact-section-dark" id="contact" style="padding-top: 200px;">
+        <div class="container">
+            <div class="theme-title text-center">
+                <h2>
+                    Please leave a message
+                </h2>
+                <p>
+                    Please take note of our Privacy Policy
+                </p>
+            </div>
+
+            <form action="#" class="form-validation" autocomplete="off" style="padding: 70px 0;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Your Name">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="email" placeholder="Your Email Address">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Your Subject">
+                    </div>
+                    <div class="col-12">
+                        <textarea placeholder="Your Message" name="message"></textarea>
+                    </div>
+                    
+                    <div class="col-12">
+                        <input type="checkbox" id="privacyPolicy" />
+                        <label for="privacyPolicy">Accept our Privacy Policy</label>
+                    </div>
+                </div>
+                <button>Send Message</button>
+            </form>
+
+            
+        </div>
+    </div>
+
+
+
+</div> 

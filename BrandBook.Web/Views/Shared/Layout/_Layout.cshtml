@@ -1,4 +1,5 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
     HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
 }
 <!-- Insertion -->
@@ -26,7 +27,7 @@
     @RenderSection("styles", required: false)
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="100x100" href="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584.png">
+    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 

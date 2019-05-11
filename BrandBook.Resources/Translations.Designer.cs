@@ -70,6 +70,312 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select your preferred language for the userinterface.
+        /// </summary>
+        public static string app_culturesetting_description {
+            get {
+                return ResourceManager.GetString("app_culturesetting_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string app_culturesetting_save_button_title {
+            get {
+                return ResourceManager.GetString("app_culturesetting_save_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language Selection.
+        /// </summary>
+        public static string app_culturesetting_title {
+            get {
+                return ResourceManager.GetString("app_culturesetting_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string app_culturesetting_value_active {
+            get {
+                return ResourceManager.GetString("app_culturesetting_value_active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        public static string app_mainnavigation_dashboard {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Companies.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_company {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roles.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_roles {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_user {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usermanagement.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_usermanagement {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_usermanagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Brands.
+        /// </summary>
+        public static string app_mainnavigation_yourbrands {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_yourbrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string app_settings_back_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_back_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings regarding the Brands.
+        /// </summary>
+        public static string app_settings_brand_description {
+            get {
+                return ResourceManager.GetString("app_settings_brand_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Settings.
+        /// </summary>
+        public static string app_settings_brand_title {
+            get {
+                return ResourceManager.GetString("app_settings_brand_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage of Media.
+        /// </summary>
+        public static string app_settings_media_description {
+            get {
+                return ResourceManager.GetString("app_settings_media_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media Settings.
+        /// </summary>
+        public static string app_settings_media_title {
+            get {
+                return ResourceManager.GetString("app_settings_media_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On this page you find all relevant Settings. Please contact the administrator if you have questions..
+        /// </summary>
+        public static string app_settings_overview_description {
+            get {
+                return ResourceManager.GetString("app_settings_overview_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        public static string app_settings_overview_open_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_overview_open_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string app_settings_overview_title {
+            get {
+                return ResourceManager.GetString("app_settings_overview_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The App Title will is shown in the Browser Tab..
+        /// </summary>
+        public static string app_settings_system_apptitle_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_apptitle_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App Title.
+        /// </summary>
+        public static string app_settings_system_apptitle_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_apptitle_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Important System Settings.
+        /// </summary>
+        public static string app_settings_system_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change the Email to specify from which E-Mail Address System-E-Mails should be sent..
+        /// </summary>
+        public static string app_settings_system_emailsender_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_emailsender_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail Sender.
+        /// </summary>
+        public static string app_settings_system_emailsender_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_emailsender_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects..
+        /// </summary>
+        public static string app_settings_system_systembaseurl_description {
+            get {
+                return ResourceManager.GetString("app_settings_system_systembaseurl_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Base Url.
+        /// </summary>
+        public static string app_settings_system_systembaseurl_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_systembaseurl_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Settings.
+        /// </summary>
+        public static string app_settings_system_title {
+            get {
+                return ResourceManager.GetString("app_settings_system_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string app_settings_update_button_title {
+            get {
+                return ResourceManager.GetString("app_settings_update_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Settings.
+        /// </summary>
+        public static string app_settings_user_description {
+            get {
+                return ResourceManager.GetString("app_settings_user_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Settings.
+        /// </summary>
+        public static string app_settings_user_title {
+            get {
+                return ResourceManager.GetString("app_settings_user_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languageselection.
+        /// </summary>
+        public static string app_usermenu_languageselection {
+            get {
+                return ResourceManager.GetString("app_usermenu_languageselection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leave app.
+        /// </summary>
+        public static string app_usermenu_leaveapp {
+            get {
+                return ResourceManager.GetString("app_usermenu_leaveapp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string app_usermenu_logout {
+            get {
+                return ResourceManager.GetString("app_usermenu_logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string app_usermenu_profile {
+            get {
+                return ResourceManager.GetString("app_usermenu_profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string app_usermenu_settings {
+            get {
+                return ResourceManager.GetString("app_usermenu_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {
@@ -340,6 +646,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Rights Reserved..
+        /// </summary>
+        public static string frontend_footer_allrightsreserved {
+            get {
+                return ResourceManager.GetString("frontend_footer_allrightsreserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Philipp C. Moser.
+        /// </summary>
+        public static string frontend_footer_copyright {
+            get {
+                return ResourceManager.GetString("frontend_footer_copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cookie Terms.
         /// </summary>
         public static string frontend_footer_legal_cookieterms {
@@ -412,7 +736,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solutions.
+        ///   Looks up a localized string similar to Functions.
         /// </summary>
         public static string frontend_footer_product_solutions {
             get {
@@ -466,6 +790,240 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand..
+        /// </summary>
+        public static string frontend_home_index_features_feature_01_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_01_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access to your brand. From everywhere..
+        /// </summary>
+        public static string frontend_home_index_features_feature_01_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_01_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A redesign of your brand contributes to the brand&apos;s success through intelligent advance planning..
+        /// </summary>
+        public static string frontend_home_index_features_feature_02_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_02_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expand your brand. Well planned..
+        /// </summary>
+        public static string frontend_home_index_features_feature_02_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_02_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Through the use of Artificial Intelligence, we provide you and your brand a steady improvement..
+        /// </summary>
+        public static string frontend_home_index_features_feature_03_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_03_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous improvement. Thanks to AI..
+        /// </summary>
+        public static string frontend_home_index_features_feature_03_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_03_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why BrandCi leads your Brand.
+        /// </summary>
+        public static string frontend_home_index_features_title_l1 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_title_l1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to success.
+        /// </summary>
+        public static string frontend_home_index_features_title_l2 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_title_l2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to know more?.
+        /// </summary>
+        public static string frontend_home_index_intro_button_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_button_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click here..
+        /// </summary>
+        public static string frontend_home_index_intro_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let us introduce you BrandCi.
+        /// </summary>
+        public static string frontend_home_index_intro_heading {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_heading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is BrandCi?.
+        /// </summary>
+        public static string frontend_home_index_intro_subheading {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_subheading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_intro_subtext {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_subtext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_intro_text {
+            get {
+                return ResourceManager.GetString("frontend_home_index_intro_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more..
+        /// </summary>
+        public static string frontend_home_index_services_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand..
+        /// </summary>
+        public static string frontend_home_index_services_service_01_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_01_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access to your brand. From everywhere..
+        /// </summary>
+        public static string frontend_home_index_services_service_01_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_01_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A redesign of your brand contributes to the brand&apos;s success through intelligent advance planning..
+        /// </summary>
+        public static string frontend_home_index_services_service_02_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_02_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expand your brand. Well planned..
+        /// </summary>
+        public static string frontend_home_index_services_service_02_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_02_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Through the use of Artificial Intelligence, we provide you and your brand a steady improvement..
+        /// </summary>
+        public static string frontend_home_index_services_service_03_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_03_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous improvement. Thanks to AI..
+        /// </summary>
+        public static string frontend_home_index_services_service_03_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_03_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover BrandCi.
+        /// </summary>
+        public static string frontend_home_index_topsection_discover_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_discover_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage and improve your brand image..
+        /// </summary>
+        public static string frontend_home_index_topsection_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test Brand Ci for free.
+        /// </summary>
+        public static string frontend_home_index_topsection_test_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_test_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your digital brand..
+        /// </summary>
+        public static string frontend_home_index_topsection_title_l1 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_l1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your success..
+        /// </summary>
+        public static string frontend_home_index_topsection_title_l2 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_l2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accept.
         /// </summary>
         public static string frontend_legal_cookieconsent_accept_button_text {
@@ -511,42 +1069,6 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Planned Features.
-        /// </summary>
-        public static string frontend_navigation_function_plannedfeatures {
-            get {
-                return ResourceManager.GetString("frontend_navigation_function_plannedfeatures", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Functionality.
-        /// </summary>
-        public static string frontend_navigation_functions {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brand Improvement (AI).
-        /// </summary>
-        public static string frontend_navigation_functions_brandimprovement {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions_brandimprovement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brand Management.
-        /// </summary>
-        public static string frontend_navigation_functions_brandmanagement {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions_brandmanagement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Homepage.
         /// </summary>
         public static string frontend_navigation_homepage {
@@ -574,11 +1096,92 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string frontend_navigation_product {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Improvement (AI).
+        /// </summary>
+        public static string frontend_navigation_product_brandimprovement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandimprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Management.
+        /// </summary>
+        public static string frontend_navigation_product_brandmanagement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandmanagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string frontend_navigation_product_overview {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planned Features.
+        /// </summary>
+        public static string frontend_navigation_product_plannedfeatures {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_plannedfeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string frontend_navigation_register_button {
             get {
                 return ResourceManager.GetString("frontend_navigation_register_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to de-DE.
+        /// </summary>
+        public static string system_culture_de_de {
+            get {
+                return ResourceManager.GetString("system_culture_de_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to German (Germany).
+        /// </summary>
+        public static string system_culture_de_de_full {
+            get {
+                return ResourceManager.GetString("system_culture_de_de_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to en-US.
+        /// </summary>
+        public static string system_culture_en_us {
+            get {
+                return ResourceManager.GetString("system_culture_en_us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English (United States).
+        /// </summary>
+        public static string system_culture_en_us_full {
+            get {
+                return ResourceManager.GetString("system_culture_en_us_full", resourceCulture);
             }
         }
     }

@@ -7,7 +7,7 @@
 }
 
 
-@AuthCustomHelper.RenderBackground("https://content.philipp-moser.de/wlo0t5byw6/AuthData/b14828a6-69ac-4d63-a7e0-0f442729e318.svg")
+@AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
 
 <div class="form-holder">
     <div class="form-content">
@@ -47,6 +47,13 @@
                     </div>
                 </div>
 
+                <div class="form-group mt-4 mb-4">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.PromotionCode, new { @value = Model.PromotionCode, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.PromotionCode) })
+                        @Html.ValidationMessageFor(m => m.PromotionCode, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
                 <label class="container">
                     @Html.DisplayNameFor(m => m.PrivacyPolicyAccepted)
                     @Html.CheckBoxFor(m => m.PrivacyPolicyAccepted)
@@ -61,6 +68,8 @@
                 </div>
 
             }
+
+            @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
 
             <div class="other-links">
                 <div class="text">@Translations.auth_register_external_title</div>

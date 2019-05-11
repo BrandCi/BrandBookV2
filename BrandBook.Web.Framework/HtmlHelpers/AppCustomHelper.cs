@@ -76,7 +76,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append(brand.Description);
                 html.Append("</p>");
 
-                html.Append("<a href=\"" + "#" + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
+                html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
                 html.Append(Translations.app_brandoverview_openbrand_button_title);
                 html.Append("</a>");
                 html.Append("</div></div></div>");

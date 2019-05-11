@@ -1,4 +1,5 @@
-﻿<footer class="theme-footer dark-style">
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+<footer class="theme-footer dark-style">
     <div class="container">
         <div class="inner-wrapper">
             <div class="top-footer-data-wrapper">
@@ -6,15 +7,19 @@
                     <div class="col-lg-3 col-sm-6 footer-logo">
                         <div class="logo">
                             <a href="@Url.Action("Index", "Home", new {area = ""})">
-                                <img src="https://content.philipp-moser.de/wlo0t5byw6/06b354ec-78ad-4bac-bafa-5afcddb75de5.png" height="150" alt="Logo">
+                                @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "", "", "height=\"150\"")
                             </a>
                         </div>
                     </div> <!-- /.footer-logo -->
                     <div class="col-lg-3 col-sm-6 footer-list">
                         <h4 class="title">@Translations.frontend_footer_product_title</h4>
                         <ul>
-                            <li><a href="#">@Translations.frontend_footer_product_solutions</a></li>
-                            <li><a href="@Url.Action("Index", "Pricing", new {area=""})">@Translations.frontend_footer_product_pricing</a></li>
+                            <li><a href="@Url.Action("Overview", "Product", new {area = ""})">
+                                @Translations.frontend_footer_product_solutions
+                            </a></li>
+                            <li><a href="@Url.Action("Index", "Pricing", new {area = ""})">
+                                @Translations.frontend_footer_product_pricing
+                            </a></li>
                             <!--
                             <li><a href="#">@Translations.frontend_footer_product_documentation</a></li>
                             <li><a href="#">@Translations.frontend_footer_product_examples</a></li>
@@ -22,9 +27,13 @@
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">@Translations.frontend_footer_support_title</h4>
+                        <h4 class="title">
+                            @Translations.frontend_footer_support_title
+                        </h4>
                         <ul>
-                            <li><a href="#">@Translations.frontend_footer_support_contact</a></li>
+                            <li><a href="@Url.Action("Contact", "Support", new {area = ""})">
+                                @Translations.frontend_footer_support_contact
+                            </a></li>
                             <!--
                             <li><a href="#">@Translations.frontend_footer_support_forum</a></li>
                             <li><a href="#">@Translations.frontend_footer_support_reportabug</a></li>
