@@ -14,8 +14,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
 
         private static ISettingRepository settingRepository;
-        private static string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
-        private static string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
 
         static CustomHelper()
         {
@@ -24,6 +22,9 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static string ImagePath(string imageName, string imageType, string imageSection = "")
         {
+            string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
+            string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
+
             if (imageSection != "")
             {
                 return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName + "." + imageType;
