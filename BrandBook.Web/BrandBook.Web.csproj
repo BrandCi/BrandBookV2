@@ -954,10 +954,10 @@
     <Content Include="Views\Shared\Layout\Partial\_CookieConsent.cshtml" />
     <Content Include="Views\Legal\PrivacyPolicy.cshtml" />
     <Content Include="Views\Legal\Cookie.cshtml" />
+    <Content Include="Views\Product\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
