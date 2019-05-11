@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.RepositoryInterfaces.Setting;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -10,6 +13,16 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "Administrator")]
     public class SettingsController : AppControllerBase
     {
+
+        private ISettingRepository settingRepository;
+
+        public SettingsController()
+        {
+            this.settingRepository = new SettingRepository(new BrandBookDbContext());
+        }
+
+
+
         // GET: App/Settings
         public ActionResult Index()
         {
