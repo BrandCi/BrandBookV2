@@ -331,6 +331,51 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Languageselection.
+        /// </summary>
+        public static string app_usermenu_languageselection {
+            get {
+                return ResourceManager.GetString("app_usermenu_languageselection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leave app.
+        /// </summary>
+        public static string app_usermenu_leaveapp {
+            get {
+                return ResourceManager.GetString("app_usermenu_leaveapp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string app_usermenu_logout {
+            get {
+                return ResourceManager.GetString("app_usermenu_logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string app_usermenu_profile {
+            get {
+                return ResourceManager.GetString("app_usermenu_profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string app_usermenu_settings {
+            get {
+                return ResourceManager.GetString("app_usermenu_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string auth_back_button_title {
