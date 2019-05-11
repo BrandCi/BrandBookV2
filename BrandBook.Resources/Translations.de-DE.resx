@@ -372,4 +372,22 @@
   <data name="system_culture_en_us_full" xml:space="preserve">
     <value>Englisch (Vereinigte Staaten)</value>
   </data>
+  <data name="app_mainnavigation_dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_company" xml:space="preserve">
+    <value>Firmen</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_user" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_usermanagement" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="app_mainnavigation_yourbrands" xml:space="preserve">
+    <value>Ihre Marken</value>
+  </data>
 </root>
