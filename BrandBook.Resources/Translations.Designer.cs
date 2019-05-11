@@ -106,6 +106,60 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        public static string app_mainnavigation_dashboard {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Companies.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_company {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roles.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_roles {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_user {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usermanagement.
+        /// </summary>
+        public static string app_mainnavigation_usermanagement_usermanagement {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_usermanagement_usermanagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Brands.
+        /// </summary>
+        public static string app_mainnavigation_yourbrands {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_yourbrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string app_settings_back_button_title {
