@@ -46,7 +46,7 @@
             <div class="text-right">
                 <h3 class="text-dark mt-3"><b class="counter">@Translations.system_culture_de_de_full</b></h3>
             </div>
-            <a href="@Url.Action("SetCulture", "Culture", new {area = "App", culture = "de-de"})" class="btn btn-primary btn-custom mt-4">
+            <a href="@Url.Action("SetCulture", "AppCulture", new {area = "App", culture = "de-de"})" class="btn btn-primary btn-custom mt-4">
                 @Translations.app_culturesetting_save_button_title&nbsp;&nbsp;<i class="fas fa-globe"></i>
             </a>
             <div class="clearfix"></div>
@@ -64,7 +64,7 @@
             <div class="text-right">
                 <h3 class="text-dark mt-3"><b class="counter">@Translations.system_culture_en_us_full</b></h3>
             </div>
-            <a href="@Url.Action("SetCulture", "Culture", new {area = "App", culture = "en-us"})" class="btn btn-primary btn-custom mt-4">
+            <a href="@Url.Action("SetCulture", "AppCulture", new {area = "App", culture = "en-us"})" class="btn btn-primary btn-custom mt-4">
                 @Translations.app_culturesetting_save_button_title&nbsp;&nbsp;<i class="fas fa-globe"></i>
             </a>
             <div class="clearfix"></div>
@@ -82,7 +82,7 @@
                 <h4 class="card-title">Export Translations</h4>
                 <p class="card-text">
 
-                    @using (Html.BeginForm("ExportTranslationsByCulture", "Culture", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                    @using (Html.BeginForm("ExportTranslationsByCulture", "AppCulture", FormMethod.Post, new { @class = "form-validation", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
 

@@ -8,7 +8,7 @@ using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class CultureController : AppControllerBase
+    public class AppCultureController : AppControllerBase
     {
 
         public ActionResult Index()
@@ -38,14 +38,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             Response.Cookies.Add(cookie);
 
-            return RedirectToAction("Index", "Culture", new { area = "App" });
+            return RedirectToAction("Index", "AppCulture", new { area = "App" });
         }
 
 
 
         public ActionResult ExportTranslationsByCulture()
         {
-            return RedirectToAction("Index", "Culture", new {area = "App"});
+            return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
     }
 }
