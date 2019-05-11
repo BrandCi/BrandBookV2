@@ -1,4 +1,5 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
     ViewBag.Title = "Startseite";
 }
 @section ColorStyle
@@ -7,13 +8,13 @@
 }
 
 <div class="theme-top-section">
-    <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4.png" alt="" class="blue-shape">
+    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
 
     <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
     <div id="theme-banner" class="theme-banner-two">
         <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12.png" alt="" class="cube-shape">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7.svg" alt="" class="illustration d-lg-none d-xl-none" style="right: 10%; max-width:80%">
+        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7.svg" alt="" class="illustration d-lg-none d-xl-none" style="right: 10%; max-width: 80%">
         <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c.svg" alt="" class="illustration d-none d-lg-block d-xl-block">
         <div class="container">
             <div class="main-text-wrapper">
@@ -46,10 +47,10 @@
                         <h2>Lass uns Dir BrandCi vorstellen.</h2>
                     </div> <!-- /.theme-title -->
                     <p class="sub-text">
-                        
+
                     </p>
                     <p class="text">
-                        
+
                     </p>
                     <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Index", "Home")">Klick hier</a></p>
                 </div>
@@ -61,7 +62,7 @@
     </div> <!-- /.about-cryto -->
     <!--
     =====================================================
-        Our Feature Three
+    Our Feature Three
     =====================================================
     -->
     <div class="our-features-three" id="features">
@@ -75,7 +76,7 @@
         <div class="container">
             <div class="theme-title text-center">
                 <h2>
-                    Warum BrandCi Deine Marke<br />
+                    Warum BrandCi Deine Marke<br/>
                     zum Erfolg führt.
                 </h2>
             </div>
@@ -114,7 +115,7 @@
     </div> <!-- /.our-features-three -->
     <!--
     =====================================================
-        Our Feature Two
+    Our Feature Two
     =====================================================
     -->
     <div class="our-feature-two dark-bg" id="services">
@@ -128,7 +129,8 @@
                         <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                <div class="col-lg-6 img-box">
+                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
             </div> <!-- /.row -->
 
             <div class="row">
@@ -140,7 +142,8 @@
                         <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 order-lg-first img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                <div class="col-lg-6 order-lg-first img-box">
+                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
             </div> <!-- /.row -->
 
             <div class="row">
@@ -152,7 +155,8 @@
                         <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box"><div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203.svg" alt=""></div></div>
+                <div class="col-lg-6 img-box">
+                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203.svg" alt=""></div></div>
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.our-feature-two -->

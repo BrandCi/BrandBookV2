@@ -21,7 +21,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString Image(string imageName, string imageType, string classes)
+        public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "")
         {
             string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
             string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
@@ -34,7 +34,18 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append("https://" + contentServer + "/" + contentKey + "/" + imageName + "." + imageType);
             html.Append("\" ");
 
-            html.Append(" class=\"" + classes + "\" ");
+            if (classes != "")
+            {
+                html.Append(" class=\"" + classes + "\" ");
+            }
+
+            if (styles != "")
+            {
+                html.Append(" style=\"" + styles + "\" ");
+            }
+
+
+
 
             html.Append(" />");
 
