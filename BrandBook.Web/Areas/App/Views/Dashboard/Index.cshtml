@@ -31,7 +31,9 @@
         <div class="portlet">
             <!-- /primary heading -->
             <div class="portlet-heading">
-                <h3 class="portlet-title text-dark"> Your brand activity </h3>
+                <h3 class="portlet-title text-dark">
+                    Your brand activity
+                </h3>
                 <div class="portlet-widgets">
                     <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
                     <span class="divider"></span>
@@ -99,21 +101,21 @@
 
             var MorrisCharts = function () { };
             
-                MorrisCharts.prototype.createAreaChartDotted = function (element, pointSize, lineWidth, data, xkey, ykeys, labels, Pfillcolor, Pstockcolor, lineColors) {
+                MorrisCharts.prototype.createBrandActivityChart = function (element, data, labels) {
                     Morris.Area({
                         element: element,
                         pointSize: 3,
                         lineWidth: 1,
                         data: data,
-                        xkey: xkey,
-                        ykeys: ykeys,
+                        xkey: 'y',
+                        ykeys: ['a'],
                         labels: labels,
                         hideHover: 'auto',
-                        pointFillColors: Pfillcolor,
-                        pointStrokeColors: Pstockcolor,
+                        pointFillColors: ['#ffffff'],
+                        pointStrokeColors: ['#999999'],
                         resize: true,
                         gridLineColor: '#eef0f2',
-                        lineColors: lineColors,
+                        lineColors: ['#80deea'],
                         xLabels: "month"
                     });
                 }
@@ -122,19 +124,30 @@
 
                     
                     var $areaDotData = [
-                        { y: '2019-01-01', a: 9 },
-                        { y: '2019-02-01', a: 5 },
-                        { y: '2019-03-01', a: 7 },
+                        { y: '2018-06-01', a: 2 },
+                        { y: '2018-07-01', a: 5 },
+                        { y: '2018-08-01', a: 7 },
+                        { y: '2018-09-01', a: 17 },
+                        { y: '2018-10-01', a: 12 },
+                        { y: '2018-11-01', a: 14 },
+                        { y: '2018-12-01', a: 17 },
+                        { y: '2019-01-01', a: 20 },
+                        { y: '2019-02-01', a: 10 },
+                        { y: '2019-03-01', a: 10 },
                         { y: '2019-04-01', a: 17 },
                         { y: '2019-05-01', a: 58 }
                     ];
-                    this.createAreaChartDotted('last-activity-morris-area', 0, 0, $areaDotData, 'y', ['a'], ['Your Activity'], ['#ffffff'], ['#999999'], ["#80deea"]);
+
+
+                    this.createBrandActivityChart('last-activity-morris-area', $areaDotData, ['Your Activity']);
 
                    
-                },
+                }
+
                 //init
-                $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts
-        }(window.jQuery),
+                $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts;
+
+            }(window.jQuery),
 
             //initializing
             function ($) {
