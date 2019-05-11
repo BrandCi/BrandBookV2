@@ -390,4 +390,19 @@
   <data name="app_mainnavigation_yourbrands" xml:space="preserve">
     <value>Ihre Marken</value>
   </data>
+  <data name="app_usermenu_languageselection" xml:space="preserve">
+    <value>Sprachauswahl</value>
+  </data>
+  <data name="app_usermenu_leaveapp" xml:space="preserve">
+    <value>App verlassen</value>
+  </data>
+  <data name="app_usermenu_logout" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="app_usermenu_profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="app_usermenu_settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
 </root>
