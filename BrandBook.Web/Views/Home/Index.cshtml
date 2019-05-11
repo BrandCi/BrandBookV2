@@ -26,7 +26,9 @@
                     Verwalte und verbessere Deinen Markenauftritt.
                 </p>
                 <ul class="button-group clearfix">
-                    <li><a href="#">Entdecke BrandCi.</a></li>
+                    <li><a href="@Url.Action("Overview", "Product", new {area = ""})">
+                        Entdecke BrandCi.
+                    </a></li>
                     @if (!User.Identity.IsAuthenticated)
                     {
                         <li><a href="@Url.Action("Index", "Register", new {area = "Auth"})">Teste BrandCi kostenfrei.</a></li>
@@ -52,7 +54,9 @@
                     <p class="text">
 
                     </p>
-                    <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Index", "Home")">Klick hier</a></p>
+                    <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                        Klick hier
+                    </a></p>
                 </div>
                 <div class="col-lg-6 order-lg-first">
                     @CustomHelper.Image("FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f", "svg", "blue-shape", "", "data-aos=\"zoom-out\"")
@@ -120,7 +124,9 @@
                         <div class="number">01</div>
                         <h2 class="title">Zugriff auf Deine Marke. Von Überall.</h2>
                         <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            Mehr erfahren. <i class="flaticon-right-thin"></i>
+                        </a>
                     </div>
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 img-box">
@@ -136,7 +142,9 @@
                         <div class="number">02</div>
                         <h2 class="title">Erweitere Deine Marke. Und zwar geplant.</h2>
                         <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            Mehr erfahren. <i class="flaticon-right-thin"></i>
+                        </a>
                     </div> 
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 order-lg-first img-box">
@@ -152,7 +160,9 @@
                         <div class="number">03</div>
                         <h2 class="title">Fortlaufende Verbesserung. Dank KI.</h2>
                         <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
-                        <a href="#" class="learn-more">Mehr erfahren. <i class="flaticon-right-thin"></i></a>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            Mehr erfahren. <i class="flaticon-right-thin"></i>
+                        </a>
                     </div> 
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 img-box">
