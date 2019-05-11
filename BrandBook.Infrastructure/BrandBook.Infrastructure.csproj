@@ -99,6 +99,10 @@
     <Compile Include="Migrations\201905072033449_AddSystemSettingsTable.Designer.cs">
       <DependentUpon>201905072033449_AddSystemSettingsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.cs" />
+    <Compile Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.Designer.cs">
+      <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905072033449_AddSystemSettingsTable.resx">
       <DependentUpon>201905072033449_AddSystemSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.resx">
+      <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
