@@ -14,6 +14,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
 
         private static ISettingRepository settingRepository;
+        private static string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
+        private static string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
 
         static CustomHelper()
         {
@@ -23,8 +25,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
-            string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
-            string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
 
             StringBuilder html = new StringBuilder();
 
