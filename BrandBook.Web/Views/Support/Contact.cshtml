@@ -11,26 +11,43 @@
     @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
 
-    <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
-    <div id="theme-banner" class="theme-banner-two">
-        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
-        @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
-        @CustomHelper.Image("FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c", "svg", "illustration d-none d-lg-block d-xl-block")
+    <div class="contact-section-dark" id="contact" style="padding-top: 200px;">
         <div class="container">
-            <div class="main-text-wrapper">
-                <h1 class="strong-title-900">
-                    @Translations.frontend_home_index_topsection_title_l1
-                    <br>@Translations.frontend_home_index_topsection_title_l2
-                </h1>
+            <div class="theme-title text-center">
+                <h2>
+                    Please leave a message
+                </h2>
                 <p>
-                    @Translations.frontend_home_index_topsection_subtitle
+                    Please take note of our Privacy Policy
                 </p>
-                
             </div>
+
+            <form action="#" class="form-validation" autocomplete="off" style="padding: 70px 0;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Your Name">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="email" placeholder="Your Email Address">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Your Subject">
+                    </div>
+                    <div class="col-12">
+                        <textarea placeholder="Your Message" name="message"></textarea>
+                    </div>
+                    
+                    <div class="col-12">
+                        <input type="checkbox" id="privacyPolicy" />
+                        <label for="privacyPolicy">Accept our Privacy Policy</label>
+                    </div>
+                </div>
+                <button>Send Message</button>
+            </form>
+
+            
         </div>
     </div>
-    
-
 
 
 
