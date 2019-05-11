@@ -1,7 +1,37 @@
-﻿
+﻿@using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
 }
+@section ColorStyle
+{
+    @Styles.Render("~/Content/Css/Frontend/Styling/02")
+}
 
-<h2>Contact</h2>
+<div class="theme-top-section">
+    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
+
+    <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
+    <div id="theme-banner" class="theme-banner-two">
+        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
+        @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
+        @CustomHelper.Image("FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c", "svg", "illustration d-none d-lg-block d-xl-block")
+        <div class="container">
+            <div class="main-text-wrapper">
+                <h1 class="strong-title-900">
+                    @Translations.frontend_home_index_topsection_title_l1
+                    <br>@Translations.frontend_home_index_topsection_title_l2
+                </h1>
+                <p>
+                    @Translations.frontend_home_index_topsection_subtitle
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+</div> 
