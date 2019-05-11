@@ -4,6 +4,10 @@
     ViewBag.Title = Translations.app_settings_system_title;
 }
 
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+}
+
 <div class="row">
     <div class="col-12">
         <div class="card-box">
@@ -70,7 +74,7 @@
                                     @Translations.app_settings_update_button_title
                                 </button>
                             </div>
-                           
+
 
 
                         </form>

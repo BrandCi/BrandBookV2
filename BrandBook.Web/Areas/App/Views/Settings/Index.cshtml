@@ -5,13 +5,17 @@
     Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
 }
 
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+}
+
 
 <div class="row">
     <div class="col-sm-12 col-xs-12">
         <div class="card m-b-20 card-body">
             <h4 class="card-title">@Translations.app_settings_overview_title</h4>
             <p class="card-text">
-               @Translations.app_settings_overview_description
+                @Translations.app_settings_overview_description
             </p>
         </div>
     </div>

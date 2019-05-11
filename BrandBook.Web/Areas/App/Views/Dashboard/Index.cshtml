@@ -4,6 +4,9 @@
     Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
 }
 
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+}
 
 @section styles {
     @Styles.Render("~/Content/Plugins/MorrisChart")
@@ -105,54 +108,54 @@
             "use strict";
 
             var MorrisCharts = function () { };
-            
-                MorrisCharts.prototype.createBrandActivityChart = function (element, data, labels) {
-                    Morris.Area({
-                        element: element,
-                        pointSize: 3,
-                        lineWidth: 1,
-                        data: data,
-                        xkey: 'y',
-                        ykeys: ['a'],
-                        labels: labels,
-                        hideHover: 'auto',
-                        pointFillColors: ['#ffffff'],
-                        pointStrokeColors: ['#999999'],
-                        resize: true,
-                        gridLineColor: '#eef0f2',
-                        lineColors: ['#80deea'],
-                        xLabels: "month"
-                    });
-                }
-                
-                MorrisCharts.prototype.init = function () {
 
-                    
-                    var $areaDotData = [
-                        { y: '2018-06-01', a: 2 },
-                        { y: '2018-07-01', a: 5 },
-                        { y: '2018-08-01', a: 7 },
-                        { y: '2018-09-01', a: 17 },
-                        { y: '2018-10-01', a: 12 },
-                        { y: '2018-11-01', a: 14 },
-                        { y: '2018-12-01', a: 17 },
-                        { y: '2019-01-01', a: 20 },
-                        { y: '2019-02-01', a: 10 },
-                        { y: '2019-03-01', a: 10 },
-                        { y: '2019-04-01', a: 17 },
-                        { y: '2019-05-01', a: 58 }
-                    ];
+            MorrisCharts.prototype.createBrandActivityChart = function (element, data, labels) {
+                Morris.Area({
+                    element: element,
+                    pointSize: 3,
+                    lineWidth: 1,
+                    data: data,
+                    xkey: 'y',
+                    ykeys: ['a'],
+                    labels: labels,
+                    hideHover: 'auto',
+                    pointFillColors: ['#ffffff'],
+                    pointStrokeColors: ['#999999'],
+                    resize: true,
+                    gridLineColor: '#eef0f2',
+                    lineColors: ['#80deea'],
+                    xLabels: "month"
+                });
+            }
+
+            MorrisCharts.prototype.init = function () {
 
 
-                    this.createBrandActivityChart('last-activity-morris-area', $areaDotData, ['Your Activity']);
+                var $areaDotData = [
+                    { y: '2018-06-01', a: 2 },
+                    { y: '2018-07-01', a: 5 },
+                    { y: '2018-08-01', a: 7 },
+                    { y: '2018-09-01', a: 17 },
+                    { y: '2018-10-01', a: 12 },
+                    { y: '2018-11-01', a: 14 },
+                    { y: '2018-12-01', a: 17 },
+                    { y: '2019-01-01', a: 20 },
+                    { y: '2019-02-01', a: 10 },
+                    { y: '2019-03-01', a: 10 },
+                    { y: '2019-04-01', a: 17 },
+                    { y: '2019-05-01', a: 58 }
+                ];
 
-                   
-                }
 
-                //init
-                $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts;
+                this.createBrandActivityChart('last-activity-morris-area', $areaDotData, ['Your Activity']);
 
-            }(window.jQuery),
+
+            }
+
+            //init
+            $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts;
+
+        }(window.jQuery),
 
             //initializing
             function ($) {
