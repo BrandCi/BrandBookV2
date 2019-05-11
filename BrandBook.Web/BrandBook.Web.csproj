@@ -161,7 +161,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
-    <Compile Include="Areas\App\Controllers\BrandController.cs" />
+    <Compile Include="Areas\App\Controllers\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\CultureController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
@@ -835,7 +835,7 @@
     <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_LeftNavigation.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
-    <Content Include="Areas\App\Views\Brand\Overview.cshtml" />
+    <Content Include="Areas\App\Views\Brands\Overview.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\Partial\_VersionNumber.cshtml" />
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="App_Data\BrandBook_Content\README.md" />

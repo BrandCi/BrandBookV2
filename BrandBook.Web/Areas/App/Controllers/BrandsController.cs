@@ -12,11 +12,11 @@ using BrandBook.Web.Framework.ViewModels.App.Brand;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class BrandController : AppControllerBase
+    public class BrandsController : AppControllerBase
     {
         private IBrandRepository brandRepository;
 
-        public BrandController()
+        public BrandsController()
         {
             this.brandRepository = new BrandRepository(new BrandBookDbContext());
         }
