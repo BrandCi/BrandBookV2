@@ -1,4 +1,5 @@
-﻿<footer class="theme-footer dark-style">
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+<footer class="theme-footer dark-style">
     <div class="container">
         <div class="inner-wrapper">
             <div class="top-footer-data-wrapper">
@@ -6,7 +7,7 @@
                     <div class="col-lg-3 col-sm-6 footer-logo">
                         <div class="logo">
                             <a href="@Url.Action("Index", "Home", new {area = ""})">
-                                <img src="https://content.philipp-moser.de/wlo0t5byw6/06b354ec-78ad-4bac-bafa-5afcddb75de5.png" height="150" alt="Logo">
+                                @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "", "", "height=\"150\"")
                             </a>
                         </div>
                     </div> <!-- /.footer-logo -->
