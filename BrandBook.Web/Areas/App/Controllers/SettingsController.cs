@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.Domain.System;
 using BrandBook.Core.RepositoryInterfaces.Setting;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.ViewModels.App.Settings;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -42,7 +44,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Media()
         {
-            return View();
+
+            MediaSettingsViewModel model = new MediaSettingsViewModel();
+
+            model.Server.Value = settingRepository.GetSettingByKey("conf_media_server").Value;
+            model.Key.Value = settingRepository.GetSettingByKey("conf_media_key").Value;
+
+
+            return View(model);
         }
 
         public ActionResult Brand()
