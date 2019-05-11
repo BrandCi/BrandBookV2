@@ -9,6 +9,11 @@ namespace BrandBook.Web.Controllers
 {
     public class ProductController : FrontendControllerBase
     {
-    
+
+        public ActionResult Overview()
+        {
+            return View();
+        }
+
     }
 }
