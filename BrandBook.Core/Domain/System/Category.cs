@@ -10,6 +10,7 @@ namespace BrandBook.Core.Domain.System
     {
         System,
         User,
+        Media,
         Brand
     }
 }
