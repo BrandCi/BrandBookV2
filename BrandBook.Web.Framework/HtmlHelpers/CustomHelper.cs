@@ -21,7 +21,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "")
+        public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
             string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
             string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
@@ -44,6 +44,10 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append(" style=\"" + styles + "\" ");
             }
 
+            if (additionalAttributes != "")
+            {
+                html.Append(" " + additionalAttributes + " ");
+            }
 
 
 

@@ -7,15 +7,16 @@
     @Styles.Render("~/Content/Css/Frontend/Styling/02")
 }
 
+@CustomHelper.Image("FrontendData/", "", "")
 <div class="theme-top-section">
     @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
 
     <!-- ^^^^^^^^^^^^^^^^^ Theme Banner ^^^^^^^^^^^^^^^ -->
     <div id="theme-banner" class="theme-banner-two">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12.png" alt="" class="cube-shape">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7.svg" alt="" class="illustration d-lg-none d-xl-none" style="right: 10%; max-width: 80%">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c.svg" alt="" class="illustration d-none d-lg-block d-xl-block">
+        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
+        @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
+        @CustomHelper.Image("FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c", "svg", "illustration d-none d-lg-block d-xl-block")
         <div class="container">
             <div class="main-text-wrapper">
                 <h1 class="strong-title-900">
@@ -55,7 +56,7 @@
                     <p class="know-more">Möchtest Du mehr wissen? <a href="@Url.Action("Index", "Home")">Klick hier</a></p>
                 </div>
                 <div class="col-lg-6 order-lg-first">
-                    <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f.svg" alt="" data-aos="zoom-out">
+                    @CustomHelper.Image("FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f", "svg", "blue-shape", "", "data-aos=\"zoom-out\"")
                 </div>
             </div>
         </div> <!-- /.container -->
@@ -66,7 +67,7 @@
     =====================================================
     -->
     <div class="our-features-three" id="features">
-        <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e9addbec-6b22-4ab8-995d-74e0631ff456.png" alt="" class="main-bg-shape">
+        @CustomHelper.Image("FrontendData/e9addbec-6b22-4ab8-995d-74e0631ff456", "png", "main-bg-shape")
         <div class="line-shape-one shape"></div>
         <div class="line-shape-two shape"></div>
         <div class="line-shape-three shape"></div>
@@ -76,7 +77,7 @@
         <div class="container">
             <div class="theme-title text-center">
                 <h2>
-                    Warum BrandCi Deine Marke<br/>
+                    Warum BrandCi Deine Marke<br />
                     zum Erfolg führt.
                 </h2>
             </div>
@@ -86,7 +87,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/13fe82d4-3866-4ef2-819d-63b0fa438ffa.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/13fe82d4-3866-4ef2-819d-63b0fa438ffa", "svg", "primary-icon")
                         </div>
                         <h3>Zugriff auf Deine Marke. Von Überall.</h3>
                         <p>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</p>
@@ -95,7 +96,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/9f452dd3-10f8-4502-854e-7180cbab2ca9.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/9f452dd3-10f8-4502-854e-7180cbab2ca9", "svg", "primary-icon")
                         </div>
                         <h3>Erweitere Deine Marke. Und zwar geplant.</h3>
                         <p>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</p>
@@ -104,7 +105,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature">
                         <div class="icon-box">
-                            <img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/47c47fd7-e6a3-4926-a637-a951b0e8ee67.svg" alt="" class="primary-icon">
+                            @CustomHelper.Image("FrontendData/47c47fd7-e6a3-4926-a637-a951b0e8ee67", "svg", "primary-icon")
                         </div>
                         <h3>Fortlaufende Verbesserung. Dank KI.</h3>
                         <p>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</p>
@@ -130,7 +131,10 @@
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 img-box">
-                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
 
             <div class="row">
@@ -143,7 +147,10 @@
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 order-lg-first img-box">
-                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" alt=""></div></div>
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
 
             <div class="row">
@@ -156,7 +163,10 @@
                     </div> <!-- /.text -->
                 </div> <!-- /.col- -->
                 <div class="col-lg-6 img-box">
-                    <div><img src="https://content.philipp-moser.de/wlo0t5byw6/FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203.svg" alt=""></div></div>
+                    <div>
+                        @CustomHelper.Image("FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203", "svg", "")
+                    </div>
+                </div>
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.our-feature-two -->
