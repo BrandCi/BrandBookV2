@@ -772,6 +772,78 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_01_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_01_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_01_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_01_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_02_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_02_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_02_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_02_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_03_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_03_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_feature_03_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_feature_03_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_title_l1 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_title_l1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_features_title_l2 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_title_l2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Would you like to know more?.
         /// </summary>
         public static string frontend_home_index_intro_button_description {
