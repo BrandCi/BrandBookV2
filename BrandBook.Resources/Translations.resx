@@ -408,6 +408,12 @@
   <data name="frontend_navigation_product_overview" xml:space="preserve">
     <value>Overview</value>
   </data>
+  <data name="frontend_footer_allrightsreserved" xml:space="preserve">
+    <value>All Rights Reserved</value>
+  </data>
+  <data name="frontend_footer_copyright" xml:space="preserve">
+    <value>Philipp C. Moser</value>
+  </data>
   <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
     <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
   </data>

@@ -646,6 +646,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Rights Reserved.
+        /// </summary>
+        public static string frontend_footer_allrightsreserved {
+            get {
+                return ResourceManager.GetString("frontend_footer_allrightsreserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Philipp C. Moser.
+        /// </summary>
+        public static string frontend_footer_copyright {
+            get {
+                return ResourceManager.GetString("frontend_footer_copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cookie Terms.
         /// </summary>
         public static string frontend_footer_legal_cookieterms {
