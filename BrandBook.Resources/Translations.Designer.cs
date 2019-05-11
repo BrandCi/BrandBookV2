@@ -736,7 +736,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solutions.
+        ///   Looks up a localized string similar to Functions.
         /// </summary>
         public static string frontend_footer_product_solutions {
             get {
