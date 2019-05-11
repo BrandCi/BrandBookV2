@@ -772,7 +772,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand..
         /// </summary>
         public static string frontend_home_index_features_feature_01_description {
             get {
@@ -781,7 +781,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Access to your brand. From everywhere..
         /// </summary>
         public static string frontend_home_index_features_feature_01_title {
             get {
@@ -790,7 +790,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to A redesign of your brand contributes to the brand&apos;s success through intelligent advance planning..
         /// </summary>
         public static string frontend_home_index_features_feature_02_description {
             get {
@@ -799,7 +799,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Expand your brand. Well planned..
         /// </summary>
         public static string frontend_home_index_features_feature_02_title {
             get {
@@ -808,7 +808,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Through the use of Artificial Intelligence, we provide you and your brand a steady improvement..
         /// </summary>
         public static string frontend_home_index_features_feature_03_description {
             get {
@@ -817,7 +817,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Continuous improvement. Thanks to AI..
         /// </summary>
         public static string frontend_home_index_features_feature_03_title {
             get {
@@ -826,7 +826,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Why BrandCi leads your Brand.
         /// </summary>
         public static string frontend_home_index_features_title_l1 {
             get {
@@ -835,7 +835,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to to success.
         /// </summary>
         public static string frontend_home_index_features_title_l2 {
             get {
