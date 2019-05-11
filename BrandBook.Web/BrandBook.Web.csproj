@@ -848,6 +848,7 @@
     <Content Include="Areas\App\Views\Settings\Brand.cshtml" />
     <Content Include="Areas\App\Views\Culture\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Brand\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -954,7 +955,6 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\App\Views\Brand\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
