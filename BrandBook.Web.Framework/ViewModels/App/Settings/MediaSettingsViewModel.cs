@@ -8,8 +8,8 @@ namespace BrandBook.Web.Framework.ViewModels.App.Settings
 {
     public class MediaSettingsViewModel
     {
-        public SettingViewModel Server { get; set; }
-        public SettingViewModel Key { get; set; }
+        public string Server { get; set; }
+        public string Key { get; set; }
 
     }
 }

@@ -47,8 +47,8 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             MediaSettingsViewModel model = new MediaSettingsViewModel();
 
-            model.Server.Value = settingRepository.GetSettingByKey("conf_media_server").Value;
-            model.Key.Value = settingRepository.GetSettingByKey("conf_media_key").Value;
+            model.Server = settingRepository.GetSettingByKey("conf_media_server").Value;
+            model.Key = settingRepository.GetSettingByKey("conf_media_key").Value;
 
 
             return View(model);

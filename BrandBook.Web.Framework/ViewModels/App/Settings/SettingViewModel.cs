@@ -9,7 +9,6 @@ namespace BrandBook.Web.Framework.ViewModels.App.Settings
 {
     public class SettingViewModel
     {
-        [Required]
         public string Value { get; set; }
     }
 }
