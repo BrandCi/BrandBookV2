@@ -107,6 +107,7 @@
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
+    <Compile Include="HtmlHelpers\CustomHelper.cs" />
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
