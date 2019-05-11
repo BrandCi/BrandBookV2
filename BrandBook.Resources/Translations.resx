@@ -450,6 +450,27 @@
   <data name="frontend_home_index_intro_text" xml:space="preserve">
     <value />
   </data>
+  <data name="frontend_home_index_services_button_title" xml:space="preserve">
+    <value>Learn more.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_description" xml:space="preserve">
+    <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
+    <value>Access to your brand. From everywhere.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
+    <value>A redesign of your brand contributes to the brand's success through intelligent advance planning.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
+    <value>Expand your brand. Well planned.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
+    <value>Through the use of Artificial Intelligence, we provide you and your brand a steady improvement.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_title" xml:space="preserve">
+    <value>Continuous improvement. Thanks to AI.</value>
+  </data>
   <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
     <value>Discover BrandCi</value>
   </data>
