@@ -956,10 +956,10 @@
     <Content Include="Views\Legal\PrivacyPolicy.cshtml" />
     <Content Include="Views\Legal\Cookie.cshtml" />
     <Content Include="Views\Product\Overview.cshtml" />
+    <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
-    <Folder Include="Views\Support\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

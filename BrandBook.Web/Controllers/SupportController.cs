@@ -8,8 +8,7 @@ namespace BrandBook.Web.Controllers
 {
     public class SupportController : Controller
     {
-        // GET: Support
-        public ActionResult Index()
+        public ActionResult Contact()
         {
             return View();
         }
