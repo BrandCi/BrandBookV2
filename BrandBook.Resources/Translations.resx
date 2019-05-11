@@ -183,16 +183,16 @@
   <data name="frontend_navigation_contact" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="frontend_navigation_functions" xml:space="preserve">
-    <value>Functionality</value>
+  <data name="frontend_navigation_product" xml:space="preserve">
+    <value>Product</value>
   </data>
-  <data name="frontend_navigation_functions_brandimprovement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandimprovement" xml:space="preserve">
     <value>Brand Improvement (AI)</value>
   </data>
-  <data name="frontend_navigation_functions_brandmanagement" xml:space="preserve">
+  <data name="frontend_navigation_product_brandmanagement" xml:space="preserve">
     <value>Brand Management</value>
   </data>
-  <data name="frontend_navigation_function_plannedfeatures" xml:space="preserve">
+  <data name="frontend_navigation_product_plannedfeatures" xml:space="preserve">
     <value>Planned Features</value>
   </data>
   <data name="frontend_navigation_homepage" xml:space="preserve">

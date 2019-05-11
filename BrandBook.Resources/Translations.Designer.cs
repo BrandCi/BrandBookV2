@@ -817,42 +817,6 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Planned Features.
-        /// </summary>
-        public static string frontend_navigation_function_plannedfeatures {
-            get {
-                return ResourceManager.GetString("frontend_navigation_function_plannedfeatures", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Functionality.
-        /// </summary>
-        public static string frontend_navigation_functions {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brand Improvement (AI).
-        /// </summary>
-        public static string frontend_navigation_functions_brandimprovement {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions_brandimprovement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brand Management.
-        /// </summary>
-        public static string frontend_navigation_functions_brandmanagement {
-            get {
-                return ResourceManager.GetString("frontend_navigation_functions_brandmanagement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Homepage.
         /// </summary>
         public static string frontend_navigation_homepage {
@@ -876,6 +840,42 @@ namespace BrandBook.Resources {
         public static string frontend_navigation_pricing {
             get {
                 return ResourceManager.GetString("frontend_navigation_pricing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string frontend_navigation_product {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Improvement (AI).
+        /// </summary>
+        public static string frontend_navigation_product_brandimprovement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandimprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Management.
+        /// </summary>
+        public static string frontend_navigation_product_brandmanagement {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandmanagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planned Features.
+        /// </summary>
+        public static string frontend_navigation_product_plannedfeatures {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_plannedfeatures", resourceCulture);
             }
         }
         
