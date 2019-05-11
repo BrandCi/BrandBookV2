@@ -22,6 +22,15 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             settingRepository = new SettingRepository(new BrandBookDbContext());
         }
 
+        public static string ImagePath(string imageName, string imageType, string imageSection = "")
+        {
+            if (imageSection != "")
+            {
+                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName + "." + imageType;
+            }
+            return "https://" + contentServer + "/" + contentKey + "/" + imageName + "." + imageType;
+        }
+
 
         public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
@@ -31,7 +40,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append("<img");
 
             html.Append(" src=\"");
-            html.Append("https://" + contentServer + "/" + contentKey + "/" + imageName + "." + imageType);
+            html.Append(ImagePath(imageName, imageType));
             html.Append("\" ");
 
             if (classes != "")
