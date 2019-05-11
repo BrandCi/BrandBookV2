@@ -175,6 +175,7 @@
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Routes\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -956,6 +957,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
