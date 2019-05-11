@@ -408,4 +408,85 @@
   <data name="frontend_navigation_product_overview" xml:space="preserve">
     <value>Übersicht</value>
   </data>
+  <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
+    <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
+    <value>Zugriff auf Deine Marke. Von Überall.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
+    <value>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
+    <value>Erweitere Deine Marke. Und zwar geplant.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
+    <value>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
+    <value>Fortlaufende Verbesserung. Dank KI.</value>
+  </data>
+  <data name="frontend_home_index_features_title_l1" xml:space="preserve">
+    <value>Warum BrandCi Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_features_title_l2" xml:space="preserve">
+    <value>zum Erfolg führt.</value>
+  </data>
+  <data name="frontend_home_index_intro_button_description" xml:space="preserve">
+    <value>Möchtest Du mehr wissen?</value>
+  </data>
+  <data name="frontend_home_index_intro_button_title" xml:space="preserve">
+    <value>Klick hier</value>
+  </data>
+  <data name="frontend_home_index_intro_heading" xml:space="preserve">
+    <value>Lass uns Dir BrandCi vorstellen.</value>
+  </data>
+  <data name="frontend_home_index_intro_subheading" xml:space="preserve">
+    <value>Was ist BrandCi?</value>
+  </data>
+  <data name="frontend_home_index_intro_subtext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_intro_text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_services_button_title" xml:space="preserve">
+    <value>Mehr erfahren.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_description" xml:space="preserve">
+    <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
+    <value>Zugriff auf Deine Marke. Von Überall.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
+    <value>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
+    <value>Erweitere Deine Marke. Und zwar geplant.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
+    <value>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_title" xml:space="preserve">
+    <value>Fortlaufende Verbesserung. Dank KI.</value>
+  </data>
+  <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
+    <value>Entdecke BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
+    <value>Verwalte und verbessere Deinen Markenauftritt.</value>
+  </data>
+  <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
+    <value>Teste BrandCi kostenfrei.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
+    <value>Deine digitale Marke.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
+    <value>Dein Erfolg.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>
