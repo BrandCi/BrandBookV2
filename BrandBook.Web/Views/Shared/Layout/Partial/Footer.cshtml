@@ -27,9 +27,13 @@
                         </ul>
                     </div> <!-- /.footer-list -->
                     <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">@Translations.frontend_footer_support_title</h4>
+                        <h4 class="title">
+                            @Translations.frontend_footer_support_title
+                        </h4>
                         <ul>
-                            <li><a href="#">@Translations.frontend_footer_support_contact</a></li>
+                            <li><a href="@Url.Action("Contact", "Support", new {area = ""})">
+                                @Translations.frontend_footer_support_contact
+                            </a></li>
                             <!--
                             <li><a href="#">@Translations.frontend_footer_support_forum</a></li>
                             <li><a href="#">@Translations.frontend_footer_support_reportabug</a></li>
