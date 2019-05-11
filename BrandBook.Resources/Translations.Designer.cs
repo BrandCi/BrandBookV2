@@ -871,6 +871,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string frontend_navigation_product_overview {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Planned Features.
         /// </summary>
         public static string frontend_navigation_product_plannedfeatures {

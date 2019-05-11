@@ -405,4 +405,7 @@
   <data name="app_usermenu_settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="frontend_navigation_product_overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
 </root>
