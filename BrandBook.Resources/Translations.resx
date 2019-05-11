@@ -408,4 +408,19 @@
   <data name="frontend_navigation_product_overview" xml:space="preserve">
     <value>Overview</value>
   </data>
+  <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
+    <value>Discover Brand Ci</value>
+  </data>
+  <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
+    <value>Manage and improve your brand image.</value>
+  </data>
+  <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
+    <value>Test Brand Ci for free</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
+    <value>Your digital brand.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
+    <value>Your success.</value>
+  </data>
 </root>

@@ -772,6 +772,51 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discover Brand Ci.
+        /// </summary>
+        public static string frontend_home_index_topsection_discover_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_discover_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage and improve your brand image..
+        /// </summary>
+        public static string frontend_home_index_topsection_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test Brand Ci for free.
+        /// </summary>
+        public static string frontend_home_index_topsection_test_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_test_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your digital brand..
+        /// </summary>
+        public static string frontend_home_index_topsection_title_l1 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_l1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your success..
+        /// </summary>
+        public static string frontend_home_index_topsection_title_l2 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_l2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accept.
         /// </summary>
         public static string frontend_legal_cookieconsent_accept_button_text {

@@ -19,19 +19,26 @@
         <div class="container">
             <div class="main-text-wrapper">
                 <h1 class="strong-title-900">
-                    Deine digitale Marke.
-                    <br>Dein Erfolg.
+                    @Translations.frontend_home_index_topsection_title_l1
+                    <br>@Translations.frontend_home_index_topsection_title_l2
                 </h1>
                 <p>
-                    Verwalte und verbessere Deinen Markenauftritt.
+                    @Translations.frontend_home_index_topsection_subtitle
                 </p>
                 <ul class="button-group clearfix">
-                    <li><a href="@Url.Action("Overview", "Product", new {area = ""})">
-                        Entdecke BrandCi.
-                    </a></li>
+                    <li>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                            @Translations.frontend_home_index_topsection_discover_button_title
+                        </a>
+                    </li>
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <li><a href="@Url.Action("Index", "Register", new {area = "Auth"})">Teste BrandCi kostenfrei.</a></li>
+                        <li>
+
+                            <a href="@Url.Action("Index", "Register", new {area = "Auth"})">
+                                @Translations.frontend_home_index_topsection_test_button_title
+                            </a>
+                        </li>
                     }
 
                 </ul>
