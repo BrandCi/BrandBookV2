@@ -21,5 +21,10 @@ namespace BrandBook.Infrastructure.Repositories.Setting
         {
             return Set.Where(x => x.Category == category).ToList();
         }
+
+        public Core.Domain.System.Setting GetSettingByKey(string key)
+        {
+            return Set.FirstOrDefault(x => x.Key == key);
+        }
     }
 }
