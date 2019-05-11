@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Settings
 {
-    class MediaSettingsViewModel
+    public class MediaSettingsViewModel
     {
+        public SettingViewModel Server { get; set; }
+        public SettingViewModel Key { get; set; }
+
     }
 }
