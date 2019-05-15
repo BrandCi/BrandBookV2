@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Dtos.User
 {
-    public class AppUserDto : BaseDto
+    public class AppUserDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
