@@ -5,7 +5,84 @@
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
 }
+@section styles {
+    @Styles.Render("~/Content/Plugins/Datatables")
+}
 
 
 <h2>UserOverview</h2>
 
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">Multi item selection</h4>
+            <p class="text-muted font-14 m-b-30">
+                This example shows the multi option. Note how a click on a row will toggle its selected state without effecting other rows, unlike the os and single options shown in other examples.
+            </p>
+
+            <table id="selection-datatable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Nutzername</th>
+                        <th>Email</th>
+                        <th>Aktiv</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Admin</td>
+                        <td>Admin</td>
+                        <td>admin</td>
+                        <td>admin@philipp-moser.de</td>
+                        <td>
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Philipp</td>
+                        <td>Moser</td>
+                        <td>pmoser</td>
+                        <td>info@philipp-moser.de</td>
+                        <td>
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/Plugins/Datatables")
+    
+    <script type="text/javascript">
+
+        $('#selection-datatable').DataTable({
+            select: {
+                style: 'multi'
+            }
+        });
+
+    </script>
+    
+    
+    
+
+}
