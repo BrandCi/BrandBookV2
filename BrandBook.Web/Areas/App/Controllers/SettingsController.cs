@@ -40,7 +40,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             model.BasicUrl = settingRepository.GetSettingByKey("conf_system_baseisurl").Value;
             model.EmailAddress = settingRepository.GetSettingByKey("conf_system_email").Value;
 
-            return View();
+            return View(model);
         }
 
         public ActionResult User()
