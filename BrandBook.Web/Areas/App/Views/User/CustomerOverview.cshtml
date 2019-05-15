@@ -11,7 +11,65 @@
 
 
 
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <p class="text-muted font-14 m-b-30"></p>
 
+            <table id="customerOverview-datatable" class="table table-bordered dt-responsive">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Nutzer</th>
+                    <th>Aktiv</th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <a href="#">
+                                philovation GmbH
+                            </a>
+                        </td>
+                        <td>5 / 10</td>
+                        <td>
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <a href="#">
+                                philovation GmbH
+                            </a>
+                        </td>
+                        <td>5 / 10</td>
+                        <td>
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <a href="#">
+                                philovation GmbH
+                            </a>
+                        </td>
+                        <td>5 / 10</td>
+                        <td>
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
 
 @section scripts{
     @Scripts.Render("~/bundles/Plugins/Datatables")
