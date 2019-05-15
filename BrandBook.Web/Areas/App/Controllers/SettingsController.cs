@@ -9,6 +9,7 @@ using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
+using BrandBook.Web.Framework.ViewModels.Auth;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -34,8 +35,30 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult System()
         {
-            return View();
+            SystemSettingsViewModel model = new SystemSettingsViewModel();
+
+            model.AppTitle = settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            model.BasicUrl = settingRepository.GetSettingByKey("conf_system_baseisurl").Value;
+            model.EmailAddress = settingRepository.GetSettingByKey("conf_system_email").Value;
+
+            return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult System(SystemSettingsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            return RedirectToAction("System", "Settings", new {area = "App"});
+
+
+        }
+
+
 
         public ActionResult User()
         {

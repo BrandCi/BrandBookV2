@@ -156,6 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\AppUserController.cs" />
     <Compile Include="Api\BrandController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
     <Compile Include="Areas\App\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\App\Controllers\UserController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
@@ -775,6 +777,24 @@
     <Content Include="Plugins\custombox\src\css\custombox.css" />
     <Content Include="Plugins\custombox\src\js\custombox.js" />
     <Content Include="Plugins\custombox\src\js\legacy.js" />
+    <Content Include="Plugins\datatables\buttons.bootstrap4.min.css" />
+    <Content Include="Plugins\datatables\buttons.bootstrap4.min.js" />
+    <Content Include="Plugins\datatables\buttons.colVis.min.js" />
+    <Content Include="Plugins\datatables\buttons.html5.min.js" />
+    <Content Include="Plugins\datatables\buttons.print.min.js" />
+    <Content Include="Plugins\datatables\dataTables.bootstrap4.min.css" />
+    <Content Include="Plugins\datatables\dataTables.bootstrap4.min.js" />
+    <Content Include="Plugins\datatables\dataTables.buttons.min.js" />
+    <Content Include="Plugins\datatables\dataTables.keyTable.min.js" />
+    <Content Include="Plugins\datatables\dataTables.responsive.min.js" />
+    <Content Include="Plugins\datatables\dataTables.select.min.js" />
+    <Content Include="Plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Plugins\datatables\jszip.min.js" />
+    <Content Include="Plugins\datatables\pdfmake.min.js" />
+    <Content Include="Plugins\datatables\responsive.bootstrap4.min.css" />
+    <Content Include="Plugins\datatables\responsive.bootstrap4.min.js" />
+    <Content Include="Plugins\datatables\select.bootstrap4.min.css" />
+    <Content Include="Plugins\datatables\vfs_fonts.js" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.css" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.js" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.min.css" />
@@ -851,6 +871,8 @@
     <Content Include="Areas\App\Views\AppCulture\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
     <Content Include="Areas\App\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\App\Views\User\UserOverview.cshtml" />
+    <Content Include="Areas\App\Views\User\CustomerOverview.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -913,6 +935,7 @@
     <Content Include="Content\Flag-Icon\_variables.scss" />
     <Content Include="AppSettings.config" />
     <Content Include="Content\App\_Customize.scss" />
+    <Content Include="Plugins\datatables\json\scroller-demo.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Frontend\theme.js" />

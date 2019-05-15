@@ -1,5 +1,5 @@
 ﻿@using BrandBook.Resources
-
+@model BrandBook.Web.Framework.ViewModels.App.Settings.SystemSettingsViewModel
 @{
     ViewBag.Title = Translations.app_settings_system_title;
 }
@@ -21,12 +21,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="p-20">
-                        <form class="form-horizontal" role="form">
+                        @using (Html.BeginForm("System", "Settings", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
 
                             <div class="form-group row">
-                                <label class="col-2 col-form-label">@Translations.app_settings_system_apptitle_title</label>
+                                @Html.LabelFor(m => m.AppTitle, new { @class = "col-2 col-form-label" })
                                 <div class="col-10">
-                                    <input type="text" class="form-control" value="Brand Ci" placeholder="@Translations.app_settings_system_apptitle_title">
+                                    @Html.TextBoxFor(m => m.AppTitle, new { @class = "form-control" })
                                     <span class="help-block">
                                         <small>
                                             @Translations.app_settings_system_apptitle_description
@@ -35,11 +37,10 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group row">
-                                <label class="col-2 col-form-label">@Translations.app_settings_system_systembaseurl_title</label>
+                                @Html.LabelFor(m => m.BasicUrl, new { @class = "col-2 col-form-label" })
                                 <div class="col-10">
-                                    <input type="text" class="form-control" placeholder="@Translations.app_settings_system_systembaseurl_title" value="https://localhost:44305">
+                                    @Html.TextBoxFor(m => m.BasicUrl, new { @class = "form-control" })
                                     <span class="help-block">
                                         <small>
                                             @Translations.app_settings_system_systembaseurl_description
@@ -48,11 +49,10 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group row">
-                                <label class="col-2 col-form-label" for="example-email">@Translations.app_settings_system_emailsender_title</label>
+                                @Html.LabelFor(m => m.EmailAddress, new { @class = "col-2 col-form-label" })
                                 <div class="col-10">
-                                    <input type="email" id="example-email" name="example-email" class="form-control" value="brandbook@philipp-moser.de" placeholder="@Translations.app_settings_system_emailsender_title">
+                                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
                                     <span class="help-block">
                                         <small>
                                             @Translations.app_settings_system_emailsender_description
@@ -75,9 +75,11 @@
                                 </button>
                             </div>
 
+                        }
 
 
-                        </form>
+
+
                     </div>
                 </div>
 

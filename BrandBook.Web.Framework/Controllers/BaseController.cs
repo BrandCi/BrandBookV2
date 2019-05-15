@@ -7,6 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.RepositoryInterfaces.Setting;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Helpers;
@@ -22,12 +25,22 @@ namespace BrandBook.Web.Framework.Controllers
         public RoleService _roleService;
 
         #endregion
-        
 
+        private ISettingRepository settingRepository;
+
+        public BaseController()
+        {
+            this.settingRepository = new SettingRepository(new BrandBookDbContext());
+        }
 
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
+
+            ViewBag.AppTitle = settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+
+
+
             string cultureName = null;
 
             HttpCookie cultureCookie = Request.Cookies["_culture"];
@@ -55,7 +68,6 @@ namespace BrandBook.Web.Framework.Controllers
 
             return base.BeginExecuteCore(callback, state);
         }
-
 
     }
 }

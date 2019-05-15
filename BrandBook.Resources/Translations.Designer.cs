@@ -115,7 +115,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Companies.
+        ///   Looks up a localized string similar to Customers.
         /// </summary>
         public static string app_mainnavigation_usermanagement_company {
             get {

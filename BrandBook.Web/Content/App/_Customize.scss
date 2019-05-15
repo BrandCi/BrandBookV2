@@ -6,3 +6,16 @@
 .custom-modal-text {
     padding: 50px;
 }
+
+
+// Datatables
+.dataTable {
+    .selected td,
+    .selected td a {
+        color: $light;
+    }
+
+    td a {
+        text-decoration: underline;
+    }
+}

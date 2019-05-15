@@ -114,6 +114,7 @@
     <Compile Include="ViewModels\App\Brand\SingleBrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\MediaSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\SettingViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\SystemSettingsViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
   </ItemGroup>

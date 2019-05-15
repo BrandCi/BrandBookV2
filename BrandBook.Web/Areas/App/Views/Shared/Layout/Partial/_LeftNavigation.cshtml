@@ -25,9 +25,23 @@
                             <i class="fas fa-user"></i><span> @Translations.app_mainnavigation_usermanagement_usermanagement</span>
                         </a>
                         <ul class="list-unstyled" style="display: block;">
-                            <li><a href="#">@Translations.app_mainnavigation_usermanagement_user</a></li>
-                            <li><a href="#">@Translations.app_mainnavigation_usermanagement_roles</a></li>
-                            <li><a href="#">@Translations.app_mainnavigation_usermanagement_company</a></li>
+                            <li>
+                                <a href="@Url.Action("UserOverview", "User", new {area = "App"})">
+                                    @Translations.app_mainnavigation_usermanagement_user
+                                </a>
+                            </li>
+                        <!--
+                        <li>
+                            <a href="#">
+                                @Translations.app_mainnavigation_usermanagement_roles
+                            </a>
+                        </li>
+                        -->
+                            <li>
+                                <a href="@Url.Action("CustomerOverview", "User", new { area = "App"})">
+                                    @Translations.app_mainnavigation_usermanagement_company
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 }

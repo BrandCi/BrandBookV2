@@ -151,13 +151,10 @@ namespace BrandBook.Web
              *
              */
 
-            /*
-             * Modals
-             */
+            // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
                     "~/Plugins/custombox/dist/custombox.min.css",
                     "~/Plugins/morris/morris.css"));
-
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
                 "~/Plugins/custombox/dist/custombox.min.js",
@@ -165,15 +162,35 @@ namespace BrandBook.Web
 
 
 
+            // Morris Chart
             bundles.Add(new StyleBundle("~/Content/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.css"));
-
-
+            
             bundles.Add(new ScriptBundle("~/bundles/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.min.js",
                 "~/Plugins/raphael/raphael-min.js"));
 
 
+            // Datatables
+            bundles.Add(new StyleBundle("~/Content/Plugins/Datatables").Include(
+                "~/Plugins/datatables/dataTables.bootstrap4.min.css",
+                "~/Plugins/datatables/buttons.bootstrap4.min.css",
+                "~/Plugins/datatables/responsive.bootstrap4.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Datatables").Include(
+                "~/Plugins/datatables/jquery.dataTables.min.js",
+                "~/Plugins/datatables/dataTables.bootstrap4.min.js",
+                "~/Plugins/datatables/dataTables.buttons.min.js",
+                "~/Plugins/datatables/buttons.bootstrap4.min.js",
+                "~/Plugins/datatables/jszip.min.js",
+                "~/Plugins/datatables/pdfmake.min.js",
+                "~/Plugins/datatables/vfs_fonts.js",
+                "~/Plugins/datatables/buttons.html5.min.js",
+                "~/Plugins/datatables/buttons.print.min.js",
+                "~/Plugins/datatables/dataTables.keyTable.min.js",
+                "~/Plugins/datatables/dataTables.responsive.min.js",
+                "~/Plugins/datatables/responsive.bootstrap4.min.js",
+                "~/Plugins/datatables/dataTables.select.min.js"));
 
         }
     }
