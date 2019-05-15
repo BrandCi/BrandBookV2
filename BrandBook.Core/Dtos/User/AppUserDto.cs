@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Dtos.User
 {
-    class AppUserDto
+    public class AppUserDto : BaseDto
     {
     }
 }
