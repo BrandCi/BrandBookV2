@@ -4646,3 +4646,6 @@ File: Responsive
 
 .custom-modal-text {
   padding: 50px; }
+
+.dataTable .selected td {
+  color: #eeeeee; }

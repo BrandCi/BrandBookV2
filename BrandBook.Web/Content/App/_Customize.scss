@@ -6,3 +6,9 @@
 .custom-modal-text {
     padding: 50px;
 }
+
+
+// Datatables
+.dataTable .selected td {
+    color: $light;
+}
