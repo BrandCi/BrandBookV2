@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.Brand;
+using BrandBook.Core.Domain.System;
 using BrandBook.Core.Domain.User;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -16,6 +17,8 @@ namespace BrandBook.Infrastructure.Data
         public DbSet<RolePermission> RolePermissions { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
+
+        public DbSet<Setting> Settings { get; set; }
 
 
 

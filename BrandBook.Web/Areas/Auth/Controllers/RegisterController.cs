@@ -81,6 +81,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
+                if (model.PromotionCode != "Promo_E85D2C" || model.PromotionCode != "Promo_292A8D" || model.PromotionCode != "Promo_5CEAE3")
+                {
+                    ModelState.AddModelError("", "Please check the Promotioncode!");
+                    return View(model);
+                }
+
+
+
                 var user = new AppUser { UserName = model.Username, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 

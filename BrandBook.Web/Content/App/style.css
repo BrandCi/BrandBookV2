@@ -239,7 +239,6 @@ body.fixed-left .side-menu.left {
   position: absolute;
   right: 20px;
   display: inline-block;
-  font-family: "Material Design Icons";
   text-rendering: auto;
   line-height: 24px;
   font-size: 16px;
@@ -250,8 +249,6 @@ body.fixed-left .side-menu.left {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
   color: #98a6ad; }
-  #sidebar-menu ul li .menu-arrow:before {
-    content: "\F142"; }
 
 #sidebar-menu ul li a.subdrop .menu-arrow {
   -ms-transform: rotate(90deg);

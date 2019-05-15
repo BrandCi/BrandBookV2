@@ -5,24 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.RepositoryInterfaces.Setting;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.Setting;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
     public static class AuthCustomHelper
     {
-
-        public static IHtmlString RenderBackground(string backgroundSrc = "")
+        public static IHtmlString RenderBackground(string imageName = "", string imageType = "")
         {
             StringBuilder html = new StringBuilder();
 
             html.Append("<div class=\"img-holder\">");
                 html.Append("<div class=\"bg\"></div>");
 
-                if (backgroundSrc != "")
+                if (imageName != "" && imageType != "")
                 {
                     html.Append("<div class=\"info-holder\">");
                         html.Append("<img src=\"");
-                        html.Append(backgroundSrc);
+                        html.Append(CustomHelper.ImagePath(imageName, imageType, "AuthData"));
                         html.Append("\" />");
                     html.Append("</div>");
                 }

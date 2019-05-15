@@ -10,8 +10,9 @@ namespace BrandBook.Core.Dtos.Brand
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Image { get; set; }
+        public string ImageName { get; set; }
+        public string ImageType { get; set; }
         public string Description { get; set; }
-        public string MainColor { get; set; }
+        public string MainHexColor { get; set; }
     }
 }

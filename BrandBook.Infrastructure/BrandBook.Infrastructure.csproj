@@ -95,10 +95,19 @@
     <Compile Include="Migrations\201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.Designer.cs">
       <DependentUpon>201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905072033449_AddSystemSettingsTable.cs" />
+    <Compile Include="Migrations\201905072033449_AddSystemSettingsTable.Designer.cs">
+      <DependentUpon>201905072033449_AddSystemSettingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.cs" />
+    <Compile Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.Designer.cs">
+      <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\Setting\SettingRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
@@ -144,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.resx">
       <DependentUpon>201905051906290_UpdateMainColorAndImageDecouplingInBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905072033449_AddSystemSettingsTable.resx">
+      <DependentUpon>201905072033449_AddSystemSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.resx">
+      <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

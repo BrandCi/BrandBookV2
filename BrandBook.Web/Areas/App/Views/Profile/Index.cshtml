@@ -1,7 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/App/Views/Shared/Layout/_Layout.cshtml";
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
 }
 
 @section styles
@@ -112,7 +115,7 @@
     </button>
     <h4 class="custom-modal-title">E-Mail Adresse ändern</h4>
     <div class="custom-modal-text">
-        
+
 
         <form role="form">
             <div class="form-group">

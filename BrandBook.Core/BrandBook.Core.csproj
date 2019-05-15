@@ -56,6 +56,9 @@
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
     <Compile Include="Domain\Brand\Brand.cs" />
+    <Compile Include="Domain\System\AccessLevel.cs" />
+    <Compile Include="Domain\System\Category.cs" />
+    <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\Brand\IBrandRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRepository.cs" />
+    <Compile Include="RepositoryInterfaces\Setting\ISettingRepository.cs" />
     <Compile Include="RepositoryInterfaces\User\IAppUserRepository.cs" />
     <Compile Include="RepositoryInterfaces\User\IRolePermissionRepository.cs" />
     <Compile Include="RepositoryInterfaces\User\IUserRoleRepository.cs" />

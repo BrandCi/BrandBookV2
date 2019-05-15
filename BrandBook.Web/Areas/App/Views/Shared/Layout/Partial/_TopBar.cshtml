@@ -1,9 +1,10 @@
-﻿<div class="topbar">
+﻿@using BrandBook.Resources
+<div class="topbar">
 
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="#" class="logo">
+            <a href="@Url.Action("Index", "Dashboard", new {area = "App"})" class="logo">
                 <i class="fa fa-rocket"></i> <span>BrandBook</span>
             </a>
         </div>
@@ -30,18 +31,28 @@
                     </div>
 
                     <!-- item-->
-                    <a href="@Url.Action("Index", "Profile", new {area="App"})" class="dropdown-item notify-item">
-                        <i class="fas fa-user"></i> <span>Profil</span>
+                    <a href="@Url.Action("Index", "Profile" , new {area="App" })" class="dropdown-item notify-item">
+                        <i class="fas fa-user"></i> <span>@Translations.app_usermenu_profile</span>
                     </a>
 
                     <!-- item-->
-                    <a href="#" class="dropdown-item notify-item">
-                        <i class="fas fa-cogs"></i> <span>Einstellungen</span>
+                    <a href="@Url.Action("Index", "AppCulture", new {area="App"})" class="dropdown-item notify-item">
+                        <i class="fas fa-globe"></i> <span>@Translations.app_usermenu_languageselection</span>
                     </a>
+
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <!-- item-->
+                        <a href="@Url.Action("Index", "Settings", new {area = "App"})" class="dropdown-item notify-item">
+                            <i class="fas fa-cogs"></i> <span>@Translations.app_usermenu_settings</span>
+                        </a>
+                    }
+
+
 
                     <!-- item-->
                     <a href="@Url.Action("Index", "Home", new {area = ""})" class="dropdown-item notify-item">
-                        <i class="fas fa-chevron-circle-left"></i> <span>App verlassen</span>
+                        <i class="fas fa-chevron-circle-left"></i> <span>@Translations.app_usermenu_leaveapp</span>
                     </a>
 
                     @using (Html.BeginForm("Index", "Logout", new { area = "Auth" }, FormMethod.Post, new { id = "logoutForm" }))
@@ -49,7 +60,7 @@
                         @Html.AntiForgeryToken()
 
                         <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item notify-item">
-                            <i class="fas fa-sign-out-alt"></i> <span>Abmelden</span>
+                            <i class="fas fa-sign-out-alt"></i> <span>@Translations.app_usermenu_logout</span>
                         </a>
                     }
 

@@ -23,7 +23,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-
         // GET: App/Brands
         public ActionResult Overview()
         {

@@ -1,0 +1,89 @@
+﻿@using BrandBook.Resources
+
+@{
+    ViewBag.Title = Translations.app_settings_system_title;
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">
+                @Translations.app_settings_system_title
+            </h4>
+            <p class="text-muted m-b-30 font-14">
+                @Translations.app_settings_system_description
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+                        <form class="form-horizontal" role="form">
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">@Translations.app_settings_system_apptitle_title</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" value="Brand Ci" placeholder="@Translations.app_settings_system_apptitle_title">
+                                    <span class="help-block">
+                                        <small>
+                                            @Translations.app_settings_system_apptitle_description
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">@Translations.app_settings_system_systembaseurl_title</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" placeholder="@Translations.app_settings_system_systembaseurl_title" value="https://localhost:44305">
+                                    <span class="help-block">
+                                        <small>
+                                            @Translations.app_settings_system_systembaseurl_description
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label" for="example-email">@Translations.app_settings_system_emailsender_title</label>
+                                <div class="col-10">
+                                    <input type="email" id="example-email" name="example-email" class="form-control" value="brandbook@philipp-moser.de" placeholder="@Translations.app_settings_system_emailsender_title">
+                                    <span class="help-block">
+                                        <small>
+                                            @Translations.app_settings_system_emailsender_description
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-5 mb-0">
+                                <a href="@Url.Action("Index", "Settings", new {area = "App"})" class="btn btn-danger btn-custom mr-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_back_button_title
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_update_button_title
+                                </button>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>
