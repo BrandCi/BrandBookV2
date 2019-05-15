@@ -62,6 +62,7 @@
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
+    <Compile Include="Dtos\BaseDto.cs" />
     <Compile Include="Dtos\Brand\BrandDto.cs" />
     <Compile Include="Dtos\User\AppUserDto.cs" />
     <Compile Include="IUnitOfWork.cs" />
