@@ -15,7 +15,7 @@ using BrandBook.Infrastructure.Repositories.User;
 
 namespace BrandBook.Web.Api
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class AppUserController : ApiController
     {
 
