@@ -34,6 +34,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult System()
         {
+            SystemSettingsViewModel model = new SystemSettingsViewModel();
+
+            model.AppTitle = settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            model.BasicUrl = settingRepository.GetSettingByKey("conf_system_baseisurl").Value;
+            model.EmailAddress = settingRepository.GetSettingByKey("conf_system_email").Value;
+
             return View();
         }
 

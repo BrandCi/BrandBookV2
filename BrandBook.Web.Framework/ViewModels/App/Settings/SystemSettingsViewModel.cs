@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Settings
 {
-    class SystemSettingsViewModel
+    public class SystemSettingsViewModel
     {
+        public string AppTitle { get; set; }
+        public string BasicUrl { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
