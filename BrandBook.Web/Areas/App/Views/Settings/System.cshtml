@@ -49,6 +49,18 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.EmailAddress, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+                                            @Translations.app_settings_system_emailsender_description
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
                         }
 
 
