@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Dtos.Brand
 {
-    public class BrandDto
+    public class BrandDto : BaseDto
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string ImageName { get; set; }
         public string ImageType { get; set; }
