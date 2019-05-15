@@ -26,12 +26,24 @@
                             @Html.AntiForgeryToken()
 
                             <div class="form-group row">
-                                @Html.LabelFor(m => m.AppTitle, new {@class = "col-2 col-form-label"})
+                                @Html.LabelFor(m => m.AppTitle, new { @class = "col-2 col-form-label" })
                                 <div class="col-10">
-                                    @Html.TextBoxFor(m => m.AppTitle, new {@class = "form-control"})
+                                    @Html.TextBoxFor(m => m.AppTitle, new { @class = "form-control" })
                                     <span class="help-block">
                                         <small>
                                             @Translations.app_settings_system_apptitle_description
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.BasicUrl, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.BasicUrl, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+                                            @Translations.app_settings_system_systembaseurl_description
                                         </small>
                                     </span>
                                 </div>
