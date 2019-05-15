@@ -852,6 +852,7 @@
     <Content Include="Areas\App\Views\AppCulture\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
     <Content Include="Areas\App\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\App\Views\User\UserOverview.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -960,7 +961,6 @@
     <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\App\Views\User\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
