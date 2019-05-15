@@ -167,6 +167,7 @@
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
     <Compile Include="Areas\App\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\App\Controllers\UserController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
@@ -959,6 +960,7 @@
     <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\App\Views\User\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
