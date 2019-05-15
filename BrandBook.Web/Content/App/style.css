@@ -4647,5 +4647,9 @@ File: Responsive
 .custom-modal-text {
   padding: 50px; }
 
-.dataTable .selected td {
+.dataTable .selected td,
+.dataTable .selected td a {
   color: #eeeeee; }
+
+.dataTable td a {
+  text-decoration: underline; }

@@ -9,6 +9,13 @@
 
 
 // Datatables
-.dataTable .selected td {
-    color: $light;
+.dataTable {
+    .selected td,
+    .selected td a {
+        color: $light;
+    }
+
+    td a {
+        text-decoration: underline;
+    }
 }
