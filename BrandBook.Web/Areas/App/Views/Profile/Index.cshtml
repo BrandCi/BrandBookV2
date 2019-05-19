@@ -137,16 +137,25 @@
     <h4 class="custom-modal-title">E-Mail Adresse ändern</h4>
     <div class="custom-modal-text">
 
+        @using (Html.BeginForm("UpdateEmail", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+        {
 
-        <form role="form">
+            @Html.AntiForgeryToken()
+
             <div class="form-group">
-                <label for="newemail">Neue E-Mail Adresse</label>
-                <input type="email" value="" id="newemail" class="form-control">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
             </div>
+
+
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
             </button>
-        </form>
+        }
+
+      
     </div>
 </div>
 
