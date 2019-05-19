@@ -35,12 +35,20 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateUserData(bool model)
+        public ActionResult UpdateUserData(GeneralUserDataViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Index", "Profile", new { area = "App" });
             }
+
+            var appUser = appUserRepository.FindById(User.Identity.GetUserId());
+
+            appUser.FirstName = model.FirstName;
+            appUser.LastName = model.LastName;
+
+            appUserRepository.Update(appUser);
+
 
             return RedirectToAction("Index", "Profile", new {area = "App"});
         }
