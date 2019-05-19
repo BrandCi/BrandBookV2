@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="">
-                    <h5 class="m-b-5">Philipp Moser</h5>
+                    <h5 class="m-b-5">@Model.FirstName @Model.LastName</h5>
                     <p class="text-muted"></p>
                 </div>
 
@@ -43,22 +43,21 @@
 
 
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
                             @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.FirstName) })
                             @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.LastName) })
                             @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
                         </div>
