@@ -724,6 +724,7 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\e24d2d3c-0ee7-44fb-80c5-ef55a9f55518.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\e9addbec-6b22-4ab8-995d-74e0631ff456.png" />
+    <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
     <Content Include="Content\App\style.css">
       <DependentUpon>style.scss</DependentUpon>
