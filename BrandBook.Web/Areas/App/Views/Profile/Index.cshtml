@@ -1,4 +1,4 @@
-﻿
+﻿@model BrandBook.Web.Framework.ViewModels.App.Profile.GeneralUserDataViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -35,23 +35,44 @@
         <div class="card m-b-20 card-body">
             <h4 class="card-title">Ändern Sie Ihre Daten</h4>
             <p class="card-text">
-                <form role="form">
+
+                @using (Html.BeginForm("UpdateUserData", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                {
+
+                    @Html.AntiForgeryToken()
+
+
                     <div class="form-group">
-                        <label for="Username">Nutzername</label>
-                        <input type="text" value="pmoser" id="Username" class="form-control" disabled="disabled">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="Firstname">Vorname</label>
-                        <input type="text" value="Philipp" id="Firstname" class="form-control">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.FirstName) })
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
+
                     <div class="form-group">
-                        <label for="Lastname">Nachname</label>
-                        <input type="text" value="Moser" id="Lastname" class="form-control">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.LastName) })
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
+
                     <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                         <i class="fas fa-save"></i>&nbsp;&nbsp;Speichern
                     </button>
-                </form>
+
+                }
+
+
+
             </p>
         </div>
 
