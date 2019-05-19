@@ -109,23 +109,37 @@
             <li>Großbuchstaben</li>
             <li>Kleinbuchstaben</li>
         </ul>
-        <form role="form">
-            <div class="form-group mt-3">
-                <label for="currentpassword">Aktuelles Passwort</label>
-                <input type="password" value="" id="currentpassword" class="form-control">
-            </div>
-            <div class="form-group mt-5">
-                <label for="newpassword">Neues Passwort</label>
-                <input type="password" value="" id="newpassword" class="form-control">
+
+        @using (Html.BeginForm("UpdatePassword", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+        {
+
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
             </div>
             <div class="form-group">
-                <label for="confirmnewpassword">Neues Passwort wiederholen</label>
-                <input type="password" value="" id="confirmnewpassword" class="form-control">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
             </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
             </button>
-        </form>
+        }
+
+
     </div>
 </div>
 
