@@ -7,6 +7,8 @@ using BrandBook.Core.RepositoryInterfaces.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.ViewModels.App.Profile;
+using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -22,7 +24,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var appUser = appUserRepository.FindById(User.Identity.GetUserId());
+
+            GeneralUserDataViewModel appUserViewModel = new GeneralUserDataViewModel(appUser.Id, appUser.UserName, appUser.Email);
+                
+
+            return View(appUserViewModel);
         }
 
 
