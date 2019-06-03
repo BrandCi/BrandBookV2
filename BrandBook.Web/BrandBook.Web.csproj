@@ -803,6 +803,7 @@
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.min.js" />
     <Content Include="Plugins\html5shiv.js" />
     <Content Include="Plugins\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Plugins\jquery-validation\js\jquery.validate.min.js" />
     <Content Include="Plugins\jquery.2.2.3.min.js" />
     <Content Include="Plugins\jquery.appear.js" />
     <Content Include="Plugins\jquery.countTo.js" />
