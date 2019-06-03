@@ -669,6 +669,13 @@ div#cookieConsentBox {
 .cookie-terms table td {
   font-size: 15px; }
 
+/*
+    Contact Form
+*/
+.contact-section-dark form input,
+.contact-section-dark form textarea {
+  color: #ffffff !important; }
+
 #loader-wrapper {
   position: fixed;
   top: 0;
