@@ -23,30 +23,42 @@
                 </p>
             </div>
 
-            <form action="#" class="form-validation" autocomplete="off" style="padding: 70px 0;">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <input type="text" placeholder="Your Name">
-                    </div>
-                    <div class="col-lg-6">
-                        <input type="email" placeholder="Your Email Address">
-                    </div>
-                    <div class="col-lg-6">
-                        <input type="text" placeholder="Your Subject">
-                    </div>
-                    <div class="col-12">
-                        <textarea placeholder="Your Message" name="message"></textarea>
-                    </div>
-                    
-                    <div class="col-12">
-                        <input type="checkbox" id="privacyPolicy" />
-                        <label for="privacyPolicy">Accept our Privacy Policy</label>
-                    </div>
-                </div>
-                <button>Send Message</button>
-            </form>
+            <!-- style="padding: 70px 0;" -->
+            @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
-            
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Name, new { placeholder = @Html.DisplayNameFor(m => m.Name)})
+                    </div>
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Email)
+                    </div>
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Subject)
+                    </div>
+
+                    <div class="col-12">
+                        @Html.TextAreaFor(m => m.Message)
+                    </div>
+
+                    <div class="col-12">
+                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy)
+                        @Html.LabelFor(m => m.AcceptPrivacyPolicy)
+                    </div>
+
+                    <button type="submit">Send Message</button>
+
+                </div>
+            }
+
+           
+
+
         </div>
     </div>
 
