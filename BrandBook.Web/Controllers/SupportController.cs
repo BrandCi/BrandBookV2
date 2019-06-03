@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -23,7 +24,15 @@ namespace BrandBook.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (await EmailService.SendEmailAsync("info@philipp-moser.de", model.Message, model.Subject))
+
+                StringBuilder message = new StringBuilder();
+
+                message.Append("Name: " + model.Name + "\n");
+                message.Append("Email: " + model.Email + "\n");
+                message.Append("Subject: " + model.Subject + "\n");
+                message.Append("Message: " + model.Message);
+
+                if (await EmailService.SendEmailAsync("info@philipp-moser.de", message.ToString(), model.Subject))
                 {
                     return RedirectToAction("Index", "Pricing");
                 } 
