@@ -23,6 +23,16 @@ namespace BrandBook.Services.Email
                 // Email Settings
                 message.To.Add(new MailAddress(receiver));
                 message.From = new MailAddress(ConfigurationSettings.AppSettings["EmailAccount"]);
+
+                if (!string.IsNullOrEmpty(subject))
+                {
+                    message.Subject = subject;
+                }
+                else
+                {
+                    message.Subject = ConfigurationSettings.AppSettings["EmailSubjectDefault"];
+                }
+
                 message.Body = body;
                 message.IsBodyHtml = true;
 
