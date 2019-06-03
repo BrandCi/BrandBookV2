@@ -41,6 +41,12 @@ namespace BrandBook.Services.Email
                     smtp.Port = Convert.ToInt32(ConfigurationSettings.AppSettings["EmailSmtpPort"]);
                     smtp.EnableSsl = true;
 
+
+
+                    // Send Email
+                    await smtp.SendMailAsync(message);
+                    isSent = true;
+
                 }
 
             }
