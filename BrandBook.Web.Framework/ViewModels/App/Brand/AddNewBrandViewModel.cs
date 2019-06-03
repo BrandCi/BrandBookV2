@@ -9,14 +9,17 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
     public class AddNewBrandViewModel
     {
+        [Required]
         public string Name { get; set; }
 
         public string Description { get; set; }
 
+        [Required]
         public string MainColor { get; set; }
 
         public string Image { get; set; }
 
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Please agree Terms and Conditions")]
         public bool AgreeTerms { get; set; }
 
 
