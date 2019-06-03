@@ -26,6 +26,14 @@ namespace BrandBook.Services.Email
                 message.Body = body;
                 message.IsBodyHtml = true;
 
+                using (var smtp = new SmtpClient())
+                {
+                    var credential = new NetworkCredential()
+                    {
+                        UserName = ConfigurationSettings.AppSettings["EmailAccount"],
+                        Password = ConfigurationSettings.AppSettings["EmailPassword"]
+                    };
+                }
 
             }
             catch (Exception ex)
