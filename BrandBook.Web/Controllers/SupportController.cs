@@ -15,5 +15,16 @@ namespace BrandBook.Web.Controllers
             var model = new ContactFormViewModel();
             return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Contact(ContactFormViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // return RedirectToAction("ContactSuccess", "Support");
+            }
+
+            return View(model);
+        }
     }
 }
