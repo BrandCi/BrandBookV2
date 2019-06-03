@@ -110,6 +110,7 @@
     <Compile Include="HtmlHelpers\CustomHelper.cs" />
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\SingleBrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Profile\GeneralUserDataViewModel.cs" />
