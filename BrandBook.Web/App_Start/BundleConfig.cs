@@ -151,6 +151,12 @@ namespace BrandBook.Web
              *
              */
 
+
+            // Jquery.Validation
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/JqueryValidation").Include(
+                "~/Plugins/jquery-validation/js/jquery.validate.min.js"
+                ));
+
             // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
                     "~/Plugins/custombox/dist/custombox.min.css",
