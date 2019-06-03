@@ -12,7 +12,7 @@ namespace BrandBook.Services.Email
     public class EmailService
     {
 
-        public async Task<bool> SendEmailAsync(string receiver, string body, string subject = "")
+        public static async Task<bool> SendEmailAsync(string receiver, string body, string subject = "")
         {
             bool isSent = false;
 
