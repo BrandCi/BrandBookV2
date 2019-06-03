@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.ViewModels.Frontend;
 
 namespace BrandBook.Web.Controllers
 {
@@ -11,7 +12,8 @@ namespace BrandBook.Web.Controllers
     {
         public ActionResult Contact()
         {
-            return View();
+            var model = new ContactFormViewModel();
+            return View(model);
         }
     }
 }
