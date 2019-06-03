@@ -19,6 +19,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
 
         public string Image { get; set; }
 
+        [Display(Name = "Agree Terms and Conditions")]
         [Range(typeof(bool), "true", "true", ErrorMessage = "Please agree Terms and Conditions")]
         public bool AgreeTerms { get; set; }
 
