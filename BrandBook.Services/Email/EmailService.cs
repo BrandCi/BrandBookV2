@@ -12,14 +12,21 @@ namespace BrandBook.Services.Email
     public class EmailService
     {
 
-        public async Task<bool> SendEmailAsync(string receiver, string msg, string subject = "")
+        public async Task<bool> SendEmailAsync(string receiver, string body, string subject = "")
         {
             bool isSent = false;
 
             try
             {
-                var mailBody = msg;
                 var message = new MailMessage();
+
+                // Email Settings
+                message.To.Add(new MailAddress(receiver));
+                message.From = new MailAddress(ConfigurationSettings.AppSettings["EmailAccount"]);
+                message.Body = body;
+                message.IsBodyHtml = true;
+
+
             }
             catch (Exception ex)
             {
