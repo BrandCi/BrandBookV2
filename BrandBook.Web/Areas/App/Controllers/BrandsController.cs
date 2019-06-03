@@ -47,5 +47,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewmodel);
         }
+
+
+        public ActionResult Add()
+        {
+            return View();
+        }
+
     }
 }   
