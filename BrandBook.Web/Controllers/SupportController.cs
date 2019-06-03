@@ -32,9 +32,9 @@ namespace BrandBook.Web.Controllers
                 message.Append("Subject: " + model.Subject + "\n");
                 message.Append("Message: " + model.Message);
 
-                if (await EmailService.SendEmailAsync("info@philipp-moser.de", message.ToString(), model.Subject))
+                if (await EmailService.SendEmailAsync("info@philipp-moser.de", message.ToString(), "Contact Form BrandBook"))
                 {
-                    return RedirectToAction("Index", "Pricing");
+                    return RedirectToAction("Contact", "Support");
                 } 
             }
 
