@@ -33,6 +33,14 @@ namespace BrandBook.Services.Email
                         UserName = ConfigurationSettings.AppSettings["EmailAccount"],
                         Password = ConfigurationSettings.AppSettings["EmailPassword"]
                     };
+
+
+                    // Smtp Settings
+                    smtp.Credentials = credential;
+                    smtp.Host = ConfigurationSettings.AppSettings["EmailSmtpHost"];
+                    smtp.Port = Convert.ToInt32(ConfigurationSettings.AppSettings["EmailSmtpPort"]);
+                    smtp.EnableSsl = true;
+
                 }
 
             }
