@@ -192,6 +192,14 @@ namespace BrandBook.Web
                 "~/Plugins/datatables/responsive.bootstrap4.min.js",
                 "~/Plugins/datatables/dataTables.select.min.js"));
 
+
+            // Jquery.Steps
+            bundles.Add(new StyleBundle("~/Content/Plugins/JquerySteps").Include(
+                "~/Plugins/jquery.steps/css/jquery.steps.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/JquerySteps").Include(
+                "~/Plugins/jquery.steps/js/jquery.steps.min.js"));
+
         }
     }
 }
