@@ -56,5 +56,28 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(AddNewBrandViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var brand = new Brand()
+                {
+                    Name = model.Name,
+                    Description = model.Description,
+                    MainHexColor = model.MainColor,
+                    ImageName = model.Image,
+                    ImageType = "png"
+                };
+                
+                brandRepository.Add(brand);
+                return RedirectToAction("Overview", "Brands", new {area = "App"});
+            }
+
+            return View(model);
+        }
+
     }
 }   
