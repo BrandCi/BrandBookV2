@@ -35,15 +35,15 @@
                     </div>
 
                     <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = @Html.DisplayNameFor(m => m.Email) })
                     </div>
 
                     <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Subject)
+                        @Html.TextBoxFor(m => m.Subject, new { placeholder = @Html.DisplayNameFor(m => m.Subject) })
                     </div>
 
                     <div class="col-12">
-                        @Html.TextAreaFor(m => m.Message)
+                        @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) })
                     </div>
 
                     <div class="col-12">
