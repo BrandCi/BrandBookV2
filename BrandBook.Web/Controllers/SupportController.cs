@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Services.Email;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Frontend;
 
@@ -17,11 +19,14 @@ namespace BrandBook.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Contact(ContactFormViewModel model)
+        public async Task<ActionResult> Contact(ContactFormViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // return RedirectToAction("ContactSuccess", "Support");
+                if (await EmailService.SendEmailAsync("info@philipp-moser.de", model.Message, model.Subject))
+                {
+                    return RedirectToAction("Index", "Pricing");
+                } 
             }
 
             return View(model);
