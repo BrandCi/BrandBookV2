@@ -51,7 +51,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Add()
         {
-            return View();
+            var model = new AddNewBrandViewModel();
+
+            return View(model);
         }
 
     }
