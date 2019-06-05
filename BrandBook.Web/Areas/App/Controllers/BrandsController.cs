@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.RepositoryInterfaces.Brand;
+using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Web.Framework.Controllers;
@@ -14,11 +16,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandsController : AppControllerBase
     {
-        private IBrandRepository brandRepository;
+        //private IBrandRepository brandRepository;
+        private IUnitOfWork unitOfWork;
 
         public BrandsController()
         {
-            this.brandRepository = new BrandRepository(new BrandBookDbContext());
+            //this.brandRepository = new BrandRepository(new BrandBookDbContext());
+            this.unitOfWork = new UnitOfWork();
         }
 
 
@@ -26,7 +30,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brands
         public ActionResult Overview()
         {
-            var allBrands = brandRepository.GetAll();
+            var allBrands = unitOfWork.BrandRepository.GetAll();
             List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (Brand singleBrand in allBrands) 
@@ -72,7 +76,8 @@ namespace BrandBook.Web.Areas.App.Controllers
                     ImageType = "png"
                 };
                 
-                brandRepository.Add(brand);
+                unitOfWork.BrandRepository.Add(brand);
+                unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
             }
 
