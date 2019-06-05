@@ -206,6 +206,15 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/JquerySteps").Include(
                 "~/Plugins/jquery.steps/js/jquery.steps.min.js"));
 
+
+
+            // Sweet Alerts
+            bundles.Add(new StyleBundle("~/Content/Plugins/SweetAlerts").Include(
+                "~/Plugins/sweet-alert/sweetalert2.min.css"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
+                "~/Plugins/sweet-alert/sweetalert2.min.js"));
+
         }
     }
 }
