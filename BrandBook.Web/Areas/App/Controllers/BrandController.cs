@@ -7,6 +7,7 @@ using BrandBook.Core.RepositoryInterfaces.Brand;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.ViewModels.App.Brand;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -26,6 +27,16 @@ namespace BrandBook.Web.Areas.App.Controllers
             ViewBag.BrandId = Id;
 
             var brand = brandRepository.FindById(Id);
+
+            var model = new BrandOverviewViewModel()
+            {
+                Id = brand.Id,
+                Name = brand.Name,
+                Description = brand.Description,
+                MainHexColor = brand.MainHexColor,
+                ImageName = brand.ImageName,
+                ImageType = brand.ImageType
+            };
 
 
             return View();
