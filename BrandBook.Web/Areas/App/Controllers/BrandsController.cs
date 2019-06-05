@@ -41,7 +41,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 });
             }
 
-            BrandOverviewViewModel viewmodel = new BrandOverviewViewModel();
+            BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
             viewmodel.Brands = singleBrandViewModels;
 
 

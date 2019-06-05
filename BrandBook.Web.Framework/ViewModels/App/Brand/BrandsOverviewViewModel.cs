@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
-    public class BrandOverviewViewModel : IEnumerable<SingleBrandOverviewViewModel>
+    public class BrandsOverviewViewModel : IEnumerable<SingleBrandOverviewViewModel>
     {
         public List<SingleBrandOverviewViewModel> Brands { get; set; }
 

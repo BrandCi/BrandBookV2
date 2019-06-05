@@ -53,7 +53,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString BrandOverviewItem(BrandOverviewViewModel model)
+        public static IHtmlString BrandOverviewItem(BrandsOverviewViewModel model)
         {
             string contentSrv = "https://content.philipp-moser.de";
             string appKey = "wlo0t5byw6";
