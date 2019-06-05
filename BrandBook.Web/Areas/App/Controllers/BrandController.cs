@@ -22,11 +22,17 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
         // GET: App/Brand
-        public ActionResult Index(int Id)
+        public ActionResult Index(int? id)
         {
-            ViewBag.BrandId = Id;
+            if (id == null)
+            {
+                return RedirectToAction("Overview", "Brands", new {area = "App"});
+            }
 
-            var brand = brandRepository.FindById(Id);
+
+            ViewBag.BrandId = id;
+
+            var brand = brandRepository.FindById(id);
 
             var model = new BrandOverviewViewModel()
             {
