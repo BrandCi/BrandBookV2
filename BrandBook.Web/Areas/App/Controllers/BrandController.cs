@@ -10,8 +10,10 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class BrandController : AppControllerBase
     {
         // GET: App/Brand
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
+            ViewBag.BrandId = Id;
+
             return View();
         }
     }
