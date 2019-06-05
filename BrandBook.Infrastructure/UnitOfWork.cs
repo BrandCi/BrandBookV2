@@ -19,6 +19,7 @@ namespace BrandBook.Infrastructure
         #region Fileds
 
         private readonly BrandBookDbContext _context;
+
         private IAppUserRepository _appUserRepository;
         private IUserRoleRepository _userRoleRepository;
         private IRolePermissionRepository _rolePermissionRepository;

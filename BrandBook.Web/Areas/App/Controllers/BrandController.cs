@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
 using BrandBook.Core.RepositoryInterfaces.Brand;
+using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Web.Framework.Controllers;
@@ -13,12 +15,11 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandController : AppControllerBase
     {
-
-        private IBrandRepository brandRepository;
+        private IUnitOfWork unitOfWork;
 
         public BrandController()
         {
-            this.brandRepository = new BrandRepository(new BrandBookDbContext());
+            this.unitOfWork = new UnitOfWork();
         }
 
         // GET: App/Brand
@@ -33,7 +34,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             try
             {
-                var brand = brandRepository.FindById(id);
+                var brand = unitOfWork.BrandRepository.FindById(id);
 
                 var model = new BrandOverviewViewModel()
                 {
