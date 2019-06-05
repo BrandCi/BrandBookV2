@@ -879,6 +879,7 @@
     <Content Include="Areas\App\Views\User\UserOverview.cshtml" />
     <Content Include="Areas\App\Views\User\CustomerOverview.cshtml" />
     <Content Include="Areas\App\Views\Brands\Add.cshtml" />
+    <Content Include="Areas\App\Views\Brand\Settings.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

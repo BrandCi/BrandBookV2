@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Settings";
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_BrandNavigation.cshtml")
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            
+            <div class="form-group row mt-5 mb-0">
+                <a href="@Url.Action("Delete", "Settings", new {area = "App"})" class="btn btn-danger btn-custom mr-2">
+                    <i class="fas fa-trash"></i>
+                    &nbsp;
+                    Delete
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts {
+
+}
