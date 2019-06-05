@@ -823,6 +823,10 @@
     <Content Include="Plugins\raphael\raphael.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.js" />
     <Content Include="Plugins\roadmap\jquery.roadmap.min.css" />
+    <Content Include="Plugins\sweet-alert\sweetalert2.css" />
+    <Content Include="Plugins\sweet-alert\sweetalert2.js" />
+    <Content Include="Plugins\sweet-alert\sweetalert2.min.css" />
+    <Content Include="Plugins\sweet-alert\sweetalert2.min.js" />
     <Content Include="Plugins\switchery\switchery.min.css" />
     <Content Include="Plugins\switchery\switchery.min.js" />
     <Content Include="Scripts\App\Main\detect.js" />
