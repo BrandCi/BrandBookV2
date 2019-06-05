@@ -68,5 +68,19 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View();
         }
+
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
+
+
+
+            return RedirectToAction("Overview", "Brands", new { area = "App" });
+        }
     }
 }
