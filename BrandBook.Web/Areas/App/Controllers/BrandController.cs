@@ -24,28 +24,37 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brand
         public ActionResult Index(int? id)
         {
-            if (id == null)
+            if (id == null || id == 0)
             {
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
             }
 
-
             ViewBag.BrandId = id;
 
-            var brand = brandRepository.FindById(id);
-
-            var model = new BrandOverviewViewModel()
+            try
             {
-                Id = brand.Id,
-                Name = brand.Name,
-                Description = brand.Description,
-                MainHexColor = brand.MainHexColor,
-                ImageName = brand.ImageName,
-                ImageType = brand.ImageType
-            };
+                var brand = brandRepository.FindById(id);
 
+                var model = new BrandOverviewViewModel()
+                {
+                    Id = brand.Id,
+                    Name = brand.Name,
+                    Description = brand.Description,
+                    MainHexColor = brand.MainHexColor,
+                    ImageName = brand.ImageName,
+                    ImageType = brand.ImageType
+                };
 
-            return View(model);
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
+            
+            
         }
     }
 }
