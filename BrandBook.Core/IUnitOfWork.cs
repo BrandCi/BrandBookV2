@@ -27,7 +27,7 @@ namespace BrandBook.Core
         #region Methods
 
         void SaveChanges();
-        // Task<int> SaveChangesAsync();
+        void SaveChangesAsync();
 
         void Dispose();
 
