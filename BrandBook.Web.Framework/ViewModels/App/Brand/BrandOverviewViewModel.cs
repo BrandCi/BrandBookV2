@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
-    class BrandOverviewViewModel
+    public class BrandOverviewViewModel
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string ImageName { get; set; }
+        public string ImageType { get; set; }
+        public string Description { get; set; }
+        public string MainHexColor { get; set; }
     }
 }
