@@ -57,5 +57,11 @@ namespace BrandBook.Web.Areas.App.Controllers
             
             
         }
+
+
+        public ActionResult Settings(int? id)
+        {
+            return View();
+        }
     }
 }

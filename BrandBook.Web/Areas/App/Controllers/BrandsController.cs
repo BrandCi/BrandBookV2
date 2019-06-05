@@ -16,12 +16,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandsController : AppControllerBase
     {
-        //private IBrandRepository brandRepository;
         private IUnitOfWork unitOfWork;
 
         public BrandsController()
         {
-            //this.brandRepository = new BrandRepository(new BrandBookDbContext());
             this.unitOfWork = new UnitOfWork();
         }
 
@@ -57,7 +55,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var model = new AddNewBrandViewModel();
 
-            return View(model);
+            return View(model); 
         }
 
 
