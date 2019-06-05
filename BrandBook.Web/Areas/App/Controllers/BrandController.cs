@@ -61,6 +61,8 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Settings(int? id)
         {
+            ViewBag.BrandId = id;
+
             if (id == null || id == 0)
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
@@ -77,7 +79,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
+            var brand = unitOfWork.BrandRepository.FindById(id);
 
+            unitOfWork.BrandRepository.Remove(brand);
+            unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
