@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
 using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Web.Framework.Controllers;
@@ -15,16 +17,16 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class ProfileController : AppControllerBase
     {
 
-        private IAppUserRepository appUserRepository;
+        private IUnitOfWork unitOfWork;
 
         public ProfileController()
         {
-            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            this.unitOfWork = new UnitOfWork();
         }
 
         public ActionResult Index()
         {
-            var appUser = appUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
 
             GeneralUserDataViewModel appUserViewModel = new GeneralUserDataViewModel(appUser.Id, appUser.FirstName, appUser.LastName, appUser.UserName, appUser.Email);
                 
@@ -42,12 +44,12 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Index", "Profile", new { area = "App" });
             }
 
-            var appUser = appUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
 
             appUser.FirstName = model.FirstName;
             appUser.LastName = model.LastName;
 
-            appUserRepository.Update(appUser);
+            unitOfWork.AppUserRepository.Update(appUser);
 
 
             return RedirectToAction("Index", "Profile", new {area = "App"});
