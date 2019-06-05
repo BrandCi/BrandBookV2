@@ -17,13 +17,13 @@
                 <li class="menu-title">General</li>
 
                 <li>
-                    <a href="@Url.Action("Index", "Brand", new {area = "App"})" class="waves-effect waves-primary">
+                    <a href="@Url.Action("Index", "Brand", new { id = ViewBag.BrandId, area = "App"})" class="waves-effect waves-primary">
                         <i class="fas fa-swatchbook"></i><span> Overview </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="@Url.Action("Settings", "Brand", new {area = "App"})" class="waves-effect waves-primary">
+                    <a href="@Url.Action("Settings", "Brand", new { id = ViewBag.BrandId, area = "App"})" class="waves-effect waves-primary">
                         <i class="fas fa-cog"></i><span> Settings </span>
                     </a>
                 </li>
