@@ -6,11 +6,15 @@
     @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_BrandNavigation.cshtml")
 }
 
+@section styles {
+    @Styles.Render("~/Content/Plugins/SweetAlerts")
+}
+
 
 <div class="row">
     <div class="col-12">
         <div class="card-box">
-            
+
             <div class="form-group row mt-5 mb-0">
                 <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-danger btn-custom mr-2">
                     <i class="fas fa-trash"></i>
@@ -28,5 +32,5 @@
 
 
 @section scripts {
-
+    @Scripts.Render("~/bundles/Plugins/SweetAlerts")
 }
