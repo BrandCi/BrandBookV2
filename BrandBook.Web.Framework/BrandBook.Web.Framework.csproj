@@ -113,6 +113,8 @@
     <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\GeneralSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\SingleBrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Profile\GeneralUserDataViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\MediaSettingsViewModel.cs" />
