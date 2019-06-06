@@ -102,12 +102,14 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Settings", "Brand", new { id = model.GeneralSettingsViewModel.Id, area = "App" });
             }
 
+            // Get current brand
             var brand = unitOfWork.BrandRepository.FindById(model.GeneralSettingsViewModel.Id);
 
-            // Update Test
+            // Set updated values
             brand.Name = model.GeneralSettingsViewModel.Name;
             brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
 
+            // Update
             unitOfWork.BrandRepository.Update(brand);
             unitOfWork.SaveChanges();
 
