@@ -83,6 +83,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                 },
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
+                {
+                    Id = brand.Id,
+                    ContactPerson = brand.ContactPerson
+                }
             };
 
 
