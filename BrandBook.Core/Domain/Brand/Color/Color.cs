@@ -10,6 +10,7 @@ namespace BrandBook.Core.Domain.Brand.Color
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public Category Category { get; set; }
 
         public RgbValue RgbValue { get; set; }
         public CmykValue CmykValue { get; set; }
