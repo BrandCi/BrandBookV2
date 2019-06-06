@@ -123,6 +123,30 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult UpdateContactSettings(BrandSettingsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Settings", "Brand", new { id = model.ContactSettingsViewModel.Id, area = "App" });
+            }
+
+            // Get current brand
+            var brand = unitOfWork.BrandRepository.FindById(model.ContactSettingsViewModel.Id);
+
+            // Set updated values
+            brand.ContactPerson = model.ContactSettingsViewModel.ContactPerson;
+
+            // Update
+            unitOfWork.BrandRepository.Update(brand);
+            unitOfWork.SaveChanges();
+
+
+
+            return RedirectToAction("Settings", "Brand", new { id = model.ContactSettingsViewModel.Id, area = "App" });
+        }
+
+
 
 
         public ActionResult Delete(int? id)
