@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201905191548109_AddFirstnameAndLastnameToAppUsersTable.Designer.cs">
       <DependentUpon>201905191548109_AddFirstnameAndLastnameToAppUsersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.cs" />
+    <Compile Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.Designer.cs">
+      <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -166,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905191548109_AddFirstnameAndLastnameToAppUsersTable.resx">
       <DependentUpon>201905191548109_AddFirstnameAndLastnameToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.resx">
+      <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
