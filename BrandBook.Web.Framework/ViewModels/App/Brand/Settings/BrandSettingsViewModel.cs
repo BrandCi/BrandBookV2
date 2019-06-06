@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand.Settings
 {
-    public class ContactSettingsViewModel
+    public class BrandSettingsViewModel
     {
     }
 }
