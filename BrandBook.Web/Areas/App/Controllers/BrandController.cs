@@ -62,6 +62,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Colors(int? id)
         {
+            ViewBag.BrandId = id;
+
+            if (id == null || id == 0)
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
             return View();
         }
 
