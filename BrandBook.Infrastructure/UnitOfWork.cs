@@ -25,6 +25,7 @@ namespace BrandBook.Infrastructure
         private IRolePermissionRepository _rolePermissionRepository;
         private ISettingRepository _settingRepository;
         private IBrandRepository _brandRepository;
+        private IColorRepository _colorRepository;
 
         #endregion
 
@@ -64,6 +65,12 @@ namespace BrandBook.Infrastructure
             get { return _brandRepository ?? (_brandRepository = new BrandRepository(_context)); }
         }
 
+        public IColorRepository ColorRepository
+        {
+            get { return _colorRepository ?? (_colorRepository = new ColorRepository(_context)); }
+        }
+        
+
 
 
         public void SaveChanges()
@@ -88,6 +95,7 @@ namespace BrandBook.Infrastructure
             _rolePermissionRepository = null;
             _settingRepository = null;
             _brandRepository = null;
+            _colorRepository = null;
 
             _context.Dispose();
         }
