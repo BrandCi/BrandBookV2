@@ -73,7 +73,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<div class=\"card-body\">");
                 html.Append("<h2 class=\"card-title\">" + brand.Name + "</h2>");
                 html.Append("<p class=\"card-text\">");
-                html.Append(brand.Description);
+                html.Append(brand.ShortDescription);
                 html.Append("</p>");
 
                 html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");

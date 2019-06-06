@@ -20,9 +20,10 @@ namespace BrandBook.Services.Email
             {
                 var message = new MailMessage();
 
+
                 // Email Settings
                 message.To.Add(new MailAddress(receiver));
-                message.From = new MailAddress(ConfigurationSettings.AppSettings["EmailAccount"]);
+                message.From = new MailAddress(ConfigurationManager.AppSettings["EmailAccount"]);
 
                 if (!string.IsNullOrEmpty(subject))
                 {
@@ -30,7 +31,7 @@ namespace BrandBook.Services.Email
                 }
                 else
                 {
-                    message.Subject = ConfigurationSettings.AppSettings["EmailSubjectDefault"];
+                    message.Subject = ConfigurationManager.AppSettings["EmailSubjectDefault"];
                 }
 
                 message.Body = body;
@@ -40,15 +41,15 @@ namespace BrandBook.Services.Email
                 {
                     var credential = new NetworkCredential()
                     {
-                        UserName = ConfigurationSettings.AppSettings["EmailAccount"],
-                        Password = ConfigurationSettings.AppSettings["EmailPassword"]
+                        UserName = ConfigurationManager.AppSettings["EmailAccount"],
+                        Password = ConfigurationManager.AppSettings["EmailPassword"]
                     };
 
 
                     // Smtp Settings
                     smtp.Credentials = credential;
-                    smtp.Host = ConfigurationSettings.AppSettings["EmailSmtpHost"];
-                    smtp.Port = Convert.ToInt32(ConfigurationSettings.AppSettings["EmailSmtpPort"]);
+                    smtp.Host = ConfigurationManager.AppSettings["EmailSmtpHost"];
+                    smtp.Port = Convert.ToInt32(ConfigurationManager.AppSettings["EmailSmtpPort"]);
                     smtp.EnableSsl = true;
 
 
