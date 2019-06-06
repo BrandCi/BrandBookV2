@@ -27,17 +27,5 @@ namespace BrandBook.Web.Framework.ViewModels.App.Profile
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        
-        public GeneralUserDataViewModel() { }
-
-        public GeneralUserDataViewModel(string id, string firstName, string lastName, string userName, string email)
-        {
-            this.Id = id;
-            this.UserName = userName;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
-        }
-
     }
 }
