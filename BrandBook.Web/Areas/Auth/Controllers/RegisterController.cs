@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Domain.User;
-using BrandBook.Core.Repository.User;
+using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;

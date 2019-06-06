@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BrandBook.Core.Domain.System;
 
-namespace BrandBook.Core.Repository.Setting
+namespace BrandBook.Core.Repositories.Setting
 {
     public interface ISettingRepository : IRepository<Domain.System.Setting>
     {

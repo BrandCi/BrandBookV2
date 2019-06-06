@@ -71,13 +71,13 @@
     <Compile Include="Dtos\User\AppUserDto.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Brand\IBrandRepository.cs" />
-    <Compile Include="Repository\Brand\IColorRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\Setting\ISettingRepository.cs" />
-    <Compile Include="Repository\User\IAppUserRepository.cs" />
-    <Compile Include="Repository\User\IRolePermissionRepository.cs" />
-    <Compile Include="Repository\User\IUserRoleRepository.cs" />
+    <Compile Include="Repositories\Brand\IBrandRepository.cs" />
+    <Compile Include="Repositories\Brand\IColorRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Setting\ISettingRepository.cs" />
+    <Compile Include="Repositories\User\IAppUserRepository.cs" />
+    <Compile Include="Repositories\User\IRolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\IUserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">

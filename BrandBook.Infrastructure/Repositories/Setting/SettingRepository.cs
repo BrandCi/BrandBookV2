@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.System;
-using BrandBook.Core.Repository.Setting;
+using BrandBook.Core.Repositories.Setting;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.Setting

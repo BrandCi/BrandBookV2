@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Domain.System;
-using BrandBook.Core.Repository.Setting;
 using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;

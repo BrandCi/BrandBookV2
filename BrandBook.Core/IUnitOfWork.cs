@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BrandBook.Core.Repository.Brand;
-using BrandBook.Core.Repository.Setting;
-using BrandBook.Core.Repository.User;
+using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Setting;
+using BrandBook.Core.Repositories.User;
 
 namespace BrandBook.Core
 {

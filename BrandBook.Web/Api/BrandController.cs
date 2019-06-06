@@ -5,7 +5,7 @@ using System.Web.Http;
 using AutoMapper;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Dtos.Brand;
-using BrandBook.Core.Repository.Brand;
+using BrandBook.Core.Repositories.Brand;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 
