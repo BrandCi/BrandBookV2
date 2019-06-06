@@ -94,8 +94,27 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
+        [HttpPost]
+        public ActionResult UpdateGeneralSettings(BrandSettingsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Settings", "Brand", new { id = model.GeneralSettingsViewModel.Id, area = "App" });
+            }
+
+            var brand = unitOfWork.BrandRepository.FindById(model.GeneralSettingsViewModel.Id);
+
+            // Update Test
+            brand.Name = model.GeneralSettingsViewModel.Name;
+            brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
+
+            unitOfWork.BrandRepository.Update(brand);
+            unitOfWork.SaveChanges();
 
 
+
+            return RedirectToAction("Settings", "Brand", new { id = model.GeneralSettingsViewModel.Id, area = "App"});
+        }
 
 
 

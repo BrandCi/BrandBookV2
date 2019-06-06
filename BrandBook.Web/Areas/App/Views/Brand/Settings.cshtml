@@ -36,6 +36,7 @@
                         {
                             @Html.AntiForgeryToken()
                          
+                            @Html.HiddenFor(m => m.GeneralSettingsViewModel.Id, new { @Value = Model.GeneralSettingsViewModel.Id})
 
                             <div class="form-group clearfix">
                                 @Html.LabelFor(m => m.GeneralSettingsViewModel.Name, new { @class = "control-label" })
