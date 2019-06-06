@@ -18,23 +18,23 @@
 
             <ul class="nav nav-tabs tabs-bordered nav-justified">
                 <li class="nav-item">
-                    <a href="#general-settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                    <a href="#general-settings" data-toggle="tab" aria-expanded="false" class="nav-link active">
                         General Settings
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact-settings" data-toggle="tab" aria-expanded="true" class="nav-link active">
+                    <a href="#contact-settings" data-toggle="tab" aria-expanded="true" class="nav-link">
                         Contact Settings
                     </a>
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane" id="general-settings">
+                <div class="tab-pane active" id="general-settings">
                     <p>
 
                     </p>
                 </div>
-                <div class="tab-pane active" id="contact-settings">
+                <div class="tab-pane" id="contact-settings">
                     <p>
 
                     </p>
@@ -54,7 +54,13 @@
             <h4 class="header-title m-t-0 m-b-30">Danger Zone</h4>
 
             <div class="form-group row mt-5 mb-0">
-                
+
+                <a href="#" class="btn btn-warning btn-custom mr-2">
+                    <i class="fab fa-galactic-republic"></i>
+                    &nbsp;
+                    Make public
+                </a>
+
 
                 <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-danger btn-custom mr-2">
                     <i class="fas fa-trash"></i>
@@ -62,12 +68,12 @@
                     Delete
                 </a>
                 <!--
-                <button class="btn btn-danger btn-custom mr-2" id="delete-warning">
-                    <i class="fas fa-trash"></i>
-                    &nbsp;
-                    Delete
-                </button>
-                -->
+    <button class="btn btn-danger btn-custom mr-2" id="delete-warning">
+        <i class="fas fa-trash"></i>
+        &nbsp;
+        Delete
+    </button>
+    -->
             </div>
 
         </div>
