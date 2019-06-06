@@ -54,6 +54,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             appUser.LastName = model.LastName;
 
             unitOfWork.AppUserRepository.Update(appUser);
+            unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Index", "Profile", new {area = "App"});
