@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand
 {
-    class Color
+    public class Color
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
     }
 }
