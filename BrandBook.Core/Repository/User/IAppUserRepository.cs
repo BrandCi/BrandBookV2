@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.User;
 
-namespace BrandBook.Core.RepositoryInterfaces.User
+namespace BrandBook.Core.Repository.User
 {
     public interface IAppUserRepository : IRepository<AppUser>
     {

@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BrandBook.Core.RepositoryInterfaces;
+using BrandBook.Core.Repository;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories

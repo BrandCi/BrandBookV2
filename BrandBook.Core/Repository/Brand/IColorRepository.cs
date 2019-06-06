@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.Brand.Color;
 
-namespace BrandBook.Core.RepositoryInterfaces.Brand
+namespace BrandBook.Core.Repository.Brand
 {
     public interface IColorRepository : IRepository<Color>
     {

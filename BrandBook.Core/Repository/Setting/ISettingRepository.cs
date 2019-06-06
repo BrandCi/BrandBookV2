@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.System;
 
-namespace BrandBook.Core.RepositoryInterfaces.Setting
+namespace BrandBook.Core.Repository.Setting
 {
     public interface ISettingRepository : IRepository<Domain.System.Setting>
     {

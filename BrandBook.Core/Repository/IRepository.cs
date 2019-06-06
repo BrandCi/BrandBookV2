@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.RepositoryInterfaces
+namespace BrandBook.Core.Repository
 {
     public interface IRepository<TEntity> where TEntity : class
     {
