@@ -111,6 +111,10 @@
     <Compile Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.Designer.cs">
       <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906061311284_AddContactPersonToBrandsTable.cs" />
+    <Compile Include="Migrations\201906061311284_AddContactPersonToBrandsTable.Designer.cs">
+      <DependentUpon>201906061311284_AddContactPersonToBrandsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.resx">
       <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061311284_AddContactPersonToBrandsTable.resx">
+      <DependentUpon>201906061311284_AddContactPersonToBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
