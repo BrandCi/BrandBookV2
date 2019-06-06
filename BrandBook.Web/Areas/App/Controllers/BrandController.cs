@@ -55,10 +55,17 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
-
-            
             
         }
+
+
+
+        public ActionResult Colors(int? id)
+        {
+            return View();
+        }
+
+
 
 
         public ActionResult Settings(int? id)
