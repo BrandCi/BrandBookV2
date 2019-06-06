@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Color
 {
-    class CmykValue
+    public class CmykValue
     {
+
+        public int Id { get; set; }
+
+
+        public int C { get; set; }
+        public int M { get; set; }
+        public int Y { get; set; }
+        public int K { get; set; }
+
     }
 }
