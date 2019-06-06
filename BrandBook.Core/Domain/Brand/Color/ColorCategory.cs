@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Color
 {
-    public class Category
+    public class ColorCategory
     {
         public int Id { get; set; }
         public string Name { get; set; }
