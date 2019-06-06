@@ -27,10 +27,15 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var appUser = unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
 
-            GeneralUserDataViewModel appUserViewModel = new GeneralUserDataViewModel(appUser.Id, appUser.FirstName, appUser.LastName, appUser.UserName, appUser.Email);
+            var model = new GeneralUserDataViewModel()
+            {
+                UserName = appUser.UserName,
+                FirstName = appUser.FirstName,
+                LastName = appUser.LastName
+            };
                 
 
-            return View(appUserViewModel);
+            return View(model);
         }
 
 
