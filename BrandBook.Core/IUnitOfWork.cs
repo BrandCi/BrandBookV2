@@ -19,6 +19,7 @@ namespace BrandBook.Core
         IRolePermissionRepository RolePermissionRepository { get; }
         ISettingRepository SettingRepository { get; }
         IBrandRepository BrandRepository { get; }
+        IColorRepository ColorRepository { get; }
 
         #endregion
 
