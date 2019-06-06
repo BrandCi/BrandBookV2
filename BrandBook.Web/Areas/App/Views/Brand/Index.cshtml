@@ -76,7 +76,12 @@
     <!-- Brand Todos -->
     <div class="col-lg-4">
         <div class="card-box">
-            <h4 class="m-t-0 m-b-20 header-title"><b>Todo</b></h4>
+            <h4 class="m-t-0 m-b-20 header-title">
+                <b>Todo</b>
+                <a href="@Url.Action("Todo", "Brand", new { area = "App" })" class="m-l-10">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </h4>
             <div class="BrandToDo">
                 <div class="row">
                     <div class="col-sm-6">
@@ -106,7 +111,12 @@
     <!-- INBOX -->
     <div class="col-lg-4">
         <div class="card-box">
-            <h4 class="m-t-0 m-b-20 header-title"><b>Recent Activity</b></h4>
+            <h4 class="m-t-0 m-b-20 header-title">
+                <b>Recent Activity</b>
+                <a href="@Url.Action("Activity", "Brand", new { area = "App" })" class="m-l-10">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </h4>
 
             <div class="inbox-widget nicescroll mx-box">
                 <a href="#">
