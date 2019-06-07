@@ -57,7 +57,7 @@
                                 <div class="">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="mainColorInput">#</span>
+                                            <span class="input-group-text">#</span>
                                         </div>
                                         @Html.TextBoxFor(m => m.GeneralSettingsViewModel.MainHexColor, new { @Value = Model.GeneralSettingsViewModel.MainHexColor, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.GeneralSettingsViewModel.MainHexColor) })
                                         @Html.ValidationMessageFor(m => m.GeneralSettingsViewModel.MainHexColor, "", new { @class = "text-danger" })
@@ -90,7 +90,7 @@
                                 <div class="">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="mainColorInput">@@</span>
+                                            <span class="input-group-text">@@</span>
                                         </div>
                                         @Html.TextBoxFor(m => m.ContactSettingsViewModel.ContactPerson, new { @Value = Model.ContactSettingsViewModel.ContactPerson, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ContactSettingsViewModel.ContactPerson) })
                                         @Html.ValidationMessageFor(m => m.ContactSettingsViewModel.ContactPerson, "", new { @class = "text-danger" })

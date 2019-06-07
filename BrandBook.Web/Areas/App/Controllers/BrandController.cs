@@ -98,7 +98,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
-                    ContactPerson = brand.ContactPerson
+                    ContactPerson = brand.BrandSetting.ContactEmail
                 },
 
                 CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
@@ -155,7 +155,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             var brand = unitOfWork.BrandRepository.FindById(model.Id);
 
             // Set updated values
-            brand.ContactPerson = model.ContactSettingsViewModel.ContactPerson;
+            brand.BrandSetting.ContactEmail = model.ContactSettingsViewModel.ContactPerson;
 
             // Update
             unitOfWork.BrandRepository.Update(brand);
