@@ -71,6 +71,11 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
+        public ActionResult Fonts(int? id)
+        {
+            return View();
+        }
+
 
 
 
