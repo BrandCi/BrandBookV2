@@ -99,6 +99,11 @@ namespace BrandBook.Web.Areas.App.Controllers
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
                     ContactPerson = brand.ContactPerson
+                },
+
+                CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
+                {
+                    
                 }
             };
 
