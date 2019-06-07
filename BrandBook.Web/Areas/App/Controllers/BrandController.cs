@@ -88,16 +88,16 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var model = new BrandSettingsViewModel()
             {
+                Id = brand.Id,
+
                 GeneralSettingsViewModel = new GeneralSettingsViewModel()
                 {
-                    Id = brand.Id,
                     Name = brand.Name,
                     MainHexColor = brand.MainHexColor
                 },
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
-                    Id = brand.Id,
                     ContactPerson = brand.ContactPerson
                 }
             };
@@ -116,11 +116,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Settings", "Brand", new { id = model.GeneralSettingsViewModel.Id, area = "App" });
+                return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
 
             // Get current brand
-            var brand = unitOfWork.BrandRepository.FindById(model.GeneralSettingsViewModel.Id);
+            var brand = unitOfWork.BrandRepository.FindById(model.Id);
 
             // Set updated values
             brand.Name = model.GeneralSettingsViewModel.Name;
@@ -132,7 +132,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-            return RedirectToAction("Settings", "Brand", new { id = model.GeneralSettingsViewModel.Id, area = "App"});
+            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App"});
         }
 
 
@@ -141,11 +141,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Settings", "Brand", new { id = model.ContactSettingsViewModel.Id, area = "App" });
+                return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
 
             // Get current brand
-            var brand = unitOfWork.BrandRepository.FindById(model.ContactSettingsViewModel.Id);
+            var brand = unitOfWork.BrandRepository.FindById(model.Id);
 
             // Set updated values
             brand.ContactPerson = model.ContactSettingsViewModel.ContactPerson;
@@ -156,7 +156,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-            return RedirectToAction("Settings", "Brand", new { id = model.ContactSettingsViewModel.Id, area = "App" });
+            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
         }
 
 

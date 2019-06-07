@@ -41,7 +41,7 @@
                         {
                             @Html.AntiForgeryToken()
                          
-                            @Html.HiddenFor(m => m.GeneralSettingsViewModel.Id, new { @Value = Model.GeneralSettingsViewModel.Id})
+                            @Html.HiddenFor(m => m.Id, new { @Value = Model.Id})
 
                             <div class="form-group clearfix">
                                 @Html.LabelFor(m => m.GeneralSettingsViewModel.Name, new { @class = "control-label" })
@@ -83,7 +83,7 @@
                         {
                             @Html.AntiForgeryToken()
 
-                            @Html.HiddenFor(m => m.ContactSettingsViewModel.Id, new { @Value = Model.ContactSettingsViewModel.Id })
+                            @Html.HiddenFor(m => m.Id, new { @Value = Model.Id })
 
                             <div class="form-group clearfix">
                                 @Html.LabelFor(m => m.ContactSettingsViewModel.ContactPerson, new { @class = "col-form-label" })
@@ -116,7 +116,7 @@
                         {
                             @Html.AntiForgeryToken()
 
-                            @Html.HiddenFor(m => m.ContactSettingsViewModel.Id, new { @Value = Model.ContactSettingsViewModel.Id })
+                            @Html.HiddenFor(m => m.Id, new { @Value = Model.Id })
 
                             <div class="form-group clearfix">
                                 @Html.LabelFor(m => m.ContactSettingsViewModel.ContactPerson, new { @class = "col-form-label" })

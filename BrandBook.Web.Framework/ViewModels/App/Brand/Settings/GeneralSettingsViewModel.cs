@@ -9,9 +9,6 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand.Settings
 {
     public class GeneralSettingsViewModel
     {
-        [Required]
-        public int Id { get; set; }
-
         [Required (ErrorMessage = "Please define a Name for your Brand")]
         public string Name { get; set; }
 
