@@ -14,8 +14,8 @@ namespace BrandBook.Infrastructure.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ContactEmail = c.String(),
                         PrimaryHexColor = c.String(),
-                        RoundedButtons = c.Boolean(nullable: false),
-                        RoundedButtonsPixel = c.Int(nullable: false),
+                        RoundedButtons = c.Boolean(nullable: false, defaultValue: true),
+                        RoundedButtonsPixel = c.Int(nullable: false, defaultValue: 5),
                     })
                 .PrimaryKey(t => t.Id);
             
