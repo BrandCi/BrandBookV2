@@ -888,10 +888,9 @@
     <Content Include="Areas\App\Views\Brand\Settings.cshtml" />
     <Content Include="Areas\App\Views\Brand\Colors.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
-    <Content Include="Areas\Public\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Public\Views\Shared\Partial\_BrandNavigation.cshtml" />
-    <Content Include="Areas\Public\Views\Shared\Partial\_LeftNavigation.cshtml" />
-    <Content Include="Areas\Public\Views\Shared\Partial\_TopBar.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Layout\_Layout.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Layout\Partial\_Navigation.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Brand\Overview.cshtml" />
     <None Include="compilerconfig.json" />
