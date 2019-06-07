@@ -103,7 +103,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
                 {
-                    
+                    PrimaryHexColor = "193357",
+                    RoundedButtons = true,
+                    RoundedButtonsPixel = 5
                 }
             };
 
