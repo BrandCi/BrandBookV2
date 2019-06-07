@@ -104,6 +104,7 @@
     <Compile Include="Controllers\AuthControllerBase.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FrontendControllerBase.cs" />
+    <Compile Include="Controllers\PublicControllerBase.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
