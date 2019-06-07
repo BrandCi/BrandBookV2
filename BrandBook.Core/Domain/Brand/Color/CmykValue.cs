@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Color
 {
-    public class CmykValue
+    public class CmykValue : BaseEntity
     {
-
-        public int Id { get; set; }
-
 
         public int C { get; set; }
         public int M { get; set; }
