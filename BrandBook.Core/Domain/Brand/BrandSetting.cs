@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand
 {
-    public class BrandSettings : BaseEntity
+    public class BrandSetting : BaseEntity
     {
         public string ContactEmail { get; set; }
         public string PrimaryHexColor { get; set; }
