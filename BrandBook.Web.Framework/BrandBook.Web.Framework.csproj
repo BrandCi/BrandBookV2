@@ -115,6 +115,7 @@
     <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\BrandSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\CustomizingSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\GeneralSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\SingleBrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Profile\GeneralUserDataViewModel.cs" />
