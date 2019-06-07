@@ -888,6 +888,9 @@
     <Content Include="Areas\App\Views\Brand\Colors.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Partial\_BrandNavigation.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Partial\_LeftNavigation.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\Partial\_TopBar.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
