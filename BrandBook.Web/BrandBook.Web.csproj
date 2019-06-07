@@ -175,6 +175,7 @@
     <Compile Include="Areas\Auth\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Public\Controllers\BrandController.cs" />
+    <Compile Include="Areas\Public\Controllers\FontsController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
@@ -1003,6 +1004,7 @@
     <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Public\Views\Fonts\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
