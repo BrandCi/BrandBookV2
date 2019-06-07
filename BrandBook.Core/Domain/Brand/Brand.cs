@@ -15,5 +15,7 @@ namespace BrandBook.Core.Domain.Brand
         public string Description { get; set; }
         public string MainHexColor { get; set; }
         public string ContactPerson { get; set; }
+
+        public BrandSetting BrandSetting { get; set; }
     }
 }
