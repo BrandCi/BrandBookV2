@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.Controllers
 {
-    class PublicControllerBase
+    public class PublicControllerBase : BaseController
     {
     }
 }
