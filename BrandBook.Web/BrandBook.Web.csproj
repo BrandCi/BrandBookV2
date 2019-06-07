@@ -887,6 +887,7 @@
     <Content Include="Areas\App\Views\Brand\Settings.cshtml" />
     <Content Include="Areas\App\Views\Brand\Colors.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
+    <Content Include="Areas\Public\Views\Shared\_Layout.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -997,8 +998,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Public\Controllers\" />
-    <Folder Include="Areas\Public\Models\" />
-    <Folder Include="Areas\Public\Views\Shared\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
