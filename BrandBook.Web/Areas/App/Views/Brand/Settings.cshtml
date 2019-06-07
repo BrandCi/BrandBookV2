@@ -112,21 +112,51 @@
 
                 <div class="tab-pane" id="customizing-settings">
                     <p>
-                        @using (Html.BeginForm("UpdateContactSettings", "Brand", new { area = "App" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        @using (Html.BeginForm("UpdateCustomizingSettings", "Brand", new { area = "App" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
 
                             @Html.HiddenFor(m => m.Id, new { @Value = Model.Id })
 
                             <div class="form-group clearfix">
-                                @Html.LabelFor(m => m.ContactSettingsViewModel.ContactPerson, new { @class = "col-form-label" })
+                                @Html.LabelFor(m => m.CustomizingSettingsViewModel.PrimaryHexColor, new { @class = "col-form-label" })
                                 <div class="">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="mainColorInput">@@</span>
+                                            <span class="input-group-text" id="mainColorInput">#</span>
                                         </div>
-                                        @Html.TextBoxFor(m => m.ContactSettingsViewModel.ContactPerson, new { @Value = Model.ContactSettingsViewModel.ContactPerson, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ContactSettingsViewModel.ContactPerson) })
-                                        @Html.ValidationMessageFor(m => m.ContactSettingsViewModel.ContactPerson, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(m => m.CustomizingSettingsViewModel.PrimaryHexColor, new { @Value = Model.CustomizingSettingsViewModel.PrimaryHexColor, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.CustomizingSettingsViewModel.PrimaryHexColor) })
+                                        @Html.ValidationMessageFor(m => m.CustomizingSettingsViewModel.PrimaryHexColor, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="mt-5" />
+                            <h3 class="mb-4">
+                                Rounded Buttons
+                            </h3>
+
+                            <div class="form-group clearfix">
+                                <div class="">
+                                    <div class="">
+                                        @Html.CheckBoxFor(m => m.CustomizingSettingsViewModel.RoundedButtons)
+                                        @Html.LabelFor(m => m.CustomizingSettingsViewModel.RoundedButtons)
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group clearfix">
+                                @Html.LabelFor(m => m.CustomizingSettingsViewModel.RoundedButtonsPixel, new { @class = "col-form-label" })
+                                <div class="">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="mainColorInput">
+                                                <i class="fas fa-expand"></i>
+                                            </span>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.CustomizingSettingsViewModel.RoundedButtonsPixel, new { type = "number", @Value = Model.CustomizingSettingsViewModel.RoundedButtonsPixel, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.CustomizingSettingsViewModel.RoundedButtonsPixel) })
+                                        @Html.ValidationMessageFor(m => m.CustomizingSettingsViewModel.RoundedButtonsPixel, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                             </div>
