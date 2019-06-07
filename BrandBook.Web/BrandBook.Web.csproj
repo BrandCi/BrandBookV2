@@ -895,6 +895,7 @@
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Brand\Overview.cshtml" />
     <Content Include="Areas\App\Views\Brand\Fonts.cshtml" />
+    <Content Include="Areas\Public\Views\Fonts\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -1004,7 +1005,6 @@
     <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Public\Views\Fonts\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
