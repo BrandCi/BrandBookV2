@@ -98,7 +98,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
-                    ContactPerson = brand.BrandSetting.ContactEmail
+                    ContactPerson = "info@philipp-moser.de"
                 },
 
                 CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
