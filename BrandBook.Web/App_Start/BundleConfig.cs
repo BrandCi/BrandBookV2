@@ -215,6 +215,15 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
                 "~/Plugins/sweet-alert/sweetalert2.min.js"));
 
+
+
+            // Switchery
+            bundles.Add(new StyleBundle("~/Content/Plugins/Switchery").Include(
+                "~/Plugins/switchery/switchery.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Switchery").Include(
+                "~/Plugins/switchery/switchery.min.js"));
+
         }
     }
 }

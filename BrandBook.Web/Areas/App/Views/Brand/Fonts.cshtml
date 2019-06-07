@@ -7,7 +7,7 @@
 }
 
 @section styles {
-
+    @Styles.Render("~/Content/Plugins/Switchery")
 }
 
 
@@ -92,6 +92,10 @@
 
 
 @section scripts {
+    @Scripts.Render("~/bundles/Plugins/Switchery")
+
+
+
     <script>
 
         $("#showAdditionalContent").change(function () {
