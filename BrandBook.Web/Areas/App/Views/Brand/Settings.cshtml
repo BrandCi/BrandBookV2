@@ -146,7 +146,7 @@
                             </div>
 
 
-                            <div class="form-group clearfix">
+                            <div class="form-group clearfix" id="formgroup-roundedbuttons">
                                 @Html.LabelFor(m => m.CustomizingSettingsViewModel.RoundedButtonsPixel, new { @class = "col-form-label" })
                                 <div class="">
                                     <div class="input-group">
@@ -222,7 +222,7 @@
     <script>
 
         !function($) {
-            "use strict";
+                "use strict";
 
                 var SweetAlert = function() {
                 };
@@ -267,8 +267,27 @@
             //initializing
             function($) {
                 "use strict";
-                $.SweetAlert.init()
+                $.SweetAlert.init();
             }(window.jQuery);
     </script>
+    
+    
+    
+    <script>
+
+        // formgroup-roundedbuttons
+        $('#CustomizingSettingsViewModel_RoundedButtons').change(function(){
+            if (this.checked) {
+                $('#formgroup-roundedbuttons').fadeIn('slow');
+            }
+            else {
+                $('#formgroup-roundedbuttons').fadeOut('slow');
+            }                   
+        });
+
+    </script>
+    
+    
+
 
 }
