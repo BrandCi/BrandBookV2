@@ -893,6 +893,7 @@
     <Content Include="Areas\Public\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Brand\Overview.cshtml" />
+    <Content Include="Areas\App\Views\Brand\Fonts.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
