@@ -61,14 +61,14 @@
     <div class="col-lg-2 col-md-6">
         <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
 
-            <div class="bg-icon bg-icon-inverse pull-left">
-                <a href="">
-                    <i class="fas fa-swatchbook text-info"></i>
+            <div class="bg-icon bg-icon-warning pull-left">
+                <a href="@Url.Action("Fonts", "Brand", new { Id = ViewBag.BrandId, area = "App"})">
+                    <i class="fas fa-font text-info"></i>
                 </a>
             </div>
 
             <div class="text-right">
-                <a href="#" class="text-muted mb-0">
+                <a href="@Url.Action("Fonts", "Brand", new { Id = ViewBag.BrandId, area = "App"})" class="text-muted mb-0">
                     Open <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
