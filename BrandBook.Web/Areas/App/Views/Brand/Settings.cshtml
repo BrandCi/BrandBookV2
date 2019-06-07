@@ -28,6 +28,11 @@
                         Contact Settings
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="#customizing-settings" data-toggle="tab" aria-expanded="true" class="nav-link">
+                        Customizing Brand
+                    </a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="general-settings">
@@ -70,6 +75,8 @@
                         }
                     </p>
                 </div>
+                
+
                 <div class="tab-pane" id="contact-settings">
                     <p>
                         @using (Html.BeginForm("UpdateContactSettings", "Brand", new { area = "App" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -101,6 +108,41 @@
                         }
                     </p>
                 </div>
+                
+
+                <div class="tab-pane" id="customizing-settings">
+                    <p>
+                        @using (Html.BeginForm("UpdateContactSettings", "Brand", new { area = "App" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.HiddenFor(m => m.ContactSettingsViewModel.Id, new { @Value = Model.ContactSettingsViewModel.Id })
+
+                            <div class="form-group clearfix">
+                                @Html.LabelFor(m => m.ContactSettingsViewModel.ContactPerson, new { @class = "col-form-label" })
+                                <div class="">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="mainColorInput">@@</span>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.ContactSettingsViewModel.ContactPerson, new { @Value = Model.ContactSettingsViewModel.ContactPerson, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ContactSettingsViewModel.ContactPerson) })
+                                        @Html.ValidationMessageFor(m => m.ContactSettingsViewModel.ContactPerson, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    Speichern
+                                </button>
+                            </div>
+                        }
+                    </p>
+                </div>
+                
+
             </div>
         </div>
     </div> <!-- end col -->
