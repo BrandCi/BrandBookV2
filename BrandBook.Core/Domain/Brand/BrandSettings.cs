@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand
 {
-    class BrandSettings
+    public class BrandSettings : BaseEntity
     {
     }
 }
