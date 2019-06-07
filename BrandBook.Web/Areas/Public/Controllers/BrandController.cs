@@ -10,5 +10,11 @@ namespace BrandBook.Web.Areas.Public.Controllers
 {
     public class BrandController : Controller
     {
+
+        public ActionResult Overview()
+        {
+            return View();
+        }
+
     }
 }
