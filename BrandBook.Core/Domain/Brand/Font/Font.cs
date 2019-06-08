@@ -13,5 +13,7 @@ namespace BrandBook.Core.Domain.Brand.Font
 
         public FontInclusion FontInclusion { get; set; }
 
+        public Brand Brand { get; set; }
+
     }
 }
