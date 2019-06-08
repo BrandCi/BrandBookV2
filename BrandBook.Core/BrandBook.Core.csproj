@@ -61,6 +61,7 @@
     <Compile Include="Domain\Brand\Color\CmykValue.cs" />
     <Compile Include="Domain\Brand\Color\Color.cs" />
     <Compile Include="Domain\Brand\Color\RgbValue.cs" />
+    <Compile Include="Domain\Brand\Font\Font.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
     <Compile Include="Domain\System\Setting.cs" />
