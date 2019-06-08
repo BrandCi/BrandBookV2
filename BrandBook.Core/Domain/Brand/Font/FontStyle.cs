@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Font
 {
-    class FontStyle
+    public class FontStyle : BaseEntity
     {
     }
 }
