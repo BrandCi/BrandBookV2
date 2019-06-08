@@ -127,6 +127,10 @@
     <Compile Include="Migrations\201906070929174_AddBrandSettingsTable.Designer.cs">
       <DependentUpon>201906070929174_AddBrandSettingsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906082139539_AddAllInitialFontsTables.cs" />
+    <Compile Include="Migrations\201906082139539_AddAllInitialFontsTables.Designer.cs">
+      <DependentUpon>201906082139539_AddAllInitialFontsTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -202,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906070929174_AddBrandSettingsTable.resx">
       <DependentUpon>201906070929174_AddBrandSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906082139539_AddAllInitialFontsTables.resx">
+      <DependentUpon>201906082139539_AddAllInitialFontsTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
