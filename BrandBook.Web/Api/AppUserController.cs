@@ -9,7 +9,7 @@ using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dtos.Brand;
 using BrandBook.Core.Dtos.User;
-using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 

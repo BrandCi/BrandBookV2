@@ -1,4 +1,5 @@
-﻿
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+
 @{
     ViewBag.Title = "Overview";
 }
@@ -6,3 +7,99 @@
 {
     @Styles.Render("~/Content/Css/Frontend/Styling/02")
 }
+
+<div class="theme-top-section">
+    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
+
+
+    <div id="theme-banner" class="theme-banner-two">
+        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
+        @CustomHelper.Image("FrontendData/f1facc1e-d48a-4cc9-9853-1895d7d1a739", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
+        @CustomHelper.Image("FrontendData/1aae520d-647a-48c4-a2ab-94a92d8d8efb", "svg", "illustration d-none d-lg-block d-xl-block", "top: 68px; right: -1px;")
+        <div class="container">
+            <div class="main-text-wrapper">
+                <h1 class="strong-title-900">
+                    Product
+                    <br>Overview
+                </h1>
+                <p>
+                    Get familiar with our most interesting features.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="our-feature-two dark-bg" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text">
+                        <div class="number">01</div>
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_01_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_01_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div>
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-6 order-lg-last">
+                    <div class="text">
+                        <div class="number">02</div>
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_02_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_02_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div>
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 order-lg-first img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
+                    </div>
+                </div>
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text">
+                        <div class="number">03</div>
+                        <h2 class="title">
+                            @Translations.frontend_home_index_services_service_03_title
+                        </h2>
+                        <p>
+                            @Translations.frontend_home_index_services_service_03_description
+                        </p>
+                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
+                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
+                        </a>
+                    </div>
+                </div> <!-- /.col- -->
+                <div class="col-lg-6 img-box">
+                    <div>
+                        @CustomHelper.Image("FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203", "svg", "")
+                    </div>
+                </div>
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div>
+
+</div> 

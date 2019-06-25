@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.RepositoryInterfaces.Brand
+namespace BrandBook.Web.Framework.Controllers
 {
-    public interface IBrandRepository : IRepository<Domain.Brand.Brand>
+    public class PublicControllerBase : BaseController
     {
     }
 }

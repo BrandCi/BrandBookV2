@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Core.RepositoryInterfaces.Setting;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;
 

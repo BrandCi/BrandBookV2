@@ -151,6 +151,12 @@ namespace BrandBook.Web
              *
              */
 
+
+            // Jquery.Validation
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/JqueryValidation").Include(
+                "~/Plugins/jquery-validation/js/jquery.validate.min.js"
+                ));
+
             // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
                     "~/Plugins/custombox/dist/custombox.min.css",
@@ -191,6 +197,32 @@ namespace BrandBook.Web
                 "~/Plugins/datatables/dataTables.responsive.min.js",
                 "~/Plugins/datatables/responsive.bootstrap4.min.js",
                 "~/Plugins/datatables/dataTables.select.min.js"));
+
+
+            // Jquery.Steps
+            bundles.Add(new StyleBundle("~/Content/Plugins/JquerySteps").Include(
+                "~/Plugins/jquery.steps/css/jquery.steps.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/JquerySteps").Include(
+                "~/Plugins/jquery.steps/js/jquery.steps.min.js"));
+
+
+
+            // Sweet Alerts
+            bundles.Add(new StyleBundle("~/Content/Plugins/SweetAlerts").Include(
+                "~/Plugins/sweet-alert/sweetalert2.min.css"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
+                "~/Plugins/sweet-alert/sweetalert2.min.js"));
+
+
+
+            // Switchery
+            bundles.Add(new StyleBundle("~/Content/Plugins/Switchery").Include(
+                "~/Plugins/switchery/switchery.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Switchery").Include(
+                "~/Plugins/switchery/switchery.min.js"));
 
         }
     }

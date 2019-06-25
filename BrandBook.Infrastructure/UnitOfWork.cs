@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core;
-using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Setting;
+using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Infrastructure.Repositories.User;
 
 namespace BrandBook.Infrastructure
@@ -15,9 +19,13 @@ namespace BrandBook.Infrastructure
         #region Fileds
 
         private readonly BrandBookDbContext _context;
+
         private IAppUserRepository _appUserRepository;
         private IUserRoleRepository _userRoleRepository;
         private IRolePermissionRepository _rolePermissionRepository;
+        private ISettingRepository _settingRepository;
+        private IBrandRepository _brandRepository;
+        private IColorRepository _colorRepository;
 
         #endregion
 
@@ -47,16 +55,32 @@ namespace BrandBook.Infrastructure
             get { return _rolePermissionRepository ?? (_rolePermissionRepository = new RolePermissionRepository(_context)); }
         }
 
-
-
-        public int SaveChanges()
+        public ISettingRepository SettingRepository
         {
-            return _context.SaveChanges();
+            get { return _settingRepository ?? (_settingRepository = new SettingRepository(_context)); }
         }
 
-        public Task<int> SaveChangesAsync()
+        public IBrandRepository BrandRepository
         {
-            return _context.SaveChangesAsync();
+            get { return _brandRepository ?? (_brandRepository = new BrandRepository(_context)); }
+        }
+
+        public IColorRepository ColorRepository
+        {
+            get { return _colorRepository ?? (_colorRepository = new ColorRepository(_context)); }
+        }
+        
+
+
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
+        public async void SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
 
         #endregion
@@ -69,6 +93,10 @@ namespace BrandBook.Infrastructure
             _appUserRepository = null;
             _userRoleRepository = null;
             _rolePermissionRepository = null;
+            _settingRepository = null;
+            _brandRepository = null;
+            _colorRepository = null;
+
             _context.Dispose();
         }
 

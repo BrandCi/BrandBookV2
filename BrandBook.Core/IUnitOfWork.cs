@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Setting;
+using BrandBook.Core.Repositories.User;
 
 namespace BrandBook.Core
 {
@@ -15,6 +17,9 @@ namespace BrandBook.Core
         IAppUserRepository AppUserRepository { get; }
         IUserRoleRepository UserRoleRepository { get; }
         IRolePermissionRepository RolePermissionRepository { get; }
+        ISettingRepository SettingRepository { get; }
+        IBrandRepository BrandRepository { get; }
+        IColorRepository ColorRepository { get; }
 
         #endregion
 
@@ -22,8 +27,10 @@ namespace BrandBook.Core
 
         #region Methods
 
-        int SaveChanges();
-        Task<int> SaveChangesAsync();
+        void SaveChanges();
+        void SaveChangesAsync();
+
+        void Dispose();
 
         #endregion
     }

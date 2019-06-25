@@ -1,0 +1,41 @@
+﻿@using BrandBook.Resources
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <!--- Divider -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title" style="font-weight: bolder; font-size: 17px;">
+                    My Cool Branding
+                </li>
+
+
+                <li class="menu-title">
+                    General
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Overview", "Brand", new {id = ViewBag.BrandId, area = "Public"})" class="waves-effect waves-primary">
+                        <i class="fas fa-swatchbook"></i><span> Overview </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Colors", new {id = ViewBag.BrandId, area = "Public"})" class="waves-effect waves-primary">
+                        <i class="fas fa-palette"></i><span> Colors </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Fonts", new {id = ViewBag.BrandId, area = "Public"})" class="waves-effect waves-primary">
+                        <i class="fas fa-font"></i><span> Fonts </span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -21,12 +21,12 @@ namespace BrandBook.Infrastructure.Migrations
             AddColumn("dbo.ImprintValues", "Category_Id", c => c.Int());
             CreateIndex("dbo.ImprintValues", "Category_Id");
             AddForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories", "Id");
-            DropColumn("dbo.ImprintValues", "Category");
+            DropColumn("dbo.ImprintValues", "ColorCategory");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.ImprintValues", "Category", c => c.Int(nullable: false));
+            AddColumn("dbo.ImprintValues", "ColorCategory", c => c.Int(nullable: false));
             DropForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories");
             DropIndex("dbo.ImprintValues", new[] { "Category_Id" });
             DropColumn("dbo.ImprintValues", "Category_Id");
