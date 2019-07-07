@@ -46,9 +46,9 @@
                         @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) + "*", @required="required" })
                     </div>
 
-                    <div class="col-12">
-                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new {@required="required"})
-                        @Html.LabelFor(m => m.AcceptPrivacyPolicy)
+                    <div class="col-12 form-group form-check">
+                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new {@class="form-check-input" ,@required="required"})
+                        @Html.LabelFor(m => m.AcceptPrivacyPolicy, new {@class="form-check-label"})
                     </div>
 
                     <button type="submit">Send Message</button>
