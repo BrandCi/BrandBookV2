@@ -183,10 +183,6 @@ div#cookieConsentBox {
 /*
     Contact Form
 */
-.contact-section-dark form input,
-.contact-section-dark form textarea {
-    color: #ffffff !important;
-}
 
 .bb-contact-form {
 
@@ -196,7 +192,7 @@ div#cookieConsentBox {
 
     input[type="text"], textarea {
         background-color: #ffffff !important;
-        color: black !important;
+        color: black;
 
         &::placeholder {
             color: black;

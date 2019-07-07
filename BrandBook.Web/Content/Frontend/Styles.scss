@@ -1501,7 +1501,7 @@ body .theme-button:hover span {
     border-radius: 4px;
     display: block;
     margin: 10px auto 0;
-    color: #fff;
+    /*color: #fff;*/
     font-size: 20px;
 }
 
@@ -2290,11 +2290,11 @@ body .theme-button:hover span {
 .contact-section-dark form input,
 .contact-section-dark form textarea {
     border: none;
-    background: #2529b2;
+    
     margin-bottom: 35px;
     width: 100%;
     max-width: 100%;
-    color: rgba(255,255,255,0.5);
+    
 }
 
 .contact-section-dark form input {
@@ -2314,9 +2314,6 @@ body .theme-button:hover span {
     opacity: 0.5;
 }
 
-.contact-section-dark form :-ms-input-placeholder {
-    color: rgba(255,255,255,0.5);
-}
 
 .contact-section-dark form button {
     font-family: 'Source Sans Pro', Arial, sans-serif;

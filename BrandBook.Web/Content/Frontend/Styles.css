@@ -672,16 +672,12 @@ div#cookieConsentBox {
 /*
     Contact Form
 */
-.contact-section-dark form input,
-.contact-section-dark form textarea {
-  color: #ffffff !important; }
-
 .bb-contact-form input {
   border: 1px solid rgba(0, 0, 0, 0.75); }
 
 .bb-contact-form input[type="text"], .bb-contact-form textarea {
   background-color: #ffffff !important;
-  color: black !important; }
+  color: black; }
   .bb-contact-form input[type="text"]::placeholder, .bb-contact-form textarea::placeholder {
     color: black; }
 
@@ -1934,7 +1930,7 @@ body .theme-button:hover span {
   border-radius: 4px;
   display: block;
   margin: 10px auto 0;
-  color: #fff;
+  /*color: #fff;*/
   font-size: 20px; }
 
 .contact-us-one form button:hover {
@@ -2594,11 +2590,9 @@ body .theme-button:hover span {
 .contact-section-dark form input,
 .contact-section-dark form textarea {
   border: none;
-  background: #2529b2;
   margin-bottom: 35px;
   width: 100%;
-  max-width: 100%;
-  color: rgba(255, 255, 255, 0.5); }
+  max-width: 100%; }
 
 .contact-section-dark form input {
   height: 60px;
@@ -2613,9 +2607,6 @@ body .theme-button:hover span {
 .contact-section-dark form {
   color: #fff;
   opacity: 0.5; }
-
-.contact-section-dark form :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5); }
 
 .contact-section-dark form button {
   font-family: 'Source Sans Pro', Arial, sans-serif;
