@@ -31,11 +31,11 @@
                 <div class="row">
 
                     <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Name, new { placeholder = @Html.DisplayNameFor(m => m.Name)})
+                        @Html.TextBoxFor(m => m.Name, new { placeholder = @Html.DisplayNameFor(m => m.Name) + "*", @required="required"})
                     </div>
 
                     <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Email, new { placeholder = @Html.DisplayNameFor(m => m.Email) })
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = @Html.DisplayNameFor(m => m.Email) + "*", @required="required" })
                     </div>
 
                     <div class="col-lg-6">
@@ -43,11 +43,11 @@
                     </div>
 
                     <div class="col-12">
-                        @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) })
+                        @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) + "*", @required="required" })
                     </div>
 
                     <div class="col-12">
-                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy)
+                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new {@required="required"})
                         @Html.LabelFor(m => m.AcceptPrivacyPolicy)
                     </div>
 
