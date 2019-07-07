@@ -47,11 +47,12 @@
                     </div>
 
                     <div class="col-12 form-group form-check">
-                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new {@class="form-check-input" ,@required="required"})
-                        @Html.LabelFor(m => m.AcceptPrivacyPolicy, new {@class="form-check-label"})
+                        @Html.LabelFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-label" })
+                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-input", @required = "required" })
+
                     </div>
 
-                    <button type="submit">Send Message</button>
+                    <button type="submit" class="mt-5">Send Message</button>
 
                 </div>
             }
