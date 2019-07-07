@@ -677,7 +677,12 @@ div#cookieConsentBox {
   color: #ffffff !important; }
 
 .bb-contact-form input {
-  border: 1px solid black !important; }
+  border: 1px solid rgba(0, 0, 0, 0.75); }
+
+.bb-contact-form input[type="text"], .bb-contact-form textarea {
+  background-color: #ffffff !important; }
+  .bb-contact-form input[type="text"]::placeholder, .bb-contact-form textarea::placeholder {
+    color: black; }
 
 #loader-wrapper {
   position: fixed;
