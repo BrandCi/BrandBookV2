@@ -2597,7 +2597,6 @@ body .theme-button:hover span {
   padding: 295px 0 140px; }
 
 .contact-section-dark:before {
-  content: url(../images/shape/15.png);
   position: absolute;
   top: 41%;
   left: 0; }
