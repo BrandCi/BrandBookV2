@@ -5,5 +5,7 @@ namespace BrandBook.Core.Repositories.User
     public interface IAppUserRepository : IRepository<AppUser>
     {
         AppUser FindByUsername(string username);
+
+        int CountUserForCompanyId(int companyId);
     }
 }

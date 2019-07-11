@@ -30,6 +30,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.UserManagement
         public string Name { get; set; }
         public string UrlName { get; set; }
         public string ContactEmail { get; set; }
+        public int NumberOfUser { get; set; }
 
     }
 
