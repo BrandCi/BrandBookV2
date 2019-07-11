@@ -35,15 +35,19 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var allCompanies = await _unitOfWork.CompanyRepository.GetAllAsync();
             List<SingleCompanyViewModel> singleCompanyViewModels = new List<SingleCompanyViewModel>();
+            int numberOfUser = 0;
 
             foreach (Company singleCompany in allCompanies)
             {
+                numberOfUser = _unitOfWork.AppUserRepository.CountUserForCompanyId(singleCompany.Id);
+
                 singleCompanyViewModels.Add(new SingleCompanyViewModel()
                 {
                     Id = singleCompany.Id,
                     Name = singleCompany.Name,
                     UrlName = singleCompany.UrlName,
-                    ContactEmail = singleCompany.ContactEmail
+                    ContactEmail = singleCompany.ContactEmail,
+                    NumberOfUser = numberOfUser
 
                 });
             }
