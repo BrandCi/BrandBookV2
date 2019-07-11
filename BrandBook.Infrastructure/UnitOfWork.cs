@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Infrastructure.Repositories.Company;
 using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Infrastructure.Repositories.User;
 
@@ -26,6 +28,7 @@ namespace BrandBook.Infrastructure
         private ISettingRepository _settingRepository;
         private IBrandRepository _brandRepository;
         private IColorRepository _colorRepository;
+        private ICompanyRepository _companyRepository;
 
         #endregion
 
@@ -69,7 +72,12 @@ namespace BrandBook.Infrastructure
         {
             get { return _colorRepository ?? (_colorRepository = new ColorRepository(_context)); }
         }
-        
+
+        public ICompanyRepository CompanyRepository
+        {
+            get { return _companyRepository ?? (_companyRepository = new CompanyRepository(_context)); }
+        }
+
 
 
 
@@ -96,6 +104,7 @@ namespace BrandBook.Infrastructure
             _settingRepository = null;
             _brandRepository = null;
             _colorRepository = null;
+            _companyRepository = null;
 
             _context.Dispose();
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.User;
 
@@ -20,6 +21,7 @@ namespace BrandBook.Core
         ISettingRepository SettingRepository { get; }
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
+        ICompanyRepository CompanyRepository { get; }
 
         #endregion
 
