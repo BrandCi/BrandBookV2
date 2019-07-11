@@ -1,4 +1,4 @@
-﻿
+﻿@model BrandBook.Web.Framework.ViewModels.App.UserManagement.CompaniesOverviewViewModel
 @{
     ViewBag.Title = "Firmenübersicht";
 }
@@ -22,26 +22,33 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Nutzer</th>
-                    <th>Aktiv</th>
+                    <th>UrlName</th>
+                    <th>Kontakt</th>
                 </tr>
                 </thead>
 
 
                 <tbody>
-
+                
+                @foreach (var company in Model.Companies)
+                {
                     <tr>
-                        <td>1</td>
                         <td>
-                            <a href="#">
-                                philovation GmbH
-                            </a>
+                            @company.Id
                         </td>
-                        <td>5 / 10</td>
                         <td>
-                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                            @company.Name
+                        </td>
+                        <td>
+                            @company.UrlName
+                        </td>
+                        <td>
+                            @company.ContactEmail
                         </td>
                     </tr>
+                }
+
+               
 
                 </tbody>
             </table>
