@@ -331,7 +331,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Languageselection.
+        ///   Looks up a localized string similar to Languages.
         /// </summary>
         public static string app_usermenu_languageselection {
             get {
