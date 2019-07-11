@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.UserManagement
 {
-    class CompanyViewModel
+    public class CompanyViewModel
     {
+
+        public string Name { get; set; }
+        public string UrlName { get; set; }
+        public string ContactEmail { get; set; }
+
     }
 }
