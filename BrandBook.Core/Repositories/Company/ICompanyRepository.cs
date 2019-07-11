@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace BrandBook.Core.Repositories.Company
 {
-    interface ICompanyRepository
+    public interface ICompanyRepository : IRepository<Domain.Company.Company>
     {
     }
 }
