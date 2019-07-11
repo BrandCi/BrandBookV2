@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201907111953161_AddCompaniesTable.Designer.cs">
       <DependentUpon>201907111953161_AddCompaniesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907111954521_SeedCompaniesTable.cs" />
+    <Compile Include="Migrations\201907111954521_SeedCompaniesTable.Designer.cs">
+      <DependentUpon>201907111954521_SeedCompaniesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907111953161_AddCompaniesTable.resx">
       <DependentUpon>201907111953161_AddCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907111954521_SeedCompaniesTable.resx">
+      <DependentUpon>201907111954521_SeedCompaniesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
