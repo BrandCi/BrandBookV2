@@ -16,7 +16,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        public ActionResult CustomerOverview()
+        public ActionResult CompanyOverview()
         {
             return View();
         }
