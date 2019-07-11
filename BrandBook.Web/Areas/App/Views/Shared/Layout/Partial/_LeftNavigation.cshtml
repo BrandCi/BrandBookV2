@@ -38,7 +38,7 @@
                         </li>
                         -->
                             <li>
-                                <a href="@Url.Action("CustomerOverview", "User", new { area = "App"})">
+                                <a href="@Url.Action("CompanyOverview", "User", new { area = "App"})">
                                     @Translations.app_mainnavigation_usermanagement_company
                                 </a>
                             </li>
@@ -49,18 +49,28 @@
                 
                 @if (User.IsInRole("Administrator"))
                 {
-
-                    <li>
-                        <a href="@Url.Action("Index", "Settings", new {area = "App"})" class="waves-effect waves-primary">
-                            <i class="fas fa-cogs"></i><span> @Translations.app_usermenu_settings </span>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary subdrop">
+                            <i class="fas fa-server"></i><span> System</span>
                         </a>
+                        <ul class="list-unstyled" style="display: block;">
+                            <li>
+                                <a href="@Url.Action("Index", "Settings", new {area = "App"})">
+                                    @Translations.app_usermenu_settings
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("CustomerOverview", "User", new { area = "App"})">
+                                    Services
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                   
                 }
                 
                 
-                
-
+               
             
 
             </ul>
