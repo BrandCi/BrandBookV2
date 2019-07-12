@@ -879,7 +879,7 @@
     <Content Include="Areas\App\Views\System\Index.cshtml" />
     <Content Include="Areas\App\Views\System\SystemSettings.cshtml" />
     <Content Include="Areas\App\Views\System\UserSettings.cshtml" />
-    <Content Include="Areas\App\Views\System\Media.cshtml" />
+    <Content Include="Areas\App\Views\System\MediaSettings.cshtml" />
     <Content Include="Areas\App\Views\System\Brand.cshtml" />
     <Content Include="Areas\App\Views\AppCulture\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
