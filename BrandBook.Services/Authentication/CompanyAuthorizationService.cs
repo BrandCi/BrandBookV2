@@ -28,7 +28,7 @@ namespace BrandBook.Services.Authentication
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
             var brand = _unitOfWork.BrandRepository.FindById(brandId);
 
-            if (appUser.Company.Id == brand.Company.Id)
+            if (appUser.CompanyId == brand.CompanyId)
             {
                 return true;
             }
@@ -54,7 +54,7 @@ namespace BrandBook.Services.Authentication
 
             var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(appUserId);
 
-            return await _unitOfWork.BrandRepository.GetBrandsByCompanyAsync(appUser.Company.Id);
+            return await _unitOfWork.BrandRepository.GetBrandsByCompanyAsync(appUser.CompanyId);
 
         }
 
