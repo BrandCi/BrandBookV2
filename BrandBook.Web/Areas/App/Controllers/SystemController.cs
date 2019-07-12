@@ -34,7 +34,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult System()
+        public ActionResult SystemSettings()
         {
             SystemSettingsViewModel model = new SystemSettingsViewModel();
 
