@@ -206,14 +206,15 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             string userId = User.Identity.GetUserId();
 
-            if (!_cmpAuthService.IsAuthorized(userId, brandId) || (id == null || id == 0))
+            if (id != null && id != 0)
             {
-                return HttpNotFound();
-                // return RedirectToAction("Overview", "Brands", new {area = "App"});
-                
+                if (_cmpAuthService.IsAuthorized(userId, brandId))
+                {
+                    return new EmptyResult();
+                }
             }
 
-            return new EmptyResult();
+            return HttpNotFound();
         }
     }
 }
