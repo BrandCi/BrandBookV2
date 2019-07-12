@@ -17,6 +17,7 @@ namespace BrandBook.Core.Domain.Brand
 
         public BrandSetting BrandSetting { get; set; }
 
+        public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
     }
 }
