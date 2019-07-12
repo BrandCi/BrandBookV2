@@ -876,7 +876,7 @@
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="App_Data\BrandBook_Content\README.md" />
     <Content Include="Areas\App\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\App\Views\System\Index.cshtml" />
+    <Content Include="Areas\App\Views\System\Settings.cshtml" />
     <Content Include="Areas\App\Views\System\SystemSettings.cshtml" />
     <Content Include="Areas\App\Views\System\UserSettings.cshtml" />
     <Content Include="Areas\App\Views\System\MediaSettings.cshtml" />
