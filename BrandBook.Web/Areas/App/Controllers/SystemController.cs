@@ -78,7 +78,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
-        public ActionResult Brand()
+        public ActionResult BrandSettings()
         {
             return View();
         }
