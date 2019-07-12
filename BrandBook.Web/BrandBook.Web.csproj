@@ -900,6 +900,7 @@
     <Content Include="Areas\App\Views\System\Services.cshtml" />
     <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Auth\Views\Login\VersionInfo.cshtml" />
+    <Content Include="Areas\App\Views\System\VersionInfo.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

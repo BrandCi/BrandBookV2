@@ -1,0 +1,57 @@
+﻿@using BrandBook.Resources
+
+@{
+    ViewBag.Title = "VersionInfo";
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+}
+
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12">
+        <div class="card m-b-20 card-body">
+            <h4 class="card-title">Version Info</h4>
+            <p class="card-text">
+                Current Version: BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="timeline">
+            <article class="timeline-item alt">
+                <div class="text-right">
+                    <div class="time-show first">
+                        <a href="#" class="btn btn-primary w-lg">
+                            BrandCi v2.0.1
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+
+            
+
+
+            <article class="timeline-item alt">
+                <div class="text-right">
+                    <div class="time-show">
+                        <a href="#" class="btn btn-primary w-lg">BrandCi v2.0.0</a>
+                    </div>
+                </div>
+            </article>
+
+
+        </div>
+    </div>
+</div>
+<!-- end row -->
