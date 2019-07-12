@@ -1,4 +1,5 @@
 ﻿@using BrandBook.Resources
+@using BrandBook.Web.Framework.HtmlHelpers
 
 @{
     ViewBag.Title = "VersionInfo";
@@ -14,7 +15,7 @@
         <div class="card m-b-20 card-body">
             <h4 class="card-title">Version Info</h4>
             <p class="card-text">
-                Current Version: BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
+                <strong>Current Version:</strong> BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
             </p>
         </div>
     </div>
@@ -38,8 +39,13 @@
                 </div>
             </article>
             
-
             
+            @AppCustomHelper.VersionInfoItem(true, "2.0.0.84", "13.07.2019", 
+                "Mit diesem Release wurde die Verwendung von Companies und die Trennung von Inhalten durch die Nutzung dieser, eingeführt.")
+            
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.83", "12.07.2019", 
+                "Erste Vorbereitungen für die Verwendung von Companies wurden getroffen.")
+
 
 
             <article class="timeline-item alt">
