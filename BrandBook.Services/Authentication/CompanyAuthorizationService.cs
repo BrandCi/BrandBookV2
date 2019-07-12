@@ -49,10 +49,10 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<List<Brand>> GetAllBrandsAsync(string AppUserId)
+        public async Task<List<Brand>> GetAllBrandsAsync(string appUserId)
         {
 
-            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
+            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(appUserId);
 
             return await _unitOfWork.BrandRepository.GetBrandsByCompanyAsync(appUser.Company.Id);
 
