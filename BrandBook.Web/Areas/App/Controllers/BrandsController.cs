@@ -8,6 +8,7 @@ using BrandBook.Core.Domain.Brand;
 using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 
@@ -15,11 +16,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandsController : AppControllerBase
     {
-        private IUnitOfWork unitOfWork;
+        private IUnitOfWork _unitOfWork;
+        private CompanyAuthorizationService _cmpAuthService;
 
         public BrandsController()
         {
-            this.unitOfWork = new UnitOfWork();
+            this._unitOfWork = new UnitOfWork();
+            this._cmpAuthService = new CompanyAuthorizationService();
         }
 
 
@@ -27,7 +30,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brands
         public ActionResult Overview()
         {
-            var allBrands = unitOfWork.BrandRepository.GetAll();
+            var allBrands = _unitOfWork.BrandRepository.GetAll();
             List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (Brand singleBrand in allBrands) 
@@ -73,8 +76,8 @@ namespace BrandBook.Web.Areas.App.Controllers
                     ImageType = "png"
                 };
                 
-                unitOfWork.BrandRepository.Add(brand);
-                unitOfWork.SaveChanges();
+                _unitOfWork.BrandRepository.Add(brand);
+                _unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
             }
 
