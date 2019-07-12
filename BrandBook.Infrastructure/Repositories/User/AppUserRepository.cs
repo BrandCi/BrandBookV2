@@ -29,8 +29,6 @@ namespace BrandBook.Infrastructure.Repositories.User
             return Set.Where(au => au.Company.Id == companyId)
                 .Count();
 
-
-            // return 15;
         }
 
     }
