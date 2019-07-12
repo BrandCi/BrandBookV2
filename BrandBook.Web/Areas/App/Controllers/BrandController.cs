@@ -68,7 +68,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             ViewBag.BrandId = id;
 
-            if (id == null || id == 0)
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -79,7 +79,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult Fonts(int? id)
         {
 
-            if (id == null || id == 0)
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -95,7 +95,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             ViewBag.BrandId = id;
 
-            if (id == null || id == 0)
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -138,10 +138,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         [HttpPost]
         public ActionResult UpdateGeneralSettings(BrandSettingsViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.Id))
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
+
 
             // Get current brand
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
@@ -163,10 +164,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         [HttpPost]
         public ActionResult UpdateContactSettings(BrandSettingsViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.Id))
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
+
 
             // Get current brand
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
@@ -188,7 +190,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Delete(int? id)
         {
-            if (id == null || id == 0)
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
