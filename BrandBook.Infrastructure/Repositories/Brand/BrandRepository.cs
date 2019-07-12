@@ -21,5 +21,16 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         {
             return await Set.Where(b => b.Company.Id == companyId).ToListAsync();
         }
+
+        public bool IsBrandExistingById(int brandId)
+        {
+
+            if (Set.Count(b => b.Id == brandId) >= 1)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
