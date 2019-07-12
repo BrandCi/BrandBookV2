@@ -25,7 +25,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-
+        #region Settings
         // GET: App/Settings
         public ActionResult Settings()
         {
@@ -82,5 +82,19 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+        #endregion
+
+
+        #region Services
+
+        public ActionResult Services()
+        {
+            return View();
+        }
+
+
+        #endregion
+        
     }
+
 }

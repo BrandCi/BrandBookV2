@@ -898,6 +898,7 @@
     <Content Include="Areas\App\Views\Brand\Fonts.cshtml" />
     <Content Include="Areas\Public\Views\Fonts\Index.cshtml" />
     <Content Include="Areas\Public\Views\Colors\Index.cshtml" />
+    <Content Include="Areas\App\Views\System\Services.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
