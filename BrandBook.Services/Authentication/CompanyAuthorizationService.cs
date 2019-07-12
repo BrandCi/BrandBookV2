@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<Brand> GetBrandAsync(int AppUserId, int BrandId)
+        public async Task<Brand> GetBrandAsync(string AppUserId, int BrandId)
         {
 
             var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
@@ -37,7 +38,7 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<List<Brand>> GetAllBrandsAsync(int AppUserId)
+        public async Task<List<Brand>> GetAllBrandsAsync(string AppUserId)
         {
 
             var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
