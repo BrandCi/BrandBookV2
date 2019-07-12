@@ -30,10 +30,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brand
         public ActionResult Index(int? id)
         {
-            if (id == null || id == 0)
-            {
-                return RedirectToAction("Overview", "Brands", new {area = "App"});
-            }
+            AuthorizationRouting(id);
 
             ViewBag.BrandId = id;
 
@@ -203,7 +200,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        private void AuthorizationRouting(int id)
+        private void AuthorizationRouting(int? id)
         {
             if (id == null || id == 0)
             {
