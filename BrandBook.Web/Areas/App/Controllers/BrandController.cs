@@ -7,6 +7,7 @@ using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
@@ -16,10 +17,12 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class BrandController : AppControllerBase
     {
         private IUnitOfWork unitOfWork;
+        private CompanyAuthorizationService _cmpAuthService;
 
         public BrandController()
         {
             this.unitOfWork = new UnitOfWork();
+            this._cmpAuthService = new CompanyAuthorizationService();
         }
 
         // GET: App/Brand
@@ -196,5 +199,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
         }
+
+
     }
 }
