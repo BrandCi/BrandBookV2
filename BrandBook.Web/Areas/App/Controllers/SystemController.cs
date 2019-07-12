@@ -94,6 +94,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
         #endregion
+
+
+        public ActionResult VersionInfo()
+        {
+            return View();
+        }
         
     }
 
