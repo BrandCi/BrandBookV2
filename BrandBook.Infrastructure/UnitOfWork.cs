@@ -28,6 +28,7 @@ namespace BrandBook.Infrastructure
         private ISettingRepository _settingRepository;
         private IBrandRepository _brandRepository;
         private IColorRepository _colorRepository;
+        private IFontRepository _fontRepository;
         private ICompanyRepository _companyRepository;
 
         #endregion
@@ -71,6 +72,11 @@ namespace BrandBook.Infrastructure
         public IColorRepository ColorRepository
         {
             get { return _colorRepository ?? (_colorRepository = new ColorRepository(_context)); }
+        }
+
+        public IFontRepository FontRepository
+        {
+            get { return _fontRepository ?? (_fontRepository = new FontRepository(_context)); }
         }
 
         public ICompanyRepository CompanyRepository
