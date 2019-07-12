@@ -201,5 +201,12 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+        private void AuthorizationRouting(int id)
+        {
+            if ((id == null || id == 0))
+            {
+                RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+        }
     }
 }
