@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="p-20">
-                        @using (Html.BeginForm("System", "System", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                        @using (Html.BeginForm("SystemSettings", "System", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
 

@@ -47,14 +47,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult System(SystemSettingsViewModel model)
+        public ActionResult SystemSettings(SystemSettingsViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            return RedirectToAction("System", "System", new {area = "App"});
+            return RedirectToAction("SystemSettings", "System", new {area = "App"});
 
 
         }
