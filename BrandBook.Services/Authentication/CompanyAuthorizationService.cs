@@ -22,15 +22,26 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<Brand> GetBrandAsync(string AppUserId, int BrandId)
+        public async Task<bool> IsAuthorized(string appUserGuid, int brandId)
         {
 
-            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
-            var brand = await _unitOfWork.BrandRepository.FindByIdAsync(BrandId);
+            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(appUserGuid);
+            var brand = await _unitOfWork.BrandRepository.FindByIdAsync(brandId);
 
             if (appUser.Company.Id == brand.Company.Id)
             {
-                return brand;
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public async Task<Brand> GetBrandAsync(string appUserGuid, int brandId)
+        {
+            if (await IsAuthorized(appUserGuid, brandId))
+            {
+                return await _unitOfWork.BrandRepository.FindByIdAsync(brandId);
             }
 
             return new Brand();
