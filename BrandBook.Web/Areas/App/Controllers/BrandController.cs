@@ -30,9 +30,12 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brand
         public ActionResult Index(int? id)
         {
-            AuthorizationRouting(id);
-
             ViewBag.BrandId = id;
+
+            if (id == null || id == 0)
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
 
             try
             {
@@ -202,13 +205,17 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void AuthorizationRouting(int? id)
         {
-            if (id == null || id == 0)
-            {
-                string userId = User.Identity.GetUserId();
+            int brandId = id ?? default(int);
 
-                if (_cmpAuthService.IsAuthorized(userId, id))
+            string userId = User.Identity.GetUserId();
+
+            if (!_cmpAuthService.IsAuthorized(userId, brandId))
+            {
+                if (id == null || id == 0)
                 {
-                    RedirectToAction("Overview", "Brands", new { area = "App" });
+
+                    RedirectToAction("Overview", "Brands", new {area = "App"});
+
                 }
             }
         }
