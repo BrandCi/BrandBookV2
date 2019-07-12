@@ -872,7 +872,6 @@
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_LeftNavigation.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\App\Views\Brands\Overview.cshtml" />
-    <Content Include="Areas\Auth\Views\Shared\Partial\_VersionNumber.cshtml" />
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="App_Data\BrandBook_Content\README.md" />
     <Content Include="Areas\App\Views\_ViewStart.cshtml" />
