@@ -28,15 +28,18 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
         // GET: App/Brand
-        public ActionResult Index(int? id)
+        public async Task<ActionResult> Index(int? id)
         {
             ViewBag.BrandId = id;
 
-            AuthorizationRouting(id);
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
 
             try
             {
-                var brand = _unitOfWork.BrandRepository.FindById(id);
+                var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
 
                 var model = new BrandOverviewViewModel()
                 {
@@ -200,21 +203,5 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        private ActionResult AuthorizationRouting(int? id)
-        {
-            int brandId = id ?? default(int);
-
-            string userId = User.Identity.GetUserId();
-
-            if (id != null && id != 0)
-            {
-                if (_cmpAuthService.IsAuthorized(userId, brandId))
-                {
-                    return new EmptyResult();
-                }
-            }
-
-            return HttpNotFound();
-        }
     }
 }

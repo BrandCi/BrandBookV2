@@ -22,22 +22,26 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public bool IsAuthorized(string appUserGuid, int brandId)
+        public bool IsAuthorized(string appUserGuid, int? brandId)
         {
 
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
-            var brand = _unitOfWork.BrandRepository.FindById(brandId);
 
-            if (appUser.CompanyId == brand.CompanyId)
+            if (brandId != null && brandId != 0)
             {
-                return true;
+                var brand = _unitOfWork.BrandRepository.FindById(brandId);
+
+                if (appUser.CompanyId == brand.CompanyId)
+                {
+                    return true;
+                }
             }
 
             return false;
         }
 
 
-        public async Task<Brand> GetBrandAsync(string appUserGuid, int brandId)
+        public async Task<Brand> GetBrandAsync(string appUserGuid, int? brandId)
         {
             if (IsAuthorized(appUserGuid, brandId))
             {
