@@ -37,5 +37,15 @@ namespace BrandBook.Services.Authentication
         }
 
 
+        public async Task<List<Brand>> GetAllBrandsAsync(int AppUserId)
+        {
+
+            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
+
+            return await _unitOfWork.BrandRepository.GetBrandsByCompanyAsync(appUser.Company.Id);
+
+        }
+
+
     }
 }
