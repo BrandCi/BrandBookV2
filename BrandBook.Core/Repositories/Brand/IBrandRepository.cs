@@ -7,6 +7,7 @@ namespace BrandBook.Core.Repositories.Brand
     {
 
         Task<List<Domain.Brand.Brand>> GetBrandsByCompanyAsync(int companyId);
+        int IsBrandExistingById(int brandId);
 
     }
 }
