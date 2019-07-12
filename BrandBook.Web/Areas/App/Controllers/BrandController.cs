@@ -18,12 +18,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandController : AppControllerBase
     {
-        private IUnitOfWork unitOfWork;
+        private IUnitOfWork _unitOfWork;
         private CompanyAuthorizationService _cmpAuthService;
 
         public BrandController()
         {
-            this.unitOfWork = new UnitOfWork();
+            this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
         }
 
@@ -36,7 +36,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             try
             {
-                var brand = unitOfWork.BrandRepository.FindById(id);
+                var brand = _unitOfWork.BrandRepository.FindById(id);
 
                 var model = new BrandOverviewViewModel()
                 {
@@ -98,7 +98,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
-            var brand = unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(id);
 
             var model = new BrandSettingsViewModel()
             {
@@ -141,15 +141,15 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             // Get current brand
-            var brand = unitOfWork.BrandRepository.FindById(model.Id);
+            var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
             // Set updated values
             brand.Name = model.GeneralSettingsViewModel.Name;
             brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
 
             // Update
-            unitOfWork.BrandRepository.Update(brand);
-            unitOfWork.SaveChanges();
+            _unitOfWork.BrandRepository.Update(brand);
+            _unitOfWork.SaveChanges();
 
 
 
@@ -166,14 +166,14 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             // Get current brand
-            var brand = unitOfWork.BrandRepository.FindById(model.Id);
+            var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
             // Set updated values
             brand.BrandSetting.ContactEmail = model.ContactSettingsViewModel.ContactPerson;
 
             // Update
-            unitOfWork.BrandRepository.Update(brand);
-            unitOfWork.SaveChanges();
+            _unitOfWork.BrandRepository.Update(brand);
+            _unitOfWork.SaveChanges();
 
 
 
@@ -190,10 +190,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            var brand = unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(id);
 
-            unitOfWork.BrandRepository.Remove(brand);
-            unitOfWork.SaveChanges();
+            _unitOfWork.BrandRepository.Remove(brand);
+            _unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
