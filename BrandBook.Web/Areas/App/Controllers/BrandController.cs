@@ -73,6 +73,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Fonts(int? id)
         {
+
+            if (id == null || id == 0)
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
+
             return View();
         }
 
