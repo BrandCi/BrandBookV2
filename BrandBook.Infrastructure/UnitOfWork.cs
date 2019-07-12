@@ -110,6 +110,7 @@ namespace BrandBook.Infrastructure
             _settingRepository = null;
             _brandRepository = null;
             _colorRepository = null;
+            _fontRepository = null;
             _companyRepository = null;
 
             _context.Dispose();
