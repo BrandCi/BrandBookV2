@@ -11,6 +11,7 @@ using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -33,16 +34,22 @@ namespace BrandBook.Web.Areas.App.Controllers
             var allBrands = _unitOfWork.BrandRepository.GetAll();
             List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
-            foreach (Brand singleBrand in allBrands) 
+            foreach (Brand singleBrand in allBrands)
             {
-                singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
+                string userGuid = User.Identity.GetUserId();
+
+                if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
-                    Id = singleBrand.Id,
-                    Name = singleBrand.Name,
-                    Image = singleBrand.ImageName + "." + singleBrand.ImageType,
-                    ShortDescription = singleBrand.ShortDescription,
-                    MainHexColor = singleBrand.MainHexColor
-                });
+                    singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
+                    {
+                        Id = singleBrand.Id,
+                        Name = singleBrand.Name,
+                        Image = singleBrand.ImageName + "." + singleBrand.ImageType,
+                        ShortDescription = singleBrand.ShortDescription,
+                        MainHexColor = singleBrand.MainHexColor
+                    });
+                }
+                
             }
 
             BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
