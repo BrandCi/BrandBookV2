@@ -15,11 +15,11 @@ using BrandBook.Web.Framework.ViewModels.Auth;
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class SettingsController : AppControllerBase
+    public class SystemController : AppControllerBase
     {
         private IUnitOfWork unitOfWork;
 
-        public SettingsController()
+        public SystemController()
         {
             this.unitOfWork = new UnitOfWork();
         }
@@ -31,6 +31,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+
 
 
         public ActionResult System()
@@ -53,7 +54,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("System", "Settings", new {area = "App"});
+            return RedirectToAction("System", "System", new {area = "App"});
 
 
         }

@@ -167,7 +167,7 @@
     <Compile Include="Areas\App\Controllers\AppCultureController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
-    <Compile Include="Areas\App\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\App\Controllers\SystemController.cs" />
     <Compile Include="Areas\App\Controllers\UserController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
     <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
@@ -876,11 +876,11 @@
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="App_Data\BrandBook_Content\README.md" />
     <Content Include="Areas\App\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\App\Views\Settings\Index.cshtml" />
-    <Content Include="Areas\App\Views\Settings\System.cshtml" />
-    <Content Include="Areas\App\Views\Settings\User.cshtml" />
-    <Content Include="Areas\App\Views\Settings\Media.cshtml" />
-    <Content Include="Areas\App\Views\Settings\Brand.cshtml" />
+    <Content Include="Areas\App\Views\System\Index.cshtml" />
+    <Content Include="Areas\App\Views\System\System.cshtml" />
+    <Content Include="Areas\App\Views\System\User.cshtml" />
+    <Content Include="Areas\App\Views\System\Media.cshtml" />
+    <Content Include="Areas\App\Views\System\Brand.cshtml" />
     <Content Include="Areas\App\Views\AppCulture\Index.cshtml" />
     <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
     <Content Include="Areas\App\Views\Brand\Index.cshtml" />
