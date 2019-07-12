@@ -22,19 +22,25 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public bool IsAuthorized(string appUserGuid, int? brandId)
+        public bool IsAuthorized(string appUserGuid, int? id)
         {
 
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
 
-            if (brandId != null && brandId != 0)
+            if (id != null && id != 0)
             {
-                var brand = _unitOfWork.BrandRepository.FindById(brandId);
+                int brandId = id ?? 0;
 
-                if (appUser.CompanyId == brand.CompanyId)
+                if (_unitOfWork.BrandRepository.IsBrandExistingById(brandId))
                 {
-                    return true;
+                    var brand = _unitOfWork.BrandRepository.FindById(brandId);
+
+                    if (appUser.CompanyId == brand.CompanyId)
+                    {
+                        return true;
+                    }
                 }
+                
             }
 
             return false;
