@@ -21,11 +21,18 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public Task<Brand> GetBrandAsync(int AppUserId, int BrandId)
+        public async Task<Brand> GetBrandAsync(int AppUserId, int BrandId)
         {
 
-            
+            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(AppUserId);
+            var brand = await _unitOfWork.BrandRepository.FindByIdAsync(BrandId);
 
+            if (appUser.Company.Id == brand.Company.Id)
+            {
+                return brand;
+            }
+
+            return new Brand();
 
         }
 
