@@ -61,7 +61,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult User()
+        public ActionResult UserSettings()
         {
             return View();
         }
