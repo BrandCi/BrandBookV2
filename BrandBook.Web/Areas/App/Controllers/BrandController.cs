@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -11,6 +12,7 @@ using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
+using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -203,9 +205,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void AuthorizationRouting(int id)
         {
-            if ((id == null || id == 0))
+            if (id == null || id == 0)
             {
-                RedirectToAction("Overview", "Brands", new { area = "App" });
+                string userId = User.Identity.GetUserId();
+
+                if (_cmpAuthService.IsAuthorized(userId, id))
+                {
+                    RedirectToAction("Overview", "Brands", new { area = "App" });
+                }
             }
         }
     }
