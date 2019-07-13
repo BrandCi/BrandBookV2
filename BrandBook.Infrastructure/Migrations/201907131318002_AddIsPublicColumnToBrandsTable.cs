@@ -11,7 +11,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropIndex("dbo.Brands", new[] { "BrandSetting_Id" });
             RenameColumn(table: "dbo.Brands", name: "BrandSetting_Id", newName: "BrandSettingId");
             AddColumn("dbo.Brands", "IsPublic", c => c.Boolean(nullable: false));
-            AlterColumn("dbo.Brands", "BrandSettingId", c => c.Int(nullable: false));
+            AlterColumn("dbo.Brands", "BrandSettingId", c => c.Int(nullable: true));
             CreateIndex("dbo.Brands", "BrandSettingId");
             AddForeignKey("dbo.Brands", "BrandSettingId", "dbo.BrandSettings", "Id", cascadeDelete: true);
         }
