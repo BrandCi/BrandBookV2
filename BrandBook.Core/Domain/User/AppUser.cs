@@ -15,6 +15,9 @@ namespace BrandBook.Core.Domain.User
         public string LastName { get; set; }
         public bool PrivacyPolicyAccepted { get; set; }
 
+        public int CompanyId { get; set; }
+        public Company.Company Company { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

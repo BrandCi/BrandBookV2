@@ -11,5 +11,7 @@ namespace BrandBook.Core.Domain.Brand.Font
         public string Name { get; set; }
         public string Style { get; set; }
         public string Weight { get; set; }
+
+        public Font Font { get; set; }
     }
 }

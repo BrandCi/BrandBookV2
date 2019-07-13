@@ -7,6 +7,7 @@ namespace BrandBook.Infrastructure.Migrations
     {
         public override void Up()
         {
+            /*
             CreateTable(
                 "dbo.ImprintValues",
                 c => new
@@ -16,13 +17,13 @@ namespace BrandBook.Infrastructure.Migrations
                         Value = c.String(),
                         Category = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id);*/
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.ImprintValues");
+            // DropTable("dbo.ImprintValues");
         }
     }
 }

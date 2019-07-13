@@ -55,7 +55,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("</ul>");
             }
 
-            html.Append("<a class=\"btn btn-lg btn-block btn-primary btn-pricing\">");
+            html.Append("<a href=\"/Auth/Register\" class=\"btn btn-lg btn-block btn-primary btn-pricing\">");
             html.Append(buttonTitle);
             html.Append("</a>");
             html.Append("</div>");

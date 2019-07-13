@@ -1,0 +1,83 @@
+﻿@using BrandBook.Resources
+@using BrandBook.Web.Framework.HtmlHelpers
+
+@{
+    ViewBag.Title = "VersionInfo";
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12">
+        <div class="card m-b-20 card-body">
+            <h4 class="card-title">Version Info</h4>
+            <p class="card-text">
+                <strong>Current Version:</strong> BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="timeline">
+            <article class="timeline-item alt">
+                <div class="text-right">
+                    <div class="time-show first">
+                        <a href="#" class="btn btn-primary w-lg">
+                            BrandCi v2.0.1
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.91", "13.07.2019",
+                "Möglichkeit, Farbwerte nach Kategorien zu sortieren und anzuzeigen.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.90", "13.07.2019",
+                "Vorbereitungen Struktur Color-Kategorien.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.89", "13.07.2019",
+                "Umsetzung des Colors Modul / Berechnung der Farbwerte auf Basis des Hexadezimalwertes.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.88", "13.07.2019",
+                "Vorbereitungen für das Colors Modul.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.87", "13.07.2019",
+                "Überarbeitung der Registrierung / Speichern von Daten unter 'Mein Profil'")
+
+            @AppCustomHelper.VersionInfoItem(true, "2.0.0.86", "13.07.2019",
+                "Änderungen an den SystemSettings, sodass diese nun vollständing konfigurierbar sind.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.85", "13.07.2019",
+                "Es wurde ein Button zum Erreichen der VersionsInformationen in der Hauptnavigation des App-Bereichs integriert.")
+
+            @AppCustomHelper.VersionInfoItem(true, "2.0.0.84", "13.07.2019",
+                "Mit diesem Release wurde die Verwendung von Companies und die Trennung von Inhalten durch die Nutzung dieser, eingeführt.")
+
+            @AppCustomHelper.VersionInfoItem(false, "2.0.0.83", "12.07.2019",
+                "Erste Vorbereitungen für die Verwendung von Companies wurden getroffen.")
+
+
+
+            <article class="timeline-item alt">
+                <div class="text-right">
+                    <div class="time-show">
+                        <a href="#" class="btn btn-primary w-lg">BrandCi v2.0.0</a>
+                    </div>
+                </div>
+            </article>
+
+
+        </div>
+    </div>
+</div>
+<!-- end row -->

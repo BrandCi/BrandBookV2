@@ -114,6 +114,9 @@
     <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\ColorCategoryViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\ColorsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\SingleColorViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\BrandSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\CustomizingSettingsViewModel.cs" />
@@ -123,6 +126,8 @@
     <Compile Include="ViewModels\App\Settings\MediaSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\SettingViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\SystemSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\UserSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Frontend\ContactFormViewModel.cs" />
@@ -149,8 +154,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\App\Brand\Colors\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

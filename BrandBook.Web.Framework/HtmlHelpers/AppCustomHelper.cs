@@ -86,6 +86,39 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             return new HtmlString(html.ToString());
         }
 
+
+        public static IHtmlString VersionInfoItem(bool leftItem, string versionNumber, string releaseDate, string description)
+        {
+            StringBuilder html = new StringBuilder();
+
+            if (leftItem)
+            {
+                html.Append("<article class=\"timeline-item alt\">");
+            }
+            else
+            {
+                html.Append("<article class=\"timeline-item\">");
+            }
+            
+            html.Append("<div class=\"timeline-desk\">");
+            html.Append("<div class=\"panel\">");
+            html.Append("<div class=\"panel-body\">");
+            html.Append("<span class=\"arrow-alt\"></span>");
+            html.Append("<span class=\"timeline-icon\"></span>");
+
+            html.Append("<h4 class=\"text-danger\">" + versionNumber + "</h4>");
+            html.Append("<p class=\"timeline-date text-muted\"><small>" + releaseDate + "</small></p>");
+
+            html.Append("<p>");
+            html.Append(description);
+            html.Append("</p>");
+
+            html.Append("</div></div></div></article>");
+
+
+            return new HtmlString(html.ToString());
+        }
+
     }
 
 }

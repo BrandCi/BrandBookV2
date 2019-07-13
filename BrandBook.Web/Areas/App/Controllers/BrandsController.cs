@@ -8,18 +8,22 @@ using BrandBook.Core.Domain.Brand;
 using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandsController : AppControllerBase
     {
-        private IUnitOfWork unitOfWork;
+        private IUnitOfWork _unitOfWork;
+        private CompanyAuthorizationService _cmpAuthService;
 
         public BrandsController()
         {
-            this.unitOfWork = new UnitOfWork();
+            this._unitOfWork = new UnitOfWork();
+            this._cmpAuthService = new CompanyAuthorizationService();
         }
 
 
@@ -27,19 +31,25 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brands
         public ActionResult Overview()
         {
-            var allBrands = unitOfWork.BrandRepository.GetAll();
+            var allBrands = _unitOfWork.BrandRepository.GetAll();
             List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
-            foreach (Brand singleBrand in allBrands) 
+            foreach (Brand singleBrand in allBrands)
             {
-                singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
+                string userGuid = User.Identity.GetUserId();
+
+                if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
-                    Id = singleBrand.Id,
-                    Name = singleBrand.Name,
-                    Image = singleBrand.ImageName + "." + singleBrand.ImageType,
-                    ShortDescription = singleBrand.ShortDescription,
-                    MainHexColor = singleBrand.MainHexColor
-                });
+                    singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
+                    {
+                        Id = singleBrand.Id,
+                        Name = singleBrand.Name,
+                        Image = singleBrand.ImageName + "." + singleBrand.ImageType,
+                        ShortDescription = singleBrand.ShortDescription,
+                        MainHexColor = singleBrand.MainHexColor
+                    });
+                }
+                
             }
 
             BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
@@ -60,6 +70,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Add(AddNewBrandViewModel model)
         {
             if (ModelState.IsValid)
@@ -73,8 +84,8 @@ namespace BrandBook.Web.Areas.App.Controllers
                     ImageType = "png"
                 };
                 
-                unitOfWork.BrandRepository.Add(brand);
-                unitOfWork.SaveChanges();
+                _unitOfWork.BrandRepository.Add(brand);
+                _unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
             }
 

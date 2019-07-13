@@ -96,6 +96,12 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         }
 
 
+        public ActionResult VersionInfo()
+        {
+            return View();
+        }
+
+
 
         public ActionResult RedirectToLocal(string returnUrl)
         {

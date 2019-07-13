@@ -376,7 +376,7 @@
     <value>Dashboard</value>
   </data>
   <data name="app_mainnavigation_usermanagement_company" xml:space="preserve">
-    <value>Kunden</value>
+    <value>Firmen</value>
   </data>
   <data name="app_mainnavigation_usermanagement_roles" xml:space="preserve">
     <value>Rollen</value>
@@ -391,7 +391,7 @@
     <value>Ihre Marken</value>
   </data>
   <data name="app_usermenu_languageselection" xml:space="preserve">
-    <value>Sprachauswahl</value>
+    <value>Sprachen</value>
   </data>
   <data name="app_usermenu_leaveapp" xml:space="preserve">
     <value>App verlassen</value>

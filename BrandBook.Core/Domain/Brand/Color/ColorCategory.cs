@@ -10,6 +10,7 @@ namespace BrandBook.Core.Domain.Brand.Color
     {
         public string Name { get; set; }
 
+        public int BrandId { get; set; }
         public Brand Brand { get; set; }
     }
 }

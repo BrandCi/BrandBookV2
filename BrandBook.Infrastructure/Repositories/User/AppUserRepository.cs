@@ -22,5 +22,14 @@ namespace BrandBook.Infrastructure.Repositories.User
             return Set.FirstOrDefault(x => x.UserName == username);
         }
 
+
+        public int CountUserForCompanyId(int companyId)
+        {
+
+            return Set.Where(au => au.Company.Id == companyId)
+                .Count();
+
+        }
+
     }
 }

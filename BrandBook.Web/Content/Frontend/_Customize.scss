@@ -183,7 +183,20 @@ div#cookieConsentBox {
 /*
     Contact Form
 */
-.contact-section-dark form input,
-.contact-section-dark form textarea {
-    color: #ffffff !important;
+
+.bb-contact-form {
+
+    input {
+        border: 1px solid rgba(0,0,0,0.75);
+    }
+
+    input[type="text"], textarea {
+        background-color: #ffffff !important;
+        color: black;
+
+        &::placeholder {
+            color: black;
+        }
+
+    }
 }

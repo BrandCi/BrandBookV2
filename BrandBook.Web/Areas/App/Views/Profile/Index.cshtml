@@ -4,7 +4,7 @@
 }
 
 @section navigation {
-    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
 @section styles
@@ -90,6 +90,24 @@
 </div>
 
 
+
+<div class="row">
+    <div class="col-12 mt-5 mb-5" style="text-align: center; color: #98a6ad;">
+        BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="changePasswordModal" class="modal-demo">
     <button type="button" class="close" onclick="Custombox.close();">
         <span>&times;</span><span class="sr-only">Close</span>
@@ -113,6 +131,7 @@
         {
 
             @Html.AntiForgeryToken()
+            @*
 
             <div class="form-group">
                 <div class="col-md-12">
@@ -136,6 +155,7 @@
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
             </button>
+                *@
         }
 
 
@@ -154,10 +174,10 @@
         {
 
             @Html.AntiForgeryToken()
-
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+            @*
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -166,9 +186,10 @@
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
             </button>
+            *@
         }
 
-      
+
     </div>
 </div>
 
