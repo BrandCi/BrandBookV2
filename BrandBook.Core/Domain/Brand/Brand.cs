@@ -15,6 +15,9 @@ namespace BrandBook.Core.Domain.Brand
         public string Description { get; set; }
         public string MainHexColor { get; set; }
 
+        public bool IsPublic { get; set; }
+
+        public int BrandSettingId { get; set; }
         public BrandSetting BrandSetting { get; set; }
 
         public int CompanyId { get; set; }
