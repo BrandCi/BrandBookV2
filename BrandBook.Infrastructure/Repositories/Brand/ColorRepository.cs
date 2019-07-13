@@ -27,5 +27,13 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         }
 
 
+        public List<Color> GetAllColorsFromCategory(int categoryId)
+        {
+            return Set
+                .Where(c => c.CategoryId == categoryId)
+                .ToList();
+        }
+
+
     }
 }
