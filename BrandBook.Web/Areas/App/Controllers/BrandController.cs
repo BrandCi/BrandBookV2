@@ -116,6 +116,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Fonts(int id)
         {
+            ViewBag.BrandId = id;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
