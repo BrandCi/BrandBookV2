@@ -78,8 +78,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var colors = _unitOfWork.ColorRepository.GetAllColorsFromBrand(id);
 
-
             ColorsViewModel model = new ColorsViewModel();
+            model.Colors = new List<SingleColorViewModel>();
+
             Color _color;
             string _rgb;
 
