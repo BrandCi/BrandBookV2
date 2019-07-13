@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -75,12 +76,21 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
+            var color = _unitOfWork.ColorRepository.FindById(1);
+
+
+            Color _color = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
+
+            string Rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
+            
+            
+
             SingleColorViewModel model = new SingleColorViewModel()
             {
-                Name = "Philovation Blue",
-                HexColor = "193357",
-                CmykValue = "10, 10, 10, 10",
-                RgbValue = "255, 255, 255"
+                Name = color.Name,
+                HexColor = color.HexColorCode,
+                CmykValue = "",
+                RgbValue = Rgb
             };
 
             return View(model);
