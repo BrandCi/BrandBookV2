@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand.Colors
 {
-    class SingleColorViewModel
+    public class SingleColorViewModel
     {
+        public string Name { get; set; }
+        public string HexColor { get; set; }
+        public string RgbValue { get; set; }
+        public string CmykValue { get; set; }
     }
 }
