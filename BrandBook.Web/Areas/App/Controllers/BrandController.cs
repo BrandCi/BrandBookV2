@@ -76,28 +76,38 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
-            var colors = _unitOfWork.ColorRepository.GetAllColorsFromBrand(id);
+            var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(id);
 
             ColorsViewModel model = new ColorsViewModel();
-            model.Colors = new List<SingleColorViewModel>();
+            model.Categories = new List<ColorCategoryViewModel>();
 
-            Color _color;
-            string _rgb;
 
-            foreach (var singleColor in colors)
+            foreach (var category in categories)
             {
-                _color = System.Drawing.ColorTranslator.FromHtml("#" + singleColor.HexColorCode);
-                _rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
+                var colors = _unitOfWork.ColorRepository.GetAllColorsFromCategory(category.Id);
 
-                model.Colors.Add(
-                    new SingleColorViewModel()
+                List<SingleColorViewModel> singleColors = new List<SingleColorViewModel>();
+
+                foreach (var color in colors)
+                {
+                    Color _color = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
+                    string _rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
+
+                    singleColors.Add(new SingleColorViewModel()
                     {
-                        Name = singleColor.Name,
-                        HexColor = singleColor.HexColorCode,
-                        CmykValue = "",
-                        RgbValue = _rgb
-                    }
-                );
+                        Name = color.Name,
+                        HexColor = color.HexColorCode,
+                        RgbValue = _rgb,
+                        CmykValue = ""
+                    });
+                }
+
+                model.Categories.Add(new ColorCategoryViewModel()
+                {
+                    Name = category.Name,
+                    Colors = singleColors
+
+                });
             }
 
           
