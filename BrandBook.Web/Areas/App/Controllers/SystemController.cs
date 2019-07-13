@@ -48,7 +48,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SystemSettings(SystemSettingsViewModel model)
+        public ActionResult SystemSettings(SystemSettingsViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             _unitOfWork.SettingRepository.Update(appTitle);
 
-            _unitOfWork.SaveChangesAsync();
+            _unitOfWork.SaveChanges();
 
             return RedirectToAction("SystemSettings", "System", new {area = "App"});
 
