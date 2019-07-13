@@ -54,21 +54,13 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return View(model);
             }
-
-            var appTitle = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_apptitle");
-            appTitle.Value = model.AppTitle;
-
-            var baseUrl = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl");
-            baseUrl.Value = model.BasicUrl;
-
-            var email = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_email");
-            email.Value = model.EmailAddress;
-
-            _unitOfWork.SettingRepository.Update(appTitle);
-            _unitOfWork.SettingRepository.Update(baseUrl);
-            _unitOfWork.SettingRepository.Update(email);
-
+            
+            UpdateSettingValue("conf_system_apptitle", model.AppTitle);
+            UpdateSettingValue("conf_system_baseisurl", model.BasicUrl);
+            UpdateSettingValue("conf_system_email", model.EmailAddress);
+            
             _unitOfWork.SaveChanges();
+
 
             return RedirectToAction("SystemSettings", "System", new {area = "App"});
 
