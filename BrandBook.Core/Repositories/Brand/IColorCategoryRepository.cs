@@ -9,5 +9,8 @@ namespace BrandBook.Core.Repositories.Brand
 {
     public interface IColorCategoryRepository : IRepository<ColorCategory>
     {
+
+        List<ColorCategory> GetCategoriesForBrand(int brandId);
+
     }
 }
