@@ -28,6 +28,7 @@ namespace BrandBook.Infrastructure
         private ISettingRepository _settingRepository;
         private IBrandRepository _brandRepository;
         private IColorRepository _colorRepository;
+        private IColorCategoryRepository _colorCategoryRepository;
         private IFontRepository _fontRepository;
         private ICompanyRepository _companyRepository;
 
@@ -74,6 +75,11 @@ namespace BrandBook.Infrastructure
             get { return _colorRepository ?? (_colorRepository = new ColorRepository(_context)); }
         }
 
+        public IColorCategoryRepository ColorCategoryRepository
+        {
+            get { return _colorCategoryRepository ?? (_colorCategoryRepository = new ColorCategoryRepository(_context)); }
+        }
+
         public IFontRepository FontRepository
         {
             get { return _fontRepository ?? (_fontRepository = new FontRepository(_context)); }
@@ -110,6 +116,7 @@ namespace BrandBook.Infrastructure
             _settingRepository = null;
             _brandRepository = null;
             _colorRepository = null;
+            _colorCategoryRepository = null;
             _fontRepository = null;
             _companyRepository = null;
 
