@@ -131,6 +131,7 @@
         {
 
             @Html.AntiForgeryToken()
+            @*
 
             <div class="form-group">
                 <div class="col-md-12">
@@ -154,6 +155,7 @@
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
             </button>
+                *@
         }
 
 
@@ -172,10 +174,10 @@
         {
 
             @Html.AntiForgeryToken()
-
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+            @*
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -184,9 +186,10 @@
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
             </button>
+            *@
         }
 
-      
+
     </div>
 </div>
 
