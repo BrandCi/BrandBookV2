@@ -13,6 +13,8 @@ namespace BrandBook.Core.Domain.Brand.Color
         public int CategoryId { get; set; }
         public ColorCategory Category { get; set; }
 
+        public int Sorting { get; set; }
+
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
 
