@@ -76,25 +76,30 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
-            var color = _unitOfWork.ColorRepository.FindById(1);
-
             var colors = _unitOfWork.ColorRepository.GetAllColorsFromBrand(id);
 
 
-            Color _color = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
+            ColorsViewModel model = new ColorsViewModel();
+            Color _color;
+            string _rgb;
 
-            string Rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
-            
-            
-
-            SingleColorViewModel model = new SingleColorViewModel()
+            foreach (var singleColor in colors)
             {
-                Name = color.Name,
-                HexColor = color.HexColorCode,
-                CmykValue = "",
-                RgbValue = Rgb
-            };
+                _color = System.Drawing.ColorTranslator.FromHtml("#" + singleColor.HexColorCode);
+                _rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
 
+                model.Colors.Add(
+                    new SingleColorViewModel()
+                    {
+                        Name = singleColor.Name,
+                        HexColor = singleColor.HexColorCode,
+                        CmykValue = "",
+                        RgbValue = _rgb
+                    }
+                );
+            }
+
+          
             return View(model);
         }
 
