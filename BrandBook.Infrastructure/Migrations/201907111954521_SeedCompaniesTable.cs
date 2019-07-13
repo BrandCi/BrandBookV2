@@ -9,7 +9,7 @@ namespace BrandBook.Infrastructure.Migrations
         {
 
             Sql("SET IDENTITY_INSERT [dbo].[Companies] ON");
-            Sql("INSERT INTO[dbo].[Companies]([Id], [Name], [UrlName], [ContactEmail]) VALUES(1, N'Philipp C. Moser', N'philipp-c-moser', N'info@philipp-moser.de')");
+            Sql("INSERT INTO[dbo].[Companies]([Id], [Name], [UrlName], [ContactEmail]) VALUES(1, N'Default', N'default', N'info@philipp-moser.de')");
             Sql("SET IDENTITY_INSERT[dbo].[Companies] OFF");
 
 
