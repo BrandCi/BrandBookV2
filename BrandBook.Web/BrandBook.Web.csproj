@@ -867,10 +867,10 @@
     <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
     <Content Include="Areas\Auth\Views\ForgotPassword\Index.cshtml" />
     <Content Include="Areas\App\Views\web.config" />
-    <Content Include="Areas\App\Views\Shared\Layout\_Layout.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Layout\_Layout.cshtml" />
     <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\App\Views\Shared\Layout\Partial\_LeftNavigation.cshtml" />
-    <Content Include="Areas\App\Views\Shared\Layout\Partial\_TopBar.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Layout\Partial\_LeftNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\App\Views\Brands\Overview.cshtml" />
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="App_Data\BrandBook_Content\README.md" />
@@ -881,7 +881,7 @@
     <Content Include="Areas\App\Views\System\MediaSettings.cshtml" />
     <Content Include="Areas\App\Views\System\BrandSettings.cshtml" />
     <Content Include="Areas\App\Views\AppCulture\Index.cshtml" />
-    <Content Include="Areas\App\Views\Shared\Layout\Partial\_BrandNavigation.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Layout\Partial\_BrandNavigation.cshtml" />
     <Content Include="Areas\App\Views\Brand\Index.cshtml" />
     <Content Include="Areas\App\Views\User\UserOverview.cshtml" />
     <Content Include="Areas\App\Views\User\CompanyOverview.cshtml" />
@@ -1010,6 +1010,7 @@
     <Content Include="Views\Support\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\App\Views\Shared\System\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>

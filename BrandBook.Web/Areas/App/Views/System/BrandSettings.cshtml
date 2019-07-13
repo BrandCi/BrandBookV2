@@ -5,7 +5,7 @@
 }
 
 @section navigation {
-    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
 <div class="row">
@@ -27,7 +27,7 @@
 
 
                             <div class="form-group row mt-5 mb-0">
-                                <a href="@Url.Action("Index", "System", new {area = "App"})" class="btn btn-danger btn-custom mr-2">
+                                <a href="@Url.Action("Settings", "System", new {area = "App"})" class="btn btn-danger btn-custom mr-2">
                                     <i class="fas fa-arrow-left"></i>
                                     &nbsp;
                                     @Translations.app_settings_back_button_title
