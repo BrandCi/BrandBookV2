@@ -31,6 +31,7 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         {
             return Set
                 .Where(c => c.CategoryId == categoryId)
+                .OrderBy(c => c.Sorting)
                 .ToList();
         }
 
