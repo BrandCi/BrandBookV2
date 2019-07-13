@@ -21,6 +21,7 @@ namespace BrandBook.Core
         ISettingRepository SettingRepository { get; }
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
+        IColorCategoryRepository ColorCategoryRepository { get; }
         IFontRepository FontRepository { get; }
         ICompanyRepository CompanyRepository { get; }
         
