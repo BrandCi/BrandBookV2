@@ -15,7 +15,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Settings
         [Display(Name = "Require Non Letter or Digit")]
         public string Password_ReqNonLetterOrDigit { get; set; }
 
-        [Display(Name = "Reequire Digit")]
+        [Display(Name = "Require Digit")]
         public string Password_ReqDigit { get; set; }
 
         [Display(Name = "Require Lowercase")]
