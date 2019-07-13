@@ -74,24 +74,16 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            /*
-                var colors = _unitOfWork.ColorRepository.GetAll();
 
-                ColorsViewModel model = new ColorsViewModel();
+            SingleColorViewModel model = new SingleColorViewModel()
+            {
+                Name = "Philovation Blue",
+                HexColor = "193357",
+                CmykValue = "10, 10, 10, 10",
+                RgbValue = "255, 255, 255"
+            };
 
-                for (int i = 0; i > colors.Count; i++)
-                {
-                    model.Colors.Add(new SingleColorViewModel()
-                    {
-                        Name = colors[i].Name,
-                        HexColor = colors[i].HexColorCode,
-                        CmykValue = "" + colors[i].CmykValue.C + colors[i].CmykValue.M + colors[i].CmykValue.Y + colors[i].CmykValue.K,
-                        RgbValue = "" + colors[i].RgbValue.R + colors[i].RgbValue.G + colors[i].RgbValue.B
-                    });
-                }
-            */
-
-            return View();
+            return View(model);
         }
 
         public ActionResult Fonts(int? id)
