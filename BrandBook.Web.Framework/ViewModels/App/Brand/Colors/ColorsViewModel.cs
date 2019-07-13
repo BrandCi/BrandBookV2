@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand.Colors
 {
-    public class ColorsViewModel : IEnumerable<SingleColorViewModel>
+    public class ColorsViewModel : IEnumerable<ColorCategoryViewModel>
     {
 
-        public List<SingleColorViewModel> Colors { get; set; }
+        public List<ColorCategoryViewModel> Categories { get; set; }
 
-        public IEnumerator<SingleColorViewModel> GetEnumerator()
+        public IEnumerator<ColorCategoryViewModel> GetEnumerator()
         {
-            return Colors.GetEnumerator();
+            return Categories.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
