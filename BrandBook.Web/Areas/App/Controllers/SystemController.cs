@@ -76,11 +76,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult MediaSettings()
         {
-
-            MediaSettingsViewModel model = new MediaSettingsViewModel();
-
-            model.Server = _unitOfWork.SettingRepository.GetSettingByKey("conf_media_server").Value;
-            model.Key = _unitOfWork.SettingRepository.GetSettingByKey("conf_media_key").Value;
+            // Media Settings should not be changed via UI.
+            // They are part of the initial configuration!
+            MediaSettingsViewModel model = new MediaSettingsViewModel()
+            {
+                Key = GetSettingValueByKey("conf_media_key"),
+                Server = GetSettingValueByKey("conf_media_server")
+            };
 
 
             return View(model);
@@ -110,6 +112,12 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+
+
+        private string GetSettingValueByKey(string settingKey)
+        {
+            return _unitOfWork.SettingRepository.GetSettingByKey(settingKey).Value;
+        }
 
 
 
