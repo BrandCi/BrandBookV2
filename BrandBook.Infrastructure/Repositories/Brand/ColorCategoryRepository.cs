@@ -19,7 +19,7 @@ namespace BrandBook.Infrastructure.Repositories.Brand
 
         public List<ColorCategory> GetCategoriesForBrand(int brandId)
         {
-            return Set.ToList();
+            return Set.Where(cc => cc.BrandId == brandId).ToList();
         }
 
     }
