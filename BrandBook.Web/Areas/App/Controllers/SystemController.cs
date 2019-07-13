@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -47,12 +48,19 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SystemSettings(SystemSettingsViewModel model)
+        public async Task<ActionResult> SystemSettings(SystemSettingsViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+
+            var appTitle = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_apptitle");
+            appTitle.Value = model.AppTitle;
+
+            _unitOfWork.SettingRepository.Update(appTitle);
+
+            _unitOfWork.SaveChangesAsync();
 
             return RedirectToAction("SystemSettings", "System", new {area = "App"});
 
