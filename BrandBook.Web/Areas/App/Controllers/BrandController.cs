@@ -11,6 +11,7 @@ using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
 
@@ -73,7 +74,24 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            return View();
+
+            var colors = _unitOfWork.ColorRepository.GetAll();
+
+            ColorsViewModel model = new ColorsViewModel();
+
+            for (int i = 0; i > colors.Count; i++)
+            {
+                model.Colors.Add(new SingleColorViewModel()
+                {
+                    Name = colors[i].Name,
+                    HexColor = colors[i].HexColorCode,
+                    CmykValue = "" + colors[i].CmykValue.C + colors[i].CmykValue.M + colors[i].CmykValue.Y + colors[i].CmykValue.K,
+                    RgbValue = "" + colors[i].RgbValue.R + colors[i].RgbValue.G + colors[i].RgbValue.B
+                });
+            }
+
+
+            return View(model);
         }
 
         public ActionResult Fonts(int? id)
