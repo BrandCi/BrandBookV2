@@ -72,7 +72,19 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult UserSettings()
         {
-            return View();
+            UserSettingsViewModel model = new UserSettingsViewModel()
+            {
+                Password_ReqLength = GetSettingValueByKey("conf_user_pass_requiredlength"),
+                Password_ReqNonLetterOrDigit = GetSettingValueByKey("conf_user_pass_requirenonletterordigit"),
+                Password_ReqDigit = GetSettingValueByKey("conf_user_pass_requiredigit"),
+                Password_ReqLowerCase = GetSettingValueByKey("conf_user_pass_requirelowercase"),
+                Password_ReqUpperCase = GetSettingValueByKey("conf_user_pass_requireuppercase"),
+                Lockout_Enabled = GetSettingValueByKey("conf_user_lockout_enable"),
+                Lockout_LockoutTime = GetSettingValueByKey("conf_user_lockout_lockouttime"),
+                Lockout_FailedAttempts = GetSettingValueByKey("conf_user_lockout_failedattemtsbeforelockout")
+            };
+
+            return View(model);
         }
 
         public ActionResult MediaSettings()
