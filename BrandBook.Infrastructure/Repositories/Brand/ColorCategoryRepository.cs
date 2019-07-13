@@ -17,5 +17,10 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         {
         }
 
+        public List<ColorCategory> GetCategoriesForBrand(int brandId)
+        {
+            return Set.ToList();
+        }
+
     }
 }
