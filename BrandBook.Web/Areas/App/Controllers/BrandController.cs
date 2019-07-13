@@ -30,7 +30,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
         // GET: App/Brand
-        public async Task<ActionResult> Index(int? id)
+        public async Task<ActionResult> Index(int id)
         {
             ViewBag.BrandId = id;
 
@@ -66,7 +66,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Colors(int? id)
+        public ActionResult Colors(int id)
         {
             ViewBag.BrandId = id;
 
@@ -77,6 +77,8 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
             var color = _unitOfWork.ColorRepository.FindById(1);
+
+            var colors = _unitOfWork.ColorRepository.GetAllColorsFromBrand(id);
 
 
             Color _color = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
@@ -96,7 +98,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
-        public ActionResult Fonts(int? id)
+        public ActionResult Fonts(int id)
         {
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
@@ -111,7 +113,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Settings(int? id)
+        public ActionResult Settings(int id)
         {
             ViewBag.BrandId = id;
 
@@ -208,7 +210,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
             {
