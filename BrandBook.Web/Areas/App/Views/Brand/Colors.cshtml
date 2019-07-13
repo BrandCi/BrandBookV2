@@ -25,7 +25,7 @@
                         <div class="text-center card-box">
                             <div class="">
                                 <div class="thumb-lg m-b-10 center-page">
-                                    <div style="background-color: #@Model.HexColor; width: 100%; height: 100%;" class="rounded-circle"></div>
+                                    <div style="background-color: @Model.HexColor; width: 100%; height: 100%;" class="rounded-circle"></div>
                                 </div>
                                 <br />
                                 <div class="">
@@ -38,7 +38,7 @@
                                     <p class="text-muted font-13">
                                         <strong>Hex:</strong>
                                         <br />
-                                        <span>#@Model.HexColor</span>
+                                        <span>@Model.HexColor</span>
                                     </p>
 
                                     <p class="text-muted font-13">
@@ -48,7 +48,8 @@
                                             @Model.RgbValue
                                         </span>
                                     </p>
-
+                                    
+                                @*
                                     <p class="text-muted font-13">
                                         <strong>CMYK:</strong>
                                         <br />
@@ -56,6 +57,7 @@
                                             @Model.CmykValue
                                         </span>
                                     </p>
+                                *@
 
                                 </div>
 
