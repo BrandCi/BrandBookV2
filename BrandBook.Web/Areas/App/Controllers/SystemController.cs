@@ -58,7 +58,15 @@ namespace BrandBook.Web.Areas.App.Controllers
             var appTitle = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_apptitle");
             appTitle.Value = model.AppTitle;
 
+            var baseUrl = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl");
+            baseUrl.Value = model.BasicUrl;
+
+            var email = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_email");
+            email.Value = model.EmailAddress;
+
             _unitOfWork.SettingRepository.Update(appTitle);
+            _unitOfWork.SettingRepository.Update(baseUrl);
+            _unitOfWork.SettingRepository.Update(email);
 
             _unitOfWork.SaveChanges();
 
@@ -108,6 +116,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+
+
+
+
+
+        private void UpdateSettingValue(string settingKey, string newValue)
+        {
+
+            var setting = _unitOfWork.SettingRepository.GetSettingByKey(settingKey);
+            setting.Value = newValue;
+
+            _unitOfWork.SettingRepository.Update(setting);
+
+
+        }
+
         
     }
 
