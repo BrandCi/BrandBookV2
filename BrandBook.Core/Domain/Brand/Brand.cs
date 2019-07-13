@@ -20,6 +20,9 @@ namespace BrandBook.Core.Domain.Brand
         public int BrandSettingId { get; set; }
         public BrandSetting BrandSetting { get; set; }
 
+
+        public List<Color.Color> Colors { get; set; }
+
         public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
     }
