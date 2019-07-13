@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BrandBook.Web.Framework.ViewModels.App.Brand.Colors.SingleColorViewModel
+@{
     ViewBag.Title = "Colors";
 }
 
@@ -24,12 +25,12 @@
                         <div class="text-center card-box">
                             <div class="">
                                 <div class="thumb-lg m-b-10 center-page">
-                                    <div style="background-color: #193357; width: 100%; height: 100%;" class="rounded-circle"></div>
+                                    <div style="background-color: #@Model.HexColor; width: 100%; height: 100%;" class="rounded-circle"></div>
                                 </div>
                                 <br />
                                 <div class="">
                                     <h6 class="m-b-5 mt-2">
-                                        philovation blue
+                                        @Model.Name
                                     </h6>
                                 </div>
 
@@ -37,16 +38,14 @@
                                     <p class="text-muted font-13">
                                         <strong>Hex:</strong>
                                         <br />
-                                        <span>#193357</span>
+                                        <span>#@Model.HexColor</span>
                                     </p>
 
                                     <p class="text-muted font-13">
                                         <strong>RGB:</strong>
                                         <br />
                                         <span>
-                                            255,
-                                            255,
-                                            255
+                                            @Model.RgbValue
                                         </span>
                                     </p>
 
@@ -54,10 +53,7 @@
                                         <strong>CMYK:</strong>
                                         <br />
                                         <span>
-                                            10,
-                                            10,
-                                            10,
-                                            10
+                                            @Model.CmykValue
                                         </span>
                                     </p>
 
