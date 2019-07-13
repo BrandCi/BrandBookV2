@@ -12,13 +12,32 @@
     @Styles.Render("~/Content/Plugins/Modals")
 }
 
-<div class="row mb-3">
-    <div class="col-md-4">
-        <a href="@Url.Action("Add","Brands", new { area = "App"})" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
-            <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
-        </a>
+
+@if (User.IsInRole("Administrator"))
+{
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <a href="@Url.Action("Add","Brands", new { area = "App"})" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
+                <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
+            </a>
+        </div>
     </div>
-</div>
+}
+else
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box">
+                                <h4 class="m-t-0 header-title">
+                    Please upgrade your subscription to create new brands.
+                </h4>
+                Thank you for using BrandCi.
+                You can find an overview over available subscriptions on our <a href="@Url.Action("Index", "Pricing", new {area = ""})">Pricing-Page</a>.
+            </div>
+        </div>
+    </div>
+}
+
 
 <div class="row">
     @AppCustomHelper.BrandOverviewItem(Model)
