@@ -87,6 +87,33 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserSettings(UserSettingsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            UpdateSettingValue("conf_user_pass_requiredlength", model.Password_ReqLength);
+            UpdateSettingValue("conf_user_pass_requirenonletterordigit", model.Password_ReqNonLetterOrDigit);
+            UpdateSettingValue("conf_user_pass_requiredigit", model.Password_ReqDigit);
+            UpdateSettingValue("conf_user_pass_requirelowercase", model.Password_ReqLowerCase);
+            UpdateSettingValue("conf_user_pass_requireuppercase", model.Password_ReqUpperCase);
+            UpdateSettingValue("conf_user_lockout_enable", model.Lockout_Enabled);
+            UpdateSettingValue("conf_user_lockout_lockouttime", model.Lockout_LockoutTime);
+            UpdateSettingValue("conf_user_lockout_failedattemtsbeforelockout", model.Lockout_FailedAttempts);
+
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("UserSettings", "System", new { area = "App" });
+        }
+
+
+
         public ActionResult MediaSettings()
         {
             // Media Settings should not be changed via UI.
