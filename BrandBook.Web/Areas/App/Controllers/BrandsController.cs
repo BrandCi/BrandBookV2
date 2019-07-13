@@ -70,6 +70,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Add(AddNewBrandViewModel model)
         {
             if (ModelState.IsValid)
