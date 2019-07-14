@@ -62,10 +62,10 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        public async Task<ActionResult> RoleOverview()
+        public ActionResult RoleOverview()
         {
 
-            var roles = await _unitOfWork.UserRoleRepository.GetAllAsync();
+            var roles = _unitOfWork.UserRoleRepository.GetAll();
 
             RoleOverviewViewModel model = new RoleOverviewViewModel();
             model.Roles = new List<SingleRoleViewModel>();
