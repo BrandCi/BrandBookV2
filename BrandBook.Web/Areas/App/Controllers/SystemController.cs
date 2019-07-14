@@ -174,7 +174,27 @@ namespace BrandBook.Web.Areas.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult GoogleAnalytics(GoogleAnalyticsViewModel model)
         {
-            return View();
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.IsActive)
+            {
+                UpdateSettingValue("google_analytics_enabled", "1");
+            }
+            else
+            {
+                UpdateSettingValue("google_analytics_enabled", "0");
+            }
+            
+            UpdateSettingValue("google_analytics_trackingkey", model.TrackingKey);
+
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("GoogleAnalytics", "System", new {area = "App"});
         }
 
         #endregion
