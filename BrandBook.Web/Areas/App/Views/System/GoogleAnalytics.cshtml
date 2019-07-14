@@ -1,7 +1,64 @@
-﻿
+﻿@using BrandBook.Resources
+
 @{
-    ViewBag.Title = "GoogleAnalytics";
+    ViewBag.Title = "Google Analytics";
 }
 
-<h2>GoogleAnalytics</h2>
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
 
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">
+                Google Analytics
+            </h4>
+            <p class="text-muted m-b-30 font-14">
+                Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+                        <form class="form-horizontal" role="form">
+                            
+                            <div class="form-group row">
+                                <label class="container">
+                                    IsEnabled
+                                    <input type="checkbox" />
+                                </label>
+                            </div>
+                            
+
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">TrackingKey</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" value="123">
+                                    
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-5 mb-0">
+                                @Html.Partial("~/Areas/App/Views/Shared/System/_SettingsBackButton.cshtml")
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_update_button_title
+                                </button>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>
