@@ -62,9 +62,25 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        public ActionResult RoleOverview()
+        public async Task<ActionResult> RoleOverview()
         {
-            return View();
+
+            var roles = await _unitOfWork.UserRoleRepository.GetAllAsync();
+
+            RoleOverviewViewModel model = new RoleOverviewViewModel();
+            model.Roles = new List<SingleRoleViewModel>();
+
+            foreach (var role in roles)
+            {
+                model.Roles.Add(new SingleRoleViewModel()
+                {
+                    Id = role.Id,
+                    Name = role.Name
+                });
+            }
+
+
+            return View(model);
         }
     }
 }
