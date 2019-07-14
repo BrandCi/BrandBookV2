@@ -1,7 +1,66 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "RoleOverview";
 }
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+@section styles {
+    @Styles.Render("~/Content/Plugins/Datatables")
+}
 
-<h2>RoleOverview</h2>
 
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <p class="text-muted font-14 m-b-30"></p>
+
+            <table id="appRoleOverview-datatable" class="table table-bordered dt-responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <a href="#">
+                                AppUser
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/Plugins/Datatables")
+
+    <script type="text/javascript">
+
+        $('#appRoleOverview-datatable').DataTable({
+            select: {
+                style: 'multi'
+            },
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json'
+            }
+        });
+
+    </script>
+}
