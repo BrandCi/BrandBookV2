@@ -12,5 +12,8 @@ namespace BrandBook.Core.Domain.Brand.Icon
         public string ClassName { get; set; }
         public string Prefix { get; set; }
 
+        public int IconCategoryId { get; set; }
+        public IconCategory IconCategory { get; set; }
+
     }
 }
