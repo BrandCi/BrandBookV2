@@ -13,6 +13,7 @@ using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
+using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
 
@@ -135,6 +136,41 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
+
+
+
+            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(id);
+
+            IconsViewModel model = new IconsViewModel();
+            model.Categories = new List<IconCategoryViewModel>();
+
+
+            foreach (var category in categories)
+            {
+                var icons = _unitOfWork.IconRepository.GetAllIconsFromCategory(category.Id);
+
+                List<SingleIconViewModel> singleIcons = new List<SingleIconViewModel>();
+
+                foreach (var icon in icons)
+                {
+
+                    singleIcons.Add(new SingleIconViewModel()
+                    {
+                        ClassName = icon.ClassName,
+                        Prefix = icon.Prefix
+                    });
+                }
+
+                model.Categories.Add(new IconCategoryViewModel()
+                {
+                    Name = category.Name,
+                    Icons = singleIcons
+
+                });
+            }
+
+
+
 
             return View();
         }
