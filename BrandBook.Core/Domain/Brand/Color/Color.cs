@@ -15,9 +15,6 @@ namespace BrandBook.Core.Domain.Brand.Color
 
         public int Sorting { get; set; }
 
-        public int BrandId { get; set; }
-        public Brand Brand { get; set; }
-
         public string HexColorCode { get; set; }
 
         public int RgbValueId { get; set; }
