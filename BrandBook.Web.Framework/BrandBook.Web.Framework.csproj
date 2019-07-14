@@ -119,6 +119,7 @@
     <Compile Include="ViewModels\App\Brand\Colors\SingleColorViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Icons\IconCategoryViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Icons\IconsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\SingleIconViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\BrandSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\CustomizingSettingsViewModel.cs" />
