@@ -41,9 +41,18 @@
                                 @Html.LabelFor(ga => ga.TrackingKey)
                             </div>
 
-                            <div class="col-8">
-                                @Html.TextBoxFor(ga => ga.TrackingKey, new {@class = "form-control"})
-                            </div>
+                        
+                        <div class="col-8">
+                            @if (Model.IsActive)
+                            {
+                                @Html.TextBoxFor(ga => ga.TrackingKey, new { @class = "form-control" })
+                            }
+                            else
+                            {
+                                @Html.TextBoxFor(ga => ga.TrackingKey, new { @class = "form-control", @readonly = "readonly" })
+                            }
+
+                        </div>
                         </div>
 
 
