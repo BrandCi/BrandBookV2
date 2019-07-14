@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.Frontend.Layout
 {
-    class GoogleAnalyticsViewModel
+    public class GoogleAnalyticsViewModel
     {
+        public bool IsActive { get; set; }
+        public string TrackingKey { get; set; }
     }
 }
