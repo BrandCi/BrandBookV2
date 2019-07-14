@@ -1,4 +1,5 @@
-﻿@using BrandBook.Resources
+﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Layout.GoogleAnalyticsViewModel
+@using BrandBook.Resources
 
 @{
     ViewBag.Title = "Google Analytics";
@@ -26,17 +27,19 @@
                             
                             <div class="form-group row">
                                 <label class="container">
-                                    IsEnabled
-                                    <input type="checkbox" />
+                                    @Html.LabelFor(ga => ga.IsActive)
+                                    @Html.CheckBoxFor(ga => ga.IsActive)
                                 </label>
                             </div>
                             
 
                             <div class="form-group row">
-                                <label class="col-2 col-form-label">TrackingKey</label>
-                                <div class="col-10">
-                                    <input type="text" class="form-control" value="123">
-                                    
+                                <div class="col-4">
+                                    @Html.LabelFor(ga => ga.TrackingKey)
+                                </div>
+                                
+                                <div class="col-8">
+                                    @Html.TextBoxFor(ga => ga.TrackingKey, new {@class = "form-control"})
                                 </div>
                             </div>
 
