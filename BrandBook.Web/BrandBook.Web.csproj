@@ -903,6 +903,7 @@
     <Content Include="Areas\App\Views\System\VersionInfo.cshtml" />
     <Content Include="Areas\App\Views\Shared\System\_SettingsBackButton.cshtml" />
     <Content Include="Areas\App\Views\Brand\Icons.cshtml" />
+    <Content Include="Areas\App\Views\User\RoleOverview.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
