@@ -65,6 +65,7 @@
     <Compile Include="Domain\Brand\Font\FontInclusion.cs" />
     <Compile Include="Domain\Brand\Font\FontStyle.cs" />
     <Compile Include="Domain\Brand\Icon\Icon.cs" />
+    <Compile Include="Domain\Brand\Icon\IconCategory.cs" />
     <Compile Include="Domain\Company\Company.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
