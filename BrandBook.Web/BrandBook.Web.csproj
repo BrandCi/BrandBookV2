@@ -179,6 +179,7 @@
     <Compile Include="Areas\Public\Controllers\FontsController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
