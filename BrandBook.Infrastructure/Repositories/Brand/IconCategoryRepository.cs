@@ -15,5 +15,10 @@ namespace BrandBook.Infrastructure.Repositories.Brand
             : base(context)
         {
         }
+
+        public List<IconCategory> GetCategoriesForBrand(int brandId)
+        {
+            return Set.Where(cc => cc.BrandId == brandId).ToList();
+        }
     }
 }
