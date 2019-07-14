@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Icon
 {
-    class Icon
+    public class Icon : BaseEntity
     {
+
+        public string ClassName { get; set; }
+        public string Prefix { get; set; }
+
     }
 }
