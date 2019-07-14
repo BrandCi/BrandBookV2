@@ -12,6 +12,7 @@ using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
 using BrandBook.Web.Framework.ViewModels.Auth;
+using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -144,7 +145,29 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult GoogleAnalytics()
         {
-            return View();
+
+            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            GoogleAnalyticsViewModel model;
+
+            if (ga_enabled.Value == "1")
+            {
+                model = new GoogleAnalyticsViewModel()
+                {
+                    IsActive = true,
+                    TrackingKey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value
+                };
+            }
+            else
+            {
+                model = new GoogleAnalyticsViewModel()
+                {
+                    IsActive = false,
+                    TrackingKey = ""
+                };
+            }
+
+
+            return View(model);
         }
 
         #endregion
