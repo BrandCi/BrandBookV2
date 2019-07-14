@@ -179,6 +179,7 @@
     <Compile Include="Areas\Public\Controllers\FontsController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -902,6 +903,8 @@
     <Content Include="Areas\Auth\Views\Login\VersionInfo.cshtml" />
     <Content Include="Areas\App\Views\System\VersionInfo.cshtml" />
     <Content Include="Areas\App\Views\Shared\System\_SettingsBackButton.cshtml" />
+    <Content Include="Areas\App\Views\Brand\Icons.cshtml" />
+    <Content Include="Areas\App\Views\User\RoleOverview.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -1009,6 +1012,7 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
     <Content Include="Views\Product\Overview.cshtml" />
     <Content Include="Views\Support\Contact.cshtml" />
+    <Content Include="Views\Layout\GoogleAnalytics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />

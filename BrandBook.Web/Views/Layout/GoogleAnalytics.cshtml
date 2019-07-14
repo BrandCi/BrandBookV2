@@ -1,0 +1,16 @@
+﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Layout.GoogleAnalyticsViewModel
+
+
+@if (Model.IsActive)
+{
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=@Model.TrackingKey"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '@Model.TrackingKey');
+    </script>
+}
+

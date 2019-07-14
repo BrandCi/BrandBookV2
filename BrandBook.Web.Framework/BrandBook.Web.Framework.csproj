@@ -117,6 +117,9 @@
     <Compile Include="ViewModels\App\Brand\Colors\ColorCategoryViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\ColorsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\SingleColorViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\IconCategoryViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\IconsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\SingleIconViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\BrandSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Settings\CustomizingSettingsViewModel.cs" />
@@ -128,9 +131,11 @@
     <Compile Include="ViewModels\App\Settings\SystemSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Settings\UserSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Frontend\ContactFormViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">

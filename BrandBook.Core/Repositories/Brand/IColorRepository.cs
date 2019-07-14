@@ -5,7 +5,6 @@ namespace BrandBook.Core.Repositories.Brand
 {
     public interface IColorRepository : IRepository<Color>
     {
-        List<Color> GetAllColorsFromBrand(int brandId);
         List<Color> GetAllColorsFromCategory(int categoryId);
     }
 }

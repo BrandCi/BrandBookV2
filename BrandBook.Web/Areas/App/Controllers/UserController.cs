@@ -60,5 +60,27 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewmodel);
         }
+
+
+        public ActionResult RoleOverview()
+        {
+
+            var roles = _unitOfWork.UserRoleRepository.GetAll();
+
+            RoleOverviewViewModel model = new RoleOverviewViewModel();
+            model.Roles = new List<SingleRoleViewModel>();
+
+            foreach (var role in roles)
+            {
+                model.Roles.Add(new SingleRoleViewModel()
+                {
+                    Id = role.Id,
+                    Name = role.Name
+                });
+            }
+
+
+            return View(model);
+        }
     }
 }

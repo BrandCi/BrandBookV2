@@ -30,13 +30,11 @@
                                     @Translations.app_mainnavigation_usermanagement_user
                                 </a>
                             </li>
-                        <!--
-                        <li>
-                            <a href="#">
-                                @Translations.app_mainnavigation_usermanagement_roles
-                            </a>
-                        </li>
-                        -->
+                            <li>
+                                <a href="@Url.Action("RoleOverview", "User", new {area = "App"})">
+                                    @Translations.app_mainnavigation_usermanagement_roles
+                                </a>
+                            </li>
                             <li>
                                 <a href="@Url.Action("CompanyOverview", "User", new { area = "App"})">
                                     @Translations.app_mainnavigation_usermanagement_company

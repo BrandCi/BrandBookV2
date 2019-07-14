@@ -64,6 +64,8 @@
     <Compile Include="Domain\Brand\Font\Font.cs" />
     <Compile Include="Domain\Brand\Font\FontInclusion.cs" />
     <Compile Include="Domain\Brand\Font\FontStyle.cs" />
+    <Compile Include="Domain\Brand\Icon\Icon.cs" />
+    <Compile Include="Domain\Brand\Icon\IconCategory.cs" />
     <Compile Include="Domain\Company\Company.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
@@ -80,6 +82,8 @@
     <Compile Include="Repositories\Brand\IColorCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IColorRepository.cs" />
     <Compile Include="Repositories\Brand\IFontRepository.cs" />
+    <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
+    <Compile Include="Repositories\Brand\IIconRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />

@@ -23,6 +23,8 @@ namespace BrandBook.Core
         IColorRepository ColorRepository { get; }
         IColorCategoryRepository ColorCategoryRepository { get; }
         IFontRepository FontRepository { get; }
+        IIconRepository IconRepository { get; }
+        IIconCategoryRepository IconCategoryRepository { get; }
         ICompanyRepository CompanyRepository { get; }
         
         #endregion

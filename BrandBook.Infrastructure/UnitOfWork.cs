@@ -30,6 +30,8 @@ namespace BrandBook.Infrastructure
         private IColorRepository _colorRepository;
         private IColorCategoryRepository _colorCategoryRepository;
         private IFontRepository _fontRepository;
+        private IIconRepository _iconRepository;
+        private IIconCategoryRepository _iconCategoryRepository;
         private ICompanyRepository _companyRepository;
 
         #endregion
@@ -85,6 +87,16 @@ namespace BrandBook.Infrastructure
             get { return _fontRepository ?? (_fontRepository = new FontRepository(_context)); }
         }
 
+        public IIconRepository IconRepository
+        {
+            get { return _iconRepository ?? (_iconRepository = new IconRepository(_context)); }
+        }
+
+        public IIconCategoryRepository IconCategoryRepository
+        {
+            get { return _iconCategoryRepository ?? (_iconCategoryRepository = new IconCategoryRepository(_context)); }
+        }
+
         public ICompanyRepository CompanyRepository
         {
             get { return _companyRepository ?? (_companyRepository = new CompanyRepository(_context)); }
@@ -118,6 +130,8 @@ namespace BrandBook.Infrastructure
             _colorRepository = null;
             _colorCategoryRepository = null;
             _fontRepository = null;
+            _iconRepository = null;
+            _iconCategoryRepository = null;
             _companyRepository = null;
 
             _context.Dispose();

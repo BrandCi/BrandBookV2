@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BrandBook.Core.Domain.Brand.Color;
+using BrandBook.Core.Domain.Brand.Icon;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.Brand
 {
-    public class ColorRepository : Repository<Color>, IColorRepository
+    public class IconRepository : Repository<Icon>, IIconRepository
     {
-
-        public ColorRepository(BrandBookDbContext context)
+        public IconRepository(BrandBookDbContext context)
             : base(context)
         {
         }
 
-        public List<Color> GetAllColorsFromCategory(int categoryId)
+        public List<Icon> GetAllIconsFromCategory(int categoryId)
         {
             return Set
-                .Where(c => c.CategoryId == categoryId)
-                .OrderBy(c => c.Sorting)
+                .Where(i => i.IconCategoryId == categoryId)
+                .OrderBy(i => i.ClassName)
                 .ToList();
         }
 
