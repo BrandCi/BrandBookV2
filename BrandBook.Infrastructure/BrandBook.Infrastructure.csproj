@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.Designer.cs">
       <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.cs" />
+    <Compile Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.Designer.cs">
+      <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.resx">
       <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.resx">
+      <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
