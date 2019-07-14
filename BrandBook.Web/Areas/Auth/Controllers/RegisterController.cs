@@ -103,5 +103,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             return View(model);
         }
+
+
+        public ActionResult Success()
+        {
+            return View();
+        }
     }
 }
