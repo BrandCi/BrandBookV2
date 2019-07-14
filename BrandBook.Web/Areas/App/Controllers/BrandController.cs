@@ -172,7 +172,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-            return View();
+            return View(model);
         }
 
 
