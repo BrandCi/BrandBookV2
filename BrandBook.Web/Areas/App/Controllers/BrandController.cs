@@ -161,12 +161,16 @@ namespace BrandBook.Web.Areas.App.Controllers
                     });
                 }
 
-                model.Categories.Add(new IconCategoryViewModel()
+                if (singleIcons.Count > 0)
                 {
-                    Name = category.Name,
-                    Icons = singleIcons
+                    model.Categories.Add(new IconCategoryViewModel()
+                    {
+                        Name = category.Name,
+                        Icons = singleIcons
 
-                });
+                    });
+                }
+                
             }
 
 
