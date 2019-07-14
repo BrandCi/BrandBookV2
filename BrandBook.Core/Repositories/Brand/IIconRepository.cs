@@ -9,5 +9,7 @@ namespace BrandBook.Core.Repositories.Brand
 {
     public interface IIconRepository : IRepository<Icon>
     {
+
+        List<Icon> GetAllIconsFromCategory(int categoryId);
     }
 }
