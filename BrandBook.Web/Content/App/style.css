@@ -1,10 +1,4 @@
-﻿/*
-Template Name: Minton - Bootstrap 4 Admin Dashboard
-Author: Coderthemes
-Email: coderthemes@gmail.com
-File: Main Css
-*/
-/*===================================
+﻿/*===================================
   Menu
   ===================================*/
 .topbar {
@@ -4646,3 +4640,23 @@ File: Responsive
 
 .custom-modal-text {
   padding: 50px; }
+
+.dataTable .selected td,
+.dataTable .selected td a {
+  color: #eeeeee; }
+
+.dataTable td a {
+  text-decoration: underline; }
+
+/*
+    Add Brand Wizard
+*/
+.wizard > .steps .current a,
+.wizard > .steps .current a:hover,
+.wizard > .steps .current a:active {
+  background: #193357 !important; }
+
+.wizard > .steps .done a,
+.wizard > .steps .done a:hover,
+.wizard > .steps .done a:active {
+  background-color: #356dba !important; }

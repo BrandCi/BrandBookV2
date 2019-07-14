@@ -7,14 +7,14 @@ namespace BrandBook.Infrastructure.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories");
+            /*DropForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories");
             DropIndex("dbo.ImprintValues", new[] { "Category_Id" });
             DropTable("dbo.ImprintCategories");
-            DropTable("dbo.ImprintValues");
+            DropTable("dbo.ImprintValues");*/
         }
         
         public override void Down()
-        {
+        {/*
             CreateTable(
                 "dbo.ImprintValues",
                 c => new
@@ -38,7 +38,7 @@ namespace BrandBook.Infrastructure.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateIndex("dbo.ImprintValues", "Category_Id");
-            AddForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories", "Id");
+            AddForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories", "Id");*/
         }
     }
 }

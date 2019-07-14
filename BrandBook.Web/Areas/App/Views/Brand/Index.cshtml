@@ -1,10 +1,11 @@
-﻿
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@model BrandBook.Web.Framework.ViewModels.App.Brand.BrandOverviewViewModel
 @{
     ViewBag.Title = "Index";
 }
 
 @section navigation {
-    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_BrandNavigation.cshtml")
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_BrandNavigation.cshtml")
 }
 
 <style>
@@ -14,25 +15,404 @@
         text-align: center;
     }
 
-    .brand-title-container .brand-title-img {
-        max-width: 25%;
-    }
-
+        .brand-title-container .brand-title-img {
+            max-width: 25%;
+        }
 </style>
 
 
 <div class="row">
     <div class="col-12">
-        <div class="card-box">
+        <div class="card-box" style="border-top: 7px solid #@Model.MainHexColor">
             <h4 class="m-t-0 header-title">
-                Philipp C. Moser
+                @Model.Name
             </h4>
-            
+
             <div class="brand-title-container">
-                <img src="https://content.philipp-moser.de/wlo0t5byw6/BrandData/1e829ca5-c778-4529-b5e8-01ee8ead6633.jpg" class="brand-title-img" />
+                @CustomHelper.Image("BrandData/" + Model.ImageName, Model.ImageType, "brand-title-img")
             </div>
 
-            
+
         </div>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+            
+            <div class="bg-icon bg-icon-success pull-left">
+                <a href="@Url.Action("Colors", "Brand", new { Id = ViewBag.BrandId, area = "App"})">
+                    <i class="fas fa-palette text-success"></i>
+                </a>
+            </div>
+            
+            <div class="text-right">
+                <a href="@Url.Action("Colors", "Brand", new { Id = ViewBag.BrandId, area = "App"})" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+
+            <div class="bg-icon bg-icon-warning pull-left">
+                <a href="@Url.Action("Fonts", "Brand", new { Id = ViewBag.BrandId, area = "App"})">
+                    <i class="fas fa-font text-info"></i>
+                </a>
+            </div>
+
+            <div class="text-right">
+                <a href="@Url.Action("Fonts", "Brand", new { Id = ViewBag.BrandId, area = "App"})" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+            <div class="bg-icon bg-icon-inverse pull-left">
+                <a href="#">
+                    <i class="fas fa-swatchbook text-pink"></i>
+                </a>
+            </div>
+            <div class="text-right">
+                <a href="#" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+            <div class="bg-icon bg-icon-inverse pull-left">
+                <a href="#">
+                    <i class="fas fa-swatchbook text-purple"></i>
+                </a>
+            </div>
+            <div class="text-right">
+                <a href="#" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+
+            <div class="bg-icon bg-icon-inverse pull-left">
+                <a href="#">
+                    <i class="fas fa-swatchbook text-success"></i>
+                </a>
+            </div>
+
+            <div class="text-right">
+                <a href="#" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-6">
+        <div class="widget-bg-color-icon card-box" style="border-top: 7px solid #@Model.MainHexColor">
+
+            <div class="bg-icon bg-icon-inverse pull-left">
+                <a href="#">
+                    <i class="fas fa-swatchbook text-info"></i>
+                </a>
+                
+            </div>
+
+            <div class="text-right">
+                <a href="#" class="text-muted mb-0">
+                    Open <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+        
+</div>
+<!-- end row -->
+
+
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card-box">
+            <h4 class="header-title m-t-0 m-b-30">Brand Descriptions</h4>
+
+            <ul class="nav nav-tabs tabs-bordered nav-justified">
+
+                <li class="nav-item">
+                    <a href="#short-description" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                        Short Description
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#description" data-toggle="tab" aria-expanded="true" class="nav-link">
+                        Description
+                    </a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="short-description">
+                    <p>
+                        @Model.ShortDescription
+                    </p>
+                </div>
+                <div class="tab-pane" id="description">
+                    <p>
+                        @Model.Description
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+    <!-- Brand Todos -->
+    <div class="col-lg-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">
+                <b>Todo</b>
+                <a href="@Url.Action("Todo", "Brand", new { area = "App" })" class="m-l-10">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </h4>
+            <div class="BrandToDo">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4 id="todo-message"><span id="todo-remaining"></span> of <span id="todo-total"></span> remaining</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="" class="pull-right btn btn-primary btn-sm waves-effect waves-light" id="btn-archive">Archive</a>
+                    </div>
+                </div>
+
+                <ul class="list-group no-margn nicescroll todo-list" style="height: 280px" id="todo-list"></ul>
+
+                <form name="todo-form" id="todo-form" role="form" class="m-t-20">
+                    <div class="row">
+                        <div class="col-sm-9 todo-inputbar">
+                            <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
+                        </div>
+                        <div class="col-sm-3 todo-send">
+                            <button class="btn-primary btn-md btn-block btn waves-effect waves-light" type="button" id="todo-btn-submit">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div> <!-- end col -->
+    <!-- INBOX -->
+    <div class="col-lg-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">
+                <b>Recent Activity</b>
+                <a href="@Url.Action("Activity", "Brand", new { area = "App" })" class="m-l-10">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </h4>
+
+            <div class="inbox-widget nicescroll mx-box">
+                <a href="#">
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="https://content.philipp-moser.de/wlo0t5byw6/UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author">Color added</p>
+                        <p class="inbox-item-text">A new color has been added.</p>
+                        <p class="inbox-item-date">13:40 PM</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="https://content.philipp-moser.de/wlo0t5byw6/UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author">Font added</p>
+                        <p class="inbox-item-text">A new font has been added.</p>
+                        <p class="inbox-item-date">13:34 PM</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div> <!-- end col -->
+
+
+</div>
+
+@section scripts {
+    <script>
+        !function ($) {
+            "use strict";
+
+            var BrandToDo = function () {
+                this.$body = $("body"),
+                    this.$todoContainer = $('#todo-container'),
+                    this.$todoMessage = $("#todo-message"),
+                    this.$todoRemaining = $("#todo-remaining"),
+                    this.$todoTotal = $("#todo-total"),
+                    this.$archiveBtn = $("#btn-archive"),
+                    this.$todoList = $("#todo-list"),
+                    this.$todoDonechk = ".todo-done",
+                    this.$todoForm = $("#todo-form"),
+                    this.$todoInput = $("#todo-input-text"),
+                    this.$todoBtn = $("#todo-btn-submit"),
+
+                    this.$todoData = [
+                        {
+                            'id': '1',
+                            'text': 'Add all CI-Colors',
+                            'done': false
+                        },
+                        {
+                            'id': '6',
+                            'text': 'Upload Logo',
+                            'done': true
+                        }];
+
+                this.$todoCompletedData = [];
+                this.$todoUnCompletedData = [];
+            };
+
+            //mark/unmark - use ajax
+            BrandToDo.prototype.markTodo = function (todoId, complete) {
+                for (var count = 0; count < this.$todoData.length; count++) {
+                    if (this.$todoData[count].id == todoId) {
+                        this.$todoData[count].done = complete;
+                    }
+                }
+            },
+
+                //adds new todo
+                BrandToDo.prototype.addTodo = function (todoText) {
+                    this.$todoData.push({ 'id': this.$todoData.length, 'text': todoText, 'done': false });
+                    //regenerate list
+                    this.generate();
+                },
+
+                //Archives all completed todos
+                BrandToDo.prototype.archives = function () {
+                    this.$todoUnCompletedData = [];
+                    for (var count = 0; count < this.$todoData.length; count++) {
+                        //geretaing html
+                        var todoItem = this.$todoData[count];
+                        if (todoItem.done == true) {
+                            this.$todoCompletedData.push(todoItem);
+                        } else {
+                            this.$todoUnCompletedData.push(todoItem);
+                        }
+                    }
+                    this.$todoData = [];
+                    this.$todoData = [].concat(this.$todoUnCompletedData);
+                    //regenerate todo list
+                    this.generate();
+                },
+
+                //Generates todos
+                BrandToDo.prototype.generate = function () {
+                    //clear list
+                    this.$todoList.html("");
+                    var remaining = 0;
+                    for (var count = 0; count < this.$todoData.length; count++) {
+                        //geretaing html
+                        var todoItem = this.$todoData[count];
+                        if (todoItem.done == true)
+                            this.$todoList.prepend(
+                                '<li class="list-group-item"><div class=""><input class="todo-done" id="' +
+                                todoItem.id +
+                                '" type="checkbox" checked><label for="' +
+                                todoItem.id +
+                                '">' +
+                                '&nbsp;&nbsp;' +
+                                todoItem.text +
+                                '</label></div></li>');
+                        else {
+                            remaining = remaining + 1;
+                            this.$todoList.prepend(
+                                '<li class="list-group-item"><div class=""><input class="todo-done" id="' +
+                                todoItem.id +
+                                '" type="checkbox"><label for="' +
+                                todoItem.id +
+                                '">' +
+                                '&nbsp;&nbsp;' +
+                                todoItem.text +
+                                '</label></div></li>');
+                        }
+                    }
+
+                    //set total in ui
+                    this.$todoTotal.text(this.$todoData.length);
+                    //set remaining
+                    this.$todoRemaining.text(remaining);
+                },
+
+
+                //init todo app
+                BrandToDo.prototype.init = function () {
+                    var $this = this;
+                    //generating todo list
+                    this.generate();
+
+                    //binding archive
+                    this.$archiveBtn.on("click",
+                        function (e) {
+                            e.preventDefault();
+                            $this.archives();
+                            return false;
+                        });
+
+                    //binding todo done chk
+                    $(document).on("change",
+                        this.$todoDonechk,
+                        function () {
+                            if (this.checked)
+                                $this.markTodo($(this).attr('id'), true);
+                            else
+                                $this.markTodo($(this).attr('id'), false);
+                            //regenerate list
+                            $this.generate();
+                        });
+
+                    //binding the new todo button
+                    this.$todoBtn.on("click",
+                        function () {
+                            if ($this.$todoInput.val() == "" ||
+                                typeof ($this.$todoInput.val()) == 'undefined' ||
+                                $this.$todoInput.val() == null) {
+                                sweetAlert("Oops...", "You forgot to enter todo text", "error");
+                                $this.$todoInput.focus();
+                            } else {
+                                $this.addTodo($this.$todoInput.val());
+                            }
+                        });
+                },
+                //init BrandToDo
+                $.BrandToDo = new BrandToDo, $.BrandToDo.Constructor = BrandToDo;
+
+        }(window.jQuery),
+
+            //initializing todo app
+            function ($) {
+                "use strict";
+                $.BrandToDo.init();
+            }(window.jQuery);
+    </script>
+}

@@ -103,9 +103,91 @@
     <Compile Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.Designer.cs">
       <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905191548109_AddFirstnameAndLastnameToAppUsersTable.cs" />
+    <Compile Include="Migrations\201905191548109_AddFirstnameAndLastnameToAppUsersTable.Designer.cs">
+      <DependentUpon>201905191548109_AddFirstnameAndLastnameToAppUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.cs" />
+    <Compile Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.Designer.cs">
+      <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906061311284_AddContactPersonToBrandsTable.cs" />
+    <Compile Include="Migrations\201906061311284_AddContactPersonToBrandsTable.Designer.cs">
+      <DependentUpon>201906061311284_AddContactPersonToBrandsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906062147207_CreateAllInitialColorRelatedTables.cs" />
+    <Compile Include="Migrations\201906062147207_CreateAllInitialColorRelatedTables.Designer.cs">
+      <DependentUpon>201906062147207_CreateAllInitialColorRelatedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906062157017_AddColorCategoriesTableAndReferenceToColorsTable.cs" />
+    <Compile Include="Migrations\201906062157017_AddColorCategoriesTableAndReferenceToColorsTable.Designer.cs">
+      <DependentUpon>201906062157017_AddColorCategoriesTableAndReferenceToColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906070929174_AddBrandSettingsTable.cs" />
+    <Compile Include="Migrations\201906070929174_AddBrandSettingsTable.Designer.cs">
+      <DependentUpon>201906070929174_AddBrandSettingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906082139539_AddAllInitialFontsTables.cs" />
+    <Compile Include="Migrations\201906082139539_AddAllInitialFontsTables.Designer.cs">
+      <DependentUpon>201906082139539_AddAllInitialFontsTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907111953161_AddCompaniesTable.cs" />
+    <Compile Include="Migrations\201907111953161_AddCompaniesTable.Designer.cs">
+      <DependentUpon>201907111953161_AddCompaniesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907111954521_SeedCompaniesTable.cs" />
+    <Compile Include="Migrations\201907111954521_SeedCompaniesTable.Designer.cs">
+      <DependentUpon>201907111954521_SeedCompaniesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907121820133_FixRelationshipsInFontsModule.cs" />
+    <Compile Include="Migrations\201907121820133_FixRelationshipsInFontsModule.Designer.cs">
+      <DependentUpon>201907121820133_FixRelationshipsInFontsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907121903186_AddCompanyIdIntToBrandsAndAppUsersTable.cs" />
+    <Compile Include="Migrations\201907121903186_AddCompanyIdIntToBrandsAndAppUsersTable.Designer.cs">
+      <DependentUpon>201907121903186_AddCompanyIdIntToBrandsAndAppUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907131318002_AddIsPublicColumnToBrandsTable.cs" />
+    <Compile Include="Migrations\201907131318002_AddIsPublicColumnToBrandsTable.Designer.cs">
+      <DependentUpon>201907131318002_AddIsPublicColumnToBrandsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907131539597_UpdateRelationsInColorsTable.cs" />
+    <Compile Include="Migrations\201907131539597_UpdateRelationsInColorsTable.Designer.cs">
+      <DependentUpon>201907131539597_UpdateRelationsInColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907131546096_AddBrandRelationToColorsTable.cs" />
+    <Compile Include="Migrations\201907131546096_AddBrandRelationToColorsTable.Designer.cs">
+      <DependentUpon>201907131546096_AddBrandRelationToColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907131557070_AddHexColorCodeToColorsTable.cs" />
+    <Compile Include="Migrations\201907131557070_AddHexColorCodeToColorsTable.Designer.cs">
+      <DependentUpon>201907131557070_AddHexColorCodeToColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907131941390_AddNewBrandIdToColorCategoriesTable.cs" />
+    <Compile Include="Migrations\201907131941390_AddNewBrandIdToColorCategoriesTable.Designer.cs">
+      <DependentUpon>201907131941390_AddNewBrandIdToColorCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907132008445_AddSortingColumnToColorsTable.cs" />
+    <Compile Include="Migrations\201907132008445_AddSortingColumnToColorsTable.Designer.cs">
+      <DependentUpon>201907132008445_AddSortingColumnToColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs" />
+    <Compile Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.Designer.cs">
+      <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.cs" />
+    <Compile Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.Designer.cs">
+      <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
+    <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
+    <Compile Include="Repositories\Brand\ColorRepository.cs" />
+    <Compile Include="Repositories\Brand\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
+    <Compile Include="Repositories\Brand\IconRepository.cs" />
+    <Compile Include="Repositories\Company\CompanyRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
@@ -159,6 +241,63 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905111024309_SeedDatabaseWithDefaultSettings.resx">
       <DependentUpon>201905111024309_SeedDatabaseWithDefaultSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191548109_AddFirstnameAndLastnameToAppUsersTable.resx">
+      <DependentUpon>201905191548109_AddFirstnameAndLastnameToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061108189_AddShortDescriptionToBrandsTable.resx">
+      <DependentUpon>201906061108189_AddShortDescriptionToBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061311284_AddContactPersonToBrandsTable.resx">
+      <DependentUpon>201906061311284_AddContactPersonToBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906062147207_CreateAllInitialColorRelatedTables.resx">
+      <DependentUpon>201906062147207_CreateAllInitialColorRelatedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906062157017_AddColorCategoriesTableAndReferenceToColorsTable.resx">
+      <DependentUpon>201906062157017_AddColorCategoriesTableAndReferenceToColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906070929174_AddBrandSettingsTable.resx">
+      <DependentUpon>201906070929174_AddBrandSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906082139539_AddAllInitialFontsTables.resx">
+      <DependentUpon>201906082139539_AddAllInitialFontsTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907111953161_AddCompaniesTable.resx">
+      <DependentUpon>201907111953161_AddCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907111954521_SeedCompaniesTable.resx">
+      <DependentUpon>201907111954521_SeedCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907121820133_FixRelationshipsInFontsModule.resx">
+      <DependentUpon>201907121820133_FixRelationshipsInFontsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907121903186_AddCompanyIdIntToBrandsAndAppUsersTable.resx">
+      <DependentUpon>201907121903186_AddCompanyIdIntToBrandsAndAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131318002_AddIsPublicColumnToBrandsTable.resx">
+      <DependentUpon>201907131318002_AddIsPublicColumnToBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131539597_UpdateRelationsInColorsTable.resx">
+      <DependentUpon>201907131539597_UpdateRelationsInColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131546096_AddBrandRelationToColorsTable.resx">
+      <DependentUpon>201907131546096_AddBrandRelationToColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131557070_AddHexColorCodeToColorsTable.resx">
+      <DependentUpon>201907131557070_AddHexColorCodeToColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907131941390_AddNewBrandIdToColorCategoriesTable.resx">
+      <DependentUpon>201907131941390_AddNewBrandIdToColorCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907132008445_AddSortingColumnToColorsTable.resx">
+      <DependentUpon>201907132008445_AddSortingColumnToColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.resx">
+      <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.resx">
+      <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

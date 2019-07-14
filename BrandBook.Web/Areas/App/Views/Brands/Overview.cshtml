@@ -1,10 +1,10 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
-@model BrandBook.Web.Framework.ViewModels.App.Brand.BrandOverviewViewModel
+@model BrandBook.Web.Framework.ViewModels.App.Brand.BrandsOverviewViewModel
 @{
     ViewBag.Title = "Markenübersicht";
 }
 @section navigation {
-    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
 @section styles
@@ -12,13 +12,32 @@
     @Styles.Render("~/Content/Plugins/Modals")
 }
 
-<div class="row mb-3">
-    <div class="col-md-4">
-        <a href="#" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5" data-toggle="modal" data-target=".modal-add-brand" data-backdrop="static" data-keyboard="false">
-            <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
-        </a>
+
+@if (User.IsInRole("Administrator"))
+{
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <a href="@Url.Action("Add","Brands", new { area = "App"})" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
+                <i class="fas fa-plus"></i><span class="d-none d-lg-block d-sm-none">&nbsp;Add new Brand</span>
+            </a>
+        </div>
     </div>
-</div>
+}
+else
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box">
+                                <h4 class="m-t-0 header-title">
+                    Please upgrade your subscription to create new brands.
+                </h4>
+                Thank you for using BrandCi.
+                You can find an overview over available subscriptions on our <a href="@Url.Action("Index", "Pricing", new {area = ""})">Pricing-Page</a>.
+            </div>
+        </div>
+    </div>
+}
+
 
 <div class="row">
     @AppCustomHelper.BrandOverviewItem(Model)
@@ -27,75 +46,3 @@
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/Modals")
 }
-
-
-
-
-<!--  Modal content for adding a new Brand -->
-<div class="modal fade modal-add-brand" tabindex="-1" role="dialog" aria-labelledby="addBrandModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="addBrandModalLabel">
-                    Fügen Sie eine neue Marke hinzu
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form>
-
-                    <div class="form-group input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="brand-name-addon">
-                                <i class="fas fa-chess-rook"></i>
-                            </span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Name der Marke" aria-label="BrandName" aria-describedby="brand-name-addon">
-                    </div>
-
-                    <div class="form-group input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="brand-color-addon">
-                                <i class="fas fa-palette"></i>
-                            </span>
-                        </div>
-                        <input type="color" class="form-control" placeholder="Primärfarbe der Marke" aria-label="BrandColor" aria-describedby="brand-color-addon">
-                    </div>
-
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="brand-image-addon">
-                                <i class="fas fa-images"></i>
-                            </span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="BildKey Contentserver" aria-describedby="brand-image-addon" aria-label="Image Input with Imagetype selection">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Typ</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">.jpg</a>
-                                <a class="dropdown-item" href="#">.png</a>
-                                <a class="dropdown-item" href="#">.svg</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fas fa-info"></i>
-                            </span>
-                        </div>
-                        <textarea class="form-control" aria-label="Brand Description"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <button type="submit" class="btn btn-success btn-custom waves-effect w-md waves-light m-b-5 mr-4">Marke anlegen</button>
-                        <button type="button" class="btn btn-danger btn-custom waves-effect w-md waves-light m-b-5" data-dismiss="modal" aria-hidden="true">Abbrechen</button>
-                    </div>
-
-                </form>
-
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

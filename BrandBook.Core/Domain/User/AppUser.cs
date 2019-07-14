@@ -11,8 +11,12 @@ namespace BrandBook.Core.Domain.User
 {
     public class AppUser : IdentityUser
     {
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public bool PrivacyPolicyAccepted { get; set; }
+
+        public int CompanyId { get; set; }
+        public Company.Company Company { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {

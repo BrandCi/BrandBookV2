@@ -1,10 +1,10 @@
-﻿
+﻿@model BrandBook.Web.Framework.ViewModels.App.Profile.GeneralUserDataViewModel
 @{
     ViewBag.Title = "Index";
 }
 
 @section navigation {
-    @Html.Partial("~/Areas/App/Views/Shared/Layout/Partial/_LeftNavigation.cshtml")
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
 @section styles
@@ -22,8 +22,8 @@
                 </div>
 
                 <div class="">
-                    <h5 class="m-b-5">Philipp C. Moser</h5>
-                    <p class="text-muted">Software Entwickler</p>
+                    <h5 class="m-b-5">@Model.FirstName @Model.LastName</h5>
+                    <p class="text-muted"></p>
                 </div>
 
             </div>
@@ -35,23 +35,43 @@
         <div class="card m-b-20 card-body">
             <h4 class="card-title">Ändern Sie Ihre Daten</h4>
             <p class="card-text">
-                <form role="form">
+
+                @using (Html.BeginForm("UpdateUserData", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                {
+
+                    @Html.AntiForgeryToken()
+
+
                     <div class="form-group">
-                        <label for="Username">Nutzername</label>
-                        <input type="text" value="pmoser" id="Username" class="form-control" disabled="disabled">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.UserName) })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="Firstname">Vorname</label>
-                        <input type="text" value="Philipp" id="Firstname" class="form-control">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.FirstName) })
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="Lastname">Nachname</label>
-                        <input type="text" value="Moser" id="Lastname" class="form-control">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.LastName) })
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
+
                     <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                         <i class="fas fa-save"></i>&nbsp;&nbsp;Speichern
                     </button>
-                </form>
+
+                }
+
+
+
             </p>
         </div>
 
@@ -68,6 +88,24 @@
     </div>
 
 </div>
+
+
+
+<div class="row">
+    <div class="col-12 mt-5 mb-5" style="text-align: center; color: #98a6ad;">
+        BrandCi v@(System.Configuration.ConfigurationManager.AppSettings["AppVersion"])
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 <div id="changePasswordModal" class="modal-demo">
@@ -88,23 +126,39 @@
             <li>Großbuchstaben</li>
             <li>Kleinbuchstaben</li>
         </ul>
-        <form role="form">
-            <div class="form-group mt-3">
-                <label for="currentpassword">Aktuelles Passwort</label>
-                <input type="password" value="" id="currentpassword" class="form-control">
-            </div>
-            <div class="form-group mt-5">
-                <label for="newpassword">Neues Passwort</label>
-                <input type="password" value="" id="newpassword" class="form-control">
+
+        @using (Html.BeginForm("UpdatePassword", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+        {
+
+            @Html.AntiForgeryToken()
+            @*
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
             </div>
             <div class="form-group">
-                <label for="confirmnewpassword">Neues Passwort wiederholen</label>
-                <input type="password" value="" id="confirmnewpassword" class="form-control">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
             </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
             </button>
-        </form>
+                *@
+        }
+
+
     </div>
 </div>
 
@@ -116,16 +170,26 @@
     <h4 class="custom-modal-title">E-Mail Adresse ändern</h4>
     <div class="custom-modal-text">
 
+        @using (Html.BeginForm("UpdateEmail", "Profile", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+        {
 
-        <form role="form">
-            <div class="form-group">
-                <label for="newemail">Neue E-Mail Adresse</label>
-                <input type="email" value="" id="newemail" class="form-control">
+            @Html.AntiForgeryToken()
+            @*
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
             </div>
+
+
             <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
             </button>
-        </form>
+            *@
+        }
+
+
     </div>
 </div>
 

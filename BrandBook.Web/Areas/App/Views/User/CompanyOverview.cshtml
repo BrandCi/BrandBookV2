@@ -1,0 +1,81 @@
+﻿@model BrandBook.Web.Framework.ViewModels.App.UserManagement.CompaniesOverviewViewModel
+@{
+    ViewBag.Title = "Firmenübersicht";
+}
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+@section styles {
+    @Styles.Render("~/Content/Plugins/Datatables")
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <p class="text-muted font-14 m-b-30"></p>
+
+            <table id="customerOverview-datatable" class="table table-bordered dt-responsive">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>UrlName</th>
+                    <th>Kontakt</th>
+                    <th>Nutzer</th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+                
+                @foreach (var company in Model.Companies)
+                {
+                    <tr>
+                        <td>
+                            @company.Id
+                        </td>
+                        <td>
+                            <a href="">
+                                @company.Name
+                            </a>
+                        </td>
+                        <td>
+                            @company.UrlName
+                        </td>
+                        <td>
+                            @company.ContactEmail
+                        </td>
+                        <td>
+                            @company.NumberOfUser
+                        </td>
+                    </tr>
+                }
+
+               
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+@section scripts{
+    @Scripts.Render("~/bundles/Plugins/Datatables")
+    
+    <script type="text/javascript">
+
+        $('#customerOverview-datatable').DataTable({
+            select: {
+                style: 'multi'
+            },
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json'
+            }
+        });
+
+    </script>
+
+}

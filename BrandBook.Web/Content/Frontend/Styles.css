@@ -669,23 +669,17 @@ div#cookieConsentBox {
 .cookie-terms table td {
   font-size: 15px; }
 
-#loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999;
-  background: #fff;
-  overflow: hidden; }
+/*
+    Contact Form
+*/
+.bb-contact-form input {
+  border: 1px solid rgba(0, 0, 0, 0.75); }
 
-#loader {
-  background: url(../images/1.gif);
-  width: 64px;
-  height: 64px;
-  position: relative;
-  top: 50%;
-  margin: -32px auto 0 auto; }
+.bb-contact-form input[type="text"], .bb-contact-form textarea {
+  background-color: #ffffff !important;
+  color: black; }
+  .bb-contact-form input[type="text"]::placeholder, .bb-contact-form textarea::placeholder {
+    color: black; }
 
 /*** 
 
@@ -1052,7 +1046,6 @@ body .theme-button:hover span {
 
 /*----------------------- Theme Banner One -------------------------*/
 .theme-banner-one {
-  background: url(../images/home/bg1.png) no-repeat center;
   background-size: cover; }
 
 .theme-banner-one .main-text-wrapper {
@@ -1218,7 +1211,6 @@ body .theme-button:hover span {
 
 /*----------------------- Theme Banner Three -------------------------*/
 .theme-banner-three {
-  background: url(../images/home/bg8.png) no-repeat center center;
   background-size: cover; }
 
 .theme-banner-three .main-text-wrapper {
@@ -1696,7 +1688,6 @@ body .theme-button:hover span {
 
 /*----------------------- Theme Counter ------------------*/
 .theme-counter .bg-image {
-  background: url(../images/home/bg3.png) no-repeat center;
   padding: 30px 0 120px; }
 
 .theme-counter .bg-image .theme-title p {
@@ -1885,7 +1876,6 @@ body .theme-button:hover span {
 
 /*---------------------- Contact Us One -------------*/
 .contact-us-one {
-  background: url(../images/home/3.jpg) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   /* margin-top: 125px; */ }
@@ -1940,7 +1930,7 @@ body .theme-button:hover span {
   border-radius: 4px;
   display: block;
   margin: 10px auto 0;
-  color: #fff;
+  /*color: #fff;*/
   font-size: 20px; }
 
 .contact-us-one form button:hover {
@@ -2005,9 +1995,6 @@ body .theme-button:hover span {
   right: 0;
   top: -40%;
   z-index: -1; }
-
-.theme-footer .inner-wrapper {
-  background: url(../images/home/bg4.png) no-repeat center center; }
 
 .theme-footer .top-footer-data-wrapper {
   border-bottom: 1px solid #f1f1f1;
@@ -2267,7 +2254,6 @@ body .theme-button:hover span {
   z-index: 1; }
 
 .token-sale-section .overlay {
-  background: url(../images/home/bg7.png) no-repeat center center;
   background-size: cover;
   padding: 130px 0 140px;
   position: relative; }
@@ -2581,7 +2567,6 @@ body .theme-button:hover span {
   padding: 295px 0 140px; }
 
 .contact-section-dark:before {
-  content: url(../images/shape/15.png);
   position: absolute;
   top: 41%;
   left: 0; }
@@ -2605,11 +2590,9 @@ body .theme-button:hover span {
 .contact-section-dark form input,
 .contact-section-dark form textarea {
   border: none;
-  background: #2529b2;
   margin-bottom: 35px;
   width: 100%;
-  max-width: 100%;
-  color: rgba(255, 255, 255, 0.5); }
+  max-width: 100%; }
 
 .contact-section-dark form input {
   height: 60px;
@@ -2624,9 +2607,6 @@ body .theme-button:hover span {
 .contact-section-dark form {
   color: #fff;
   opacity: 0.5; }
-
-.contact-section-dark form :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5); }
 
 .contact-section-dark form button {
   font-family: 'Source Sans Pro', Arial, sans-serif;

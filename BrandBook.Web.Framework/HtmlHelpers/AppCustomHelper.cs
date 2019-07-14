@@ -53,7 +53,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString BrandOverviewItem(BrandOverviewViewModel model)
+        public static IHtmlString BrandOverviewItem(BrandsOverviewViewModel model)
         {
             string contentSrv = "https://content.philipp-moser.de";
             string appKey = "wlo0t5byw6";
@@ -73,7 +73,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<div class=\"card-body\">");
                 html.Append("<h2 class=\"card-title\">" + brand.Name + "</h2>");
                 html.Append("<p class=\"card-text\">");
-                html.Append(brand.Description);
+                html.Append(brand.ShortDescription);
                 html.Append("</p>");
 
                 html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
@@ -82,6 +82,39 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("</div></div></div>");
 
             }
+
+            return new HtmlString(html.ToString());
+        }
+
+
+        public static IHtmlString VersionInfoItem(bool leftItem, string versionNumber, string releaseDate, string description)
+        {
+            StringBuilder html = new StringBuilder();
+
+            if (leftItem)
+            {
+                html.Append("<article class=\"timeline-item alt\">");
+            }
+            else
+            {
+                html.Append("<article class=\"timeline-item\">");
+            }
+            
+            html.Append("<div class=\"timeline-desk\">");
+            html.Append("<div class=\"panel\">");
+            html.Append("<div class=\"panel-body\">");
+            html.Append("<span class=\"arrow-alt\"></span>");
+            html.Append("<span class=\"timeline-icon\"></span>");
+
+            html.Append("<h4 class=\"text-danger\">" + versionNumber + "</h4>");
+            html.Append("<p class=\"timeline-date text-muted\"><small>" + releaseDate + "</small></p>");
+
+            html.Append("<p>");
+            html.Append(description);
+            html.Append("</p>");
+
+            html.Append("</div></div></div></article>");
+
 
             return new HtmlString(html.ToString());
         }

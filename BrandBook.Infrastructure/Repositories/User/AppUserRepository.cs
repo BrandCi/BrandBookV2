@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Domain.User;
-using BrandBook.Core.RepositoryInterfaces.User;
+using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.User
@@ -20,6 +20,15 @@ namespace BrandBook.Infrastructure.Repositories.User
         public AppUser FindByUsername(string username)
         {
             return Set.FirstOrDefault(x => x.UserName == username);
+        }
+
+
+        public int CountUserForCompanyId(int companyId)
+        {
+
+            return Set.Where(au => au.Company.Id == companyId)
+                .Count();
+
         }
 
     }

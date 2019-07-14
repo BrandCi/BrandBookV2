@@ -16,7 +16,7 @@
     <!-- For Resposive Device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - BrandCi</title>
+    <title>@ViewBag.Title - @ViewBag.AppTitle</title>
 
 
     @Styles.Render("~/Content/Css/Frontend/Main")
@@ -25,6 +25,8 @@
 
     @RenderSection("ColorStyle", required: true)
     @RenderSection("styles", required: false)
+    
+    @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
@@ -44,9 +46,7 @@
     <body>
         <div class="main-page-wrapper">
 
-            <div id="loader-wrapper">
-                <div id="loader"></div>
-            </div>
+            
             <!-- Navigation -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->

@@ -1,4 +1,5 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
+﻿@model BrandBook.Web.Framework.ViewModels.Frontend.ContactFormViewModel
+@using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
 }
@@ -22,30 +23,43 @@
                 </p>
             </div>
 
-            <form action="#" class="form-validation" autocomplete="off" style="padding: 70px 0;">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <input type="text" placeholder="Your Name">
-                    </div>
-                    <div class="col-lg-6">
-                        <input type="email" placeholder="Your Email Address">
-                    </div>
-                    <div class="col-lg-6">
-                        <input type="text" placeholder="Your Subject">
-                    </div>
-                    <div class="col-12">
-                        <textarea placeholder="Your Message" name="message"></textarea>
-                    </div>
-                    
-                    <div class="col-12">
-                        <input type="checkbox" id="privacyPolicy" />
-                        <label for="privacyPolicy">Accept our Privacy Policy</label>
-                    </div>
-                </div>
-                <button>Send Message</button>
-            </form>
+            <!-- style="padding: 70px 0;" -->
+            @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation bb-contact-form", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
-            
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Name, new { placeholder = @Html.DisplayNameFor(m => m.Name) + "*", @required="required"})
+                    </div>
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = @Html.DisplayNameFor(m => m.Email) + "*", @required="required" })
+                    </div>
+
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Subject, new { placeholder = @Html.DisplayNameFor(m => m.Subject) })
+                    </div>
+
+                    <div class="col-12">
+                        @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) + "*", @required="required" })
+                    </div>
+
+                    <div class="col-12 form-group form-check">
+                        @Html.LabelFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-label" })*
+                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-input", @required = "required" })
+
+                    </div>
+
+                    <button type="submit" class="mt-5">Send Message</button>
+
+                </div>
+            }
+
+           
+
+
         </div>
     </div>
 
