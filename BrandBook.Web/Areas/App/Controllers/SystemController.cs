@@ -142,6 +142,10 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
+        public ActionResult GoogleAnalytics()
+        {
+            return View();
+        }
 
         #endregion
 
@@ -150,6 +154,9 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+
+
+
 
 
 
