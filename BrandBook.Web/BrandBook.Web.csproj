@@ -1012,6 +1012,7 @@
     <Content Include="Views\Legal\Cookie.cshtml" />
     <Content Include="Views\Product\Overview.cshtml" />
     <Content Include="Views\Support\Contact.cshtml" />
+    <Content Include="Views\Layout\GoogleAnalytics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
