@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201907132008445_AddSortingColumnToColorsTable.Designer.cs">
       <DependentUpon>201907132008445_AddSortingColumnToColorsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs" />
+    <Compile Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.Designer.cs">
+      <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -282,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907132008445_AddSortingColumnToColorsTable.resx">
       <DependentUpon>201907132008445_AddSortingColumnToColorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.resx">
+      <DependentUpon>201907140907584_AddIconsTablesAndAdjustedRelationsInColorsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
