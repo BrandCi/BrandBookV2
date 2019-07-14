@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BrandBook.Web.Framework.ViewModels.App.UserManagement.RoleOverviewViewModel
+@{
     ViewBag.Title = "RoleOverview";
 }
 @section navigation {
@@ -25,17 +26,21 @@
 
 
                 <tbody>
-
+                @foreach (var role in Model.Roles)
+                {
                     <tr>
                         <td>
-                            
+                            @role.Id
                         </td>
                         <td>
                             <a href="#">
-                                AppUser
+                                @role.Name
                             </a>
                         </td>
                     </tr>
+                }
+
+                
 
                 </tbody>
             </table>
