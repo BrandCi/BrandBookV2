@@ -9,6 +9,11 @@ namespace BrandBook.Web.Controllers
 {
     public class LayoutController : FrontendControllerBase
     {
-        
+
+        public PartialViewResult GoogleAnalytics()
+        {
+            return PartialView("GoogleAnalytics");
+        }
+
     }
 }
