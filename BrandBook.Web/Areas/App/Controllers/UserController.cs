@@ -60,5 +60,11 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewmodel);
         }
+
+
+        public ActionResult RoleOverview()
+        {
+            return View();
+        }
     }
 }
