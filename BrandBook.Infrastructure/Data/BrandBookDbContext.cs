@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Core.Domain.Brand.Font;
+using BrandBook.Core.Domain.Brand.Icon;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.System;
 using BrandBook.Core.Domain.User;
@@ -28,6 +29,10 @@ namespace BrandBook.Infrastructure.Data
         public DbSet<ColorCategory> ColorCategories { get; set; }
         public DbSet<RgbValue> RgbValues { get; set; }
         public DbSet<CmykValue> CmykValues { get; set; }
+
+        // Icons
+        public DbSet<Icon> Icons { get; set; }
+        public DbSet<IconCategory> IconCategories { get; set; }
 
         // Fonts
         public DbSet<Font> Fonts { get; set; }
