@@ -127,6 +127,18 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
+        public ActionResult Icons(int id)
+        {
+            ViewBag.BrandId = id;
+
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
+            return View();
+        }
+
 
 
 
