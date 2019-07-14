@@ -16,6 +16,14 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         {
         }
 
+        public List<Icon> GetAllIconsFromCategory(int categoryId)
+        {
+            return Set
+                .Where(c => c.IconCategoryId == categoryId)
+                .OrderBy(c => c.ClassName)
+                .ToList();
+        }
+
 
     }
 }
