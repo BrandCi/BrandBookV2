@@ -145,27 +145,26 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult GoogleAnalytics()
         {
+            
+            var ga_isActive = false;
 
             var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
-            GoogleAnalyticsViewModel model;
 
             if (ga_enabled.Value == "1")
             {
-                model = new GoogleAnalyticsViewModel()
-                {
-                    IsActive = true,
-                    TrackingKey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value
-                };
-            }
-            else
-            {
-                model = new GoogleAnalyticsViewModel()
-                {
-                    IsActive = false,
-                    TrackingKey = ""
-                };
+                ga_isActive = true;
             }
 
+            var ga_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
+
+
+            GoogleAnalyticsViewModel model = new GoogleAnalyticsViewModel()
+            {
+                IsActive = ga_isActive,
+                TrackingKey = ga_trackingkey
+            };
+
+            
 
             return View(model);
         }
