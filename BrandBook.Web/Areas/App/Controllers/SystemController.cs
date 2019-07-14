@@ -170,6 +170,13 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GoogleAnalytics(GoogleAnalyticsViewModel model)
+        {
+            return View();
+        }
+
         #endregion
 
 
