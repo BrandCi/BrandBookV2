@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.Brand.Icon
 {
-    class IconCategory
+    public class IconCategory : BaseEntity
     {
+        public string Name { get; set; }
+        public int Sorting { get; set; }
+
+        public int BrandId { get; set; }
+        public Brand Brand { get; set; }
     }
 }
