@@ -23,39 +23,47 @@
             <div class="row">
                 <div class="col-12">
                     <div class="p-20">
-                        <form class="form-horizontal" role="form">
-                            
-                            <div class="form-group row">
-                                <label class="container">
-                                    @Html.LabelFor(ga => ga.IsActive)
-                                    @Html.CheckBoxFor(ga => ga.IsActive)
-                                </label>
-                            </div>
-                            
+                        
+                    @using (Html.BeginForm("GoogleAnalytics", "System", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                    {
+                        @Html.AntiForgeryToken()
 
-                            <div class="form-group row">
-                                <div class="col-4">
-                                    @Html.LabelFor(ga => ga.TrackingKey)
-                                </div>
-                                
-                                <div class="col-8">
-                                    @Html.TextBoxFor(ga => ga.TrackingKey, new {@class = "form-control"})
-                                </div>
+                        <div class="form-group row">
+                            <label class="container">
+                                @Html.LabelFor(ga => ga.IsActive)
+                                @Html.CheckBoxFor(ga => ga.IsActive)
+                            </label>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-4">
+                                @Html.LabelFor(ga => ga.TrackingKey)
                             </div>
 
-
-                            <div class="form-group row mt-5 mb-0">
-                                @Html.Partial("~/Areas/App/Views/Shared/System/_SettingsBackButton.cshtml")
-                                <button type="submit" class="btn btn-primary btn-custom">
-                                    <i class="fas fa-save"></i>
-                                    &nbsp;
-                                    @Translations.app_settings_update_button_title
-                                </button>
+                            <div class="col-8">
+                                @Html.TextBoxFor(ga => ga.TrackingKey, new {@class = "form-control"})
                             </div>
+                        </div>
+
+
+                        <div class="form-group row mt-5 mb-0">
+                            @Html.Partial("~/Areas/App/Views/Shared/System/_SettingsBackButton.cshtml")
+                            <button type="submit" class="btn btn-primary btn-custom">
+                                <i class="fas fa-save"></i>
+                                &nbsp;
+                                @Translations.app_settings_update_button_title
+                            </button>
+                        </div>
 
 
 
-                        </form>
+
+                    } 
+                        
+                        
+                        
+
                     </div>
                 </div>
 
