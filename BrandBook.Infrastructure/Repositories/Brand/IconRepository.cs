@@ -19,8 +19,8 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         public List<Icon> GetAllIconsFromCategory(int categoryId)
         {
             return Set
-                .Where(c => c.IconCategoryId == categoryId)
-                .OrderBy(c => c.ClassName)
+                .Where(i => i.IconCategoryId == categoryId)
+                .OrderBy(i => i.ClassName)
                 .ToList();
         }
 
