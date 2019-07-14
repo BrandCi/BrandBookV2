@@ -25,6 +25,8 @@
 
     @RenderSection("ColorStyle", required: true)
     @RenderSection("styles", required: false)
+    
+    @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
