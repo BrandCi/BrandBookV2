@@ -21,6 +21,8 @@ namespace BrandBook.Web.Controllers
 
         public PartialViewResult GoogleAnalytics()
         {
+            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+
             return PartialView("GoogleAnalytics");
         }
 
