@@ -1,0 +1,30 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+
+
+@{
+    ViewBag.Title = @Translations.auth_register_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Welcome, @User.Identity.Name</h3>
+            <p>
+                Your account is created! <br /><br />
+                Thank you for taking time to register. We hope you will enjoy BrandCi.
+            </p>
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Dashboard", new {area = "App"} )">Ok, continue&nbsp;<i class="fas fa-chevron-right"></i></a>
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>

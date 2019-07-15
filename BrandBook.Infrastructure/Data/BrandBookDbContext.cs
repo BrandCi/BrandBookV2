@@ -23,6 +23,7 @@ namespace BrandBook.Infrastructure.Data
         public DbSet<RolePermission> RolePermissions { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<BrandPublicSetting> BrandPublicSettings { get; set; }
 
         // Colors
         public DbSet<Color> Colors { get; set; }

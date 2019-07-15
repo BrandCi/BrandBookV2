@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.Designer.cs">
       <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.cs" />
+    <Compile Include="Migrations\201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.Designer.cs">
+      <DependentUpon>201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -298,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907141437247_SeedGoogleAnalyticsSettingKeys.resx">
       <DependentUpon>201907141437247_SeedGoogleAnalyticsSettingKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.resx">
+      <DependentUpon>201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

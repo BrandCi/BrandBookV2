@@ -97,11 +97,17 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Index", "Home", new {area = ""});
+                    return RedirectToAction("Success", "Register", new {area = "Auth"});
                 }
             }
 
             return View(model);
+        }
+
+
+        public ActionResult Success()
+        {
+            return View();
         }
     }
 }

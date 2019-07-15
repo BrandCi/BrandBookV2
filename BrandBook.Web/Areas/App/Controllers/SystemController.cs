@@ -12,6 +12,7 @@ using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
 using BrandBook.Web.Framework.ViewModels.Auth;
+using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -142,6 +143,58 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
+        public ActionResult GoogleAnalytics()
+        {
+            
+            var ga_isActive = false;
+
+            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+
+            if (ga_enabled.Value == "1")
+            {
+                ga_isActive = true;
+            }
+
+            var ga_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
+
+
+            GoogleAnalyticsViewModel model = new GoogleAnalyticsViewModel()
+            {
+                IsActive = ga_isActive,
+                TrackingKey = ga_trackingkey
+            };
+
+            
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GoogleAnalytics(GoogleAnalyticsViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.IsActive)
+            {
+                UpdateSettingValue("google_analytics_enabled", "1");
+            }
+            else
+            {
+                UpdateSettingValue("google_analytics_enabled", "0");
+            }
+            
+            UpdateSettingValue("google_analytics_trackingkey", model.TrackingKey);
+
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("GoogleAnalytics", "System", new {area = "App"});
+        }
 
         #endregion
 
@@ -150,6 +203,9 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+
+
+
 
 
 
