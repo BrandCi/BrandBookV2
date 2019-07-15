@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
     <Compile Include="Domain\Brand\Brand.cs" />
+    <Compile Include="Domain\Brand\BrandPublicSetting.cs" />
     <Compile Include="Domain\Brand\BrandSetting.cs" />
     <Compile Include="Domain\Brand\Color\ColorCategory.cs" />
     <Compile Include="Domain\Brand\Color\CmykValue.cs" />
