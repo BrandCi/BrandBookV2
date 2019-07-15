@@ -979,6 +979,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share your brand. With everybody you want..
+        /// </summary>
+        public static string frontend_home_index_services_service_04_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_services_service_04_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discover BrandCi.
         /// </summary>
         public static string frontend_home_index_topsection_discover_button_title {

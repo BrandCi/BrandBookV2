@@ -492,4 +492,7 @@
   <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
     <value>Your success.</value>
   </data>
+  <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
+    <value>Share your brand. With everybody you want.</value>
+  </data>
 </root>
