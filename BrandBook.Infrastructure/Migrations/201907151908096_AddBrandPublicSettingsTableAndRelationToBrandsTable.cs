@@ -16,8 +16,9 @@ namespace BrandBook.Infrastructure.Migrations
                         ShareString = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
+
             
-            AddColumn("dbo.Brands", "BrandPublicSettingId", c => c.Int(nullable: false));
+            AddColumn("dbo.Brands", "BrandPublicSettingId", c => c.Int(nullable: true));
             CreateIndex("dbo.Brands", "BrandPublicSettingId");
             AddForeignKey("dbo.Brands", "BrandPublicSettingId", "dbo.BrandPublicSettings", "Id", cascadeDelete: true);
             DropColumn("dbo.Brands", "IsPublic");
