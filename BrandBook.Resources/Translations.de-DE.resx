@@ -492,4 +492,10 @@
   <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
     <value>Dein Erfolg.</value>
   </data>
+  <data name="frontend_home_index_services_service_04_description" xml:space="preserve">
+    <value>Geben Sie Ihren Agenturen Zugriff auf Ihre Marke. Richten Sie einen privaten Bereich mit allen Informationen rund um Ihr Branding ein. Außerdem können Sie Ihre Brandings auch für alle veröffentlichen.</value>
+  </data>
+  <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
+    <value>Teile Deine Marke. Mit allen Freunden.</value>
+  </data>
 </root>
