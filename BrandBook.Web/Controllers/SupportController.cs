@@ -27,12 +27,12 @@ namespace BrandBook.Web.Controllers
 
                 StringBuilder message = new StringBuilder();
 
-                message.Append("Name: " + model.Name + "\n");
-                message.Append("Email: " + model.Email + "\n");
-                message.Append("Subject: " + model.Subject + "\n");
+                message.Append("Name: " + model.Name + "<br />");
+                message.Append("Email: " + model.Email + "<br />");
+                message.Append("Subject: " + model.Subject + "<br />");
                 message.Append("Message: " + model.Message);
 
-                if (await EmailService.SendEmailAsync("info@philipp-moser.de", message.ToString(), "Contact Form BrandBook"))
+                if (await EmailService.SendEmailAsync(message.ToString()))
                 {
                     return RedirectToAction("Contact", "Support");
                 } 
