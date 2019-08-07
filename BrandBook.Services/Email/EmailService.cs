@@ -12,7 +12,7 @@ namespace BrandBook.Services.Email
     public class EmailService
     {
 
-        public static async Task<bool> SendEmailAsync(string receiver, string body, string subject = "")
+        public static async Task<bool> SendEmailAsync(string body)
         {
             bool isSent = false;
 
@@ -22,17 +22,9 @@ namespace BrandBook.Services.Email
 
 
                 // Email Settings
-                message.To.Add(new MailAddress(receiver));
+                message.To.Add(new MailAddress(ConfigurationManager.AppSettings["EmailReceiver"]));
                 message.From = new MailAddress(ConfigurationManager.AppSettings["EmailAccount"]);
-
-                if (!string.IsNullOrEmpty(subject))
-                {
-                    message.Subject = subject;
-                }
-                else
-                {
-                    message.Subject = ConfigurationManager.AppSettings["EmailSubjectDefault"];
-                }
+                message.Subject = ConfigurationManager.AppSettings["EmailSubjectDefault"];
 
                 message.Body = body;
                 message.IsBodyHtml = true;
