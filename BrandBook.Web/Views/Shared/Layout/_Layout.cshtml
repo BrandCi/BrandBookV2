@@ -23,9 +23,12 @@
     @Styles.Render("~/Content/Frontend/Plugins")
     @Styles.Render("~/Content/Css/Flag-Icon")
 
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
     @RenderSection("ColorStyle", required: true)
     @RenderSection("styles", required: false)
-    
+
+
     @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
 
     <!-- Favicon -->
