@@ -28,6 +28,18 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
 
             var allAppUsers = await _unitOfWork.AppUserRepository.GetAllAsync();
+            var singleAppUserViewModel = new List<SingleAppUserViewModel>();
+
+            foreach (var singleAppUser in allAppUsers)
+            {
+                singleAppUserViewModel.Add(new SingleAppUserViewModel()
+                {
+                    Email = singleAppUser.Email,
+                    FirstName = singleAppUser.FirstName,
+                    LastName = singleAppUser.LastName,
+                    UserName = singleAppUser.UserName
+                });
+            }
 
 
             return View();
@@ -40,7 +52,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             var allCompanies = await _unitOfWork.CompanyRepository.GetAllAsync();
             var singleCompanyViewModels = new List<SingleCompanyViewModel>();
 
-            foreach (Company singleCompany in allCompanies)
+            foreach (var singleCompany in allCompanies)
             {
                 var numberOfUser = _unitOfWork.AppUserRepository.CountUserForCompanyId(singleCompany.Id);
 
