@@ -2078,38 +2078,38 @@ body .theme-button:hover span {
   color: rgba(255, 255, 255, 0.7); }
 
 /*------------------- About cryto -------------------*/
-.about-cryto {
+.about-brandci {
   padding: 195px 0 140px; }
 
-.about-cryto .theme-title {
+.about-brandci .theme-title {
   padding-top: 40px; }
 
-.about-cryto .sub-text {
+.about-brandci .sub-text {
   font-size: 24px;
   line-height: 35px;
   color: rgba(255, 255, 255, 0.8);
   padding: 28px 0 24px; }
 
-.about-cryto .text {
+.about-brandci .text {
   font-size: 17px;
   color: #c9c9d8;
   padding-bottom: 32px; }
 
-.about-cryto .know-more {
+.about-brandci .know-more {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 20px;
   color: #fff; }
 
-.about-cryto .know-more a {
+.about-brandci .know-more a {
   text-decoration: underline; }
 
-.about-cryto.style-two {
+.about-brandci.style-two {
   background: #f9faff;
   padding: 235px 0 240px;
   overflow: hidden;
   position: relative; }
 
-.about-cryto.style-two:before {
+.about-brandci.style-two:before {
   content: '';
   width: 103%;
   height: 270px;
@@ -2119,7 +2119,7 @@ body .theme-button:hover span {
   right: 0;
   transform: rotate(-7deg); }
 
-.about-cryto.style-two:after {
+.about-brandci.style-two:after {
   content: '';
   width: 103%;
   height: 270px;
@@ -2129,16 +2129,16 @@ body .theme-button:hover span {
   left: 0;
   transform: rotate(-7deg); }
 
-.about-cryto.style-two .sub-text {
+.about-brandci.style-two .sub-text {
   color: #3e5065; }
 
-.about-cryto.style-two .know-more {
+.about-brandci.style-two .know-more {
   color: #2c2c2c; }
 
-.about-cryto.style-two .text {
+.about-brandci.style-two .text {
   color: #6a7587; }
 
-.about-cryto.style-two .learn-more {
+.about-brandci.style-two .learn-more {
   width: 160px;
   line-height: 50px;
   border-radius: 25px;
@@ -2147,11 +2147,11 @@ body .theme-button:hover span {
   margin-bottom: 28px;
   background: linear-gradient(45deg, #00a6fd 0%, #00d0df 100%); }
 
-.about-cryto.style-two .icon-data {
+.about-brandci.style-two .icon-data {
   position: relative;
   height: 100%; }
 
-.about-cryto.style-two .single-box {
+.about-brandci.style-two .single-box {
   width: 310px;
   background: #fff;
   border-radius: 5px;
@@ -2160,19 +2160,19 @@ body .theme-button:hover span {
   position: absolute;
   z-index: 1; }
 
-.about-cryto.style-two .single-box:first-child {
+.about-brandci.style-two .single-box:first-child {
   top: 155px;
   left: -196px; }
 
-.about-cryto.style-two .single-box:nth-child(2) {
+.about-brandci.style-two .single-box:nth-child(2) {
   top: -125px;
   right: 50px; }
 
-.about-cryto.style-two .single-box:nth-child(3) {
+.about-brandci.style-two .single-box:nth-child(3) {
   bottom: -175px;
   right: 50px; }
 
-.about-cryto.style-two .single-box h3 {
+.about-brandci.style-two .single-box h3 {
   padding: 22px 0; }
 
 /*---------------- Our Feature Three ------------------*/
