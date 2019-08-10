@@ -23,7 +23,7 @@
 /*   12 - Testimonial Section  */
 /*   13 - Conatct Us  */
 /*   14 - Footer  */
-/*   15 - About cryto  */
+/*   15 - About BrandCi  */
 /*   16 - Our Feature Three  */
 /*   17 - Token Sale */
 /*   18 - Our Road Mape */
@@ -35,7 +35,6 @@
     Author     : Philipp C. Moser.
    
 */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900");
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,900&display=swap");
 /* Responsive CSS Document */
 /* 
@@ -50,9 +49,9 @@
     padding-right: 0 !important; } }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-  .about-cryto.style-two .single-box:first-child {
+  .about-brandci.style-two .single-box:first-child {
     left: 0; }
-  .about-cryto.style-two .single-box {
+  .about-brandci.style-two .single-box {
     width: 252px;
     padding: 60px 25px; } }
 
@@ -63,7 +62,7 @@
     padding: 65px 50px 0; } }
 
 @media (max-width: 1199px) {
-  .about-cryto.style-two .single-box {
+  .about-brandci.style-two .single-box {
     width: 100%;
     position: static;
     padding: 25px 35px;
@@ -194,13 +193,13 @@
     padding: 50px 0 20px; }
   .theme-footer .bottom-footer {
     padding: 30px 0; }
-  .about-cryto, .our-features-three {
+  .about-brandci, .our-features-three {
     padding: 80px 0 100px; }
   .our-feature-two.dark-bg {
     padding: 100px 0 80px 0; }
   .token-sale-section .overlay {
     padding: 100px 0; }
-  .about-cryto img {
+  .about-brandci img {
     margin: 40px auto 0; }
   .our-features-three .theme-title, .token-sale-section .theme-title, .our-road-map .theme-title {
     padding-bottom: 100px; }
@@ -270,20 +269,20 @@
     padding: 180px 0 150px; }
   .our-features-four, .testimonial-section .full-width, .contact-us-one.bg-color {
     padding: 120px 0 100px; }
-  .about-cryto.style-two {
+  .about-brandci.style-two {
     padding: 100px 0; }
-  .about-cryto.style-two:before, .about-cryto.style-two:after,
+  .about-brandci.style-two:before, .about-brandci.style-two:after,
   .our-features-four .shape, .apps-overview.color-three:before,
   .apps-overview.color-three:after, .apps-overview.color-three .shape,
   .our-feature-five .shape, .testimonial-section .full-width:after,
   .contact-us-one.bg-color:after, .contact-us-one.bg-color:before,
   .contact-us-one.bg-color .shape-two, .theme-footer .shape {
     display: none; }
-  .about-cryto.style-two .icon-data {
+  .about-brandci.style-two .icon-data {
     margin-top: 60px; }
-  .about-cryto.style-two .single-box {
+  .about-brandci.style-two .single-box {
     text-align: center; }
-  .about-cryto.style-two .single-box img {
+  .about-brandci.style-two .single-box img {
     margin-top: 0; }
   .our-feature-five .img-box > div {
     margin-top: 60px; }
@@ -2077,7 +2076,7 @@ body .theme-button:hover span {
 .theme-footer.dark-style .top-footer-data-wrapper .footer-list ul li a {
   color: rgba(255, 255, 255, 0.7); }
 
-/*------------------- About cryto -------------------*/
+/*------------------- About BrandCi -------------------*/
 .about-brandci {
   padding: 195px 0 140px; }
 
