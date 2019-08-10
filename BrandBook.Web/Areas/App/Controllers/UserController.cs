@@ -41,8 +41,12 @@ namespace BrandBook.Web.Areas.App.Controllers
                 });
             }
 
+            var viewModel = new AppUserViewModel()
+            {
+                AppUsers = singleAppUserViewModel
+            };
 
-            return View();
+            return View(viewModel);
         }
 
 
