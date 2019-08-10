@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.Domain.Resource;
 
 namespace BrandBook.Core.Domain.Brand
 {
@@ -16,6 +17,9 @@ namespace BrandBook.Core.Domain.Brand
 
         public int BrandPublicSettingId { get; set; }
         public BrandPublicSetting BrandPublicSetting { get; set; }
+
+        public int ImageId { get; set; }
+        public Image Image { get; set; }
 
         public int BrandSettingId { get; set; }
         public BrandSetting BrandSetting { get; set; }
