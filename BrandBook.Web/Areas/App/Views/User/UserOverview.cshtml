@@ -1,4 +1,4 @@
-﻿
+﻿@model BrandBook.Web.Framework.ViewModels.App.UserManagement.AppUserViewModel
 @{
     ViewBag.Title = "Nutzerübersicht";
 }
@@ -19,46 +19,35 @@
             <table id="appUserOverview-datatable" class="table table-bordered dt-responsive">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nutzername</th>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
-                        <th>Email</th>
-                        <th>Aktiv</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>UserName</th>
+                        <th>E-Mail</th>
                     </tr>
                 </thead>
 
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <a href="#">
-                                admin
-                            </a>
-                        </td>
-                        <td>Admin</td>
-                        <td>Admin</td>
-                        <td>admin@philipp-moser.de</td>
-                        <td>
-                            <input type="checkbox" checked="checked" disabled="disabled" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>
-                            <a href="">
-                                pmoser
-                            </a>
-                        </td>
-                        <td>Philipp</td>
-                        <td>Moser</td>
-                        <td>info@philipp-moser.de</td>
-                        <td>
-                            <input type="checkbox" checked="checked" disabled="disabled" />
-                        </td>
-                    </tr>
-                    
+              
+                
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>
+                                @user.FirstName
+                            </td>
+                            <td>
+                                @user.LastName
+                            </td>
+                            <td>
+                                @user.UserName
+                            </td>
+                            <td>
+                                @user.Email
+                            </td>
+                        </tr>
+                    }
+                
                 </tbody>
             </table>
         </div>
