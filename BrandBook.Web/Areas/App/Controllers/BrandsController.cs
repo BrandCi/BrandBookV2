@@ -80,19 +80,23 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 if (image != null)
                 {
+                    var separatedImageName = image.FileName.Split('.');
+                    var imgType = separatedImageName[separatedImageName.Length - 1];
+
+                    // Save Image in Storage
+                    var fileName = GenerateRandomImageName() + "." + imgType;
+                    var filePath = Server.MapPath("/SharedStorage/BrandImages");
+
+                    image.SaveAs(Path.Combine(filePath, fileName));
+
+
+                    
                     var brandImage = new Image()
                     {
                         Name = image.FileName,
                         ContentType = image.ContentType,
                         Category = 1
                     };
-
-                    
-                    var fileName = GenerateRandomImageName() + ".jpg";
-                    var filePath = Server.MapPath("/SharedStorage/BrandImages");
-
-                    image.SaveAs(Path.Combine(filePath, fileName));
-
 
                 }
 
@@ -114,6 +118,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(model);
         }
+        
 
 
         private string GenerateRandomImageName()
