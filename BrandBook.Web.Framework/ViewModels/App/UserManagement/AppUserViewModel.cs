@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BrandBook.Web.Framework.ViewModels.App.UserManagement
+{
+    public class AppUserViewModel : IEnumerable<SingleAppUserViewModel>
+    {
+        public List<SingleAppUserViewModel> AppUsers { get; set; }
+
+
+
+        public IEnumerator<SingleAppUserViewModel> GetEnumerator()
+        {
+            return AppUsers.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+    }
+
+    public class SingleAppUserViewModel
+    {
+
+        public int Email { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+    }
+}
