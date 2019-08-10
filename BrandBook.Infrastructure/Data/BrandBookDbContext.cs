@@ -9,6 +9,7 @@ using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Core.Domain.Brand.Font;
 using BrandBook.Core.Domain.Brand.Icon;
 using BrandBook.Core.Domain.Company;
+using BrandBook.Core.Domain.Resource;
 using BrandBook.Core.Domain.System;
 using BrandBook.Core.Domain.User;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -42,6 +43,9 @@ namespace BrandBook.Infrastructure.Data
 
         // Settings
         public DbSet<Setting> Settings { get; set; }
+
+        // Resources
+        public DbSet<Image> Images { get; set; }
 
 
 
