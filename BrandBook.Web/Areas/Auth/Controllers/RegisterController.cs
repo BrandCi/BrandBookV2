@@ -15,21 +15,21 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
-        private IAppUserRepository appUserRepository;
+        private IAppUserRepository _appUserRepository;
 
        
         #region Constructor
 
         public RegisterController()
         {
-            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
         }
 
         public RegisterController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
-            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
         }
 
         #endregion
