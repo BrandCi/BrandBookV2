@@ -34,11 +34,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll();
-            List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
+            var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
-            foreach (Brand singleBrand in allBrands)
+            foreach (var singleBrand in allBrands)
             {
-                string userGuid = User.Identity.GetUserId();
+                var userGuid = User.Identity.GetUserId();
 
                 if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
@@ -53,7 +53,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 
             }
 
-            BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
+            var viewmodel = new BrandsOverviewViewModel();
             viewmodel.Brands = singleBrandViewModels;
 
 
