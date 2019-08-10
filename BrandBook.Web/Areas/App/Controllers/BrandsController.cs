@@ -82,7 +82,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                     var fileName = GenerateRandomImageName() + "." + ExtractTypeFromImageName(image.FileName);
 
                     SaveBrandImageInStorage(image, fileName);
-
                     
                     var brandImage = new Image()
                     {
@@ -90,7 +89,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                         ContentType = image.ContentType,
                         Category = 1
                     };
-
                 }
 
 
@@ -100,7 +98,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Description = model.Description,
                     MainHexColor = model.MainColor,
                     ImageId = 1
-
                 };
 
                 _unitOfWork.BrandRepository.Add(brand);
@@ -135,7 +132,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-            return new string(Enumerable.Repeat(chars, 15)
+            return new string(Enumerable.Repeat(chars, 20)
                 .Select(s => s[random.Next(s.Length)])
                 .ToArray());
         }
