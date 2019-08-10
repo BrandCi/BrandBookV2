@@ -87,7 +87,8 @@ namespace BrandBook.Web.Areas.App.Controllers
                         Category = 1
                     };
 
-                    var fileName = image.FileName;
+                    
+                    var fileName = GenerateRandomImageName() + ".jpg";
                     var filePath = Server.MapPath("/SharedStorage/BrandImages");
 
                     image.SaveAs(Path.Combine(filePath, fileName));
@@ -112,6 +113,18 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             return View(model);
+        }
+
+
+        private string GenerateRandomImageName()
+        {
+            var random = new Random();
+
+            const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+            return new string(Enumerable.Repeat(chars, 15)
+                .Select(s => s[random.Next(s.Length)])
+                .ToArray());
         }
 
     }
