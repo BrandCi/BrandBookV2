@@ -907,6 +907,7 @@
     <Content Include="Areas\App\Views\User\RoleOverview.cshtml" />
     <Content Include="Areas\Auth\Views\Register\Success.cshtml" />
     <Content Include="Areas\App\Views\System\GoogleAnalytics.cshtml" />
+    <Content Include="Areas\App\Views\System\UserLike.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
