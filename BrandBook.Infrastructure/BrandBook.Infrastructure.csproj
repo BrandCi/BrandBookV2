@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201908101148149_AddIsActivePropertyToAppUsersTable.Designer.cs">
       <DependentUpon>201908101148149_AddIsActivePropertyToAppUsersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.cs" />
+    <Compile Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.Designer.cs">
+      <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -312,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908101148149_AddIsActivePropertyToAppUsersTable.resx">
       <DependentUpon>201908101148149_AddIsActivePropertyToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.resx">
+      <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
