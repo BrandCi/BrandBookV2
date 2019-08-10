@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Company;
+using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Infrastructure.Repositories.Company;
+using BrandBook.Infrastructure.Repositories.Resource;
 using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Infrastructure.Repositories.User;
 
@@ -33,6 +35,7 @@ namespace BrandBook.Infrastructure
         private IIconRepository _iconRepository;
         private IIconCategoryRepository _iconCategoryRepository;
         private ICompanyRepository _companyRepository;
+        private IImageRepository _imageRepository;
 
         #endregion
 
@@ -101,6 +104,10 @@ namespace BrandBook.Infrastructure
         {
             get { return _companyRepository ?? (_companyRepository = new CompanyRepository(_context)); }
         }
+        public IImageRepository ImageRepository
+        {
+            get { return _imageRepository ?? (_imageRepository = new ImageRepository(_context)); }
+        }
 
 
 
@@ -133,6 +140,7 @@ namespace BrandBook.Infrastructure
             _iconRepository = null;
             _iconCategoryRepository = null;
             _companyRepository = null;
+            _imageRepository = null;
 
             _context.Dispose();
         }
