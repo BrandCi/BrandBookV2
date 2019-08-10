@@ -76,24 +76,17 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (ModelState.IsValid)
             {
-                
 
                 if (image != null)
                 {
-                    var separatedImageName = image.FileName.Split('.');
-                    var imgType = separatedImageName[separatedImageName.Length - 1];
+                    var fileName = GenerateRandomImageName() + "." + ExtractTypeFromImageName(image.FileName);
 
-                    // Save Image in Storage
-                    var fileName = GenerateRandomImageName() + "." + imgType;
-                    var filePath = Server.MapPath("/SharedStorage/BrandImages");
-
-                    image.SaveAs(Path.Combine(filePath, fileName));
-
+                    SaveBrandImageInStorage(image, fileName);
 
                     
                     var brandImage = new Image()
                     {
-                        Name = image.FileName,
+                        Name = fileName,
                         ContentType = image.ContentType,
                         Category = 1
                     };
@@ -117,6 +110,21 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             return View(model);
+        }
+
+
+        private string ExtractTypeFromImageName(string name)
+        {
+            var separatedImageName = name.Split('.');
+
+            return separatedImageName[separatedImageName.Length - 1];
+        }
+
+        private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)
+        {
+            var filePath = Server.MapPath("/SharedStorage/BrandImages");
+
+            image.SaveAs(Path.Combine(filePath, fileName));
         }
         
 
