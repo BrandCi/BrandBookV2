@@ -196,6 +196,61 @@ namespace BrandBook.Web.Areas.App.Controllers
             return RedirectToAction("GoogleAnalytics", "System", new {area = "App"});
         }
 
+
+
+        public ActionResult UserLike()
+        {
+
+            var ul_isActive = false;
+
+            var ul_enabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+
+            if (ul_enabled.Value == "1")
+            {
+                ul_isActive = true;
+            }
+
+            var ul_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value;
+
+
+            var model = new UserLikeViewModel()
+            {
+                IsActive = ul_isActive,
+                Source = ul_trackingkey
+            };
+
+
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserLike(UserLikeViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.IsActive)
+            {
+                UpdateSettingValue("ext_userlike_enabled", "1");
+            }
+            else
+            {
+                UpdateSettingValue("ext_userlike_enabled", "0");
+            }
+
+            UpdateSettingValue("ext_userlike_source", model.Source);
+
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("UserLike", "System", new { area = "App" });
+        }
+
         #endregion
 
 
