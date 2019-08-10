@@ -42,9 +42,32 @@ namespace BrandBook.Web.Controllers
                 };
             }
 
-            
-
             return PartialView("GoogleAnalytics", model);
+        }
+
+        public PartialViewResult UserLike()
+        {
+            var ul_enabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+            UserLikeViewModel model;
+
+            if (ul_enabled.Value == "1")
+            {
+                model = new UserLikeViewModel()
+                {
+                    IsActive = true,
+                    Source = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value
+                };
+            }
+            else
+            {
+                model = new UserLikeViewModel()
+                {
+                    IsActive = false,
+                    Source = ""
+                };
+            }
+
+            return PartialView("UserLike", model);
         }
 
     }
