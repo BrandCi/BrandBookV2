@@ -50,9 +50,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Name = brand.Name,
                     ShortDescription = brand.ShortDescription,
                     Description = brand.Description,
-                    MainHexColor = brand.MainHexColor,
-                    ImageName = brand.ImageName,
-                    ImageType = brand.ImageType
+                    MainHexColor = brand.MainHexColor
                 };
 
                 return View(model);

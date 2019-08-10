@@ -44,7 +44,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                     {
                         Id = singleBrand.Id,
                         Name = singleBrand.Name,
-                        Image = singleBrand.ImageName + "." + singleBrand.ImageType,
                         ShortDescription = singleBrand.ShortDescription,
                         MainHexColor = singleBrand.MainHexColor
                     });
@@ -79,9 +78,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {
                     Name = model.Name,
                     Description = model.Description,
-                    MainHexColor = model.MainColor,
-                    ImageName = model.Image,
-                    ImageType = "png"
+                    MainHexColor = model.MainColor
                 };
                 
                 _unitOfWork.BrandRepository.Add(brand);
