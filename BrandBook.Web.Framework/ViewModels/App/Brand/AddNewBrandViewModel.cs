@@ -17,7 +17,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         [Required]
         public string MainColor { get; set; }
 
-        public string Image { get; set; }
+        public int ImageId { get; set; }
 
         [Display(Name = "Agree Terms and Conditions")]
         [Range(typeof(bool), "true", "true", ErrorMessage = "Please agree Terms and Conditions")]

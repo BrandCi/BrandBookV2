@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.Designer.cs">
       <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs" />
+    <Compile Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.Designer.cs">
+      <DependentUpon>201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -201,6 +205,7 @@
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\Resource\ImageRepository.cs" />
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
@@ -319,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.resx">
       <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.resx">
+      <DependentUpon>201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -20,7 +20,7 @@
             <h4 class="m-t-0 header-title"><b>Add a new Brand</b></h4>
 
 
-            @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <div>
@@ -56,9 +56,9 @@
                     <h3>Image</h3>
                     <section>
                         <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Image, new { @class = "control-label" })
+                            <label class="col-2 col-form-label">Brand Image</label>
                             <div class="">
-                                @Html.TextBoxFor(m => m.Image, new { @class = "form-control required" })
+                                <input type="file" class="form-control" name="image">
                             </div>
                         </div>
 
