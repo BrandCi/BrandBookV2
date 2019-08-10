@@ -89,7 +89,11 @@ namespace BrandBook.Web.Areas.App.Controllers
                         ContentType = image.ContentType,
                         Category = 1
                     };
+
+                    _unitOfWork.ImageRepository.Add(brandImage);
                 }
+
+                
 
 
                 var brand = new Brand()
@@ -97,7 +101,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     MainHexColor = model.MainColor,
-                    ImageId = 1
+                    ImageId = 1,
+                    BrandPublicSettingId = 1,
+                    BrandSettingId = 2,
+                    CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
                 };
 
                 _unitOfWork.BrandRepository.Add(brand);
