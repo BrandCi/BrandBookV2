@@ -49,7 +49,9 @@
     <body>
         <div class="main-page-wrapper">
 
-            
+            @{ Html.RenderAction("UserLike", "Layout"); }
+
+
             <!-- Navigation -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->
@@ -89,12 +91,10 @@
 
             </script>
             <!-- ./ Culture Switcher-->
-            
-
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
-                $("#acceptCookiesButton").click(function() {
-                    $.cookie("_cookieConsent", 1, {expires: 365});
+                $("#acceptCookiesButton").click(function () {
+                    $.cookie("_cookieConsent", 1, { expires: 365 });
                     $("#cookieConsentBox").fadeOut(400);
                 });
             </script>
