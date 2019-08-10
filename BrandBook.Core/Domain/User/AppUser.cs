@@ -14,6 +14,7 @@ namespace BrandBook.Core.Domain.User
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool PrivacyPolicyAccepted { get; set; }
+        public bool IsActive { get; set; }
 
         public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
