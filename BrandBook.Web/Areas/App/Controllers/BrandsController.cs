@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
+using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
@@ -70,18 +72,41 @@ namespace BrandBook.Web.Areas.App.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-        public ActionResult Add(AddNewBrandViewModel model)
+        public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
+                
+
+                if (image != null)
+                {
+                    var brandImage = new Image()
+                    {
+                        Name = image.FileName,
+                        ContentType = image.ContentType,
+                        Category = 1
+                    };
+
+                    var fileName = image.FileName;
+                    var filePath = Server.MapPath("/SharedStorage/BrandImages");
+
+                    image.SaveAs(Path.Combine(filePath, fileName));
+
+
+                }
+
+
                 var brand = new Brand()
                 {
                     Name = model.Name,
                     Description = model.Description,
-                    MainHexColor = model.MainColor
+                    MainHexColor = model.MainColor,
+                    ImageId = 1
+
                 };
-                
+
                 _unitOfWork.BrandRepository.Add(brand);
+
                 _unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
             }
