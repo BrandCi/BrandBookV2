@@ -93,7 +93,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var currentDate = DateTime.Now;
 
-            return currentDate.ToString("yyymmdd-hhmmss") + "_Translations";
+            return currentDate.ToString("yyymmdd-hhmmss") + "_Translations.csv";
         }
     }
 }
