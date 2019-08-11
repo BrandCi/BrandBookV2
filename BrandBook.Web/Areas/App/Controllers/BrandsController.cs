@@ -85,14 +85,14 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                Image brandImage;
                 if (image != null)
                 {
                     var fileName = GenerateRandomImageName() + "." + ExtractTypeFromImageName(image.FileName);
 
                     SaveBrandImageInStorage(image, fileName);
                     
-                    var brandImage = new Image()
+                    brandImage = new Image()
                     {
                         Name = fileName,
                         ContentType = image.ContentType,
@@ -100,6 +100,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                     };
 
                     _unitOfWork.ImageRepository.Add(brandImage);
+                }
+                else
+                {
+                    brandImage = _unitOfWork.ImageRepository.FindById(1);
                 }
 
                 
@@ -110,13 +114,14 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     MainHexColor = model.MainColor,
-                    ImageId = 1,
+                    ImageId = brandImage.Id,
+                    Image = brandImage,
                     BrandPublicSettingId = 1,
                     BrandSettingId = 2,
                     CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
                 };
 
-                // _unitOfWork.BrandRepository.Add(brand);
+                _unitOfWork.BrandRepository.Add(brand);
 
                 _unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
