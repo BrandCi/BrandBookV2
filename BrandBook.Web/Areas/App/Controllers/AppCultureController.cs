@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.Helpers;
+using Exception = System.Exception;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -50,7 +51,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult ExportTranslationsByCulture()
         {
+            GenerateAndSaveTranslationFile();
 
+            return RedirectToAction("Index", "AppCulture", new {area = "App"});
+        }
+
+
+        private void GenerateAndSaveTranslationFile()
+        {
             var csv = String.Join(
                 Environment.NewLine,
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
@@ -59,10 +67,15 @@ namespace BrandBook.Web.Areas.App.Controllers
             var folder = Server.MapPath("/SharedStorage/Translations/");
             var filePath = Path.Combine(folder, GenerateTranslationExportName());
 
+            try
+            {
+                System.IO.File.WriteAllText(filePath, csv);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
 
-            System.IO.File.WriteAllText(filePath, csv);
-
-            return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
 
 
