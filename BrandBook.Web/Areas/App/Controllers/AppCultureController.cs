@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.Helpers;
+using BrandBook.Web.Framework.ViewModels.App.Settings;
 using Exception = System.Exception;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -17,6 +18,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
+            var amountOfTranslations = LoadListOfTranslations().Count;
+
+            var viewModel = new AppCultureViewModel()
+            {
+                AmountOfTranslations = amountOfTranslations,
+                SelectedCultureForExport = "en-US"
+            };
+
             return View();
         }
 
@@ -49,7 +58,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public FileResult ExportTranslationsByCulture()
+        public FileResult ExportTranslationsByCulture(AppCultureViewModel model)
         {
             var translationName = GenerateTranslationExportName();
             GenerateAndSaveTranslationFile(translationName);
