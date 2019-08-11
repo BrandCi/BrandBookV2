@@ -106,9 +106,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {
                     brandImage = _unitOfWork.ImageRepository.FindById(1);
                 }
-
                 
-
 
                 var brand = new Brand()
                 {

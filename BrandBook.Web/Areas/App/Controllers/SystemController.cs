@@ -38,7 +38,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult SystemSettings()
         {
-            SystemSettingsViewModel model = new SystemSettingsViewModel()
+            var model = new SystemSettingsViewModel()
             {
                 AppTitle = GetSettingValueByKey("conf_system_apptitle"),
                 BasicUrl = GetSettingValueByKey("conf_system_baseisurl"),
@@ -73,7 +73,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult UserSettings()
         {
-            UserSettingsViewModel model = new UserSettingsViewModel()
+            var model = new UserSettingsViewModel()
             {
                 Password_ReqLength = GetSettingValueByKey("conf_user_pass_requiredlength"),
                 Password_ReqNonLetterOrDigit = GetSettingValueByKey("conf_user_pass_requirenonletterordigit"),
@@ -119,7 +119,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             // Media Settings should not be changed via UI.
             // They are part of the initial configuration!
-            MediaSettingsViewModel model = new MediaSettingsViewModel()
+            var model = new MediaSettingsViewModel()
             {
                 Key = GetSettingValueByKey("conf_media_key"),
                 Server = GetSettingValueByKey("conf_media_server")
@@ -146,22 +146,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult GoogleAnalytics()
         {
             
-            var ga_isActive = false;
+            var isActive = false;
 
-            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
 
-            if (ga_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
-                ga_isActive = true;
+                isActive = true;
             }
 
-            var ga_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
+            var trackingKey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
 
 
-            GoogleAnalyticsViewModel model = new GoogleAnalyticsViewModel()
+            var model = new GoogleAnalyticsViewModel()
             {
-                IsActive = ga_isActive,
-                TrackingKey = ga_trackingkey
+                IsActive = isActive,
+                TrackingKey = trackingKey
             };
 
             
@@ -201,22 +201,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult UserLike()
         {
 
-            var ul_isActive = false;
+            var isActive = false;
 
-            var ul_enabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
 
-            if (ul_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
-                ul_isActive = true;
+                isActive = true;
             }
 
-            var ul_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value;
+            var trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value;
 
 
             var model = new UserLikeViewModel()
             {
-                IsActive = ul_isActive,
-                Source = ul_trackingkey
+                IsActive = isActive,
+                Source = trackingkey
             };
 
 

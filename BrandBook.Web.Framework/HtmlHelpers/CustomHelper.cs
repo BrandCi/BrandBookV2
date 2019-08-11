@@ -22,8 +22,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static string ImagePath(string imageName, string imageType, string imageSection = "")
         {
-            string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
-            string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
+            var contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
+            var contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
 
             if (imageSection != "")
             {
@@ -36,7 +36,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
 
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             html.Append("<img");
 
