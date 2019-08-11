@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,7 +56,11 @@ namespace BrandBook.Web.Areas.App.Controllers
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );
 
-            System.IO.File.WriteAllText(GenerateTranslationExportName(), csv);
+            var folder = Server.MapPath("/SharedStorage/Translations/");
+            var filePath = Path.Combine(folder, GenerateTranslationExportName());
+
+
+            System.IO.File.WriteAllText(filePath, csv);
 
             return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
@@ -88,8 +93,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var currentDate = DateTime.Now;
 
-
-            return currentDate.ToString("YYYYmmdd-hhmmss") + "_Translations";
+            return currentDate.ToString("yyymmdd-hhmmss") + "_Translations";
         }
     }
 }
