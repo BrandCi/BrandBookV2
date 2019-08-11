@@ -22,10 +22,10 @@ namespace BrandBook.Web.Controllers
 
         public PartialViewResult GoogleAnalytics()
         {
-            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
             GoogleAnalyticsViewModel model;
 
-            if (ga_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
                 model = new GoogleAnalyticsViewModel()
                 {
@@ -47,10 +47,10 @@ namespace BrandBook.Web.Controllers
 
         public PartialViewResult UserLike()
         {
-            var ul_enabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
             UserLikeViewModel model;
 
-            if (ul_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
                 model = new UserLikeViewModel()
                 {

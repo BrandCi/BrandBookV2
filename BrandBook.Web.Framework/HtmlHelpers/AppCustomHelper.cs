@@ -21,7 +21,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             }
 
 
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             html.Append("<div class=\"row\"><div class=\"col-sm-12\"><div class=\"page-title-box\">");
 
@@ -55,9 +55,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString BrandOverviewItem(BrandsOverviewViewModel model)
         {
-            string contentSrv = "https://content.philipp-moser.de";
-            string appKey = "wlo0t5byw6";
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             foreach (var brand in model)
             {
@@ -70,10 +68,11 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<div class=\"card m-b-20\">");
 
                 html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\">");
-                html.Append("<img class=\"card-img-top img-fluid\" src=\"" + contentSrv + "/" + appKey + "/" + "BrandData" + "/" + brand.Image + "\" alt=\"" + brand.Name + "\">");
+                html.Append("<img class=\"card-img-top img-fluid\" src=\"/SharedStorage/BrandImages/" + brand.BrandImage.Name + "\" alt=\"" + brand.Name + "\" />");
                 html.Append("</a>");
 
                 html.Append("<div class=\"card-body\">");
+
                 html.Append("<h2 class=\"card-title\">" + brand.Name + "</h2>");
                 html.Append("<p class=\"card-text\">");
                 html.Append(brand.ShortDescription);
@@ -82,7 +81,10 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
                 html.Append(Translations.app_brandoverview_openbrand_button_title);
                 html.Append("</a>");
-                html.Append("</div></div></div>");
+
+                html.Append("</div>");
+                html.Append("</div>");
+                html.Append("</div>");
 
             }
 
@@ -92,7 +94,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString VersionInfoItem(bool leftItem, string versionNumber, string releaseDate, string description)
         {
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             if (leftItem)
             {

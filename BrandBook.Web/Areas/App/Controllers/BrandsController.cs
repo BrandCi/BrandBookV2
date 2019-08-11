@@ -8,9 +8,8 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Resources;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using Microsoft.AspNet.Identity;
@@ -21,11 +20,13 @@ namespace BrandBook.Web.Areas.App.Controllers
     {
         private IUnitOfWork _unitOfWork;
         private CompanyAuthorizationService _cmpAuthService;
+        private ImageService _imageService;
 
         public BrandsController()
         {
             this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
+            this._imageService = new ImageService();
         }
 
 
@@ -34,27 +35,36 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll();
-            List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
+            var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
-            foreach (Brand singleBrand in allBrands)
+            foreach (var singleBrand in allBrands)
             {
-                string userGuid = User.Identity.GetUserId();
+                var userGuid = User.Identity.GetUserId();
 
                 if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
+                    var brandImage = _unitOfWork.ImageRepository.FindById(singleBrand.ImageId);
+
                     singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
                     {
                         Id = singleBrand.Id,
                         Name = singleBrand.Name,
                         ShortDescription = singleBrand.ShortDescription,
-                        MainHexColor = singleBrand.MainHexColor
+                        MainHexColor = singleBrand.MainHexColor,
+                        BrandImage = new BrandImageViewModel()
+                        {
+                            Id = brandImage.Id,
+                            Name = brandImage.Name
+                        }
                     });
                 }
                 
             }
 
-            BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
-            viewmodel.Brands = singleBrandViewModels;
+            var viewmodel = new BrandsOverviewViewModel
+            {
+                Brands = singleBrandViewModels
+            };
 
 
             return View(viewmodel);
@@ -76,14 +86,14 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                Image brandImage;
                 if (image != null)
                 {
-                    var fileName = GenerateRandomImageName() + "." + ExtractTypeFromImageName(image.FileName);
+                    var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.ExtractTypeFromImageName(image.FileName);
 
                     SaveBrandImageInStorage(image, fileName);
                     
-                    var brandImage = new Image()
+                    brandImage = new Image()
                     {
                         Name = fileName,
                         ContentType = image.ContentType,
@@ -92,16 +102,19 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                     _unitOfWork.ImageRepository.Add(brandImage);
                 }
-
+                else
+                {
+                    brandImage = _unitOfWork.ImageRepository.FindById(1);
+                }
                 
-
 
                 var brand = new Brand()
                 {
                     Name = model.Name,
                     Description = model.Description,
                     MainHexColor = model.MainColor,
-                    ImageId = 1,
+                    ImageId = brandImage.Id,
+                    Image = brandImage,
                     BrandPublicSettingId = 1,
                     BrandSettingId = 2,
                     CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
@@ -117,12 +130,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        private string ExtractTypeFromImageName(string name)
-        {
-            var separatedImageName = name.Split('.');
 
-            return separatedImageName[separatedImageName.Length - 1];
-        }
 
         private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)
         {
@@ -130,19 +138,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             image.SaveAs(Path.Combine(filePath, fileName));
         }
-        
 
-
-        private string GenerateRandomImageName()
-        {
-            var random = new Random();
-
-            const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-            return new string(Enumerable.Repeat(chars, 20)
-                .Select(s => s[random.Next(s.Length)])
-                .ToArray());
-        }
 
     }
 }   

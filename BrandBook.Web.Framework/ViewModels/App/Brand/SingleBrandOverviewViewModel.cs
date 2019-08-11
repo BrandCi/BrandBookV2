@@ -13,5 +13,12 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         public string Image { get; set; }
         public string ShortDescription { get; set; }
         public string MainHexColor { get; set; }
+        public BrandImageViewModel BrandImage { get; set; }
+    }
+
+    public class BrandImageViewModel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

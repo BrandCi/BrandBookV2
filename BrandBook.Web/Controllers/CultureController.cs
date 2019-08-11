@@ -15,7 +15,7 @@ namespace BrandBook.Web.Controllers
         {
             culture = CultureHelper.GetImplementedCulture(culture);
 
-            HttpCookie cookie = Request.Cookies["_culture"];
+            var cookie = Request.Cookies["_culture"];
 
             if (cookie != null)
             {
@@ -24,9 +24,11 @@ namespace BrandBook.Web.Controllers
             }
             else
             {
-                cookie = new HttpCookie("_culture");
-                cookie.Value = culture;
-                cookie.Expires = DateTime.Now.AddYears(1);
+                cookie = new HttpCookie("_culture")
+                {
+                    Value = culture,
+                    Expires = DateTime.Now.AddYears(1)
+                };
             }
 
             Response.Cookies.Add(cookie);

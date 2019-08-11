@@ -43,7 +43,7 @@ namespace BrandBook.Web.Framework.Controllers
 
             string cultureName = null;
 
-            HttpCookie cultureCookie = Request.Cookies["_culture"];
+            var cultureCookie = Request.Cookies["_culture"];
             if (cultureCookie != null)
             {
                 cultureName = cultureCookie.Value;

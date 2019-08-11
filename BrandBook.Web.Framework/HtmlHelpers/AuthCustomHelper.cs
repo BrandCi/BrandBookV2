@@ -14,7 +14,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
         public static IHtmlString RenderBackground(string imageName = "", string imageType = "")
         {
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             html.Append("<div class=\"img-holder\">");
                 html.Append("<div class=\"bg\"></div>");

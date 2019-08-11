@@ -25,7 +25,7 @@ namespace BrandBook.Web.Controllers
             if (ModelState.IsValid)
             {
 
-                StringBuilder message = new StringBuilder();
+                var message = new StringBuilder();
 
                 message.Append("Name: " + model.Name + "<br />");
                 message.Append("Email: " + model.Email + "<br />");
