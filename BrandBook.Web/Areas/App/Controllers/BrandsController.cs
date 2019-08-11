@@ -42,19 +42,28 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
+                    var brandImage = _unitOfWork.ImageRepository.FindById(singleBrand.ImageId);
+
                     singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
                     {
                         Id = singleBrand.Id,
                         Name = singleBrand.Name,
                         ShortDescription = singleBrand.ShortDescription,
-                        MainHexColor = singleBrand.MainHexColor
+                        MainHexColor = singleBrand.MainHexColor,
+                        BrandImage = new BrandImageViewModel()
+                        {
+                            Id = brandImage.Id,
+                            Name = brandImage.Name
+                        }
                     });
                 }
                 
             }
 
-            var viewmodel = new BrandsOverviewViewModel();
-            viewmodel.Brands = singleBrandViewModels;
+            var viewmodel = new BrandsOverviewViewModel
+            {
+                Brands = singleBrandViewModels
+            };
 
 
             return View(viewmodel);
@@ -107,7 +116,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                     CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
                 };
 
-                _unitOfWork.BrandRepository.Add(brand);
+                // _unitOfWork.BrandRepository.Add(brand);
 
                 _unitOfWork.SaveChanges();
                 return RedirectToAction("Overview", "Brands", new {area = "App"});
