@@ -1,4 +1,5 @@
-﻿@using BrandBook.Resources
+﻿@model BrandBook.Web.Framework.ViewModels.App.Settings.AppCultureViewModel
+@using BrandBook.Resources
 
 @{
     ViewBag.Title = "Sprachauswahl";
@@ -81,23 +82,30 @@
             <div class="card m-b-20 card-body">
                 <h4 class="card-title">Export Translations</h4>
                 <p class="card-text">
+                    
+                    <p>
+                        Anzahl Default Übersetzungen: 
+                    </p>
 
-                    @using (Html.BeginForm("ExportTranslationsByCulture", "AppCulture", FormMethod.Post, new { @class = "form-validation", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
 
-                        <div class="form-group row">
-                            <div class="col-6">
-                                <select class="form-control" name="exportCulture">
-                                    <option value="de-de">@Translations.system_culture_de_de_full [@Translations.system_culture_de_de]</option>
-                                    <option value="en-us">@Translations.system_culture_en_us_full [@Translations.system_culture_en_us]</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-custom">Export&nbsp;&nbsp;<i class="fas fa-download"></i></button>
-                            </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <select class="form-control" name="exportCulture">
+                                <option value="de-de">@Translations.system_culture_de_de_full [@Translations.system_culture_de_de]</option>
+                                <option value="en-us">@Translations.system_culture_en_us_full [@Translations.system_culture_en_us]</option>
+                            </select>
                         </div>
-                    }
+                        <div class="col-4">
+                            <a href="@Url.Action("ExportTranslationsByCulture", "AppCulture", new {area = "App"})" target="_blank" class="btn btn-primary btn-custom">
+                                <i class="fas fa-download"></i>
+                                &nbsp;
+                                Export
+                            </a>
+                        </div>
+                    </div>
+
                 </p>
             </div>
         </div>
