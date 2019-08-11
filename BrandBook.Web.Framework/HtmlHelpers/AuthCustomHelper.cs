@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Web;
-using System.Web.Mvc;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Web;
-using System.Web.WebPages;
 using BrandBook.Resources;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 

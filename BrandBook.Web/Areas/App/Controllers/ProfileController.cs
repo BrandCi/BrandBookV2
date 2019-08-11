@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Profile;
 using Microsoft.AspNet.Identity;

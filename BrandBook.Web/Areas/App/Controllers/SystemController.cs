@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BrandBook.Core;
-using BrandBook.Core.Domain.System;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
-using BrandBook.Web.Framework.ViewModels.Auth;
 using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
 
 namespace BrandBook.Web.Areas.App.Controllers

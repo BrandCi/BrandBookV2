@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Security.AccessControl;
 using BrandBook.Resources;
 
 namespace BrandBook.Web.Framework.ViewModels.Auth
