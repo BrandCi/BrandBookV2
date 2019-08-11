@@ -9,6 +9,7 @@ using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Resources;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using Microsoft.AspNet.Identity;
@@ -19,11 +20,13 @@ namespace BrandBook.Web.Areas.App.Controllers
     {
         private IUnitOfWork _unitOfWork;
         private CompanyAuthorizationService _cmpAuthService;
+        private ImageService _imageService;
 
         public BrandsController()
         {
             this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
+            this._imageService = new ImageService();
         }
 
 
@@ -86,7 +89,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Image brandImage;
                 if (image != null)
                 {
-                    var fileName = GenerateRandomImageName() + "." + ExtractTypeFromImageName(image.FileName);
+                    var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.ExtractTypeFromImageName(image.FileName);
 
                     SaveBrandImageInStorage(image, fileName);
                     
@@ -129,12 +132,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        private string ExtractTypeFromImageName(string name)
-        {
-            var separatedImageName = name.Split('.');
 
-            return separatedImageName[separatedImageName.Length - 1];
-        }
 
         private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)
         {
@@ -142,19 +140,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             image.SaveAs(Path.Combine(filePath, fileName));
         }
-        
 
-
-        private string GenerateRandomImageName()
-        {
-            var random = new Random();
-
-            const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-            return new string(Enumerable.Repeat(chars, 20)
-                .Select(s => s[random.Next(s.Length)])
-                .ToArray());
-        }
 
     }
 }   
