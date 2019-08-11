@@ -196,18 +196,43 @@
                 </a>
 
 
-                <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-danger btn-custom mr-2">
+             
+                <button type="button" class="btn btn-danger btn-custom mr-2" data-toggle="modal" data-target="#DeleteConfirmation">
                     <i class="fas fa-trash"></i>
                     &nbsp;
                     Delete
-                </a>
-                <!--
-    <button class="btn btn-danger btn-custom mr-2" id="delete-warning">
-        <i class="fas fa-trash"></i>
-        &nbsp;
-        Delete
-    </button>
-    -->
+                </button>
+
+
+
+                <div id="DeleteConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="DeleteConfirmationLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="DeleteConfirmationLabel">Delete: @Model.GeneralSettingsViewModel.Name</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    Do you really want to delete this Brand and all depending files and data?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Abort, Stop!</button>
+
+                                <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-danger btn-custom mr-2">
+                                    <i class="fas fa-trash"></i>
+                                    &nbsp;
+                                    Delete it.
+                                </a>
+
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
             </div>
 
         </div>
