@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
@@ -16,6 +12,7 @@ using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
+using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -278,12 +275,34 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             var brand = _unitOfWork.BrandRepository.FindById(id);
-
+            var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
+            
             _unitOfWork.BrandRepository.Remove(brand);
+            RemoveBrandImage(brandImage);
+
             _unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
+        }
+
+
+
+        private void RemoveBrandImage(Image brandImage)
+        {
+            var fullPath = Request.MapPath("~/SharedStorage/BrandImages/" + brandImage.Name);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+
+                _unitOfWork.ImageRepository.Remove(brandImage);
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+
         }
 
 
