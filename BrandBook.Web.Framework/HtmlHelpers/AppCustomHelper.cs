@@ -55,8 +55,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString BrandOverviewItem(BrandsOverviewViewModel model)
         {
-            string contentSrv = "https://content.philipp-moser.de";
-            string appKey = "wlo0t5byw6";
             StringBuilder html = new StringBuilder();
 
             foreach (var brand in model)
@@ -70,7 +68,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<div class=\"card m-b-20\">");
 
                 html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\">");
-                html.Append("<img class=\"card-img-top img-fluid\" src=\"" + contentSrv + "/" + appKey + "/" + "BrandData" + "/" + brand.Image + "\" alt=\"" + brand.Name + "\">");
+                html.Append("<img class=\"card-img-top img-fluid\" src=\"/SharedStorage/BrandImages/" + brand.BrandImage.Name + "\" alt=\"" + brand.Name + "\" />");
+                // html.Append("<img class=\"card-img-top img-fluid\" src=\"" + contentSrv + "/" + appKey + "/" + "BrandData" + "/" + brand.Image + "\" alt=\"" + brand.Name + "\">");
                 html.Append("</a>");
 
                 html.Append("<div class=\"card-body\">");
