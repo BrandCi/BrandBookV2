@@ -51,13 +51,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult ExportTranslationsByCulture()
         {
-            GenerateAndSaveTranslationFile();
+            var translationName = GenerateTranslationExportName();
+            GenerateAndSaveTranslationFile(translationName);
 
             return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
 
 
-        private void GenerateAndSaveTranslationFile()
+        private void GenerateAndSaveTranslationFile(string translationName)
         {
             var csv = String.Join(
                 Environment.NewLine,
@@ -65,7 +66,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             );
 
             var folder = Server.MapPath("/SharedStorage/Translations/");
-            var filePath = Path.Combine(folder, GenerateTranslationExportName());
+            var filePath = Path.Combine(folder, translationName);
 
             try
             {
