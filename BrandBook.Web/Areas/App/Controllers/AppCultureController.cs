@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
@@ -11,6 +12,18 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
+
+            Resources
+                .Translations
+                .ResourceManager
+                .GetResourceSet(
+                    CultureInfo.CreateSpecificCulture("de-DE"), 
+                    false, 
+                    true);
+
+
+
+
             return View();
         }
 
