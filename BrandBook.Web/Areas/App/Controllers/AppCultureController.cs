@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
@@ -13,16 +16,20 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult Index()
         {
 
-            Resources
+
+            var resourceSet = Resources
                 .Translations
                 .ResourceManager
                 .GetResourceSet(
-                    CultureInfo.CreateSpecificCulture("de-DE"), 
-                    false, 
+                    CultureInfo.CreateSpecificCulture("de-DE"),
+                    false,
                     true);
 
-
-
+            foreach (DictionaryEntry item in resourceSet)
+            {
+                var test = item.Value;
+            }
+            
 
             return View();
         }
