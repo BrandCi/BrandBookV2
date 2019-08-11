@@ -15,22 +15,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
-
-
-            var resourceSet = Resources
-                .Translations
-                .ResourceManager
-                .GetResourceSet(
-                    CultureInfo.CreateSpecificCulture("de-DE"),
-                    false,
-                    true);
-
-            foreach (DictionaryEntry item in resourceSet)
-            {
-                var test = item.Value;
-            }
-            
-
             return View();
         }
 
@@ -65,7 +49,47 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult ExportTranslationsByCulture()
         {
+
+            var csv = String.Join(
+                Environment.NewLine,
+                LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
+            );
+
+            System.IO.File.WriteAllText(GenerateTranslationExportName(), csv);
+
             return RedirectToAction("Index", "AppCulture", new {area = "App"});
+        }
+
+
+
+        private Dictionary<string, string> LoadListOfTranslations()
+        {
+            var keyValuePairs = new Dictionary<string, string>();
+
+            var resourceSet = Resources
+                                .Translations
+                                .ResourceManager
+                                .GetResourceSet(
+                                    CultureInfo.CreateSpecificCulture("de-DE"),
+                                    false,
+                                    true);
+            
+            foreach (DictionaryEntry item in resourceSet)
+            {
+                keyValuePairs.Add(item.Key.ToString(), item.Value.ToString());
+            }
+
+            return keyValuePairs;
+
+        }
+
+
+        private string GenerateTranslationExportName()
+        {
+            var currentDate = DateTime.Now;
+
+
+            return currentDate.ToString("YYYYmmdd-hhmmss") + "_Translations";
         }
     }
 }
