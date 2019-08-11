@@ -35,7 +35,6 @@
     Author     : Philipp C. Moser.
    
 */
-@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,900&display=swap");
 /* Responsive CSS Document */
 /* 
     Description: BrandBook
@@ -732,7 +731,7 @@ div#cookieConsentBox {
   background: #f4f4f4; }
 
 body {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-weight: normal;
   color: rgba(48, 61, 83, 0.7);
   font-size: 18px;
@@ -749,22 +748,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #283249; }
 
 h1 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 70px;
   line-height: 75px; }
 
 h2 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 50px; }
 
 h3 {
   font-size: 28px;
   font-weight: normal;
-  font-family: 'Nunito', Arial, sans-serif; }
+  font-family: 'Josefin Sans', Arial, sans-serif; }
 
 h4 {
   font-size: 24px;
-  font-family: 'Nunito', Arial, sans-serif; }
+  font-family: 'Josefin Sans', Arial, sans-serif; }
 
 h5 {
   font-size: 22px;
@@ -772,7 +771,7 @@ h5 {
 
 h6 {
   font-size: 20px;
-  font-family: 'Nunito', Arial, sans-serif; }
+  font-family: 'Josefin Sans', Arial, sans-serif; }
 
 p {
   line-height: 32px; }
@@ -837,7 +836,7 @@ input, textarea {
 
 /*--------------- Theme Title ------------*/
 .theme-title h2 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 55px;
   line-height: 65px;
   font-weight: normal; }
@@ -851,7 +850,7 @@ input, textarea {
 
 /*---------------- Theme Button --------------*/
 body .theme-button {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-transform: capitalize;
@@ -960,7 +959,7 @@ body .theme-button:hover span {
   z-index: 9; }
 
 #mega-menu-holder ul > li > a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   position: relative;
   padding: 7px 0 0;
   display: block;
@@ -1193,7 +1192,7 @@ body .theme-button:hover span {
   padding: 20px 0 50px; }
 
 .theme-banner-two .main-text-wrapper .button-group li a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   line-height: 48px;
   border: 1px solid #fff;
   border-radius: 3px;
@@ -1339,7 +1338,7 @@ body .theme-button:hover span {
   text-align: left; }
 
 .stock-market-price #market-rate .main-wrapper .amount {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 28px;
   color: #1a1a1a;
   padding-bottom: 5px; }
@@ -1470,7 +1469,7 @@ body .theme-button:hover span {
   padding: 0 0 60px 60px; }
 
 .our-feature-two .text .number {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-weight: 900;
   font-size: 60px;
   color: #d8d8d8;
@@ -1503,7 +1502,7 @@ body .theme-button:hover span {
   line-height: 60px; }
 
 .our-feature-two .text .learn-more {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 22px;
   color: #3c3c3c; }
 
@@ -1610,7 +1609,7 @@ body .theme-button:hover span {
   padding: 6px 0 25px; }
 
 .apps-overview .inner-wrapper .text h6 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 24px;
   color: #fff;
   padding-bottom: 20px; }
@@ -1624,7 +1623,7 @@ body .theme-button:hover span {
   margin-right: 15px; }
 
 .apps-overview .inner-wrapper .button-group li a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   width: 170px;
   line-height: 55px;
   text-align: center;
@@ -1708,7 +1707,7 @@ body .theme-button:hover span {
   text-align: center; }
 
 .theme-counter .bg-image .counter-wrapper .number {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 36px;
   color: #1b1b1b; }
 
@@ -1716,7 +1715,7 @@ body .theme-button:hover span {
   font-size: 65px; }
 
 .theme-counter .bg-image .counter-wrapper p {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 24px;
   color: #a9a9a9; }
 
@@ -1756,7 +1755,7 @@ body .theme-button:hover span {
   bottom: 61px; }
 
 .our-work-progress .main-wrapper .progress-slider-wrapper .inner-block h3 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   line-height: 30px;
   color: #1b1b1b;
   padding: 27px 0 25px; }
@@ -1912,7 +1911,7 @@ body .theme-button:hover span {
   z-index: 1; }
 
 .contact-us-one form label {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   color: #3a3c4e;
   display: block;
   margin-bottom: 10px; }
@@ -1931,7 +1930,7 @@ body .theme-button:hover span {
   box-shadow: 0px 3px 16px 0px rgba(63, 53, 53, 0.07); }
 
 .contact-us-one form button {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   width: 220px;
   height: 55px;
   border-radius: 4px;
@@ -2095,7 +2094,7 @@ body .theme-button:hover span {
   padding-bottom: 32px; }
 
 .about-brandci .know-more {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 20px;
   color: #fff; }
 
@@ -2292,7 +2291,7 @@ body .theme-button:hover span {
   text-align: right; }
 
 .token-sale-section .token-sale-text .title-wrapper .stage {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   width: 100px;
   line-height: 30px;
   display: inline-block;
@@ -2305,7 +2304,7 @@ body .theme-button:hover span {
   background: #efd421; }
 
 .token-sale-section .token-sale-text .title-wrapper .title {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 72px;
   color: #fff;
   line-height: 70px;
@@ -2322,7 +2321,7 @@ body .theme-button:hover span {
   right: -175px; }
 
 .token-sale-section .token-sale-text .meta-data-wrapper .date-range {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 22px;
   color: #fff;
   padding-bottom: 38px; }
@@ -2333,7 +2332,7 @@ body .theme-button:hover span {
 
 .token-sale-section .token-sale-text .meta-data-wrapper .table tr td:first-child {
   width: 30%;
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 20px;
   color: #efd421; }
 
@@ -2366,7 +2365,7 @@ body .theme-button:hover span {
   margin-bottom: 38px; }
 
 .token-sale-section .token-sale-allocation .allocation-box ul li h3 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 35px;
   margin-bottom: -3px; }
 
@@ -2436,7 +2435,7 @@ body .theme-button:hover span {
   padding: 108px 0; }
 
 .our-road-map .time-line-wrapper #timeline-frame .event__date {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 22px;
   color: #fff;
   font-weight: normal; }
@@ -2524,7 +2523,7 @@ body .theme-button:hover span {
   border: none; }
 
 .accordion-one .panel-heading h6 a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-weight: 700;
   border: none;
   font-size: 20px;
@@ -2616,7 +2615,7 @@ body .theme-button:hover span {
   opacity: 0.5; }
 
 .contact-section-dark form button {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   width: 220px;
   height: 55px;
   border-radius: 4px;
@@ -2709,7 +2708,7 @@ body .theme-button:hover span {
   margin: 0 auto; }
 
 .our-features-four .single-feature h3 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   padding: 45px 0 15px; }
 
 .our-features-four .single-feature a {
@@ -2791,7 +2790,7 @@ body .theme-button:hover span {
   padding-top: 15px; }
 
 .our-feature-five .text .learn-more {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 22px;
   color: #3c3c3c; }
 
@@ -2857,7 +2856,7 @@ body .theme-button:hover span {
   z-index: 1; }
 
 .theme-inner-banner h2 {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 50px; }
 
 .theme-inner-banner ul {
@@ -2892,7 +2891,7 @@ body .theme-button:hover span {
   text-transform: capitalize; }
 
 .blog-grid-style .single-blog-post .title a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 32px;
   margin: 20px 0 30px 0;
   color: #283249;
@@ -2913,7 +2912,7 @@ body .theme-button:hover span {
   padding: 0 0 70px; }
 
 .theme-main-sidebar .sidebar-title {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-weight: 700;
   position: relative;
   font-size: 22px;
@@ -2927,7 +2926,7 @@ body .theme-button:hover span {
   border-bottom: 1px solid #f4f4f4; }
 
 .theme-main-sidebar .sidebar-trending-post .single-trending-post .post h6 a {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-weight: 700;
   line-height: 28px;
   font-size: 18px;
