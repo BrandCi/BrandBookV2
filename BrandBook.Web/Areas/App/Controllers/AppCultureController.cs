@@ -49,12 +49,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult ExportTranslationsByCulture()
+        public FileResult ExportTranslationsByCulture()
         {
             var translationName = GenerateTranslationExportName();
             GenerateAndSaveTranslationFile(translationName);
 
-            return RedirectToAction("Index", "AppCulture", new {area = "App"});
+            return File(GetAbsoluteFilePath(translationName), "csv");
+
+            // return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
 
 
@@ -64,13 +66,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Environment.NewLine,
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );
-
-            var folder = Server.MapPath("/SharedStorage/Translations/");
-            var filePath = Path.Combine(folder, translationName);
-
+            
             try
             {
-                System.IO.File.WriteAllText(filePath, csv);
+                System.IO.File.WriteAllText(GetAbsoluteFilePath(translationName), csv);
             }
             catch (Exception ex)
             {
@@ -89,7 +88,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                                 .Translations
                                 .ResourceManager
                                 .GetResourceSet(
-                                    CultureInfo.CreateSpecificCulture("de-DE"),
+                                    CultureInfo.CreateSpecificCulture("en-US"),
                                     false,
                                     true);
             
@@ -108,6 +107,13 @@ namespace BrandBook.Web.Areas.App.Controllers
             var currentDate = DateTime.Now;
 
             return currentDate.ToString("yyymmdd-hhmmss") + "_Translations.csv";
+        }
+
+        private string GetAbsoluteFilePath(string translationName)
+        {
+            var folder = Server.MapPath("/SharedStorage/Translations/");
+
+            return Path.Combine(folder, translationName);
         }
     }
 }
