@@ -8,8 +8,6 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
