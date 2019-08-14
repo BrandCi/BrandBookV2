@@ -10,7 +10,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "Administrator")]
     public class SystemController : AppControllerBase
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public SystemController()
         {

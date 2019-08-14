@@ -18,8 +18,8 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandController : AppControllerBase
     {
-        private IUnitOfWork _unitOfWork;
-        private CompanyAuthorizationService _cmpAuthService;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly CompanyAuthorizationService _cmpAuthService;
 
         public BrandController()
         {

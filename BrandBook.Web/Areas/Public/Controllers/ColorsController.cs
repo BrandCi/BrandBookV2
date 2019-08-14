@@ -7,7 +7,7 @@ namespace BrandBook.Web.Areas.Public.Controllers
 {
     public class ColorsController : PublicControllerBase
     {
-        private IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork unitOfWork;
 
         public ColorsController()
         {

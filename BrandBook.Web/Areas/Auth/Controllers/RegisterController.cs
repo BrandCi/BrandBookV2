@@ -15,7 +15,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
-        private IAppUserRepository _appUserRepository;
+        private readonly IAppUserRepository _appUserRepository;
 
        
         #region Constructor

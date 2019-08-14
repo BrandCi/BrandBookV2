@@ -21,7 +21,7 @@ namespace BrandBook.Web.Framework.Controllers
 
         #endregion
 
-        private ISettingRepository settingRepository;
+        private readonly ISettingRepository settingRepository;
 
         public BaseController()
         {

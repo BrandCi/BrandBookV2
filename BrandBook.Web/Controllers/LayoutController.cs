@@ -9,7 +9,7 @@ namespace BrandBook.Web.Controllers
     public class LayoutController : FrontendControllerBase
     {
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public LayoutController()
         {

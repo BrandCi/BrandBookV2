@@ -10,7 +10,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class ProfileController : AppControllerBase
     {
 
-        private IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork unitOfWork;
 
         public ProfileController()
         {

@@ -11,7 +11,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class UserController : AppControllerBase
     {
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public UserController()
         {

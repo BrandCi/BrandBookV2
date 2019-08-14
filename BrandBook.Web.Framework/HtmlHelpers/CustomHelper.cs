@@ -9,7 +9,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     public static class CustomHelper
     {
 
-        private static ISettingRepository settingRepository;
+        private static readonly ISettingRepository settingRepository;
 
         static CustomHelper()
         {
