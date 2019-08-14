@@ -27,9 +27,8 @@
             <h4 class="m-t-0 header-title">
                 @Model.Name
             </h4>
-
             <div class="brand-title-container">
-                @CustomHelper.Image("BrandData/" + Model.ImageName, Model.ImageType, "brand-title-img")
+                @CustomHelper.SharedStorageImage(Model.Image.Name, "", "brand-title-img")
             </div>
 
 

@@ -40,6 +40,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             try
             {
                 var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+                var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
                 var model = new BrandOverviewViewModel()
                 {
@@ -47,7 +48,12 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Name = brand.Name,
                     ShortDescription = brand.ShortDescription,
                     Description = brand.Description,
-                    MainHexColor = brand.MainHexColor
+                    MainHexColor = brand.MainHexColor,
+                    Image = new BrandImageViewModel()
+                    {
+                        Id = brandImage.Id,
+                        Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
+                    }
                 };
 
                 return View(model);

@@ -62,6 +62,41 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             return new HtmlString(html.ToString());
         }
 
+
+        public static IHtmlString SharedStorageImage(string imageNameAndType, string classes = "", string styles = "", string additionalAttributes = "")
+        {
+           
+
+            var html = new StringBuilder();
+
+            html.Append("<img");
+
+            html.Append(" src=\"");
+            html.Append(imageNameAndType);
+            html.Append("\" ");
+
+            if (classes != "")
+            {
+                html.Append(" class=\"" + classes + "\" ");
+            }
+
+            if (styles != "")
+            {
+                html.Append(" style=\"" + styles + "\" ");
+            }
+
+            if (additionalAttributes != "")
+            {
+                html.Append(" " + additionalAttributes + " ");
+            }
+
+
+
+            html.Append(" />");
+
+            return new HtmlString(html.ToString());
+        }
+
     }
 
 }
