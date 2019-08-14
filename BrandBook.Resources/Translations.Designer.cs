@@ -799,7 +799,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access to your brand. From everywhere..
+        ///   Looks up a localized string similar to Creation.
         /// </summary>
         public static string frontend_home_index_features_feature_01_title {
             get {
@@ -817,7 +817,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expand your brand. Well planned..
+        ///   Looks up a localized string similar to Management.
         /// </summary>
         public static string frontend_home_index_features_feature_02_title {
             get {
@@ -835,7 +835,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continuous improvement. Thanks to AI..
+        ///   Looks up a localized string similar to Improvement.
         /// </summary>
         public static string frontend_home_index_features_feature_03_title {
             get {
