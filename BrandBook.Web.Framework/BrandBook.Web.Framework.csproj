@@ -112,6 +112,7 @@
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\BrandImageViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\ColorCategoryViewModel.cs" />
