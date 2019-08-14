@@ -27,7 +27,7 @@
                     <h3>Details</h3>
                     <section>
                         <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Name, new { @class = "control-label"})
+                            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
                             <div class="">
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control required" })
                             </div>
@@ -36,7 +36,14 @@
                         <div class="form-group clearfix">
                             @Html.LabelFor(m => m.Description, new { @class = "control-label" })
                             <div class="">
-                                @Html.TextAreaFor(m => m.Description, new {@class = "form-control"})
+                                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            @Html.LabelFor(m => m.ShortDescription, new { @class = "control-label" })
+                            <div class="">
+                                @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control" })
                             </div>
                         </div>
 
@@ -47,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="mainColorInput">#</span>
                                     </div>
-                                    @Html.TextBoxFor(m => m.MainColor, new { @class = "form-control required", placeholder = "193357", data_bind= "aria-describedby=mainColorInput" })
+                                    @Html.TextBoxFor(m => m.MainColor, new { @class = "form-control required", placeholder = "193357", data_bind = "aria-describedby=mainColorInput" })
                                 </div>
                             </div>
                         </div>

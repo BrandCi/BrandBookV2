@@ -110,6 +110,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {
                     Name = model.Name,
                     Description = model.Description,
+                    ShortDescription = model.ShortDescription,
                     MainHexColor = model.MainColor,
                     ImageId = brandImage.Id,
                     Image = brandImage,
