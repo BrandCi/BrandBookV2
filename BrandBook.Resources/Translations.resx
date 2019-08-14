@@ -498,4 +498,7 @@
   <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
     <value>Share your brand. With everybody you want.</value>
   </data>
+  <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
+    <value>Brand Creation</value>
+  </data>
 </root>

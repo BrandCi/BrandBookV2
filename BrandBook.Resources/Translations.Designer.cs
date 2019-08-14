@@ -1123,6 +1123,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brand Creation.
+        /// </summary>
+        public static string frontend_navigation_product_brandcreation {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandcreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Brand Improvement (AI).
         /// </summary>
         public static string frontend_navigation_product_brandimprovement {
