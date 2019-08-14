@@ -790,7 +790,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand..
+        ///   Looks up a localized string similar to Create and document your company branding step by step. Our intelligent editor helps you with your existing data..
         /// </summary>
         public static string frontend_home_index_features_feature_01_description {
             get {
@@ -808,7 +808,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A redesign of your brand contributes to the brand&apos;s success through intelligent advance planning..
+        ///   Looks up a localized string similar to Through many tips and tricks you will learn how to use your brand to advantage and provide it to others..
         /// </summary>
         public static string frontend_home_index_features_feature_02_description {
             get {
@@ -826,7 +826,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Through the use of Artificial Intelligence, we provide you and your brand a steady improvement..
+        ///   Looks up a localized string similar to Continuous and automated tests constantly check your brand for optimization possibilities and implement them as you wish..
         /// </summary>
         public static string frontend_home_index_features_feature_03_description {
             get {
