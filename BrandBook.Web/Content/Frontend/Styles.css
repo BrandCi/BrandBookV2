@@ -611,6 +611,9 @@ a.btn-pricing {
 .cultureSelection label.checked {
   border-bottom: 5px solid green; }
 
+.cultureSelection .flag-icon {
+  opacity: 0.25; }
+
 /*
     Cookie-Consent
 */
@@ -686,6 +689,10 @@ div#cookieConsentBox {
   color: black; }
   .bb-contact-form input[type="text"]::placeholder, .bb-contact-form textarea::placeholder {
     color: black; }
+
+@media (max-width: 991px) {
+  .theme-footer {
+    text-align: center; } }
 
 /*** 
 
