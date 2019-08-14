@@ -972,6 +972,7 @@
     <Content Include="Content\App\_Customize.scss" />
     <Content Include="Plugins\datatables\json\scroller-demo.json" />
     <Content Include="Content\Frontend\_Definitions.scss" />
+    <Content Include="Content\Frontend\_Customize.Responsive.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Frontend\theme.js" />
