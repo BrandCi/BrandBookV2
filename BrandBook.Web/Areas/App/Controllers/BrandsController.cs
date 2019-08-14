@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -32,7 +33,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brands
         public ActionResult Overview()
         {
-            var allBrands = _unitOfWork.BrandRepository.GetAll();
+            var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
             var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (var singleBrand in allBrands)
