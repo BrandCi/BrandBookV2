@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace BrandBook.Web.Framework.Helpers
 {
@@ -63,6 +64,12 @@ namespace BrandBook.Web.Framework.Helpers
             return _cultures[0];
         }
 
+        public static string GetCurrentNeutralCulture()
+        {
+            return GetNeutralCulture(Thread.CurrentThread.CurrentCulture.Name);
+        }
+
+
         public static string GetNeutralCulture(string name)
         {
             if (!name.Contains("-"))
@@ -74,5 +81,6 @@ namespace BrandBook.Web.Framework.Helpers
                 return name.Split('-')[0];
             }
         }
+
     }
 }
