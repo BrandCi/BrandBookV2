@@ -42,12 +42,12 @@ namespace BrandBook.Web.Framework.Helpers
                 return GetDefaultCulture();
             }
 
-            if (_validCultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() == 0)
+            if (!_validCultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return GetDefaultCulture();
             }
 
-            if (_cultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() > 0)
+            if (_cultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return name;
             }
