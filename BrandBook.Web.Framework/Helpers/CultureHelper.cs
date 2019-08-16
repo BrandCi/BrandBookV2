@@ -82,5 +82,9 @@ namespace BrandBook.Web.Framework.Helpers
             }
         }
 
+        public static bool IsRightToLeft()
+        {
+            return Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft;
+        }
     }
 }
