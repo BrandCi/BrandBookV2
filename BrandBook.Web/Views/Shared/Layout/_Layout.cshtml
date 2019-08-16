@@ -1,52 +1,56 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
+﻿@using BrandBook.Web.Framework.Helpers
+@using BrandBook.Web.Framework.HtmlHelpers
 @{
     HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
 }
+
+
 <!-- Insertion -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Brand Management, BrandBook">
-    <meta name="author" content="Philipp C. Moser">
-    <meta name="description" content="Brand Book V2">
+<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRightToLeft() ? "rtl" : "ltr")">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Brand Management, BrandBook">
+        <meta name="author" content="Philipp C. Moser">
+        <meta name="description" content="Brand Book V2">
 
-    <!-- For IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- For Resposive Device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- For IE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- For Resposive Device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - @ViewBag.AppTitle</title>
-
-
-    @Styles.Render("~/Content/Css/Frontend/Main")
-    @Styles.Render("~/Content/Frontend/Plugins")
-    @Styles.Render("~/Content/Css/Flag-Icon")
-    
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700&display=swap" rel="stylesheet">
-
-    @RenderSection("ColorStyle", required: true)
-    @RenderSection("styles", required: false)
+        <title>@ViewBag.Title - @ViewBag.AppTitle</title>
 
 
-    @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
+        @Styles.Render("~/Content/Css/Frontend/Main")
+        @Styles.Render("~/Content/Frontend/Plugins")
+        @Styles.Render("~/Content/Css/Flag-Icon")
+        
+        
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700&display=swap" rel="stylesheet">
+
+        @RenderSection("ColorStyle", required: true)
+        @RenderSection("styles", required: false)
 
 
-    <!-- Fix Internet Explorer ______________________________________-->
-    <!--[if lt IE 9]>
-                        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-                        <script src="vendor/html5shiv.js"></script>
-                        <script src="vendor/respond.js"></script>
-                    <![endif]-->
+        @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
 
-</head>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
+
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+        <!-- Fix Internet Explorer ______________________________________-->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="vendor/html5shiv.js"></script>
+            <script src="vendor/respond.js"></script>
+        <![endif]-->
+
+    </head>
 
     <body>
         <div class="main-page-wrapper">
@@ -66,7 +70,7 @@
                 @if (cookieConsent == null)
                 {
                     <!-- Cookie-Consent -->
-                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                        @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
                     <!-- Cookie-Consent -->
                 }
 
@@ -93,6 +97,7 @@
 
             </script>
             <!-- ./ Culture Switcher-->
+
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
                 $("#acceptCookiesButton").click(function () {
