@@ -84,23 +84,26 @@
 
             <!-- Js File_________________________________ -->
             @Scripts.Render("~/bundles/Frontend/Main")
+            
+            @RenderSection("pageScriptBundle", required: false)
+
+            @Scripts.Render("~/bundles/Frontend/General")
 
 
             <!-- Culture Switcher -->
             <script type="text/javascript">
 
-                (function($) {
-                    $("input[type = 'radio']").click(function() {
+                (function ($) {
+                    $("input[type = 'radio']").click(function () {
                         $(this).parents("form").submit();
                     });
                 })(jQuery);
 
             </script>
             <!-- ./ Culture Switcher-->
-
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
-                $("#acceptCookiesButton").click(function() {
+                $("#acceptCookiesButton").click(function () {
                     $.cookie("_cookieConsent", 1, { expires: 365 });
                     $("#cookieConsentBox").fadeOut(400);
                 });

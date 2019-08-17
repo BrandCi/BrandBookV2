@@ -70,17 +70,30 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/imagesloaded/imagesloaded.pkgd.min.js",
                         "~/Plugins/Frontend/isotope/isotope-min.js",
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.concat.min.js",
-                        "~/Plugins/Frontend/magnify-pop/jquery.magnific-popup.min.js",
-                        /* ./Plugins */
-
-                        "~/Scripts/Frontend/plugins.js",
-                        "~/Scripts/Frontend/main.js"));
+                        "~/Plugins/Frontend/magnify-pop/jquery.magnific-popup.min.js"));
 
 
 
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/General").Include(
+                "~/Scripts/Frontend/plugins.js",
+                "~/Scripts/Frontend/main.js"));
 
 
-            
+
+            /* Page Bundles */
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Page/Homepage").Include(
+                "~/Plugins/Frontend/circle-progress/circle-progress.js",
+                "~/Plugins/Frontend/counterup/jquery.counterup.min.js",
+                "~/Plugins/Frontend/counterup/jquery.waypoints.min.js",
+                "~/Plugins/Frontend/counterup/appear.js",
+                "~/Plugins/Frontend/multiscroll/jquery.easings.min.js",
+                "~/Plugins/Frontend/multiscroll/multiscroll.responsiveExpand.limited.min.js",
+                "~/Plugins/Frontend/multiscroll/jquery.multiscroll.extensions.min.js"));
+
+
+
+
+
 
             /*
              *
