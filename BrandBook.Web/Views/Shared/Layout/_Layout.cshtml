@@ -1,7 +1,7 @@
 ﻿@using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
-    HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
+    var cookieConsent = Request.Cookies["_cookieConsent"];
 }
 
 
@@ -25,9 +25,6 @@
         @Styles.Render("~/Content/Css/Frontend/Main")
         @Styles.Render("~/Content/Css/Flag-Icon")
         
-        
-
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700&display=swap" rel="stylesheet">
 
         @RenderSection("styles", required: false)
 
@@ -40,13 +37,6 @@
         <!-- Fontawesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-
-        <!-- Fix Internet Explorer ______________________________________-->
-        <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script src="vendor/html5shiv.js"></script>
-            <script src="vendor/respond.js"></script>
-        <![endif]-->
 
     </head>
 
@@ -63,26 +53,24 @@
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->
 
-            <div class="html-top-content">
+            
 
-                @RenderBody()
+            @RenderBody()
 
 
-                @if (cookieConsent == null)
-                {
-                    <!-- Cookie-Consent -->
-                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
-                    <!-- Cookie-Consent -->
-                }
-
-            </div>
-
+            @if (cookieConsent == null)
+            {
+                <!-- Cookie-Consent -->
+                @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                <!-- Cookie-Consent -->
+            }
+        
 
 
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
 
-            <!-- Js File_________________________________ -->
+            <!-- Js Bundles -->
             @Scripts.Render("~/bundles/Frontend/Main")
             
             @RenderSection("pageScriptBundle", required: false)
@@ -101,6 +89,7 @@
 
             </script>
             <!-- ./ Culture Switcher-->
+
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
                 $("#acceptCookiesButton").click(function () {
@@ -112,7 +101,8 @@
 
 
             @RenderSection("scripts", required: false)
-            <!-- ./ Footer -->
-        </div> <!-- /.main-page-wrapper -->
+            
+
+        </div> <!-- /.body_wrapper -->
     </body>
 </html>
