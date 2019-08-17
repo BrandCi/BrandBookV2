@@ -57,6 +57,9 @@ namespace BrandBook.Web
                         "~/Content/Frontend/style.min.css",
                         "~/Content/Frontend/responsive.css"));
 
+            bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
+                "~/Content/Frontend/rtl.css"));
+
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
                         "~/Scripts/jquery-{version}.js",

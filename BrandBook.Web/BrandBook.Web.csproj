@@ -756,6 +756,7 @@
       <DependentUpon>flag-icon.css</DependentUpon>
     </Content>
     <Content Include="Content\Frontend\responsive.css" />
+    <Content Include="Content\Frontend\rtl.css" />
     <Content Include="Content\Frontend\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>

@@ -24,7 +24,12 @@
 
         @Styles.Render("~/Content/Css/Frontend/Main")
         @Styles.Render("~/Content/Css/Flag-Icon")
-        
+
+        @if (CultureHelper.IsRightToLeft())
+        {
+            Styles.Render("~/Content/Css/Frontend/RTL");
+        }
+
 
         @RenderSection("styles", required: false)
 
