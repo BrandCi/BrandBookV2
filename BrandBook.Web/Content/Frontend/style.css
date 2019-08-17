@@ -14214,4 +14214,11 @@ a .h_head:hover {
 .language-selection-item {
   visibility: hidden; }
 
+/* Pricing */
+.plan-included {
+  color: #5f2eed; }
+
+.plan-excluded {
+  color: #f0002d; }
+
 /*====================================================*/
