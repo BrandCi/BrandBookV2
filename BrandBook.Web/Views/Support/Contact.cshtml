@@ -3,66 +3,60 @@
 @{
     ViewBag.Title = "Contact";
 }
-@section ColorStyle
-{
-    @Styles.Render("~/Content/Css/Frontend/Styling/02")
-}
-
-<div class="theme-top-section">
-    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
 
 
-    <div class="contact-section-dark" id="contact" style="padding-top: 200px;">
-        <div class="container">
-            <div class="theme-title text-center">
-                <h2>
-                    Please leave a message
-                </h2>
-                <p>
-                    Please take note of our Privacy Policy
-                </p>
-            </div>
-
-            <!-- style="padding: 70px 0;" -->
-            @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation bb-contact-form", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="row">
-
-                    <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Name, new { placeholder = @Html.DisplayNameFor(m => m.Name) + "*", @required="required"})
-                    </div>
-
-                    <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Email, new { placeholder = @Html.DisplayNameFor(m => m.Email) + "*", @required="required" })
-                    </div>
-
-                    <div class="col-lg-6">
-                        @Html.TextBoxFor(m => m.Subject, new { placeholder = @Html.DisplayNameFor(m => m.Subject) })
-                    </div>
-
-                    <div class="col-12">
-                        @Html.TextAreaFor(m => m.Message, new { placeholder = @Html.DisplayNameFor(m => m.Message) + "*", @required="required" })
-                    </div>
-
-                    <div class="col-12 form-group form-check">
-                        @Html.LabelFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-label" })*
-                        @Html.CheckBoxFor(m => m.AcceptPrivacyPolicy, new { @class = "form-check-input", @required = "required" })
-
-                    </div>
-
-                    <button type="submit" class="mt-5">Send Message</button>
-
-                </div>
-            }
-
-           
 
 
+
+<section class="breadcrumb_area">
+    <img class="breadcrumb_shap" src="img/breadcrumb/banner_bg.png" alt="">
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                Contact us
+            </h1>
+            <p class="f_400 w_color f_size_16 l_height26">
+                We are pleased about your message!
+            </p>
         </div>
     </div>
+</section>
 
+<section class="contact_info_area sec_pad bg_color">
+    <div class="container">
+        <div class="row">
 
-
-</div> 
+            <div class="col-lg-10 offset-lg-1">
+                <div class="contact_form">
+                    <form action="#" class="contact_form_box" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group text_box">
+                                    <input type="text" id="name" name="name" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group text_box">
+                                    <input type="text" name="email" id="email" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group text_box">
+                                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group text_box">
+                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message . . ."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn_three">Send Message</button>
+                    </form>
+                    <div id="success">Your message succesfully sent!</div>
+                    <div id="error">Opps! There is something wrong. Please try again</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
