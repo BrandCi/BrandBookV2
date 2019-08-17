@@ -76,7 +76,8 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/General").Include(
                 "~/Scripts/Frontend/plugins.js",
-                "~/Scripts/Frontend/main.js"));
+                "~/Scripts/Frontend/main.js",
+                "~/Scripts/Frontend/jquery.cookie.js"));
 
 
 
