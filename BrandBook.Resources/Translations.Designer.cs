@@ -1132,7 +1132,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand Improvement (AI).
+        ///   Looks up a localized string similar to Brand Optimization.
         /// </summary>
         public static string frontend_navigation_product_brandimprovement {
             get {
