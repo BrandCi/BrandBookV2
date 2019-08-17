@@ -1,115 +1,116 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
 @using Microsoft.AspNet.Identity
-<header class="header_area header_area_three header_area_five">
-    <nav class="navbar navbar-expand-lg menu_one">
-        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-            @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"45\" height=\"45\"")
-        </a>
-
-        
 
 
+<header class="header_area">
+    <nav class="navbar navbar-expand-lg menu_one menu_five">
+        <div class="container">
+            <a class="navbar-brand sticky_logo" href="@Url.Action("Index", "Home")">
+                @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"50\" height=\"50\"")
+            </a>
 
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="menu_toggle">
-                <span class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu_toggle">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="hamburger-cross">
+                        <span></span>
+                        <span></span>
+                    </span>
                 </span>
-                <span class="hamburger-cross">
-                    <span></span>
-                    <span></span>
-                </span>
-            </span>
-        </button>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto menu">
-                <li class="nav-item">
-                    <a title="@Translations.frontend_navigation_homepage" class="nav-link" role="button" href="@Url.Action("Index","Home")">
-                        @Translations.frontend_navigation_homepage
-                    </a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-auto menu w_menu pl_120">
+                    <li class="nav-item">
+                        <a title="@Translations.frontend_navigation_homepage" class="nav-link" role="button" href="@Url.Action("Index", "Home")">
+                            @Translations.frontend_navigation_homepage
+                        </a>
+                    </li>
 
-                <li class="dropdown submenu nav-item">
-                    <a title="@Translations.frontend_navigation_product" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
-                        @Translations.frontend_navigation_product
-                    </a>
-                    <ul role="menu" class=" dropdown-menu">
+                    <li class="dropdown submenu nav-item">
+                        <a title="@Translations.frontend_navigation_product" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                            @Translations.frontend_navigation_product
+                        </a>
+                        <ul role="menu" class=" dropdown-menu">
 
-                        <li class="nav-item">
-                            <a title="@Translations.frontend_navigation_product_overview" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                @Translations.frontend_navigation_product_overview
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="@Translations.frontend_navigation_product_brandcreation" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                @Translations.frontend_navigation_product_brandcreation
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="@Translations.frontend_navigation_product_brandmanagement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                @Translations.frontend_navigation_product_brandmanagement
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="@Translations.frontend_navigation_product_brandimprovement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                @Translations.frontend_navigation_product_brandimprovement
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a title="@Translations.frontend_navigation_product_overview" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
+                                    @Translations.frontend_navigation_product_overview
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a title="@Translations.frontend_navigation_product_brandcreation" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
+                                    @Translations.frontend_navigation_product_brandcreation
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a title="@Translations.frontend_navigation_product_brandmanagement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
+                                    @Translations.frontend_navigation_product_brandmanagement
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a title="@Translations.frontend_navigation_product_brandimprovement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
+                                    @Translations.frontend_navigation_product_brandimprovement
+                                </a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-                <li class="nav-item">
-                    <a title="@Translations.frontend_navigation_pricing" class="nav-link" role="button" href="@Url.Action("Index", "Pricing", new {area=""})">
-                        @Translations.frontend_navigation_pricing
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a title="@Translations.frontend_navigation_pricing" class="nav-link" role="button" href="@Url.Action("Index", "Pricing", new {area = ""})">
+                            @Translations.frontend_navigation_pricing
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a title="@Translations.frontend_navigation_contact" class="nav-link" role="button" href="@Url.Action("Contact", "Support", new {area = ""})">
-                        @Translations.frontend_navigation_contact
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a title="@Translations.frontend_navigation_contact" class="nav-link" role="button" href="@Url.Action("Contact", "Support", new {area = ""})">
+                            @Translations.frontend_navigation_contact
+                        </a>
+                    </li>
 
 
-            </ul>
+                </ul>
 
-            @if (User.Identity.IsAuthenticated)
-            {
-                using (Html.BeginForm("Index", "Logout", new { area = "Auth" }, FormMethod.Post, new { id = "logoutForm" }))
+                @if (User.Identity.IsAuthenticated)
                 {
-                    @Html.AntiForgeryToken()
+                    using (Html.BeginForm("Index", "Logout", new {area = "Auth"}, FormMethod.Post, new {id = "logoutForm"}))
+                    {
+                        @Html.AntiForgeryToken()
 
-                    <small class="mr-4">
-                        @User.Identity.GetUserName()
-                    </small>
+                        <small class="mr-4">
+                            @User.Identity.GetUserName()
+                        </small>
 
-                    <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
-                        @Translations.frontend_navigation_authorized_gotoapp
+                        <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
+                            @Translations.frontend_navigation_authorized_gotoapp
+                        </a>
+
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    }
+                }
+                else
+                {
+                    <a href="@Url.Action("Index", "Login", new {area = "Auth"})" class="btn_get btn_hover">
+                        @Translations.frontend_navigation_login_button
                     </a>
 
-                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
-                        <i class="fas fa-sign-out-alt"></i>
+                    <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_hover agency_banner_btn pay_btn pay_btn_two cus_mb-10">
+                        @Translations.frontend_navigation_register_button
                     </a>
                 }
-            }
-            else
-            {
-                <a href="@Url.Action("Index", "Login", new {area = "Auth"})" class="btn_get btn_hover">
-                    @Translations.frontend_navigation_login_button
-                </a>
-
-                <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_hover agency_banner_btn pay_btn pay_btn_two cus_mb-10">
-                    @Translations.frontend_navigation_register_button
-                </a>
-            }
 
 
 
 
+            </div>
         </div>
     </nav>
 </header>
