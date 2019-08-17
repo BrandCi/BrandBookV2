@@ -720,6 +720,7 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\48df6de6-ed3f-4cd8-bce7-592639601425.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584.png" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\6cf67f0e-7246-4e4d-9e77-97e28efb05b4.png" />
+    <Content Include="App_Data\BrandBook_Content\FrontendData\6de4d537-9a97-4b39-bda4-7b491a3d2ce6.png" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\78ac03fb-5a19-410b-85c2-cc4c9733cb9e.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\7a5f43f7-a053-4ea8-afe2-f0598394f203.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\9f452dd3-10f8-4502-854e-7180cbab2ca9.svg" />
@@ -729,6 +730,7 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\e06b7899-c2d9-45c8-ac10-86007e4dcafb.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\e24d2d3c-0ee7-44fb-80c5-ef55a9f55518.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\e9addbec-6b22-4ab8-995d-74e0631ff456.png" />
+    <Content Include="App_Data\BrandBook_Content\FrontendData\ebc22580-a6fe-40ce-9733-274ca0a8337d.png" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
     <Content Include="Content\App\style.css">
