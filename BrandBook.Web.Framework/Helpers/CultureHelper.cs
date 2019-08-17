@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace BrandBook.Web.Framework.Helpers
 {
@@ -30,7 +31,8 @@ namespace BrandBook.Web.Framework.Helpers
         private static readonly List<string> _cultures = new List<string>
         {
             "en-US",
-            "de-DE"
+            "de-DE",
+            "ar-SA"
         };
 
 
@@ -41,12 +43,12 @@ namespace BrandBook.Web.Framework.Helpers
                 return GetDefaultCulture();
             }
 
-            if (_validCultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() == 0)
+            if (!_validCultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return GetDefaultCulture();
             }
 
-            if (_cultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() > 0)
+            if (_cultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return name;
             }
@@ -63,6 +65,12 @@ namespace BrandBook.Web.Framework.Helpers
             return _cultures[0];
         }
 
+        public static string GetCurrentNeutralCulture()
+        {
+            return GetNeutralCulture(Thread.CurrentThread.CurrentCulture.Name);
+        }
+
+
         public static string GetNeutralCulture(string name)
         {
             if (!name.Contains("-"))
@@ -73,6 +81,11 @@ namespace BrandBook.Web.Framework.Helpers
             {
                 return name.Split('-')[0];
             }
+        }
+
+        public static bool IsRightToLeft()
+        {
+            return Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft;
         }
     }
 }
