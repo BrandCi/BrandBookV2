@@ -1188,6 +1188,11 @@
     <Content Include="Views\Layout\GoogleAnalytics.cshtml" />
     <Content Include="Views\Layout\UserLike.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_PreLoader.cshtml" />
+    <Content Include="Views\Product\Creation.cshtml" />
+    <Content Include="Views\Product\Documentation.cshtml" />
+    <Content Include="Views\Product\Collaboration.cshtml" />
+    <Content Include="Views\Product\Sharing.cshtml" />
+    <Content Include="Views\Product\Optimization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
