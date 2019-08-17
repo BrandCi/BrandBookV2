@@ -2,209 +2,137 @@
 @{
     ViewBag.Title = "Startseite";
 }
+@section pageScriptBundle {
+    @Scripts.Render("~/bundles/Frontend/Page/Homepage")
+}
 
-<div class="theme-top-section">
-    @CustomHelper.Image("FrontendData/6cf67f0e-7246-4e4d-9e77-97e28efb05b4", "png", "blue-shape")
-
-
-    <div id="theme-banner" class="theme-banner-two">
-        @CustomHelper.Image("FrontendData/06c26687-81ec-445a-bc62-da21b1f50a12", "png", "cube-shape")
-        @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "illustration d-lg-none d-xl-none", "right: 10%; max-width: 80%;")
-        @CustomHelper.Image("FrontendData/d2bbd336-c78f-4c28-ab08-f5f6c7f2193c", "svg", "illustration d-none d-lg-block d-xl-block")
+<section class="seo_home_area">
+    <div class="home_bubble">
+        <div class="bubble b_one"></div>
+        <div class="bubble b_two"></div>
+        <div class="bubble b_three"></div>
+        <div class="bubble b_four"></div>
+        <div class="bubble b_five"></div>
+        <div class="bubble b_six"></div>
+    </div>
+    <div class="banner_top">
         <div class="container">
-            <div class="main-text-wrapper">
-                <h1 class="strong-title-900">
-                    @Translations.frontend_home_index_topsection_title_l1
-                    <br>@Translations.frontend_home_index_topsection_title_l2
-                </h1>
-                <p>
-                    @Translations.frontend_home_index_topsection_subtitle
-                </p>
-                <ul class="button-group clearfix">
-                    <li>
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
-                            @Translations.frontend_home_index_topsection_discover_button_title
-                        </a>
-                    </li>
+            <div class="row">
+                <div class="col-md-12 text-center seo_banner_content">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.3s">
+                        @Translations.frontend_home_index_topsection_title_l1<br />
+                        @Translations.frontend_home_index_topsection_title_l2
+                    </h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.5s">
+                        @Translations.frontend_home_index_topsection_subtitle
+                    </p>
+
+                    <a href="@Url.Action("Overview", "Product", new {area = ""})" class="seo_btn seo_btn_one btn_hover">
+                        @Translations.frontend_home_index_topsection_discover_button_title
+                    </a>
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <li>
-
-                            <a href="@Url.Action("Index", "Register", new {area = "Auth"})">
-                                @Translations.frontend_home_index_topsection_test_button_title
-                            </a>
-                        </li>
+                        <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="seo_btn seo_btn_two btn_hover">
+                            @Translations.frontend_home_index_topsection_test_button_title
+                        </a>
                     }
 
-                </ul>
+                </div>
+            </div>
+            <div class="saas_home_img wow fadeInUp" data-wow-delay="0.8s">
+                @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "", "", "width=\"50%\"")
             </div>
         </div>
-    </div> 
-
-
-    <div class="about-brandci" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-lg-last">
-                    <div class="theme-title">
-                        <div class="upper-heading">
-                            @Translations.frontend_home_index_intro_subheading
-                        </div>
-                        <h2>
-                            @Translations.frontend_home_index_intro_heading
-                        </h2>
-                    </div>
-                    <p class="sub-text">
-                        @Translations.frontend_home_index_intro_subtext
-                    </p>
-                    <p class="text">
-                        @Translations.frontend_home_index_intro_text
-                    </p>
-                    <p class="know-more">
-                        @Translations.frontend_home_index_intro_button_description
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})">
-                            @Translations.frontend_home_index_intro_button_title
-                        </a>
-                    </p>
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                    @CustomHelper.Image("FrontendData/3bb8af85-75f1-4c93-9022-a0ccfe9f889f", "svg", "blue-shape", "", "data-aos=\"zoom-out\"")
+    </div>
+</section>
+<section class="seo_service_area sec_pad">
+    <div class="container">
+        <div class="seo_sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+            <h2>
+                @Translations.frontend_home_index_features_title_l1<br/>
+                @Translations.frontend_home_index_features_title_l2
+            </h2>
+            <p></p>
+        </div>
+        <div class="row seo_service_info">
+            <div class="col-lg-4 col-md-6">
+                <div class="seo_service_item">
+                    @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "", "", "width=\"100%\"")
+                    <a href="#">
+                        <h4>@Translations.frontend_home_index_features_feature_01_title</h4>
+                    </a>
+                    <p>@Translations.frontend_home_index_features_feature_01_description</p>
+                    <a href="#"><i class="arrow_right"></i></a>
                 </div>
             </div>
-        </div> <!-- /.container -->
-    </div>
-    
-
-    <div class="our-features-three" id="features">
-        @CustomHelper.Image("FrontendData/e9addbec-6b22-4ab8-995d-74e0631ff456", "png", "main-bg-shape")
-        <div class="line-shape-one shape"></div>
-        <div class="line-shape-two shape"></div>
-        <div class="line-shape-three shape"></div>
-        <div class="line-shape-four shape"></div>
-        <div class="line-shape-five shape"></div>
-        <div class="line-shape-six shape"></div>
-        <div class="container">
-            <div class="theme-title text-center">
-                <h2>
-                    @Translations.frontend_home_index_features_title_l1<br />
-                    @Translations.frontend_home_index_features_title_l2
-                </h2>
+            <div class="col-lg-4 col-md-6">
+                <div class="seo_service_item">
+                    @CustomHelper.Image("FrontendData/b46e4b1c-42f8-4e27-9e94-41162ec1e32b", "svg", "", "", "width=\"100%\"")
+                    <a href="#">
+                        <h4>@Translations.frontend_home_index_features_feature_02_title</h4>
+                    </a>
+                    <p>@Translations.frontend_home_index_features_feature_02_description</p>
+                    <a href="#"><i class="arrow_right"></i></a>
+                </div>
             </div>
-
-
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-feature">
-                        <div class="icon-box">
-                            @CustomHelper.Image("FrontendData/13fe82d4-3866-4ef2-819d-63b0fa438ffa", "svg", "primary-icon")
-                        </div>
-                        <h3>
-                            @Translations.frontend_home_index_features_feature_01_title
-                        </h3>
-                        <p>
-                            @Translations.frontend_home_index_features_feature_01_description
-                        </p>
-                    </div>
-                </div> <!-- /.col- -->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-feature">
-                        <div class="icon-box">
-                            @CustomHelper.Image("FrontendData/9f452dd3-10f8-4502-854e-7180cbab2ca9", "svg", "primary-icon")
-                        </div>
-                        <h3>
-                            @Translations.frontend_home_index_features_feature_02_title
-                        </h3>
-                        <p>
-                            @Translations.frontend_home_index_features_feature_02_description
-                        </p>
-                    </div>
-                </div> <!-- /.col- -->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-feature">
-                        <div class="icon-box">
-                            @CustomHelper.Image("FrontendData/47c47fd7-e6a3-4926-a637-a951b0e8ee67", "svg", "primary-icon")
-                        </div>
-                        <h3>
-                            @Translations.frontend_home_index_features_feature_03_title
-                        </h3>
-                        <p>
-                            @Translations.frontend_home_index_features_feature_03_description
-                        </p>
-                    </div>
-                </div> <!-- /.col- -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
+            <div class="col-lg-4 col-md-6">
+                <div class="seo_service_item">
+                    @CustomHelper.Image("FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203", "svg", "", "", "width=\"100%\"")
+                    <a href="#">
+                        <h4>@Translations.frontend_home_index_features_feature_03_title</h4>
+                    </a>
+                    <p>@Translations.frontend_home_index_features_feature_03_description</p>
+                    <a href="#"><i class="arrow_right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-12 text-center mt_40">
+                <a href="#" class="seo_btn seo_btn_one btn_hover">All Features</a>
+            </div>
+        </div>
     </div>
-    
+</section>
 
-    <div class="our-feature-two dark-bg" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text">
-                        <div class="number">01</div>
-                        <h2 class="title">
-                            @Translations.frontend_home_index_services_service_01_title
-                        </h2>
-                        <p>
-                            @Translations.frontend_home_index_services_service_01_description
-                        </p>
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
-                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
-                        </a>
-                    </div>
-                </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box">
-                    <div>
-                        @CustomHelper.Image("FrontendData/e06b7899-c2d9-45c8-ac10-86007e4dcafb", "svg", "")
-                    </div>
-                </div>
-            </div> <!-- /.row -->
 
-            <div class="row">
-                <div class="col-lg-6 order-lg-last">
-                    <div class="text">
-                        <div class="number">02</div>
-                        <h2 class="title">
-                            @Translations.frontend_home_index_services_service_02_title
-                        </h2>
-                        <p>
-                            @Translations.frontend_home_index_services_service_02_description
-                        </p>
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
-                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
-                        </a>
-                    </div> 
-                </div> <!-- /.col- -->
-                <div class="col-lg-6 order-lg-first img-box">
-                    <div>
-                        @CustomHelper.Image("FrontendData/b46e4b1c-42f8-4e27-9e94-41162ec1e32b", "svg", "")
-                    </div>
-                </div>
-            </div> <!-- /.row -->
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text">
-                        <div class="number">03</div>
-                        <h2 class="title">
-                            @Translations.frontend_home_index_services_service_03_title
-                        </h2>
-                        <p>
-                            @Translations.frontend_home_index_services_service_03_description
-                        </p>
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="learn-more">
-                            @Translations.frontend_home_index_services_button_title <i class="flaticon-right-thin"></i>
-                        </a>
-                    </div> 
-                </div> <!-- /.col- -->
-                <div class="col-lg-6 img-box">
-                    <div>
-                        @CustomHelper.Image("FrontendData/7a5f43f7-a053-4ea8-afe2-f0598394f203", "svg", "")
-                    </div>
-                </div>
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
+
+
+<section class="seo_fact_area sec_pad">
+    <div class="home_bubble">
+        <div class="bubble b_one"></div>
+        <div class="bubble b_three"></div>
+        <div class="bubble b_four"></div>
+        <div class="bubble b_six"></div>
     </div>
+    <div class="container">
+       
+        <div class="seo_fact_info">
+            <div class="seo_fact_item">
+                <div class="text">
+                    <div class="counter one">12</div>
+                    <p>Happy Users</p>
+                </div>
+            </div>
+            <div class="seo_fact_item">
+                <div class="text">
+                    <div class="counter two">17</div>
+                    <p>Brandings created</p>
+                </div>
+            </div>
+            <div class="seo_fact_item">
+                <div class="text">
+                    <div class="counter three">8</div>
+                    <p>Brandings optimized</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-</div> 
+<section class="seo_call_to_action_area sec_pad">
+    <div class="container">
+        <div class="seo_call_action_text">
+            <h2>Ready to get started?<br> lt's fast and very easy!</h2>
+            <a href="@Url.Action("Index", "Pricing", new {area=""})" class="about_btn">Select your plan</a>
+        </div>
+    </div>
+</section>
