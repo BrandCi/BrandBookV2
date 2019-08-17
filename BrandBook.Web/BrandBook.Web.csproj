@@ -1134,6 +1134,7 @@
     <Content Include="Plugins\Frontend\simple-line-icon\fonts\Simple-Line-Icons.woff" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.ttf" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.woff" />
+    <Content Include="Content\Frontend\_custom.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Frontend\main.js" />
