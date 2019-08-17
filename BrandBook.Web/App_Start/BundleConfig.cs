@@ -32,6 +32,7 @@ namespace BrandBook.Web
 
 
 
+
             /*
              *
              * Styles
@@ -42,39 +43,44 @@ namespace BrandBook.Web
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        "~/Content/Frontend/Plugins/themify-icon/themify-icons.css",
-                        "~/Content/Frontend/Plugins/flaticon/flaticon.css",
-                        "~/Content/Frontend/Plugins/animation/animate.css",
-                        "~/Content/Frontend/Plugins/owl-carousel/assets/owl.carousel.min.css",
-                        "~/Content/Frontend/Plugins/magnify-pop/magnific-popup.css",
-                        "~/Content/Frontend/Plugins/elagent/style.css",
-                        "~/Content/Frontend/Plugins/scroll/jquery.mCustomScrollbar.min.css",
+                        
+                        /* Plugins */
+                        "~/Plugins/Frontend/themify-icon/themify-icons.css",
+                        "~/Plugins/Frontend/flaticon/flaticon.css",
+                        "~/Plugins/Frontend/animation/animate.css",
+                        "~/Plugins/Frontend/owl-carousel/assets/owl.carousel.min.css",
+                        "~/Plugins/Frontend/magnify-pop/magnific-popup.css",
+                        "~/Plugins/Frontend/elagent/style.css",
+                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
+                        /* ./Plugins */
 
                         "~/Content/Frontend/style.min.css",
                         "~/Content/Frontend/responsive.css"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/Frontend/propper.js",
+                        "~/Scripts/bootstrap.min.js",
+
+                        /* Plugins */
+                        "~/Plugins/Frontend/wow/wow.min.js",
+                        "~/Plugins/Frontend/sckroller/jquery.parallax-scroll.js",
+                        "~/Plugins/Frontend/owl-carousel/owl.carousel.min.js",
+                        "~/Plugins/Frontend/imagesloaded/imagesloaded.pkgd.min.js",
+                        "~/Plugins/Frontend/isotope/isotope-min.js",
+                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.concat.min.js",
+                        "~/Plugins/Frontend/magnify-pop/jquery.magnific-popup.min.js",
+                        /* ./Plugins */
+
+                        "~/Scripts/Frontend/plugins.js",
+                        "~/Scripts/Frontend/main.js"));
 
 
 
-            bundles.Add(new StyleBundle("~/Content/Frontend/Plugins").Include(
-                        "~/Plugins/owl-carousel/owl.carousel.css",
-                        "~/Plugins/owl-carousel/owl.carousel.css",
-                        "~/Plugins/owl-carousel/owl.theme.css",
-                        "~/Plugins/aos-next/dist/aos.css",
-                        "~/Plugins/language-switcher/polyglot-language-switcher.css",
-                        "~/Plugins/fancybox/dist/jquery.fancybox.min.css",
-                        "~/Plugins/roadmap/jquery.roadmap.min.css"));
 
 
             
-
-
-            
-
-
-
-
 
             /*
              *
@@ -127,14 +133,11 @@ namespace BrandBook.Web
 
 
 
-
-
             /*
              *
              *  Plugins
              *
              */
-
 
             // Jquery.Validation
             bundles.Add(new ScriptBundle("~/bundles/Plugins/JqueryValidation").Include(
