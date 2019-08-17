@@ -874,6 +874,7 @@
     <Content Include="Content\Frontend\Plugins\ui-fliter\nouislider.js" />
     <Content Include="Content\Frontend\Plugins\ui-fliter\nouislider.min.css" />
     <Content Include="Content\Frontend\Plugins\wow\wow.min.js" />
+    <Content Include="Content\Frontend\responsive.css" />
     <Content Include="Content\Frontend\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>

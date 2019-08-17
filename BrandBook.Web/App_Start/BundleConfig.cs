@@ -42,7 +42,20 @@ namespace BrandBook.Web
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        "~/Content/Frontend/style.min.css"));
+                        "~/Content/Frontend/Plugins/themify-icon/themify-icons.css",
+                        "~/Content/Frontend/Plugins/flaticon/flaticon.css",
+                        "~/Content/Frontend/Plugins/animation/animate.css",
+                        "~/Content/Frontend/Plugins/owl-carousel/assets/owl.carousel.min.css",
+                        "~/Content/Frontend/Plugins/magnify-pop/magnific-popup.css",
+                        "~/Content/Frontend/Plugins/elagent/style.css",
+                        "~/Content/Frontend/Plugins/scroll/jquery.mCustomScrollbar.min.css",
+
+                        "~/Content/Frontend/style.min.css",
+                        "~/Content/Frontend/responsive.css"));
+
+
+
+
 
             bundles.Add(new StyleBundle("~/Content/Frontend/Plugins").Include(
                         "~/Plugins/owl-carousel/owl.carousel.css",
