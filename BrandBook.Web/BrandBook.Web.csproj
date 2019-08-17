@@ -1183,6 +1183,7 @@
     <Content Include="Views\Support\Contact.cshtml" />
     <Content Include="Views\Layout\GoogleAnalytics.cshtml" />
     <Content Include="Views\Layout\UserLike.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_PreLoader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />

@@ -51,6 +51,9 @@
     </head>
 
     <body>
+
+
+        @Html.Partial("~/Views/Shared/Layout/Partial/_PreLoader.cshtml")
         <div class="body_wrapper">
 
             @{ Html.RenderAction("UserLike", "Layout"); }
@@ -68,7 +71,7 @@
                 @if (cookieConsent == null)
                 {
                     <!-- Cookie-Consent -->
-                        @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
                     <!-- Cookie-Consent -->
                 }
 
@@ -86,8 +89,8 @@
             <!-- Culture Switcher -->
             <script type="text/javascript">
 
-                (function ($) {
-                    $("input[type = 'radio']").click(function () {
+                (function($) {
+                    $("input[type = 'radio']").click(function() {
                         $(this).parents("form").submit();
                     });
                 })(jQuery);
@@ -97,7 +100,7 @@
 
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
-                $("#acceptCookiesButton").click(function () {
+                $("#acceptCookiesButton").click(function() {
                     $.cookie("_cookieConsent", 1, { expires: 365 });
                     $("#cookieConsentBox").fadeOut(400);
                 });
