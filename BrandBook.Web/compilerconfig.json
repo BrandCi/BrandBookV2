@@ -26,5 +26,9 @@
   {
     "outputFile": "Content/Frontend/style.css",
     "inputFile": "Content/Frontend/style.scss"
+  },
+  {
+    "outputFile": "Content/App/bootstrap-rtl.css",
+    "inputFile": "Content/App/bootstrap-rtl.scss"
   }
 ]

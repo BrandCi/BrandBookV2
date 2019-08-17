@@ -733,6 +733,12 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\ebc22580-a6fe-40ce-9733-274ca0a8337d.png" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
+    <Content Include="Content\App\bootstrap-rtl.css">
+      <DependentUpon>bootstrap-rtl.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\App\bootstrap-rtl.min.css">
+      <DependentUpon>bootstrap-rtl.css</DependentUpon>
+    </Content>
     <Content Include="Content\App\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
@@ -1138,6 +1144,7 @@
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.ttf" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.woff" />
     <Content Include="Content\Frontend\_custom.scss" />
+    <Content Include="Content\App\bootstrap-rtl.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Frontend\main.js" />

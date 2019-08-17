@@ -125,6 +125,9 @@ namespace BrandBook.Web
                 "~/Content/bootstrap.min.css",
                 "~/Content/App/style.min.css"));
 
+            bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
+                "~/Content/App/bootstrap-rtl.min.css"));
+
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
                 "~/Scripts/jquery-{version}.js",
