@@ -19,23 +19,40 @@
     }
 }
 
-<div class="bottom-footer clearfix">
-    <p class="copyright">&copy; 2019 <a href="#">
-        @Translations.frontend_footer_copyright
-    </a>&nbsp;<i class="fab fa-galactic-senate"></i>&nbsp;@Translations.frontend_footer_allrightsreserved</p>
-    <div style="float: right" class="cultureSelection">
-        @using (Html.BeginForm("SetCulture", "Culture", new { area = "" }))
-        {
-            <input type="hidden" name="currentAction" value="@routeData.Values["action"].ToString()" />
-            <input type="hidden" name="currentController" value="@routeData.Values["controller"].ToString()" />
-            <label for="en-us" style="color: white;" @selectedLabel("en-us", culture)>
-                <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) />
-                <span class="flag-icon flag-icon-us"></span>
-            </label>
-            <label for="de-de" style="color: white;" @selectedLabel("de-de", culture)>
-                <input name="culture" id="de-de" value="de-de" type="radio" @selected("de-de", culture) />
-                <span class="flag-icon flag-icon-de"></span>
-            </label>
-        }
-    </div>
+<div class="f_widget about-widget">
+    <h3 class="f-title f_600 f_size_18 mb_40">
+        Language Selection
+    </h3>
+
+    @using (Html.BeginForm("SetCulture", "Culture", new {area = ""}))
+    {
+        <ul class="list-unstyled f_list">
+            <li class="dropdown submenu nav-item">
+                <a title="Deutsch (Deutschland)" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false" href="#">
+                    Deutsch (Deutschland)
+                </a>
+                <ul role="menu" class=" dropdown-menu">
+
+                    <li class="nav-item">
+                        <a title="Deutsch (Deutschland)" class="nav-link" href="#">
+                            Deutsch (Deutschland)
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a title="English (United Stated)" class="nav-link" href="#">
+                            English (United Stated)
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a title="Arabic (Saudi Arabia)" class="nav-link" href="#">
+                            Arabic (Saudi Arabia)
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    }
+
 </div>
