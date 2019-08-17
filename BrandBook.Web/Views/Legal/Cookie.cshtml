@@ -1,101 +1,99 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
     ViewBag.Title = "Cookie Richtlinie";
 }
-@section ColorStyle
-{
-    @Styles.Render("~/Content/Css/Frontend/Styling/01")
-}
 
-<div class="theme-top-section">
 
-    <div class="theme-inner-banner">
-        <div class="container">
-            <h2 style="padding: 0 0 15% 0;">
+<section class="breadcrumb_area">
+    @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
                 Cookie Richtlinien
-            </h2>
-        </div> <!-- /.container -->
-    </div> <!-- /.theme-inner-banner -->
+            </h1>
+        </div>
+    </div>
+</section>
 
-
-    <div class="container inner-page-spacing">
+<section class="blog_area sec_pad cus_ptB_Bl">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-12 blog-details">
-                <div class="clearfix cookie-terms">
-                    
-                    <p>
-                        Cookies sind kleine Textdateien, welche von den Websites erstellt werden, die Sie besucht haben. Sie werden verwendet, um moderne Websiten optimal bedienbar zu machen oder dem Betreiber bestimmte Informationen zur Website zu liefern.
-                    </p>
-                    
-                    
-                    <h3>Technisch notwendige Cookies</h3>
-                    <p>In dieser Applikation werden folgende Cookies verwendet.</p>
-                    <p>
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th scope="col">
-                                    Name
-                                </th>
-                                <th scope="col">
-                                    Speicherdauer
-                                </th>
-                                <th scope="col">
-                                    Beschreibung
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        .AspNet.ApplicationCookie
-                                    </td>
-                                    <td>
-                                        Wird beim Schließen des Browsers gelöscht.
-                                    </td>
-                                    <td>
-                                        Zur Identifizierung des aktuell angemeldeten Nutzers.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        __RequestVerificationToken
-                                    </td>
-                                    <td>
-                                        Wird beim Schließen des Browsers gelöscht.
-                                    </td>
-                                    <td>
-                                        Zum technischen Schutz vor unbefugtem Versand von Formularen.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        _culture
-                                    </td>
-                                    <td>
-                                        1 Jahr ab letzter Änderung
-                                    </td>
-                                    <td>
-                                        In dem Cookie '_culture' wird die durch den Nutzer selektierte Sprache gespeichert. Mögliche Werte sind z.B. 'de-DE' oder 'en-US'.<br />
-                                        Wird die Sprache durch den Nutzer nicht verändert, ist dieser Cookie nicht notwendig, es wird die im Browser als bevorzugte Sprache angegebene verwendet.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        _cookieConsent
-                                    </td>
-                                    <td>
-                                        1 Jahr
-                                    </td>
-                                    <td>
-                                        Zur Speicherung der Einverständniserklärung zur Verwendung von Cookies.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
+            <div class="col-lg-12">
+                <div class="blog_single mb_50">
+                    <div class="blog_content cus_p">
+                        
+                        <p class="f_400 mb-30">
+                            Cookies sind kleine Textdateien, welche von den Websites erstellt werden, die Sie besucht haben. Sie werden verwendet, um moderne Websiten optimal bedienbar zu machen oder dem Betreiber bestimmte Informationen zur Website zu liefern.
+                        </p>
 
+                        <p class="f_400 mb-30">
+                            <h5>Technisch notwendige Cookies</h5>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Name
+                                        </th>
+                                        <th scope="col">
+                                            Speicherdauer
+                                        </th>
+                                        <th scope="col">
+                                            Beschreibung
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            .AspNet.ApplicationCookie
+                                        </td>
+                                        <td>
+                                            Wird beim Schließen des Browsers gelöscht.
+                                        </td>
+                                        <td>
+                                            Zur Identifizierung des aktuell angemeldeten Nutzers.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            __RequestVerificationToken
+                                        </td>
+                                        <td>
+                                            Wird beim Schließen des Browsers gelöscht.
+                                        </td>
+                                        <td>
+                                            Zum technischen Schutz vor unbefugtem Versand von Formularen.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            _culture
+                                        </td>
+                                        <td>
+                                            1 Jahr ab letzter Änderung
+                                        </td>
+                                        <td>
+                                            In dem Cookie '_culture' wird die durch den Nutzer selektierte Sprache gespeichert. Mögliche Werte sind z.B. 'de-DE' oder 'en-US'.<br />
+                                            Wird die Sprache durch den Nutzer nicht verändert, ist dieser Cookie nicht notwendig, es wird die im Browser als bevorzugte Sprache angegebene verwendet.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            _cookieConsent
+                                        </td>
+                                        <td>
+                                            1 Jahr
+                                        </td>
+                                        <td>
+                                            Zur Speicherung der Einverständniserklärung zur Verwendung von Cookies.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- /.container -->
-</div> <!-- /.html-top-content -->
+    </div>
+</section>

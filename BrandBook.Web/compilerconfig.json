@@ -22,5 +22,9 @@
   {
     "outputFile": "Content/Flag-Icon/flag-icon.css",
     "inputFile": "Content/Flag-Icon/flag-icon.scss"
+  },
+  {
+    "outputFile": "Content/Frontend/style.css",
+    "inputFile": "Content/Frontend/style.scss"
   }
 ]
