@@ -6,13 +6,17 @@
     @Scripts.Render("~/bundles/Frontend/Page/Homepage")
 }
 
+
 <section class="software_banner_area d-flex align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex align-items-center">
                 <div class="software_banner_content">
                     <h2 class="f_500 f_size_50 w_color wow fadeInLeft" data-wow-delay="0.2s">
-                        @Translations.frontend_home_index_topsection_title_l1<br />
+                        <span class="f_700">
+                            @Translations.frontend_home_index_topsection_title_l1
+                        </span>
+                        <br />
                         @Translations.frontend_home_index_topsection_title_l2
                     </h2>
                     <p class="w_color f_size_18 l_height30 mt_30 wow fadeInLeft" data-wow-delay="0.4s">
@@ -20,14 +24,14 @@
                     </p>
                     <div class="action_btn d-flex align-items-center mt_40 wow fadeInLeft" data-wow-delay="0.6s">
 
-                        <a href="@Url.Action("Overview", "Product", new {area = ""})" class="btn_hover agency_banner_btn cus_mb-10">
+                        <a href="@Url.Action("Overview", "Product" , new {area="" })" class="btn_hover agency_banner_btn cus_mb-10">
                             @Translations.frontend_home_index_topsection_discover_button_title
                         </a>
 
 
                         @if (!User.Identity.IsAuthenticated)
                         {
-                            <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_hover agency_banner_btn pay_btn pay_btn_two cus_mb-10">
+                            <a href="@Url.Action("Index", "Register" , new {area="Auth" })" class="btn_hover agency_banner_btn pay_btn pay_btn_two cus_mb-10">
                                 @Translations.frontend_home_index_topsection_test_button_title
                             </a>
                         }

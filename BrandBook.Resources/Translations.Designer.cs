@@ -1006,7 +1006,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage and improve your brand image..
+        ///   Looks up a localized string similar to Manage and improve your brand to success with BrandCi..
         /// </summary>
         public static string frontend_home_index_topsection_subtitle {
             get {
