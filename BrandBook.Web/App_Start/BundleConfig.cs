@@ -42,7 +42,7 @@ namespace BrandBook.Web
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        "~/Content/Frontend/Styles.min.css"));
+                        "~/Content/Frontend/style.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Frontend/Plugins").Include(
                         "~/Plugins/owl-carousel/owl.carousel.css",
@@ -56,34 +56,8 @@ namespace BrandBook.Web
 
             
 
-            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/01").Include(
-                        "~/Content/Frontend/ColorStyle01.css"));
 
-            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/02").Include(
-                        "~/Content/Frontend/ColorStyle02.css"));
-
-            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Styling/03").Include(
-                        "~/Content/Frontend/ColorStyle03.css"));
-
-
-            // Main Js File for Sales Frontend
-            bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
-                        "~/Scripts/Frontend/theme.js",
-                        "~/Scripts/Frontend/jquery.cookie.js"));
-
-            // Plugins for Sales Frontend
-            bundles.Add(new ScriptBundle("~/bundles/Frontend/Plugins").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Plugins/popper.js/popper.min.js",
-                        "~/Scripts/bootstrap.min.js",
-                        "~/Plugins/jquery-easing/jquery.easing.min.js",
-                        "~/Plugins/language-switcher/jquery.polyglot.language.switcher.js",
-                        "~/Plugins/jquery.appear.js",
-                        "~/Plugins/jquery.countTo.js",
-                        "~/Plugins/fancybox/dist/jquery.fancybox.min.js",
-                        "~/Plugins/owl-carousel/owl.carousel.min.js",
-                        "~/Plugins/aos-next/dist/aos.js",
-                        "~/Plugins/roadmap/jquery.roadmap.js"));
+            
 
 
 
@@ -132,9 +106,6 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/App/Core").Include(
                 "~/Scripts/App/jquery.core.js",
                 "~/Scripts/App/jquery.app.js"));
-
-
-
 
 
 
