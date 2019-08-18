@@ -13,8 +13,8 @@ namespace BrandBook.Infrastructure.Migrations
             AddColumn("dbo.SubscriptionPlans", "PricePerMonth", c => c.Double(nullable: false));
             AlterColumn("dbo.Subscriptions", "AppUserId", c => c.String(maxLength: 128));
             CreateIndex("dbo.Subscriptions", "AppUserId");
-
-            Sql("UPDATE [BrandBookV2.Local].[dbo].[SubscriptionPlans] SET PricePerMonth = Price;");
+            
+            Sql("UPDATE dbo.SubscriptionPlans SET PricePerMonth = Price;");
 
             DropColumn("dbo.SubscriptionPlans", "Price");
         }
