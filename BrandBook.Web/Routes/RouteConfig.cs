@@ -9,12 +9,22 @@ namespace BrandBook.Web.Routes
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                "Blog",
+                "Blog/{blogName}",
+                new { controller = "Home", action = "Index" },
+                new[] { "BrandBook.Web.Controllers.Blog" }
+            );
+
+
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
 
             routes.MapRoute(
                 name: "Fallback",
