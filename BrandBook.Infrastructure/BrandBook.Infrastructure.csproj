@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.Designer.cs">
       <DependentUpon>201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908181917183_AddBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201908181917183_AddBlogEntriesTable.Designer.cs">
+      <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.resx">
       <DependentUpon>201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181917183_AddBlogEntriesTable.resx">
+      <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
