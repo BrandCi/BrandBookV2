@@ -224,6 +224,7 @@
     <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
+    <Compile Include="Repositories\Frontend\BlogEntryRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\Resource\ImageRepository.cs" />
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
