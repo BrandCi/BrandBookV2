@@ -15,5 +15,18 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
             : base(context)
         {
         }
+
+
+        public bool BlogEntryExists(string blogEntryKey)
+        {
+            return Set.Count(be => be.UrlKey == blogEntryKey) > 0;
+        }
+
+        public BlogEntry FindBlogEntryByKey(string blogEntryKey)
+        {
+            return Set.SingleOrDefault(be => be.UrlKey == blogEntryKey);
+        }
+
+
     }
 }
