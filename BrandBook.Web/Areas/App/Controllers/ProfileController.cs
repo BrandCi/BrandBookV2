@@ -55,5 +55,13 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+
+
+        public ActionResult Subscriptions()
+        {
+            return View();
+        }
+
+
     }
 }
