@@ -18,11 +18,14 @@ namespace BrandBook.Infrastructure.Data
 {
     public class BrandBookDbContext : IdentityDbContext<AppUser>
     {
-        
+        /* User */
         public DbSet<Company> Companies { get; set; }
-
         public DbSet<RolePermission> RolePermissions { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
 
+
+        /* Brand */
         public DbSet<Brand> Brands { get; set; }
         public DbSet<BrandPublicSetting> BrandPublicSettings { get; set; }
 
