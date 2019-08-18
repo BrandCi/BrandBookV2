@@ -1,12 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Subscriptions
 {
-    public class SubscriptionsViewModel
+    public class SubscriptionsViewModel : IEnumerable<SingleSubscriptionViewModel>
     {
+
+        public List<SingleSubscriptionViewModel> Subscriptions { get; set; }
+
+
+        public IEnumerator<SingleSubscriptionViewModel> GetEnumerator()
+        {
+            return Subscriptions.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+
     }
 }
