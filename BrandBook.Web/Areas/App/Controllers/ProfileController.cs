@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
@@ -60,21 +61,27 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Subscriptions()
         {
-            var subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(User.Identity.GetUserId());
-            var viewModel = new SubscriptionsViewModel();
+            var userId = User.Identity.GetUserId();
+            var subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
+            var viewModel = new SubscriptionsViewModel()
+            {
+                Subscriptions = new List<SingleSubscriptionViewModel>()
+            };
 
 
             foreach (var subscription in subscriptions)
             {
+                var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
+
                 viewModel.Subscriptions.Add(new SingleSubscriptionViewModel()
                     {
                         Id = subscription.Id,
                         Key = subscription.Id.ToString(),
                         IsActive = subscription.IsActive,
                         IsPaid = subscription.IsPaid,
-                        PlanName = subscription.SubscriptionPlan.Name,
-                        PlanValidityInMonths = subscription.SubscriptionPlan.ValidityInMonths,
-                        PlanPricePerMonth = subscription.SubscriptionPlan.PricePerMonth
+                        PlanName = subscriptionPlan.Name,
+                        PlanValidityInMonths = subscriptionPlan.ValidityInMonths,
+                        PlanPricePerMonth = subscriptionPlan.PricePerMonth
                     }
                 );
             }
