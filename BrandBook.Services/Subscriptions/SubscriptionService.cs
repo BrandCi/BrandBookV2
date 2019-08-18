@@ -50,7 +50,19 @@ namespace BrandBook.Services.Subscriptions
 
         private bool IsMaximumOfBrandsReached(int amountCurrentBrands, int amountPossibleBrands)
         {
+
+
             return amountCurrentBrands >= amountPossibleBrands;
+        }
+
+
+        private int CalcAmountOfPossibleBrands(IEnumerable<Subscription> subscriptions)
+        {
+            return subscriptions
+                .Select(subscription => _unitOfWork.SubscriptionPlanRepository
+                                        .FindById(subscription.SubscriptionPlanId))
+                                        .Select(subscriptionPlan => subscriptionPlan.AmountOfBrands)
+                                        .Sum();
         }
 
 
