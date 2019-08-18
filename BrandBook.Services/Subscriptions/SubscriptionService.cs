@@ -35,7 +35,14 @@ namespace BrandBook.Services.Subscriptions
                 return false;
             }
 
-            return (from subscription in subscriptions let subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId) where IsEndDateInFuture(subscription, subscriptionPlan) select subscription).Any();
+            return (
+                        from subscription in subscriptions
+                        let subscriptionPlan = _unitOfWork.SubscriptionPlanRepository
+                            .FindById(subscription.SubscriptionPlanId) where 
+                            IsEndDateInFuture(subscription, subscriptionPlan)
+                        select subscription
+                    )
+                    .Any();
         }
 
         

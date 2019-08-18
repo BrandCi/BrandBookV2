@@ -8,6 +8,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Subscriptions
     {
 
         public List<SingleSubscriptionViewModel> Subscriptions { get; set; }
+        public bool HasValidSubscription { get; set; }
 
 
         public IEnumerator<SingleSubscriptionViewModel> GetEnumerator()
