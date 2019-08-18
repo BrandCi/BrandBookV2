@@ -17,8 +17,9 @@ namespace BrandBook.Web.Framework.ViewModels.App.Subscriptions
 
 
         // subscription plan
-        public string PlanName { get; set; }
-        public int PlanValidityInMonths { get; set; }
-        public double PlanPricePerMonth { get; set; }
+        public string Name { get; set; }
+        public int AmountOfBrands { get; set; }
+        public int ValidityInMonths { get; set; }
+        public double PricePerMonth { get; set; }
     }
 }

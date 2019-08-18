@@ -82,9 +82,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                         EndDate = endDate.ToString("dd.MM.yyyy"),
                         IsActive = subscription.IsActive,
                         IsPaid = subscription.IsPaid,
-                        PlanName = subscriptionPlan.Name,
-                        PlanValidityInMonths = subscriptionPlan.ValidityInMonths,
-                        PlanPricePerMonth = subscriptionPlan.PricePerMonth
+                        Name = subscriptionPlan.Name,
+                        AmountOfBrands = subscriptionPlan.AmountOfBrands,
+                        ValidityInMonths = subscriptionPlan.ValidityInMonths,
+                        PricePerMonth = subscriptionPlan.PricePerMonth
                     }
                 );
             }
