@@ -221,6 +221,7 @@
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\SubscriptionRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
