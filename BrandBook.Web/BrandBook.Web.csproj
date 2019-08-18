@@ -1215,10 +1215,10 @@
     <Content Include="Views\Product\Collaboration.cshtml" />
     <Content Include="Views\Product\Sharing.cshtml" />
     <Content Include="Views\Product\Optimization.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />
-    <Folder Include="Views\Blog\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
