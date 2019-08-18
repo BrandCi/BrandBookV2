@@ -34,7 +34,7 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         }
 
 
-        public int GetAmountOfBrandsByCompany(int companyId)
+        public int CountBrandsByCompany(int companyId)
         {
             return Set.Count(b => b.Company.Id == companyId);
         }
