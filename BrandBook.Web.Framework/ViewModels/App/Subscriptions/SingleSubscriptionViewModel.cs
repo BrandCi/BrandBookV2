@@ -10,6 +10,8 @@ namespace BrandBook.Web.Framework.ViewModels.App.Subscriptions
     {
         public int Id { get; set; }
         public string Key { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
         public bool IsPaid { get; set; }
         public bool IsActive { get; set; }
 
