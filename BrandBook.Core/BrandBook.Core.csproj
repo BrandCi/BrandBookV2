@@ -94,6 +94,7 @@
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />
     <Compile Include="Repositories\User\IAppUserRepository.cs" />
     <Compile Include="Repositories\User\IRolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
