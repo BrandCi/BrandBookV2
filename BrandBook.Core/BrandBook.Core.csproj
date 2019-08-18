@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\Blog\BlogEntry.cs" />
     <Compile Include="Domain\Brand\Brand.cs" />
     <Compile Include="Domain\Brand\BrandPublicSetting.cs" />
     <Compile Include="Domain\Brand\BrandSetting.cs" />
