@@ -53,8 +53,9 @@ namespace BrandBook.Services.Subscriptions
         private bool IsEndDateInFuture(Subscription subscription, SubscriptionPlan subscriptionPlan)
         {
             var endDate = subscription.StartDateTime.AddMonths(subscriptionPlan.ValidityInMonths);
+            var currentDate = DateTime.Now;
 
-            return DateTime.Compare(endDate, new DateTime()) > 0;
+            return DateTime.Compare(endDate, currentDate) > 0;
         }
 
 
