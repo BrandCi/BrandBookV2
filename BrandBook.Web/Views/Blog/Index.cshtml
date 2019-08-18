@@ -9,11 +9,36 @@
     <div class="container">
         <div class="breadcrumb_content text-center">
             <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
-                Blog Item: @Model.Title
+                @Model.Title
             </h1>
             <p class="f_400 w_color f_size_16 l_height26">
-                Dynamic Page from Database
+                @Model.SubTitle
             </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog_area_two sec_pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 blog_single_info">
+                <div class="blog_list_item blog_list_item_two">
+                    <a href="#" class="post_date">
+                        <h2>@Model.CreationDateTime.ToString("dd") <span>@Model.CreationDateTime.ToString("MMM")</span></h2>
+                    </a>
+                    @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg", "img-fluid")
+                    <div class="blog_content">
+
+                        <p>
+                            @Model.Content
+                        </p>
+
+                    </div>
+                </div>
+                
+                
+            </div>
         </div>
     </div>
 </section>
