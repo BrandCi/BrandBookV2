@@ -49,26 +49,27 @@
                                 </div>
                                 <div id="collapse-@subscription.Id" class="collapse" role="tabpanel" aria-labelledby="heading-@subscription.Id">
                                     <div class="card-body">
-
+                                        <h3>
+                                            Validity
+                                        </h3>
                                         <p>
-                                            Active since:
+                                            <strong>Active since:</strong>
                                             <span class="badge subscription badge-primary"> @subscription.StartDate</span>
                                             <br />
-                                            Active until:
-                                            <span class="badge subscription badge-primary"> @subscription.EndDate</span>
+                                            <strong>Active until:</strong>
+                                        <span class="badge subscription badge-primary"> @subscription.EndDate</span>
                                         </p>
 
                                         <h3>
                                             Subscription Plan
                                         </h3>
                                         <p>
-                                            Selected Plan:
+                                            <strong>Selected Plan:</strong>
                                             <span class="badge subscription badge-primary"> @subscription.PlanName</span>
-</p>
-                                        <p>
+                                            <br />
                                             <strong>Price per Month:</strong>
                                             <span class="badge subscription badge-primary">€ @subscription.PlanPricePerMonth</span>
-</p>
+                                        </p>
 
                                     </div>
                                 </div>
