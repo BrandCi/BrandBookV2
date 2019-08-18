@@ -9,5 +9,9 @@ namespace BrandBook.Core.Repositories.Frontend
 {
     public interface IBlogEntryRepository : IRepository<BlogEntry>
     {
+
+        bool BlogEntryExists(string blogEntryKey);
+        BlogEntry FindBlogEntryByKey(string blogEntryKey);
+
     }
 }
