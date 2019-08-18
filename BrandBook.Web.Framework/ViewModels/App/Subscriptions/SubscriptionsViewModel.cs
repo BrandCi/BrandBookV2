@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Subscriptions
 {
-    class SubscriptionsViewModel
+    public class SubscriptionsViewModel
     {
     }
 }
