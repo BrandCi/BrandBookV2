@@ -14,6 +14,13 @@ namespace BrandBook.Web.Routes
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+                name: "Fallback",
+                url: "",
+                defaults: new { controller = "Home", action = "Index" }
+            );
         }
     }
 }
