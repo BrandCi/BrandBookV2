@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Web", "BrandBook.Web\BrandBook.Web.csproj", "{16656BE7-8DAF-442B-9D3A-438016784DE8}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Web.Framework", "BrandBook.Web.Framework\BrandBook.Web.Framework.csproj", "{18AE69DC-669E-45AF-A1C4-7D8DD44622A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Resources", "BrandBook.Resources\BrandBook.Resources.csproj", "{AF550719-7734-4B5B-9C55-88AB5FD69F4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AF5A9C6A-8656-4934-B97D-73DDB35E5213}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandBook.Services.Test", "UnitTests\BrandBook.Services.Test\BrandBook.Services.Test.csproj", "{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,16 @@ Global
 		{AF550719-7734-4B5B-9C55-88AB5FD69F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF550719-7734-4B5B-9C55-88AB5FD69F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF550719-7734-4B5B-9C55-88AB5FD69F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8BE5CFC-8C0C-4A36-B7CF-22648AE943FA} = {AF5A9C6A-8656-4934-B97D-73DDB35E5213}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A8A22C4-CB71-4ADC-A800-F84EB6D0ABFB}
