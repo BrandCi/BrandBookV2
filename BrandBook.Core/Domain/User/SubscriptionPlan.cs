@@ -11,7 +11,7 @@ namespace BrandBook.Core.Domain.User
 
         public string Name { get; set; }
         public int ValidityInMonths { get; set; }
-        public double Price { get; set; }
+        public double PricePerMonth { get; set; }
 
     }
 }
