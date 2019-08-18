@@ -11,7 +11,7 @@ namespace BrandBook.Services.Resources
     public class ImageService
     {
 
-        public string ExtractTypeFromImageName(string name)
+        public string GetImageType(string name)
         {
             var separatedImageName = name.Split('.');
 

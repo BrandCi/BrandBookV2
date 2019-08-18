@@ -88,7 +88,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Image brandImage;
                 if (image != null)
                 {
-                    var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.ExtractTypeFromImageName(image.FileName);
+                    var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.GetImageType(image.FileName);
 
                     SaveBrandImageInStorage(image, fileName);
                     
