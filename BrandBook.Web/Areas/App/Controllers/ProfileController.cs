@@ -72,11 +72,14 @@ namespace BrandBook.Web.Areas.App.Controllers
             foreach (var subscription in subscriptions)
             {
                 var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
+                var endDate = subscription.StartDateTime.AddMonths(subscriptionPlan.ValidityInMonths);
 
                 viewModel.Subscriptions.Add(new SingleSubscriptionViewModel()
                     {
                         Id = subscription.Id,
                         Key = subscription.Id.ToString(),
+                        StartDate = subscription.StartDateTime.ToString("dd.MM.yyyy"),
+                        EndDate = endDate.ToString("dd.MM.yyyy"),
                         IsActive = subscription.IsActive,
                         IsPaid = subscription.IsPaid,
                         PlanName = subscriptionPlan.Name,
