@@ -90,6 +90,7 @@
     <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IIconRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />
+    <Compile Include="Repositories\Frontend\IBlogEntryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Resource\IImageRepository.cs" />
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />
