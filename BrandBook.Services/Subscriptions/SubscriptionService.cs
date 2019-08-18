@@ -22,19 +22,20 @@ namespace BrandBook.Services.Subscriptions
         public bool HasValidSubscription(string userId)
         {
             var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveUserSubscriptions(userId);
+            
+            return IsAnySubscriptionValid(userId, subscriptions);
+        }
 
-            foreach(var subscription in subscriptions)
+
+
+        private bool IsAnySubscriptionValid(string userId, IEnumerable<Subscription> subscriptions)
+        {
+            if (IsMaximumOfBrandsReached(userId, subscriptions))
             {
-                var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
-
-                if (IsEndDateInFuture(subscription, subscriptionPlan))
-                {
-                    return true;
-                }
-
+                return false;
             }
 
-            return false;
+            return (from subscription in subscriptions let subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId) where IsEndDateInFuture(subscription, subscriptionPlan) select subscription).Any();
         }
 
         
@@ -48,11 +49,12 @@ namespace BrandBook.Services.Subscriptions
 
 
 
-        private bool IsMaximumOfBrandsReached(int amountCurrentBrands, int amountPossibleBrands)
+        private bool IsMaximumOfBrandsReached(string userId, IEnumerable<Subscription> subscriptions)
         {
+            var usersCompanyId = _unitOfWork.AppUserRepository.FindById(userId).CompanyId;
+            var amountOfBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(usersCompanyId);
 
-
-            return amountCurrentBrands >= amountPossibleBrands;
+            return amountOfBrands >= CalcAmountOfPossibleBrands(subscriptions);
         }
 
 
