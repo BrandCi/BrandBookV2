@@ -10,11 +10,21 @@ namespace BrandBook.Web.Routes
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
+
+
+
+            routes.MapRoute(
+                "BlogOverview",
+                "Blog/Overview",
+                new { controller = "Blog", action = "Overview" },
+                new[] { "BrandBook.Web.Controllers.BlogController" }
+            );
+
             routes.MapRoute(
                 "Blog",
                 "Blog/{blogName}",
-                new { controller = "Home", action = "Index" },
-                new[] { "BrandBook.Web.Controllers.Blog" }
+                new { controller = "Blog", action = "Index" },
+                new[] { "BrandBook.Web.Controllers.BlogController" }
             );
 
 
