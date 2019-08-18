@@ -38,7 +38,7 @@ namespace BrandBook.Core
         void SaveChanges();
         void SaveChangesAsync();
 
-        void Dispose();
+        new void Dispose();
 
         #endregion
     }
