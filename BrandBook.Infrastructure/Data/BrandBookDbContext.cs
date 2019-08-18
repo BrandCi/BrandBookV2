@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.Domain.Blog;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Core.Domain.Brand.Font;
@@ -49,6 +50,12 @@ namespace BrandBook.Infrastructure.Data
 
         // Resources
         public DbSet<Image> Images { get; set; }
+
+
+
+
+        /* Frontend - Blog */
+        public DbSet<BlogEntry> BlogEntries { get; set; }
 
 
 
