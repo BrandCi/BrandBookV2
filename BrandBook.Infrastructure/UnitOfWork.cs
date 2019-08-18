@@ -37,6 +37,7 @@ namespace BrandBook.Infrastructure
         private ICompanyRepository _companyRepository;
         private IImageRepository _imageRepository;
         private ISubscriptionRepository _subscriptionRepository;
+        private ISubscriptionPlanRepository _subscriptionPlanRepository;
 
         #endregion
 
@@ -114,6 +115,10 @@ namespace BrandBook.Infrastructure
         {
             get { return _subscriptionRepository ?? (_subscriptionRepository = new SubscriptionRepository(_context)); }
         }
+        public ISubscriptionPlanRepository SubscriptionPlanRepository
+        {
+            get { return _subscriptionPlanRepository ?? (_subscriptionPlanRepository = new SubscriptionPlanRepository(_context)); }
+        }
 
 
 
@@ -148,6 +153,7 @@ namespace BrandBook.Infrastructure
             _companyRepository = null;
             _imageRepository = null;
             _subscriptionRepository = null;
+            _subscriptionPlanRepository = null;
 
             _context.Dispose();
         }
