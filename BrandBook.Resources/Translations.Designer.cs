@@ -1078,6 +1078,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string frontend_navigation_blog {
+            get {
+                return ResourceManager.GetString("frontend_navigation_blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string frontend_navigation_contact {
