@@ -76,14 +76,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );
             
-            try
-            {
-                System.IO.File.WriteAllText(GetAbsoluteFilePath(translationName), csv);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception();
-            }
+            System.IO.File.WriteAllText(GetAbsoluteFilePath(translationName), csv);
 
         }
 

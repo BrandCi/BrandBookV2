@@ -37,32 +37,26 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            try
-            {
-                var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
-                var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
+            
+            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+            var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
-                var model = new BrandOverviewViewModel()
+            var model = new BrandOverviewViewModel()
+            {
+                Id = brand.Id,
+                Name = brand.Name,
+                ShortDescription = brand.ShortDescription,
+                Description = brand.Description,
+                MainHexColor = brand.MainHexColor,
+                Image = new BrandImageViewModel()
                 {
-                    Id = brand.Id,
-                    Name = brand.Name,
-                    ShortDescription = brand.ShortDescription,
-                    Description = brand.Description,
-                    MainHexColor = brand.MainHexColor,
-                    Image = new BrandImageViewModel()
-                    {
-                        Id = brandImage.Id,
-                        Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
-                    }
-                };
+                    Id = brandImage.Id,
+                    Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
+                }
+            };
 
-                return View(model);
-
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Overview", "Brands", new { area = "App" });
-            }
+            return View(model);
+           
             
         }
 
