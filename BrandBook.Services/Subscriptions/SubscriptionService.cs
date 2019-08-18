@@ -25,8 +25,9 @@ namespace BrandBook.Services.Subscriptions
 
             foreach(var subscription in subscriptions)
             {
+                var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
 
-                if (IsEndDateInFuture(subscription))
+                if (IsEndDateInFuture(subscription, subscriptionPlan))
                 {
                     return true;
                 }
@@ -38,17 +39,18 @@ namespace BrandBook.Services.Subscriptions
 
         
 
-        private bool IsEndDateInFuture(Subscription subscription)
+        private bool IsEndDateInFuture(Subscription subscription, SubscriptionPlan subscriptionPlan)
         {
-            var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
             var endDate = subscription.StartDateTime.AddMonths(subscriptionPlan.ValidityInMonths);
 
-            if (endDate > new DateTime())
-            {
-                return true;
-            }
+            return endDate > new DateTime();
+        }
 
-            return false;
+
+
+        private bool IsMaximumOfBrandsReached(int amountCurrentBrands, int amountPossibleBrands)
+        {
+            return amountCurrentBrands >= amountPossibleBrands;
         }
 
 
