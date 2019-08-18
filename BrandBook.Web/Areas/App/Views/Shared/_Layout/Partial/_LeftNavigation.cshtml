@@ -17,6 +17,14 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="@Url.Action("Subscriptions", "Profile", new{ area = "App" })" class="waves-effect waves-primary">
+                        <i class="fas fa-key"></i><span> My Subscriptions </span>
+                    </a>
+                </li>
+
+
+
 
                 @if (User.IsInRole("Administrator"))
                 {
@@ -43,8 +51,8 @@
                         </ul>
                     </li>
                 }
-                
-                
+
+
                 @if (User.IsInRole("Administrator"))
                 {
                     <li class="has_sub">
@@ -72,10 +80,10 @@
                         </ul>
                     </li>
                 }
-                
-                
-               
-            
+
+
+
+
 
             </ul>
 
