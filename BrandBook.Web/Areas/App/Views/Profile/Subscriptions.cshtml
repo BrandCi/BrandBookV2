@@ -25,7 +25,25 @@
                                     <h5 class="mb-0 mt-0 font-16">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@subscription.Id" aria-expanded="false" aria-controls="collapse-@subscription.Id">
                                             <strong>Subscription #@subscription.Key</strong> (@subscription.PlanName)
-                                            <span class="badge badge-danger" style="float: right;">Expired</span>
+                                            @if (subscription.IsActive)
+                                            {
+                                                <span class="badge subscription badge-success">Active</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge subscription badge-danger">Expired</span>
+                                            }
+
+
+                                            @if (subscription.IsPaid)
+                                            {
+                                                <span class="badge subscription badge-success">Paid</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge subscription badge-warning">Not Paid</span>
+                                            }
+
                                         </a>
                                     </h5>
                                 </div>

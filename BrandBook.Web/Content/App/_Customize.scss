@@ -37,3 +37,9 @@
 .wizard > .steps .done a:active {
     background-color: lighten($primary, 25%) !important;
 }
+
+
+.badge.subscription {
+    float: right;
+    margin-left: .5%;
+}
