@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Profile;
 using BrandBook.Web.Framework.ViewModels.App.Subscriptions;
@@ -13,10 +14,12 @@ namespace BrandBook.Web.Areas.App.Controllers
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly SubscriptionService _subscriptionService;
 
         public ProfileController()
         {
-            this._unitOfWork = new UnitOfWork();
+            _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         public ActionResult Index()
@@ -63,9 +66,12 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var userId = User.Identity.GetUserId();
             var subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
+
+
             var viewModel = new SubscriptionsViewModel()
             {
-                Subscriptions = new List<SingleSubscriptionViewModel>()
+                Subscriptions = new List<SingleSubscriptionViewModel>(),
+                HasValidSubscription = _subscriptionService.HasValidSubscription(userId)
             };
 
 
