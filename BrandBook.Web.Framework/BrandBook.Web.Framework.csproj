@@ -139,6 +139,7 @@
     <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Blog\BlogEntryViewModel.cs" />
     <Compile Include="ViewModels\Frontend\ContactFormViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
