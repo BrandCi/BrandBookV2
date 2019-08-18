@@ -74,6 +74,7 @@
     <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
+    <Compile Include="Domain\User\Subscription.cs" />
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Dtos\BaseDto.cs" />
