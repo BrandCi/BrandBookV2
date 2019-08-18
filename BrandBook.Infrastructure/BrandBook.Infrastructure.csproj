@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201908181011251_AddSubscriptionsManagementTables.Designer.cs">
       <DependentUpon>201908181011251_AddSubscriptionsManagementTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908181016148_SeedSubscriptionPlansTable.cs" />
+    <Compile Include="Migrations\201908181016148_SeedSubscriptionPlansTable.Designer.cs">
+      <DependentUpon>201908181016148_SeedSubscriptionPlansTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908181011251_AddSubscriptionsManagementTables.resx">
       <DependentUpon>201908181011251_AddSubscriptionsManagementTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181016148_SeedSubscriptionPlansTable.resx">
+      <DependentUpon>201908181016148_SeedSubscriptionPlansTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
