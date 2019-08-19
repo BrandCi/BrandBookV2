@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Repositories.Frontend;
@@ -47,8 +48,16 @@ namespace BrandBook.Web.Controllers
         }
 
 
-        public ActionResult Overview()
+        public async Task<ActionResult> Overview()
         {
+            var allBlogs = await _blogEntryRepository.GetAllAsync();
+
+            var viewModel = new BlogOverviewViewModel()
+            {
+                BlogEntryViewModels = new List<BlogEntryViewModel>()
+            };
+
+
             return View();
         }
     }
