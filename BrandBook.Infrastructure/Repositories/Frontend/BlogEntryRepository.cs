@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +29,9 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
         }
 
 
-        public List<BlogEntry> GetAllPublishedBlogEntries()
+        public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesAsync()
         {
-            return Set.Where(be => be.IsPublished).ToList();
+            return await Set.Where(be => be.IsPublished).ToListAsync();
         }
 
 
