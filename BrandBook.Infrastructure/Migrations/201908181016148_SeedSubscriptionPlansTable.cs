@@ -15,6 +15,7 @@ namespace BrandBook.Infrastructure.Migrations
             Sql("INSERT INTO [dbo].[SubscriptionPlans] ([Id], [Name], [ValidityInMonths], [Price]) VALUES (4, N'Business Annually', 12, 5)");
             Sql("INSERT INTO [dbo].[SubscriptionPlans] ([Id], [Name], [ValidityInMonths], [Price]) VALUES (5, N'Agency Monthly', 1, 25)");
             Sql("INSERT INTO [dbo].[SubscriptionPlans] ([Id], [Name], [ValidityInMonths], [Price]) VALUES (6, N'Agency Annually', 12, 20)");
+            Sql("INSERT INTO [dbo].[SubscriptionPlans] ([Id], [Name], [ValidityInMonths], [Price]) VALUES (7, N'Evaluation', 1, 0)");
             Sql("SET IDENTITY_INSERT [dbo].[SubscriptionPlans] OFF");
 
         }
