@@ -84,13 +84,18 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
-                
+                var company = new Company()
+                {
+                    Name = model.Username,
+                    ContactEmail = model.Email,
+                    UrlName = model.Username
+                };
 
                 var user = new AppUser
                 {
                     UserName = model.Username,
                     Email = model.Email,
-                    CompanyId = 1,
+                    Company = company,
                     PrivacyPolicyAccepted = true,
                     IsActive = true
                 };
