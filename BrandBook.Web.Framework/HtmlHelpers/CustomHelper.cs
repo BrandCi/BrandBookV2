@@ -21,11 +21,16 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             var contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
             var contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
 
+            if (imageType != "")
+            {
+                imageName = imageName + "." + imageType;
+            }
+
             if (imageSection != "")
             {
-                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName + "." + imageType;
+                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName;
             }
-            return "https://" + contentServer + "/" + contentKey + "/" + imageName + "." + imageType;
+            return "https://" + contentServer + "/" + contentKey + "/" + imageName;
         }
 
 

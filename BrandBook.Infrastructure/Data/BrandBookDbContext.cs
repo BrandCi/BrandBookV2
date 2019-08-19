@@ -9,6 +9,7 @@ using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Core.Domain.Brand.Font;
 using BrandBook.Core.Domain.Brand.Icon;
 using BrandBook.Core.Domain.Company;
+using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Core.Domain.System;
 using BrandBook.Core.Domain.User;
@@ -49,6 +50,12 @@ namespace BrandBook.Infrastructure.Data
 
         // Resources
         public DbSet<Image> Images { get; set; }
+
+
+
+
+        /* Frontend - Blog */
+        public DbSet<BlogEntry> BlogEntries { get; set; }
 
 
 

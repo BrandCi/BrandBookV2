@@ -191,6 +191,7 @@
     <Compile Include="Areas\Public\Controllers\ColorsController.cs" />
     <Compile Include="Areas\Public\Controllers\FontsController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
@@ -1214,6 +1215,8 @@
     <Content Include="Views\Product\Collaboration.cshtml" />
     <Content Include="Views\Product\Sharing.cshtml" />
     <Content Include="Views\Product\Optimization.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Auth\" />

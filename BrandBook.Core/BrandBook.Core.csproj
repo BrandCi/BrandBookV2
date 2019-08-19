@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\Frontend\BlogEntry.cs" />
     <Compile Include="Domain\Brand\Brand.cs" />
     <Compile Include="Domain\Brand\BrandPublicSetting.cs" />
     <Compile Include="Domain\Brand\BrandSetting.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IIconRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />
+    <Compile Include="Repositories\Frontend\IBlogEntryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Resource\IImageRepository.cs" />
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />
