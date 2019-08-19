@@ -1,8 +1,11 @@
 ﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
+using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Repositories.User;
+using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
@@ -15,21 +18,21 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
-        private readonly IAppUserRepository _appUserRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
        
         #region Constructor
 
         public RegisterController()
         {
-            this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            _unitOfWork = new UnitOfWork();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
-            this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            _unitOfWork = new UnitOfWork();
         }
 
         #endregion
@@ -81,6 +84,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
+                
+
                 var user = new AppUser
                 {
                     UserName = model.Username,
