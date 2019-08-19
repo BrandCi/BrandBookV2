@@ -57,8 +57,22 @@ namespace BrandBook.Web.Controllers
                 BlogEntryViewModels = new List<BlogEntryViewModel>()
             };
 
+            foreach (var blogEntry in allBlogs)
+            {
+                viewModel.BlogEntryViewModels.Add(new BlogEntryViewModel()
+                {
+                    Title = blogEntry.Title,
+                    SubTitle = blogEntry.SubTitle,
+                    UrlKey = blogEntry.UrlKey,
+                    Image = blogEntry.Image,
+                    Author = blogEntry.Author,
+                    Content = blogEntry.Content,
+                    CreationDateTime = blogEntry.CreationDateTime
+                });
+            }
 
-            return View();
+
+            return View(viewModel);
         }
     }
 }
