@@ -15,6 +15,7 @@ namespace BrandBook.Infrastructure.Migrations
             Sql("UPDATE dbo.SubscriptionPlans SET AmountOfBrands = 2 WHERE Id = 4;");
             Sql("UPDATE dbo.SubscriptionPlans SET AmountOfBrands = 500 WHERE Id = 5;");
             Sql("UPDATE dbo.SubscriptionPlans SET AmountOfBrands = 500 WHERE Id = 6;");
+            Sql("UPDATE dbo.SubscriptionPlans SET AmountOfBrands = 1 WHERE Id = 7;");
 
 
 
