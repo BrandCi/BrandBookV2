@@ -12,6 +12,7 @@ namespace BrandBook.Core.Repositories.Frontend
 
         bool BlogEntryExists(string blogEntryKey);
         BlogEntry FindBlogEntryByKey(string blogEntryKey);
+        List<BlogEntry> GetAllPublishedBlogEntries();
 
     }
 }
