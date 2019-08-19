@@ -28,5 +28,11 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
         }
 
 
+        public List<BlogEntry> GetAllPublishedBlogEntries()
+        {
+            return Set.Where(be => be.IsPublished).ToList();
+        }
+
+
     }
 }
