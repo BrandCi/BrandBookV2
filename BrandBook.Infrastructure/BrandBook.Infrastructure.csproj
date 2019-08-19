@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201908181917183_AddBlogEntriesTable.Designer.cs">
       <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.Designer.cs">
+      <DependentUpon>201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -365,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908181917183_AddBlogEntriesTable.resx">
       <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.resx">
+      <DependentUpon>201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
