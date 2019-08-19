@@ -25,7 +25,7 @@ namespace BrandBook.Web.Controllers
         // GET: Blog
         public ActionResult Index(string blogName = "")
         {
-            if (blogName == "" || !_blogEntryRepository.BlogEntryExists(blogName))
+            if (blogName == "" || !_blogEntryRepository.BlogEntryExistsAndPublished(blogName))
             {
                 return RedirectToAction("Overview");
             }
