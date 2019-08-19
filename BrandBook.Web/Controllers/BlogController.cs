@@ -50,7 +50,7 @@ namespace BrandBook.Web.Controllers
 
         public async Task<ActionResult> Overview()
         {
-            var allBlogs = await _blogEntryRepository.GetAllAsync();
+            var allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesAsync();
 
             var viewModel = new BlogOverviewViewModel()
             {
