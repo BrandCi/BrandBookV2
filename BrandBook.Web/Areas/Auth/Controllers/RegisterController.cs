@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -81,7 +82,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
-
             if (ModelState.IsValid)
             {
                 var company = new Company()
@@ -104,6 +104,22 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                 if (result.Succeeded)
                 {
+
+                    var initialSubscription = new Subscription()
+                    {
+                        AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                        AppUserId = user.Id,
+                        IsActive = true,
+                        IsPaid = true,
+                        StartDateTime = DateTime.Now,
+                        SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                        SubscriptionPlanId = 7
+                    };
+
+                    _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+                    _unitOfWork.SaveChanges();
+
+
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
