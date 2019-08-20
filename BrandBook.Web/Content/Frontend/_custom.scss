@@ -26,6 +26,8 @@
 
 
 
+
+
 /*
     RESPONSIVE STYLINGS
 */
@@ -38,4 +40,15 @@
         color: #3d64f4;
         display: inline-block;
     }
+}
+
+@media (max-width: 418px) {
+
+    .nav-button-group,
+    home-button-group > a{
+        margin-bottom: 2.5%;
+    }
+
+    
+
 }
