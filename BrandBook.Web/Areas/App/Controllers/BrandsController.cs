@@ -9,6 +9,7 @@ using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Resources;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using Microsoft.AspNet.Identity;
@@ -20,12 +21,14 @@ namespace BrandBook.Web.Areas.App.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
+        private readonly SubscriptionService _subscriptionService;
 
         public BrandsController()
         {
-            this._unitOfWork = new UnitOfWork();
-            this._cmpAuthService = new CompanyAuthorizationService();
-            this._imageService = new ImageService();
+            _unitOfWork = new UnitOfWork();
+            _cmpAuthService = new CompanyAuthorizationService();
+            _imageService = new ImageService();
+            _subscriptionService = new SubscriptionService();
         }
 
 
