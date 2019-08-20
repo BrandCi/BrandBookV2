@@ -23,15 +23,18 @@
 }
 
 
+#cookieConsentBox {
 
+    position: fixed;
+    bottom: 0;
 
+}
 
 
 
 /*
     RESPONSIVE STYLINGS
 */
-
 @media screen and (max-width: 991px) {
 
     .header_area.navbar_fixed .menu_five .btn_get,
