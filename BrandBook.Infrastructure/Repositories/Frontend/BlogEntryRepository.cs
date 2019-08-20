@@ -35,5 +35,11 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
         }
 
 
+        public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesForAnonymousUserAsync()
+        {
+            return await Set.Where(be => be.IsPublished && be.IsVisibleForAnonymous).ToListAsync();
+        }
+
+
     }
 }
