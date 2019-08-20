@@ -65,7 +65,8 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var viewmodel = new BrandsOverviewViewModel
             {
-                Brands = singleBrandViewModels
+                Brands = singleBrandViewModels,
+                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId())
             };
 
 
@@ -83,53 +84,54 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
         public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid || _subscriptionService.HasValidSubscription(User.Identity.GetUserId()))
             {
-                Image brandImage;
-                if (image != null)
-                {
-                    var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.GetImageType(image.FileName);
-
-                    SaveBrandImageInStorage(image, fileName);
-                    
-                    brandImage = new Image()
-                    {
-                        Name = fileName,
-                        ContentType = image.ContentType,
-                        Category = 1
-                    };
-
-                    _unitOfWork.ImageRepository.Add(brandImage);
-                }
-                else
-                {
-                    brandImage = _unitOfWork.ImageRepository.FindById(1);
-                }
+                return View(model);
+            }
                 
 
-                var brand = new Brand()
+            Image brandImage;
+            if (image != null)
+            {
+                var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.GetImageType(image.FileName);
+
+                SaveBrandImageInStorage(image, fileName);
+                    
+                brandImage = new Image()
                 {
-                    Name = model.Name,
-                    Description = model.Description,
-                    ShortDescription = model.ShortDescription,
-                    MainHexColor = model.MainColor,
-                    ImageId = brandImage.Id,
-                    Image = brandImage,
-                    BrandPublicSettingId = 1,
-                    BrandSettingId = 2,
-                    CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
+                    Name = fileName,
+                    ContentType = image.ContentType,
+                    Category = 1
                 };
 
-                _unitOfWork.BrandRepository.Add(brand);
-
-                _unitOfWork.SaveChanges();
-                return RedirectToAction("Overview", "Brands", new {area = "App"});
+                _unitOfWork.ImageRepository.Add(brandImage);
             }
+            else
+            {
+                brandImage = _unitOfWork.ImageRepository.FindById(1);
+            }
+                
 
-            return View(model);
+            var brand = new Brand()
+            {
+                Name = model.Name,
+                Description = model.Description,
+                ShortDescription = model.ShortDescription,
+                MainHexColor = model.MainColor,
+                ImageId = brandImage.Id,
+                Image = brandImage,
+                BrandPublicSettingId = 1,
+                BrandSettingId = 2,
+                CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
+            };
+
+            _unitOfWork.BrandRepository.Add(brand);
+
+            _unitOfWork.SaveChanges();
+            return RedirectToAction("Overview", "Brands", new {area = "App"});
+
         }
 
 
