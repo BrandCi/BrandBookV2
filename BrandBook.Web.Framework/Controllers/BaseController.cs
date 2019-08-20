@@ -21,18 +21,19 @@ namespace BrandBook.Web.Framework.Controllers
 
         #endregion
 
-        private readonly ISettingRepository settingRepository;
+        private readonly ISettingRepository _settingRepository;
 
         public BaseController()
         {
-            this.settingRepository = new SettingRepository(new BrandBookDbContext());
+            this._settingRepository = new SettingRepository(new BrandBookDbContext());
         }
 
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
 
-            ViewBag.AppTitle = settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            ViewBag.AppTitle = _settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            ViewBag.AppAuthor = _settingRepository.GetSettingByKey("conf_system_appauthor").Value;
 
 
 
