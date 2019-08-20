@@ -5,13 +5,12 @@
 }
 
 
-<!-- Insertion -->
 <!DOCTYPE html>
 <html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRightToLeft() ? "rtl" : "ltr")">
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="Brand Management, BrandBook">
-    <meta name="author" content="@ViewBag.AppAuthor">
+    <meta name="author" content="@ViewBag.MetaAppAuthor">
     <meta name="description" content="Brand Book V2">
 
     <!-- For IE -->
@@ -19,7 +18,7 @@
     <!-- For Resposive Device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - @ViewBag.AppTitle</title>
+    <title>@ViewBag.Title - @ViewBag.MetaAppTitle</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
@@ -39,17 +38,21 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
+    <!-- ./ Favicon -->
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ./ Fontawesome -->
 
 
 </head>
 
     <body>
 
-
+        <!-- PreLoader -->
         @Html.Partial("~/Views/Shared/Layout/Partial/_PreLoader.cshtml")
+        <!-- ./ PreLoader -->
+
         <div class="body_wrapper">
 
             @{ Html.RenderAction("UserLike", "Layout"); }
@@ -68,13 +71,14 @@
             {
                 <!-- Cookie-Consent -->
                 @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
-                <!-- Cookie-Consent -->
+                <!-- ./ Cookie-Consent -->
             }
         
 
 
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
+            <!-- ./ Footer -->
 
             <!-- Js Bundles -->
             @Scripts.Render("~/bundles/Frontend/Main")
@@ -82,6 +86,7 @@
             @RenderSection("pageScriptBundle", required: false)
 
             @Scripts.Render("~/bundles/Frontend/General")
+            <!-- ./ Js Bundles -->
 
 
             <!-- Culture Switcher -->

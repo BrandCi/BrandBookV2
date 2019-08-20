@@ -32,8 +32,8 @@ namespace BrandBook.Web.Framework.Controllers
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
 
-            ViewBag.AppTitle = _settingRepository.GetSettingByKey("conf_system_apptitle").Value;
-            ViewBag.AppAuthor = _settingRepository.GetSettingByKey("conf_system_appauthor").Value;
+            ViewBag.MetaAppTitle = _settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            ViewBag.MetaAppAuthor = _settingRepository.GetSettingByKey("conf_system_appauthor").Value;
 
 
 
