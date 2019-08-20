@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend;
@@ -50,7 +51,17 @@ namespace BrandBook.Web.Controllers
 
         public async Task<ActionResult> Overview()
         {
-            var allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesAsync();
+            List<BlogEntry> allBlogs;
+            if (User.Identity.IsAuthenticated)
+            {
+                allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesAsync();
+            }
+            else
+            {
+                allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync();
+            }
+
+            
 
             var viewModel = new BlogOverviewViewModel()
             {
