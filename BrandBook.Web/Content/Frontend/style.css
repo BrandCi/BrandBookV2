@@ -14227,7 +14227,35 @@ a .h_head:hover {
 
 #cookieConsentBox {
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  left: 12.5%;
+  width: 75%;
+  z-index: 100; }
+  #cookieConsentBox .box_alert {
+    background-color: #ffffff;
+    padding: 40px 40px 20px 40px; }
+  #cookieConsentBox #acceptCookiesButton {
+    margin-top: 0;
+    padding: 6px 15px 6px 15px; }
+  #cookieConsentBox h5 {
+    font-size: 15px; }
+  #cookieConsentBox p {
+    font-size: 12px;
+    line-height: 2; }
+
+@media (max-width: 768px) {
+  #cookieConsentBox {
+    width: 110%;
+    left: 0; }
+    #cookieConsentBox .box-alert {
+      padding: 20px 30px 10px 30px; }
+    #cookieConsentBox .icon {
+      display: none; }
+    #cookieConsentBox h5 {
+      font-size: 12px; }
+    #cookieConsentBox p {
+      font-size: 10px;
+      line-height: 1.5; } }
 
 /*
     RESPONSIVE STYLINGS
