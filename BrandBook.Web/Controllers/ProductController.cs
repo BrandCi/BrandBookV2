@@ -8,6 +8,10 @@ namespace BrandBook.Web.Controllers
 
         public ActionResult Overview()
         {
+            ViewBag.Title = "Product Overview";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
             return View();
         }
 

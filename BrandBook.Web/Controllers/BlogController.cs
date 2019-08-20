@@ -26,12 +26,19 @@ namespace BrandBook.Web.Controllers
         // GET: Blog
         public ActionResult Index(string blogName = "")
         {
+   
+
+
             if (blogName == "" || !_blogEntryRepository.BlogEntryExistsAndPublished(blogName))
             {
                 return RedirectToAction("Overview");
             }
 
             var blog = _blogEntryRepository.FindBlogEntryByKey(blogName);
+
+            ViewBag.Title = blog.Title;
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
 
             var viewModel = new BlogEntryViewModel()
             {
@@ -51,6 +58,13 @@ namespace BrandBook.Web.Controllers
 
         public async Task<ActionResult> Overview()
         {
+
+            ViewBag.Title = "Blog Overview";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
+
+
             List<BlogEntry> allBlogs;
             if (User.Identity.IsAuthenticated)
             {

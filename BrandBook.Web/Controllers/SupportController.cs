@@ -11,6 +11,10 @@ namespace BrandBook.Web.Controllers
     {
         public ActionResult Contact()
         {
+            ViewBag.Title = "Contact";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
             var model = new ContactFormViewModel();
             return View(model);
         }
