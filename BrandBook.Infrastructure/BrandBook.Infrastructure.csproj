@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201908201957006_AddAuthorSettingKeyToSettingsTable.Designer.cs">
       <DependentUpon>201908201957006_AddAuthorSettingKeyToSettingsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.cs" />
+    <Compile Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.Designer.cs">
+      <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -386,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908201957006_AddAuthorSettingKeyToSettingsTable.resx">
       <DependentUpon>201908201957006_AddAuthorSettingKeyToSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.resx">
+      <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
