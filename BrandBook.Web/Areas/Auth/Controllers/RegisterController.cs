@@ -10,6 +10,7 @@ using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
@@ -20,6 +21,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
     public class RegisterController : AuthControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly SubscriptionService _subscriptionService;
 
        
         #region Constructor
@@ -27,6 +29,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         public RegisterController()
         {
             _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
@@ -34,6 +37,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             UserManager = userService;
             SignInService = signInService;
             _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         #endregion
@@ -107,6 +111,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                     var initialSubscription = new Subscription()
                     {
+                        Key = _subscriptionService.GenerateEvaluationKey(),
                         AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
                         AppUserId = user.Id,
                         IsActive = true,
