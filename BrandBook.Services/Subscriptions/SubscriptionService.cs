@@ -13,6 +13,9 @@ namespace BrandBook.Services.Subscriptions
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        private readonly int _evaluationKeyLength = 6;
+        private readonly int _paidKeyLength = 8;
+
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
@@ -77,6 +80,21 @@ namespace BrandBook.Services.Subscriptions
                                         .Select(subscriptionPlan => subscriptionPlan.AmountOfBrands)
                                         .Sum();
         }
+
+
+        private string GenerateKeyFor(int typeOfKey)
+        {
+            var random = new Random();
+
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            return new string(Enumerable.Repeat(chars, typeOfKey)
+                .Select(s => s[random.Next(s.Length)])
+                .ToArray());
+        }
+
+
+        
 
 
 
