@@ -40,16 +40,22 @@
                                             {
                                                 <span class="badge subscription badge-danger">Expired</span>
                                             }
+                                            
+                                            
+                                            @if (subscription.Name != "Evaluation")
+                                            {
+                                                 if (subscription.IsPaid)
+                                                 {
+                                                     <span class="badge subscription badge-success">Paid</span>
+                                                 }
+                                                 else
+                                                 {
+                                                     <span class="badge subscription badge-warning">Not Paid</span>
+                                                 }
+                                            }
 
 
-                                            @if (subscription.IsPaid)
-                                            {
-                                                <span class="badge subscription badge-success">Paid</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="badge subscription badge-warning">Not Paid</span>
-                                            }
+                                          
                                             
                                         </a>
                                     </h5>
