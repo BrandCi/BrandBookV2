@@ -30,6 +30,24 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
+        public string GenerateEvaluationKey()
+        {
+            return GenerateKeyWith(_evaluationKeyLength);
+        }
+
+        public string GeneratePaidKey()
+        {
+            return GenerateKeyWith(_paidKeyLength);
+        }
+
+
+
+
+
+
+
+
+
         private bool IsAnySubscriptionValid(string userId, IEnumerable<Subscription> subscriptions)
         {
             if (IsMaximumOfBrandsReached(userId, subscriptions))
@@ -82,7 +100,7 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
-        private string GenerateKeyFor(int typeOfKey)
+        private string GenerateKeyWith(int typeOfKey)
         {
             var random = new Random();
 
