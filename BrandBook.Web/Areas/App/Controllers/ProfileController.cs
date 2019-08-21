@@ -83,7 +83,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 viewModel.Subscriptions.Add(new SingleSubscriptionViewModel()
                     {
                         Id = subscription.Id,
-                        Key = subscription.Id.ToString(),
+                        Key = subscription.Key,
                         StartDate = subscription.StartDateTime.ToString("dd.MM.yyyy"),
                         EndDate = endDate.ToString("dd.MM.yyyy"),
                         IsActive = subscription.IsActive,
