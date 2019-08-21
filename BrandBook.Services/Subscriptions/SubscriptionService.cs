@@ -13,9 +13,7 @@ namespace BrandBook.Services.Subscriptions
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private readonly int _evaluationKeyLength = 6;
-        private readonly int _paidKeyLength = 8;
-
+     
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
@@ -30,31 +28,16 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
-        public string GenerateEvaluationKey()
+        public string GenerateSubscriptionKey()
         {
-            return GenerateKeyWith(_evaluationKeyLength);
+            var random = new Random();
+
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            return new string(Enumerable.Repeat(chars, 8)
+                .Select(s => s[random.Next(s.Length)])
+                .ToArray());
         }
-
-        public string GeneratePaidKey()
-        {
-            return GenerateKeyWith(_paidKeyLength);
-        }
-
-
-        public bool IsEvaluationKey(string key)
-        {
-            return key.Length == _evaluationKeyLength;
-        }
-
-        public bool IsPaidKey(string key)
-        {
-            return key.Length == _paidKeyLength;
-        }
-
-
-
-
-
 
 
 
@@ -111,21 +94,6 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
-        private string GenerateKeyWith(int typeOfKey)
-        {
-            var random = new Random();
-
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-            return new string(Enumerable.Repeat(chars, typeOfKey)
-                .Select(s => s[random.Next(s.Length)])
-                .ToArray());
-        }
-
-
         
-
-
-
     }
 }

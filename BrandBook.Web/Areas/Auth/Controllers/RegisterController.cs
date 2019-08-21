@@ -111,7 +111,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                     var initialSubscription = new Subscription()
                     {
-                        Key = _subscriptionService.GenerateEvaluationKey(),
+                        Key = _subscriptionService.GenerateSubscriptionKey(),
                         AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
                         AppUserId = user.Id,
                         IsActive = true,
