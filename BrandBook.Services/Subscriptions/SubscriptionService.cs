@@ -41,6 +41,17 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
+        public bool IsEvaluationKey(string key)
+        {
+            return key.Length == _evaluationKeyLength;
+        }
+
+        public bool IsPaidKey(string key)
+        {
+            return key.Length == _paidKeyLength;
+        }
+
+
 
 
 
