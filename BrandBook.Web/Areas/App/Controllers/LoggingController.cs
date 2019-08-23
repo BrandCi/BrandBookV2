@@ -10,7 +10,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class LoggingController : AppControllerBase
     {
         // GET: App/Logging
-        public ActionResult Index()
+        public ActionResult LoggingMessages()
         {
             return View();
         }
