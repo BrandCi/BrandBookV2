@@ -182,6 +182,7 @@
     <Compile Include="Areas\App\Controllers\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\AppCultureController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\App\Controllers\LoggingController.cs" />
     <Compile Include="Areas\App\Controllers\ProfileController.cs" />
     <Compile Include="Areas\App\Controllers\SystemController.cs" />
     <Compile Include="Areas\App\Controllers\UserController.cs" />
@@ -1222,6 +1223,7 @@
     <Content Include="Views\Blog\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\App\Views\Logging\" />
     <Folder Include="Scripts\Auth\" />
   </ItemGroup>
   <ItemGroup>
