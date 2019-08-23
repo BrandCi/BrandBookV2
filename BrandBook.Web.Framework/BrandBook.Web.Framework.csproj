@@ -137,6 +137,7 @@
     <Compile Include="ViewModels\App\Settings\UserSettingsViewModel.cs" />
     <Compile Include="ViewModels\App\Subscriptions\SingleSubscriptionViewModel.cs" />
     <Compile Include="ViewModels\App\Subscriptions\SubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\App\System\LoggingMessages\LoggingMessagesViewModel.cs" />
     <Compile Include="ViewModels\App\System\LoggingMessages\SingleLoggingMessageViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\AppUserViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
