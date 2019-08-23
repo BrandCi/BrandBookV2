@@ -8,16 +8,18 @@ using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Helpers;
+using log4net;
 
 namespace BrandBook.Web.Framework.Controllers
 {
     public class BaseController : Controller
     {
         #region Fields
-
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         public SignInService _signInService;
         public UserService _userService;
         public RoleService _roleService;
+
 
         #endregion
 
