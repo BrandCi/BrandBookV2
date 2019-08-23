@@ -248,6 +248,7 @@
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\Resource\ImageRepository.cs" />
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
+    <Compile Include="Repositories\System\Log4NetLogRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
     <Compile Include="Repositories\User\SubscriptionPlanRepository.cs" />
