@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.Designer.cs">
       <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908231843079_AddLog4NetLogsTable.cs" />
+    <Compile Include="Migrations\201908231843079_AddLog4NetLogsTable.Designer.cs">
+      <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -393,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.resx">
       <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908231843079_AddLog4NetLogsTable.resx">
+      <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
