@@ -38,6 +38,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 viewModel.LoggingMessages.Add(new SingleLoggingMessageViewModel()
                 {
+                    Id = loggingMessage.Id,
                     Date = loggingMessage.Date,
                     Logger = loggingMessage.Logger,
                     Level = loggingMessage.Level,
