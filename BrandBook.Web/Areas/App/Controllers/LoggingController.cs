@@ -34,8 +34,21 @@ namespace BrandBook.Web.Areas.App.Controllers
                 LoggingMessages = new List<SingleLoggingMessageViewModel>()
             };
 
+            foreach (var loggingMessage in loggingMessages)
+            {
+                viewModel.LoggingMessages.Add(new SingleLoggingMessageViewModel()
+                {
+                    Date = loggingMessage.Date,
+                    Logger = loggingMessage.Logger,
+                    Level = loggingMessage.Level,
+                    Thread = loggingMessage.Thread,
+                    Message = loggingMessage.Message,
+                    Exception = loggingMessage.Exception
+                });
+            }
+
             
-            return View();
+            return View(viewModel);
         }
     }
 }

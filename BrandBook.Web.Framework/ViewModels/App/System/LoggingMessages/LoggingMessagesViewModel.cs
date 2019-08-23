@@ -9,7 +9,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.System.LoggingMessages
 {
     public class LoggingMessagesViewModel : IEnumerable<SingleLoggingMessageViewModel>
     {
-        public IEnumerable<SingleLoggingMessageViewModel> LoggingMessages { get; set; }
+        public List<SingleLoggingMessageViewModel> LoggingMessages { get; set; }
 
         public IEnumerator<SingleLoggingMessageViewModel> GetEnumerator()
         {
