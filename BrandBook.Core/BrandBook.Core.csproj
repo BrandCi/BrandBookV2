@@ -72,6 +72,7 @@
     <Compile Include="Domain\Resource\Image.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
+    <Compile Include="Domain\System\Log4NetLog.cs" />
     <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
