@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using log4net;
 using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -22,6 +24,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
         private readonly SubscriptionService _subscriptionService;
+        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandsController()
         {
@@ -141,7 +144,19 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var filePath = Server.MapPath("/SharedStorage/BrandImages");
 
-            image.SaveAs(Path.Combine(filePath, fileName));
+            try
+            {
+                image.SaveAs(Path.Combine(filePath, fileName));
+            }
+            catch (FileNotFoundException ex)
+            {
+                Logger.Warn(ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn(ex.Message, ex);
+            }
+
         }
 
 
