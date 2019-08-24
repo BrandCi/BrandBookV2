@@ -81,6 +81,22 @@
                     </li>
                 }
 
+                @if (User.IsInRole("Administrator"))
+                {
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary subdrop">
+                            <i class="fas fa-boxes"></i><span> Logging</span>
+                        </a>
+                        <ul class="list-unstyled" style="display: block;">
+                            <li>
+                                <a href="@Url.Action("LoggingMessages", "Logging", new {area = "App"})">
+                                    Logging Messages
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                }
 
 
 
