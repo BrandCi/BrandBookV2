@@ -8,12 +8,14 @@ using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
+using BrandBook.Core.Repositories.System;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Infrastructure.Repositories.Company;
 using BrandBook.Infrastructure.Repositories.Resource;
 using BrandBook.Infrastructure.Repositories.Setting;
+using BrandBook.Infrastructure.Repositories.System;
 using BrandBook.Infrastructure.Repositories.User;
 
 namespace BrandBook.Infrastructure
@@ -38,6 +40,7 @@ namespace BrandBook.Infrastructure
         private IImageRepository _imageRepository;
         private ISubscriptionRepository _subscriptionRepository;
         private ISubscriptionPlanRepository _subscriptionPlanRepository;
+        private ILog4NetLogRepository _log4NetLogRepository;
 
         #endregion
 
@@ -120,6 +123,11 @@ namespace BrandBook.Infrastructure
             get { return _subscriptionPlanRepository ?? (_subscriptionPlanRepository = new SubscriptionPlanRepository(_context)); }
         }
 
+        public ILog4NetLogRepository Log4NetLogRepository
+        {
+            get { return _log4NetLogRepository ?? (_log4NetLogRepository = new Log4NetLogRepository(_context)); }
+        }
+
 
 
 
@@ -154,6 +162,7 @@ namespace BrandBook.Infrastructure
             _imageRepository = null;
             _subscriptionRepository = null;
             _subscriptionPlanRepository = null;
+            _log4NetLogRepository = null;
 
             _context.Dispose();
         }

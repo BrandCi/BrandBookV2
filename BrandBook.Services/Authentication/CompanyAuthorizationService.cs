@@ -8,17 +8,20 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Infrastructure;
+using log4net;
+using log4net.Repository.Hierarchy;
 
 namespace BrandBook.Services.Authentication
 {
     public class CompanyAuthorizationService
     {
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public CompanyAuthorizationService()
         {
-            this._unitOfWork = new UnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
 
 
@@ -29,7 +32,7 @@ namespace BrandBook.Services.Authentication
 
             if (id != null && id != 0)
             {
-                int brandId = id ?? 0;
+                var brandId = id ?? 0;
 
                 if (_unitOfWork.BrandRepository.IsBrandExistingById(brandId))
                 {
@@ -39,6 +42,14 @@ namespace BrandBook.Services.Authentication
                     {
                         return true;
                     }
+                    else
+                    {
+                        Logger.Warn($"Not authorized to access brand. {{AppUser: #{appUserGuid} | Brand: #{brandId}}}");
+                    }
+                }
+                else
+                {
+                    Logger.Warn($"Brand does not exist. {{Brand: #{brandId}}}");
                 }
                 
             }
