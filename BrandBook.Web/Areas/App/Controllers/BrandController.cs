@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
@@ -16,13 +12,14 @@ using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
+using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandController : AppControllerBase
     {
-        private IUnitOfWork _unitOfWork;
-        private CompanyAuthorizationService _cmpAuthService;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly CompanyAuthorizationService _cmpAuthService;
 
         public BrandController()
         {
@@ -40,28 +37,26 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            try
-            {
-                var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+            
+            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+            var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
-                var model = new BrandOverviewViewModel()
+            var model = new BrandOverviewViewModel()
+            {
+                Id = brand.Id,
+                Name = brand.Name,
+                ShortDescription = brand.ShortDescription,
+                Description = brand.Description,
+                MainHexColor = brand.MainHexColor,
+                Image = new BrandImageViewModel()
                 {
-                    Id = brand.Id,
-                    Name = brand.Name,
-                    ShortDescription = brand.ShortDescription,
-                    Description = brand.Description,
-                    MainHexColor = brand.MainHexColor,
-                    ImageName = brand.ImageName,
-                    ImageType = brand.ImageType
-                };
+                    Id = brandImage.Id,
+                    Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
+                }
+            };
 
-                return View(model);
-
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Overview", "Brands", new { area = "App" });
-            }
+            return View(model);
+           
             
         }
 
@@ -79,26 +74,28 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(id);
 
-            ColorsViewModel model = new ColorsViewModel();
-            model.Categories = new List<ColorCategoryViewModel>();
+            var model = new ColorsViewModel
+            {
+                Categories = new List<ColorCategoryViewModel>()
+            };
 
 
             foreach (var category in categories)
             {
                 var colors = _unitOfWork.ColorRepository.GetAllColorsFromCategory(category.Id);
 
-                List<SingleColorViewModel> singleColors = new List<SingleColorViewModel>();
+                var singleColors = new List<SingleColorViewModel>();
 
                 foreach (var color in colors)
                 {
-                    Color _color = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
-                    string _rgb = "" + _color.R + ", " + _color.G + ", " + _color.B;
+                    var plainColor = System.Drawing.ColorTranslator.FromHtml("#" + color.HexColorCode);
+                    var rgb = "" + plainColor.R + ", " + plainColor.G + ", " + plainColor.B;
 
                     singleColors.Add(new SingleColorViewModel()
                     {
                         Name = color.Name,
                         HexColor = color.HexColorCode,
-                        RgbValue = _rgb,
+                        RgbValue = rgb,
                         CmykValue = ""
                     });
                 }
@@ -141,15 +138,17 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(id);
 
-            IconsViewModel model = new IconsViewModel();
-            model.Categories = new List<IconCategoryViewModel>();
+            var model = new IconsViewModel
+            {
+                Categories = new List<IconCategoryViewModel>()
+            };
 
 
             foreach (var category in categories)
             {
                 var icons = _unitOfWork.IconRepository.GetAllIconsFromCategory(category.Id);
 
-                List<SingleIconViewModel> singleIcons = new List<SingleIconViewModel>();
+                var singleIcons = new List<SingleIconViewModel>();
 
                 foreach (var icon in icons)
                 {
@@ -233,21 +232,16 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
-
-
-            // Get current brand
+            
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
-            // Set updated values
             brand.Name = model.GeneralSettingsViewModel.Name;
             brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
 
-            // Update
             _unitOfWork.BrandRepository.Update(brand);
             _unitOfWork.SaveChanges();
 
-
-
+            
             return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App"});
         }
 
@@ -259,20 +253,14 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
-
-
-            // Get current brand
+            
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
-            // Set updated values
             brand.BrandSetting.ContactEmail = model.ContactSettingsViewModel.ContactPerson;
 
-            // Update
             _unitOfWork.BrandRepository.Update(brand);
             _unitOfWork.SaveChanges();
-
-
-
+            
             return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
         }
 
@@ -287,12 +275,34 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
             var brand = _unitOfWork.BrandRepository.FindById(id);
-
+            var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
+            
             _unitOfWork.BrandRepository.Remove(brand);
+            RemoveBrandImage(brandImage);
+
             _unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
+        }
+
+
+
+        private void RemoveBrandImage(Image brandImage)
+        {
+            var fullPath = Request.MapPath("~/SharedStorage/BrandImages/" + brandImage.Name);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+
+                _unitOfWork.ImageRepository.Remove(brandImage);
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+
         }
 
 

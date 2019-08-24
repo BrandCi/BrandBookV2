@@ -183,6 +183,58 @@
     <Compile Include="Migrations\201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.Designer.cs">
       <DependentUpon>201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908101148149_AddIsActivePropertyToAppUsersTable.cs" />
+    <Compile Include="Migrations\201908101148149_AddIsActivePropertyToAppUsersTable.Designer.cs">
+      <DependentUpon>201908101148149_AddIsActivePropertyToAppUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.cs" />
+    <Compile Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.Designer.cs">
+      <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs" />
+    <Compile Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.Designer.cs">
+      <DependentUpon>201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181011251_AddSubscriptionsManagementTables.cs" />
+    <Compile Include="Migrations\201908181011251_AddSubscriptionsManagementTables.Designer.cs">
+      <DependentUpon>201908181011251_AddSubscriptionsManagementTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181016148_SeedSubscriptionPlansTable.cs" />
+    <Compile Include="Migrations\201908181016148_SeedSubscriptionPlansTable.Designer.cs">
+      <DependentUpon>201908181016148_SeedSubscriptionPlansTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181032567_UpdatedSubscriptionManagementTables.cs" />
+    <Compile Include="Migrations\201908181032567_UpdatedSubscriptionManagementTables.Designer.cs">
+      <DependentUpon>201908181032567_UpdatedSubscriptionManagementTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.cs" />
+    <Compile Include="Migrations\201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.Designer.cs">
+      <DependentUpon>201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181917183_AddBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201908181917183_AddBlogEntriesTable.Designer.cs">
+      <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.Designer.cs">
+      <DependentUpon>201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201934169_AddIsVisibleForAnonymousToBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201908201934169_AddIsVisibleForAnonymousToBlogEntriesTable.Designer.cs">
+      <DependentUpon>201908201934169_AddIsVisibleForAnonymousToBlogEntriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201957006_AddAuthorSettingKeyToSettingsTable.cs" />
+    <Compile Include="Migrations\201908201957006_AddAuthorSettingKeyToSettingsTable.Designer.cs">
+      <DependentUpon>201908201957006_AddAuthorSettingKeyToSettingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.cs" />
+    <Compile Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.Designer.cs">
+      <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908231843079_AddLog4NetLogsTable.cs" />
+    <Compile Include="Migrations\201908231843079_AddLog4NetLogsTable.Designer.cs">
+      <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -192,10 +244,15 @@
     <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
+    <Compile Include="Repositories\Frontend\BlogEntryRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\Resource\ImageRepository.cs" />
     <Compile Include="Repositories\Setting\SettingRepository.cs" />
+    <Compile Include="Repositories\System\Log4NetLogRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
     <Compile Include="Repositories\User\RolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\SubscriptionPlanRepository.cs" />
+    <Compile Include="Repositories\User\SubscriptionRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
@@ -305,6 +362,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.resx">
       <DependentUpon>201907151908096_AddBrandPublicSettingsTableAndRelationToBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101148149_AddIsActivePropertyToAppUsersTable.resx">
+      <DependentUpon>201908101148149_AddIsActivePropertyToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101418056_AddUserlikeSettingToSettingsTable.resx">
+      <DependentUpon>201908101418056_AddUserlikeSettingToSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101927072_AddImagesTableAndReferenceFromBrandsTable.resx">
+      <DependentUpon>201908101927072_AddImagesTableAndReferenceFromBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181011251_AddSubscriptionsManagementTables.resx">
+      <DependentUpon>201908181011251_AddSubscriptionsManagementTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181016148_SeedSubscriptionPlansTable.resx">
+      <DependentUpon>201908181016148_SeedSubscriptionPlansTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181032567_UpdatedSubscriptionManagementTables.resx">
+      <DependentUpon>201908181032567_UpdatedSubscriptionManagementTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.resx">
+      <DependentUpon>201908181359255_AddAmountOfBrandsPropertyToSubscriptionPlansTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181917183_AddBlogEntriesTable.resx">
+      <DependentUpon>201908181917183_AddBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908192013350_AddIsPublishedColumnToBlogEntriesTable.resx">
+      <DependentUpon>201908192013350_AddIsPublishedColumnToBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201934169_AddIsVisibleForAnonymousToBlogEntriesTable.resx">
+      <DependentUpon>201908201934169_AddIsVisibleForAnonymousToBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201957006_AddAuthorSettingKeyToSettingsTable.resx">
+      <DependentUpon>201908201957006_AddAuthorSettingKeyToSettingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908211839599_AddKeyPropertyToSubscriptionsTable.resx">
+      <DependentUpon>201908211839599_AddKeyPropertyToSubscriptionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908231843079_AddLog4NetLogsTable.resx">
+      <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

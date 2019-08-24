@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Web;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Infrastructure.Data;
@@ -13,7 +9,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     public static class CustomHelper
     {
 
-        private static ISettingRepository settingRepository;
+        private static readonly ISettingRepository settingRepository;
 
         static CustomHelper()
         {
@@ -22,26 +18,66 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static string ImagePath(string imageName, string imageType, string imageSection = "")
         {
-            string contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
-            string contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
+            var contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
+            var contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
+
+            if (imageType != "")
+            {
+                imageName = imageName + "." + imageType;
+            }
 
             if (imageSection != "")
             {
-                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName + "." + imageType;
+                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName;
             }
-            return "https://" + contentServer + "/" + contentKey + "/" + imageName + "." + imageType;
+            return "https://" + contentServer + "/" + contentKey + "/" + imageName;
         }
 
 
         public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
 
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             html.Append("<img");
 
             html.Append(" src=\"");
             html.Append(ImagePath(imageName, imageType));
+            html.Append("\" ");
+
+            if (classes != "")
+            {
+                html.Append(" class=\"" + classes + "\" ");
+            }
+
+            if (styles != "")
+            {
+                html.Append(" style=\"" + styles + "\" ");
+            }
+
+            if (additionalAttributes != "")
+            {
+                html.Append(" " + additionalAttributes + " ");
+            }
+
+
+
+            html.Append(" />");
+
+            return new HtmlString(html.ToString());
+        }
+
+
+        public static IHtmlString SharedStorageImage(string imageNameAndType, string classes = "", string styles = "", string additionalAttributes = "")
+        {
+           
+
+            var html = new StringBuilder();
+
+            html.Append("<img");
+
+            html.Append(" src=\"");
+            html.Append(imageNameAndType);
             html.Append("\" ");
 
             if (classes != "")

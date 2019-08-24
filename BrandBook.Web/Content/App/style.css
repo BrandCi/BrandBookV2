@@ -4660,3 +4660,7 @@ File: Responsive
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active {
   background-color: #356dba !important; }
+
+.badge.subscription {
+  float: right;
+  margin-left: .5%; }

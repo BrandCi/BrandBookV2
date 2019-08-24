@@ -1,53 +1,42 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
     ViewBag.Title = "Impressum";
 }
-@section ColorStyle
-{
-    @Styles.Render("~/Content/Css/Frontend/Styling/01")
-}
 
-<div class="theme-top-section">
-
-    <div class="theme-inner-banner">
+    <section class="breadcrumb_area">
+        @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
         <div class="container">
-            <h2 style="padding: 0 0 15% 0;">
-                Impressum
-            </h2>
-        </div> <!-- /.container -->
-    </div> <!-- /.theme-inner-banner -->
+            <div class="breadcrumb_content text-center">
+                <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                    Imprint
+                </h1>
+            </div>
+        </div>
+    </section>
 
 
-    <div class="container inner-page-spacing">
+<section class="blog_area sec_pad cus_ptB_Bl">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-12 blog-details">
-                <div class="clearfix">
-                    <div class="blog-main-post mt-5">
-                        <div>01.01.2019</div>
-                        <h4>Angaben gemäß §5 TMG</h4>
-                        <p>
-                            Philipp Moser
-                        </p>
-                        <p>
-                            Ahornweg 5
-                        </p>
-                        <p>
-                            76337 Waldbronn
-                        </p>
-                        <p>
+            <div class="col-lg-12">
+                <div class="blog_single mb_50">
+                    <div class="blog_content cus_p">
+                        <p class="f_400 mb-30">
+                            01.01.2019
+                            <h3>Angaben gemäß §5 TMG</h3>
+                            Philipp Moser<br />
+                            Ahornweg 5<br />
+                            76337 Waldbronn<br />
                             Deutschland
                         </p>
-                    </div>
-                    <div class="blog-main-post mt-5">
-                        <h4>Kontakt</h4>
-                        <p>
-                            Tel.: 0123456789
-                        </p>
-                        <p>
+                        <p class="f_400 mb-30">
+                            <h5>Kontakt</h5>
+                            Tel.: 0123456789<br />
                             E-Mail: legal@philipp-moser.de
                         </p>
                     </div>
-                </div>
-            </div> 
+                </div>                    
+            </div>
         </div>
-    </div> <!-- /.container -->
-</div> <!-- /.html-top-content -->
+    </div>
+</section>

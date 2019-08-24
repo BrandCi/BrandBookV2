@@ -1,29 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
+using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Resources;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using log4net;
 using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
     public class BrandsController : AppControllerBase
     {
-        private IUnitOfWork _unitOfWork;
-        private CompanyAuthorizationService _cmpAuthService;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly CompanyAuthorizationService _cmpAuthService;
+        private readonly ImageService _imageService;
+        private readonly SubscriptionService _subscriptionService;
+        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandsController()
         {
-            this._unitOfWork = new UnitOfWork();
-            this._cmpAuthService = new CompanyAuthorizationService();
+            _unitOfWork = new UnitOfWork();
+            _cmpAuthService = new CompanyAuthorizationService();
+            _imageService = new ImageService();
+            _subscriptionService = new SubscriptionService();
         }
 
 
@@ -31,29 +39,38 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brands
         public ActionResult Overview()
         {
-            var allBrands = _unitOfWork.BrandRepository.GetAll();
-            List<SingleBrandOverviewViewModel> singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
+            var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
+            var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
-            foreach (Brand singleBrand in allBrands)
+            foreach (var singleBrand in allBrands)
             {
-                string userGuid = User.Identity.GetUserId();
+                var userGuid = User.Identity.GetUserId();
 
                 if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
                 {
+                    var brandImage = _unitOfWork.ImageRepository.FindById(singleBrand.ImageId);
+
                     singleBrandViewModels.Add(new SingleBrandOverviewViewModel()
                     {
                         Id = singleBrand.Id,
                         Name = singleBrand.Name,
-                        Image = singleBrand.ImageName + "." + singleBrand.ImageType,
                         ShortDescription = singleBrand.ShortDescription,
-                        MainHexColor = singleBrand.MainHexColor
+                        MainHexColor = singleBrand.MainHexColor,
+                        BrandImage = new BrandImageViewModel()
+                        {
+                            Id = brandImage.Id,
+                            Name = brandImage.Name
+                        }
                     });
                 }
                 
             }
 
-            BrandsOverviewViewModel viewmodel = new BrandsOverviewViewModel();
-            viewmodel.Brands = singleBrandViewModels;
+            var viewmodel = new BrandsOverviewViewModel
+            {
+                Brands = singleBrandViewModels,
+                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId())
+            };
 
 
             return View(viewmodel);
@@ -70,27 +87,78 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
-        public ActionResult Add(AddNewBrandViewModel model)
+        public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid || _subscriptionService.HasValidSubscription(User.Identity.GetUserId()))
             {
-                var brand = new Brand()
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    MainHexColor = model.MainColor,
-                    ImageName = model.Image,
-                    ImageType = "png"
-                };
+                return View(model);
+            }
                 
-                _unitOfWork.BrandRepository.Add(brand);
-                _unitOfWork.SaveChanges();
-                return RedirectToAction("Overview", "Brands", new {area = "App"});
+
+            Image brandImage;
+            if (image != null)
+            {
+                var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.GetImageType(image.FileName);
+
+                SaveBrandImageInStorage(image, fileName);
+                    
+                brandImage = new Image()
+                {
+                    Name = fileName,
+                    ContentType = image.ContentType,
+                    Category = 1
+                };
+
+                _unitOfWork.ImageRepository.Add(brandImage);
+            }
+            else
+            {
+                brandImage = _unitOfWork.ImageRepository.FindById(1);
+            }
+                
+
+            var brand = new Brand()
+            {
+                Name = model.Name,
+                Description = model.Description,
+                ShortDescription = model.ShortDescription,
+                MainHexColor = model.MainColor,
+                ImageId = brandImage.Id,
+                Image = brandImage,
+                BrandPublicSettingId = 1,
+                BrandSettingId = 2,
+                CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
+            };
+
+            _unitOfWork.BrandRepository.Add(brand);
+
+            _unitOfWork.SaveChanges();
+            return RedirectToAction("Overview", "Brands", new {area = "App"});
+
+        }
+
+
+
+
+        private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)
+        {
+            var filePath = Server.MapPath("/SharedStorage/BrandImages");
+
+            try
+            {
+                image.SaveAs(Path.Combine(filePath, fileName));
+            }
+            catch (FileNotFoundException ex)
+            {
+                Logger.Warn(ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn(ex.Message, ex);
             }
 
-            return View(model);
         }
+
 
     }
 }   

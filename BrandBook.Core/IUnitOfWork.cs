@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Company;
+using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
+using BrandBook.Core.Repositories.System;
 using BrandBook.Core.Repositories.User;
 
 namespace BrandBook.Core
@@ -26,7 +28,11 @@ namespace BrandBook.Core
         IIconRepository IconRepository { get; }
         IIconCategoryRepository IconCategoryRepository { get; }
         ICompanyRepository CompanyRepository { get; }
-        
+        IImageRepository ImageRepository { get; }
+        ISubscriptionRepository SubscriptionRepository { get; }
+        ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
+        ILog4NetLogRepository Log4NetLogRepository { get;  }
+
         #endregion
 
 
@@ -36,7 +42,7 @@ namespace BrandBook.Core
         void SaveChanges();
         void SaveChangesAsync();
 
-        void Dispose();
+        new void Dispose();
 
         #endregion
     }

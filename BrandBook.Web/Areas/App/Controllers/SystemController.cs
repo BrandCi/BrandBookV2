@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BrandBook.Core;
-using BrandBook.Core.Domain.System;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
-using BrandBook.Web.Framework.ViewModels.Auth;
 using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -19,7 +10,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "Administrator")]
     public class SystemController : AppControllerBase
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public SystemController()
         {
@@ -38,7 +29,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult SystemSettings()
         {
-            SystemSettingsViewModel model = new SystemSettingsViewModel()
+            var model = new SystemSettingsViewModel()
             {
                 AppTitle = GetSettingValueByKey("conf_system_apptitle"),
                 BasicUrl = GetSettingValueByKey("conf_system_baseisurl"),
@@ -73,7 +64,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult UserSettings()
         {
-            UserSettingsViewModel model = new UserSettingsViewModel()
+            var model = new UserSettingsViewModel()
             {
                 Password_ReqLength = GetSettingValueByKey("conf_user_pass_requiredlength"),
                 Password_ReqNonLetterOrDigit = GetSettingValueByKey("conf_user_pass_requirenonletterordigit"),
@@ -119,7 +110,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             // Media Settings should not be changed via UI.
             // They are part of the initial configuration!
-            MediaSettingsViewModel model = new MediaSettingsViewModel()
+            var model = new MediaSettingsViewModel()
             {
                 Key = GetSettingValueByKey("conf_media_key"),
                 Server = GetSettingValueByKey("conf_media_server")
@@ -146,22 +137,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult GoogleAnalytics()
         {
             
-            var ga_isActive = false;
+            var isActive = false;
 
-            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
 
-            if (ga_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
-                ga_isActive = true;
+                isActive = true;
             }
 
-            var ga_trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
+            var trackingKey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
 
 
-            GoogleAnalyticsViewModel model = new GoogleAnalyticsViewModel()
+            var model = new GoogleAnalyticsViewModel()
             {
-                IsActive = ga_isActive,
-                TrackingKey = ga_trackingkey
+                IsActive = isActive,
+                TrackingKey = trackingKey
             };
 
             
@@ -194,6 +185,61 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
             return RedirectToAction("GoogleAnalytics", "System", new {area = "App"});
+        }
+
+
+
+        public ActionResult UserLike()
+        {
+
+            var isActive = false;
+
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+
+            if (isEnabled.Value == "1")
+            {
+                isActive = true;
+            }
+
+            var trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value;
+
+
+            var model = new UserLikeViewModel()
+            {
+                IsActive = isActive,
+                Source = trackingkey
+            };
+
+
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserLike(UserLikeViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.IsActive)
+            {
+                UpdateSettingValue("ext_userlike_enabled", "1");
+            }
+            else
+            {
+                UpdateSettingValue("ext_userlike_enabled", "0");
+            }
+
+            UpdateSettingValue("ext_userlike_source", model.Source);
+
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("UserLike", "System", new { area = "App" });
         }
 
         #endregion

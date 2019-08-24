@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\Frontend\BlogEntry.cs" />
     <Compile Include="Domain\Brand\Brand.cs" />
     <Compile Include="Domain\Brand\BrandPublicSetting.cs" />
     <Compile Include="Domain\Brand\BrandSetting.cs" />
@@ -68,11 +69,15 @@
     <Compile Include="Domain\Brand\Icon\Icon.cs" />
     <Compile Include="Domain\Brand\Icon\IconCategory.cs" />
     <Compile Include="Domain\Company\Company.cs" />
+    <Compile Include="Domain\Resource\Image.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
+    <Compile Include="Domain\System\Log4NetLog.cs" />
     <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
+    <Compile Include="Domain\User\Subscription.cs" />
+    <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Dtos\BaseDto.cs" />
     <Compile Include="Dtos\Brand\BrandDto.cs" />
@@ -86,10 +91,15 @@
     <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IIconRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />
+    <Compile Include="Repositories\Frontend\IBlogEntryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Resource\IImageRepository.cs" />
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />
+    <Compile Include="Repositories\System\ILog4NetLogRepository.cs" />
     <Compile Include="Repositories\User\IAppUserRepository.cs" />
     <Compile Include="Repositories\User\IRolePermissionRepository.cs" />
+    <Compile Include="Repositories\User\ISubscriptionPlanRepository.cs" />
+    <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>

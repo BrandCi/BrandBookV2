@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Web;
-using System.Web.Mvc;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -14,7 +7,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
     {
         public static IHtmlString RenderBackground(string imageName = "", string imageType = "")
         {
-            StringBuilder html = new StringBuilder();
+            var html = new StringBuilder();
 
             html.Append("<div class=\"img-holder\">");
                 html.Append("<div class=\"bg\"></div>");

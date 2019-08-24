@@ -1,11 +1,16 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
+using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Repositories.User;
+using BrandBook.Infrastructure;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
@@ -15,21 +20,24 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthControllerBase
     {
-        private IAppUserRepository appUserRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly SubscriptionService _subscriptionService;
 
        
         #region Constructor
 
         public RegisterController()
         {
-            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
-            this.appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         #endregion
@@ -78,22 +86,45 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
-
             if (ModelState.IsValid)
             {
-                //if (model.PromotionCode != "Promo_E85D2C" || model.PromotionCode != "Promo_292A8D" || model.PromotionCode != "Promo_5CEAE3")
-                //{
-                    //ModelState.AddModelError("", "Please check the Promotioncode!");
-                    //return View(model);
-                //}
+                var company = new Company()
+                {
+                    Name = model.Username,
+                    ContactEmail = model.Email,
+                    UrlName = model.Username
+                };
 
+                var user = new AppUser
+                {
+                    UserName = model.Username,
+                    Email = model.Email,
+                    Company = company,
+                    PrivacyPolicyAccepted = true,
+                    IsActive = true
+                };
 
-
-                var user = new AppUser { UserName = model.Username, Email = model.Email, CompanyId = 1};
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
+
+                    var initialSubscription = new Subscription()
+                    {
+                        Key = _subscriptionService.GenerateSubscriptionKey(),
+                        AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                        AppUserId = user.Id,
+                        IsActive = true,
+                        IsPaid = true,
+                        StartDateTime = DateTime.Now,
+                        SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                        SubscriptionPlanId = 7
+                    };
+
+                    _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+                    _unitOfWork.SaveChanges();
+
+
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);

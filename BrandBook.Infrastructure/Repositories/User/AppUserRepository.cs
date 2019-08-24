@@ -31,5 +31,10 @@ namespace BrandBook.Infrastructure.Repositories.User
 
         }
 
+        public int GetCompanyIdByUsername(string username)
+        {
+            return Set.FirstOrDefault(x => x.UserName == username).CompanyId;
+        }
+
     }
 }

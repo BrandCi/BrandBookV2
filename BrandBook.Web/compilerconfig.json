@@ -22,5 +22,13 @@
   {
     "outputFile": "Content/Flag-Icon/flag-icon.css",
     "inputFile": "Content/Flag-Icon/flag-icon.scss"
+  },
+  {
+    "outputFile": "Content/Frontend/style.css",
+    "inputFile": "Content/Frontend/style.scss"
+  },
+  {
+    "outputFile": "Content/App/bootstrap-rtl.css",
+    "inputFile": "Content/App/bootstrap-rtl.scss"
   }
 ]

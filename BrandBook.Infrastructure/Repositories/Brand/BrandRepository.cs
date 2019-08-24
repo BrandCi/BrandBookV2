@@ -17,6 +17,12 @@ namespace BrandBook.Infrastructure.Repositories.Brand
         }
 
 
+        public List<Core.Domain.Brand.Brand> GetBrandsByCompany(int companyId)
+        {
+            return Set.Where(b => b.Company.Id == companyId).ToList();
+        }
+
+
         public async Task<List<Core.Domain.Brand.Brand>> GetBrandsByCompanyAsync(int companyId)
         {
             return await Set.Where(b => b.Company.Id == companyId).ToListAsync();
@@ -24,13 +30,14 @@ namespace BrandBook.Infrastructure.Repositories.Brand
 
         public bool IsBrandExistingById(int brandId)
         {
-
-            if (Set.Count(b => b.Id == brandId) >= 1)
-            {
-                return true;
-            }
-
-            return false;
+            return Set.Count(b => b.Id == brandId) >= 1;
         }
+
+
+        public int CountBrandsByCompany(int companyId)
+        {
+            return Set.Count(b => b.Company.Id == companyId);
+        }
+
     }
 }

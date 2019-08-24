@@ -790,7 +790,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand..
+        ///   Looks up a localized string similar to Create and document your company branding step by step. Our intelligent editor helps you with your existing data..
         /// </summary>
         public static string frontend_home_index_features_feature_01_description {
             get {
@@ -799,7 +799,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access to your brand. From everywhere..
+        ///   Looks up a localized string similar to Creation.
         /// </summary>
         public static string frontend_home_index_features_feature_01_title {
             get {
@@ -808,7 +808,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A redesign of your brand contributes to the brand&apos;s success through intelligent advance planning..
+        ///   Looks up a localized string similar to Through many tips and tricks you will learn how to use your brand to advantage and provide it to others..
         /// </summary>
         public static string frontend_home_index_features_feature_02_description {
             get {
@@ -817,7 +817,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expand your brand. Well planned..
+        ///   Looks up a localized string similar to Management.
         /// </summary>
         public static string frontend_home_index_features_feature_02_title {
             get {
@@ -826,7 +826,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Through the use of Artificial Intelligence, we provide you and your brand a steady improvement..
+        ///   Looks up a localized string similar to Continuous and automated tests constantly check your brand for optimization possibilities and implement them as you wish..
         /// </summary>
         public static string frontend_home_index_features_feature_03_description {
             get {
@@ -835,7 +835,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continuous improvement. Thanks to AI..
+        ///   Looks up a localized string similar to Improvement.
         /// </summary>
         public static string frontend_home_index_features_feature_03_title {
             get {
@@ -1006,7 +1006,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage and improve your brand image..
+        ///   Looks up a localized string similar to Manage and improve your brand to success with BrandCi..
         /// </summary>
         public static string frontend_home_index_topsection_subtitle {
             get {
@@ -1078,6 +1078,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string frontend_navigation_blog {
+            get {
+                return ResourceManager.GetString("frontend_navigation_blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string frontend_navigation_contact {
@@ -1123,7 +1132,16 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand Improvement (AI).
+        ///   Looks up a localized string similar to Brand Creation.
+        /// </summary>
+        public static string frontend_navigation_product_brandcreation {
+            get {
+                return ResourceManager.GetString("frontend_navigation_product_brandcreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Optimization.
         /// </summary>
         public static string frontend_navigation_product_brandimprovement {
             get {

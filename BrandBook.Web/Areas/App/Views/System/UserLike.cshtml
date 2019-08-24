@@ -1,0 +1,84 @@
+﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Layout.UserLikeViewModel
+@using BrandBook.Resources
+
+@{
+    ViewBag.Title = "UserLike";
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">
+                UserLike
+            </h4>
+            <p class="text-muted m-b-30 font-14">
+                Live-Chat-Software für Website- und Mobilsupport
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+
+                        @using (Html.BeginForm("UserLike", "System", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group row">
+                                <label class="container">
+                                    @Html.LabelFor(ul => ul.IsActive)
+                                    @Html.CheckBoxFor(ul => ul.IsActive)
+                                </label>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    @Html.LabelFor(ul => ul.Source)
+                                </div>
+
+
+                                <div class="col-8">
+                                    @if (Model.IsActive)
+                                    {
+                                        @Html.TextBoxFor(ul => ul.Source, new { @class = "form-control" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBoxFor(ul => ul.Source, new { @class = "form-control", @readonly = "readonly" })
+                                    }
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-5 mb-0">
+                                @Html.Partial("~/Areas/App/Views/Shared/System/_SettingsBackButton.cshtml")
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_update_button_title
+                                </button>
+                            </div>
+
+
+
+
+                        }
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>

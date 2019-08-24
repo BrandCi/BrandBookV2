@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core;
-using BrandBook.Core.Domain.Company;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.UserManagement;
@@ -15,7 +11,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     public class UserController : AppControllerBase
     {
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public UserController()
         {
@@ -24,9 +20,29 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
         // GET: App/User
-        public ActionResult UserOverview()
+        public async Task<ActionResult> UserOverview()
         {
-            return View();
+            
+            var allAppUsers = await _unitOfWork.AppUserRepository.GetAllAsync();
+            var singleAppUserViewModel = new List<SingleAppUserViewModel>();
+
+            foreach (var singleAppUser in allAppUsers)
+            {
+                singleAppUserViewModel.Add(new SingleAppUserViewModel()
+                {
+                    Email = singleAppUser.Email,
+                    FirstName = singleAppUser.FirstName,
+                    LastName = singleAppUser.LastName,
+                    UserName = singleAppUser.UserName
+                });
+            }
+
+            var viewModel = new AppUserViewModel()
+            {
+                AppUsers = singleAppUserViewModel
+            };
+
+            return View(viewModel);
         }
 
 
@@ -34,12 +50,11 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
 
             var allCompanies = await _unitOfWork.CompanyRepository.GetAllAsync();
-            List<SingleCompanyViewModel> singleCompanyViewModels = new List<SingleCompanyViewModel>();
-            int numberOfUser = 0;
+            var singleCompanyViewModels = new List<SingleCompanyViewModel>();
 
-            foreach (Company singleCompany in allCompanies)
+            foreach (var singleCompany in allCompanies)
             {
-                numberOfUser = _unitOfWork.AppUserRepository.CountUserForCompanyId(singleCompany.Id);
+                var numberOfUser = _unitOfWork.AppUserRepository.CountUserForCompanyId(singleCompany.Id);
 
                 singleCompanyViewModels.Add(new SingleCompanyViewModel()
                 {
@@ -53,8 +68,10 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
-            CompaniesOverviewViewModel viewmodel = new CompaniesOverviewViewModel();
-            viewmodel.Companies = singleCompanyViewModels;
+            var viewmodel = new CompaniesOverviewViewModel
+            {
+                Companies = singleCompanyViewModels
+            };
 
 
 
@@ -67,8 +84,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var roles = _unitOfWork.UserRoleRepository.GetAll();
 
-            RoleOverviewViewModel model = new RoleOverviewViewModel();
-            model.Roles = new List<SingleRoleViewModel>();
+            var model = new RoleOverviewViewModel
+            {
+                Roles = new List<SingleRoleViewModel>()
+            };
 
             foreach (var role in roles)
             {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
 
 namespace BrandBook.Web.Controllers
@@ -11,6 +7,35 @@ namespace BrandBook.Web.Controllers
     {
 
         public ActionResult Overview()
+        {
+            ViewBag.Title = "Product Overview";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
+            return View();
+        }
+
+        public ActionResult Creation()
+        {
+            return View();
+        }
+
+        public ActionResult Documentation()
+        {
+            return View();
+        }
+
+        public ActionResult Collaboration()
+        {
+            return View();
+        }
+
+        public ActionResult Sharing()
+        {
+            return View();
+        }
+
+        public ActionResult Optimization()
         {
             return View();
         }

@@ -187,7 +187,7 @@
     <value>Product</value>
   </data>
   <data name="frontend_navigation_product_brandimprovement" xml:space="preserve">
-    <value>Brand Improvement (AI)</value>
+    <value>Brand Optimization</value>
   </data>
   <data name="frontend_navigation_product_brandmanagement" xml:space="preserve">
     <value>Brand Management</value>
@@ -415,22 +415,22 @@
     <value>Philipp C. Moser</value>
   </data>
   <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
-    <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
+    <value>Create and document your company branding step by step. Our intelligent editor helps you with your existing data.</value>
   </data>
   <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
-    <value>Access to your brand. From everywhere.</value>
+    <value>Creation</value>
   </data>
   <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
-    <value>A redesign of your brand contributes to the brand's success through intelligent advance planning.</value>
+    <value>Through many tips and tricks you will learn how to use your brand to advantage and provide it to others.</value>
   </data>
   <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
-    <value>Expand your brand. Well planned.</value>
+    <value>Management</value>
   </data>
   <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
-    <value>Through the use of Artificial Intelligence, we provide you and your brand a steady improvement.</value>
+    <value>Continuous and automated tests constantly check your brand for optimization possibilities and implement them as you wish.</value>
   </data>
   <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
-    <value>Continuous improvement. Thanks to AI.</value>
+    <value>Improvement</value>
   </data>
   <data name="frontend_home_index_features_title_l1" xml:space="preserve">
     <value>Why BrandCi leads your Brand</value>
@@ -481,7 +481,7 @@
     <value>Discover BrandCi</value>
   </data>
   <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
-    <value>Manage and improve your brand image.</value>
+    <value>Manage and improve your brand to success with BrandCi.</value>
   </data>
   <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
     <value>Test Brand Ci for free</value>
@@ -497,5 +497,11 @@
   </data>
   <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
     <value>Share your brand. With everybody you want.</value>
+  </data>
+  <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
+    <value>Brand Creation</value>
+  </data>
+  <data name="frontend_navigation_blog" xml:space="preserve">
+    <value>Blog</value>
   </data>
 </root>

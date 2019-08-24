@@ -1,97 +1,111 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
+﻿@using BrandBook.Web.Framework.Helpers
+@using BrandBook.Web.Framework.HtmlHelpers
 @{
-    HttpCookie cookieConsent = Request.Cookies["_cookieConsent"];
+    var cookieConsent = Request.Cookies["_cookieConsent"];
 }
-<!-- Insertion -->
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRightToLeft() ? "rtl" : "ltr")">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="keywords" content="Brand Management, BrandBook">
-    <meta name="author" content="Philipp C. Moser">
-    <meta name="description" content="Brand Book V2">
+    <meta name="keywords" content="@ViewBag.MetaKeywords">
+    <meta name="author" content="@ViewBag.MetaAppAuthor">
+    <meta name="description" content="@ViewBag.MetaDescription">
 
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For Resposive Device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - @ViewBag.AppTitle</title>
+    <title>@ViewBag.Title - @ViewBag.MetaAppTitle</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
+    <!-- Style Bundles -->
     @Styles.Render("~/Content/Css/Frontend/Main")
-    @Styles.Render("~/Content/Frontend/Plugins")
     @Styles.Render("~/Content/Css/Flag-Icon")
+    <!-- Style Bundles -->
 
-    @RenderSection("ColorStyle", required: true)
+    @if (CultureHelper.IsRightToLeft())
+    {
+        @Styles.Render("~/Content/Css/Frontend/RTL")
+        ;
+    }
+
+
     @RenderSection("styles", required: false)
-    
+
+
     @{ Html.RenderAction("GoogleAnalytics", "Layout"); }
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584","png", "FrontendData")">
+    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("4a5b63cd-c7e2-4da7-93d5-f9b2c6ae1584", "png", "FrontendData")">
+    <!-- ./ Favicon -->
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ./ Fontawesome -->
 
-
-    <!-- Fix Internet Explorer ______________________________________-->
-    <!--[if lt IE 9]>
-                        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-                        <script src="vendor/html5shiv.js"></script>
-                        <script src="vendor/respond.js"></script>
-                    <![endif]-->
 
 </head>
 
     <body>
-        <div class="main-page-wrapper">
 
-            
+        <!-- PreLoader -->
+        @Html.Partial("~/Views/Shared/Layout/Partial/_PreLoader.cshtml")
+        <!-- ./ PreLoader -->
+
+        <div class="body_wrapper">
+
+            @{ Html.RenderAction("UserLike", "Layout"); }
+
+
             <!-- Navigation -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->
 
-            <div class="html-top-content">
+            
 
-                @RenderBody()
+            @RenderBody()
 
 
-                @if (cookieConsent == null)
-                {
-                    <!-- Cookie-Consent -->
-                    @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
-                    <!-- Cookie-Consent -->
-                }
-
-            </div>
-
+            @if (cookieConsent == null)
+            {
+                <!-- Cookie-Consent -->
+                @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
+                <!-- ./ Cookie-Consent -->
+            }
+        
 
 
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
+            <!-- ./ Footer -->
 
-            <!-- Js File_________________________________ -->
-            @Scripts.Render("~/bundles/Frontend/Plugins")
+            <!-- Js Bundles -->
             @Scripts.Render("~/bundles/Frontend/Main")
+            
+            @RenderSection("pageScriptBundle", required: false)
+
+            @Scripts.Render("~/bundles/Frontend/General")
+            <!-- ./ Js Bundles -->
 
 
             <!-- Culture Switcher -->
             <script type="text/javascript">
-
                 (function ($) {
                     $("input[type = 'radio']").click(function () {
                         $(this).parents("form").submit();
                     });
                 })(jQuery);
-
             </script>
             <!-- ./ Culture Switcher-->
-            
 
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
-                $("#acceptCookiesButton").click(function() {
-                    $.cookie("_cookieConsent", 1, {expires: 365});
+                $("#acceptCookiesButton").click(function () {
+                    $.cookie("_cookieConsent", 1, { expires: 365 });
                     $("#cookieConsentBox").fadeOut(400);
                 });
             </script>
@@ -99,7 +113,8 @@
 
 
             @RenderSection("scripts", required: false)
-            <!-- ./ Footer -->
-        </div> <!-- /.main-page-wrapper -->
+            
+
+        </div> <!-- /.body_wrapper -->
     </body>
 </html>

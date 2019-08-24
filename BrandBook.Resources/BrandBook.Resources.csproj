@@ -54,6 +54,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Translations.ar-SA.resx" />
     <EmbeddedResource Include="Translations.de-DE.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Translations.de-DE.Designer.cs</LastGenOutput>

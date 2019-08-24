@@ -20,14 +20,14 @@
             <h4 class="m-t-0 header-title"><b>Add a new Brand</b></h4>
 
 
-            @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <div>
                     <h3>Details</h3>
                     <section>
                         <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Name, new { @class = "control-label"})
+                            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
                             <div class="">
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control required" })
                             </div>
@@ -36,7 +36,14 @@
                         <div class="form-group clearfix">
                             @Html.LabelFor(m => m.Description, new { @class = "control-label" })
                             <div class="">
-                                @Html.TextAreaFor(m => m.Description, new {@class = "form-control"})
+                                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            @Html.LabelFor(m => m.ShortDescription, new { @class = "control-label" })
+                            <div class="">
+                                @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control" })
                             </div>
                         </div>
 
@@ -47,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="mainColorInput">#</span>
                                     </div>
-                                    @Html.TextBoxFor(m => m.MainColor, new { @class = "form-control required", placeholder = "193357", data_bind= "aria-describedby=mainColorInput" })
+                                    @Html.TextBoxFor(m => m.MainColor, new { @class = "form-control required", placeholder = "", data_bind = "aria-describedby=mainColorInput" })
                                 </div>
                             </div>
                         </div>
@@ -56,12 +63,23 @@
                     <h3>Image</h3>
                     <section>
                         <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Image, new { @class = "control-label" })
+                            <label class="col-2 col-form-label">Brand Image</label>
                             <div class="">
-                                @Html.TextBoxFor(m => m.Image, new { @class = "form-control required" })
+                                <input type="file" class="form-control" name="image" style="height: auto;">
                             </div>
                         </div>
-
+                        <div class="card m-b-20 card-body card-inverse card-primary text-xs-center">
+                            <blockquote class="card-bodyquote">
+                                <p>
+                                    Please use the following dimensions for Brand Images:
+                                </p>
+                                <footer>
+                                    <small>
+                                        <cite title="Image Dimensions">600 x 430px</cite>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
                     </section>
 
                     <h3>Overview</h3>

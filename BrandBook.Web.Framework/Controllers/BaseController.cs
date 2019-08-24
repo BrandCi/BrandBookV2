@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Infrastructure.Data;
@@ -13,37 +8,40 @@ using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Helpers;
+using log4net;
 
 namespace BrandBook.Web.Framework.Controllers
 {
     public class BaseController : Controller
     {
         #region Fields
-
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         public SignInService _signInService;
         public UserService _userService;
         public RoleService _roleService;
 
+
         #endregion
 
-        private ISettingRepository settingRepository;
+        private readonly ISettingRepository _settingRepository;
 
         public BaseController()
         {
-            this.settingRepository = new SettingRepository(new BrandBookDbContext());
+            this._settingRepository = new SettingRepository(new BrandBookDbContext());
         }
 
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
 
-            ViewBag.AppTitle = settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            ViewBag.MetaAppTitle = _settingRepository.GetSettingByKey("conf_system_apptitle").Value;
+            ViewBag.MetaAppAuthor = _settingRepository.GetSettingByKey("conf_system_appauthor").Value;
 
 
 
             string cultureName = null;
 
-            HttpCookie cultureCookie = Request.Cookies["_culture"];
+            var cultureCookie = Request.Cookies["_culture"];
             if (cultureCookie != null)
             {
                 cultureName = cultureCookie.Value;

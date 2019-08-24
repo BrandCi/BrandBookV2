@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
@@ -13,7 +9,7 @@ namespace BrandBook.Web.Controllers
     public class LayoutController : FrontendControllerBase
     {
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public LayoutController()
         {
@@ -22,10 +18,10 @@ namespace BrandBook.Web.Controllers
 
         public PartialViewResult GoogleAnalytics()
         {
-            var ga_enabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
             GoogleAnalyticsViewModel model;
 
-            if (ga_enabled.Value == "1")
+            if (isEnabled.Value == "1")
             {
                 model = new GoogleAnalyticsViewModel()
                 {
@@ -42,9 +38,32 @@ namespace BrandBook.Web.Controllers
                 };
             }
 
-            
-
             return PartialView("GoogleAnalytics", model);
+        }
+
+        public PartialViewResult UserLike()
+        {
+            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+            UserLikeViewModel model;
+
+            if (isEnabled.Value == "1")
+            {
+                model = new UserLikeViewModel()
+                {
+                    IsActive = true,
+                    Source = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value
+                };
+            }
+            else
+            {
+                model = new UserLikeViewModel()
+                {
+                    IsActive = false,
+                    Source = ""
+                };
+            }
+
+            return PartialView("UserLike", model);
         }
 
     }

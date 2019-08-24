@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.UI;
-using BrandBook.Infrastructure.Data;
+﻿using System.Web.Mvc;
 using BrandBook.Web.Framework.Controllers;
 
 namespace BrandBook.Web.Controllers
@@ -13,16 +7,28 @@ namespace BrandBook.Web.Controllers
     {
         public ActionResult Imprint()
         {
+            ViewBag.Title = "Imprint";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
             return View();
         }
 
         public ActionResult PrivacyPolicy()
         {
+            ViewBag.Title = "Privacy Policy";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
             return View();
         }
 
         public ActionResult Cookie()
         {
+            ViewBag.Title = "Cookie Policy";
+            ViewBag.MetaKeywords = "";
+            ViewBag.MetaDescription = "";
+
             return View();
         }
     }

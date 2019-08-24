@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Brand
 {
@@ -13,11 +8,12 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         public string Name { get; set; }
 
         public string Description { get; set; }
+        public string ShortDescription { get; set; }
 
         [Required]
         public string MainColor { get; set; }
 
-        public string Image { get; set; }
+        public int ImageId { get; set; }
 
         [Display(Name = "Agree Terms and Conditions")]
         [Range(typeof(bool), "true", "true", ErrorMessage = "Please agree Terms and Conditions")]

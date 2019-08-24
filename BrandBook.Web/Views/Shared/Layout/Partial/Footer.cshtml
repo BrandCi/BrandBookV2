@@ -1,75 +1,88 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
-<footer class="theme-footer dark-style">
-    <div class="container">
-        <div class="inner-wrapper">
-            <div class="top-footer-data-wrapper">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 footer-logo">
-                        <div class="logo">
-                            <a href="@Url.Action("Index", "Home", new {area = ""})">
-                                @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "", "", "height=\"150\"")
-                            </a>
-                        </div>
-                    </div> <!-- /.footer-logo -->
-                    <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">@Translations.frontend_footer_product_title</h4>
-                        <ul>
-                            <li><a href="@Url.Action("Overview", "Product", new {area = ""})">
-                                @Translations.frontend_footer_product_solutions
-                            </a></li>
-                            <li><a href="@Url.Action("Index", "Pricing", new {area = ""})">
-                                @Translations.frontend_footer_product_pricing
-                            </a></li>
-                            <!--
-                            <li><a href="#">@Translations.frontend_footer_product_documentation</a></li>
-                            <li><a href="#">@Translations.frontend_footer_product_examples</a></li>
-                            -->
+<footer class="footer_area footer_three">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="f_widget company_widget">
+                        <a href="@Url.Action("Index", "Home", new {area = ""})" class="f-logo">
+                            @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"75\" height=\"75\"")
+                        </a>
+                        <p class="f_400 f_p f_size_15 mb-0 l_height28 mt_30">
+                            Deine digitale Marke.
+                            Dein Erfolg.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="f_widget about-widget pl-30">
+                        <h3 class="f-title f_600 f_size_18 mb_40">
+                            @Translations.frontend_footer_product_title
+                        </h3>
+                        <ul class="list-unstyled f_list">
+                            <li>
+                                <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                                    @Translations.frontend_footer_product_solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Pricing", new {area = ""})">
+                                    @Translations.frontend_footer_product_pricing
+                                </a>
+                            </li>
                         </ul>
-                    </div> <!-- /.footer-list -->
-                    <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="f_widget about-widget">
+                        <h3 class="f-title f_600 f_size_18 mb_40">
                             @Translations.frontend_footer_support_title
-                        </h4>
-                        <ul>
-                            <li><a href="@Url.Action("Contact", "Support", new {area = ""})">
-                                @Translations.frontend_footer_support_contact
-                            </a></li>
-                            <!--
-                            <li><a href="#">@Translations.frontend_footer_support_forum</a></li>
-                            <li><a href="#">@Translations.frontend_footer_support_reportabug</a></li>
-                            -->
-                        </ul>
-                    </div> <!-- /.footer-list -->
-                    <div class="col-lg-3 col-sm-6 footer-list">
-                        <h4 class="title">@Translations.frontend_footer_legal_title</h4>
-                        <ul>
+                        </h3>
+                        <ul class="list-unstyled f_list">
                             <li>
-                                <a href="@Url.Action("Imprint", "Legal")">
-                                    @Translations.frontend_footer_legal_imprint
-                                </a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("PrivacyPolicy", "Legal", new {area = ""})">
-                                    @Translations.frontend_footer_legal_privacypolicy
-                                </a>
-                            </li>
-                            <!--
-                            <li>
-                                <a href="#">
-                                    @Translations.frontend_footer_legal_terms
-                                </a>
-                            </li>
-                            -->
-                            <li>
-                                <a href="@Url.Action("Cookie", "Legal", new {area = ""})">
-                                    @Translations.frontend_footer_legal_cookieterms
+                                <a href="@Url.Action("Contact", "Support", new {area = ""})">
+                                    @Translations.frontend_footer_support_contact
                                 </a>
                             </li>
                         </ul>
-                    </div> <!-- /.footer-list -->
-                </div> <!-- /.row -->
-            </div> <!-- /.top-footer-data-wrapper -->
-            @Html.Partial("~/Views/Shared/Layout/Partial/_LanguageSelectionFooter.cshtml")
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    @Html.Partial("~/Views/Shared/Layout/Partial/_LanguageSelectionFooter.cshtml")
+                </div>
+                
+            </div>
         </div>
-    </div> <!-- /.container -->
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <p class="mb-0 f_400">
+                        <a href="@Url.Action("Index", "Home")">
+                            @Translations.frontend_footer_copyright
+                        </a>
+                        © 2019 @Translations.frontend_footer_allrightsreserved
+                    </p>
+
+                </div>
+                <div class="col-lg-6">
+                    <ul class="f_menu text-right list-unstyled">
+                        <li>
+                            <a href="@Url.Action("Imprint", "Legal", new {area = ""})">
+                                @Translations.frontend_footer_legal_imprint
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("PrivacyPolicy", "Legal", new {area = ""})">
+                                @Translations.frontend_footer_legal_privacypolicy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
