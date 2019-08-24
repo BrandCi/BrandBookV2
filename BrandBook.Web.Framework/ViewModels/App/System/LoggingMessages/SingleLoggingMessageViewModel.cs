@@ -9,7 +9,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.System.LoggingMessages
     public class SingleLoggingMessageViewModel
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Thread { get; set; }
         public string Level { get; set; }
         public string Logger { get; set; }

@@ -40,7 +40,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 viewModel.LoggingMessages.Add(new SingleLoggingMessageViewModel()
                 {
                     Id = loggingMessage.Id,
-                    Date = loggingMessage.Date,
+                    Date = loggingMessage.Date.ToString("dd.MM.yyyy HH:mm:ss"),
                     Logger = loggingMessage.Logger,
                     Level = loggingMessage.Level,
                     Thread = loggingMessage.Thread,
