@@ -11,6 +11,7 @@ using BrandBook.Web.Framework.ViewModels.App.System.LoggingMessages;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class LoggingController : AppControllerBase
     {
 
