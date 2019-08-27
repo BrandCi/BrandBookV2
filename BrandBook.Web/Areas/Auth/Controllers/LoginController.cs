@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.Domain.User;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
+using BrandBook.Web.Framework.ViewModels.Auth.External;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
@@ -125,9 +127,17 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     // Promt to create new account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View();
+                    return View("ExternalConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
+
+
+
+
+
+
+
+
 
 
 
