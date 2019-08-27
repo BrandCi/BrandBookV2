@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Services.Authentication;
@@ -36,8 +37,8 @@ namespace BrandBook.Web
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             app.UseFacebookAuthentication(
-            appId: "",
-            appSecret: "");
+            appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
+            appSecret: ConfigurationManager.AppSettings["SocialFacebookAppSecret"]);
 
         }
     }
