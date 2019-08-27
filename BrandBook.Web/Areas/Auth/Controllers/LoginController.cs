@@ -101,7 +101,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult External(string provider, string returnUrl)
         {
-            return View();
+            return new ChallengeResult(provider, Url.Action("ExternalCallback", "Login", new { ReturnUrl = returnUrl }));
         }
 
 
