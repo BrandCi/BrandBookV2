@@ -7,6 +7,8 @@ using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
 
+
+
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class LoginController : AuthControllerBase
@@ -91,6 +93,17 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             }
 
         }
+
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult External(string provider, string returnUrl)
+        {
+            return View();
+        }
+
 
 
         public ActionResult VersionInfo()
