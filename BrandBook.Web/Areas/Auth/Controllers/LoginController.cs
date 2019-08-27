@@ -208,6 +208,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                         _unitOfWork.SubscriptionRepository.Add(initialSubscription);
                         _unitOfWork.SaveChanges();
 
+                        await UserManager.AddToRoleAsync(user.Id, "AppUser");
+
 
                         await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
