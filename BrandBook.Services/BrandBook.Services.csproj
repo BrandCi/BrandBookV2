@@ -103,12 +103,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\BrandBook.Web\AppSettings.config">
-      <Link>AppSettings.config</Link>
-    </None>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
       <Link>ConnectionStrings.config</Link>
     </None>
+    <Content Include="..\BrandBook.Web\MachineAppSettings.config">
+      <Link>MachineAppSettings.config</Link>
+    </Content>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

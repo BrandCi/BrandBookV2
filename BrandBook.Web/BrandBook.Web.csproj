@@ -1115,7 +1115,7 @@
     <Content Include="Content\Flag-Icon\_flag-icon-base.scss" />
     <Content Include="Content\Flag-Icon\_flag-icon-list.scss" />
     <Content Include="Content\Flag-Icon\_variables.scss" />
-    <Content Include="AppSettings.config" />
+    <Content Include="MachineAppSettings.config" />
     <Content Include="Content\App\_Customize.scss" />
     <Content Include="Plugins\datatables\json\scroller-demo.json" />
     <Content Include="Content\Frontend\style.scss" />
