@@ -6,7 +6,7 @@ using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
-
+using Microsoft.Owin.Security;
 
 
 namespace BrandBook.Web.Areas.Auth.Controllers
@@ -121,5 +121,48 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             }
             return RedirectToAction("Index", "Dashboard", new { area = "App" });
         }
+
+
+
+
+
+
+        #region Helpers
+        private const string XsrfKey = "XsrfId";
+
+
+        internal class ChallengeResult : HttpUnauthorizedResult
+        {
+            public ChallengeResult(string provider, string redirectUri)
+                : this(provider, redirectUri, null)
+            {
+            }
+
+            public ChallengeResult(string provider, string redirectUri, string userId)
+            {
+                LoginProvider = provider;
+                RedirectUri = redirectUri;
+                UserId = userId;
+            }
+
+            public string LoginProvider { get; set; }
+            public string RedirectUri { get; set; }
+            public string UserId { get; set; }
+
+            public override void ExecuteResult(ControllerContext context)
+            {
+                var properties = new AuthenticationProperties { RedirectUri = RedirectUri };
+                if (UserId != null)
+                {
+                    properties.Dictionary[XsrfKey] = UserId;
+                }
+                context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
+            }
+        }
+
+        #endregion
+
+
+
     }
 }
