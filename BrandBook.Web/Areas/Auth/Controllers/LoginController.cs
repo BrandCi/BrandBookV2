@@ -1,8 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core;
+using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
+using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
@@ -16,15 +21,24 @@ namespace BrandBook.Web.Areas.Auth.Controllers
     public class LoginController : AuthControllerBase
     {
 
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly SubscriptionService _subscriptionService;
+
 
         #region Constructor
 
-        public LoginController() { }
+        public LoginController()
+        {
+            _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
+        }
 
         public LoginController(UserService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
+            _unitOfWork = new UnitOfWork();
+            _subscriptionService = new SubscriptionService();
         }
 
         #endregion
@@ -146,18 +160,55 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             if (ModelState.IsValid)
             {
+                var company = new Company()
+                {
+                    Name = model.Email,
+                    ContactEmail = model.Email,
+                    UrlName = model.Email
+                };
+
+
+
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+
                 if (info == null)
                 {
                     return RedirectToAction("Index", "Home", new { area = "" });
                 }
-                var user = new AppUser { UserName = model.Email, Email = model.Email };
+
+                var user = new AppUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Company = company,
+                    PrivacyPolicyAccepted = true,
+                    IsActive = true
+                };
+
                 var result = await UserManager.CreateAsync(user);
+
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+
+                        var initialSubscription = new Subscription()
+                        {
+                            Key = _subscriptionService.GenerateSubscriptionKey(),
+                            AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                            AppUserId = user.Id,
+                            IsActive = true,
+                            IsPaid = true,
+                            StartDateTime = DateTime.Now,
+                            SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                            SubscriptionPlanId = 7
+                        };
+
+                        _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+                        _unitOfWork.SaveChanges();
+
+
                         await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
