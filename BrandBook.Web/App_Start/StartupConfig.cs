@@ -9,6 +9,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
+
 namespace BrandBook.Web
 {
     public partial class Startup
@@ -30,6 +31,13 @@ namespace BrandBook.Web
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
+
+
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+
+            app.UseFacebookAuthentication(
+            appId: "",
+            appSecret: "");
 
         }
     }
