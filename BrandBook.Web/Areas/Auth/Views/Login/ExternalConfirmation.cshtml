@@ -1,0 +1,34 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@model BrandBook.Web.Framework.ViewModels.Auth.External.ExternalLoginConfirmationViewModel
+
+@{
+    ViewBag.Title = @Translations.auth_login_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>ExternalConfirmation</h3>
+            <p></p>
+
+
+
+
+           
+
+
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
+                <a href="@Url.Action("Index", "Register")">@Translations.auth_login_register_button_title&nbsp;<i class="fas fa-chevron-right"></i></a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
