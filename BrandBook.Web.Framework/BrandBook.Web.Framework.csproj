@@ -142,6 +142,7 @@
     <Compile Include="ViewModels\App\UserManagement\AppUserViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
+    <Compile Include="ViewModels\Auth\External\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\BlogEntryViewModel.cs" />
