@@ -15,7 +15,14 @@
                     @foreach (AuthenticationDescription externalAuth in loginProviders)
                     {
 
-                        <button type="submit" id="@externalAuth.AuthenticationType" name="provider" value="@externalAuth.AuthenticationType" title="Log in using your @externalAuth.Caption account">
+                        <button type="submit" class="btn btn-primary btn-custom" id="@externalAuth.AuthenticationType" name="provider" value="@externalAuth.AuthenticationType" title="Log in using your @externalAuth.Caption account">
+                            @if (externalAuth.Caption == "Facebook")
+                            {
+                                <text>
+                                    <i class="fab fa-facebook-f"></i>&nbsp;
+                                </text>
+                            }
+
                             @externalAuth.AuthenticationType
                         </button>
 
