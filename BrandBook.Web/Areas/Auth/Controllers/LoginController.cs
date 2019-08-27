@@ -12,6 +12,7 @@ using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
 using BrandBook.Web.Framework.ViewModels.Auth.External;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
@@ -215,6 +216,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                         return RedirectToLocal(returnUrl);
                     }
                 }
+                AddErrors(result);
             }
 
 
@@ -223,13 +225,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
 
         }
-
-
-
-
-
-
-
 
 
 
@@ -264,6 +259,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             get
             {
                 return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
             }
         }
 
