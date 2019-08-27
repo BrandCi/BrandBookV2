@@ -105,6 +105,31 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         }
 
 
+        [AllowAnonymous]
+        public async Task<ActionResult> ExternalCallback(string returnUrl)
+        {
+            var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+            if (loginInfo == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            // If existing, log in with external account
+            var result = await SignInService.ExternalSignInAsync(loginInfo, isPersistent: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.Failure:
+                default:
+                    // Promt to create new account
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+                    return View();
+            }
+        }
+
+
 
         public ActionResult VersionInfo()
         {
@@ -131,6 +156,15 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private const string XsrfKey = "XsrfId";
 
 
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
+
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)
@@ -144,6 +178,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 RedirectUri = redirectUri;
                 UserId = userId;
             }
+
+            
 
             public string LoginProvider { get; set; }
             public string RedirectUri { get; set; }
