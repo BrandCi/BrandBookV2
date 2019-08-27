@@ -134,6 +134,46 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
 
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ExternalConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard", new {area = "App"});
+            }
+
+            if (ModelState.IsValid)
+            {
+                var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    return RedirectToAction("Index", "Home", new { area = "" });
+                }
+                var user = new AppUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    result = await UserManager.AddLoginAsync(user.Id, info.Login);
+                    if (result.Succeeded)
+                    {
+                        await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        return RedirectToLocal(returnUrl);
+                    }
+                }
+            }
+
+
+            ViewBag.ReturnUrl = returnUrl;
+            return View(model);
+
+
+        }
+
+
+
+
 
 
 
