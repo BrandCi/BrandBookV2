@@ -657,4 +657,7 @@
   <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
     <value>Teile Deine Marke</value>
   </data>
+  <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
+    <value>Markenerstellung</value>
+  </data>
 </root>
