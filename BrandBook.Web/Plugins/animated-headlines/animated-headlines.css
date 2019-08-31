@@ -1,0 +1,229 @@
+﻿/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+
+
+
+.bci-title {
+    position: relative;
+    height: 160px;
+    line-height: 230px;
+    text-align: center;
+}
+
+    .bci-title h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+@media only screen and (min-width: 768px) {
+    .bci-title {
+        line-height: 250px;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .bci-title {
+        height: 200px;
+        line-height: 300px;
+    }
+
+        .bci-title h1 {
+            font-size: 3rem;
+        }
+}
+
+.bci-intro {
+    width: 90%;
+    max-width: 768px;
+    text-align: center;
+}
+
+.bci-intro {
+    margin: 4em auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .bci-intro {
+        margin: 5em auto;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .bci-intro {
+        margin: 6em auto;
+    }
+}
+
+.bci-headline {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+    .bci-headline {
+        font-size: 4.4rem;
+        font-weight: 300;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .bci-headline {
+        font-size: 6rem;
+    }
+}
+
+.bci-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+    .bci-words-wrapper b {
+        display: inline-block;
+        position: absolute;
+        white-space: nowrap;
+        left: 0;
+        top: 0;
+    }
+
+        .bci-words-wrapper b.is-visible {
+            position: relative;
+        }
+
+.no-js .bci-words-wrapper b {
+    opacity: 0;
+}
+
+    .no-js .bci-words-wrapper b.is-visible {
+        opacity: 1;
+    }
+
+/* -------------------------------- 
+
+bci-typing 
+
+-------------------------------- */
+.bci-headline.type .bci-words-wrapper {
+    vertical-align: top;
+    overflow: hidden;
+}
+
+    .bci-headline.type .bci-words-wrapper::after {
+        /* vertical bar */
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        bottom: auto;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 90%;
+        width: 1px;
+        background-color: #aebcb9;
+    }
+
+    .bci-headline.type .bci-words-wrapper.waiting::after {
+        -webkit-animation: bci-pulse 1s infinite;
+        -moz-animation: bci-pulse 1s infinite;
+        animation: bci-pulse 1s infinite;
+    }
+
+    .bci-headline.type .bci-words-wrapper.selected {
+        background-color: #aebcb9;
+    }
+
+        .bci-headline.type .bci-words-wrapper.selected::after {
+            visibility: hidden;
+        }
+
+        .bci-headline.type .bci-words-wrapper.selected b {
+            color: #0d0d0d;
+        }
+
+.bci-headline.type b {
+    visibility: hidden;
+}
+
+    .bci-headline.type b.is-visible {
+        visibility: visible;
+    }
+
+.bci-headline.type i {
+    position: absolute;
+    visibility: hidden;
+}
+
+    .bci-headline.type i.in {
+        position: relative;
+        visibility: visible;
+    }
+
+@-webkit-keyframes bci-pulse {
+    0% {
+        -webkit-transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-50%) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(-50%) scale(0);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes bci-pulse {
+    0% {
+        -moz-transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        -moz-transform: translateY(-50%) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        -moz-transform: translateY(-50%) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes bci-pulse {
+    0% {
+        -webkit-transform: translateY(-50%) scale(1);
+        -moz-transform: translateY(-50%) scale(1);
+        -ms-transform: translateY(-50%) scale(1);
+        -o-transform: translateY(-50%) scale(1);
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-50%) scale(0.9);
+        -moz-transform: translateY(-50%) scale(0.9);
+        -ms-transform: translateY(-50%) scale(0.9);
+        -o-transform: translateY(-50%) scale(0.9);
+        transform: translateY(-50%) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(-50%) scale(0);
+        -moz-transform: translateY(-50%) scale(0);
+        -ms-transform: translateY(-50%) scale(0);
+        -o-transform: translateY(-50%) scale(0);
+        transform: translateY(-50%) scale(0);
+        opacity: 0;
+    }
+}

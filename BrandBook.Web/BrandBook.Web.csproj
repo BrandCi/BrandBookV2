@@ -802,6 +802,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Compile Include="App_Start\StartupConfig.cs" />
+    <Content Include="Plugins\animated-headlines\animated-headlines.css" />
+    <Content Include="Plugins\animated-headlines\animated-headlines.js" />
     <Content Include="Plugins\aos-next\dist\aos.css" />
     <Content Include="Plugins\aos-next\dist\aos.js" />
     <Content Include="Plugins\bootstrap\css\bootstrap.min.css" />
