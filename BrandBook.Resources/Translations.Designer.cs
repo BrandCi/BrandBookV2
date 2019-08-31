@@ -997,6 +997,357 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_accessrights_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_accessrights_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Granular access rights.
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_accessrights_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_accessrights_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_feedback_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_feedback_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get Feedback.
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_feedback_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_feedback_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Collaboration.
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_together_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_together_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work together with others.
+        /// </summary>
+        public static string frontend_home_index_supporting_collaboration_together_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_collaboration_together_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_assistance_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_assistance_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extensive assistance.
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_assistance_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_assistance_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_inspiration_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_inspiration_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creative inspiration.
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_inspiration_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_inspiration_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_resources_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_resources_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Existing resources.
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_resources_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_resources_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_scopes_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_scopes_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Different scopes.
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_scopes_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_scopes_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Creation.
+        /// </summary>
+        public static string frontend_home_index_supporting_creation_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_creation_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_documentation_contenttypes_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_documentation_contenttypes_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use different content types.
+        /// </summary>
+        public static string frontend_home_index_supporting_documentation_contenttypes_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_documentation_contenttypes_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_documentation_save_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_documentation_save_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save your brand approach.
+        /// </summary>
+        public static string frontend_home_index_supporting_documentation_save_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_documentation_save_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Documentation.
+        /// </summary>
+        public static string frontend_home_index_supporting_documentation_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_documentation_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_assistance_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_assistance_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic assistance.
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_assistance_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_assistance_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_history_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_history_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage history of your branding.
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_history_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_history_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_improvements_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_improvements_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check for improvements.
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_improvements_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_improvements_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_suggestions_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_suggestions_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accept suggestions for improvement.
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_suggestions_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_suggestions_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Improvement.
+        /// </summary>
+        public static string frontend_home_index_supporting_improvement_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_improvement_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_section_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_section_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How BrandCi supports your branding process.
+        /// </summary>
+        public static string frontend_home_index_supporting_section_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_section_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_agencies_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_agencies_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share with your agencies.
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_agencies_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_agencies_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_limitaccess_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_limitaccess_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Limit access for others.
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_limitaccess_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_limitaccess_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_publish_description {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_publish_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publish you brand.
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_publish_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_publish_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Sharing.
+        /// </summary>
+        public static string frontend_home_index_supporting_sharing_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_sharing_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discover BrandCi.
         /// </summary>
         public static string frontend_home_index_topsection_discover_button_title {
