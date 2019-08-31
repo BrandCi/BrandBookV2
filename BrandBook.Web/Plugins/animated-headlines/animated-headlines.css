@@ -1,13 +1,4 @@
-﻿/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-
-
-
-.bci-title {
+﻿.bci-title {
     position: relative;
     height: 160px;
     line-height: 230px;
@@ -15,7 +6,6 @@ Primary style
 }
 
     .bci-title h1 {
-        /*font-size: 2.4rem;*/
         font-weight: 700;
     }
 
@@ -31,22 +21,18 @@ Primary style
         line-height: 300px;
     }
 
-        .bci-title h1 {
-            /*font-size: 3rem;*/
-        }
 }
 
 
 
 .bci-headline {
-    font-size: 3rem;
+    font-size: 3.3rem;
     line-height: 1.2;
     color: #ffffff;
 }
 
 @media only screen and (min-width: 768px) {
     .bci-headline {
-        /*font-size: 4.4rem;*/
         font-weight: 300;
     }
 }
@@ -89,7 +75,6 @@ bci-typing
 }
 
     .bci-headline.type .bci-words-wrapper::after {
-        /* vertical bar */
         content: '';
         position: absolute;
         right: 0;
@@ -101,8 +86,8 @@ bci-typing
         -o-transform: translateY(-50%);
         transform: translateY(-50%);
         height: 90%;
-        width: 1px;
-        background-color: #aebcb9;
+        width: 2px;
+        background-color: #ffffff;
     }
 
     .bci-headline.type .bci-words-wrapper.waiting::after {
