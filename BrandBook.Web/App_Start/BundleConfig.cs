@@ -231,6 +231,14 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Switchery").Include(
                 "~/Plugins/switchery/switchery.min.js"));
 
+
+            // Animated-Headlines
+            bundles.Add(new StyleBundle("~/Content/Plugins/AnimatedHeadlines").Include(
+                "~/Plugins/animated-headlines/animated-headlines.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/AnimatedHeadlines").Include(
+                "~/Plugins/animated-headlines/animated-headlines.js"));
+
         }
     }
 }
