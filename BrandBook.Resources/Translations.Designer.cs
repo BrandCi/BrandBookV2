@@ -646,6 +646,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At the moment we are preparing interesting blog entries round about the topic Company Branding for you..
+        /// </summary>
+        public static string frontend_blog_noavailableblogs_description {
+            get {
+                return ResourceManager.GetString("frontend_blog_noavailableblogs_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We do not have any published blog entries yet.
+        /// </summary>
+        public static string frontend_blog_noavailableblogs_title {
+            get {
+                return ResourceManager.GetString("frontend_blog_noavailableblogs_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Rights Reserved..
         /// </summary>
         public static string frontend_footer_allrightsreserved {

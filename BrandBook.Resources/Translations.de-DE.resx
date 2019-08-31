@@ -513,6 +513,12 @@
   <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
     <value>Deine Marke.</value>
   </data>
+  <data name="frontend_blog_noavailableblogs_description" xml:space="preserve">
+    <value>Wir bereiten gerade interessante Blogeinträge rund um das Thema Unternehmensmarken für Dich vor. Sei gespannt.</value>
+  </data>
+  <data name="frontend_blog_noavailableblogs_title" xml:space="preserve">
+    <value>Aktuell haben wir leider keine publizierten Blogeinträge.</value>
+  </data>
   <data name="frontend_home_index_bubbles_brandingscreated" xml:space="preserve">
     <value>Marken erstellt</value>
   </data>

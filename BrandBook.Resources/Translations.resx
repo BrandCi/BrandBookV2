@@ -519,6 +519,12 @@
   <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
     <value>your corporate branding.</value>
   </data>
+  <data name="frontend_blog_noavailableblogs_description" xml:space="preserve">
+    <value>At the moment we are preparing interesting blog entries round about the topic Company Branding for you.</value>
+  </data>
+  <data name="frontend_blog_noavailableblogs_title" xml:space="preserve">
+    <value>We do not have any published blog entries yet</value>
+  </data>
   <data name="frontend_home_index_bubbles_brandingscreated" xml:space="preserve">
     <value>Brandings created</value>
   </data>
