@@ -1,6 +1,6 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
 @{
-    ViewBag.Title = "Startseite";
+    ViewBag.Title = @Translations.frontend_navigation_homepage;
 }
 @section styles {
     @Styles.Render("~/Content/Plugins/AnimatedHeadlines")
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="col-lg-12 text-center mt_40">
-                <a href="@Url.Action("Overview", "Product", new {area = ""})" class="seo_btn seo_btn_one btn_hover">All Features</a>
+                <a href="@Url.Action("Overview", "Product", new {area = ""})" class="seo_btn seo_btn_one btn_hover">@Translations.frontend_home_index_features_allfeatures</a>
             </div>
         </div>
     </div>
@@ -311,19 +311,19 @@
             <div class="seo_fact_item">
                 <div class="text">
                     <div class="counter one">12</div>
-                    <p>Happy Users</p>
+                    <p>@Translations.frontend_home_index_bubbles_happyusers</p>
                 </div>
             </div>
             <div class="seo_fact_item">
                 <div class="text">
                     <div class="counter two">17</div>
-                    <p>Brandings created</p>
+                    <p>@Translations.frontend_home_index_bubbles_brandingscreated</p>
                 </div>
             </div>
             <div class="seo_fact_item">
                 <div class="text">
                     <div class="counter three">8</div>
-                    <p>Brandings optimized</p>
+                    <p>@Translations.frontend_home_index_bubbles_brandingsimproved</p>
                 </div>
             </div>
         </div>
@@ -333,8 +333,9 @@
 <section class="seo_call_to_action_area sec_pad">
     <div class="container">
         <div class="seo_call_action_text">
-            <h2>Ready to get started?<br> lt's fast and very easy!</h2>
-            <a href="@Url.Action("Index", "Pricing", new {area=""})" class="about_btn">Select your plan</a>
+            <h2>@Translations.frontend_home_index_calltoaction_title_1<br>
+                @Translations.frontend_home_index_calltoaction_title_2</h2>
+            <a href="@Url.Action("Index", "Pricing", new {area=""})" class="about_btn">@Translations.frontend_home_index_calltoaction_button_title</a>
         </div>
     </div>
 </section>

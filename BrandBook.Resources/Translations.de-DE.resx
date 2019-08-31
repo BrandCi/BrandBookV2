@@ -513,4 +513,142 @@
   <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
     <value>Deine Marke.</value>
   </data>
+  <data name="frontend_home_index_bubbles_brandingscreated" xml:space="preserve">
+    <value>Marken erstellt</value>
+  </data>
+  <data name="frontend_home_index_bubbles_brandingsimproved" xml:space="preserve">
+    <value>Marken verbessert</value>
+  </data>
+  <data name="frontend_home_index_bubbles_happyusers" xml:space="preserve">
+    <value>Glückliche Nutzer</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_button_title" xml:space="preserve">
+    <value>Finde jetzt den passenden Plan</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_1" xml:space="preserve">
+    <value>Bereit zu starten?</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_2" xml:space="preserve">
+    <value>Es geht schnell und ist sehr einfach!</value>
+  </data>
+  <data name="frontend_home_index_features_allfeatures" xml:space="preserve">
+    <value>Alle Funktionen</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_accessrights_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_accessrights_title" xml:space="preserve">
+    <value>Granulare Zugriffsrechte</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_feedback_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_feedback_title" xml:space="preserve">
+    <value>Hole Feedback ein</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_title" xml:space="preserve">
+    <value>Zusammenarbeit Deiner Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_together_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_together_title" xml:space="preserve">
+    <value>Arbeite mit Anderen zusammen</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_assistance_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_creation_assistance_title" xml:space="preserve">
+    <value>Umfangreiche Unterstützung</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_inspiration_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_creation_inspiration_title" xml:space="preserve">
+    <value>Kreative Inspiration</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_resources_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_creation_resources_title" xml:space="preserve">
+    <value>Verwenden bestehender Resourcen</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_scopes_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_creation_scopes_title" xml:space="preserve">
+    <value>Unterschiedlichster Umfang</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_title" xml:space="preserve">
+    <value>Erstelle Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_contenttypes_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_documentation_contenttypes_title" xml:space="preserve">
+    <value>Verwende unterschieldiche Typen</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_save_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_documentation_save_title" xml:space="preserve">
+    <value>Halte Deinen Markenansatz fest</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_title" xml:space="preserve">
+    <value>Dokumentiere Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_assistance_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_improvement_assistance_title" xml:space="preserve">
+    <value>Automatische Unterstützung</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_history_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_improvement_history_title" xml:space="preserve">
+    <value>Verwalte die Historie deiner Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_improvements_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_improvement_improvements_title" xml:space="preserve">
+    <value>Prüfe auf Verbesserungen</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_suggestions_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_improvement_suggestions_title" xml:space="preserve">
+    <value>Setze Verbesserungsvorschläge um</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_title" xml:space="preserve">
+    <value>Optimiere Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_section_subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_section_title" xml:space="preserve">
+    <value>Wie BrandCi deine Marke unterstützt</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_agencies_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_sharing_agencies_title" xml:space="preserve">
+    <value>Teile mit Deinen Agenturen</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_limitaccess_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_sharing_limitaccess_title" xml:space="preserve">
+    <value>Beschränke den Zugriff für andere</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_publish_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_sharing_publish_title" xml:space="preserve">
+    <value>Publiziere Deine Marke</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
+    <value>Teile Deine Marke</value>
+  </data>
 </root>

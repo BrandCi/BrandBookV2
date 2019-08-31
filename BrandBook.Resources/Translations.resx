@@ -519,6 +519,27 @@
   <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
     <value>your corporate branding.</value>
   </data>
+  <data name="frontend_home_index_bubbles_brandingscreated" xml:space="preserve">
+    <value>Brandings created</value>
+  </data>
+  <data name="frontend_home_index_bubbles_brandingsimproved" xml:space="preserve">
+    <value>Brandings improved</value>
+  </data>
+  <data name="frontend_home_index_bubbles_happyusers" xml:space="preserve">
+    <value>Happy users</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_button_title" xml:space="preserve">
+    <value>Select your plan</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_1" xml:space="preserve">
+    <value>Ready to get started?</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_2" xml:space="preserve">
+    <value>It's fast and very easy!</value>
+  </data>
+  <data name="frontend_home_index_features_allfeatures" xml:space="preserve">
+    <value>All features</value>
+  </data>
   <data name="frontend_home_index_supporting_collaboration_accessrights_description" xml:space="preserve">
     <value />
   </data>

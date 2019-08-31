@@ -790,6 +790,69 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brandings created.
+        /// </summary>
+        public static string frontend_home_index_bubbles_brandingscreated {
+            get {
+                return ResourceManager.GetString("frontend_home_index_bubbles_brandingscreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brandings improved.
+        /// </summary>
+        public static string frontend_home_index_bubbles_brandingsimproved {
+            get {
+                return ResourceManager.GetString("frontend_home_index_bubbles_brandingsimproved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Happy users.
+        /// </summary>
+        public static string frontend_home_index_bubbles_happyusers {
+            get {
+                return ResourceManager.GetString("frontend_home_index_bubbles_happyusers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select your plan.
+        /// </summary>
+        public static string frontend_home_index_calltoaction_button_title {
+            get {
+                return ResourceManager.GetString("frontend_home_index_calltoaction_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready to get started?.
+        /// </summary>
+        public static string frontend_home_index_calltoaction_title_1 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_calltoaction_title_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s fast and very easy!.
+        /// </summary>
+        public static string frontend_home_index_calltoaction_title_2 {
+            get {
+                return ResourceManager.GetString("frontend_home_index_calltoaction_title_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All features.
+        /// </summary>
+        public static string frontend_home_index_features_allfeatures {
+            get {
+                return ResourceManager.GetString("frontend_home_index_features_allfeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create and document your company branding step by step. Our intelligent editor helps you with your existing data..
         /// </summary>
         public static string frontend_home_index_features_feature_01_description {
