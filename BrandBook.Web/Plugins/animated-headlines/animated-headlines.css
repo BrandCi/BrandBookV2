@@ -15,7 +15,7 @@ Primary style
 }
 
     .bci-title h1 {
-        font-size: 2.4rem;
+        /*font-size: 2.4rem;*/
         font-weight: 700;
     }
 
@@ -32,49 +32,25 @@ Primary style
     }
 
         .bci-title h1 {
-            font-size: 3rem;
+            /*font-size: 3rem;*/
         }
 }
 
-.bci-intro {
-    width: 90%;
-    max-width: 768px;
-    text-align: center;
-}
 
-.bci-intro {
-    margin: 4em auto;
-}
-
-@media only screen and (min-width: 768px) {
-    .bci-intro {
-        margin: 5em auto;
-    }
-}
-
-@media only screen and (min-width: 1170px) {
-    .bci-intro {
-        margin: 6em auto;
-    }
-}
 
 .bci-headline {
     font-size: 3rem;
     line-height: 1.2;
+    color: #ffffff;
 }
 
 @media only screen and (min-width: 768px) {
     .bci-headline {
-        font-size: 4.4rem;
+        /*font-size: 4.4rem;*/
         font-weight: 300;
     }
 }
 
-@media only screen and (min-width: 1170px) {
-    .bci-headline {
-        font-size: 6rem;
-    }
-}
 
 .bci-words-wrapper {
     display: inline-block;
@@ -136,7 +112,7 @@ bci-typing
     }
 
     .bci-headline.type .bci-words-wrapper.selected {
-        background-color: #aebcb9;
+        background-color: #1b1e29;
     }
 
         .bci-headline.type .bci-words-wrapper.selected::after {
@@ -144,7 +120,7 @@ bci-typing
         }
 
         .bci-headline.type .bci-words-wrapper.selected b {
-            color: #0d0d0d;
+            color: #ffffff;
         }
 
 .bci-headline.type b {
@@ -156,6 +132,8 @@ bci-typing
     }
 
 .bci-headline.type i {
+    font-style: normal;
+    font-weight: bold;
     position: absolute;
     visibility: hidden;
 }
