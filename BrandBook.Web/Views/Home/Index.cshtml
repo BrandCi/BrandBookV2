@@ -2,8 +2,13 @@
 @{
     ViewBag.Title = "Startseite";
 }
+@section styles {
+    @Styles.Render("~/Content/Plugins/AnimatedHeadlines")
+}
+
 @section pageScriptBundle {
     @Scripts.Render("~/bundles/Frontend/Page/Homepage")
+    @Scripts.Render("~/bundles/Plugins/AnimatedHeadlines")
 }
 
 
@@ -14,7 +19,17 @@
                 <div class="software_banner_content">
                     <h2 class="f_500 f_size_50 w_color wow fadeInLeft" data-wow-delay="0.2s">
                         <span class="f_700">
-                            @Translations.frontend_home_index_topsection_title_l1
+                            
+                                <h1 class="bci-headline letters type">
+                                    <span class="bci-words-wrapper waiting">
+                                        <b class="is-visible">Create</b>
+                                        <b>Share</b>
+                                        <b>Improve</b>
+                                    </span>
+                                    <span>your corporate branding.</span>
+                                </h1>
+                            
+
                         </span>
                         <br />
                         @Translations.frontend_home_index_topsection_title_l2
