@@ -126,11 +126,26 @@
   <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
     <value>اختبار BrandCi مجانا</value>
   </data>
+  <data name="frontend_home_index_topsection_title_dynamic_create" xml:space="preserve">
+    <value>خلق</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_document" xml:space="preserve">
+    <value>وثيقة</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_improve" xml:space="preserve">
+    <value>تحسن</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_share" xml:space="preserve">
+    <value>شارك</value>
+  </data>
   <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
     <value>العلامة التجارية الرقمية الخاصة بك.</value>
   </data>
   <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
     <value>نجاحك.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
+    <value>العلامة التجارية الخاصة بك</value>
   </data>
   <data name="frontend_navigation_authorized_gotoapp" xml:space="preserve">
     <value>افتح التطبيق</value>

@@ -498,4 +498,19 @@
   <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
     <value>Teile Deine Marke. Mit allen Freunden.</value>
   </data>
+  <data name="frontend_home_index_topsection_title_dynamic_create" xml:space="preserve">
+    <value>Erstelle</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_document" xml:space="preserve">
+    <value>Dokumentiere</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_improve" xml:space="preserve">
+    <value>Verbessere</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_share" xml:space="preserve">
+    <value>Teile</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
+    <value>Deine Marke.</value>
+  </data>
 </root>

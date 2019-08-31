@@ -504,4 +504,19 @@
   <data name="frontend_navigation_blog" xml:space="preserve">
     <value>Blog</value>
   </data>
+  <data name="frontend_home_index_topsection_title_dynamic_create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_improve" xml:space="preserve">
+    <value>Improve</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
+    <value>your corporate branding.</value>
+  </data>
 </root>

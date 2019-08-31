@@ -1024,6 +1024,42 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string frontend_home_index_topsection_title_dynamic_create {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_dynamic_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document.
+        /// </summary>
+        public static string frontend_home_index_topsection_title_dynamic_document {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_dynamic_document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improve.
+        /// </summary>
+        public static string frontend_home_index_topsection_title_dynamic_improve {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_dynamic_improve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        public static string frontend_home_index_topsection_title_dynamic_share {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_dynamic_share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your digital brand..
         /// </summary>
         public static string frontend_home_index_topsection_title_l1 {
@@ -1038,6 +1074,15 @@ namespace BrandBook.Resources {
         public static string frontend_home_index_topsection_title_l2 {
             get {
                 return ResourceManager.GetString("frontend_home_index_topsection_title_l2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to your corporate branding..
+        /// </summary>
+        public static string frontend_home_index_topsection_title_static {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_title_static", resourceCulture);
             }
         }
         
