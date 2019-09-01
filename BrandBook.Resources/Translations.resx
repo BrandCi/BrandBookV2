@@ -663,4 +663,19 @@
   <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
     <value>Brand Sharing</value>
   </data>
+  <data name="frontend_footer_language_title" xml:space="preserve">
+    <value>Language Selection</value>
+  </data>
+  <data name="frontend_home_index_supporting_badge_availablesoon" xml:space="preserve">
+    <value>Available soon</value>
+  </data>
+  <data name="frontend_home_index_supporting_badge_beta" xml:space="preserve">
+    <value>Beta</value>
+  </data>
+  <data name="system_culture_ar_sa" xml:space="preserve">
+    <value>ar-SA</value>
+  </data>
+  <data name="system_culture_ar_sa_full" xml:space="preserve">
+    <value>Arabic (Saudi Arabia)</value>
+  </data>
 </root>

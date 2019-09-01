@@ -682,6 +682,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language Selection.
+        /// </summary>
+        public static string frontend_footer_language_title {
+            get {
+                return ResourceManager.GetString("frontend_footer_language_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cookie Terms.
         /// </summary>
         public static string frontend_footer_legal_cookieterms {
@@ -1074,6 +1083,24 @@ namespace BrandBook.Resources {
         public static string frontend_home_index_services_service_04_title {
             get {
                 return ResourceManager.GetString("frontend_home_index_services_service_04_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available soon.
+        /// </summary>
+        public static string frontend_home_index_supporting_badge_availablesoon {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_badge_availablesoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beta.
+        /// </summary>
+        public static string frontend_home_index_supporting_badge_beta {
+            get {
+                return ResourceManager.GetString("frontend_home_index_supporting_badge_beta", resourceCulture);
             }
         }
         
@@ -1659,6 +1686,24 @@ namespace BrandBook.Resources {
         public static string frontend_navigation_register_button {
             get {
                 return ResourceManager.GetString("frontend_navigation_register_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ar-SA.
+        /// </summary>
+        public static string system_culture_ar_sa {
+            get {
+                return ResourceManager.GetString("system_culture_ar_sa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arabic (Saudi Arabia).
+        /// </summary>
+        public static string system_culture_ar_sa_full {
+            get {
+                return ResourceManager.GetString("system_culture_ar_sa_full", resourceCulture);
             }
         }
         
