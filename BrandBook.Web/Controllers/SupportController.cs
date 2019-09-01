@@ -32,10 +32,10 @@ namespace BrandBook.Web.Controllers
 
             var message = new StringBuilder();
 
-            message.Append("Name: " + model.Name + "<br />");
-            message.Append("Email: " + model.Email + "<br />");
-            message.Append("Subject: " + model.Subject + "<br />");
-            message.Append("Message: " + model.Message);
+            message.Append("<strong>Name:</strong> " + model.Name + "<br />");
+            message.Append("<strong>Email:</strong> " + model.Email + "<br />");
+            message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
+            message.Append("<strong>Message:</strong> " + model.Message);
 
             if (await EmailService.SendEmailAsync(message.ToString()))
             {
