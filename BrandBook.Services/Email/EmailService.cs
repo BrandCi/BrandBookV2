@@ -6,15 +6,18 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 
 namespace BrandBook.Services.Email
 {
     public class EmailService
     {
 
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
         public static async Task<bool> SendEmailAsync(string body)
         {
-            bool isSent = false;
+            var isSent = false;
 
             try
             {
@@ -55,7 +58,7 @@ namespace BrandBook.Services.Email
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.Error(ex.Message, ex);
             }
 
 
