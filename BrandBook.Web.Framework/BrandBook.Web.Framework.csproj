@@ -150,6 +150,7 @@
     <Compile Include="ViewModels\Frontend\ContactFormViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
