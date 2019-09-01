@@ -663,6 +663,21 @@
   <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
     <value>Brand Sharing</value>
   </data>
+  <data name="frontend_contact_input_email" xml:space="preserve">
+    <value>Your email</value>
+  </data>
+  <data name="frontend_contact_input_message" xml:space="preserve">
+    <value>Your message</value>
+  </data>
+  <data name="frontend_contact_input_name" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="frontend_contact_input_privacypolicy" xml:space="preserve">
+    <value>Accept Privacy Policy</value>
+  </data>
+  <data name="frontend_contact_input_subject" xml:space="preserve">
+    <value>Your subject</value>
+  </data>
   <data name="frontend_footer_language_title" xml:space="preserve">
     <value>Language Selection</value>
   </data>

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Services.Email;
 using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Frontend;
+using BrandBook.Web.Framework.ViewModels.Frontend.Support;
 
 namespace BrandBook.Web.Controllers
 {
@@ -19,23 +19,27 @@ namespace BrandBook.Web.Controllers
             return View(model);
         }
 
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Contact(ContactFormViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                return View(model);
+            }
 
-                var message = new StringBuilder();
 
-                message.Append("Name: " + model.Name + "<br />");
-                message.Append("Email: " + model.Email + "<br />");
-                message.Append("Subject: " + model.Subject + "<br />");
-                message.Append("Message: " + model.Message);
+            var message = new StringBuilder();
 
-                if (await EmailService.SendEmailAsync(message.ToString()))
-                {
-                    return RedirectToAction("Contact", "Support");
-                } 
+            message.Append("Name: " + model.Name + "<br />");
+            message.Append("Email: " + model.Email + "<br />");
+            message.Append("Subject: " + model.Subject + "<br />");
+            message.Append("Message: " + model.Message);
+
+            if (await EmailService.SendEmailAsync(message.ToString()))
+            {
+                return RedirectToAction("Contact", "Support");
             }
 
             return View(model);

@@ -664,6 +664,51 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your email.
+        /// </summary>
+        public static string frontend_contact_input_email {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your message.
+        /// </summary>
+        public static string frontend_contact_input_message {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your name.
+        /// </summary>
+        public static string frontend_contact_input_name {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accept Privacy Policy.
+        /// </summary>
+        public static string frontend_contact_input_privacypolicy {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_privacypolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your subject.
+        /// </summary>
+        public static string frontend_contact_input_subject {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Rights Reserved..
         /// </summary>
         public static string frontend_footer_allrightsreserved {
