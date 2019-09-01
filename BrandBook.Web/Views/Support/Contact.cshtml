@@ -25,32 +25,36 @@
 <section class="contact_info_area sec_pad bg_color">
     <div class="container">
         <div class="row">
-
             <div class="col-lg-10 offset-lg-1">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 mt-5">
                 <div class="contact_form">
-                    @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                    @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new {@class = "form-validation", role = "form"}))
                     {
                         @Html.AntiForgeryToken()
 
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name)})
+                                    @Html.TextBoxFor(m => m.Name, new {placeholder = Html.DisplayNameFor(m => m.Name)})
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Email, new { @type = "Email", placeholder = Html.DisplayNameFor(m => m.Email)})
+                                    @Html.TextBoxFor(m => m.Email, new {@type = "Email", placeholder = Html.DisplayNameFor(m => m.Email)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Subject, new { placeholder = Html.DisplayNameFor(m => m.Subject)})
+                                    @Html.TextBoxFor(m => m.Subject, new {placeholder = Html.DisplayNameFor(m => m.Subject)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group text_box">
-                                    @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message)})
+                                    @Html.TextAreaFor(m => m.Message, new {placeholder = Html.DisplayNameFor(m => m.Message)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -68,7 +72,7 @@
 
                     }
 
-                  
+
                     <div id="success">Your message succesfully sent!</div>
                     <div id="error">Opps! There is something wrong. Please try again</div>
                 </div>

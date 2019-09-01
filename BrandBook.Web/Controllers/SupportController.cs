@@ -4,11 +4,13 @@ using System.Web.Mvc;
 using BrandBook.Services.Email;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Frontend.Support;
+using log4net;
 
 namespace BrandBook.Web.Controllers
 {
     public class SupportController : FrontendControllerBase
     {
+        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         public ActionResult Contact()
         {
             ViewBag.Title = "Contact";
@@ -40,6 +42,13 @@ namespace BrandBook.Web.Controllers
             if (await EmailService.SendEmailAsync(message.ToString()))
             {
                 return RedirectToAction("Contact", "Support");
+            }
+            else
+            {
+                var error = "This Email could not be sent. Please try again later.";
+
+                ModelState.AddModelError("NotSent", error);
+                Logger.Error(error);
             }
 
             return View(model);
