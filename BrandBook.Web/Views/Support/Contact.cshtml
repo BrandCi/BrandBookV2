@@ -1,4 +1,4 @@
-﻿@model BrandBook.Web.Framework.ViewModels.Frontend.ContactFormViewModel
+﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Support.ContactFormViewModel
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
@@ -28,38 +28,47 @@
 
             <div class="col-lg-10 offset-lg-1">
                 <div class="contact_form">
-                    <form action="#" class="contact_form_box" method="post" id="contactForm" novalidate="novalidate">
+                    @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group text_box">
-                                    <input type="text" id="name" name="name" placeholder="Your Name">
+                                    @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name)})
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group text_box">
-                                    <input type="text" name="email" id="email" placeholder="Your Email">
+                                    @Html.TextBoxFor(m => m.Email, new { @type = "Email", placeholder = Html.DisplayNameFor(m => m.Email)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group text_box">
-                                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                                    @Html.TextBoxFor(m => m.Subject, new { placeholder = Html.DisplayNameFor(m => m.Subject)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group text_box">
-                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message . . ."></textarea>
+                                    @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message)})
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="checkbox" name="privacypolicy" id="privacypolicy" />
-                                    <label for="privacypolicy">Accept </label> 
-                                    <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">Privacy Policy</a>
+                                    @Html.CheckBoxFor(m => m.PrivacyPolicy)
+                                    @Html.LabelFor(m => m.PrivacyPolicy)
+                                    &nbsp;
+                                    <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
+                                        <i class="fas fa-file-alt"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" class="btn_three">Send Message</button>
-                    </form>
+
+                    }
+
+                  
                     <div id="success">Your message succesfully sent!</div>
                     <div id="error">Opps! There is something wrong. Please try again</div>
                 </div>
