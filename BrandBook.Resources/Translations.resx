@@ -547,13 +547,13 @@
     <value>All features</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_accessrights_description" xml:space="preserve">
-    <value />
+    <value>Determine granular which team member works in which areas.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_accessrights_title" xml:space="preserve">
     <value>Granular access rights</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_feedback_description" xml:space="preserve">
-    <value />
+    <value>Receive continuous feedback from your team. This will allow your brand to grow optimally.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_feedback_title" xml:space="preserve">
     <value>Get Feedback</value>
@@ -562,31 +562,31 @@
     <value>Brand Collaboration</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_together_description" xml:space="preserve">
-    <value />
+    <value>Optimize your work results by collaborating on your brand.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_together_title" xml:space="preserve">
     <value>Work together with others</value>
   </data>
   <data name="frontend_home_index_supporting_creation_assistance_description" xml:space="preserve">
-    <value />
+    <value>Get the support you need to build your brand. We recommend the appropriate steps based on your current status.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_assistance_title" xml:space="preserve">
     <value>Extensive assistance</value>
   </data>
   <data name="frontend_home_index_supporting_creation_inspiration_description" xml:space="preserve">
-    <value />
+    <value>Get contextual inspiration through appropriate suggestions from our intelligent library.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_inspiration_title" xml:space="preserve">
     <value>Creative inspiration</value>
   </data>
   <data name="frontend_home_index_supporting_creation_resources_description" xml:space="preserve">
-    <value />
+    <value>You already have a finished brand. No problem. An import of existing data is possible at any time.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_resources_title" xml:space="preserve">
     <value>Existing resources</value>
   </data>
   <data name="frontend_home_index_supporting_creation_scopes_description" xml:space="preserve">
-    <value />
+    <value>Whether you create your brand for you privately or for your business. We offer you the right functions for every size.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_scopes_title" xml:space="preserve">
     <value>Different scopes</value>
@@ -595,13 +595,13 @@
     <value>Brand Creation</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_contenttypes_description" xml:space="preserve">
-    <value />
+    <value>For documentation, use different content types to record your color values ​​and their usage scenarios, for example.</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_contenttypes_title" xml:space="preserve">
     <value>Use different content types</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_save_description" xml:space="preserve">
-    <value />
+    <value>Capture the essence of your brand in a perfect environment.</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_save_title" xml:space="preserve">
     <value>Save your brand approach</value>
@@ -610,25 +610,25 @@
     <value>Brand Documentation</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_assistance_description" xml:space="preserve">
-    <value />
+    <value>Do you want to get the most out of your brand? We help you with that. Our automatic support knows how.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_assistance_title" xml:space="preserve">
     <value>Automatic assistance</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_history_description" xml:space="preserve">
-    <value />
+    <value>Use our version management to access previous content from your brand at any time.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_history_title" xml:space="preserve">
     <value>Manage history of your branding</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_improvements_description" xml:space="preserve">
-    <value />
+    <value>Have your brand regularly reviewed for improvement potential. This will help you to keep improving your brand.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_improvements_title" xml:space="preserve">
     <value>Check for improvements</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_suggestions_description" xml:space="preserve">
-    <value />
+    <value>You decide which proposals should be implemented. By clicking you integrate them directly into your brand.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_suggestions_title" xml:space="preserve">
     <value>Accept suggestions for improvement</value>
@@ -643,19 +643,19 @@
     <value>How BrandCi supports your branding process</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_agencies_description" xml:space="preserve">
-    <value />
+    <value>Share your brand with, for example, an agency to enable a quick completion of follow-up projects.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_agencies_title" xml:space="preserve">
     <value>Share with your agencies</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_limitaccess_description" xml:space="preserve">
-    <value />
+    <value>You do not want to publish your brand yet? No problem, you decide what you publish.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_limitaccess_title" xml:space="preserve">
     <value>Limit access for others</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_publish_description" xml:space="preserve">
-    <value />
+    <value>Publish your brand to others.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_publish_title" xml:space="preserve">
     <value>Publish you brand</value>

@@ -1150,7 +1150,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Determine granular which team member works in which areas..
         /// </summary>
         public static string frontend_home_index_supporting_collaboration_accessrights_description {
             get {
@@ -1168,7 +1168,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Receive continuous feedback from your team. This will allow your brand to grow optimally..
         /// </summary>
         public static string frontend_home_index_supporting_collaboration_feedback_description {
             get {
@@ -1195,7 +1195,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Optimize your work results by collaborating on your brand..
         /// </summary>
         public static string frontend_home_index_supporting_collaboration_together_description {
             get {
@@ -1213,7 +1213,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Get the support you need to build your brand. We recommend the appropriate steps based on your current status..
         /// </summary>
         public static string frontend_home_index_supporting_creation_assistance_description {
             get {
@@ -1231,7 +1231,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Get contextual inspiration through appropriate suggestions from our intelligent library..
         /// </summary>
         public static string frontend_home_index_supporting_creation_inspiration_description {
             get {
@@ -1249,7 +1249,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to You already have a finished brand. No problem. An import of existing data is possible at any time..
         /// </summary>
         public static string frontend_home_index_supporting_creation_resources_description {
             get {
@@ -1267,7 +1267,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Whether you create your brand for you privately or for your business. We offer you the right functions for every size..
         /// </summary>
         public static string frontend_home_index_supporting_creation_scopes_description {
             get {
@@ -1294,7 +1294,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to For documentation, use different content types to record your color values ​​and their usage scenarios, for example..
         /// </summary>
         public static string frontend_home_index_supporting_documentation_contenttypes_description {
             get {
@@ -1312,7 +1312,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Capture the essence of your brand in a perfect environment..
         /// </summary>
         public static string frontend_home_index_supporting_documentation_save_description {
             get {
@@ -1339,7 +1339,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Do you want to get the most out of your brand? We help you with that. Our automatic support knows how..
         /// </summary>
         public static string frontend_home_index_supporting_improvement_assistance_description {
             get {
@@ -1357,7 +1357,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Use our version management to access previous content from your brand at any time..
         /// </summary>
         public static string frontend_home_index_supporting_improvement_history_description {
             get {
@@ -1375,7 +1375,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Have your brand regularly reviewed for improvement potential. This will help you to keep improving your brand..
         /// </summary>
         public static string frontend_home_index_supporting_improvement_improvements_description {
             get {
@@ -1393,7 +1393,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to You decide which proposals should be implemented. By clicking you integrate them directly into your brand..
         /// </summary>
         public static string frontend_home_index_supporting_improvement_suggestions_description {
             get {
@@ -1438,7 +1438,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Share your brand with, for example, an agency to enable a quick completion of follow-up projects..
         /// </summary>
         public static string frontend_home_index_supporting_sharing_agencies_description {
             get {
@@ -1456,7 +1456,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to You do not want to publish your brand yet? No problem, you decide what you publish..
         /// </summary>
         public static string frontend_home_index_supporting_sharing_limitaccess_description {
             get {
@@ -1474,7 +1474,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Publish your brand to others..
         /// </summary>
         public static string frontend_home_index_supporting_sharing_publish_description {
             get {
