@@ -415,37 +415,37 @@
     <value>Philipp C. Moser</value>
   </data>
   <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
-    <value>Erstelle und dokumentiere Dein Unternehmensbranding Schritt für Schritt. Unser intelligenter Editor wird Dich dabei unterstützen.</value>
+    <value>Erstelle und dokumentiere dein Unternehmensbranding Schritt für Schritt. Unser intelligenter Editor wird dich dabei unterstützen.</value>
   </data>
   <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
     <value>Kreieren</value>
   </data>
   <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
-    <value>Lasse Dich von kontextbezogenen Tipps inspirieren, die Deine Marke zum Erfolg verhelfen und teile sie mit Anderen.</value>
+    <value>Lasse dich von kontextbezogenen Tipps inspirieren, die deine Marke zum Erfolg verhelfen und teile sie mit Anderen.</value>
   </data>
   <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
     <value>Verwalten</value>
   </data>
   <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
-    <value>Kontinuierliche und automatische Tests prüfen Dein Branding auf mögliche Optimierungen und führen diese auf Wunsch durch.</value>
+    <value>Kontinuierliche und automatische Tests prüfen dein Branding auf mögliche Optimierungen und führen diese auf Wunsch durch.</value>
   </data>
   <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
     <value>Optimieren</value>
   </data>
   <data name="frontend_home_index_features_title_l1" xml:space="preserve">
-    <value>Warum BrandCi Deine Marke</value>
+    <value>Warum BrandCi deine Marke</value>
   </data>
   <data name="frontend_home_index_features_title_l2" xml:space="preserve">
     <value>zum Erfolg führt.</value>
   </data>
   <data name="frontend_home_index_intro_button_description" xml:space="preserve">
-    <value>Möchtest Du mehr wissen?</value>
+    <value>Möchtest du mehr wissen?</value>
   </data>
   <data name="frontend_home_index_intro_button_title" xml:space="preserve">
     <value>Klick hier</value>
   </data>
   <data name="frontend_home_index_intro_heading" xml:space="preserve">
-    <value>Lass uns Dir BrandCi vorstellen.</value>
+    <value>Lass uns dir BrandCi vorstellen.</value>
   </data>
   <data name="frontend_home_index_intro_subheading" xml:space="preserve">
     <value>Was ist BrandCi?</value>
@@ -463,13 +463,13 @@
     <value>Plane und Verbessere Deine Marke ohne weitere Software direkt online und arbeite mit Deinen Kollegen gemeinsam am Erfolg der Marke.</value>
   </data>
   <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
-    <value>Zugriff auf Deine Marke. Von Überall.</value>
+    <value>Zugriff auf deine Marke. Von Überall.</value>
   </data>
   <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
-    <value>Eine Neugestaltung Deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
+    <value>Eine Neugestaltung deiner Marke trägt durch intelligente Vorausplanung zum Markenerfolg bei.</value>
   </data>
   <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
-    <value>Erweitere Deine Marke. Und zwar geplant.</value>
+    <value>Erweitere deine Marke. Und zwar geplant.</value>
   </data>
   <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
     <value>Durch den Einsatz von Künstlicher Intelligenz garantieren wir Dir und Deiner Marke eine stetige Verbesserung.</value>
@@ -481,7 +481,7 @@
     <value>Entdecke BrandCi</value>
   </data>
   <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
-    <value>Verwalte und verbessere Deinen Markenauftritt erfolgreich mit BrandCi.</value>
+    <value>Verwalte und verbessere deinen Markenauftritt erfolgreich mit BrandCi.</value>
   </data>
   <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
     <value>Teste BrandCi kostenfrei.</value>
@@ -496,7 +496,7 @@
     <value>Geben Sie Ihren Agenturen Zugriff auf Ihre Marke. Richten Sie einen privaten Bereich mit allen Informationen rund um Ihr Branding ein. Außerdem können Sie Ihre Brandings auch für alle veröffentlichen.</value>
   </data>
   <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
-    <value>Teile Deine Marke. Mit allen Freunden.</value>
+    <value>Teile deine Marke. Mit allen Freunden.</value>
   </data>
   <data name="frontend_home_index_topsection_title_dynamic_create" xml:space="preserve">
     <value>Erstelle</value>
@@ -514,7 +514,7 @@
     <value>Deine Marke.</value>
   </data>
   <data name="frontend_blog_noavailableblogs_description" xml:space="preserve">
-    <value>Wir bereiten gerade interessante Blogeinträge rund um das Thema Unternehmensmarken für Dich vor. Sei gespannt.</value>
+    <value>Wir bereiten gerade interessante Blogeinträge rund um das Thema Unternehmensmarken für dich vor. Sei gespannt.</value>
   </data>
   <data name="frontend_blog_noavailableblogs_title" xml:space="preserve">
     <value>Aktuell haben wir leider keine publizierten Blogeinträge.</value>
@@ -541,94 +541,94 @@
     <value>Alle Funktionen</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_accessrights_description" xml:space="preserve">
-    <value />
+    <value>Bestimme granular, welches Teammitglied an welchen Bereichen mitarbeitet.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_accessrights_title" xml:space="preserve">
     <value>Granulare Zugriffsrechte</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_feedback_description" xml:space="preserve">
-    <value />
+    <value>Erhalte kontinuierlich Feedback durch dein Team. Dadurch wird deiner Marke ein optimales Wachstum ermöglicht.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_feedback_title" xml:space="preserve">
     <value>Hole Feedback ein</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_title" xml:space="preserve">
-    <value>Zusammenarbeit Deiner Marke</value>
+    <value>Zusammenarbeit deiner Marke</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_together_description" xml:space="preserve">
-    <value />
+    <value>Optimiere deine Arbeitsergebnisse durch gemeinsames Bearbeiten deiner Marke.</value>
   </data>
   <data name="frontend_home_index_supporting_collaboration_together_title" xml:space="preserve">
     <value>Arbeite mit Anderen zusammen</value>
   </data>
   <data name="frontend_home_index_supporting_creation_assistance_description" xml:space="preserve">
-    <value />
+    <value>Erhalte beim Erstellen deiner Marke die Unterstützung, die du benötigst. Wir empfehlen dir basierend auf deinem jetzigen Stand die geeigneten Schritte.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_assistance_title" xml:space="preserve">
     <value>Umfangreiche Unterstützung</value>
   </data>
   <data name="frontend_home_index_supporting_creation_inspiration_description" xml:space="preserve">
-    <value />
+    <value>Erhalte kontextbezogene Inspiration durch passende Vorschläge aus unserer intelligenten Bibliothek.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_inspiration_title" xml:space="preserve">
     <value>Kreative Inspiration</value>
   </data>
   <data name="frontend_home_index_supporting_creation_resources_description" xml:space="preserve">
-    <value />
+    <value>Du hast bereits eine Marke. Kein Problem. Eine Import bestehender Daten ist jederzeit möglich.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_resources_title" xml:space="preserve">
     <value>Verwenden bestehender Resourcen</value>
   </data>
   <data name="frontend_home_index_supporting_creation_scopes_description" xml:space="preserve">
-    <value />
+    <value>Egal ob du deine Marke für dich privat oder für dein Unternehmen erstellst. Wir bieten dir für jede Größe die passenden Funktionen.</value>
   </data>
   <data name="frontend_home_index_supporting_creation_scopes_title" xml:space="preserve">
     <value>Unterschiedlichster Umfang</value>
   </data>
   <data name="frontend_home_index_supporting_creation_title" xml:space="preserve">
-    <value>Erstelle Deine Marke</value>
+    <value>Erstelle deine Marke</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_contenttypes_description" xml:space="preserve">
-    <value />
+    <value>Nutze zur Dokumentation unterschiedliche Inhaltstypen um zum Beispiel deine Farbwerte und deren Einsatzszenarien festzuhalten.</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_contenttypes_title" xml:space="preserve">
     <value>Verwende unterschieldiche Typen</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_save_description" xml:space="preserve">
-    <value />
+    <value>Fasse die Essenz deiner Marke in einer perfekten Umgebung zusammen.</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_save_title" xml:space="preserve">
     <value>Halte Deinen Markenansatz fest</value>
   </data>
   <data name="frontend_home_index_supporting_documentation_title" xml:space="preserve">
-    <value>Dokumentiere Deine Marke</value>
+    <value>Dokumentiere deine Marke</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_assistance_description" xml:space="preserve">
-    <value />
+    <value>Möchtest du ein Optimum aus deiner Marke herausholen? Wir helfen dir dabei. Unsere automatische Unterstützung weiß wie.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_assistance_title" xml:space="preserve">
     <value>Automatische Unterstützung</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_history_description" xml:space="preserve">
-    <value />
+    <value>Nutze unsere Versionsverwaltung um jederzeit auf frühere Inhalte deiner Marke zurückgreifen zu können.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_history_title" xml:space="preserve">
     <value>Verwalte die Historie deiner Marke</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_improvements_description" xml:space="preserve">
-    <value />
+    <value>Lasse deine Marke regelmäßig auf Verbesserungspotentiale untersuchen. Dadurch verbesserst du deine Marke laufend.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_improvements_title" xml:space="preserve">
     <value>Prüfe auf Verbesserungen</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_suggestions_description" xml:space="preserve">
-    <value />
+    <value>Du bestimmst, welche Vorschläge umgesetzt werden sollen. Per Klick integrierst du diese direkt in deiner Marke.</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_suggestions_title" xml:space="preserve">
     <value>Setze Verbesserungsvorschläge um</value>
   </data>
   <data name="frontend_home_index_supporting_improvement_title" xml:space="preserve">
-    <value>Optimiere Deine Marke</value>
+    <value>Optimiere deine Marke</value>
   </data>
   <data name="frontend_home_index_supporting_section_subtitle" xml:space="preserve">
     <value />
@@ -637,25 +637,25 @@
     <value>Wie BrandCi deine Marke unterstützt</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_agencies_description" xml:space="preserve">
-    <value />
+    <value>Teile deine Marke mit zum Beispiel einer Agentur um eine schnelle Abwicklung von Folgeprojekten zu ermöglichen.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_agencies_title" xml:space="preserve">
     <value>Teile mit Deinen Agenturen</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_limitaccess_description" xml:space="preserve">
-    <value />
+    <value>Du möchtest deine Marke noch nicht vollständig veröffentlichen? Kein Problem, du bestimmtst was veröffentlicht wird.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_limitaccess_title" xml:space="preserve">
     <value>Beschränke den Zugriff für andere</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_publish_description" xml:space="preserve">
-    <value />
+    <value>Gebe deine Marke zur Einsicht für andere frei.</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_publish_title" xml:space="preserve">
-    <value>Publiziere Deine Marke</value>
+    <value>Publiziere deine Marke</value>
   </data>
   <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
-    <value>Teile Deine Marke</value>
+    <value>Teile deine Marke</value>
   </data>
   <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
     <value>Markenerstellung</value>
