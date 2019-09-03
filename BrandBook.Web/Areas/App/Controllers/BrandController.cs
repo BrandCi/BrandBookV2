@@ -246,26 +246,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult UpdateContactSettings(BrandSettingsViewModel model)
-        {
-            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.Id))
-            {
-                return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
-            }
-            
-            var brand = _unitOfWork.BrandRepository.FindById(model.Id);
-
-            brand.BrandSetting.ContactEmail = model.ContactSettingsViewModel.ContactPerson;
-
-            _unitOfWork.BrandRepository.Update(brand);
-            _unitOfWork.SaveChanges();
-            
-            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
-        }
-
-
-
+  
 
         public ActionResult Delete(int id)
         {

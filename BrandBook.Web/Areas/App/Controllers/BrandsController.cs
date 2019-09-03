@@ -89,7 +89,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
         {
-            if (!ModelState.IsValid || _subscriptionService.HasValidSubscription(User.Identity.GetUserId()))
+            if (!ModelState.IsValid || !_subscriptionService.HasValidSubscription(User.Identity.GetUserId()))
             {
                 return View(model);
             }
@@ -125,8 +125,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                 MainHexColor = model.MainColor,
                 ImageId = brandImage.Id,
                 Image = brandImage,
-                BrandPublicSettingId = 1,
-                BrandSettingId = 2,
                 CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
             };
 
