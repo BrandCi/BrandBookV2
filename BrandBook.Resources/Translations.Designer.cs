@@ -169,6 +169,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My subscriptions.
+        /// </summary>
+        public static string app_pagetitle_subscriptions {
+            get {
+                return ResourceManager.GetString("app_pagetitle_subscriptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string app_settings_back_button_title {

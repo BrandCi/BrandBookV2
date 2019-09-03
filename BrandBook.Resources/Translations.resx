@@ -696,4 +696,7 @@
   <data name="app_mainnavigation_subscriptions" xml:space="preserve">
     <value>My subscriptions</value>
   </data>
+  <data name="app_pagetitle_subscriptions" xml:space="preserve">
+    <value>My subscriptions</value>
+  </data>
 </root>
