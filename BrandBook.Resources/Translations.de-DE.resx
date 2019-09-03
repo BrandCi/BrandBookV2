@@ -660,4 +660,7 @@
   <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
     <value>Markenerstellung</value>
   </data>
+  <data name="app_mainnavigation_subscriptions" xml:space="preserve">
+    <value>Meine Abonnements</value>
+  </data>
 </root>

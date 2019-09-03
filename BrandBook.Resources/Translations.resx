@@ -693,4 +693,7 @@
   <data name="system_culture_ar_sa_full" xml:space="preserve">
     <value>Arabic (Saudi Arabia)</value>
   </data>
+  <data name="app_mainnavigation_subscriptions" xml:space="preserve">
+    <value>My subscriptions</value>
+  </data>
 </root>

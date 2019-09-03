@@ -115,6 +115,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My subscriptions.
+        /// </summary>
+        public static string app_mainnavigation_subscriptions {
+            get {
+                return ResourceManager.GetString("app_mainnavigation_subscriptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Companies.
         /// </summary>
         public static string app_mainnavigation_usermanagement_company {
