@@ -239,6 +239,14 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/AnimatedHeadlines").Include(
                 "~/Plugins/animated-headlines/animated-headlines.js"));
 
+
+            // Dropzone
+            bundles.Add(new StyleBundle("~/Content/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.js"));
+
         }
     }
 }
