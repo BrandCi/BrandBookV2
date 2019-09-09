@@ -6,7 +6,8 @@
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
-@section styles{}
+@section styles{
+}
 
 
 
@@ -35,8 +36,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="form-row">
                     <div class="form-group col-6">
                         @Html.LabelFor(m => m.Description, new { @class = "control-label" })
@@ -62,7 +63,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="mainColorInput"><i class="fas fa-palette"></i></span>
                                 </div>
-                                @Html.TextBoxFor(m => m.MainColor, new { type="color", @class = "form-control required", value = "#193357", data_bind = "aria-describedby=mainColorInput" })
+                                @Html.TextBoxFor(m => m.MainColor, new { type = "color", @class = "form-control required", value = "#193357", data_bind = "aria-describedby=mainColorInput" })
                             </div>
                         </div>
                     </div>
@@ -75,14 +76,15 @@
                     </div>
                 </div>
 
-
-                <div class="form-group mt-5">
-                    <button type="submit" class="btn btn-primary btn-custom">Marke hinzufügen</button>
+                <div class="form-row">
+                    <div class="form-group mt-5">
+                        <button type="submit" class="btn btn-primary btn-custom" id="submitForm">Marke hinzufügen</button>
+                    </div>
                 </div>
 
             }
 
-            
+
         </div>
     </div>
 </div>
@@ -91,9 +93,7 @@
 
 
 
+
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/JqueryValidation")
 }
-
-
-
