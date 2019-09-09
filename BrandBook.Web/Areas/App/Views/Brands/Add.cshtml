@@ -73,7 +73,7 @@
                         @Html.LabelFor(m => m.ImageId)
                         <div class="">
                             <input type='file' name="image" class="form-control mb-2" onchange="readURL(this);" style="height: auto;" accept="image/*" />
-                            <img id="previewImage" src="" alt="" style="max-width: 180px;" />
+                            <img id="@Html.IdFor(m => m.ImageId)" src="" alt="" style="max-width: 180px;" />
                         </div>
                     </div>
                 </div>
@@ -99,8 +99,6 @@
 
 
 
-
-
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/JqueryValidation")
     
@@ -111,7 +109,7 @@
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#previewImage')
+                    $('#@Html.IdFor(m => m.ImageId)')
                         .attr('src', e.target.result)
                         .css("border", "1px solid black");
                     
