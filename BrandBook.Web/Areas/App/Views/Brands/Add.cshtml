@@ -1,6 +1,7 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Brand.AddNewBrandViewModel
+﻿@using BrandBook.Resources
+@model BrandBook.Web.Framework.ViewModels.App.Brand.AddNewBrandViewModel
 @{
-    ViewBag.Title = "Marke anlegen";
+    ViewBag.Title = @Translations.app_pagetitle_addbrand;
 }
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
@@ -15,7 +16,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
-            <h4 class="m-t-0 header-title"><b>Add a new Brand</b></h4>
+            <h4 class="m-t-0 header-title"><b>@Translations.app_pagetitle_addbrand</b></h4>
 
 
             @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
@@ -82,7 +83,9 @@
 
                 <div class="form-row">
                     <div class="form-group mt-5">
-                        <button type="submit" class="btn btn-primary btn-custom" id="submitForm">Marke hinzufügen</button>
+                        <button type="submit" class="btn btn-primary btn-custom" id="submitForm">
+                            @Translations.app_brands_addbrand_submit
+                        </button>
                     </div>
                 </div>
 
