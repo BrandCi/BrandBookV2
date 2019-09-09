@@ -32,7 +32,10 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="titleInput"><i class="fas fa-swatchbook"></i></span>
                                 </div>
-                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control required", data_bind = "aria-describedby=titleInput", required = "required" })
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control required", data_bind = "aria-describedby=titleInput"})
+                            </div>
+                            <div class="validation-error-text m-b-10 font-14" id="validation-message-@Html.IdFor(m => m.Name)">
+                                &nbsp;
                             </div>
                         </div>
                     </div>
@@ -109,9 +112,7 @@
 
 @section scripts {
     @Scripts.Render("~/bundles/Plugins/JqueryValidation")
-    @Scripts.Render("~/bundles/Plugins/Parsleyjs")
-    
-    
+
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -148,5 +149,28 @@
             updateTextareaCounter('@Html.IdFor(m => m.ShortDescription)');
         });
 
+    </script>
+    
+    
+    <script>
+        $(function () {
+            $.validator.addMethod("regex", function (value, element, regexpr) {
+                return regexpr.test(value);
+            }, "Please enter a valid name.");
+
+            jQuery.validator.setDefaults({
+                errorPlacement: function(error, element) {
+                    error.appendTo('#validation-message-@Html.IdFor(m => m.Name)');
+                }
+            });
+    
+            $("#add-brand-form").validate({
+                rules: {
+                    @Html.NameFor(m => m.Name): {
+                        regex: /(.|\s)*\S(.|\s)*/
+                    }
+                }
+            });
+        });
     </script>
 }

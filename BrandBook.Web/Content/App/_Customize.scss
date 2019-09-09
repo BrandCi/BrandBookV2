@@ -9,7 +9,7 @@
 
 
 .required-form-item {
-    color: #ef5350;
+    color: $danger;
 }
 .required-form-item::after {
     content: '*';
@@ -50,4 +50,11 @@
 .badge.subscription {
     float: right;
     margin-left: .5%;
+}
+
+
+
+/* Validation Messages */
+.validation-error-text {
+    color: $danger;
 }

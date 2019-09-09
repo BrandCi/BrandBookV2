@@ -4670,3 +4670,7 @@ File: Responsive
 .badge.subscription {
   float: right;
   margin-left: .5%; }
+
+/* Validation Messages */
+.validation-error-text {
+  color: #ef5350; }
