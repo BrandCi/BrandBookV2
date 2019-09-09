@@ -12,6 +12,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         [Display(Name = "app_brands_addbrand_description", ResourceType = typeof(Translations))]
         public string Description { get; set; }
 
+        [MaxLength(255)]
         [Display(Name = "app_brands_addbrand_shortdescription", ResourceType = typeof(Translations))]
         public string ShortDescription { get; set; }
 
