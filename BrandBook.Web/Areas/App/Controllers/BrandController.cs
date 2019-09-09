@@ -271,6 +271,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void RemoveBrandImage(Image brandImage)
         {
+            // Don't delete the default BrandImage
+            if (brandImage.Id == 1) return;
+
             var fullPath = Request.MapPath("~/SharedStorage/BrandImages/" + brandImage.Name);
 
             if (System.IO.File.Exists(fullPath))
@@ -283,6 +286,8 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 throw new FileNotFoundException();
             }
+
+
 
         }
 
