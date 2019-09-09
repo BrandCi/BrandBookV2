@@ -832,6 +832,13 @@
     <Content Include="Plugins\datatables\responsive.bootstrap4.min.js" />
     <Content Include="Plugins\datatables\select.bootstrap4.min.css" />
     <Content Include="Plugins\datatables\vfs_fonts.js" />
+    <Content Include="Plugins\dropzone\dropzone-amd-module.js" />
+    <Content Include="Plugins\dropzone\dropzone.css" />
+    <Content Include="Plugins\dropzone\dropzone.js" />
+    <Content Include="Plugins\dropzone\min\basic.min.css" />
+    <Content Include="Plugins\dropzone\min\dropzone-amd-module.min.js" />
+    <Content Include="Plugins\dropzone\min\dropzone.min.css" />
+    <Content Include="Plugins\dropzone\min\dropzone.min.js" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.css" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.js" />
     <Content Include="Plugins\fancybox\dist\jquery.fancybox.min.css" />
