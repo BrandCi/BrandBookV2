@@ -70,6 +70,60 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string app_brands_addbrand_description {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string app_brands_addbrand_image {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Color.
+        /// </summary>
+        public static string app_brands_addbrand_maincolor {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_maincolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string app_brands_addbrand_name {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Description.
+        /// </summary>
+        public static string app_brands_addbrand_shortdescription {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_shortdescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add brand.
+        /// </summary>
+        public static string app_brands_addbrand_submit {
+            get {
+                return ResourceManager.GetString("app_brands_addbrand_submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select your preferred language for the userinterface.
         /// </summary>
         public static string app_culturesetting_description {
@@ -165,6 +219,15 @@ namespace BrandBook.Resources {
         public static string app_mainnavigation_yourbrands {
             get {
                 return ResourceManager.GetString("app_mainnavigation_yourbrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new brand.
+        /// </summary>
+        public static string app_pagetitle_addbrand {
+            get {
+                return ResourceManager.GetString("app_pagetitle_addbrand", resourceCulture);
             }
         }
         

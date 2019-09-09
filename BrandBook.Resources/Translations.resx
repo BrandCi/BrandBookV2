@@ -699,4 +699,25 @@
   <data name="app_pagetitle_subscriptions" xml:space="preserve">
     <value>My subscriptions</value>
   </data>
+  <data name="app_brands_addbrand_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="app_brands_addbrand_image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="app_brands_addbrand_maincolor" xml:space="preserve">
+    <value>Primary Color</value>
+  </data>
+  <data name="app_brands_addbrand_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="app_brands_addbrand_shortdescription" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
+  <data name="app_brands_addbrand_submit" xml:space="preserve">
+    <value>Add brand</value>
+  </data>
+  <data name="app_pagetitle_addbrand" xml:space="preserve">
+    <value>Add new brand</value>
+  </data>
 </root>
