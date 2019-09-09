@@ -4641,6 +4641,12 @@ File: Responsive
 .custom-modal-text {
   padding: 50px; }
 
+.required-form-item {
+  color: #ef5350; }
+
+.required-form-item::after {
+  content: '*'; }
+
 .dataTable .selected td,
 .dataTable .selected td a {
   color: #eeeeee; }

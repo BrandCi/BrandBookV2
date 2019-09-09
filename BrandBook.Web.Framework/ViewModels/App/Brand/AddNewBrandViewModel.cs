@@ -10,9 +10,9 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         public string Description { get; set; }
         public string ShortDescription { get; set; }
 
-        [Required]
         public string MainColor { get; set; }
 
+        [Display(Name="Brand Image")]
         public int ImageId { get; set; }
 
     }

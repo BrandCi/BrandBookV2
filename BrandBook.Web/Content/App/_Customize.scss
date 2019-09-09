@@ -8,6 +8,14 @@
 }
 
 
+.required-form-item {
+    color: #ef5350;
+}
+.required-form-item::after {
+    content: '*';
+}
+
+
 // Datatables
 .dataTable {
     .selected td,
