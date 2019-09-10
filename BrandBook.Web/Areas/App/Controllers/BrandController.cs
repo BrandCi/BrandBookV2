@@ -205,12 +205,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
-                    ContactPerson = "info@philipp-moser.de"
+                    ContactPerson = ""
                 },
 
                 CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
                 {
-                    PrimaryHexColor = "193357",
+                    PrimaryHexColor = "",
                     RoundedButtons = true,
                     RoundedButtonsPixel = 5
                 }
