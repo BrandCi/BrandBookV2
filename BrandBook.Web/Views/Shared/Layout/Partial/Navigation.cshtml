@@ -27,39 +27,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mr-auto menu w_menu pl_120">
                     <li class="nav-item">
-                        <a title="@Translations.frontend_navigation_homepage" class="nav-link" role="button" href="@Url.Action("Index", "Home")">
+                        <a title="@Translations.frontend_navigation_homepage" class="nav-link" role="button" href="@Url.Action("Index", "Home", new {area = ""})">
                             @Translations.frontend_navigation_homepage
                         </a>
                     </li>
 
-                    <li class="dropdown submenu nav-item">
-                        <a title="@Translations.frontend_navigation_product" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                    <li class="nav-item">
+                        <a title="@Translations.frontend_navigation_product" class="nav-link" role="button" href="@Url.Action("Overview", "Product", new {area = ""})">
                             @Translations.frontend_navigation_product
                         </a>
-                        <ul role="menu" class=" dropdown-menu">
-
-                            <li class="nav-item">
-                                <a title="@Translations.frontend_navigation_product_overview" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                    @Translations.frontend_navigation_product_overview
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a title="@Translations.frontend_navigation_product_brandcreation" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                    @Translations.frontend_navigation_product_brandcreation
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a title="@Translations.frontend_navigation_product_brandmanagement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                    @Translations.frontend_navigation_product_brandmanagement
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a title="@Translations.frontend_navigation_product_brandimprovement" class="nav-link" href="@Url.Action("Overview", "Product", new {area = ""})">
-                                    @Translations.frontend_navigation_product_brandimprovement
-                                </a>
-                            </li>
-
-                        </ul>
                     </li>
 
                     <li class="nav-item">
