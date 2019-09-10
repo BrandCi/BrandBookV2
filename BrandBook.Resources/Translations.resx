@@ -699,4 +699,40 @@
   <data name="app_pagetitle_subscriptions" xml:space="preserve">
     <value>My subscriptions</value>
   </data>
+  <data name="frontend_product_process_pagetitle" xml:space="preserve">
+    <value>Define your Brand in a continuous process</value>
+  </data>
+  <data name="frontend_product_process_startprocess_buttontitle" xml:space="preserve">
+    <value>Start your journey here</value>
+  </data>
+  <data name="frontend_product_process_step_collaboration_description" xml:space="preserve">
+    <value>You work in a team? No problem. With BrandCi you have the opportunity at any time to let other people participate in the growth of your brand. You decide who can edit which elements.</value>
+  </data>
+  <data name="frontend_product_process_step_collaboration_title" xml:space="preserve">
+    <value>Brand Collaboration</value>
+  </data>
+  <data name="frontend_product_process_step_documentation_description" xml:space="preserve">
+    <value>Document your entire brand image. No matter whether it is your recognizable logo, your distinctive font or the overall appearance that speaks for itself. We help you to document your brand.</value>
+  </data>
+  <data name="frontend_product_process_step_documentation_title" xml:space="preserve">
+    <value>Brand Documentation</value>
+  </data>
+  <data name="frontend_product_process_step_optimization_description" xml:space="preserve">
+    <value>You think your brand has room for improvement. Check your brand for optimizations with our intelligent assistant. These can be implemented at the push of a button. Keep an overview of your changes through the automatically maintained history.</value>
+  </data>
+  <data name="frontend_product_process_step_optimization_title" xml:space="preserve">
+    <value>Brand Optimization</value>
+  </data>
+  <data name="frontend_product_process_step_overview_description" xml:space="preserve">
+    <value>Start your brand journey by creating your first brand with BrandCi today. Our smart editor will help you with the first steps.</value>
+  </data>
+  <data name="frontend_product_process_step_overview_title" xml:space="preserve">
+    <value>Brand Overview</value>
+  </data>
+  <data name="frontend_product_process_step_sharing_description" xml:space="preserve">
+    <value>You have implemented your wonderful brand? Wonderful. Then share it with your agencies so they can use your brand experience as the essence of their results.</value>
+  </data>
+  <data name="frontend_product_process_step_sharing_title" xml:space="preserve">
+    <value>Brand Sharing</value>
+  </data>
 </root>
