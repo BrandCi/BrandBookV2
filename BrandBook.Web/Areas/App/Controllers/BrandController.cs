@@ -9,6 +9,7 @@ using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
+using BrandBook.Web.Framework.ViewModels.App.Brand.Fonts;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
@@ -123,9 +124,42 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var fonts = _unitOfWork.FontRepository.GetAllFromBrand(brandId);
 
+            var viewModel = new FontsViewModel()
+            {
+                Fonts = new List<SingleFontViewModel>()
+            };
+
+            foreach (var font in fonts)
+            {
+                var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(font.Id);
+                var fontStylesViewModel = new List<FontStyleViewModel>();
+
+                foreach (var fontStyle in fontStyles)
+                {
+                    fontStylesViewModel.Add(new FontStyleViewModel()
+                    {
+                        Weight = fontStyle.Weight,
+                        Style = fontStyle.Style
+                    });
+                }
+
+                viewModel.Fonts.Add(new SingleFontViewModel()
+                {
+                    Name = font.Name,
+                    Family = font.Family,
+                    FontInclusion = new FontInclusionViewModel()
+                    {
+                        HtmlInline = "",
+                        CssImport = "",
+                        CssProperty = ""
+                    },
+                    FontStyles = fontStylesViewModel
+                });
+
+            }
 
 
-            return View();
+            return View(viewModel);
         }
 
         public ActionResult Icons(int brandId)
