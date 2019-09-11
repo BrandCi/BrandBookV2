@@ -735,4 +735,7 @@
   <data name="frontend_product_process_step_sharing_title" xml:space="preserve">
     <value>Brand Sharing</value>
   </data>
+  <data name="frontend_footer_slogan" xml:space="preserve">
+    <value>Your digital brand. Your success</value>
+  </data>
 </root>

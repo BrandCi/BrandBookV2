@@ -844,6 +844,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your digital brand. Your success.
+        /// </summary>
+        public static string frontend_footer_slogan {
+            get {
+                return ResourceManager.GetString("frontend_footer_slogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string frontend_footer_support_contact {
