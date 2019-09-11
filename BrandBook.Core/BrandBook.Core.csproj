@@ -87,7 +87,7 @@
     <Compile Include="Repositories\Brand\IBrandRepository.cs" />
     <Compile Include="Repositories\Brand\IColorCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IColorRepository.cs" />
-    <Compile Include="Repositories\Brand\IFontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\IFontRepository.cs" />
     <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IIconRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />

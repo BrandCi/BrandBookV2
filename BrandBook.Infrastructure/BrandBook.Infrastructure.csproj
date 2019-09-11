@@ -248,7 +248,7 @@
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\ColorRepository.cs" />
-    <Compile Include="Repositories\Brand\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontRepository.cs" />
     <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
