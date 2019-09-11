@@ -28,17 +28,17 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
         // GET: App/Brand
-        public async Task<ActionResult> Index(int id)
+        public async Task<ActionResult> Index(int brandId)
         {
-            ViewBag.BrandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
             
-            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), brandId);
             var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
             var model = new BrandOverviewViewModel()
@@ -62,17 +62,17 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Colors(int id)
+        public ActionResult Colors(int brandId)
         {
-            ViewBag.BrandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
-            var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(id);
+            var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(brandId);
 
             var model = new ColorsViewModel
             {
@@ -112,31 +112,33 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
-        public ActionResult Fonts(int id)
+        public ActionResult Fonts(int brandId)
         {
-            ViewBag.BrandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
+
+
 
 
             return View();
         }
 
-        public ActionResult Icons(int id)
+        public ActionResult Icons(int brandId)
         {
-            ViewBag.BrandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
 
-            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(id);
+            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(brandId);
 
             var model = new IconsViewModel
             {
@@ -181,17 +183,17 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Settings(int id)
+        public ActionResult Settings(int brandId)
         {
-            ViewBag.BrandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
-            var brand = _unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(brandId);
 
             var model = new BrandSettingsViewModel()
             {
@@ -248,14 +250,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
   
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int brandId)
         {
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            var brand = _unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(brandId);
             var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
             
             _unitOfWork.BrandRepository.Remove(brand);
