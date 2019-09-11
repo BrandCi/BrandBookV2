@@ -134,6 +134,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             foreach (var font in fonts)
             {
+                var fontInclusion = _unitOfWork.FontInclusionRepository.FindById(font.FontInclusionId);
                 var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(font.Id);
                 var fontStylesViewModel = new List<FontStyleViewModel>();
 
@@ -152,9 +153,9 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Family = font.Family,
                     FontInclusion = new FontInclusionViewModel()
                     {
-                        HtmlInline = "",
-                        CssImport = "",
-                        CssProperty = ""
+                        HtmlInline = fontInclusion.HtmlInline,
+                        CssImport = fontInclusion.CssImport,
+                        CssProperty = fontInclusion.CssProperty
                     },
                     FontStyles = fontStylesViewModel
                 });
