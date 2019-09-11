@@ -11,8 +11,5 @@ namespace BrandBook.Core.Domain.Brand.Font
         public string HtmlInline { get; set; }
         public string CssImport { get; set; }
         public string CssProperty { get; set; }
-
-        public int FontId { get; set; }
-        public Font Font { get; set; }
     }
 }
