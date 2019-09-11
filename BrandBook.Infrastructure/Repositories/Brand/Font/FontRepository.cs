@@ -1,4 +1,6 @@
-﻿using BrandBook.Core.Repositories.Brand.Font;
+﻿using System.Collections.Generic;
+using System.Linq;
+using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Infrastructure.Repositories.Brand.Font
@@ -9,6 +11,11 @@ namespace BrandBook.Infrastructure.Repositories.Brand.Font
         public FontRepository(BrandBookDbContext context)
             : base(context)
         {
+        }
+
+        public List<Core.Domain.Brand.Font.Font> GetAllFromBrand(int brandId)
+        {
+            return Set.Where(f => f.BrandId == brandId).ToList();
         }
 
     }
