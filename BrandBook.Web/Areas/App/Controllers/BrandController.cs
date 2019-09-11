@@ -121,6 +121,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
+            var fonts = _unitOfWork.FontRepository.GetAllFromBrand(brandId);
 
 
 
