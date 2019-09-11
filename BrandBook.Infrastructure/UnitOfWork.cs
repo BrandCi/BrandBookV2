@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core;
@@ -36,6 +37,8 @@ namespace BrandBook.Infrastructure
         private IColorRepository _colorRepository;
         private IColorCategoryRepository _colorCategoryRepository;
         private IFontRepository _fontRepository;
+        private IFontInclusionRepository _fontInclusionRepository;
+        private IFontStyleRepository _fontStyleRepository;
         private IIconRepository _iconRepository;
         private IIconCategoryRepository _iconCategoryRepository;
         private ICompanyRepository _companyRepository;
@@ -95,6 +98,16 @@ namespace BrandBook.Infrastructure
         public IFontRepository FontRepository
         {
             get { return _fontRepository ?? (_fontRepository = new FontRepository(_context)); }
+        }
+
+        public IFontInclusionRepository FontInclusionRepository
+        {
+            get { return _fontInclusionRepository ?? (_fontInclusionRepository = new FontInclusionRepository(_context)); }
+        }
+
+        public IFontStyleRepository FontStyleRepository
+        {
+            get { return _fontStyleRepository ?? (_fontStyleRepository = new FontStyleRepository(_context)); }
         }
 
         public IIconRepository IconRepository
@@ -158,6 +171,8 @@ namespace BrandBook.Infrastructure
             _colorRepository = null;
             _colorCategoryRepository = null;
             _fontRepository = null;
+            _fontInclusionRepository = null;
+            _fontStyleRepository = null;
             _iconRepository = null;
             _iconCategoryRepository = null;
             _companyRepository = null;
