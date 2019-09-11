@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.Designer.cs">
       <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs" />
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.Designer.cs">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.resx">
       <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.resx">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
