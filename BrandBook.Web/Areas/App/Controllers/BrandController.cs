@@ -29,8 +29,9 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
         // GET: App/Brand
-        public async Task<ActionResult> Index(int brandId)
+        public async Task<ActionResult> Index(int id)
         {
+            var brandId = id;
             ViewBag.BrandId = brandId;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
@@ -63,8 +64,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Colors(int brandId)
+        public ActionResult Colors(int id)
         {
+            var brandId = id;
             ViewBag.BrandId = brandId;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
@@ -113,8 +115,9 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(model);
         }
 
-        public ActionResult Fonts(int brandId)
+        public ActionResult Fonts(int id)
         {
+            var brandId = id;
             ViewBag.BrandId = brandId;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
@@ -162,8 +165,9 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Icons(int brandId)
+        public ActionResult Icons(int id)
         {
+            var brandId = id;
             ViewBag.BrandId = brandId;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
@@ -218,8 +222,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Settings(int brandId)
+        public ActionResult Settings(int id)
         {
+            var brandId = id;
             ViewBag.BrandId = brandId;
 
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
@@ -285,8 +290,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
   
 
-        public ActionResult Delete(int brandId)
+        public ActionResult Delete(int id)
         {
+            var brandId = id;
+
             if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
