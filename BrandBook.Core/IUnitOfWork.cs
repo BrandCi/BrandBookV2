@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
@@ -25,6 +21,8 @@ namespace BrandBook.Core
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
         IColorCategoryRepository ColorCategoryRepository { get; }
+        IFontInclusionRepository FontInclusionRepository { get; }
+        IFontStyleRepository FontStyleRepository { get; }
         IFontRepository FontRepository { get; }
         IIconRepository IconRepository { get; }
         IIconCategoryRepository IconCategoryRepository { get; }
