@@ -28,7 +28,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public async Task<ActionResult> LoggingMessages()
         {
 
-            var loggingMessages = await _unitOfWork.Log4NetLogRepository.GetAllAsync();
+            var loggingMessages = _unitOfWork.Log4NetLogRepository.GetAll().OrderBy(m => m.Date);
 
             var viewModel = new LoggingMessagesViewModel()
             {
