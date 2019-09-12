@@ -6,65 +6,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 {
     public static class FrontendCustomHelper
     {
-
-
-        public static IHtmlString PricingItem(string title, string image, double pricePerMonth, bool termBasedPayment, List<string> featureList, string buttonTitle, bool isFullWidth)
-        {
-            var gridSetup = "col-xs-12 col-md-6 col-lg-4";
-            if (isFullWidth)
-            {
-                gridSetup = "col-xs-12 col-md-12 col-lg-12";
-            }
-
-            var html = new StringBuilder();
-
-            html.Append("<div class=\"" + gridSetup + "\">");
-
-            html.Append("<div class=\"card mb-4\">");
-
-            html.Append("<div class=\"card-header\">");
-            html.Append("<img src=\"" + image + "\" />");
-            html.Append("<h4 class=\"mt-3 mb-3 font-weight-normal\">" + title + "</h4>");
-            html.Append("</div>");
-
-            html.Append("<div class=\"card-body\">");
-
-            if (termBasedPayment)
-            {
-                html.Append("<h1 class=\"card-title pricing-title\">€" + pricePerMonth + "<small class=\"text-muted\">/ Monat</small></h1>");
-            }
-            else
-            {
-                html.Append("<h1 class=\"card-title pricing-title\">Nutzungsbasiert</h1>");
-            }
-
-            if (featureList.Count != 0)
-            {
-                html.Append("<ul class=\"list-unstyled mt-3 mb-4 pricing-description\">");
-
-                foreach (string item in featureList)
-                {
-                    html.Append("<li>");
-                    html.Append(item);
-                    html.Append("</li>");
-                }
-
-                html.Append("</ul>");
-            }
-
-            html.Append("<a href=\"/Auth/Register\" class=\"btn btn-lg btn-block btn-primary btn-pricing\">");
-            html.Append(buttonTitle);
-            html.Append("</a>");
-            html.Append("</div>");
-            html.Append("</div>");
-            html.Append("</div>");
-
-
-
-            return new HtmlString(html.ToString());
-
-        }
-        
         
     }
 }
