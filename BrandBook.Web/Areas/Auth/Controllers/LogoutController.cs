@@ -1,7 +1,7 @@
-﻿using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System.Web;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -13,7 +13,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         public ActionResult Index()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home", new {area = ""});
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
 
 

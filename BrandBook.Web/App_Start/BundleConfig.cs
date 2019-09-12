@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BrandBook.Web
 {
@@ -43,7 +42,7 @@ namespace BrandBook.Web
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        
+
                         /* Plugins */
                         "~/Plugins/Frontend/themify-icon/themify-icons.css",
                         "~/Plugins/Frontend/flaticon/flaticon.css",
@@ -178,7 +177,7 @@ namespace BrandBook.Web
             // Morris Chart
             bundles.Add(new StyleBundle("~/Content/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.css"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.min.js",
                 "~/Plugins/raphael/raphael-min.js"));
@@ -218,7 +217,7 @@ namespace BrandBook.Web
             // Sweet Alerts
             bundles.Add(new StyleBundle("~/Content/Plugins/SweetAlerts").Include(
                 "~/Plugins/sweet-alert/sweetalert2.min.css"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
                 "~/Plugins/sweet-alert/sweetalert2.min.js"));
 

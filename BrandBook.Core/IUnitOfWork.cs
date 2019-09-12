@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Repositories.Brand;
+﻿using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.System;
 using BrandBook.Core.Repositories.User;
+using System;
 
 namespace BrandBook.Core
 {
@@ -31,7 +27,7 @@ namespace BrandBook.Core
         IImageRepository ImageRepository { get; }
         ISubscriptionRepository SubscriptionRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
-        ILog4NetLogRepository Log4NetLogRepository { get;  }
+        ILog4NetLogRepository Log4NetLogRepository { get; }
 
         #endregion
 

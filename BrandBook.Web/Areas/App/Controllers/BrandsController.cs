@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
@@ -15,6 +9,12 @@ using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using log4net;
 using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -63,7 +63,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                         }
                     });
                 }
-                
+
             }
 
             var viewmodel = new BrandsOverviewViewModel
@@ -81,7 +81,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var model = new AddNewBrandViewModel();
 
-            return View(model); 
+            return View(model);
         }
 
 
@@ -93,7 +93,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return View(model);
             }
-                
+
 
             Image brandImage;
             if (image != null)
@@ -101,7 +101,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 var fileName = _imageService.GenerateRandomImageName() + "." + _imageService.GetImageType(image.FileName);
 
                 SaveBrandImageInStorage(image, fileName);
-                    
+
                 brandImage = new Image()
                 {
                     Name = fileName,
@@ -115,7 +115,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 brandImage = _unitOfWork.ImageRepository.FindById(1);
             }
-                
+
 
             var brand = new Brand()
             {
@@ -131,7 +131,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.BrandRepository.Add(brand);
 
             _unitOfWork.SaveChanges();
-            return RedirectToAction("Overview", "Brands", new {area = "App"});
+            return RedirectToAction("Overview", "Brands", new { area = "App" });
 
         }
 
@@ -159,4 +159,4 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
     }
-}   
+}

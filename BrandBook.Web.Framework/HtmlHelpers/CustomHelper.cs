@@ -1,8 +1,8 @@
-﻿using System.Text;
-using System.Web;
-using BrandBook.Core.Repositories.Setting;
+﻿using BrandBook.Core.Repositories.Setting;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;
+using System.Text;
+using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -70,7 +70,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString SharedStorageImage(string imageNameAndType, string classes = "", string styles = "", string additionalAttributes = "")
         {
-           
+
 
             var html = new StringBuilder();
 

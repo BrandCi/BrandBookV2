@@ -1,5 +1,5 @@
-﻿using System.Web.Mvc;
-using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {

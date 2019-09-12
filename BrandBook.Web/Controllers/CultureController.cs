@@ -1,8 +1,8 @@
-﻿using System;
+﻿using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Helpers;
+using System;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Controllers
 {
@@ -30,8 +30,8 @@ namespace BrandBook.Web.Controllers
             }
 
             Response.Cookies.Add(cookie);
-            
-            return RedirectToAction(currentAction, currentController, new{area = ""});
+
+            return RedirectToAction(currentAction, currentController, new { area = "" });
         }
     }
 }

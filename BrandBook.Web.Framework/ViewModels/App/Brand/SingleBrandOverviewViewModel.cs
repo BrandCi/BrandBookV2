@@ -11,5 +11,5 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand
         public BrandImageViewModel BrandImage { get; set; }
     }
 
-    
+
 }

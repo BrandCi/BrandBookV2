@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure;
@@ -15,6 +11,10 @@ using BrandBook.Web.Framework.ViewModels.Auth.External;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 
 namespace BrandBook.Web.Areas.Auth.Controllers
@@ -78,7 +78,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home", new {area = ""});
+                return RedirectToAction("Index", "Home", new { area = "" });
             }
 
             ViewBag.ReturnUrl = returnUrl;
@@ -95,7 +95,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 return View(model);
             }
-            
+
             var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
 
             switch (result)
@@ -156,7 +156,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Dashboard", new {area = "App"});
+                return RedirectToAction("Index", "Dashboard", new { area = "App" });
             }
 
             if (ModelState.IsValid)
@@ -285,7 +285,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 UserId = userId;
             }
 
-            
+
 
             public string LoginProvider { get; set; }
             public string RedirectUri { get; set; }

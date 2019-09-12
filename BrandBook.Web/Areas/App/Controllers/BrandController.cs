@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
@@ -12,6 +7,10 @@ using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -37,7 +36,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            
+
             var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
             var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
@@ -56,8 +55,8 @@ namespace BrandBook.Web.Areas.App.Controllers
             };
 
             return View(model);
-           
-            
+
+
         }
 
 
@@ -108,7 +107,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 });
             }
 
-          
+
             return View(model);
         }
 
@@ -169,7 +168,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                     });
                 }
-                
+
             }
 
 
@@ -232,7 +231,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
-            
+
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
             brand.Name = model.GeneralSettingsViewModel.Name;
@@ -241,12 +240,12 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.BrandRepository.Update(brand);
             _unitOfWork.SaveChanges();
 
-            
-            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App"});
+
+            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
         }
 
 
-  
+
 
         public ActionResult Delete(int id)
         {
@@ -257,7 +256,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var brand = _unitOfWork.BrandRepository.FindById(id);
             var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
-            
+
             _unitOfWork.BrandRepository.Remove(brand);
             RemoveBrandImage(brandImage);
 

@@ -4,7 +4,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Settings
 {
     public class UserSettingsViewModel
     {
-        [Display(Name="Required Length")]
+        [Display(Name = "Required Length")]
         public string Password_ReqLength { get; set; }
 
         [Display(Name = "Require Non Letter or Digit")]

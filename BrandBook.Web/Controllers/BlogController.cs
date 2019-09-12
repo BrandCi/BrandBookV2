@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core.Domain.Frontend;
+﻿using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Frontend.Blog;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
@@ -19,14 +16,14 @@ namespace BrandBook.Web.Controllers
 
         public BlogController()
         {
-            _blogEntryRepository = new BlogEntryRepository( new BrandBookDbContext() );
+            _blogEntryRepository = new BlogEntryRepository(new BrandBookDbContext());
         }
 
 
         // GET: Blog
         public ActionResult Index(string blogName = "")
         {
-   
+
 
 
             if (blogName == "" || !_blogEntryRepository.BlogEntryExistsAndPublished(blogName))
@@ -75,7 +72,7 @@ namespace BrandBook.Web.Controllers
                 allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync();
             }
 
-            
+
 
             var viewModel = new BlogOverviewViewModel()
             {

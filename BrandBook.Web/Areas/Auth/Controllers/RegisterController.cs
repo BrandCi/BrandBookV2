@@ -1,20 +1,17 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
-using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.User;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
+using System;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -23,7 +20,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
 
-       
+
         #region Constructor
 
         public RegisterController()
@@ -128,7 +125,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Success", "Register", new {area = "Auth"});
+                    return RedirectToAction("Success", "Register", new { area = "Auth" });
                 }
             }
 

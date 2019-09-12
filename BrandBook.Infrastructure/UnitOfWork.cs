@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Resource;

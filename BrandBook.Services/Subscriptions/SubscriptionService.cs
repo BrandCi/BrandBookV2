@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BrandBook.Services.Subscriptions
 {
@@ -13,7 +11,7 @@ namespace BrandBook.Services.Subscriptions
     {
         private readonly IUnitOfWork _unitOfWork;
 
-     
+
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
@@ -23,7 +21,7 @@ namespace BrandBook.Services.Subscriptions
         public bool HasValidSubscription(string userId)
         {
             var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveUserSubscriptions(userId);
-            
+
             return IsAnySubscriptionValid(userId, subscriptions);
         }
 
@@ -63,7 +61,7 @@ namespace BrandBook.Services.Subscriptions
             return false;
         }
 
-        
+
 
         private bool IsEndDateInFuture(Subscription subscription, SubscriptionPlan subscriptionPlan)
         {
@@ -94,6 +92,6 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
-        
+
     }
 }
