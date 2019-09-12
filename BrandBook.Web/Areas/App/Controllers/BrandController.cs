@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -337,10 +338,30 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private string BuildGoogleFontLink(int fontId)
         {
+            var googleFontLink = new StringBuilder();
+            googleFontLink.Append("https://fonts.google.com/css?");
+
             var font = _unitOfWork.FontRepository.FindById(fontId);
 
+            googleFontLink.Append($"family={font.Family}:");
 
-            return "";
+            var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(fontId);
+
+            foreach (var fontStyle in fontStyles)
+            {
+                googleFontLink.Append(fontStyle.Weight);
+
+                if (fontStyle.Style == "italic")
+                {
+                    googleFontLink.Append("i");
+                }
+
+                googleFontLink.Append(",");
+            }
+
+
+
+            return googleFontLink.ToString();
         }
 
 
