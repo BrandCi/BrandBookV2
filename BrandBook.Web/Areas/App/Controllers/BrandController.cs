@@ -152,6 +152,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {
                     Name = font.Name,
                     Family = font.Family,
+                    GoogleFontLink = BuildGoogleFontLink(font.Id),
                     FontInclusion = new FontInclusionViewModel()
                     {
                         HtmlInline = fontInclusion.HtmlInline,
@@ -339,7 +340,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         private string BuildGoogleFontLink(int fontId)
         {
             var googleFontLink = new StringBuilder();
-            googleFontLink.Append("https://fonts.google.com/css?");
+            googleFontLink.Append("https://fonts.googleapis.com/css?");
 
             var font = _unitOfWork.FontRepository.FindById(fontId);
 
