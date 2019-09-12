@@ -13,7 +13,6 @@
 <style>
     @foreach (var font in Model.Fonts)
     {
-        
         <text>
             /* font-specific-definition */
             @@import url('@font.GoogleFontLink');   
@@ -22,11 +21,8 @@
                 font-family: '@font.Family', Arial, sans-serif !important;
             }
             /* ./font-specific-definition */
-    </text>
-        
+        </text>
     }
-
-    
 </style>
 
 
@@ -39,6 +35,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card m-b-20 card-body">
+
                 <h5>
                     Html Inline Integration
                 </h5>
@@ -55,17 +52,12 @@
                 </code>
 
 
-
                 <h5 style="margin-top: 2.5%">
                     Css Eigenschaft
                 </h5>
                 <code>
                     @font.FontInclusion.CssProperty
                 </code>
-
-
-
-
 
             </div>
         </div>
@@ -99,14 +91,10 @@
                 </div>
             </div>
         }
-        
 
     </div>
 
 }
-
-
-
 
 
 @section scripts {}
