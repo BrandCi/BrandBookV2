@@ -36,7 +36,8 @@ namespace BrandBook.Web
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            if (ConfigurationManager.AppSettings["IsSocialFacebookEnabled"] == "true")
+            var isFacebookEnabled = ConfigurationManager.AppSettings["IsSocialFacebookEnabled"];
+            if (isFacebookEnabled == "true" || isFacebookEnabled == "1")
             {
                 app.UseFacebookAuthentication(
                     appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
