@@ -1,4 +1,5 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Brand.Fonts.FontsViewModel
+﻿@using System.Web.Services.Description
+@model BrandBook.Web.Framework.ViewModels.App.Brand.Fonts.FontsViewModel
 @{
     ViewBag.Title = "Fonts";
 }
@@ -7,19 +8,32 @@
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_BrandNavigation.cshtml")
 }
 
-@section styles {
-    @Styles.Render("~/Content/Plugins/Switchery")
-}
+@section styles {}
+
+<style>
+    @foreach (var font in Model.Fonts)
+    {
+        
+        <text>
+            /* font-specific-definition */
+            @@import url('@font.GoogleFontLink');   
+
+            #font-@font.GetHashCode() {
+                font-family: '@font.Family', Arial, sans-serif !important;
+            }
+            /* ./font-specific-definition */
+    </text>
+        
+    }
+
+    
+</style>
 
 
 @foreach (var font in Model.Fonts)
 {
-
     <h3>
-        <div class="form-group">
-            <input type="checkbox" id="showAdditionalContent" checked data-plugin="switchery" data-color="#52bb56" data-size="small" />
-            <label for="showAdditionalContent">@font.Name</label>
-        </div>
+        @font.Name
     </h3>
     <br />
     <div class="row">
@@ -57,7 +71,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="font-@font.GetHashCode()">
         
         @foreach (var fontStyle in font.FontStyles)
         {
@@ -95,20 +109,4 @@
 
 
 
-@section scripts {
-    @Scripts.Render("~/bundles/Plugins/Switchery")
-
-
-
-    <script>
-
-        $("#showAdditionalContent").change(function () {
-            if ($('#showAdditionalContent').is(':checked')) {
-                $(".fontAdditionalContent").show("slow");
-            } else {
-                $(".fontAdditionalContent").hide("slow");
-            }
-        });
-
-    </script>
-}
+@section scripts {}
