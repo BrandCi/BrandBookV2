@@ -10,11 +10,6 @@ namespace BrandBook.Infrastructure
     {
         public MappingProfile()
         {
-            CreateMap<Brand, BrandDto>();
-            CreateMap<BrandDto, Brand>();
-
-            CreateMap<AppUserDto, AppUser>();
-            CreateMap<AppUser, AppUserDto>();
         }
     }
 }
