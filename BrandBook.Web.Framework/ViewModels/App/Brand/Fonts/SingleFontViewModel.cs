@@ -11,6 +11,8 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand.Fonts
     {
         public string Name { get; set; }
         public string Family { get; set; }
+        public string GoogleFontLink { get; set; }
+
         public FontInclusionViewModel FontInclusion { get; set; }
 
         public List<FontStyleViewModel> FontStyles { get; set; }
