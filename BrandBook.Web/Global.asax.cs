@@ -26,7 +26,7 @@ namespace BrandBook.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BrandBookDbContext, Infrastructure.Migrations.Configuration>());
-            BrandBookDbContext migrateDb = new BrandBookDbContext();
+            var migrateDb = new BrandBookDbContext();
             migrateDb.Database.Initialize(true);
 
         }
