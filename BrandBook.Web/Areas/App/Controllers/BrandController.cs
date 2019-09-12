@@ -332,8 +332,15 @@ namespace BrandBook.Web.Areas.App.Controllers
                 throw new FileNotFoundException();
             }
 
+        }
 
 
+        private string BuildGoogleFontLink(int fontId)
+        {
+            var font = _unitOfWork.FontRepository.FindById(fontId);
+
+
+            return "";
         }
 
 
