@@ -2,17 +2,17 @@
 
 namespace BrandBook.Web.Areas.App
 {
-    public class AppAreaRegistration : AreaRegistration 
+    public class AppAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "App";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "App_default",

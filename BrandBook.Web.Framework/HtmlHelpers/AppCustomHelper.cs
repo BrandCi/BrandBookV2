@@ -1,7 +1,7 @@
-﻿using System.Text;
-using System.Web;
-using BrandBook.Resources;
+﻿using BrandBook.Resources;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
+using System.Text;
+using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
@@ -44,7 +44,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
 
             return new HtmlString(html.ToString());
-            
+
         }
 
 
@@ -99,7 +99,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             {
                 html.Append("<article class=\"timeline-item\">");
             }
-            
+
             html.Append("<div class=\"timeline-desk\">");
             html.Append("<div class=\"panel\">");
             html.Append("<div class=\"panel-body\">");

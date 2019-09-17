@@ -10,16 +10,16 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             var html = new StringBuilder();
 
             html.Append("<div class=\"img-holder\">");
-                html.Append("<div class=\"bg\"></div>");
+            html.Append("<div class=\"bg\"></div>");
 
-                if (imageName != "" && imageType != "")
-                {
-                    html.Append("<div class=\"info-holder\">");
-                        html.Append("<img src=\"");
-                        html.Append(CustomHelper.ImagePath(imageName, imageType, "AuthData"));
-                        html.Append("\" />");
-                    html.Append("</div>");
-                }
+            if (imageName != "" && imageType != "")
+            {
+                html.Append("<div class=\"info-holder\">");
+                html.Append("<img src=\"");
+                html.Append(CustomHelper.ImagePath(imageName, imageType, "AuthData"));
+                html.Append("\" />");
+                html.Append("</div>");
+            }
 
             html.Append("</div>");
 

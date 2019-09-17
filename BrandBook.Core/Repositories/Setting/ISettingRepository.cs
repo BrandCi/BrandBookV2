@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BrandBook.Core.Domain.System;
+﻿using BrandBook.Core.Domain.System;
+using System.Collections.Generic;
 
 namespace BrandBook.Core.Repositories.Setting
 {

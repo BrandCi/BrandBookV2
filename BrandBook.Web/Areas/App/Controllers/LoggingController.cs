@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.System.LoggingMessages;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -28,7 +26,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public async Task<ActionResult> LoggingMessages()
         {
 
-            var loggingMessages = await _unitOfWork.Log4NetLogRepository.GetAllAsync();
+            var loggingMessages = _unitOfWork.Log4NetLogRepository.GetAll().OrderBy(m => m.Date);
 
             var viewModel = new LoggingMessagesViewModel()
             {
@@ -49,7 +47,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 });
             }
 
-            
+
             return View(viewModel);
         }
     }

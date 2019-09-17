@@ -907,6 +907,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your digital brand. Your success.
+        /// </summary>
+        public static string frontend_footer_slogan {
+            get {
+                return ResourceManager.GetString("frontend_footer_slogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string frontend_footer_support_contact {
@@ -1812,6 +1821,114 @@ namespace BrandBook.Resources {
         public static string frontend_navigation_register_button {
             get {
                 return ResourceManager.GetString("frontend_navigation_register_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Define your Brand in a continuous process.
+        /// </summary>
+        public static string frontend_product_process_pagetitle {
+            get {
+                return ResourceManager.GetString("frontend_product_process_pagetitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start your journey here.
+        /// </summary>
+        public static string frontend_product_process_startprocess_buttontitle {
+            get {
+                return ResourceManager.GetString("frontend_product_process_startprocess_buttontitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You work in a team? No problem. With BrandCi you have the opportunity at any time to let other people participate in the growth of your brand. You decide who can edit which elements..
+        /// </summary>
+        public static string frontend_product_process_step_collaboration_description {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_collaboration_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Collaboration.
+        /// </summary>
+        public static string frontend_product_process_step_collaboration_title {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_collaboration_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document your entire brand image. No matter whether it is your recognizable logo, your distinctive font or the overall appearance that speaks for itself. We help you to document your brand..
+        /// </summary>
+        public static string frontend_product_process_step_documentation_description {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_documentation_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Documentation.
+        /// </summary>
+        public static string frontend_product_process_step_documentation_title {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_documentation_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You think your brand has room for improvement. Check your brand for optimizations with our intelligent assistant. These can be implemented at the push of a button. Keep an overview of your changes through the automatically maintained history..
+        /// </summary>
+        public static string frontend_product_process_step_optimization_description {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_optimization_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Optimization.
+        /// </summary>
+        public static string frontend_product_process_step_optimization_title {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_optimization_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start your brand journey by creating your first brand with BrandCi today. Our smart editor will help you with the first steps..
+        /// </summary>
+        public static string frontend_product_process_step_overview_description {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_overview_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Overview.
+        /// </summary>
+        public static string frontend_product_process_step_overview_title {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_overview_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have implemented your wonderful brand? Wonderful. Then share it with your agencies so they can use your brand experience as the essence of their results..
+        /// </summary>
+        public static string frontend_product_process_step_sharing_description {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_sharing_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Sharing.
+        /// </summary>
+        public static string frontend_product_process_step_sharing_title {
+            get {
+                return ResourceManager.GetString("frontend_product_process_step_sharing_title", resourceCulture);
             }
         }
         

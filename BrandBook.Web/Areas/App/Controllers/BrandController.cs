@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -59,8 +59,8 @@ namespace BrandBook.Web.Areas.App.Controllers
             };
 
             return View(model);
-           
-            
+
+
         }
 
 
@@ -112,7 +112,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 });
             }
 
-          
+
             return View(model);
         }
 
@@ -213,7 +213,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                     });
                 }
-                
+
             }
 
 
@@ -277,7 +277,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
             }
-            
+
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
 
             brand.Name = model.GeneralSettingsViewModel.Name;
@@ -286,12 +286,12 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.BrandRepository.Update(brand);
             _unitOfWork.SaveChanges();
 
-            
-            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App"});
+
+            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
         }
 
 
-  
+
 
         public ActionResult Delete(int id)
         {
@@ -304,7 +304,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var brand = _unitOfWork.BrandRepository.FindById(brandId);
             var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
-            
+
             _unitOfWork.BrandRepository.Remove(brand);
             RemoveBrandImage(brandImage);
 

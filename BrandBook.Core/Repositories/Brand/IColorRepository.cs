@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BrandBook.Core.Domain.Brand.Color;
+﻿using BrandBook.Core.Domain.Brand.Color;
+using System.Collections.Generic;
 
 namespace BrandBook.Core.Repositories.Brand
 {

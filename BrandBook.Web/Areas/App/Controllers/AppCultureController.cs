@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Helpers;
+using BrandBook.Web.Framework.ViewModels.App.Settings;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,10 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.Helpers;
-using BrandBook.Web.Framework.ViewModels.App.Settings;
-using Exception = System.Exception;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -75,7 +74,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Environment.NewLine,
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );
-            
+
             System.IO.File.WriteAllText(GetAbsoluteFilePath(translationName), csv);
 
         }
@@ -93,7 +92,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                                     CultureInfo.CreateSpecificCulture("en-US"),
                                     false,
                                     true);
-            
+
             foreach (DictionaryEntry item in resourceSet)
             {
                 keyValuePairs.Add(item.Key.ToString(), item.Value.ToString());

@@ -1,5 +1,4 @@
-﻿using System;
-using BrandBook.Services.Resources;
+﻿using BrandBook.Services.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BrandBook.Services.Test

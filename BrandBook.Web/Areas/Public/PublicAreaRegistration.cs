@@ -2,17 +2,17 @@
 
 namespace BrandBook.Web.Areas.Public
 {
-    public class PublicAreaRegistration : AreaRegistration 
+    public class PublicAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Public";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Public_default",

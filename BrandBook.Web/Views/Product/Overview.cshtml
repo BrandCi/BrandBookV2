@@ -1,7 +1,7 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
 
 @{
-    ViewBag.Title = "Overview";
+    ViewBag.Title = @Translations.frontend_product_process_pagetitle;
 }
 
 
@@ -9,7 +9,9 @@
         @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
         <div class="container">
             <div class="breadcrumb_content text-center">
-                <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Define your Brand in a continuous process</h1>
+                <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                    @Translations.frontend_product_process_pagetitle
+                </h1>
                 <p class="f_400 w_color f_size_16 l_height26"></p>
             </div>
         </div>
@@ -29,9 +31,9 @@
                     <div class="agency_featured_content pr_70 pl_70">
                         <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                         <h1>1</h1>
-                        <h3>Brand Creation</h3>
+                        <h3>@Translations.frontend_product_process_step_overview_title</h3>
                         <p>
-                            Cupcake ipsum dolor sit amet bonbon sugar plum. Wafer candy canes bonbon wafer lemon drops caramels tootsie roll jelly beans. Dragée sweet roll bear claw. Croissant danish liquorice.
+                            @Translations.frontend_product_process_step_overview_description
                         </p>
                         <a href="#" class="icon mt_30"><i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -47,9 +49,9 @@
                     <div class="agency_featured_content pl_100">
                         <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                         <h1>2</h1>
-                        <h3>Brand Documentation</h3>
+                        <h3>@Translations.frontend_product_process_step_documentation_title</h3>
                         <p>
-                            Cupcake ipsum dolor sit amet bonbon sugar plum. Wafer candy canes bonbon wafer lemon drops caramels tootsie roll jelly beans. Dragée sweet roll bear claw. Croissant danish liquorice.
+                            @Translations.frontend_product_process_step_documentation_description
                         </p>
                         <a href="#" class="icon mt_30"><i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -65,9 +67,9 @@
                     <div class="agency_featured_content pr_70 pl_70">
                         <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                         <h1>3</h1>
-                        <h3>Brand Collaboration</h3>
+                        <h3>@Translations.frontend_product_process_step_collaboration_title</h3>
                         <p>
-                            Cupcake ipsum dolor sit amet bonbon sugar plum. Wafer candy canes bonbon wafer lemon drops caramels tootsie roll jelly beans. Dragée sweet roll bear claw. Croissant danish liquorice.
+                            @Translations.frontend_product_process_step_collaboration_description
                         </p>
                         <a href="#" class="icon mt_30"><i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -83,9 +85,9 @@
                     <div class="agency_featured_content pl_100">
                         <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                         <h1>4</h1>
-                        <h3>Brand Sharing</h3>
+                        <h3>@Translations.frontend_product_process_step_sharing_title</h3>
                         <p>
-                            Cupcake ipsum dolor sit amet bonbon sugar plum. Wafer candy canes bonbon wafer lemon drops caramels tootsie roll jelly beans. Dragée sweet roll bear claw. Croissant danish liquorice.
+                            @Translations.frontend_product_process_step_sharing_description
                         </p>
                         <a href="#" class="icon mt_30"><i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -101,11 +103,13 @@
                     <div class="agency_featured_content pr_70 pl_70">
                         <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                         <h1>5</h1>
-                        <h3>Brand Optimization</h3>
+                        <h3>@Translations.frontend_product_process_step_optimization_title</h3>
                         <p>
-                            Cupcake ipsum dolor sit amet bonbon sugar plum. Wafer candy canes bonbon wafer lemon drops caramels tootsie roll jelly beans. Dragée sweet roll bear claw. Croissant danish liquorice.
+                            @Translations.frontend_product_process_step_optimization_description
                         </p>
-                        <a href="@Url.Action("Index", "Register", new { area="Auth"})" class="btn_hover agency_banner_btn mt_30">Start your process here</a>
+                        <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_hover agency_banner_btn mt_30">
+                            @Translations.frontend_product_process_startprocess_buttontitle
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Brand;
-using BrandBook.Core.Domain.Company;
 using BrandBook.Infrastructure;
 using log4net;
-using log4net.Repository.Hierarchy;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BrandBook.Services.Authentication
 {
@@ -51,7 +45,7 @@ namespace BrandBook.Services.Authentication
                 {
                     Logger.Warn($"Brand does not exist. {{Brand: #{brandId}}}");
                 }
-                
+
             }
 
             return false;

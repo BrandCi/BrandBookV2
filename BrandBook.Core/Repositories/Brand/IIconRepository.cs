@@ -1,9 +1,5 @@
-﻿using System;
+﻿using BrandBook.Core.Domain.Brand.Icon;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Domain.Brand.Icon;
 
 namespace BrandBook.Core.Repositories.Brand
 {

@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
-using BrandBook.Resources;
+﻿using BrandBook.Resources;
 using BrandBook.Web.Framework.Controllers;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {

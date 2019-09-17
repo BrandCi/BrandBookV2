@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Settings;
 using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -35,7 +35,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 BasicUrl = GetSettingValueByKey("conf_system_baseisurl"),
                 EmailAddress = GetSettingValueByKey("conf_system_email")
             };
-            
+
             return View(model);
         }
 
@@ -47,15 +47,15 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 return View(model);
             }
-            
+
             UpdateSettingValue("conf_system_apptitle", model.AppTitle);
             UpdateSettingValue("conf_system_baseisurl", model.BasicUrl);
             UpdateSettingValue("conf_system_email", model.EmailAddress);
-            
+
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("SystemSettings", "System", new {area = "App"});
+            return RedirectToAction("SystemSettings", "System", new { area = "App" });
 
 
         }
@@ -136,7 +136,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult GoogleAnalytics()
         {
-            
+
             var isActive = false;
 
             var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
@@ -155,7 +155,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 TrackingKey = trackingKey
             };
 
-            
+
 
             return View(model);
         }
@@ -178,13 +178,13 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 UpdateSettingValue("google_analytics_enabled", "0");
             }
-            
+
             UpdateSettingValue("google_analytics_trackingkey", model.TrackingKey);
 
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("GoogleAnalytics", "System", new {area = "App"});
+            return RedirectToAction("GoogleAnalytics", "System", new { area = "App" });
         }
 
 
@@ -274,7 +274,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         }
 
-        
+
     }
 
 }

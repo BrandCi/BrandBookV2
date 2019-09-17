@@ -2,17 +2,17 @@
 
 namespace BrandBook.Web.Areas.Auth
 {
-    public class AuthAreaRegistration : AreaRegistration 
+    public class AuthAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Auth";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Auth_default",
