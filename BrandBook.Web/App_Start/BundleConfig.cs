@@ -163,6 +163,11 @@ namespace BrandBook.Web
                 "~/Plugins/jquery-validation/js/jquery.validate.min.js"
                 ));
 
+            // parsleyjs
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Parsleyjs").Include(
+                "~/Plugins/parsleyjs/dist/parsley.min.js"
+            ));
+
             // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
                     "~/Plugins/custombox/dist/custombox.min.css",
@@ -237,6 +242,14 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/AnimatedHeadlines").Include(
                 "~/Plugins/animated-headlines/animated-headlines.js"));
+
+
+            // Dropzone
+            bundles.Add(new StyleBundle("~/Content/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.js"));
 
         }
     }

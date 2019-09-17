@@ -131,7 +131,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.BrandRepository.Add(brand);
 
             _unitOfWork.SaveChanges();
-            return RedirectToAction("Overview", "Brands", new { area = "App" });
+            return RedirectToAction("Index", "Brand", new {id = brand.Id, area = "App"});
 
         }
 

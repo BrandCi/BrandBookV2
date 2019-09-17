@@ -1,5 +1,12 @@
-﻿using BrandBook.Core;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
@@ -7,6 +14,7 @@ using BrandBook.Core.Repositories.System;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
+using BrandBook.Infrastructure.Repositories.Brand.Font;
 using BrandBook.Infrastructure.Repositories.Company;
 using BrandBook.Infrastructure.Repositories.Resource;
 using BrandBook.Infrastructure.Repositories.Setting;
@@ -29,6 +37,8 @@ namespace BrandBook.Infrastructure
         private IColorRepository _colorRepository;
         private IColorCategoryRepository _colorCategoryRepository;
         private IFontRepository _fontRepository;
+        private IFontInclusionRepository _fontInclusionRepository;
+        private IFontStyleRepository _fontStyleRepository;
         private IIconRepository _iconRepository;
         private IIconCategoryRepository _iconCategoryRepository;
         private ICompanyRepository _companyRepository;
@@ -88,6 +98,16 @@ namespace BrandBook.Infrastructure
         public IFontRepository FontRepository
         {
             get { return _fontRepository ?? (_fontRepository = new FontRepository(_context)); }
+        }
+
+        public IFontInclusionRepository FontInclusionRepository
+        {
+            get { return _fontInclusionRepository ?? (_fontInclusionRepository = new FontInclusionRepository(_context)); }
+        }
+
+        public IFontStyleRepository FontStyleRepository
+        {
+            get { return _fontStyleRepository ?? (_fontStyleRepository = new FontStyleRepository(_context)); }
         }
 
         public IIconRepository IconRepository
@@ -151,6 +171,8 @@ namespace BrandBook.Infrastructure
             _colorRepository = null;
             _colorCategoryRepository = null;
             _fontRepository = null;
+            _fontInclusionRepository = null;
+            _fontStyleRepository = null;
             _iconRepository = null;
             _iconCategoryRepository = null;
             _companyRepository = null;

@@ -239,12 +239,22 @@
     <Compile Include="Migrations\201909032102268_RemoveBrandsToBrandSettingsRelation.Designer.cs">
       <DependentUpon>201909032102268_RemoveBrandsToBrandSettingsRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs" />
+    <Compile Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.Designer.cs">
+      <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs" />
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.Designer.cs">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\ColorRepository.cs" />
-    <Compile Include="Repositories\Brand\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontInclusionRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontStyleRepository.cs" />
     <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
@@ -408,6 +418,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909032102268_RemoveBrandsToBrandSettingsRelation.resx">
       <DependentUpon>201909032102268_RemoveBrandsToBrandSettingsRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.resx">
+      <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.resx">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

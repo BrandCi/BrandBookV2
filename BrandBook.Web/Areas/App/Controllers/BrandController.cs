@@ -1,16 +1,19 @@
-﻿using BrandBook.Core;
+﻿﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
+using BrandBook.Web.Framework.ViewModels.App.Brand.Fonts;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
 using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -29,15 +32,16 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/Brand
         public async Task<ActionResult> Index(int id)
         {
-            ViewBag.BrandId = id;
+            var brandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-
-            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), id);
+            
+            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), brandId);
             var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
             var model = new BrandOverviewViewModel()
@@ -63,15 +67,16 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Colors(int id)
         {
-            ViewBag.BrandId = id;
+            var brandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
-            var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(id);
+            var categories = _unitOfWork.ColorCategoryRepository.GetCategoriesForBrand(brandId);
 
             var model = new ColorsViewModel
             {
@@ -113,29 +118,69 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Fonts(int id)
         {
-            ViewBag.BrandId = id;
+            var brandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
+            var fonts = _unitOfWork.FontRepository.GetAllFromBrand(brandId);
 
-            return View();
+            var viewModel = new FontsViewModel()
+            {
+                Fonts = new List<SingleFontViewModel>()
+            };
+
+            foreach (var font in fonts)
+            {
+                var fontInclusion = _unitOfWork.FontInclusionRepository.FindById(font.FontInclusionId);
+                var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(font.Id);
+                var fontStylesViewModel = new List<FontStyleViewModel>();
+
+                foreach (var fontStyle in fontStyles)
+                {
+                    fontStylesViewModel.Add(new FontStyleViewModel()
+                    {
+                        Weight = fontStyle.Weight,
+                        Style = fontStyle.Style
+                    });
+                }
+
+                viewModel.Fonts.Add(new SingleFontViewModel()
+                {
+                    Name = font.Name,
+                    Family = font.Family,
+                    GoogleFontLink = BuildGoogleFontLink(font.Id),
+                    FontInclusion = new FontInclusionViewModel()
+                    {
+                        HtmlInline = fontInclusion.HtmlInline,
+                        CssImport = fontInclusion.CssImport,
+                        CssProperty = fontInclusion.CssProperty
+                    },
+                    FontStyles = fontStylesViewModel
+                });
+
+            }
+
+
+            return View(viewModel);
         }
 
         public ActionResult Icons(int id)
         {
-            ViewBag.BrandId = id;
+            var brandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
 
-            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(id);
+            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(brandId);
 
             var model = new IconsViewModel
             {
@@ -182,15 +227,16 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Settings(int id)
         {
-            ViewBag.BrandId = id;
+            var brandId = id;
+            ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
 
-            var brand = _unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(brandId);
 
             var model = new BrandSettingsViewModel()
             {
@@ -204,12 +250,12 @@ namespace BrandBook.Web.Areas.App.Controllers
 
                 ContactSettingsViewModel = new ContactSettingsViewModel()
                 {
-                    ContactPerson = "info@philipp-moser.de"
+                    ContactPerson = ""
                 },
 
                 CustomizingSettingsViewModel = new CustomizingSettingsViewModel()
                 {
-                    PrimaryHexColor = "193357",
+                    PrimaryHexColor = "",
                     RoundedButtons = true,
                     RoundedButtonsPixel = 5
                 }
@@ -249,12 +295,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Delete(int id)
         {
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), id))
+            var brandId = id;
+
+            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            var brand = _unitOfWork.BrandRepository.FindById(id);
+            var brand = _unitOfWork.BrandRepository.FindById(brandId);
             var brandImage = _unitOfWork.ImageRepository.FindById(brand.ImageId);
 
             _unitOfWork.BrandRepository.Remove(brand);
@@ -270,6 +318,9 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void RemoveBrandImage(Image brandImage)
         {
+            // Don't delete the default BrandImage
+            if (brandImage.Id == 1) return;
+
             var fullPath = Request.MapPath("~/SharedStorage/BrandImages/" + brandImage.Name);
 
             if (System.IO.File.Exists(fullPath))
@@ -283,6 +334,35 @@ namespace BrandBook.Web.Areas.App.Controllers
                 throw new FileNotFoundException();
             }
 
+        }
+
+
+        private string BuildGoogleFontLink(int fontId)
+        {
+            var googleFontLink = new StringBuilder();
+            googleFontLink.Append("https://fonts.googleapis.com/css?");
+
+            var font = _unitOfWork.FontRepository.FindById(fontId);
+
+            googleFontLink.Append($"family={font.Family}:");
+
+            var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(fontId);
+
+            foreach (var fontStyle in fontStyles)
+            {
+                googleFontLink.Append(fontStyle.Weight);
+
+                if (fontStyle.Style == "italic")
+                {
+                    googleFontLink.Append("i");
+                }
+
+                googleFontLink.Append(",");
+            }
+
+
+
+            return googleFontLink.ToString();
         }
 
 

@@ -1,10 +1,11 @@
-﻿using BrandBook.Core.Repositories.Brand;
+﻿using System;
+using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.System;
 using BrandBook.Core.Repositories.User;
-using System;
 
 namespace BrandBook.Core
 {
@@ -20,6 +21,8 @@ namespace BrandBook.Core
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
         IColorCategoryRepository ColorCategoryRepository { get; }
+        IFontInclusionRepository FontInclusionRepository { get; }
+        IFontStyleRepository FontStyleRepository { get; }
         IFontRepository FontRepository { get; }
         IIconRepository IconRepository { get; }
         IIconCategoryRepository IconCategoryRepository { get; }

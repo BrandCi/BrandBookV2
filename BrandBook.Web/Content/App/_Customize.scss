@@ -8,6 +8,14 @@
 }
 
 
+.required-form-item {
+    color: $danger;
+}
+.required-form-item::after {
+    content: '*';
+}
+
+
 // Datatables
 .dataTable {
     .selected td,
@@ -42,4 +50,11 @@
 .badge.subscription {
     float: right;
     margin-left: .5%;
+}
+
+
+
+/* Validation Messages */
+.validation-error-text {
+    color: $danger;
 }

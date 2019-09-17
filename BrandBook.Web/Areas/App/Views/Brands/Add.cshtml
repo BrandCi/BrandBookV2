@@ -1,14 +1,13 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Brand.AddNewBrandViewModel
+﻿@using BrandBook.Resources
+@model BrandBook.Web.Framework.ViewModels.App.Brand.AddNewBrandViewModel
 @{
-    ViewBag.Title = "Marke anlegen";
+    ViewBag.Title = @Translations.app_pagetitle_addbrand;
 }
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 
-@section styles
-{
-    @Styles.Render("~/Content/Plugins/JquerySteps")
+@section styles{
 }
 
 
@@ -17,87 +16,93 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
-            <h4 class="m-t-0 header-title"><b>Add a new Brand</b></h4>
+            <h4 class="m-t-0 header-title"><b>@Translations.app_pagetitle_addbrand</b></h4>
 
 
             @using (Html.BeginForm("Add", "Brands", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-brand-form", @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <div>
-                    <h3>Details</h3>
-                    <section>
-                        <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
-                            <div class="">
-                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control required" })
-                            </div>
-                        </div>
 
-                        <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.Description, new { @class = "control-label" })
-                            <div class="">
-                                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
-                            </div>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        @Html.LabelFor(m => m.Name)<span class="required-form-item"></span>
 
-                        <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.ShortDescription, new { @class = "control-label" })
-                            <div class="">
-                                @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-                        <div class="form-group clearfix">
-                            @Html.LabelFor(m => m.MainColor, new { @class = "col-form-label" })
-                            <div class="">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="mainColorInput">#</span>
-                                    </div>
-                                    @Html.TextBoxFor(m => m.MainColor, new { @class = "form-control required", placeholder = "", data_bind = "aria-describedby=mainColorInput" })
+                        <div class="">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="titleInput"><i class="fas fa-swatchbook"></i></span>
                                 </div>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control required", data_bind = "aria-describedby=titleInput"})
+                            </div>
+                            <div class="validation-error-text m-b-10 font-14" id="validation-message-@Html.IdFor(m => m.Name)">
+                                &nbsp;
                             </div>
                         </div>
+                    </div>
+                </div>
+                
 
-                    </section>
-                    <h3>Image</h3>
-                    <section>
-                        <div class="form-group clearfix">
-                            <label class="col-2 col-form-label">Brand Image</label>
-                            <div class="">
-                                <input type="file" class="form-control" name="image" style="height: auto;">
-                            </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        @Html.LabelFor(m => m.Description, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
                         </div>
-                        <div class="card m-b-20 card-body card-inverse card-primary text-xs-center">
-                            <blockquote class="card-bodyquote">
-                                <p>
-                                    Please use the following dimensions for Brand Images:
-                                </p>
-                                <footer>
-                                    <small>
-                                        <cite title="Image Dimensions">600 x 430px</cite>
-                                    </small>
-                                </footer>
-                            </blockquote>
-                        </div>
-                    </section>
+                        <p class="text-muted m-b-15 font-14">
+                            <span id="current-@Html.IdFor(m => m.Description)">0</span>
+                            / &infin;
+                        </p>
+                    </div>
 
-                    <h3>Overview</h3>
-                    <section>
-                        <div class="form-group clearfix">
-                            <div class="col-lg-12">
-                                <div class="">
-                                    @Html.CheckBoxFor(m => m.AgreeTerms)
-                                    @Html.LabelFor(m => m.AgreeTerms)
+                    <div class="form-group col-6">
+                        @Html.LabelFor(m => m.ShortDescription, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", maxlength = "255"})
+                        </div>
+                        <p class="text-muted m-b-15 font-14">
+                            <span id="current-@Html.IdFor(m => m.ShortDescription)">0</span>
+                            / 255
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        @Html.LabelFor(m => m.MainColor)
+
+                        <div class="">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="mainColorInput"><i class="fas fa-palette"></i></span>
                                 </div>
+                                @Html.TextBoxFor(m => m.MainColor, new { type = "color", @class = "form-control required", value = "#193357", data_bind = "aria-describedby=mainColorInput" })
                             </div>
                         </div>
-                    </section>
+                    </div>
+
+                    <div class="form-group col-6">
+                        @Html.LabelFor(m => m.ImageId)
+                        <div class="">
+                            <input type='file' name="image" class="form-control mb-2" onchange="readURL(this);" style="height: auto;" accept="image/*" />
+                            <img id="@Html.IdFor(m => m.ImageId)" src="" alt="" style="max-width: 180px;" />
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
+                <div class="form-row">
+                    <div class="form-group mt-5">
+                        <button type="submit" class="btn btn-primary btn-custom" id="submitForm">
+                            @Translations.app_brands_addbrand_submit
+                        </button>
+                    </div>
                 </div>
 
             }
 
-            
+
         </div>
     </div>
 </div>
@@ -105,106 +110,67 @@
 
 
 
-
-
-
-
-
-
 @section scripts {
-    @Scripts.Render("~/bundles/Plugins/JquerySteps")
     @Scripts.Render("~/bundles/Plugins/JqueryValidation")
-    
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#@Html.IdFor(m => m.ImageId)')
+                        .attr('src', e.target.result)
+                        .css("border", "1px solid black");
+                    
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
     
     
     <script>
+        function updateTextareaCounter(textareaId) {
 
-        !function($) {
-            "use strict";
+            var characterCount = $('#' + textareaId).val().length;
+            var current = $('#current-' + textareaId);
 
-            var FormWizard = function() {};
+            current.text(characterCount);
 
-            FormWizard.prototype.createBasic = function($form_container) {
-                $form_container.children("div").steps({
-                    headerTag: "h3",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    onFinishing: function (event, currentIndex) { 
-                        //NOTE: Here you can do form validation and return true or false based on your validation logic
-                        console.log("Form has been validated!");
-                        return true; 
-                    }, 
-                    onFinished: function (event, currentIndex) {
-                       //NOTE: Submit the form, if all validation passed.
-                        //console.log("Form can be submitted using submit method. E.g. $('#add-brand-form').submit()");
-                        $("#add-brand-form").submit();
+        }
 
-                    }
-                });
-                return $form_container;
-            },
-            //creates form with validation
-            FormWizard.prototype.createValidatorForm = function($form_container) {
-                $form_container.validate({
-                    errorPlacement: function errorPlacement(error, element) {
-                        element.after(error);
-                    }
-                });
-                $form_container.children("div").steps({
-                    headerTag: "h3",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    onStepChanging: function (event, currentIndex, newIndex) {
-                        $form_container.validate().settings.ignore = ":disabled,:hidden";
-                        return $form_container.valid();
-                    },
-                    onFinishing: function (event, currentIndex) {
-                        $form_container.validate().settings.ignore = ":disabled";
-                        return $form_container.valid();
-                    },
-                    onFinished: function (event, currentIndex) {
-                        alert("Submitted!");
-                    }
-                });
+        $('#@Html.IdFor(m => m.Description)').keyup(function () {
+            updateTextareaCounter('@Html.IdFor(m => m.Description)');
+        });
 
-                return $form_container;
-            },
-            //creates vertical form
-            FormWizard.prototype.createVertical = function($form_container) {
-                $form_container.steps({
-                    headerTag: "h3",
-                    bodyTag: "section",
-                    transitionEffect: "fade",
-                    stepsOrientation: "vertical"
-                });
-                return $form_container;
-            },
-            FormWizard.prototype.init = function() {
-                //initialzing various forms
-
-                //basic form
-                this.createBasic($("#add-brand-form"));
-
-                //form with validation
-                this.createValidatorForm($("#wizard-validation-form"));
-
-                //vertical form
-                this.createVertical($("#wizard-vertical"));
-            },
-            //init
-            $.FormWizard = new FormWizard, $.FormWizard.Constructor = FormWizard
-        }(window.jQuery),
-
-        //initializing 
-        function($) {
-            "use strict";
-            $.FormWizard.init()
-        }(window.jQuery);
+        $('#@Html.IdFor(m => m.ShortDescription)').keyup(function () {
+            updateTextareaCounter('@Html.IdFor(m => m.ShortDescription)');
+        });
 
     </script>
     
+    
+    <script>
+        $(function () {
+            $.validator.addMethod("regex", function (value, element, regexpr) {
+                return regexpr.test(value);
+            }, "Please enter a valid name.");
 
+            jQuery.validator.setDefaults({
+                errorPlacement: function(error, element) {
+                    error.appendTo('#validation-message-@Html.IdFor(m => m.Name)');
+                }
+            });
+    
+            $("#add-brand-form").validate({
+                rules: {
+                    @Html.NameFor(m => m.Name): {
+                        regex: /(.|\s)*\S(.|\s)*/
+                    }
+                }
+            });
+        });
+    </script>
 }
-
-
-
