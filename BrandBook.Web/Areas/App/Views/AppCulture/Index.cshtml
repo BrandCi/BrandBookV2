@@ -112,26 +112,34 @@
                     <p>
                         Anzahl Default Übersetzungen:
                     </p>
+                    
+
+                
+                    @using (Html.BeginForm("ExportTranslationsByCulture", "AppCulture", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
 
 
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <select class="form-control" name="exportCulture">
+                                    <option value="de-de">@Translations.system_culture_de_de_full [@Translations.system_culture_de_de]</option>
+                                    <option value="en-us">@Translations.system_culture_en_us_full [@Translations.system_culture_en_us]</option>
+                                    <option value="ar-sa">@Translations.system_culture_ar_sa_full [@Translations.system_culture_ar_sa]</option>
 
-
-                    <div class="form-group row">
-                        <div class="col-6">
-                            <select class="form-control" name="exportCulture">
-                                <option value="de-de">@Translations.system_culture_de_de_full [@Translations.system_culture_de_de]</option>
-                                <option value="en-us">@Translations.system_culture_en_us_full [@Translations.system_culture_en_us]</option>
-
-                            </select>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-download"></i>&nbsp;
+                                    Export
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <a href="@Url.Action("ExportTranslationsByCulture", "AppCulture", new {area = "App"})" target="_blank" class="btn btn-primary btn-custom">
-                                <i class="fas fa-download"></i>
-                                &nbsp;
-                                Export
-                            </a>
-                        </div>
-                    </div>
+
+                    }
+
+
 
                 </p>
             </div>
