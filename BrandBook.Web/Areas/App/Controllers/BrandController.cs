@@ -325,15 +325,28 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             if (System.IO.File.Exists(fullPath))
             {
-                System.IO.File.Delete(fullPath);
+                BackupBrandImage(brandImage);
 
                 _unitOfWork.ImageRepository.Remove(brandImage);
+
+                System.IO.File.Delete(fullPath);
             }
             else
             {
                 throw new FileNotFoundException();
             }
 
+        }
+
+
+        private void BackupBrandImage(Image brandImage)
+        {
+            var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
+            var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
+            
+            System.IO.File.Copy(sourcePath, backupPath);
+            
+            
         }
 
 
