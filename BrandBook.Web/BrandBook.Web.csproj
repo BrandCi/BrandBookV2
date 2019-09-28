@@ -179,8 +179,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
-    <Compile Include="Areas\App\Controllers\BrandController.cs" />
-    <Compile Include="Areas\App\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\App\Controllers\Brand\BrandController.cs" />
+    <Compile Include="Areas\App\Controllers\Brand\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\AppCultureController.cs" />
     <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Areas\App\Controllers\LoggingController.cs" />

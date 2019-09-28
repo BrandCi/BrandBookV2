@@ -1,5 +1,4 @@
-﻿﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +15,7 @@ using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
 using Image = BrandBook.Core.Domain.Resource.Image;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
     public class BrandController : AppControllerBase
     {

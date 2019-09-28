@@ -1,5 +1,10 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Domain.Brand;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using BrandBook.Core;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
@@ -9,14 +14,8 @@ using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Brand;
 using log4net;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
     public class BrandsController : AppControllerBase
     {
@@ -117,7 +116,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             }
 
 
-            var brand = new Brand()
+            var brand = new Core.Domain.Brand.Brand()
             {
                 Name = model.Name,
                 Description = model.Description,
