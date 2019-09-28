@@ -1066,7 +1066,7 @@
     <Content Include="Areas\App\Views\Logging\LoggingMessages.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\Partial\_ExternalLoginList.cshtml" />
     <Content Include="Areas\Auth\Views\Login\ExternalConfirmation.cshtml" />
-    <Content Include="Areas\Auth\Views\Processes\Unlock.cshtml" />
+    <Content Include="Areas\Auth\Views\Processes\Locked.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

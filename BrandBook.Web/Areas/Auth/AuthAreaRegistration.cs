@@ -25,8 +25,8 @@ namespace BrandBook.Web.Areas.Auth
 
             context.MapRoute(
                 "UnlockAccount",
-                "Auth/Unlock",
-                new { controller = "Processes", action = "Unlock" },
+                "Auth/Locked",
+                new { controller = "Processes", action = "Locked" },
                 new[] { "BrandBook.Web.Areas.Auth.Controllers" }
             );
 

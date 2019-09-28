@@ -17,7 +17,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         }
 
 
-        public ActionResult Unlock() {
+        public ActionResult Locked() {
 
             if (User.Identity.IsAuthenticated)
             {
