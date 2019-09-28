@@ -102,17 +102,12 @@
 
                     @Html.AntiForgeryToken()
 
+                    @Html.HiddenFor(ci => ci.AddColorItem.BrandId)
+
                     <div class="form-group">
                         <div class="col-md-12">
                             @Html.TextBoxFor(ci => ci.AddColorItem.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.Name) })
                             @Html.ValidationMessageFor(ci => ci.AddColorItem.Name, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            @Html.TextBoxFor(ci => ci.AddColorItem.HexColor, new { @class = "form-control", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.HexColor) })
-                            @Html.ValidationMessageFor(ci => ci.AddColorItem.HexColor, "", new { @class = "text-danger" })
                         </div>
                     </div>
 

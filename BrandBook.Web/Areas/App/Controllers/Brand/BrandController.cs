@@ -79,8 +79,14 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
             var model = new ColorsViewModel
             {
-                Categories = new List<ColorCategoryViewModel>()
+                Categories = new List<ColorCategoryViewModel>(),
+                AddColorItem = new AddColorItemViewModel()
+                {
+                    BrandId = brandId
+                }
             };
+
+                
 
 
             foreach (var category in categories)
@@ -312,6 +318,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
         }
+
+
+
+
 
 
 
