@@ -40,6 +40,8 @@ namespace BrandBook.Services.Email
 
                     // Smtp Settings
                     smtp.Credentials = credential;
+                    smtp.UseDefaultCredentials = false;
+
                     smtp.Host = ConfigurationManager.AppSettings["EmailSmtpHost"];
                     smtp.Port = Convert.ToInt32(ConfigurationManager.AppSettings["EmailSmtpPort"]);
                     smtp.EnableSsl = true;
