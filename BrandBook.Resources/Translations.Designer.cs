@@ -727,6 +727,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlock account.
+        /// </summary>
+        public static string auth_unlockaccount_title {
+            get {
+                return ResourceManager.GetString("auth_unlockaccount_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock.
+        /// </summary>
+        public static string auth_unlockaccount_unlock_button_title {
+            get {
+                return ResourceManager.GetString("auth_unlockaccount_unlock_button_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At the moment we are preparing interesting blog entries round about the topic Company Branding for you..
         /// </summary>
         public static string frontend_blog_noavailableblogs_description {
