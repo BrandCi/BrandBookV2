@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core;
+using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Web.Framework.Controllers;
@@ -321,6 +323,62 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
 
+        [HttpPost]
+        public ActionResult AddColorItem(AddColorItemViewModel model)
+        {
+            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.BrandId))
+            {
+                return RedirectToAction("Overview", "Brands", new { id = model.BrandId, area = "App" });
+            }
+
+            var rgbColor = System.Drawing.ColorTranslator.FromHtml("#" + model.HexColor);
+            var cmykColor = ConvertRgbToCmyk(rgbColor.R, rgbColor.G, rgbColor.B);
+
+
+            var color = new Color()
+            {
+                Name = model.Name,
+                Sorting = 1,
+
+                Category = new ColorCategory()
+                {
+                    BrandId = model.BrandId
+                },
+                RgbValue = new RgbValue()
+                {
+                    R = rgbColor.R,
+                    G = rgbColor.G,
+                    B = rgbColor.B
+                },
+                CmykValue = new CmykValue()
+                {
+                    C = cmykColor[0],
+                    M = cmykColor[1],
+                    Y = cmykColor[2],
+                    K = cmykColor[3]
+                }
+
+            };
+
+            _unitOfWork.ColorRepository.Add(color);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App"});
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,6 +444,49 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
             return googleFontLink.ToString();
         }
+
+
+
+
+        private List<int> ConvertRgbToCmyk(int r, int g, int b)
+        {
+            var cmyk = new List<int>();
+            int c, m, y, k;
+            float rConvert, gConvert, bConvert;
+
+            rConvert = r / 255F;
+            gConvert = g / 255F;
+            bConvert = b / 255F;
+
+            k = SaveCmyk(1 - Math.Max(Math.Max(rConvert, gConvert), bConvert));
+            c = SaveCmyk((1 - rConvert - k) / (1 - k));
+            m = SaveCmyk((1 - gConvert - k) / (1 - k));
+            y = SaveCmyk((1 - bConvert - k) / (1 - k));
+
+
+            cmyk.Add(c);
+            cmyk.Add(m);
+            cmyk.Add(y);
+            cmyk.Add(k);
+
+
+            return cmyk;
+
+        }
+
+
+
+        private int SaveCmyk(float value)
+        {
+            if (value < 0 || float.IsNaN(value))
+            {
+                value = 0;
+            }
+
+            return (int)Math.Round(value);
+        }
+
+
 
 
     }
