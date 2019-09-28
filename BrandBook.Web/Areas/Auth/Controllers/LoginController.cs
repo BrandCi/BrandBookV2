@@ -96,13 +96,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 return View(model);
             }
 
-            var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: true);
 
             switch (result)
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
-
+                case SignInStatus.LockedOut:
+                    return View();
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
