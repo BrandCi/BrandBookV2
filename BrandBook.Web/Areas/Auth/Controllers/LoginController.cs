@@ -103,7 +103,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
-                    return View();
+                    return RedirectToAction("Unlock", "Processes", new { area = "Auth" });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");

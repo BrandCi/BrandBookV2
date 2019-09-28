@@ -759,10 +759,13 @@
   <data name="frontend_footer_slogan" xml:space="preserve">
     <value>Your digital brand. Your success</value>
   </data>
-  <data name="auth_unlockaccount_title" xml:space="preserve">
-    <value>Unlock account</value>
+  <data name="auth_unlockaccount_description_first" xml:space="preserve">
+    <value>Your account has been locked!</value>
   </data>
-  <data name="auth_unlockaccount_unlock_button_title" xml:space="preserve">
-    <value>Unlock</value>
+  <data name="auth_unlockaccount_description_second" xml:space="preserve">
+    <value>Please try again in a few minutes.</value>
+  </data>
+  <data name="auth_unlockaccount_title" xml:space="preserve">
+    <value>Account locked</value>
   </data>
 </root>

@@ -11,23 +11,11 @@
     <div class="form-content">
         <div class="form-items">
             <h3>@Translations.auth_unlockaccount_title</h3>
-            <p></p>
-
-            <div class="form-group">
-                <div class="col-md-12">
-                    <input type="email" placeholder="E-Mail Address" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <input type="text" placeholder="Username" class="form-control" />
-                </div>
-            </div>
-
-            <div class="form-button">
-                <button id="submit" type="submit" class="ibtn">@Translations.auth_unlockaccount_unlock_button_title</button>
-            </div>
-
+            <p>
+                @Translations.auth_unlockaccount_description_first<br />
+                @Translations.auth_unlockaccount_description_second
+            </p>
+            
 
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>

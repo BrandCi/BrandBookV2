@@ -727,20 +727,29 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlock account.
+        ///   Looks up a localized string similar to Your account has been locked!.
         /// </summary>
-        public static string auth_unlockaccount_title {
+        public static string auth_unlockaccount_description_first {
             get {
-                return ResourceManager.GetString("auth_unlockaccount_title", resourceCulture);
+                return ResourceManager.GetString("auth_unlockaccount_description_first", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlock.
+        ///   Looks up a localized string similar to Please try again in a few minutes..
         /// </summary>
-        public static string auth_unlockaccount_unlock_button_title {
+        public static string auth_unlockaccount_description_second {
             get {
-                return ResourceManager.GetString("auth_unlockaccount_unlock_button_title", resourceCulture);
+                return ResourceManager.GetString("auth_unlockaccount_description_second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account locked.
+        /// </summary>
+        public static string auth_unlockaccount_title {
+            get {
+                return ResourceManager.GetString("auth_unlockaccount_title", resourceCulture);
             }
         }
         
