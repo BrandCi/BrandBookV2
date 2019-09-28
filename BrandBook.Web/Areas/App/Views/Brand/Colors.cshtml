@@ -96,17 +96,49 @@
                 <h4 class="modal-title" id="AddColorItemLabel">Add Color-Item</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    Add new Color-Item
-                </p>
                
+                @using (Html.BeginForm("AddColorItem", "Brand", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                {
+
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(ci => ci.AddColorItem.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.Name) })
+                            @Html.ValidationMessageFor(ci => ci.AddColorItem.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(ci => ci.AddColorItem.HexColor, new { @class = "form-control", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.HexColor) })
+                            @Html.ValidationMessageFor(ci => ci.AddColorItem.HexColor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="hexColor-preaddon">#</span>
+                                </div>
+                                @Html.TextBoxFor(ci => ci.AddColorItem.HexColor, new { @class = "form-control", aria_describedby="hexColor-preaddon", maxlength="6", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.HexColor) })
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                }
+
             </div>
             <div class="modal-footer">
 
                 <a href="@Url.Action("", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-success btn-custom mr-2">
                     <i class="fas fa-trash"></i>
                     &nbsp;
-                    Delete it.
+                    Add Color.
                 </a>
 
                 <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Cancel</button>
