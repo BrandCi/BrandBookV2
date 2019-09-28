@@ -15,5 +15,17 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             return View();
         }
+
+
+        public ActionResult Unlock() {
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
+
+            return View();
+
+        }
     }
 }

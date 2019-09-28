@@ -14,6 +14,27 @@ namespace BrandBook.Web.Areas.Auth
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
+
+            /* Auth Processes */
+            context.MapRoute(
+                "ForgotPassword",
+                "Auth/ForgotPassword",
+                new { controller = "Processes", action = "ForgotPassword" },
+                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+            );
+
+            context.MapRoute(
+                "UnlockAccount",
+                "Auth/Unlock",
+                new { controller = "Processes", action = "Unlock" },
+                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+            );
+
+
+
+
+
+
             context.MapRoute(
                 "Auth_default",
                 "Auth/{controller}/{action}/{id}",
