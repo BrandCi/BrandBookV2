@@ -8,7 +8,6 @@
 }
 
 @section styles {
-    @Styles.Render("~/Content/Plugins/SweetAlerts")
 }
 
 
@@ -167,16 +166,22 @@
                                 <p>
                                     Do you really want to delete this Brand and all depending files and data?
                                 </p>
+                                <p>
+                                    <label for="retypeBrandName">Retype Brandname</label>
+                                    <input type="text" name="retypeBrandName" id="retypeBrandName" value="" class="form-control" />
+                                    
+                                </p>
                             </div>
                             <div class="modal-footer">
 
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Abort, Stop!</button>
-
-                                <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" class="btn btn-danger btn-custom mr-2">
+                                <a href="@Url.Action("Delete", "Brand", new {id = ViewBag.BrandId, area = "App"})" id="deleteBrandButton" class="btn btn-danger btn-custom mr-2" style="display: none;">
                                     <i class="fas fa-trash"></i>
                                     &nbsp;
                                     Delete it.
                                 </a>
+
+                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Abort, Stop!</button>
+                                
 
                             </div>
                         </div><!-- /.modal-content -->
@@ -192,59 +197,33 @@
 
 
 @section scripts {
-    @Scripts.Render("~/bundles/Plugins/SweetAlerts")
 
 
     <script>
 
-        !function($) {
-                "use strict";
+        var brandName = "@Model.GeneralSettingsViewModel.Name";
 
-                var SweetAlert = function() {
-                };
+        /* Retype BrandName to delete it */
+        $('#retypeBrandName').change(function() {
 
-                SweetAlert.prototype.init = function() {
+            console.log($('#retypeBrandName').val());
 
+            if ($('#retypeBrandName').val() == brandName) {
 
-                        //Deletion Warning Message
-                        $('#delete-warning').click(function() {
-                            swal({
-                                title: "Delete this Brand?", 
-                                text: "Are you sure that you want to delete this member?", 
-                                type: "warning",
-                                showCancelButton: true,
-                                confirmButtonText: "Yes, delete it!",
-                                confirmButtonColor: "#ec6c62"
-                            }, function() {
-                                $.ajax({
-                                        url:  "/App/Brand/Delete/" + @ViewBag.BrandId,
-                                        type: "DELETE"
-                                    })
-                                    .done(function(data) {
-                                        swal({
-                                            title: "Deleted", 
-                                            text: "Brand has been successfully deleted", 
-                                            type: "success"
-                                        },function() {
-                                            location.reload();
-                                        });
-                                    })
-                                    .error(function(data) {
-                                        swal("Oops", "We couldn't connect to the server!", "error");
-                                    });
-                            });
-                        });
+                $('#deleteBrandButton').css("display", "block");
+                $('#retypeBrandName').css("border-color", "#cfcfcf");
 
-                    },
-                    //init
-                    $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert;
-            }(window.jQuery),
+            }
+            else {
 
-            //initializing
-            function($) {
-                "use strict";
-                $.SweetAlert.init();
-            }(window.jQuery);
+                $('#retypeBrandName').css("border-color", "#c71612");
+                $('#deleteBrandButton').css("display", "none");
+
+            }
+
+        });
+        
+
     </script>
     
     
