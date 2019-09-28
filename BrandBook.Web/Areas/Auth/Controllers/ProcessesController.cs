@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class ForgotPasswordController : AuthControllerBase
+    public class ProcessesController : AuthControllerBase
     {
         // GET: Auth/ForgotPassword
         public ActionResult Index()

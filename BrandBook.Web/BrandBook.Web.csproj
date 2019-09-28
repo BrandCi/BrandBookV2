@@ -188,7 +188,7 @@
     <Compile Include="Areas\App\Controllers\SystemController.cs" />
     <Compile Include="Areas\App\Controllers\UserController.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
-    <Compile Include="Areas\Auth\Controllers\ForgotPasswordController.cs" />
+    <Compile Include="Areas\Auth\Controllers\ProcessesController.cs" />
     <Compile Include="Areas\Auth\Controllers\LoginController.cs" />
     <Compile Include="Areas\Auth\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Auth\Controllers\RegisterController.cs" />
@@ -1021,7 +1021,7 @@
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
-    <Content Include="Areas\Auth\Views\ForgotPassword\Index.cshtml" />
+    <Content Include="Areas\Auth\Views\Processes\Index.cshtml" />
     <Content Include="Areas\App\Views\web.config" />
     <Content Include="Areas\App\Views\Shared\_Layout\_Layout.cshtml" />
     <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
