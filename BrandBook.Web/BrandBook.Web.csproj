@@ -1021,7 +1021,7 @@
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Auth\Views\Register\Index.cshtml" />
-    <Content Include="Areas\Auth\Views\Processes\Index.cshtml" />
+    <Content Include="Areas\Auth\Views\Processes\ForgotPassword.cshtml" />
     <Content Include="Areas\App\Views\web.config" />
     <Content Include="Areas\App\Views\Shared\_Layout\_Layout.cshtml" />
     <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />

@@ -6,7 +6,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
     public class ProcessesController : AuthControllerBase
     {
         // GET: Auth/ForgotPassword
-        public ActionResult Index()
+        public ActionResult ForgotPassword()
         {
             if (User.Identity.IsAuthenticated)
             {
