@@ -266,6 +266,4 @@ BrandBook.Web/Content/Custom/Styles.min.css
 BrandBook.Web/Content/Custom/Styles.min.css
 BrandBook.Web/Content/Custom/Styles.css
 
-BrandBook.Web/SharedStorage/BrandImages/
-BrandBook.Web/SharedStorage/UserImages/
-BrandBook.Web/SharedStorage/Translations/
+BrandBook.Web/SharedStorage/
