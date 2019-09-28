@@ -8,7 +8,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand.Colors
 {
     public class AddColorItemViewModel
     {
-
+        public int BrandId { get; set; }
         public string Name { get; set; }
         public string HexColor { get; set; }
 
