@@ -42,7 +42,7 @@ namespace BrandBook.Web.Controllers
                 UrlKey = blog.UrlKey,
                 Title = blog.Title,
                 SubTitle = blog.SubTitle,
-                Image = blog.Image,
+               /* Image = blog.Image,*/
                 Content = blog.Content,
                 Author = blog.Author,
                 CreationDateTime = blog.CreationDateTime
@@ -86,7 +86,7 @@ namespace BrandBook.Web.Controllers
                     Title = blogEntry.Title,
                     SubTitle = blogEntry.SubTitle,
                     UrlKey = blogEntry.UrlKey,
-                    Image = blogEntry.Image,
+                   /* Image = blogEntry.Image,*/
                     Author = blogEntry.Author,
                     Content = blogEntry.Content,
                     CreationDateTime = blogEntry.CreationDateTime
