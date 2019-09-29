@@ -16,6 +16,9 @@ namespace BrandBook.Core.Domain.Frontend
         public string Author { get; set; }
         public DateTime CreationDateTime { get; set; }
 
+        public int BlogImageId { get; set; }
+        public BlogImage BlogImage { get; set; }
+
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
     }
