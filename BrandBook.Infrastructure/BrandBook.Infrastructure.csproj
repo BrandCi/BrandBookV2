@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.Designer.cs">
       <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs" />
+    <Compile Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.Designer.cs">
+      <DependentUpon>201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -424,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.resx">
       <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.resx">
+      <DependentUpon>201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
