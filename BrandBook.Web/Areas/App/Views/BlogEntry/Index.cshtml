@@ -14,6 +14,10 @@
     <div class="col-12">
         <div class="card-box table-responsive">
             <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <a href="@Url.Action("Add", "BlogEntry", new { area = "App" })" class="btn btn-primary btn-custom">
+                <i class="fas fa-plus"></i>
+                Add Blog Entry
+            </a>
             <p class="text-muted font-14 m-b-30"></p>
 
             <table id="blogOverview-datatable" class="table table-bordered dt-responsive">
