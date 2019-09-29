@@ -28,13 +28,13 @@
                 <div class="row">
 
 
-                    @foreach (var blogEntry in Model.BlogEntryViewModels)
+                    @foreach (var blogEntry in Model.BlogEntries)
                     {
                         <div class="col-lg-4 col-sm-4">
                             <div class="blog_grid_item mb-30">
                                 <a href="@Url.Action(blogEntry.UrlKey, "Blog")">
                                     <div class="blog_img">
-                                        @CustomHelper.Image(blogEntry.Image, "")
+                                       
                                     </div>
                                 </a>
                                     <div class="blog_content">
@@ -55,7 +55,7 @@
                     }
                     
                     
-                    @if (Model.BlogEntryViewModels.Count == 0)
+                    @if (Model.BlogEntries.Count == 0)
                     {
                         <div class="col-lg-12 col-sm-12">
                             <div class="blog_grid_item mb-30">

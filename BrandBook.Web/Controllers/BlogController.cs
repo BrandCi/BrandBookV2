@@ -76,19 +76,17 @@ namespace BrandBook.Web.Controllers
 
             var viewModel = new BlogOverviewViewModel()
             {
-                BlogEntryViewModels = new List<BlogEntryViewModel>()
+                BlogEntries = new List<SingleBlogOverviewViewModel>()
             };
 
             foreach (var blogEntry in allBlogs)
             {
-                viewModel.BlogEntryViewModels.Add(new BlogEntryViewModel()
+                viewModel.BlogEntries.Add(new SingleBlogOverviewViewModel()
                 {
                     Title = blogEntry.Title,
                     SubTitle = blogEntry.SubTitle,
                     UrlKey = blogEntry.UrlKey,
-                   /* Image = blogEntry.Image,*/
                     Author = blogEntry.Author,
-                    Content = blogEntry.Content,
                     CreationDateTime = blogEntry.CreationDateTime
                 });
             }
