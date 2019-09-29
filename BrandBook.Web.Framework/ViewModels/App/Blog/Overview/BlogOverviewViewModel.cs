@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Blog.Overview
 {
-    class BlogOverviewViewModel
+    public class BlogOverviewViewModel : IEnumerable<SingleBlogOverviewItemViewModel>
     {
+        public List<SingleBlogOverviewItemViewModel> SingleBlogItem { get; set; }
+
+        public IEnumerator<SingleBlogOverviewItemViewModel> GetEnumerator()
+        {
+            return SingleBlogItem.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+
     }
 }
