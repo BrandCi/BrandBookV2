@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.ViewModels.App.Blog;
 using BrandBook.Web.Framework.ViewModels.App.Blog.Overview;
 
 namespace BrandBook.Web.Areas.App.Controllers
@@ -32,7 +33,6 @@ namespace BrandBook.Web.Areas.App.Controllers
             };
 
 
-
             foreach (var blog in blogs)
             {
                 viewModel.SingleBlogItems.Add(new SingleBlogOverviewItemViewModel()
@@ -44,11 +44,19 @@ namespace BrandBook.Web.Areas.App.Controllers
                     CreationDate = blog.CreationDateTime
                 });
             }
+            
+            return View(viewModel);
+        }
 
 
 
+        public ActionResult Add()
+        {
+            var viewModel = new AddBlogEntryViewModel();
 
             return View(viewModel);
         }
+
+
     }
 }
