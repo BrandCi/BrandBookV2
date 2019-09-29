@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BrandBook.Web.Framework.ViewModels.App.Blog.Overview.BlogOverviewViewModel
+@{
     ViewBag.Title = "Blog Overview";
 }
 @section navigation {
@@ -18,7 +19,6 @@
             <table id="blogOverview-datatable" class="table table-bordered dt-responsive">
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Title</th>
                         <th>UrlKey</th>
                         <th>Published</th>
@@ -29,7 +29,18 @@
 
                 <tbody>
 
+                @foreach(var blog in Model) {
 
+                    <tr>
+
+                        <td>@blog.Title</td>
+                        <td>@blog.UrlKey</td>
+                        <td>@blog.IsPublished</td>
+                        <td>@blog.CreationDate</td>
+
+                    </tr>
+
+                }
                 
 
                 </tbody>
