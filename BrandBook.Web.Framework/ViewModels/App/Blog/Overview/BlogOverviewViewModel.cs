@@ -6,11 +6,11 @@ namespace BrandBook.Web.Framework.ViewModels.App.Blog.Overview
 {
     public class BlogOverviewViewModel : IEnumerable<SingleBlogOverviewItemViewModel>
     {
-        public List<SingleBlogOverviewItemViewModel> SingleBlogItem { get; set; }
+        public List<SingleBlogOverviewItemViewModel> SingleBlogItems { get; set; }
 
         public IEnumerator<SingleBlogOverviewItemViewModel> GetEnumerator()
         {
-            return SingleBlogItem.GetEnumerator();
+            return SingleBlogItems.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
