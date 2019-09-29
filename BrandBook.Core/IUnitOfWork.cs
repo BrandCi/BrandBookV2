@@ -2,6 +2,7 @@
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
+using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.System;
@@ -31,6 +32,7 @@ namespace BrandBook.Core
         ISubscriptionRepository SubscriptionRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
         ILog4NetLogRepository Log4NetLogRepository { get; }
+        IBlogEntryRepository BlogEntryRepository { get; }
 
         #endregion
 
