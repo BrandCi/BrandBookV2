@@ -255,6 +255,10 @@
     <Compile Include="Migrations\201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.Designer.cs">
       <DependentUpon>201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.Designer.cs">
+      <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -438,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.resx">
       <DependentUpon>201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.resx">
+      <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
