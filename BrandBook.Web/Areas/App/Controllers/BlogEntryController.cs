@@ -9,12 +9,12 @@ using BrandBook.Web.Framework.ViewModels.App.Blog.Overview;
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class BlogController : AppControllerBase
+    public class BlogEntryController : AppControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public BlogController()
+        public BlogEntryController()
         {
             this._unitOfWork = new UnitOfWork();
         }

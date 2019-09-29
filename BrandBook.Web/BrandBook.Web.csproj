@@ -179,7 +179,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\App\AppAreaRegistration.cs" />
-    <Compile Include="Areas\App\Controllers\BlogController.cs" />
+    <Compile Include="Areas\App\Controllers\BlogEntryController.cs" />
     <Compile Include="Areas\App\Controllers\Brand\BrandController.cs" />
     <Compile Include="Areas\App\Controllers\Brand\BrandsController.cs" />
     <Compile Include="Areas\App\Controllers\AppCultureController.cs" />
@@ -1068,7 +1068,7 @@
     <Content Include="Areas\Auth\Views\Shared\Partial\_ExternalLoginList.cshtml" />
     <Content Include="Areas\Auth\Views\Login\ExternalConfirmation.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\Locked.cshtml" />
-    <Content Include="Areas\App\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\App\Views\BlogEntry\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
