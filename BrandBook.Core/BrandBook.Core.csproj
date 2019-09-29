@@ -69,6 +69,7 @@
     <Compile Include="Domain\Brand\Icon\Icon.cs" />
     <Compile Include="Domain\Brand\Icon\IconCategory.cs" />
     <Compile Include="Domain\Company\Company.cs" />
+    <Compile Include="Domain\Frontend\BlogImage.cs" />
     <Compile Include="Domain\Resource\Image.cs" />
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
