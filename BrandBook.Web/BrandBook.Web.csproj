@@ -1069,6 +1069,7 @@
     <Content Include="Areas\Auth\Views\Login\ExternalConfirmation.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\Locked.cshtml" />
     <Content Include="Areas\App\Views\BlogEntry\Index.cshtml" />
+    <Content Include="Areas\App\Views\BlogEntry\Add.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
