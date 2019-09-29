@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "BlogManager")]
     public class BlogEntryController : AppControllerBase
     {
 

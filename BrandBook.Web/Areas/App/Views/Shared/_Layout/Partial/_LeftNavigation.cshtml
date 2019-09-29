@@ -46,7 +46,7 @@
 
 
 
-                @if (User.IsInRole("Administrator"))
+                @if (User.IsInRole("BlogManager"))
                 {
                     <li>
                         <a href="@Url.Action("Index", "BlogEntry", new{ area = "App" })" class="waves-effect waves-primary">
