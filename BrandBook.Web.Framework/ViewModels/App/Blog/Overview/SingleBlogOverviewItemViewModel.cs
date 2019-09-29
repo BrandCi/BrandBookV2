@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Framework.ViewModels.App.Blog.Overview
 {
-    class SingleBlogOverviewItemViewModel
+    public class SingleBlogOverviewItemViewModel
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string UrlKey { get; set; }
+        public bool IsPublished { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
