@@ -101,7 +101,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        private string GenerateUrlKey()
+        private static string GenerateUrlKey()
         {
             var random = new Random();
 
