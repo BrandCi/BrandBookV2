@@ -42,7 +42,7 @@ namespace BrandBook.Web.Controllers
                 UrlKey = blog.UrlKey,
                 Title = blog.Title,
                 SubTitle = blog.SubTitle,
-               /* Image = blog.Image,*/
+                AdditionalStyles = blog.AdditionalStyles,
                 Content = blog.Content,
                 Author = blog.Author,
                 CreationDateTime = blog.CreationDateTime
