@@ -37,16 +37,15 @@
                 @foreach(var blog in Model) {
 
                     <tr>
-
                         <td>@blog.Title</td>
                         <td>@blog.UrlKey</td>
                         <td>@blog.IsPublished</td>
                         <td>@blog.CreationDate</td>
                         <td>
-                            <a href="@Url.Action("Edit", "BlogEntry", new {id = blog.Id})"><i class="fas fa-edit"></i></a> 
-                            <a href=""><i class="fas fa-eye"></i></a>
+                            <a href="@Url.Action("Edit", "BlogEntry", new {id = blog.Id})">
+                                <i class="fas fa-edit"></i>
+                            </a>
                         </td>
-
                     </tr>
 
                 }

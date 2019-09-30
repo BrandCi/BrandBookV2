@@ -86,13 +86,21 @@
 
                             @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "form-check-label" })
                         </div>
-
-                        
-
-
                     </div>
+                    <div class="form-group col-md-6">
+                        <div class="form-check">
+                            @if (Model.IsPublished)
+                            {
+                                @Html.CheckBoxFor(m => m.IsPublished, new { @checked = true, @class = "form-check-input" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.IsPublished)
+                            }
 
-                    
+                            @Html.LabelFor(m => m.IsPublished, new { @class = "form-check-label" })
+                        </div>
+                    </div>
                 </div>
 
 
