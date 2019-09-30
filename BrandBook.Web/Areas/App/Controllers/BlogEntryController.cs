@@ -148,7 +148,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             blogEntry.Content = model.Content;
             blogEntry.AdditionalStyles = model.AdditionalStyles;
             blogEntry.Author = model.Author;
-            blogEntry.IsPublished = model.IsPublished,
+            blogEntry.IsPublished = model.IsPublished;
             blogEntry.IsVisibleForAnonymous = model.IsVisibleForAnonymous;
 
             _unitOfWork.BlogEntryRepository.Update(blogEntry);
