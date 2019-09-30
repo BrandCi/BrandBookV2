@@ -74,28 +74,27 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "control-label" })
-                        @if (Model.IsVisibleForAnonymous == true)
-                        {
-                            <div class="">
-                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "Yes", new { @checked = true }) Yes
-                                <br />
-                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "No") No
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="">
-                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "Yes") Yes
-                                <br />
-                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "No", new { @checked = true }) No
-                            </div>
-                        }
+                        <div class="form-check">
+                            @if (Model.IsVisibleForAnonymous)
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous, new { @checked = true, @class = "form-check-input" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous)
+                            }
+
+                            @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "form-check-label" })
+                        </div>
+
+                        
+
 
                     </div>
 
                     
                 </div>
+
 
 
 
