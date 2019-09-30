@@ -115,6 +115,7 @@
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\Overview\BlogOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\Overview\SingleBlogOverviewItemViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
