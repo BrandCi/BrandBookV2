@@ -109,14 +109,23 @@ namespace BrandBook.Web.Areas.App.Controllers
             
             var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
 
+            var viewModel = new EditBlogEntryViewModel()
+            {
+                Id = blogEntry.Id,
+                Title = blogEntry.Title,
+                SubTitle = blogEntry.SubTitle,
+                IsPublished = blogEntry.IsPublished,
+                IsVisibleForAnonymous = blogEntry.IsVisibleForAnonymous,
+                UrlKey = blogEntry.UrlKey,
+                AdditionalStyles = blogEntry.AdditionalStyles,
+                Content = blogEntry.Content,
+                Author = blogEntry.Author
+            };
 
 
 
-
-            return View();
+            return View(viewModel);
         }
-
-
 
 
 
