@@ -8,6 +8,7 @@ namespace BrandBook.Core.Repositories.Frontend
     {
 
         bool BlogEntryExistsAndPublished(string blogEntryKey);
+        bool BlogEntryIdExists(int id);
         BlogEntry FindBlogEntryByKey(string blogEntryKey);
         Task<List<BlogEntry>> GetAllPublishedBlogEntriesAsync();
         Task<List<BlogEntry>> GetAllPublishedBlogEntriesForAnonymousUserAsync();
