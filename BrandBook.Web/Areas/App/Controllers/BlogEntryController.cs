@@ -100,6 +100,21 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         private static string GenerateUrlKey()
         {
