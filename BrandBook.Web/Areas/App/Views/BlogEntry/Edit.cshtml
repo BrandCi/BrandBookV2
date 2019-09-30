@@ -8,16 +8,17 @@
 @section styles {
 }
 
-
 <div class="row">
     <div class="col-12">
         <div class="card-box table-responsive">
             <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
             <p class="text-muted font-14 m-b-30"></p>
 
-            @using (Html.BeginForm("Add", "BlogEntry", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-blog-form", @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Edit", "BlogEntry", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "add-blog-form", @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(m => m.Id)
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -31,6 +32,23 @@
                         @Html.LabelFor(m => m.SubTitle, new { @class = "control-label" })
                         <div class="">
                             @Html.TextBoxFor(m => m.SubTitle, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.UrlKey, new { @class = "control-label" })<span class="required-form-item"></span>
+                        <div class="">
+                            @Html.TextBoxFor(m => m.UrlKey, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.Author, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
                         </div>
                     </div>
                 </div>
@@ -56,20 +74,38 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(m => m.Author)
+                        @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "control-label" })
+                        @if (Model.IsVisibleForAnonymous == true)
+                        {
+                            <div class="">
+                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "Yes", new { @checked = true }) Yes
+                                <br />
+                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "No") No
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="">
+                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "Yes") Yes
+                                <br />
+                                @Html.RadioButtonFor(m => m.IsVisibleForAnonymous, "No", new { @checked = true }) No
+                            </div>
+                        }
 
-                        <div class="">
-                            @Html.TextBoxFor(m => m.Author, new { @class = "form-control required" })
-                        </div>
                     </div>
+
+                    
                 </div>
+
+
+
 
 
 
                 <div class="form-row">
                     <div class="form-group mt-5">
                         <button type="submit" class="btn btn-primary btn-custom" id="submitForm">
-                            Add Blog Entry
+                            Save Blog Entry
                         </button>
                     </div>
                 </div>
