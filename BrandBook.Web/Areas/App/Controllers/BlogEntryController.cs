@@ -64,6 +64,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Add(AddBlogEntryViewModel model)
         {
 
@@ -129,8 +130,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public async Task<ActionResult> Edit(EditBlogEntryViewModel model)
         {
+            
             if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id))
             {
                 return View(model);
@@ -144,12 +147,11 @@ namespace BrandBook.Web.Areas.App.Controllers
             blogEntry.Content = model.Content;
             blogEntry.AdditionalStyles = model.AdditionalStyles;
             blogEntry.Author = model.Author;
+            blogEntry.IsVisibleForAnonymous = model.IsVisibleForAnonymous;
 
-
-            var test = model.IsVisibleForAnonymous;
-
-
-
+            _unitOfWork.BlogEntryRepository.Update(blogEntry);
+            _unitOfWork.SaveChanges();
+            
 
             return RedirectToAction("Index", "BlogEntry", new {area = "App"});
 
