@@ -7,6 +7,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Blog
         public int Id { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }
+        public bool IsPublished { get; set; }
         public bool IsVisibleForAnonymous { get; set; }
         public string UrlKey { get; set; }
         public string AdditionalStyles { get; set; }
