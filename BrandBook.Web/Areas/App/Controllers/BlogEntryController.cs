@@ -128,6 +128,24 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(EditBlogEntryViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+
+
+
+
+
+
+        }
+
+
 
 
 
