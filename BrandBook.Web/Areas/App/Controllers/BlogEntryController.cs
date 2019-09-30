@@ -102,8 +102,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public async Task<ActionResult> Edit(int id)
         {
-
+            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
+            {
+                return RedirectToAction("Index", "BlogEntry", new {area = "App"});
+            }
+            
             var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
+
+
 
 
 
