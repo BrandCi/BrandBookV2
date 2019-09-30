@@ -141,6 +141,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
+            return RedirectToAction("Index", "BlogEntry", new {area = "App"});
 
 
         }
