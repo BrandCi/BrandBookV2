@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace BrandBook.Web.Framework.ViewModels.App.Blog
 {
-    class EditBlogEntryViewModel
+    public class EditBlogEntryViewModel
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string SubTitle { get; set; }
+        public bool IsPublished { get; set; }
+        public bool IsVisibleForAnonymous { get; set; }
+        public string UrlKey { get; set; }
+        public string AdditionalStyles { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
     }
 }
