@@ -114,7 +114,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Id = blogEntry.Id,
                 Title = blogEntry.Title,
                 SubTitle = blogEntry.SubTitle,
-                IsPublished = blogEntry.IsPublished,
                 IsVisibleForAnonymous = blogEntry.IsVisibleForAnonymous,
                 UrlKey = blogEntry.UrlKey,
                 AdditionalStyles = blogEntry.AdditionalStyles,
@@ -130,19 +129,29 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(EditBlogEntryViewModel model)
+        public async Task<ActionResult> Edit(EditBlogEntryViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id))
             {
                 return View(model);
             }
 
+            var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(model.Id);
+
+            blogEntry.Title = model.Title;
+            blogEntry.SubTitle = model.SubTitle;
+            blogEntry.UrlKey = model.UrlKey;
+            blogEntry.Content = model.Content;
+            blogEntry.AdditionalStyles = model.AdditionalStyles;
+            blogEntry.Author = model.Author;
+
+
+            var test = model.IsVisibleForAnonymous;
 
 
 
 
             return RedirectToAction("Index", "BlogEntry", new {area = "App"});
-
 
         }
 
