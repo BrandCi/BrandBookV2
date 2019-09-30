@@ -100,8 +100,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
+
+            var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
+
+
+
             return View();
         }
 
