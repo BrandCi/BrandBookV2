@@ -11,7 +11,7 @@ namespace BrandBook.Web.Framework.ViewModels.Frontend.Blog
         public string AdditionalStyles { get; set; }
         public string Content { get; set; }
         public string Author { get; set; }
-        public DateTime CreationDateTime { get; set; }
+        public DateTime PublishDate { get; set; }
 
 
     }

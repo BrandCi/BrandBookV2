@@ -43,7 +43,7 @@ namespace BrandBook.Web.Controllers
                 AdditionalStyles = blog.AdditionalStyles,
                 Content = blog.Content,
                 Author = blog.Author,
-                CreationDateTime = blog.CreationDateTime
+                PublishDate = blog.PublishDate
 
             };
 
