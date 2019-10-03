@@ -6,6 +6,7 @@
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 @section styles {
+    @Styles.Render("~/Content/Plugins/Datepicker")
 }
 
 <div class="row">
@@ -137,4 +138,18 @@
 
 
 @section scripts{
+
+    @Scripts.Render("~/bundles/Plugins/Datepicker")
+
+
+
+    <script>
+        jQuery('#@Html.IdFor(m => m.PublishDate)').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            todayHighlight: true,
+            weekStart: 1
+        });
+    </script>
+
 }
