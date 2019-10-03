@@ -1735,6 +1735,51 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        public static string frontend_legal_imprint_contact_email_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_imprint_contact_email_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string frontend_legal_imprint_contact_phone_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_imprint_contact_phone_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string frontend_legal_imprint_contact_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_imprint_contact_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to According to § 5 TMG.
+        /// </summary>
+        public static string frontend_legal_imprint_general_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_imprint_general_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imprint.
+        /// </summary>
+        public static string frontend_legal_imprint_pagetitle {
+            get {
+                return ResourceManager.GetString("frontend_legal_imprint_pagetitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {

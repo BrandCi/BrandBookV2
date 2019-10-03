@@ -768,4 +768,19 @@
   <data name="auth_unlockaccount_title" xml:space="preserve">
     <value>Account locked</value>
   </data>
+  <data name="frontend_legal_imprint_contact_email_title" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="frontend_legal_imprint_contact_phone_title" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="frontend_legal_imprint_contact_title" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_legal_imprint_general_title" xml:space="preserve">
+    <value>According to § 5 TMG</value>
+  </data>
+  <data name="frontend_legal_imprint_pagetitle" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
 </root>
