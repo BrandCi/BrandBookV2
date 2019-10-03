@@ -259,6 +259,10 @@
     <Compile Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.Designer.cs">
       <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.Designer.cs">
+      <DependentUpon>201910030918324_AddPublishDateToBlogEntriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
@@ -445,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.resx">
       <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.resx">
+      <DependentUpon>201910030918324_AddPublishDateToBlogEntriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
