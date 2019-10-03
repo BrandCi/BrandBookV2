@@ -1780,6 +1780,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy.
+        /// </summary>
+        public static string frontend_legal_privacypolicy_pagetitle {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacypolicy_pagetitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {

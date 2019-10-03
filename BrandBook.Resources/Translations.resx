@@ -783,4 +783,7 @@
   <data name="frontend_legal_imprint_pagetitle" xml:space="preserve">
     <value>Imprint</value>
   </data>
+  <data name="frontend_legal_privacypolicy_pagetitle" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
 </root>
