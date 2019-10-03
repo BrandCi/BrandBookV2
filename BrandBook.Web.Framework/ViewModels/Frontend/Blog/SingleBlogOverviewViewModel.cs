@@ -12,7 +12,7 @@ namespace BrandBook.Web.Framework.ViewModels.Frontend.Blog
         public string Title { get; set; }
         public string SubTitle { get; set; }
         public string Author { get; set; }
-        public DateTime CreationDateTime { get; set; }
+        public DateTime PublishDate { get; set; }
 
     }
 }

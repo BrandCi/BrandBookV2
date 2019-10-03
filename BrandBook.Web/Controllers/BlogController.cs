@@ -85,7 +85,7 @@ namespace BrandBook.Web.Controllers
                     SubTitle = blogEntry.SubTitle,
                     UrlKey = blogEntry.UrlKey,
                     Author = blogEntry.Author,
-                    CreationDateTime = blogEntry.CreationDateTime
+                    PublishDate = blogEntry.PublishDate
                 });
             }
 
