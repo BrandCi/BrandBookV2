@@ -1,4 +1,5 @@
-﻿using BrandBook.Core.Domain.Frontend;
+﻿using System;
+using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using System.Collections.Generic;
@@ -35,13 +36,13 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
 
         public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesAsync()
         {
-            return await Set.Where(be => be.IsPublished).ToListAsync();
+            return await Set.Where(be => be.IsPublished && be.PublishDate >= DateTime.Now).ToListAsync();
         }
 
 
         public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesForAnonymousUserAsync()
         {
-            return await Set.Where(be => be.IsPublished && be.IsVisibleForAnonymous).ToListAsync();
+            return await Set.Where(be => be.IsPublished && be.IsVisibleForAnonymous && be.PublishDate >= DateTime.Now).ToListAsync();
         }
 
 
