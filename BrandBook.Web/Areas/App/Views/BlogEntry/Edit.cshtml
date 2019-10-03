@@ -76,20 +76,6 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <div class="form-check">
-                            @if (Model.IsVisibleForAnonymous)
-                            {
-                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous, new { @checked = true, @class = "form-check-input" })
-                            }
-                            else
-                            {
-                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous)
-                            }
-
-                            @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "form-check-label" })
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <div class="form-check">
                             @if (Model.IsPublished)
                             {
                                 @Html.CheckBoxFor(m => m.IsPublished, new { @checked = true, @class = "form-check-input" })
@@ -102,6 +88,33 @@
                             @Html.LabelFor(m => m.IsPublished, new { @class = "form-check-label" })
                         </div>
                     </div>
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.PublishDate)
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.PublishDate, new { @class = "form-control" })
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="form-check">
+                            @if (Model.IsVisibleForAnonymous)
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous, new { @checked = true, @class = "form-check-input" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous)
+                            }
+
+                            @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "form-check-label" })
+                        </div>
+                    </div>
+                    
                 </div>
 
 
