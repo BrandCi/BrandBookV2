@@ -36,13 +36,19 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
 
         public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesAsync()
         {
-            return await Set.Where(be => be.IsPublished && be.PublishDate >= DateTime.Now).ToListAsync();
+            return await Set
+                .Where(be => be.IsPublished && DateTime.Compare(DateTime.Now, be.PublishDate) >= 0)
+                .OrderByDescending(be => be.PublishDate)
+                .ToListAsync();
         }
 
 
         public async Task<List<BlogEntry>> GetAllPublishedBlogEntriesForAnonymousUserAsync()
         {
-            return await Set.Where(be => be.IsPublished && be.IsVisibleForAnonymous && be.PublishDate >= DateTime.Now).ToListAsync();
+            return await Set
+                .Where(be => be.IsPublished && be.IsVisibleForAnonymous && DateTime.Compare(DateTime.Now, be.PublishDate) >= 0)
+                .OrderByDescending(be => be.PublishDate)
+                .ToListAsync();
         }
 
 
