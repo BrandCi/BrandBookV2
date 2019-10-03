@@ -44,8 +44,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                     Id = blog.Id,
                     Title = blog.Title,
                     UrlKey = blog.UrlKey,
-                    IsPublished = blog.IsPublished,
-                    CreationDate = blog.CreationDateTime
+                    PublishDate = blog.PublishDate
                 });
             }
             

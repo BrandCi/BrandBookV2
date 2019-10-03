@@ -11,7 +11,6 @@ namespace BrandBook.Web.Framework.ViewModels.App.Blog.Overview
         public int Id { get; set; }
         public string Title { get; set; }
         public string UrlKey { get; set; }
-        public bool IsPublished { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTime PublishDate { get; set; }
     }
 }

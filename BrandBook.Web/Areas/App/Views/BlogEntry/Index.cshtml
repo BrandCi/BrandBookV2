@@ -25,8 +25,7 @@
                     <tr>
                         <th>Title</th>
                         <th>UrlKey</th>
-                        <th>Published</th>
-                        <th>CreationDate</th>
+                        <th>PublishDate</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -39,8 +38,7 @@
                     <tr>
                         <td>@blog.Title</td>
                         <td>@blog.UrlKey</td>
-                        <td>@blog.IsPublished</td>
-                        <td>@blog.CreationDate</td>
+                        <td>@blog.PublishDate.ToString("dd.MM.yyyy")</td>
                         <td>
                             <a href="@Url.Action("Edit", "BlogEntry", new {id = blog.Id})">
                                 <i class="fas fa-edit"></i>
