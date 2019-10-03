@@ -1,4 +1,5 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Blog.AddBlogEntryViewModel
+﻿@using System.Web.UI.WebControls
+@model BrandBook.Web.Framework.ViewModels.App.Blog.AddBlogEntryViewModel
 @{
     ViewBag.Title = "Add Blog Entry";
 }
@@ -6,6 +7,7 @@
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
 }
 @section styles {
+    @Styles.Render("~/Content/Plugins/Datepicker")
 }
 
 
@@ -59,10 +61,25 @@
                         @Html.LabelFor(m => m.Author)
 
                         <div class="">
-                            @Html.TextBoxFor(m => m.Author, new {@class = "form-control required"})
+                            @Html.TextBoxFor(m => m.Author, new { @class = "form-control required" })
                         </div>
                     </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Publishdate</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-publishdate">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+
                 </div>
+
 
 
 
@@ -94,4 +111,15 @@
 
 
 @section scripts{
+    @Scripts.Render("~/bundles/Plugins/Datepicker")
+    
+    
+    
+    <script>
+        jQuery('#datepicker-publishdate').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            weekStart: 1
+        });
+    </script>
 }
