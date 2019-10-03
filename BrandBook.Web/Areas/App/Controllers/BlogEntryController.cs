@@ -56,7 +56,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Add()
         {
-            var viewModel = new AddBlogEntryViewModel();
+            var viewModel = new AddBlogEntryViewModel()
+            {
+                PublishDate = DateTime.Now
+            };
 
             return View(viewModel);
         }
