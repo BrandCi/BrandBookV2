@@ -1,0 +1,168 @@
+﻿@model BrandBook.Web.Framework.ViewModels.App.Blog.EditBlogEntryViewModel
+@{
+    ViewBag.Title = "Edit Blog Entry";
+}
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+@section styles {
+    @Styles.Render("~/Content/Plugins/Datepicker")
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <p class="text-muted font-14 m-b-30"></p>
+
+            @using (Html.BeginForm("Edit", "BlogEntry", new { area = "App" }, FormMethod.Post, new { enctype = "multipart/form-data", @id = "edit-blog-form", @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(m => m.Id)
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.Title, new { @class = "control-label" })<span class="required-form-item"></span>
+                        <div class="">
+                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.SubTitle, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextBoxFor(m => m.SubTitle, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.UrlKey, new { @class = "control-label" })<span class="required-form-item"></span>
+                        <div class="">
+                            @Html.TextBoxFor(m => m.UrlKey, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.Author, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.Content, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextAreaFor(m => m.Content, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.AdditionalStyles, new { @class = "control-label" })
+                        <div class="">
+                            @Html.TextAreaFor(m => m.AdditionalStyles, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="form-check">
+                            @if (Model.IsPublished)
+                            {
+                                @Html.CheckBoxFor(m => m.IsPublished, new { @checked = true, @class = "form-check-input" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.IsPublished)
+                            }
+
+                            @Html.LabelFor(m => m.IsPublished, new { @class = "form-check-label" })
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.PublishDate)
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.PublishDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="form-check">
+                            @if (Model.IsVisibleForAnonymous)
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous, new { @checked = true, @class = "form-check-input" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.IsVisibleForAnonymous)
+                            }
+
+                            @Html.LabelFor(m => m.IsVisibleForAnonymous, new { @class = "form-check-label" })
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+
+                <div class="form-row">
+                    <div class="form-group mt-5">
+                        <a href="@Url.Action("Index", "BlogEntry", new {area = "App"})" class="btn btn-warning btn-custom">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-custom" id="submitForm">
+                            <i class="fas fa-save"></i>
+                            Save Blog Entry
+                        </button>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/Plugins/Datepicker")
+
+
+
+    <script>
+        jQuery('#@Html.IdFor(m => m.PublishDate)').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            todayHighlight: true,
+            weekStart: 1
+        });
+    </script>
+
+}

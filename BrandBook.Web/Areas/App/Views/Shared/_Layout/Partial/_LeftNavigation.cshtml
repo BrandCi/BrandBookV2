@@ -45,6 +45,19 @@
                 }
 
 
+
+                @if (User.IsInRole("BlogManager"))
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "BlogEntry", new{ area = "App" })" class="waves-effect waves-primary">
+                            <i class="fas fa-th"></i><span>Blog Entries </span>
+                        </a>
+                    </li>
+                }
+
+
+
+
                 @if (User.IsInRole("Administrator"))
                 {
                     <li class="has_sub">
@@ -85,7 +98,7 @@
                                     Logging Messages
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </li>
                 }

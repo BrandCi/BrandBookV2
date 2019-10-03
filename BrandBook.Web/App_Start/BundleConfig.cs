@@ -251,6 +251,14 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Dropzone").Include(
                 "~/Plugins/dropzone/dropzone.js"));
 
+            
+            // Bootstrap-Datepicker
+            bundles.Add(new StyleBundle("~/Content/Plugins/Datepicker").Include(
+                "~/Plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Datepicker").Include(
+                "~/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
+
         }
     }
 }

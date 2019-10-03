@@ -24,8 +24,6 @@ namespace BrandBook.Web.Controllers
         public ActionResult Index(string blogName = "")
         {
 
-
-
             if (blogName == "" || !_blogEntryRepository.BlogEntryExistsAndPublished(blogName))
             {
                 return RedirectToAction("Overview");
@@ -42,10 +40,10 @@ namespace BrandBook.Web.Controllers
                 UrlKey = blog.UrlKey,
                 Title = blog.Title,
                 SubTitle = blog.SubTitle,
-                Image = blog.Image,
+                AdditionalStyles = blog.AdditionalStyles,
                 Content = blog.Content,
                 Author = blog.Author,
-                CreationDateTime = blog.CreationDateTime
+                PublishDate = blog.PublishDate
 
             };
 
@@ -76,20 +74,18 @@ namespace BrandBook.Web.Controllers
 
             var viewModel = new BlogOverviewViewModel()
             {
-                BlogEntryViewModels = new List<BlogEntryViewModel>()
+                BlogEntries = new List<SingleBlogOverviewViewModel>()
             };
 
             foreach (var blogEntry in allBlogs)
             {
-                viewModel.BlogEntryViewModels.Add(new BlogEntryViewModel()
+                viewModel.BlogEntries.Add(new SingleBlogOverviewViewModel()
                 {
                     Title = blogEntry.Title,
                     SubTitle = blogEntry.SubTitle,
                     UrlKey = blogEntry.UrlKey,
-                    Image = blogEntry.Image,
                     Author = blogEntry.Author,
-                    Content = blogEntry.Content,
-                    CreationDateTime = blogEntry.CreationDateTime
+                    PublishDate = blogEntry.PublishDate
                 });
             }
 

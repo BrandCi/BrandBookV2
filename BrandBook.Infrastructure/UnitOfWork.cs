@@ -8,6 +8,7 @@ using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
+using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.System;
@@ -16,6 +17,7 @@ using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Brand;
 using BrandBook.Infrastructure.Repositories.Brand.Font;
 using BrandBook.Infrastructure.Repositories.Company;
+using BrandBook.Infrastructure.Repositories.Frontend;
 using BrandBook.Infrastructure.Repositories.Resource;
 using BrandBook.Infrastructure.Repositories.Setting;
 using BrandBook.Infrastructure.Repositories.System;
@@ -46,6 +48,7 @@ namespace BrandBook.Infrastructure
         private ISubscriptionRepository _subscriptionRepository;
         private ISubscriptionPlanRepository _subscriptionPlanRepository;
         private ILog4NetLogRepository _log4NetLogRepository;
+        private IBlogEntryRepository _blogEntryRepository;
 
         #endregion
 
@@ -143,6 +146,11 @@ namespace BrandBook.Infrastructure
             get { return _log4NetLogRepository ?? (_log4NetLogRepository = new Log4NetLogRepository(_context)); }
         }
 
+        public IBlogEntryRepository BlogEntryRepository
+        {
+            get { return _blogEntryRepository ?? (_blogEntryRepository = new BlogEntryRepository(_context)); }
+        }
+
 
 
 
@@ -180,6 +188,7 @@ namespace BrandBook.Infrastructure
             _subscriptionRepository = null;
             _subscriptionPlanRepository = null;
             _log4NetLogRepository = null;
+            _blogEntryRepository = null;
 
             _context.Dispose();
         }

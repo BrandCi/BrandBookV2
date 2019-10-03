@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace BrandBook.Web.Framework.ViewModels.Frontend.Blog
 {
-    public class BlogOverviewViewModel : IEnumerable<BlogEntryViewModel>
+    public class BlogOverviewViewModel : IEnumerable<SingleBlogOverviewViewModel>
     {
 
-        public List<BlogEntryViewModel> BlogEntryViewModels { get; set; }
+        public List<SingleBlogOverviewViewModel> BlogEntries { get; set; }
 
-        public IEnumerator<BlogEntryViewModel> GetEnumerator()
+        public IEnumerator<SingleBlogOverviewViewModel> GetEnumerator()
         {
-            return BlogEntryViewModels.GetEnumerator();
+            return BlogEntries.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
