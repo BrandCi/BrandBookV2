@@ -768,6 +768,9 @@
   <data name="auth_unlockaccount_title" xml:space="preserve">
     <value>Account locked</value>
   </data>
+  <data name="frontend_legal_cookiepolicy_pagetitle" xml:space="preserve">
+    <value>Cookie Policy</value>
+  </data>
   <data name="frontend_legal_imprint_contact_email_title" xml:space="preserve">
     <value>E-mail</value>
   </data>

@@ -1735,6 +1735,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cookie Policy.
+        /// </summary>
+        public static string frontend_legal_cookiepolicy_pagetitle {
+            get {
+                return ResourceManager.GetString("frontend_legal_cookiepolicy_pagetitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail.
         /// </summary>
         public static string frontend_legal_imprint_contact_email_title {
