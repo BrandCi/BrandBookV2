@@ -124,7 +124,8 @@ namespace BrandBook.Web.Areas.App.Controllers
                 UrlKey = blogEntry.UrlKey,
                 AdditionalStyles = blogEntry.AdditionalStyles,
                 Content = blogEntry.Content,
-                Author = blogEntry.Author
+                Author = blogEntry.Author,
+                PublishDate = blogEntry.PublishDate
             };
 
 
@@ -152,6 +153,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             blogEntry.Content = model.Content;
             blogEntry.AdditionalStyles = model.AdditionalStyles;
             blogEntry.Author = model.Author;
+            blogEntry.PublishDate = model.PublishDate;
             blogEntry.IsPublished = model.IsPublished;
             blogEntry.IsVisibleForAnonymous = model.IsVisibleForAnonymous;
 
