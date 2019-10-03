@@ -66,9 +66,9 @@
                     </div>
                     
                     <div class="form-group col-md-6">
-                        <label class="control-label">Publishdate</label>
+                        @Html.LabelFor(m => m.PublishDate)
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-publishdate">
+                            @Html.TextBoxFor(m => m.PublishDate, new { @class="form-Control" })
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
@@ -113,7 +113,7 @@
     
     
     <script>
-        jQuery('#datepicker-publishdate').datepicker({
+        jQuery('#@Html.IdFor(m => m.PublishDate)').datepicker({
             format: "dd/mm/yyyy",
             autoclose: true,
             todayHighlight: true,
