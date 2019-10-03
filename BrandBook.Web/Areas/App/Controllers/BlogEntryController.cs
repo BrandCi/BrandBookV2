@@ -80,6 +80,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 Content = model.Content,
                 AdditionalStyles = model.AdditionalStyles,
                 Author = model.Author,
+                PublishDate = model.PublishDate,
 
                 IsPublished = false,
                 IsVisibleForAnonymous = false,
