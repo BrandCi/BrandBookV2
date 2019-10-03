@@ -19,7 +19,7 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
 
         public bool BlogEntryExistsAndPublished(string blogEntryKey)
         {
-            return Set.Count(be => be.UrlKey == blogEntryKey && be.IsPublished) > 0;
+            return Set.Count(be => be.UrlKey == blogEntryKey && be.IsPublished && DateTime.Compare(DateTime.Now, be.PublishDate) >= 0) > 0;
         }
 
 
