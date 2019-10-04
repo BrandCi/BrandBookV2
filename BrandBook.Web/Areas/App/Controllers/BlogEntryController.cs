@@ -173,7 +173,10 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Index", "BlogEntry", new { area = "App" });
             }
 
+            var blogEntry = _unitOfWork.BlogEntryRepository.FindById(id);
 
+            _unitOfWork.BlogEntryRepository.Remove(blogEntry);
+            _unitOfWork.SaveChanges();
 
 
             return RedirectToAction("Index", "BlogEntry", new { area = "App" });
