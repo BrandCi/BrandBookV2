@@ -139,7 +139,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public async Task<ActionResult> Edit(EditBlogEntryViewModel model)
         {
             
-            if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id))
+            if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id) || _unitOfWork.BlogEntryRepository.BlogEntryKeyExists(model.UrlKey))
             {
                 return View(model);
             }
@@ -164,6 +164,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         }
 
+        
 
 
         public ActionResult Delete(int id)
