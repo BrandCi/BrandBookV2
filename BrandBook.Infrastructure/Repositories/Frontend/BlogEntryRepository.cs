@@ -28,6 +28,11 @@ namespace BrandBook.Infrastructure.Repositories.Frontend
             return Set.Count(be => be.Id == id) > 0;
         }
 
+        public bool BlogEntryKeyExists(string blogEntryKey)
+        {
+            return Set.Count(be => be.UrlKey == blogEntryKey) > 0;
+        }
+
         public BlogEntry FindBlogEntryByKey(string blogEntryKey)
         {
             return Set.SingleOrDefault(be => be.UrlKey == blogEntryKey);
