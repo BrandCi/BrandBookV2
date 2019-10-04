@@ -166,6 +166,21 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
 
+        public ActionResult Delete(int id)
+        {
+            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
+            {
+                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+            }
+
+
+
+
+            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+        }
+
+
+
 
 
 
