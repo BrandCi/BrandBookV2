@@ -147,6 +147,62 @@
 
 
 
+<div class="row">
+    <div class="col-12">
+        <div class="card-box" style="background-color: #f8d7da">
+
+            <h4 class="header-title m-t-0 m-b-30">Danger Zone</h4>
+
+            <div class="form-group row mt-5 mb-0">
+
+                <button type="button" class="btn btn-danger btn-custom mr-2" data-toggle="modal" data-target="#DeleteConfirmation">
+                    <i class="fas fa-trash"></i>
+                    &nbsp;
+                    Delete
+                </button>
+                
+                <div id="DeleteConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="DeleteConfirmationLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="DeleteConfirmationLabel">Delete: @Model.Title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    Do you really want to delete this BlogEntry and all depending data?
+                                </p>
+                                <p>
+                                    <label for="retypeBlogEntryTitle">Retype BlogEntry Title</label>
+                                    <input type="text" name="retypeBlogEntryTitle" id="retypeBlogEntryTitle" value="" class="form-control" />
+
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+
+                                <a href="@Url.Action("Delete", "BlogEntry", new {id = Model.Id, area = "App"})" id="deleteBlogEntryButton" class="btn btn-danger btn-custom mr-2" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                    &nbsp;
+                                    Delete it.
+                                </a>
+
+                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Abort, Stop!</button>
+
+
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
 
 
 
@@ -154,6 +210,39 @@
 
     @Scripts.Render("~/bundles/Plugins/Datepicker")
 
+    
+    
+    <script>
+
+        var blogEntryTitle = "@Model.Title";
+
+        /* Retype BlogEntryTitle to delete it */
+        $('#retypeBlogEntryTitle').change(function() {
+
+            // console.log($('#retypeBlogEntryTitle').val());
+
+            if ($('#retypeBlogEntryTitle').val() == blogEntryTitle) {
+
+                $('#deleteBlogEntryButton').css("display", "block");
+                $('#retypeBlogEntryTitle').css("border-color", "#cfcfcf");
+
+            }
+            else {
+
+                $('#retypeBlogEntryTitle').css("border-color", "#c71612");
+                $('#deleteBlogEntryButton').css("display", "none");
+
+            }
+
+        });
+        
+
+    </script>
+    
+    
+    
+
+    
 
 
     <script>

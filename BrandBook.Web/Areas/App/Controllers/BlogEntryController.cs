@@ -139,7 +139,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public async Task<ActionResult> Edit(EditBlogEntryViewModel model)
         {
             
-            if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id))
+            if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id) || _unitOfWork.BlogEntryRepository.BlogEntryKeyExists(model.UrlKey))
             {
                 return View(model);
             }
@@ -162,6 +162,25 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return RedirectToAction("Index", "BlogEntry", new {area = "App"});
 
+        }
+
+        
+
+
+        public ActionResult Delete(int id)
+        {
+            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
+            {
+                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+            }
+
+            var blogEntry = _unitOfWork.BlogEntryRepository.FindById(id);
+
+            _unitOfWork.BlogEntryRepository.Remove(blogEntry);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
         }
 
 

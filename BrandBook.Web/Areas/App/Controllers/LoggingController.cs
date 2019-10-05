@@ -23,7 +23,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
 
         // GET: App/Logging
-        public async Task<ActionResult> LoggingMessages()
+        public ActionResult LoggingMessages()
         {
 
             var loggingMessages = _unitOfWork.Log4NetLogRepository.GetAll().OrderBy(m => m.Date);
