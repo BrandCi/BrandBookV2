@@ -1,6 +1,7 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Subscriptions.SubscriptionsViewModel
+﻿@using BrandBook.Resources
+@model BrandBook.Web.Framework.ViewModels.App.Subscriptions.SubscriptionsViewModel
 @{
-    ViewBag.Title = "My Subscriptions";
+    ViewBag.Title = @Translations.app_pagetitle_subscriptions;
 }
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")

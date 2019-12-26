@@ -24,15 +24,15 @@
 
     if (culture == "de-de")
     {
-        @:German (Germany)
+        @:@Translations.system_culture_de_de_full
     }
     else if (culture == "ar-sa")
     {
-        @:Arabic (Saudi Arabia)
+        @:@Translations.system_culture_ar_sa_full
     }
     else
     {
-        @:English (United States)
+        @:@Translations.system_culture_en_us_full
     }
 }
 
@@ -42,7 +42,7 @@
 
 <div class="f_widget about-widget">
     <h3 class="f-title f_600 f_size_18 mb_40">
-        Language Selection
+        @Translations.frontend_footer_language_title
     </h3>
 
     @using (Html.BeginForm("SetCulture", "Culture", new { area = "" }))
@@ -61,19 +61,19 @@
                     <li class="nav-item">
                         <label class="nav-link" for="de-de">
                             <input name="culture" class="language-selection-item" id="de-de" value="de-de" type="radio" @Selected("de-de", culture) />
-                            German (Germany)
+                            @Translations.system_culture_de_de_full
                         </label>
                     </li>
                     <li class="nav-item">
                         <label class="nav-link" for="en-us">
                             <input name="culture" class="language-selection-item" id="en-us" value="en-us" type="radio" @Selected("en-us", culture) />
-                            English (United States)
+                            @Translations.system_culture_en_us_full
                         </label>
                     </li>
                     <li class="nav-item">
                         <label class="nav-link" for="ar-sa">
                             <input name="culture" class="language-selection-item" id="ar-sa" value="ar-sa" type="radio" @Selected("ar-sa", culture) />
-                            Arabic (Saudi Arabia)
+                            @Translations.system_culture_ar_sa_full
                         </label>
                     </li>
 

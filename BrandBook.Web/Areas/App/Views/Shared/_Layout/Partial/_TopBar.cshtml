@@ -1,11 +1,12 @@
 ﻿@using BrandBook.Resources
+@using BrandBook.Web.Framework.HtmlHelpers
 <div class="topbar">
 
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
             <a href="@Url.Action("Index", "Dashboard", new {area = "App"})" class="logo">
-                <i class="fa fa-rocket"></i> <span>BrandBook</span>
+                <i class="fa fa-rocket"></i> <span>BrandCi</span>
             </a>
         </div>
     </div>
@@ -18,7 +19,7 @@
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <img src="https://content.philipp-moser.de/wlo0t5byw6/UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" alt="user" class="rounded-circle">
+                    @CustomHelper.Image("UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "rounded-circle")
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                     <!-- item-->
@@ -39,6 +40,12 @@
                     <a href="@Url.Action("Index", "AppCulture", new {area="App"})" class="dropdown-item notify-item">
                         <i class="fas fa-globe"></i> <span>@Translations.app_usermenu_languageselection</span>
                     </a>
+                    
+                    <!-- item-->
+                    <a href="@Url.Action("Subscriptions", "Profile", new{ area = "App" })" class="dropdown-item notify-item">
+                        <i class="fas fa-key"></i><span> @Translations.app_mainnavigation_subscriptions </span>
+                    </a>
+                    
 
                     
 

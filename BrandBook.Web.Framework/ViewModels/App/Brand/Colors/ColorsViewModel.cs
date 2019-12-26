@@ -7,6 +7,7 @@ namespace BrandBook.Web.Framework.ViewModels.App.Brand.Colors
     {
 
         public List<ColorCategoryViewModel> Categories { get; set; }
+        public AddColorItemViewModel AddColorItem { get; set; }
 
         public IEnumerator<ColorCategoryViewModel> GetEnumerator()
         {

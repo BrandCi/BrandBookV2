@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.Profile;
 using BrandBook.Web.Framework.ViewModels.App.Subscriptions;
 using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -32,7 +32,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 FirstName = appUser.FirstName,
                 LastName = appUser.LastName
             };
-                
+
 
             return View(model);
         }
@@ -56,7 +56,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("Index", "Profile", new {area = "App"});
+            return RedirectToAction("Index", "Profile", new { area = "App" });
         }
 
 
@@ -81,18 +81,18 @@ namespace BrandBook.Web.Areas.App.Controllers
                 var endDate = subscription.StartDateTime.AddMonths(subscriptionPlan.ValidityInMonths);
 
                 viewModel.Subscriptions.Add(new SingleSubscriptionViewModel()
-                    {
-                        Id = subscription.Id,
-                        Key = subscription.Key,
-                        StartDate = subscription.StartDateTime.ToString("dd.MM.yyyy"),
-                        EndDate = endDate.ToString("dd.MM.yyyy"),
-                        IsActive = subscription.IsActive,
-                        IsPaid = subscription.IsPaid,
-                        Name = subscriptionPlan.Name,
-                        AmountOfBrands = subscriptionPlan.AmountOfBrands,
-                        ValidityInMonths = subscriptionPlan.ValidityInMonths,
-                        PricePerMonth = subscriptionPlan.PricePerMonth
-                    }
+                {
+                    Id = subscription.Id,
+                    Key = subscription.Key,
+                    StartDate = subscription.StartDateTime.ToString("dd.MM.yyyy"),
+                    EndDate = endDate.ToString("dd.MM.yyyy"),
+                    IsActive = subscription.IsActive,
+                    IsPaid = subscription.IsPaid,
+                    Name = subscriptionPlan.Name,
+                    AmountOfBrands = subscriptionPlan.AmountOfBrands,
+                    ValidityInMonths = subscriptionPlan.ValidityInMonths,
+                    PricePerMonth = subscriptionPlan.PricePerMonth
+                }
                 );
             }
 

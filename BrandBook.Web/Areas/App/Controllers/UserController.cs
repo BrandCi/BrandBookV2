@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.App.UserManagement;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -22,7 +22,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         // GET: App/User
         public async Task<ActionResult> UserOverview()
         {
-            
+
             var allAppUsers = await _unitOfWork.AppUserRepository.GetAllAsync();
             var singleAppUserViewModel = new List<SingleAppUserViewModel>();
 

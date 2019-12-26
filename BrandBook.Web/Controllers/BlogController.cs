@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using BrandBook.Core.Domain.Frontend;
+﻿using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend;
 using BrandBook.Web.Framework.Controllers;
 using BrandBook.Web.Framework.ViewModels.Frontend.Blog;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
@@ -19,15 +16,13 @@ namespace BrandBook.Web.Controllers
 
         public BlogController()
         {
-            _blogEntryRepository = new BlogEntryRepository( new BrandBookDbContext() );
+            _blogEntryRepository = new BlogEntryRepository(new BrandBookDbContext());
         }
 
 
         // GET: Blog
         public ActionResult Index(string blogName = "")
         {
-   
-
 
             if (blogName == "" || !_blogEntryRepository.BlogEntryExistsAndPublished(blogName))
             {
@@ -45,10 +40,10 @@ namespace BrandBook.Web.Controllers
                 UrlKey = blog.UrlKey,
                 Title = blog.Title,
                 SubTitle = blog.SubTitle,
-                Image = blog.Image,
+                AdditionalStyles = blog.AdditionalStyles,
                 Content = blog.Content,
                 Author = blog.Author,
-                CreationDateTime = blog.CreationDateTime
+                PublishDate = blog.PublishDate
 
             };
 
@@ -75,24 +70,22 @@ namespace BrandBook.Web.Controllers
                 allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync();
             }
 
-            
+
 
             var viewModel = new BlogOverviewViewModel()
             {
-                BlogEntryViewModels = new List<BlogEntryViewModel>()
+                BlogEntries = new List<SingleBlogOverviewViewModel>()
             };
 
             foreach (var blogEntry in allBlogs)
             {
-                viewModel.BlogEntryViewModels.Add(new BlogEntryViewModel()
+                viewModel.BlogEntries.Add(new SingleBlogOverviewViewModel()
                 {
                     Title = blogEntry.Title,
                     SubTitle = blogEntry.SubTitle,
                     UrlKey = blogEntry.UrlKey,
-                    Image = blogEntry.Image,
                     Author = blogEntry.Author,
-                    Content = blogEntry.Content,
-                    CreationDateTime = blogEntry.CreationDateTime
+                    PublishDate = blogEntry.PublishDate
                 });
             }
 

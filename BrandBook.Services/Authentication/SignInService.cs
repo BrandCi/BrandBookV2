@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
 using BrandBook.Services.Users;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace BrandBook.Services.Authentication
 {

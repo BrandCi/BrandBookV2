@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BrandBook.Infrastructure;
+using BrandBook.Infrastructure.Data;
+using BrandBook.Web.Routes;
 using System.Data.Entity;
-using System.Data.Entity.Migrations.Design;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using BrandBook.Web.Routes;
-using BrandBook.Infrastructure;
-using BrandBook.Infrastructure.Data;
 
 namespace BrandBook.Web
 {
@@ -26,7 +20,7 @@ namespace BrandBook.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BrandBookDbContext, Infrastructure.Migrations.Configuration>());
-            BrandBookDbContext migrateDb = new BrandBookDbContext();
+            var migrateDb = new BrandBookDbContext();
             migrateDb.Database.Initialize(true);
 
         }

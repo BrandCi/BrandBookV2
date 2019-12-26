@@ -17,14 +17,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="@Url.Action("Subscriptions", "Profile", new{ area = "App" })" class="waves-effect waves-primary">
-                        <i class="fas fa-key"></i><span> My Subscriptions </span>
-                    </a>
-                </li>
-
-
-
 
                 @if (User.IsInRole("Administrator"))
                 {
@@ -51,6 +43,19 @@
                         </ul>
                     </li>
                 }
+
+
+
+                @if (User.IsInRole("BlogManager"))
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "BlogEntry", new{ area = "App" })" class="waves-effect waves-primary">
+                            <i class="fas fa-th"></i><span>Blog Entries </span>
+                        </a>
+                    </li>
+                }
+
+
 
 
                 @if (User.IsInRole("Administrator"))
@@ -93,7 +98,7 @@
                                     Logging Messages
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </li>
                 }

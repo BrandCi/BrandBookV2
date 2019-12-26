@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BrandBook.Core.Repositories.Brand;
+using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;
+using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Core.Repositories.Resource;
 using BrandBook.Core.Repositories.Setting;
 using BrandBook.Core.Repositories.System;
@@ -24,6 +22,8 @@ namespace BrandBook.Core
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
         IColorCategoryRepository ColorCategoryRepository { get; }
+        IFontInclusionRepository FontInclusionRepository { get; }
+        IFontStyleRepository FontStyleRepository { get; }
         IFontRepository FontRepository { get; }
         IIconRepository IconRepository { get; }
         IIconCategoryRepository IconCategoryRepository { get; }
@@ -31,7 +31,8 @@ namespace BrandBook.Core
         IImageRepository ImageRepository { get; }
         ISubscriptionRepository SubscriptionRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
-        ILog4NetLogRepository Log4NetLogRepository { get;  }
+        ILog4NetLogRepository Log4NetLogRepository { get; }
+        IBlogEntryRepository BlogEntryRepository { get; }
 
         #endregion
 

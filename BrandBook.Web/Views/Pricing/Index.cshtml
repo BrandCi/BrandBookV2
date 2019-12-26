@@ -5,24 +5,25 @@
 }
 
 
-    <section class="breadcrumb_area">
-        @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
-        <div class="container">
-            <div class="breadcrumb_content text-center">
-                <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
-                    Our price structure
-                </h1>
-                <p class="f_400 w_color f_size_16 l_height26">
-                    Your team and you can test each version for 7 days for free.
-                </p>
-            </div>
+<section class="breadcrumb_area">
+    @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                Our price structure
+            </h1>
+            <p class="f_400 w_color f_size_16 l_height26">
+                Your team and you can test each version 7 days for free.
+            </p>
         </div>
-    </section>
+    </div>
+</section>
+
 
 <section class="pricing_area_two sec_pad">
     <div class="container custom_container p0">
         
-        <ul class="nav nav-tabs price_tab price_tab_two mt_70" role="tablist">
+        <ul class="nav nav-tabs price_tab price_tab_two" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active active_hover" id="monthly-tab" data-toggle="tab" href="#monthly" role="tab" aria-controls="monthly" aria-selected="true">Billed monthly</a>
             </li>
@@ -34,51 +35,37 @@
             
             <div class="tab-pane fade show active" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 col-sm-6">
                         <div class="price_item">
-                            @CustomHelper.Image("FrontendData/78ac03fb-5a19-410b-85c2-cc4c9733cb9e", "svg", "", "", "width=\"75%\"")
+                            @CustomHelper.Image("FrontendData/78ac03fb-5a19-410b-85c2-cc4c9733cb9e", "svg", "", "", "width=\"51%\"")
                             <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Professional</h5>
                             <p>The best plan to manage your own brands</p>
-                            <div class="price f_700 f_size_40 t_color2">
-                                € 4 <sub class="f_size_16 f_400">/ mo</sub>
-                            </div>
-                            <ul class="list-unstyled p_list">
-                                <li><i class="fas fa-check plan-included"></i>Create 1 Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-times plan-excluded"></i>Collaborate with others</li>
-                            </ul>
-                            <a href="#" class="price_btn btn_hover">Start Today</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="price_item">
-                            <div class="tag"><span>Popular</span></div>
-                            @CustomHelper.Image("FrontendData/e24d2d3c-0ee7-44fb-80c5-ef55a9f55518", "svg", "", "", "width=\"75%\"")
-                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Business</h5>
-                            <p>Our most popular plan - ideal for your business</p>
                             <div class="price f_700 f_size_40 t_color2">
                                 € 7 <sub class="f_size_16 f_400">/ mo</sub>
                             </div>
                             <ul class="list-unstyled p_list">
-                                <li><i class="fas fa-check plan-included"></i>Create 2 Brandings</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Collaborate with others</li>
+                                <li><i class="fas fa-check plan-included"></i>Create 1 Branding</li>
+                                <li><i class="fas fa-check plan-included"></i>Collaborate with up to 2 team members</li>
+                                <li><i class="fas fa-check plan-included"></i>Share your branding</li>
+                                <li><i class="fas fa-times plan-excluded"></i>Get automatic improvement assistance</li>
                             </ul>
                             <a href="#" class="price_btn btn_hover">Start Today</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 col-sm-6">
                         <div class="price_item">
-                            @CustomHelper.Image("FrontendData/addb504b-5edc-4de8-a2f5-4c7996deb10c", "svg", "", "", "width=\"75%\"")
-                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Agency</h5>
-                            <p>Manage multiple brandings and share them with your customer</p>
+                            <div class="tag"><span>Popular</span></div>
+                            @CustomHelper.Image("FrontendData/e24d2d3c-0ee7-44fb-80c5-ef55a9f55518", "svg", "", "", "width=\"45%\"")
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Business</h5>
+                            <p>Our most popular plan - ideal for your business</p>
                             <div class="price f_700 f_size_40 t_color2">
-                                € 25 <sub class="f_size_16 f_400">/ mo</sub>
+                                € 10 <sub class="f_size_16 f_400">/ mo</sub>
                             </div>
                             <ul class="list-unstyled p_list">
-                                <li><i class="fas fa-check plan-included"></i>Create unlimited Brandings</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Collaborate with others</li>
+                                <li><i class="fas fa-check plan-included"></i>Create up to 5 brandings</li>
+                                <li><i class="fas fa-check plan-included"></i>Collaborate with up to 20 team members</li>
+                                <li><i class="fas fa-check plan-included"></i>Share your branding</li>
+                                <li><i class="fas fa-check plan-included"></i>Get automatic improvement assistance</li>
                             </ul>
                             <a href="#" class="price_btn btn_hover">Start Today</a>
                         </div>
@@ -88,55 +75,75 @@
 
             <div class="tab-pane fade" id="annually" role="tabpanel" aria-labelledby="annually-tab">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 col-sm-6">
                         <div class="price_item">
-                            @CustomHelper.Image("FrontendData/78ac03fb-5a19-410b-85c2-cc4c9733cb9e", "svg", "", "", "width=\"75%\"")
+                            @CustomHelper.Image("FrontendData/78ac03fb-5a19-410b-85c2-cc4c9733cb9e", "svg", "", "", "width=\"51%\"")
                             <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Professional</h5>
                             <p>The best plan to manage your own brands</p>
                             <div class="price f_700 f_size_40 t_color2">
-                                € 2 <sub class="f_size_16 f_400">/ mo</sub>
+                                € 4 <sub class="f_size_16 f_400">/ mo</sub>
                             </div>
                             <ul class="list-unstyled p_list">
                                 <li><i class="fas fa-check plan-included"></i>Create 1 Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-times plan-excluded"></i>Collaborate with others</li>
+                                <li><i class="fas fa-check plan-included"></i>Collaborate with up to 2 team members</li>
+                                <li><i class="fas fa-check plan-included"></i>Share your branding</li>
+                                <li><i class="fas fa-times plan-excluded"></i>Get automatic improvement assistance</li>
                             </ul>
                             <a href="#" class="price_btn btn_hover">Start Today</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 col-sm-6">
                         <div class="price_item">
                             <div class="tag"><span>Popular</span></div>
-                            @CustomHelper.Image("FrontendData/e24d2d3c-0ee7-44fb-80c5-ef55a9f55518", "svg", "", "", "width=\"75%\"")
+                            @CustomHelper.Image("FrontendData/e24d2d3c-0ee7-44fb-80c5-ef55a9f55518", "svg", "", "", "width=\"45%\"")
                             <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Business</h5>
                             <p>Our most popular plan - ideal for your business</p>
                             <div class="price f_700 f_size_40 t_color2">
-                                € 5 <sub class="f_size_16 f_400">/ mo</sub>
+                                € 7 <sub class="f_size_16 f_400">/ mo</sub>
                             </div>
                             <ul class="list-unstyled p_list">
-                                <li><i class="fas fa-check plan-included"></i>Create 2 Brandings</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Collaborate with others</li>
+                                <li><i class="fas fa-check plan-included"></i>Create up to 5 brandings</li>
+                                <li><i class="fas fa-check plan-included"></i>Collaborate with up to 20 team members</li>
+                                <li><i class="fas fa-check plan-included"></i>Share your branding</li>
+                                <li><i class="fas fa-check plan-included"></i>Get automatic improvement assistance</li>
                             </ul>
                             <a href="#" class="price_btn btn_hover">Start Today</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="price_item">
-                            @CustomHelper.Image("FrontendData/addb504b-5edc-4de8-a2f5-4c7996deb10c", "svg", "", "", "width=\"75%\"")
-                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Agency</h5>
-                            <p>Manage multiple brandings and share them with your customer</p>
-                            <div class="price f_700 f_size_40 t_color2">
-                                € 20 <sub class="f_size_16 f_400">/ mo</sub>
-                            </div>
-                            <ul class="list-unstyled p_list">
-                                <li><i class="fas fa-check plan-included"></i>Create unlimited Brandings</li>
-                                <li><i class="fas fa-check plan-included"></i>Auto-Optimize your Branding</li>
-                                <li><i class="fas fa-check plan-included"></i>Collaborate with others</li>
-                            </ul>
-                            <a href="#" class="price_btn btn_hover">Start Today</a>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="saas_service_area sec_pad">
+    <div class="container">
+        <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+            <h2 class="f_p f_size_30 l_height50 f_600 t_color">Our custom Agency plan</h2>
+            <p class="f_400 f_size_16">
+                You have custom requirements to our application?<br />
+                Please contact us - we will set up a custom plan for you.
+            </p>
+        </div>
+        <div class="row saas_service_item">
+            <div class="col-lg-6">
+                <div class="saas_service_img wow fadeInLeft" data-wow-delay="0.5s">
+                    @CustomHelper.Image("FrontendData/fa805559-1642-4951-ad35-a2d7cc46c16a", "png", "", "", "width=\"80%\"")
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="saas_service_content pr_100 wow fadeInRight" data-wow-delay="0.7s">
+                    <p class="f_p f_400">
+
+                        <ul class="list-unstyled p_list" style="font-weight: bold;">
+                            <li><i class="fas fa-check plan-included"></i>&nbsp;&nbsp;Custom plan conditions</li>
+                            <li><i class="fas fa-check plan-included"></i>&nbsp;&nbsp;Get full access to all features</li>
+                            <li><i class="fas fa-check plan-included"></i>&nbsp;&nbsp;Take advantage of exclusive feature previews</li>
+                        </ul>
+
+                    </p>
+                    <a href="@Url.Action("Contact", "Support", new { area="" })" class="gr_btn"><span class="text">Contact us</span></a>
                 </div>
             </div>
         </div>

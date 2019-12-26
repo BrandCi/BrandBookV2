@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
+using System.Linq;
 
 namespace BrandBook.Infrastructure.Repositories.User
 {

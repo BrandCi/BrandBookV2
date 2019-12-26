@@ -1,7 +1,7 @@
 ﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Blog.BlogEntryViewModel
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Model.Title;
 }
 
 <section class="breadcrumb_area">
@@ -24,10 +24,17 @@
         <div class="row">
             <div class="col-lg-12 blog_single_info">
                 <div class="blog_list_item blog_list_item_two">
-                    <a href="#" class="post_date">
-                        <h2>@Model.CreationDateTime.ToString("dd") <span>@Model.CreationDateTime.ToString("MMM")</span></h2>
+                    <a href="@Url.Action("Overview", "Blog", new {area = ""})">
+                        <i class="fas fa-arrow-left"></i>
+                        Back
                     </a>
-                    @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7.svg", "", "img-fluid")
+
+                    <style>
+                        /* CUSTOM STYLING */
+                        @Model.AdditionalStyles
+                        /* ./CUSTOM STYLING */
+                        </style>
+
                     <div class="blog_content">
 
                         <p>

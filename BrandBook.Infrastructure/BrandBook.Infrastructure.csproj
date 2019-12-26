@@ -235,12 +235,42 @@
     <Compile Include="Migrations\201908231843079_AddLog4NetLogsTable.Designer.cs">
       <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909032102268_RemoveBrandsToBrandSettingsRelation.cs" />
+    <Compile Include="Migrations\201909032102268_RemoveBrandsToBrandSettingsRelation.Designer.cs">
+      <DependentUpon>201909032102268_RemoveBrandsToBrandSettingsRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs" />
+    <Compile Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.Designer.cs">
+      <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs" />
+    <Compile Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.Designer.cs">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs" />
+    <Compile Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.Designer.cs">
+      <DependentUpon>201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.cs" />
+    <Compile Include="Migrations\201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.Designer.cs">
+      <DependentUpon>201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.Designer.cs">
+      <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.cs" />
+    <Compile Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.Designer.cs">
+      <DependentUpon>201910030918324_AddPublishDateToBlogEntriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\ColorRepository.cs" />
-    <Compile Include="Repositories\Brand\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontInclusionRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontRepository.cs" />
+    <Compile Include="Repositories\Brand\Font\FontStyleRepository.cs" />
     <Compile Include="Repositories\Brand\IconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IconRepository.cs" />
     <Compile Include="Repositories\Company\CompanyRepository.cs" />
@@ -401,6 +431,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908231843079_AddLog4NetLogsTable.resx">
       <DependentUpon>201908231843079_AddLog4NetLogsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909032102268_RemoveBrandsToBrandSettingsRelation.resx">
+      <DependentUpon>201909032102268_RemoveBrandsToBrandSettingsRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112026327_UpdateFontRelatedTablesWithCorrectRelations.resx">
+      <DependentUpon>201909112026327_UpdateFontRelatedTablesWithCorrectRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.resx">
+      <DependentUpon>201909112047590_UpdateRelationBetweenFontsAndFontsInclusionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.resx">
+      <DependentUpon>201909291121416_UpdateBlogEntriesAndAddBlogImagesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.resx">
+      <DependentUpon>201909291204570_SeedDefaultBrandImageAndNewBrandManagerRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.resx">
+      <DependentUpon>201909291217083_FixIssueWithAppUserIdDatatypeInBlogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030918324_AddPublishDateToBlogEntriesTable.resx">
+      <DependentUpon>201910030918324_AddPublishDateToBlogEntriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

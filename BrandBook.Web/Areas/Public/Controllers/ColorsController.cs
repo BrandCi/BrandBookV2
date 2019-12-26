@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Public.Controllers
 {

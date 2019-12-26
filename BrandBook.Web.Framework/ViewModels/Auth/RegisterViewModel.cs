@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using BrandBook.Resources;
+﻿using BrandBook.Resources;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrandBook.Web.Framework.ViewModels.Auth
 {
@@ -28,7 +28,7 @@ namespace BrandBook.Web.Framework.ViewModels.Auth
         [Compare("Password", ErrorMessage = "Die Passwörter stimmen nicht überein")]
         public string ConfirmPassword { get; set; }
 
-        
+
         [Range(typeof(bool), "true", "true", ErrorMessageResourceName = "auth_register_checkbox_privacypolicy_validation", ErrorMessageResourceType = typeof(Translations))]
         [Display(Name = "auth_register_checkbox_privacypolicy_title", ResourceType = typeof(Translations))]
         public bool PrivacyPolicyAccepted { get; set; }

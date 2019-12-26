@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BrandBook.Web
 {
@@ -43,7 +42,7 @@ namespace BrandBook.Web
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
                         "~/Content/bootstrap.min.css",
-                        
+
                         /* Plugins */
                         "~/Plugins/Frontend/themify-icon/themify-icons.css",
                         "~/Plugins/Frontend/flaticon/flaticon.css",
@@ -164,6 +163,11 @@ namespace BrandBook.Web
                 "~/Plugins/jquery-validation/js/jquery.validate.min.js"
                 ));
 
+            // parsleyjs
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Parsleyjs").Include(
+                "~/Plugins/parsleyjs/dist/parsley.min.js"
+            ));
+
             // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
                     "~/Plugins/custombox/dist/custombox.min.css",
@@ -178,7 +182,7 @@ namespace BrandBook.Web
             // Morris Chart
             bundles.Add(new StyleBundle("~/Content/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.css"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/Plugins/MorrisChart").Include(
                 "~/Plugins/morris/morris.min.js",
                 "~/Plugins/raphael/raphael-min.js"));
@@ -218,7 +222,7 @@ namespace BrandBook.Web
             // Sweet Alerts
             bundles.Add(new StyleBundle("~/Content/Plugins/SweetAlerts").Include(
                 "~/Plugins/sweet-alert/sweetalert2.min.css"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
                 "~/Plugins/sweet-alert/sweetalert2.min.js"));
 
@@ -230,6 +234,30 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Switchery").Include(
                 "~/Plugins/switchery/switchery.min.js"));
+
+
+            // Animated-Headlines
+            bundles.Add(new StyleBundle("~/Content/Plugins/AnimatedHeadlines").Include(
+                "~/Plugins/animated-headlines/animated-headlines.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/AnimatedHeadlines").Include(
+                "~/Plugins/animated-headlines/animated-headlines.js"));
+
+
+            // Dropzone
+            bundles.Add(new StyleBundle("~/Content/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Dropzone").Include(
+                "~/Plugins/dropzone/dropzone.js"));
+
+            
+            // Bootstrap-Datepicker
+            bundles.Add(new StyleBundle("~/Content/Plugins/Datepicker").Include(
+                "~/Plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Plugins/Datepicker").Include(
+                "~/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
 
         }
     }

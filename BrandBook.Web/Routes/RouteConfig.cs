@@ -9,8 +9,7 @@ namespace BrandBook.Web.Routes
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
-
+            routes.MapMvcAttributeRoutes();
 
 
             routes.MapRoute(

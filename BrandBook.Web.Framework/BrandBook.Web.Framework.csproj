@@ -114,13 +114,22 @@
     <Compile Include="HtmlHelpers\CustomHelper.cs" />
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\Overview\BlogOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\Overview\SingleBlogOverviewItemViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandImageViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\AddColorItemViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\ColorCategoryViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\ColorsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Colors\SingleColorViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontInclusionViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontStyleViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\SingleFontViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Icons\IconCategoryViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Icons\IconsViewModel.cs" />
     <Compile Include="ViewModels\App\Brand\Icons\SingleIconViewModel.cs" />
@@ -142,13 +151,15 @@
     <Compile Include="ViewModels\App\UserManagement\AppUserViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
+    <Compile Include="ViewModels\Auth\External\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\BlogEntryViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\BlogOverviewViewModel.cs" />
-    <Compile Include="ViewModels\Frontend\ContactFormViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Blog\SingleBlogOverviewViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">

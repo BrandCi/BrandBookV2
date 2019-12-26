@@ -8,7 +8,7 @@
 }
 
 @section styles {
-    
+
 }
 
 
@@ -17,58 +17,63 @@
     <div class="col-md-12">
         <div class="card-box">
             <h4 class="header-title m-t-0 m-b-30">Colors</h4>
-            
+            <button type="button" class="btn btn-primary btn-custom mr-2" data-toggle="modal" data-target="#addColorModal">
+                <i class="fas fa-plus"></i>
+                &nbsp;
+                Add new Item
+            </button>
+
             <div class="row">
                 @foreach (var category in Model.Categories)
                 {
-                    
-                        <div class="col-12 mt-2 mb-1">
-                            <h3>
-                                @category.Name
-                            </h3>
-                        </div>
-                    
-                    
 
-                        foreach (var color in category.Colors)
-                        {
-                            <div class="col-lg-3 col-md-6">
-                                <div class="text-center card-box">
+                    <div class="col-12 mt-2 mb-1">
+                        <h3>
+                            @category.Name
+                        </h3>
+                    </div>
+
+
+
+                    foreach (var color in category.Colors)
+                    {
+                        <div class="col-lg-3 col-md-6">
+                            <div class="text-center card-box">
+                                <div class="">
+                                    <div class="thumb-lg m-b-10 center-page">
+                                        <div style="background-color: #@color.HexColor; width: 100%; height: 100%;" class="rounded-circle"></div>
+                                    </div>
+                                    <br />
                                     <div class="">
-                                        <div class="thumb-lg m-b-10 center-page">
-                                            <div style="background-color: #@color.HexColor; width: 100%; height: 100%;" class="rounded-circle"></div>
-                                        </div>
-                                        <br />
-                                        <div class="">
-                                            <h6 class="m-b-5 mt-2">
-                                                @color.Name
-                                            </h6>
-                                        </div>
+                                        <h6 class="m-b-5 mt-2">
+                                            @color.Name
+                                        </h6>
+                                    </div>
 
-                                        <div class="text-left m-t-40 text-center">
-                                            <p class="text-muted font-13">
-                                                <strong>Hex:</strong>
-                                                <br />
-                                                <span>@color.HexColor</span>
-                                            </p>
+                                    <div class="text-left m-t-40 text-center">
+                                        <p class="text-muted font-13">
+                                            <strong>Hex:</strong>
+                                            <br />
+                                            <span>@color.HexColor</span>
+                                        </p>
 
-                                            <p class="text-muted font-13">
-                                                <strong>RGB:</strong>
-                                                <br />
-                                                <span>
-                                                    @color.RgbValue
-                                                </span>
-                                            </p>
-
-                                        </div>
+                                        <p class="text-muted font-13">
+                                            <strong>RGB:</strong>
+                                            <br />
+                                            <span>
+                                                @color.RgbValue
+                                            </span>
+                                        </p>
 
                                     </div>
 
                                 </div>
-                            </div>
-                        }
 
-                    
+                            </div>
+                        </div>
+                    }
+
+
                 }
 
 
@@ -81,9 +86,72 @@
 
 
 
+@*MODALS*@
+
+<div id="addColorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AddColorItemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        @using (Html.BeginForm("AddColorItem", "Brand", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="AddColorItemLabel">Add Color-Item</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    @Html.HiddenFor(ci => ci.AddColorItem.BrandId)
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(ci => ci.AddColorItem.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.Name) })
+                            @Html.ValidationMessageFor(ci => ci.AddColorItem.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="hexColor-preaddon">#</span>
+                                </div>
+                                @Html.TextBoxFor(ci => ci.AddColorItem.HexColor, new { @class = "form-control", aria_describedby = "hexColor-preaddon", maxlength = "6", placeholder = Html.DisplayNameFor(ci => ci.AddColorItem.HexColor) })
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success btn-custom mr-2">
+                        <i class="fas fa-trash"></i>
+                        &nbsp;
+                        Add Color.
+                    </button>
+
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Cancel</button>
+
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        }
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@*./MODALS*@
+
+
+
+
+
+
 
 
 
 @section scripts {
-    
+
 }
