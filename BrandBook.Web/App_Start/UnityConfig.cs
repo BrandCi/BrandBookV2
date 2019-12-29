@@ -2,6 +2,8 @@ using System.Web.Http;
 using Unity;
 using Unity.WebApi;
 
+using BrandBook.Core;
+using BrandBook.Infrastructure;
 
 namespace BrandBook.Web
 {
@@ -11,6 +13,8 @@ namespace BrandBook.Web
         {
 			var container = new UnityContainer();
             
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
