@@ -2,6 +2,12 @@ using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
 
+using BrandBook.Core;
+using BrandBook.Infrastructure;
+
+
+
+
 namespace BrandBook.Web
 {
     public static class UnityConfig
@@ -9,11 +15,9 @@ namespace BrandBook.Web
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-            
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
-            
-            // e.g. container.RegisterType<ITestService, TestService>();
+
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
