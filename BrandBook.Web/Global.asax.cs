@@ -1,4 +1,4 @@
-﻿using BrandBook.Infrastructure;
+﻿using BrandBook.Infrastructure.Mapping;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Web.Routes;
 using System.Data.Entity;

@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BrandBookDbContext.cs" />
-    <Compile Include="MappingProfile.cs" />
+    <Compile Include="Mapping\MappingProfile.cs" />
     <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.cs" />
     <Compile Include="Migrations\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
       <DependentUpon>201904141430499_InitialMigrationWithIdentityModel.cs</DependentUpon>
