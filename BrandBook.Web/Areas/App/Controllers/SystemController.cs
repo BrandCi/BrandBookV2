@@ -1,8 +1,8 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Settings;
-using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
+using BrandBook.Core.ViewModels.App.Settings;
+using BrandBook.Core.ViewModels.Frontend.Layout;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers

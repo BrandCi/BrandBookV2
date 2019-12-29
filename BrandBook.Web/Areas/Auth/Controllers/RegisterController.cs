@@ -6,7 +6,7 @@ using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
 using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Auth;
+using BrandBook.Core.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Threading.Tasks;

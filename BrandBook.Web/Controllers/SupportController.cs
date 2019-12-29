@@ -1,6 +1,6 @@
 ﻿using BrandBook.Services.Email;
 using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Frontend.Support;
+using BrandBook.Core.ViewModels.Frontend.Support;
 using log4net;
 using System.Text;
 using System.Threading.Tasks;

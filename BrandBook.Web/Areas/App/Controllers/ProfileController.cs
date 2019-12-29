@@ -2,8 +2,8 @@
 using BrandBook.Infrastructure;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Profile;
-using BrandBook.Web.Framework.ViewModels.App.Subscriptions;
+using BrandBook.Core.ViewModels.App.Profile;
+using BrandBook.Core.ViewModels.App.Subscriptions;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Web.Mvc;
