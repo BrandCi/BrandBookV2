@@ -1,11 +1,6 @@
-using System.Web.Mvc;
+using System.Web.Http;
 using Unity;
-using Unity.Mvc5;
-
-using BrandBook.Core;
-using BrandBook.Infrastructure;
-
-
+using Unity.WebApi;
 
 
 namespace BrandBook.Web
@@ -15,11 +10,9 @@ namespace BrandBook.Web
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-
-
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
             
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
 }
