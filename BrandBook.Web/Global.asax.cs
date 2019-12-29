@@ -14,8 +14,12 @@ namespace BrandBook.Web
         protected void Application_Start()
         {
             AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
+
+            UnityConfig.RegisterComponents();
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
