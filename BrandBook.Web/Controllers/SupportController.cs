@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class SupportController : FrontendControllerBase
+    public class SupportController : FrontendMvcControllerBase
     {
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         public ActionResult Contact()

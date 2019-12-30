@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class PricingController : FrontendControllerBase
+    public class PricingController : FrontendMvcControllerBase
     {
         // GET: Pricing
         public ActionResult Index()

@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class LegalController : FrontendControllerBase
+    public class LegalController : FrontendMvcControllerBase
     {
         public ActionResult Imprint()
         {

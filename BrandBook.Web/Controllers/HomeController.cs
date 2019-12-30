@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class HomeController : FrontendControllerBase
+    public class HomeController : FrontendMvcControllerBase
     {
         public ActionResult Index()
         {

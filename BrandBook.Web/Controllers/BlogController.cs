@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class BlogController : FrontendControllerBase
+    public class BlogController : FrontendMvcControllerBase
     {
         private readonly IBlogEntryRepository _blogEntryRepository;
 

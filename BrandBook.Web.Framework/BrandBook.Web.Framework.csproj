@@ -117,7 +117,7 @@
     <Compile Include="Controllers\MvcControllers\AppControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\AuthMvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\MvcControllerBase.cs" />
-    <Compile Include="Controllers\MvcControllers\FrontendControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\FrontendMvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\PublicMvcControllerBase.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class LayoutController : FrontendControllerBase
+    public class LayoutController : FrontendMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
