@@ -19,7 +19,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class LoginController : AuthControllerBase
+    public class LoginController : AuthMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

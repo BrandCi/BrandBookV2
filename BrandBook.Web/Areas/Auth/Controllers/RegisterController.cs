@@ -15,7 +15,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class RegisterController : AuthControllerBase
+    public class RegisterController : AuthMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
