@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Dto.Frontend.Blog;
-
+using BrandBook.Web.Framework.Controllers.ApiControllers;
 
 namespace BrandBook.Web.Api.Frontend
 {
     [RoutePrefix("api/blogs")]
-    public class BlogsController : ApiController
+    public class BlogsController : FrontendApiControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
