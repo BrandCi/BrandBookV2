@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Framework.Controllers
 {
-    public class BaseController : Controller
+    public class MvcControllerBase : Controller
     {
         #region Fields
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
@@ -23,7 +23,7 @@ namespace BrandBook.Web.Framework.Controllers
         #endregion
         
 
-        public BaseController()
+        public MvcControllerBase()
         {
             this._settingRepository = new SettingRepository(new BrandBookDbContext());
         }

@@ -3,7 +3,7 @@
 namespace BrandBook.Web.Framework.Controllers
 {
     [Authorize]
-    public class AppControllerBase : BaseController
+    public class AppControllerBase : MvcControllerBase
     {
     }
 }
