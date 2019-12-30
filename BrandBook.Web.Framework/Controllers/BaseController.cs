@@ -19,11 +19,9 @@ namespace BrandBook.Web.Framework.Controllers
         public SignInService _signInService;
         public UserService _userService;
         public RoleService _roleService;
-
-
+        private readonly ISettingRepository _settingRepository;        
         #endregion
-
-        private readonly ISettingRepository _settingRepository;
+        
 
         public BaseController()
         {
