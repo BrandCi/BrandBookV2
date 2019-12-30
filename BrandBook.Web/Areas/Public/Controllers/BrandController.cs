@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Public.Controllers
 {
-    public class BrandController : PublicControllerBase
+    public class BrandController : PublicMvcControllerBase
     {
 
         public ActionResult Overview()

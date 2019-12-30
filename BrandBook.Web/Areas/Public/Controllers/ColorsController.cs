@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Public.Controllers
 {
-    public class ColorsController : PublicControllerBase
+    public class ColorsController : PublicMvcControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
 
