@@ -11,7 +11,7 @@ namespace BrandBook.Infrastructure.Mapping
         public MappingProfile()
         {
 
-            CreateMap<BlogEntry, BlogDto>();
+            CreateMap<BlogEntry, BlogOverviewDto>();
 
 
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Dto.Frontend.Blog
 {
-    public class BlogDto
+    public class BlogOverviewDto
     {
         public string UrlKey { get; set; }
         public string Title { get; set; }

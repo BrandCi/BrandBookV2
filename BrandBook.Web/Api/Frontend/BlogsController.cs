@@ -23,7 +23,7 @@ namespace BrandBook.Web.Api.Frontend
 
 
         [Route("")]
-        public async Task<IEnumerable<BlogDto>> GetAll()
+        public async Task<IEnumerable<BlogOverviewDto>> GetAll()
         {
             var allBlogs = await _unitOfWork.BlogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync(); ;
 
@@ -33,7 +33,7 @@ namespace BrandBook.Web.Api.Frontend
             }
 
 
-            return Mapper.Map<IEnumerable<BlogEntry>, IEnumerable<BlogDto>>(allBlogs);
+            return Mapper.Map<IEnumerable<BlogEntry>, IEnumerable<BlogOverviewDto>>(allBlogs);
 
         }
 
@@ -49,7 +49,7 @@ namespace BrandBook.Web.Api.Frontend
             var blog = _unitOfWork.BlogEntryRepository.FindBlogEntryByKey(blogKey);
 
 
-            return Ok(Mapper.Map<BlogEntry, BlogDto>(blog));
+            return Ok(Mapper.Map<BlogEntry, BlogOverviewDto>(blog));
 
         }
         
