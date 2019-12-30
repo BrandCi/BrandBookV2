@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class ProfileController : AppControllerBase
+    public class ProfileController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

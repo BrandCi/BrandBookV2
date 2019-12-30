@@ -17,7 +17,7 @@ using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
-    public class BrandsController : AppControllerBase
+    public class BrandsController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;

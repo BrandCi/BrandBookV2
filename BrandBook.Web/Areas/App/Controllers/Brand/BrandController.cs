@@ -19,7 +19,7 @@ using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
-    public class BrandController : AppControllerBase
+    public class BrandController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class UserController : AppControllerBase
+    public class UserController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

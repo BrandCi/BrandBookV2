@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class AppCultureController : AppControllerBase
+    public class AppCultureController : AppMvcControllerBase
     {
 
         public ActionResult Index()

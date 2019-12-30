@@ -114,7 +114,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ApiControllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\ApiControllers\FrontendApiControllerBase.cs" />
-    <Compile Include="Controllers\MvcControllers\AppControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\AppMvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\AuthMvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\MvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\FrontendMvcControllerBase.cs" />

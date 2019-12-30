@@ -14,7 +14,7 @@ using Microsoft.AspNet.Identity;
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "BlogManager")]
-    public class BlogEntryController : AppControllerBase
+    public class BlogEntryController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

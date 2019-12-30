@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class SystemController : AppControllerBase
+    public class SystemController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
