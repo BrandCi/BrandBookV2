@@ -38,5 +38,21 @@ namespace BrandBook.Web.Api.Frontend
         }
 
 
+        [Route("{blogKey}")]
+        public IHttpActionResult GetBlog(string blogKey)
+        {
+            if (blogKey == "" || !_unitOfWork.BlogEntryRepository.BlogEntryKeyExists(blogKey))
+            {
+                return BadRequest();
+            }
+
+            var blog = _unitOfWork.BlogEntryRepository.FindBlogEntryByKey(blogKey);
+
+
+            return Ok(Mapper.Map<BlogEntry, BlogDto>(blog));
+
+        }
+        
+
     }
 }
