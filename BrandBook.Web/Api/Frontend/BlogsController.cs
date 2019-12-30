@@ -16,9 +16,9 @@ namespace BrandBook.Web.Api.Frontend
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public BlogsController()
+        public BlogsController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
         }
 
 
