@@ -49,7 +49,7 @@ namespace BrandBook.Web.Api.Frontend
             var blog = _unitOfWork.BlogEntryRepository.FindBlogEntryByKey(blogKey);
 
 
-            return Ok(Mapper.Map<BlogEntry, BlogOverviewDto>(blog));
+            return Ok(Mapper.Map<BlogEntry, BlogDetailDto>(blog));
 
         }
         
