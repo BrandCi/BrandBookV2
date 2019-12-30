@@ -10,8 +10,15 @@ namespace BrandBook.Infrastructure.Mapping
     {
         public MappingProfile()
         {
+            // App
 
+
+            // Auth
+
+
+            // Frontend
             CreateMap<BlogEntry, BlogOverviewDto>();
+            CreateMap<BlogEntry, BlogDetailDto>();
 
 
         }
