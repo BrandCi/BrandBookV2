@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Web.Api.Frontend
 {
+    [RoutePrefix("api/blogs")]
     public class BlogsController : ApiController
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,7 +22,7 @@ namespace BrandBook.Web.Api.Frontend
         }
 
 
-        
+        [Route("")]
         public async Task<IEnumerable<BlogDto>> GetAll()
         {
             var allBlogs = await _unitOfWork.BlogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync(); ;
@@ -35,7 +36,6 @@ namespace BrandBook.Web.Api.Frontend
             return Mapper.Map<IEnumerable<BlogEntry>, IEnumerable<BlogDto>>(allBlogs);
 
         }
-        
 
 
     }
