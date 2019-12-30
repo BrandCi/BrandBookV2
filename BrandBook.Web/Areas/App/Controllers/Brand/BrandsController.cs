@@ -10,7 +10,7 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Brand;
 using log4net;
 using Microsoft.AspNet.Identity;

@@ -10,7 +10,7 @@ using System.Globalization;
 using System.Threading;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Framework.Controllers
+namespace BrandBook.Web.Framework.Controllers.MvcControllers
 {
     public class MvcControllerBase : Controller
     {

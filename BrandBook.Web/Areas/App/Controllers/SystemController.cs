@@ -1,6 +1,6 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Settings;
 using BrandBook.Core.ViewModels.Frontend.Layout;
 using System.Web.Mvc;

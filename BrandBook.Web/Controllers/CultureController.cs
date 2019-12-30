@@ -1,4 +1,4 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Web.Framework.Helpers;
 using System;
 using System.Web;

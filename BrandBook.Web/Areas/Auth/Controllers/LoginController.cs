@@ -5,7 +5,7 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.Auth;
 using BrandBook.Core.ViewModels.Auth.External;
 using Microsoft.AspNet.Identity;

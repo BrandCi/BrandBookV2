@@ -1,7 +1,7 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Profile;
 using BrandBook.Core.ViewModels.App.Subscriptions;
 using Microsoft.AspNet.Identity;

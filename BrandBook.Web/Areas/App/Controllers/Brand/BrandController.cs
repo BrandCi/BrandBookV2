@@ -8,7 +8,7 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Core.ViewModels.App.Brand.Colors;
 using BrandBook.Core.ViewModels.App.Brand.Fonts;

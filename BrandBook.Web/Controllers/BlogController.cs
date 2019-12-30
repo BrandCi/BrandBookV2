@@ -2,7 +2,7 @@
 using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.Frontend.Blog;
 using System.Collections.Generic;
 using System.Threading.Tasks;

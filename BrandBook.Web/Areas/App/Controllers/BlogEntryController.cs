@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Frontend;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Blog;
 using BrandBook.Core.ViewModels.App.Blog.Overview;
 using Microsoft.AspNet.Identity;

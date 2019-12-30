@@ -114,11 +114,11 @@
   <ItemGroup>
     <Compile Include="Controllers\ApiControllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\ApiControllers\FrontendApiControllerBase.cs" />
-    <Compile Include="Controllers\AppControllerBase.cs" />
-    <Compile Include="Controllers\AuthControllerBase.cs" />
-    <Compile Include="Controllers\MvcControllerBase.cs" />
-    <Compile Include="Controllers\FrontendControllerBase.cs" />
-    <Compile Include="Controllers\PublicControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\AppControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\AuthControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\MvcControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\FrontendControllerBase.cs" />
+    <Compile Include="Controllers\MvcControllers\PublicControllerBase.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
