@@ -1223,6 +1223,7 @@
     <Content Include="Areas\App\Views\BlogEntry\Index.cshtml" />
     <Content Include="Areas\App\Views\BlogEntry\Add.cshtml" />
     <Content Include="Areas\App\Views\BlogEntry\Edit.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Partial\_VersionInfo.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
