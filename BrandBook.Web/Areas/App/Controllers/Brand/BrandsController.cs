@@ -68,8 +68,14 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var viewmodel = new BrandsOverviewViewModel
             {
                 Brands = singleBrandViewModels,
-                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId())
+                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId()),
+                NoBrandsAvailable = false
             };
+
+            if(singleBrandViewModels.Count() == 0)
+            {
+                viewmodel.NoBrandsAvailable = true;
+            }
 
 
             return View(viewmodel);
