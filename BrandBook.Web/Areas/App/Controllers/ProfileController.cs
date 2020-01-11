@@ -32,7 +32,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                 UserName = appUser.UserName,
                 FirstName = appUser.FirstName,
                 LastName = appUser.LastName,
-                AppVersion = typeof(SystemController).Assembly.GetName().Version.ToString()
             };
 
 
