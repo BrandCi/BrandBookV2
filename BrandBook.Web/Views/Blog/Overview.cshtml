@@ -71,28 +71,28 @@
 
 
         const BlogItem = ({ urlKey, author, publishDate, title, subTitle }) => `
-          <div class="col-lg-4 col-sm-4">
-            <div class="blog_grid_item mb-30">
-                <a href="${urlKey}">
-                    <div class="blog_img">
-
-                    </div>
-                </a>
-                <div class="blog_content">
-                    <div class="entry_post_info">
-                        By: ${author} / ${publishDate}
-                    </div>
+                <div class="col-lg-4 col-sm-4">
+                <div class="blog_grid_item mb-30">
                     <a href="${urlKey}">
-                        <h5 class="f_p f_size_20 f_500 t_color mb_20">
-                            ${title}
-                        </h5>
+                        <div class="blog_img">
+
+                        </div>
                     </a>
-                    <p class="f_400 mb-0">
-                        ${subTitle}
-                    </p>
+                    <div class="blog_content">
+                        <div class="entry_post_info">
+                            By: ${author} / ${publishDate}
+                        </div>
+                        <a href="${urlKey}">
+                            <h5 class="f_p f_size_20 f_500 t_color mb_20">
+                                ${title}
+                            </h5>
+                        </a>
+                        <p class="f_400 mb-0">
+                            ${subTitle}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
         `;
 
 
@@ -104,16 +104,16 @@
                 url: "/api/blogs/"
             }).then(function (data) {
 
-                $('.blog-item-overview').html([
-
-                    data[0]
-                    
-
-                ].map(BlogItem).join(''));
-
+                data.forEach(appendToBlogItems);
+                
             });
 
         });
+
+
+        function appendToBlogItems(item) {
+            $('.blog-item-overview').append([ item ].map(BlogItem).join(''));
+        }
 
     </script>
 
