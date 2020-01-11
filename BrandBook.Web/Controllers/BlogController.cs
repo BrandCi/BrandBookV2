@@ -40,46 +40,10 @@ namespace BrandBook.Web.Controllers
         }
 
 
-        public async Task<ActionResult> Overview()
-        {
+        public ActionResult Overview()
+        {  
 
-            ViewBag.Title = "Blog Overview";
-            ViewBag.MetaKeywords = "";
-            ViewBag.MetaDescription = "";
-
-
-
-            List<BlogEntry> allBlogs;
-            if (User.Identity.IsAuthenticated)
-            {
-                allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesAsync();
-            }
-            else
-            {
-                allBlogs = await _blogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync();
-            }
-
-
-
-            var viewModel = new BlogOverviewViewModel()
-            {
-                BlogEntries = new List<SingleBlogOverviewViewModel>()
-            };
-
-            foreach (var blogEntry in allBlogs)
-            {
-                viewModel.BlogEntries.Add(new SingleBlogOverviewViewModel()
-                {
-                    Title = blogEntry.Title,
-                    SubTitle = blogEntry.SubTitle,
-                    UrlKey = blogEntry.UrlKey,
-                    Author = blogEntry.Author,
-                    PublishDate = blogEntry.PublishDate
-                });
-            }
-
-
-            return View(viewModel);
+            return View();
         }
     }
 }
