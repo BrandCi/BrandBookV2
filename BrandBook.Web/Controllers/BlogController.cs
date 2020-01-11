@@ -34,20 +34,9 @@ namespace BrandBook.Web.Controllers
             ViewBag.Title = blog.Title;
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
+           
 
-            var viewModel = new BlogEntryViewModel()
-            {
-                UrlKey = blog.UrlKey,
-                Title = blog.Title,
-                SubTitle = blog.SubTitle,
-                AdditionalStyles = blog.AdditionalStyles,
-                Content = blog.Content,
-                Author = blog.Author,
-                PublishDate = blog.PublishDate
-
-            };
-
-            return View(viewModel);
+            return View();
         }
 
 
