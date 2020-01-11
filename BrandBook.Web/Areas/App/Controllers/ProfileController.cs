@@ -26,11 +26,13 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
 
+
             var model = new GeneralUserDataViewModel()
             {
                 UserName = appUser.UserName,
                 FirstName = appUser.FirstName,
-                LastName = appUser.LastName
+                LastName = appUser.LastName,
+                AppVersion = typeof(SystemController).Assembly.GetName().Version.ToString()
             };
 
 
