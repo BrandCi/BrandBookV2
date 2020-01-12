@@ -21,9 +21,10 @@ namespace BrandBook.Services.Authentication
 
         public bool IsAuthorized(string appUserGuid, int? id)
         {
-
+            
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
 
+            // TODO: UnitTest and Change If-condition => Var with awesome name!
             if (id != null && id != 0)
             {
                 var brandId = id ?? 0;
@@ -38,7 +39,7 @@ namespace BrandBook.Services.Authentication
                     }
                     else
                     {
-                        Logger.Warn($"Not authorized to access brand. {{AppUser: #{appUserGuid} | Brand: #{brandId}}}");
+                        Logger.Warn($"Not authorized to access brand. {{AppUser: {appUser.UserName} | Brand: #{brandId}}}");
                     }
                 }
                 else

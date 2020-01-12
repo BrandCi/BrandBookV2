@@ -10,7 +10,7 @@ using BrandBook.Web.Framework.Controllers.ApiControllers;
 
 namespace BrandBook.Web.Api.Frontend
 {
-    [RoutePrefix("api/blogs")]
+    [RoutePrefix("api/v1/blogs")]
     public class BlogsController : FrontendApiControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

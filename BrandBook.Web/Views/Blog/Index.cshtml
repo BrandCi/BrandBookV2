@@ -56,7 +56,7 @@
 
 
             $.ajax({
-                url: "/api/blogs/" + currentBlogKey
+                url: "/api/v1/blogs/" + currentBlogKey
             }).then(function (data) {
                 $('.blog-title').append(data.title);
                 $('.blog-subtitle').append(data.subTitle);
