@@ -80,6 +80,7 @@
     <Compile Include="Domain\User\Subscription.cs" />
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
+    <Compile Include="Dto\App\UserManagement\UserDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogDetailDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogOverviewDto.cs" />
     <Compile Include="IUnitOfWork.cs" />
@@ -164,5 +165,6 @@
       <Name>BrandBook.Resources</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

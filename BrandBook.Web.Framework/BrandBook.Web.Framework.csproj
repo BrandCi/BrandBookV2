@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ApiControllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\ApiControllers\AppApiControllerBase.cs" />
     <Compile Include="Controllers\ApiControllers\FrontendApiControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\AppMvcControllerBase.cs" />
     <Compile Include="Controllers\MvcControllers\AuthMvcControllerBase.cs" />
