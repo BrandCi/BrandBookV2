@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BrandBook.Core;
+using BrandBook.Web.Framework.Controllers.ApiControllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,7 +9,21 @@ using System.Web.Http;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
-    public class UsersController
+    [RoutePrefix("api/v1/users")]
+    public class UsersController : AppApiControllerBase
     {
+
+        private readonly IUnitOfWork _unitOfWork;
+
+        public UsersController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+
+
+  
+
+
     }
 }
