@@ -36,7 +36,7 @@ namespace BrandBook.Web
 
             /* MODULES / PACKAGES */
 
-
+            // FRONTEND
             bundles.Add(new ScriptBundle("~/bundles/packages/frontend/blog-overview").Include(
                 "~/Scripts/Packages/Frontend/fe-blog-overview.js"
                 ));
@@ -44,6 +44,13 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/packages/frontend/blog-item").Include(
                 "~/Scripts/Packages/Frontend/fe-blog-item.js"
                 ));
+            // ./FRONTEND
+            /* ########### */
+            // APP
+            bundles.Add(new ScriptBundle("~/bundles/packages/app/um-users-overview").Include(
+                "~/Scripts/Packages/App/UserManagement/app-um-users-overview.js"
+                ));
+            // ./APP
 
 
 
