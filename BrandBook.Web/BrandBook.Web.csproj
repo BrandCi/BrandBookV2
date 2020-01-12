@@ -1339,6 +1339,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />
+    <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
     <Content Include="Scripts\Dependencies\Frontend\plugins.js" />
     <Content Include="Scripts\Dependencies\Frontend\propper.js" />
@@ -1395,9 +1396,7 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Auth\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

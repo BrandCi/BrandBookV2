@@ -41,6 +41,10 @@ namespace BrandBook.Web
                 "~/Scripts/Packages/Frontend/fe-blog-overview.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/bundles/packages/frontend/blog-item").Include(
+                "~/Scripts/Packages/Frontend/fe-blog-item.js"
+                ));
+
 
 
             /* ./MODULES / PACKAGES */
