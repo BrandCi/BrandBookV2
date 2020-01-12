@@ -32,6 +32,22 @@ namespace BrandBook.Web
 
 
 
+
+
+            /* MODULES / PACKAGES */
+
+
+            bundles.Add(new ScriptBundle("~/bundles/packages/frontend/blog-overview").Include(
+                "~/Scripts/Packages/Frontend/fe-blog-overview.js"
+                ));
+
+
+
+            /* ./MODULES / PACKAGES */
+
+
+
+
             /*
              *
              * Styles
@@ -62,7 +78,7 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/Frontend/propper.js",
+                        "~/Scripts/Dependencies/Frontend/propper.js",
                         "~/Scripts/bootstrap.min.js",
 
                         /* Plugins */
@@ -77,9 +93,9 @@ namespace BrandBook.Web
 
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/General").Include(
-                "~/Scripts/Frontend/plugins.js",
-                "~/Scripts/Frontend/main.js",
-                "~/Scripts/Frontend/jquery.cookie.js"));
+                "~/Scripts/Dependencies/Frontend/plugins.js",
+                "~/Scripts/Dependencies/Frontend/main.js",
+                "~/Scripts/Dependencies/Frontend/jquery.cookie.js"));
 
 
 
@@ -130,20 +146,20 @@ namespace BrandBook.Web
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
                 "~/Scripts/jquery-{version}.js",
-                "~/Scripts/App/Main/popper.min.js",
+                "~/Scripts/Dependencies/App/Main/popper.min.js",
                 "~/Scripts/bootstrap.min.js",
-                "~/Scripts/App/Main/detect.js",
-                "~/Scripts/App/Main/fastclick.js",
-                "~/Scripts/App/Main/jquery.slimscroll.js",
-                "~/Scripts/App/Main/jquery.blockUI.js",
-                "~/Scripts/App/Main/waves.js",
-                "~/Scripts/App/Main/wow.min.js",
-                "~/Scripts/App/Main/jquery.nicescroll.js",
-                "~/Scripts/App/Main/jquery.scrollTo.min.js"));
+                "~/Scripts/Dependencies/App/Main/detect.js",
+                "~/Scripts/Dependencies/App/Main/fastclick.js",
+                "~/Scripts/Dependencies/App/Main/jquery.slimscroll.js",
+                "~/Scripts/Dependencies/App/Main/jquery.blockUI.js",
+                "~/Scripts/Dependencies/App/Main/waves.js",
+                "~/Scripts/Dependencies/App/Main/wow.min.js",
+                "~/Scripts/Dependencies/App/Main/jquery.nicescroll.js",
+                "~/Scripts/Dependencies/App/Main/jquery.scrollTo.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/App/Core").Include(
-                "~/Scripts/App/jquery.core.js",
-                "~/Scripts/App/jquery.app.js"));
+                "~/Scripts/Dependencies/App/jquery.core.js",
+                "~/Scripts/Dependencies/App/jquery.app.js"));
 
 
 
