@@ -30,10 +30,10 @@ const NoBlogInfoBanner = () => `
 
                                 <div class="blog_content">
                                     <h5 class="f_p f_size_20 f_500 t_color mb_20">
-                                        @Translations.frontend_blog_noavailableblogs_title
+                                         We do not have any published blog entries yet 
                                     </h5>
                                     <p class="f_400 mb-0">
-                                        @Translations.frontend_blog_noavailableblogs_description
+                                         At the moment we are preparing interesting blog entries round about the topic Company Branding for you. 
                                     </p>
                                 </div>
 
