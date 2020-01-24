@@ -20,7 +20,7 @@ namespace BrandBook.Services.Subscriptions
 
         public bool HasValidSubscription(string userId)
         {
-            var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveUserSubscriptions(userId);
+            var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
 
             return IsAnySubscriptionValid(userId, subscriptions);
         }
@@ -42,6 +42,7 @@ namespace BrandBook.Services.Subscriptions
 
         private bool IsAnySubscriptionValid(string userId, IEnumerable<Subscription> subscriptions)
         {
+            
             if (IsMaximumOfBrandsReached(userId, subscriptions))
             {
                 return false;
