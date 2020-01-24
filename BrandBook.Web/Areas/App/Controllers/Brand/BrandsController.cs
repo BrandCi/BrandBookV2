@@ -31,12 +31,13 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
-        public BrandsController(IUnitOfWork unitOfWork, ISubscriptionService subscriptionService)
+
+        public BrandsController()
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWork = new UnitOfWork();
             _cmpAuthService = new CompanyAuthorizationService();
             _imageService = new ImageService();
-            _subscriptionService = subscriptionService;
+            _subscriptionService = new SubscriptionService();
         }
 
 
