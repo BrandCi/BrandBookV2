@@ -1,6 +1,6 @@
 ﻿using BrandBook.Services.Email;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Frontend.Support;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.Frontend.Support;
 using log4net;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class SupportController : FrontendControllerBase
+    public class SupportController : FrontendMvcControllerBase
     {
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         public ActionResult Contact()

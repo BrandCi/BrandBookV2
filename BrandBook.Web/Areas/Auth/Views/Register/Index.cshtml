@@ -1,5 +1,6 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
-@model BrandBook.Web.Framework.ViewModels.Auth.RegisterViewModel
+﻿@model BrandBook.Core.ViewModels.Auth.RegisterViewModel 
+@using BrandBook.Web.Framework.HtmlHelpers
+
 
 @{
     ViewBag.Title = @Translations.auth_register_title;
@@ -70,8 +71,8 @@
             }
 
             @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
-            
-            
+
+
             <!--
             <div class="other-links">
                 <div class="text">@Translations.auth_register_external_title</div>

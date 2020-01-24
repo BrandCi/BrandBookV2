@@ -1,14 +1,14 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Settings;
-using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Settings;
+using BrandBook.Core.ViewModels.Frontend.Layout;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class SystemController : AppControllerBase
+    public class SystemController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 

@@ -80,6 +80,9 @@
     <Compile Include="Domain\User\Subscription.cs" />
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
+    <Compile Include="Dto\App\UserManagement\UserDto.cs" />
+    <Compile Include="Dto\Frontend\Blog\BlogDetailDto.cs" />
+    <Compile Include="Dto\Frontend\Blog\BlogOverviewDto.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\Font\IFontInclusionRepository.cs" />
@@ -101,6 +104,53 @@
     <Compile Include="Repositories\User\ISubscriptionPlanRepository.cs" />
     <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
+    <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\Overview\BlogOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Blog\Overview\SingleBlogOverviewItemViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\AddNewBrandViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\BrandImageViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\BrandOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\BrandsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\AddColorItemViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\ColorCategoryViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\ColorsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Colors\SingleColorViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontInclusionViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontStyleViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\FontsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Fonts\SingleFontViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\IconCategoryViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\IconsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Icons\SingleIconViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\BrandSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\ContactSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\CustomizingSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\Settings\GeneralSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Brand\SingleBrandOverviewViewModel.cs" />
+    <Compile Include="ViewModels\App\Profile\GeneralUserDataViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\AppCultureViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\MediaSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\SettingViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\SystemSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Settings\UserSettingsViewModel.cs" />
+    <Compile Include="ViewModels\App\Subscriptions\SingleSubscriptionViewModel.cs" />
+    <Compile Include="ViewModels\App\Subscriptions\SubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\App\System\LoggingMessages\LoggingMessagesViewModel.cs" />
+    <Compile Include="ViewModels\App\System\LoggingMessages\SingleLoggingMessageViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\AppUserViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
+    <Compile Include="ViewModels\App\UserManagement\SingleAppUserViewModel.cs" />
+    <Compile Include="ViewModels\Auth\External\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Blog\BlogEntryViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Blog\BlogOverviewViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Blog\SingleBlogOverviewViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
@@ -108,6 +158,12 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrandBook.Resources\BrandBook.Resources.csproj">
+      <Project>{af550719-7734-4b5b-9c55-88ab5fd69f4a}</Project>
+      <Name>BrandBook.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

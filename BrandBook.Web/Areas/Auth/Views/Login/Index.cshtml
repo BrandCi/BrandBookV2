@@ -1,5 +1,6 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
-@model BrandBook.Web.Framework.ViewModels.Auth.LoginViewModel
+﻿@model BrandBook.Core.ViewModels.Auth.LoginViewModel
+@using BrandBook.Web.Framework.HtmlHelpers
+
 
 @{
     ViewBag.Title = @Translations.auth_login_title;
@@ -14,8 +15,8 @@
         <div class="form-items">
             <h3>@Translations.auth_login_title</h3>
             <p></p>
-            
-       
+
+
 
 
             @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-validation", role = "form" }))
@@ -35,34 +36,35 @@
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
-              
 
-                <label class="container">@Html.DisplayNameFor(m => m.RememberMe)
-                    @Html.CheckBoxFor(m => m.RememberMe)
-                    <span class="auth-custom-checkbox"></span>
-                </label>
-                
 
-                <div class="form-button mt-5">
-                    <button id="submit" type="submit" class="ibtn">@Translations.auth_login_login_button_title</button>
-                    <a href="@Url.Action("ForgotPassword", "Processes")">@Translations.auth_login_resetpassword_title</a>
-                </div>
+                <label class="container">
+                    @Html.DisplayNameFor(m => m.RememberMe)
+                @Html.CheckBoxFor(m => m.RememberMe)
+                <span class="auth-custom-checkbox"></span>
+            </label>
 
-            }
-            
-            
-            
+
+            <div class="form-button mt-5">
+                <button id="submit" type="submit" class="ibtn">@Translations.auth_login_login_button_title</button>
+                <a href="@Url.Action("ForgotPassword", "Processes")">@Translations.auth_login_resetpassword_title</a>
+            </div>
+
+        }
+
+
+
             @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
-            
-            
+
+
             @Html.Partial("~/Areas/Auth/Views/Shared/Partial/_ExternalLoginList.cshtml")
-            
-            
+
+
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
                 <a href="@Url.Action("Index", "Register")">@Translations.auth_login_register_button_title&nbsp;<i class="fas fa-chevron-right"></i></a>
             </div>
-            
+
 
         </div>
     </div>

@@ -1,6 +1,6 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Web.Framework.Helpers;
-using BrandBook.Web.Framework.ViewModels.App.Settings;
+using BrandBook.Core.ViewModels.App.Settings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class AppCultureController : AppControllerBase
+    public class AppCultureController : AppMvcControllerBase
     {
 
         public ActionResult Index()

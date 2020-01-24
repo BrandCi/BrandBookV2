@@ -1,5 +1,5 @@
 ﻿using BrandBook.Resources;
-using BrandBook.Web.Framework.ViewModels.App.Brand;
+using BrandBook.Core.ViewModels.App.Brand;
 using System.Text;
 using System.Web;
 

@@ -1,12 +1,12 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Frontend.Layout;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.Frontend.Layout;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class LayoutController : FrontendControllerBase
+    public class LayoutController : FrontendMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

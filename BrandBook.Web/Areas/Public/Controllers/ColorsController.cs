@@ -1,11 +1,11 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Public.Controllers
 {
-    public class ColorsController : PublicControllerBase
+    public class ColorsController : PublicMvcControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
 

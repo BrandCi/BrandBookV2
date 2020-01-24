@@ -6,15 +6,15 @@ using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Frontend;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Blog;
-using BrandBook.Web.Framework.ViewModels.App.Blog.Overview;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Blog;
+using BrandBook.Core.ViewModels.App.Blog.Overview;
 using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "BlogManager")]
-    public class BlogEntryController : AppControllerBase
+    public class BlogEntryController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

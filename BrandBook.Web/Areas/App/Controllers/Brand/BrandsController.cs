@@ -10,14 +10,14 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Brand;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Brand;
 using log4net;
 using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
-    public class BrandsController : AppControllerBase
+    public class BrandsController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
@@ -68,8 +68,14 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var viewmodel = new BrandsOverviewViewModel
             {
                 Brands = singleBrandViewModels,
-                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId())
+                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId()),
+                NoBrandsAvailable = false
             };
+
+            if(singleBrandViewModels.Count() == 0)
+            {
+                viewmodel.NoBrandsAvailable = true;
+            }
 
 
             return View(viewmodel);

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="f_widget company_widget">
-                        <a href="@Url.Action("Index", "Home", new {area = ""})" class="f-logo">
+                        <a href="@Url.Action("Index", "Home", new { area = "" })" class="f-logo">
                             @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"75\" height=\"75\"")
                         </a>
                         <p class="f_400 f_p f_size_15 mb-0 l_height28 mt_30">
@@ -20,12 +20,12 @@
                         </h3>
                         <ul class="list-unstyled f_list">
                             <li>
-                                <a href="@Url.Action("Overview", "Product", new {area = ""})">
+                                <a href="@Url.Action("Overview", "Product", new { area = "" })">
                                     @Translations.frontend_footer_product_solutions
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Index", "Pricing", new {area = ""})">
+                                <a href="@Url.Action("Index", "Pricing", new { area = "" })">
                                     @Translations.frontend_footer_product_pricing
                                 </a>
                             </li>
@@ -39,7 +39,7 @@
                         </h3>
                         <ul class="list-unstyled f_list">
                             <li>
-                                <a href="@Url.Action("Contact", "Support", new {area = ""})">
+                                <a href="@Url.Action("Contact", "Support", new { area = "" })">
                                     @Translations.frontend_footer_support_contact
                                 </a>
                             </li>
@@ -63,7 +63,7 @@
                         <a href="@Url.Action("Index", "Home")">
                             @Translations.frontend_footer_copyright
                         </a>
-                        © 2019 @Translations.frontend_footer_allrightsreserved
+                        © @DateTime.Now.ToString("yyyy") @Translations.frontend_footer_allrightsreserved
                     </p>
 
                 </div>

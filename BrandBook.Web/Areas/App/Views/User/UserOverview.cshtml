@@ -1,4 +1,4 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.UserManagement.AppUserViewModel
+﻿@model BrandBook.Core.ViewModels.App.UserManagement.AppUserViewModel
 @{
     ViewBag.Title = "Nutzerübersicht";
 }
@@ -62,16 +62,5 @@
 @section scripts{
     @Scripts.Render("~/bundles/Plugins/Datatables")
 
-    <script type="text/javascript">
-
-        $('#appUserOverview-datatable').DataTable({
-            select: {
-                style: 'multi'
-            },
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json'
-            }
-        });
-
-    </script>
+    @Scripts.Render("~/bundles/packages/app/um-users-overview");
 }
