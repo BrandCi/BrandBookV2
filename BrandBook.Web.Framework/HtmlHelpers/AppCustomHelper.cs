@@ -55,7 +55,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             foreach (var brand in model)
             {
                 var linkTargetImage = false;
-                var classesOpenBrandButton = "";
+                var linkAndClassesOpenBrandButton = "";
                 
 
                 if (brand.MainHexColor == null || brand.MainHexColor == "ffffff")
@@ -66,11 +66,11 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 if (model.HasValidSubscription)
                 {
                     linkTargetImage = true;
-                    classesOpenBrandButton = "class=\"btn btn-primary\"";
+                    linkAndClassesOpenBrandButton = "href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\"";
                 }
                 else
                 {
-                    classesOpenBrandButton = "class=\"btn btn-secondary disabled\"";
+                    linkAndClassesOpenBrandButton = "href=\"\" class=\"btn btn-secondary disabled\"";
                 }
 
 
@@ -100,8 +100,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
 
 
-                html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" ");
-                html.Append(classesOpenBrandButton);                
+                html.Append("<a ");
+                html.Append(linkAndClassesOpenBrandButton);                
                 html.Append("style =\"background-color: #" + brand.MainHexColor + "; border: none;\">");
 
 
