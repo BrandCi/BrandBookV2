@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+using BrandBook.Core.Services.Subscriptions;
+
 namespace BrandBook.Services.Subscriptions
 {
-    public class SubscriptionService
+    public class SubscriptionService : ISubscriptionService
     {
         private readonly IUnitOfWork _unitOfWork;
 

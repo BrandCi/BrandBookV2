@@ -104,6 +104,7 @@
     <Compile Include="Repositories\User\ISubscriptionPlanRepository.cs" />
     <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
+    <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\Overview\BlogOverviewViewModel.cs" />
