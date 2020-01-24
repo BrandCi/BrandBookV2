@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using log4net;
+using Microsoft.AspNet.Identity;
+
 using BrandBook.Core;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
@@ -12,25 +15,28 @@ using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Brand;
-using log4net;
-using Microsoft.AspNet.Identity;
+using BrandBook.Core.Services.Subscriptions;
+
+
+
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
     public class BrandsController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ISubscriptionService _subscriptionService;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
-        private readonly SubscriptionService _subscriptionService;
+        
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
-        public BrandsController()
+        public BrandsController(IUnitOfWork unitOfWork, ISubscriptionService subscriptionService)
         {
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
             _cmpAuthService = new CompanyAuthorizationService();
             _imageService = new ImageService();
-            _subscriptionService = new SubscriptionService();
+            _subscriptionService = subscriptionService;
         }
 
 
