@@ -24,8 +24,10 @@ namespace BrandBook.Services.Authentication
             
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
 
-            // TODO: UnitTest and Change If-condition => Var with awesome name!
-            if (id != null && id != 0)
+            // TODO: UnitTest
+            var idIsNotNull = id != null && id != 0;
+
+            if (idIsNotNull)
             {
                 var brandId = id ?? 0;
 
