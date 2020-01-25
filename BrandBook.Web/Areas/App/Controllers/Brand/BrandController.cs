@@ -17,6 +17,7 @@ using BrandBook.Core.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
 using Image = BrandBook.Core.Domain.Resource.Image;
 using BrandBook.Services.Subscriptions;
+using log4net;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
@@ -25,6 +26,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
         {
@@ -490,6 +492,8 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             {
                 return false;
             }
+
+            Logger.Warn($"No valid subscription to view brand. {{AppUser: #{userId} | Brand: #{brandId}}}");
 
             return true;
 
