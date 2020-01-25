@@ -46,6 +46,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
+            var userId = User.Identity.GetUserId();
             var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (var singleBrand in allBrands)
@@ -75,7 +76,8 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var viewmodel = new BrandsOverviewViewModel
             {
                 Brands = singleBrandViewModels,
-                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId()),
+                HasValidSubscription = _subscriptionService.HasValidSubscription(userId),
+                AllowedToCreateNewBrands = _subscriptionService.AllowedToCreateNewBrands(userId),
                 NoBrandsAvailable = false
             };
 

@@ -13,11 +13,11 @@ namespace BrandBook.Services.Subscriptions
     {
         private readonly IUnitOfWork _unitOfWork;
 
-
+        #region Public Methods
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
-        }
+        }      
 
 
         public bool HasValidSubscription(string userId)
@@ -26,6 +26,20 @@ namespace BrandBook.Services.Subscriptions
 
             return IsAnySubscriptionValid(userId, subscriptions);
         }
+
+
+        public bool AllowedToCreateNewBrands(string userId)
+        {
+            var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
+            
+            if(!BrandLimitReached(userId, subscriptions))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
 
 
         public string GenerateSubscriptionKey()
@@ -38,17 +52,19 @@ namespace BrandBook.Services.Subscriptions
                 .Select(s => s[random.Next(s.Length)])
                 .ToArray());
         }
+        #endregion
 
 
 
 
+        #region Private Methods
         private bool IsAnySubscriptionValid(string userId, IEnumerable<Subscription> subscriptions)
         {
-            
+            /*            
             if (IsMaximumOfBrandsReached(userId, subscriptions))
             {
                 return false;
-            }
+            }*/
 
             foreach (var subscription in subscriptions)
             {
@@ -64,7 +80,7 @@ namespace BrandBook.Services.Subscriptions
             return false;
         }
 
-
+        
 
         private bool IsEndDateInFuture(Subscription subscription, SubscriptionPlan subscriptionPlan)
         {
@@ -76,7 +92,7 @@ namespace BrandBook.Services.Subscriptions
 
 
 
-        private bool IsMaximumOfBrandsReached(string userId, IEnumerable<Subscription> subscriptions)
+        private bool BrandLimitReached(string userId, IEnumerable<Subscription> subscriptions)
         {
             var usersCompanyId = _unitOfWork.AppUserRepository.FindById(userId).CompanyId;
             var amountOfBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(usersCompanyId);
@@ -94,7 +110,7 @@ namespace BrandBook.Services.Subscriptions
                                         .Sum();
         }
 
-
+        #endregion
 
     }
 }

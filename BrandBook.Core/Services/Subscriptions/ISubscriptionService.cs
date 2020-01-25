@@ -9,6 +9,7 @@ namespace BrandBook.Core.Services.Subscriptions
     public interface ISubscriptionService
     {
         bool HasValidSubscription(string userId);
+        bool AllowedToCreateNewBrands(string userId);
         string GenerateSubscriptionKey();
     }
 }
