@@ -1,5 +1,5 @@
 ﻿@using BrandBook.Resources
-@model BrandBook.Web.Framework.ViewModels.App.Settings.SystemSettingsViewModel
+@model BrandBook.Core.ViewModels.App.Settings.SystemSettingsViewModel
 @{
     ViewBag.Title = Translations.app_settings_system_title;
 }
@@ -89,3 +89,5 @@
         </div> <!-- end card-box -->
     </div><!-- end col -->
 </div>
+
+@Html.Partial("~/Areas/App/Views/Shared/_Partial/_VersionInfo.cshtml")

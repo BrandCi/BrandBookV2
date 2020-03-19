@@ -1,5 +1,5 @@
 ﻿@using BrandBook.Resources
-@model BrandBook.Web.Framework.ViewModels.App.Subscriptions.SubscriptionsViewModel
+@model BrandBook.Core.ViewModels.App.Subscriptions.SubscriptionsViewModel
 @{
     ViewBag.Title = @Translations.app_pagetitle_subscriptions;
 }
@@ -43,7 +43,7 @@
                                             }
                                             
                                             
-                                            @if (subscription.Name != "Evaluation")
+                                            @if (subscription.Id != 7)
                                             {
                                                  if (subscription.IsPaid)
                                                  {

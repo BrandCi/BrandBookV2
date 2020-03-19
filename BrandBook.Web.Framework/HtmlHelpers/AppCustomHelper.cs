@@ -1,5 +1,5 @@
 ﻿using BrandBook.Resources;
-using BrandBook.Web.Framework.ViewModels.App.Brand;
+using BrandBook.Core.ViewModels.App.Brand;
 using System.Text;
 using System.Web;
 
@@ -54,17 +54,42 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             foreach (var brand in model)
             {
+                var linkTargetImage = false;
+                var linkAndClassesOpenBrandButton = "";
+                
+
                 if (brand.MainHexColor == null || brand.MainHexColor == "ffffff")
                 {
                     brand.MainHexColor = "193357";
                 }
 
+                if (model.HasValidSubscription)
+                {
+                    linkTargetImage = true;
+                    linkAndClassesOpenBrandButton = "href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\"";
+                }
+                else
+                {
+                    linkAndClassesOpenBrandButton = "href=\"\" class=\"btn btn-secondary disabled\"";
+                }
+
+
+
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
 
-                html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\">");
+                if(linkTargetImage)
+                {
+                    html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\">");
+
+                }
                 html.Append("<img class=\"card-img-top img-fluid\" src=\"/SharedStorage/BrandImages/" + brand.BrandImage.Name + "\" alt=\"" + brand.Name + "\" />");
-                html.Append("</a>");
+
+                if(linkTargetImage)
+                {
+                    html.Append("</a>");
+                }
+                
 
                 html.Append("<div class=\"card-body\">");
 
@@ -73,7 +98,13 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append(brand.ShortDescription);
                 html.Append("</p>");
 
-                html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" style=\"background-color: #" + brand.MainHexColor + "; border: none;\">");
+
+
+                html.Append("<a ");
+                html.Append(linkAndClassesOpenBrandButton);                
+                html.Append("style =\"background-color: #" + brand.MainHexColor + "; border: none;\">");
+
+
                 html.Append(Translations.app_brandoverview_openbrand_button_title);
                 html.Append("</a>");
 

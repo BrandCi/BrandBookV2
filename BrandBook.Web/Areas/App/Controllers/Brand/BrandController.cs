@@ -8,35 +8,41 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Brand;
-using BrandBook.Web.Framework.ViewModels.App.Brand.Colors;
-using BrandBook.Web.Framework.ViewModels.App.Brand.Fonts;
-using BrandBook.Web.Framework.ViewModels.App.Brand.Icons;
-using BrandBook.Web.Framework.ViewModels.App.Brand.Settings;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Brand;
+using BrandBook.Core.ViewModels.App.Brand.Colors;
+using BrandBook.Core.ViewModels.App.Brand.Fonts;
+using BrandBook.Core.ViewModels.App.Brand.Icons;
+using BrandBook.Core.ViewModels.App.Brand.Settings;
 using Microsoft.AspNet.Identity;
 using Image = BrandBook.Core.Domain.Resource.Image;
+using BrandBook.Services.Subscriptions;
+using log4net;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
-    public class BrandController : AppControllerBase
+    public class BrandController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
+        private readonly SubscriptionService _subscriptionService;
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
         {
             this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
+            this._subscriptionService = new SubscriptionService();
         }
 
         // GET: App/Brand
         public async Task<ActionResult> Index(int id)
         {
-            var brandId = id;
+            var brandId = id;            
+
             ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -71,7 +77,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var brandId = id;
             ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -128,7 +134,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var brandId = id;
             ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -180,7 +186,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var brandId = id;
             ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -237,7 +243,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var brandId = id;
             ViewBag.BrandId = brandId;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -280,9 +286,9 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         [HttpPost]
         public ActionResult UpdateGeneralSettings(BrandSettingsViewModel model)
         {
-            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.Id))
+            if (!ModelState.IsValid && UserIsNotAuthorizedForBrand(model.Id))
             {
-                return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
             var brand = _unitOfWork.BrandRepository.FindById(model.Id);
@@ -304,7 +310,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         {
             var brandId = id;
 
-            if (!_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), brandId))
+            if (UserIsNotAuthorizedForBrand(brandId))
             {
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
@@ -326,11 +332,13 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         [HttpPost]
         public ActionResult AddColorItem(AddColorItemViewModel model)
         {
-            if (!ModelState.IsValid || !_cmpAuthService.IsAuthorized(User.Identity.GetUserId(), model.BrandId))
+
+            if (!ModelState.IsValid && UserIsNotAuthorizedForBrand(model.BrandId))
             {
-                return RedirectToAction("Overview", "Brands", new { id = model.BrandId, area = "App" });
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
+           
             var rgbColor = System.Drawing.ColorTranslator.FromHtml("#" + model.HexColor);
             var cmykColor = ConvertRgbToCmyk(rgbColor.R, rgbColor.G, rgbColor.B);
 
@@ -367,18 +375,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App"});
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -484,6 +480,23 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
             return (int)Math.Round(value);
+        }
+
+
+        private bool UserIsNotAuthorizedForBrand(int brandId)
+        {
+            var userId = User.Identity.GetUserId();
+            var allowedToAccessBrand = _cmpAuthService.IsAuthorized(userId, brandId) && _subscriptionService.HasValidSubscription(userId);
+
+            if (allowedToAccessBrand)
+            {
+                return false;
+            }
+
+            Logger.Warn($"No valid subscription to view brand. {{AppUser: #{userId} | Brand: #{brandId}}}");
+
+            return true;
+
         }
 
 

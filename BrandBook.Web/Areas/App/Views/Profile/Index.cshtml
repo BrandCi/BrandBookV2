@@ -1,4 +1,6 @@
-﻿@model BrandBook.Web.Framework.ViewModels.App.Profile.GeneralUserDataViewModel
+﻿@model BrandBook.Core.ViewModels.App.Profile.GeneralUserDataViewModel
+@using BrandBook.Web.Framework.HtmlHelpers
+
 @{
     ViewBag.Title = "Index";
 }
@@ -18,7 +20,7 @@
         <div class="text-center card-box">
             <div class="member-card">
                 <div class="thumb-xl member-thumb m-b-10 center-block">
-                    <img src="https://content.philipp-moser.de/wlo0t5byw6/UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                    @CustomHelper.Image("UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "rounded-circle img-thumbnail")
                 </div>
 
                 <div class="">
@@ -133,29 +135,29 @@
             @Html.AntiForgeryToken()
             @*
 
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
-                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
-                <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
-            </button>
-                *@
+                <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
+                    <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort speichern
+                </button>
+            *@
         }
 
 
@@ -175,17 +177,17 @@
 
             @Html.AntiForgeryToken()
             @*
-                <div class="form-group">
-                    <div class="col-md-12">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
 
-            <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
-                <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
-            </button>
+                <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
+                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse speichern
+                </button>
             *@
         }
 

@@ -1,5 +1,5 @@
 ﻿@using BrandBook.Web.Framework.HtmlHelpers
-@model BrandBook.Web.Framework.ViewModels.App.Brand.BrandsOverviewViewModel
+@model BrandBook.Core.ViewModels.App.Brand.BrandsOverviewViewModel
 @{
     ViewBag.Title = "Markenübersicht";
 }
@@ -13,8 +13,25 @@
 }
 
 
-@if (Model.HasValidSubscription)
+@if (Model.AllowedToCreateNewBrands)
 {
+
+    if (Model.NoBrandsAvailable)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title">
+                        Very empty here!
+                    </h4>
+                    Add your first Brand by clicking on the Plus-Icon.
+                </div>
+            </div>
+        </div>
+
+    }
+
+
     <div class="row mb-3">
         <div class="col-md-4">
             <a href="@Url.Action("Add","Brands", new { area = "App"})" class="btn btn-primary btn-custom waves-effect w-md waves-light m-b-5">
@@ -22,13 +39,15 @@
             </a>
         </div>
     </div>
+
+
 }
 else
 {
     <div class="row">
         <div class="col-12">
             <div class="card-box">
-                                <h4 class="m-t-0 header-title">
+                <h4 class="m-t-0 header-title">
                     Please upgrade your subscription to create new brands.
                 </h4>
                 Thank you for using BrandCi.
@@ -37,6 +56,7 @@ else
         </div>
     </div>
 }
+
 
 
 <div class="row">

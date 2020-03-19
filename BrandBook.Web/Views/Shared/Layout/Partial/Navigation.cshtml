@@ -65,17 +65,24 @@
                         {
                             @Html.AntiForgeryToken()
 
-                            <small class="mr-4">
-                                @User.Identity.GetUserName()
-                            </small>
-
-                            <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
-                                @Translations.frontend_navigation_authorized_gotoapp
+                            <a href="@Url.Action("Index", "Dashboard", new { area = "App" })" class="current-user-profile-link" title="@Translations.frontend_navigation_authorized_openprofile">
+                                <i class="fas fa-user"></i>&nbsp;
+                                @User.Identity.GetUserName() &nbsp; &nbsp;
                             </a>
 
-                            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </a>
+                            <div class="current-user-mobile-separation"><br /></div>
+
+                            <span class="auth-user-fe-buttons">
+                                <a class="btn btn-success nav-button" href="@Url.Action("Index", "Dashboard", new {area = "App"})">
+                                    @Translations.frontend_navigation_authorized_gotoapp
+                                </a>
+
+                                <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger nav-button">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </a>
+                            </span>
+
+                            
                         }
                     }
                     else

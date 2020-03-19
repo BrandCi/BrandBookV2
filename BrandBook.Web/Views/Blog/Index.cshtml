@@ -1,19 +1,17 @@
-﻿@model BrandBook.Web.Framework.ViewModels.Frontend.Blog.BlogEntryViewModel
+﻿@model BrandBook.Core.ViewModels.Frontend.Blog.BlogEntryViewModel
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
-    ViewBag.Title = Model.Title;
 }
 
 <section class="breadcrumb_area">
     @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
     <div class="container">
         <div class="breadcrumb_content text-center">
-            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
-                @Model.Title
-            </h1>
-            <p class="f_400 w_color f_size_16 l_height26">
-                @Model.SubTitle
-            </p>
+
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20 blog-title"></h1>
+
+            <p class="f_400 w_color f_size_16 l_height26 blog-subtitle"></p>
+
         </div>
     </div>
 </section>
@@ -29,23 +27,27 @@
                         Back
                     </a>
 
-                    <style>
-                        /* CUSTOM STYLING */
-                        @Model.AdditionalStyles
-                        /* ./CUSTOM STYLING */
-                        </style>
+
+                    <!-- Custom Styling -->
+                    <style class="blog-additionalstyles"></style>
+                    <!-- Custom Styling -->
 
                     <div class="blog_content">
 
-                        <p>
-                            @Html.Raw(Model.Content)
-                        </p>
+                        <p class="blog-text"></p>
 
                     </div>
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
 </section>
+
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/packages/frontend/blog-item")
+
+}

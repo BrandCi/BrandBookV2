@@ -7,6 +7,7 @@ namespace BrandBook.Core.Repositories.User
     {
         List<Subscription> GetAllUserSubscriptions(string userId);
         List<Subscription> GetActiveUserSubscriptions(string userId);
+        List<Subscription> GetActiveAndPaidUserSubscriptions(string userId);
 
     }
 }

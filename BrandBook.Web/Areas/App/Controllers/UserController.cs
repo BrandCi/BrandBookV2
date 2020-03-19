@@ -1,14 +1,14 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.UserManagement;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.UserManagement;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class UserController : AppControllerBase
+    public class UserController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

@@ -1,9 +1,9 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class ProcessesController : AuthControllerBase
+    public class ProcessesController : AuthMvcControllerBase
     {
         // GET: Auth/ForgotPassword
         public ActionResult ForgotPassword()

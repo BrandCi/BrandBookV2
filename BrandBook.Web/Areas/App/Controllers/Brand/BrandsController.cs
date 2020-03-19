@@ -4,26 +4,33 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using log4net;
+using Microsoft.AspNet.Identity;
+
 using BrandBook.Core;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Brand;
-using log4net;
-using Microsoft.AspNet.Identity;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Brand;
+using BrandBook.Core.Services.Subscriptions;
+
+
+
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
-    public class BrandsController : AppControllerBase
+    public class BrandsController : AppMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ISubscriptionService _subscriptionService;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
-        private readonly SubscriptionService _subscriptionService;
+        
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
 
         public BrandsController()
         {
@@ -39,6 +46,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
+            var userId = User.Identity.GetUserId();
             var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (var singleBrand in allBrands)
@@ -68,8 +76,15 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             var viewmodel = new BrandsOverviewViewModel
             {
                 Brands = singleBrandViewModels,
-                HasValidSubscription = _subscriptionService.HasValidSubscription(User.Identity.GetUserId())
+                HasValidSubscription = _subscriptionService.HasValidSubscription(userId),
+                AllowedToCreateNewBrands = _subscriptionService.AllowedToCreateNewBrands(userId),
+                NoBrandsAvailable = false
             };
+
+            if(singleBrandViewModels.Count() == 0)
+            {
+                viewmodel.NoBrandsAvailable = true;
+            }
 
 
             return View(viewmodel);

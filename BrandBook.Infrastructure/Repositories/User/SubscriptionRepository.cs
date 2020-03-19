@@ -23,5 +23,11 @@ namespace BrandBook.Infrastructure.Repositories.User
         {
             return Set.Where(s => s.AppUserId == userId && s.IsActive).ToList();
         }
+
+
+        public List<Subscription> GetActiveAndPaidUserSubscriptions(string userId)
+        {
+            return Set.Where(s => s.AppUserId == userId && s.IsActive && s.IsPaid).ToList();
+        }
     }
 }

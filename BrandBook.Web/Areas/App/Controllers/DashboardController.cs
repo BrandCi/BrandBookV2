@@ -1,9 +1,9 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class DashboardController : AppControllerBase
+    public class DashboardController : AppMvcControllerBase
     {
         // GET: App/Dashboard
         public ActionResult Index()

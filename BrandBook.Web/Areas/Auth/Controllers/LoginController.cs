@@ -5,9 +5,9 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Services.Users;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.Auth;
-using BrandBook.Web.Framework.ViewModels.Auth.External;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.Auth;
+using BrandBook.Core.ViewModels.Auth.External;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -19,7 +19,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
-    public class LoginController : AuthControllerBase
+    public class LoginController : AuthMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;

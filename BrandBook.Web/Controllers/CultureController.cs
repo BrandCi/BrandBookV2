@@ -1,4 +1,4 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Web.Framework.Helpers;
 using System;
 using System.Web;
@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class CultureController : FrontendControllerBase
+    public class CultureController : FrontendMvcControllerBase
     {
 
         public ActionResult SetCulture(string culture, string currentAction, string currentController)

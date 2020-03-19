@@ -1,16 +1,16 @@
 ﻿using BrandBook.Core;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers;
-using BrandBook.Web.Framework.ViewModels.App.Profile;
-using BrandBook.Web.Framework.ViewModels.App.Subscriptions;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.ViewModels.App.Profile;
+using BrandBook.Core.ViewModels.App.Subscriptions;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
-    public class ProfileController : AppControllerBase
+    public class ProfileController : AppMvcControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
@@ -26,11 +26,12 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
 
+
             var model = new GeneralUserDataViewModel()
             {
                 UserName = appUser.UserName,
                 FirstName = appUser.FirstName,
-                LastName = appUser.LastName
+                LastName = appUser.LastName,
             };
 
 

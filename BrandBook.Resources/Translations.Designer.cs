@@ -1807,6 +1807,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open your profile.
+        /// </summary>
+        public static string frontend_navigation_authorized_openprofile {
+            get {
+                return ResourceManager.GetString("frontend_navigation_authorized_openprofile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blog.
         /// </summary>
         public static string frontend_navigation_blog {

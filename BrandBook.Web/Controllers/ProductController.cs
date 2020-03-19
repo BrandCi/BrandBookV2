@@ -1,9 +1,9 @@
-﻿using BrandBook.Web.Framework.Controllers;
+﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
-    public class ProductController : FrontendControllerBase
+    public class ProductController : FrontendMvcControllerBase
     {
 
         public ActionResult Overview()

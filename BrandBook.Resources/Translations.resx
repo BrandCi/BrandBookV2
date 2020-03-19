@@ -789,4 +789,7 @@
   <data name="frontend_legal_privacypolicy_pagetitle" xml:space="preserve">
     <value>Privacy Policy</value>
   </data>
+  <data name="frontend_navigation_authorized_openprofile" xml:space="preserve">
+    <value>Open your profile</value>
+  </data>
 </root>
