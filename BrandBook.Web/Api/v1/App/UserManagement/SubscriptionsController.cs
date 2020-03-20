@@ -36,15 +36,14 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
 
             List<Subscription> subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
 
-
             var result = new List<SubscriptionDto>();
 
             foreach (var subscription in subscriptions)
             {
-                var subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
+                SubscriptionPlan subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
 
-                var userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(User.Identity.GetUserId());
-                var existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
+                int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(User.Identity.GetUserId());
+                int existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
 
                 var item = new SubscriptionDto
                 {
@@ -63,10 +62,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 result.Add(item);
             }
 
-
             return Ok(result);
-
-
         }
 
     }
