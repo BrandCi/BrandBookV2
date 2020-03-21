@@ -1,6 +1,7 @@
-﻿@model BrandBook.Core.ViewModels.App.UserManagement.AppUserViewModel
+﻿@using BrandBook.Resources
+@model BrandBook.Core.ViewModels.App.UserManagement.AppUserViewModel
 @{
-    ViewBag.Title = "Nutzerübersicht";
+    ViewBag.Title = @Translations.app_pagetitle_usermanagement_useroverview;
 }
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
@@ -19,17 +20,18 @@
             <table id="appUserOverview-datatable" class="table table-bordered dt-responsive">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>UserName</th>
-                        <th>E-Mail</th>
+                        <th>@Translations.app_usermanagement_table_head_firstname</th>
+                        <th>@Translations.app_usermanagement_table_head_lastname</th>
+                        <th>@Translations.app_usermanagement_table_head_username</th>
+                        <th>@Translations.app_usermanagement_table_head_email</th>
+                        <th></th>
                     </tr>
                 </thead>
 
 
                 <tbody>
-              
-                
+
+
                     @foreach (var user in Model)
                     {
                         <tr>
@@ -45,14 +47,41 @@
                             <td>
                                 @user.Email
                             </td>
+                            <td>
+                                <a href="#" onclick="loadSubscriptionModal('@user.Id')">
+                                    <i class="fas fa-key"></i>
+                                </a>
+                            </td>
                         </tr>
                     }
-                
+
                 </tbody>
             </table>
         </div>
     </div>
 </div> <!-- end row -->
+
+
+<div id="subscriptionModal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="subscriptionModalLabel">@Translations.app_subscription_popup_subscription_heading <span id="subscriptionModalLabelUserName"></span></h4>
+            </div>
+            <div class="modal-body">
+
+                <div id="accordion" role="tablist" aria-multiselectable="false" class="m-b-20 subscriptionModalContent">
+
+                    
+                </div>
+
+             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary waves-effect" onclick="closeSubscriptionModal()">@Translations.app_subscription_popup_subscription_close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -63,4 +92,155 @@
     @Scripts.Render("~/bundles/Plugins/Datatables")
 
     @Scripts.Render("~/bundles/packages/app/um-users-overview");
+
+
+    <script type="text/javascript">
+
+        const SubscriptionItem = ({ id, key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
+            <div class="card">
+                <div class="card-header" role="tab" id="heading-${key}">
+                    <h5 class="mb-0 mt-0 font-16">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-${key}" aria-expanded="false" aria-controls="collapse-${key}">
+                            <strong>@Translations.app_subscription_popup_subscription_title #${key}</strong> (${subscriptionPlanName})
+                            <span class="badge subscription badge-primary">${paidOrPending}</span>
+                            <span class="badge subscription badge-primary">${activeOrInactive}</span>
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-${key}" class="collapse" role="tabpanel" aria-labelledby="heading-${key}">
+                    <div class="card-body">
+                        <p>
+                            <strong>@Translations.app_subscription_popup_subscription_brandscreated:</strong>
+                            <span class="badge subscription badge-primary">${currentAmountOfBrands} / ${possibleAmountOfBrands}</span>
+                            <br>
+                            <strong>@Translations.app_subscription_popup_subscription_activesince:</strong>
+                            <span class="badge subscription badge-primary"> ${startDateTime}</span>
+                            <br>
+                            <strong>@Translations.app_subscription_popup_subscription_activeuntil:</strong>
+                            <span class="badge subscription badge-primary"> ${endDateTime}</span>
+                            <br><br>
+                            <strong>@Translations.app_subscription_popup_subscription_type:</strong>
+                            <span class="badge subscription badge-primary"> ${subscriptionPlanName}</span>
+                            <br>
+                            <strong>@Translations.app_subscription_popup_subscription_pricepermonth:</strong>
+                            <span class="badge subscription badge-primary"> ${pricePerMonth}.00 €</span>
+                        </p>
+                        <p id="changeStatusButton-${id}"></p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const ActivateButton = ({ id }) => `
+            <button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id})">@Translations.app_subscription_popup_subscription_activate</button>
+        `;
+
+        const DeactivateButton = ({ id }) => `
+            <button type="button" class="btn btn-danger waves-effect" onclick="showDeactivateApprove(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
+        `;
+
+        var _userId;
+
+        function loadSubscriptionModal(userId) {
+
+            _userId = userId;
+
+            $('#subscriptionModal').modal('show');
+
+            updateModalContent();
+
+        }
+
+        function closeSubscriptionModal() {
+            $('#subscriptionModal').modal('hide');
+        }
+
+
+
+
+        function getAndDisplayUserName() {
+            $.ajax({
+                url: "/api/v1/users/getUserNameById/" + _userId
+            }).then(function(data) {
+
+                if (data.length != 0) {
+                    $('#subscriptionModalLabelUserName').html("@Translations.app_subscription_popup_subscription_heading_binding " + data);
+                } 
+
+            });
+        }
+
+        function getAndAppendSubscriptions() {
+            $.ajax({
+                url: "/api/v1/subscriptions/" + _userId
+            }).then(function(data) {
+
+                if (data.length != 0) {
+                    data.forEach(appendToItems);
+                } else {
+                    $('.subscriptionModalContent').html("@Translations.app_subscription_popup_subscription_noitems");
+                }
+
+            });
+        }
+
+        function activateSubscription(subscriptionId) {
+            $.ajax({
+                type: "Post",
+                url: "/api/v1/subscriptions/activate/" + subscriptionId
+            }).then(function(data) {
+                updateModalContent();
+            });
+        }
+
+        function showDeactivateApprove(subscriptionId) {
+            $('#changeStatusButton-' + subscriptionId)
+                .html('@Translations.app_subscription_popup_subscription_deactivateapprove_title<br>' +
+                    '<button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(' + subscriptionId + ')">@Translations.app_subscription_popup_subscription_deactivateapprove_button</button>');
+        }
+
+        function deactivateSubscription(subscriptionId) {
+            $.ajax({
+                type: "Post",
+                url: "/api/v1/subscriptions/deactivate/" + subscriptionId
+            }).then(function(data) {
+                updateModalContent();
+            });
+        }
+
+        function updateModalContent() {
+            resetModalContent();
+            getAndDisplayUserName();
+            getAndAppendSubscriptions();
+        }
+
+
+        function resetModalContent() {
+            $('.subscriptionModalContent').html("");
+            $('#subscriptionModalLabelUserName').html("");
+        }
+
+
+        function appendToItems(item) {
+            $('.subscriptionModalContent').append([item].map(SubscriptionItem).join(''));
+            $('.subscriptionModalContent').append("<br />");
+
+            if (item.isActive) {
+                $('#changeStatusButton-' + item.id).html([item].map(DeactivateButton).join(''));
+            } else {
+                $('#changeStatusButton-' + item.id).html([item].map(ActivateButton).join(''));
+            }
+
+        }
+
+    </script>
 }
+
+
+
+
+
+
+
+
+

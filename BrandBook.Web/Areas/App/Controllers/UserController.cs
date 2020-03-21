@@ -30,6 +30,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             {
                 singleAppUserViewModel.Add(new SingleAppUserViewModel()
                 {
+                    Id = singleAppUser.Id,
                     Email = singleAppUser.Email,
                     FirstName = singleAppUser.FirstName,
                     LastName = singleAppUser.LastName,
