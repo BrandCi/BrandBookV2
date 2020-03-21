@@ -19,7 +19,7 @@ namespace BrandBook.Core.Dto.App.UserManagement
         public int PossibleAmountOfBrands { get; set; }
         public int CurrentAmountOfBrands { get; set; }
 
-        public bool IsPaid { get; set; }
-        public bool IsActive { get; set; }
+        public string PaidOrPending { get; set; }
+        public string ActiveOrInactive { get; set; }
     }
 }

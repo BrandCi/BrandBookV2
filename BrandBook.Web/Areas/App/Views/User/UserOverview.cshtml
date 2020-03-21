@@ -1,6 +1,7 @@
-﻿@model BrandBook.Core.ViewModels.App.UserManagement.AppUserViewModel
+﻿@using BrandBook.Resources
+@model BrandBook.Core.ViewModels.App.UserManagement.AppUserViewModel
 @{
-    ViewBag.Title = "Nutzerübersicht";
+    ViewBag.Title = @Translations.app_pagetitle_usermanagement_useroverview;
 }
 @section navigation {
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
@@ -19,10 +20,10 @@
             <table id="appUserOverview-datatable" class="table table-bordered dt-responsive">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>UserName</th>
-                        <th>E-Mail</th>
+                        <th>@Translations.app_usermanagement_table_head_firstname</th>
+                        <th>@Translations.app_usermanagement_table_head_lastname</th>
+                        <th>@Translations.app_usermanagement_table_head_username</th>
+                        <th>@Translations.app_usermanagement_table_head_email</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -65,7 +66,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="subscriptionModalLabel">Subscriptions <span id="subscriptionModalLabelUserName"></span></h4>
+                <h4 class="modal-title" id="subscriptionModalLabel">@Translations.app_subscription_popup_subscription_heading <span id="subscriptionModalLabelUserName"></span></h4>
             </div>
             <div class="modal-body">
 
@@ -76,7 +77,7 @@
 
              </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" onclick="closeSubscriptionModal()">Close</button>
+                <button type="button" class="btn btn-secondary waves-effect" onclick="closeSubscriptionModal()">@Translations.app_subscription_popup_subscription_close</button>
             </div>
         </div>
     </div>
@@ -95,31 +96,33 @@
 
     <script type="text/javascript">
 
-        const SubscriptionItem = ({ key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth }) => `
+        const SubscriptionItem = ({ key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
             <div class="card">
                 <div class="card-header" role="tab" id="heading-${key}">
                     <h5 class="mb-0 mt-0 font-16">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse-${key}" aria-expanded="false" aria-controls="collapse-${key}">
-                            <strong>Subscription #${key}</strong> (${subscriptionPlanName})
+                            <strong>@Translations.app_subscription_popup_subscription_title #${key}</strong> (${subscriptionPlanName})
+                            <span class="badge subscription badge-primary">${paidOrPending}</span>
+                            <span class="badge subscription badge-primary">${activeOrInactive}</span>
                         </a>
                     </h5>
                 </div>
                 <div id="collapse-${key}" class="collapse" role="tabpanel" aria-labelledby="heading-${key}">
                     <div class="card-body">
                         <p>
-                            <strong>Brands created</strong>
+                            <strong>@Translations.app_subscription_popup_subscription_brandscreated:</strong>
                             <span class="badge subscription badge-primary">${currentAmountOfBrands} / ${possibleAmountOfBrands}</span>
                             <br>
-                            <strong>Active since:</strong>
+                            <strong>@Translations.app_subscription_popup_subscription_activesince:</strong>
                             <span class="badge subscription badge-primary"> ${startDateTime}</span>
                             <br>
-                            <strong>Active until:</strong>
+                            <strong>@Translations.app_subscription_popup_subscription_activeuntil:</strong>
                             <span class="badge subscription badge-primary"> ${endDateTime}</span>
                             <br><br>
-                            <strong>Subscription:</strong>
+                            <strong>@Translations.app_subscription_popup_subscription_type:</strong>
                             <span class="badge subscription badge-primary"> ${subscriptionPlanName}</span>
                             <br>
-                            <strong>Price per Month:</strong>
+                            <strong>@Translations.app_subscription_popup_subscription_pricepermonth:</strong>
                             <span class="badge subscription badge-primary"> ${pricePerMonth}.00 €</span>
                         </p>
                     </div>
@@ -152,7 +155,7 @@
             }).then(function(data) {
 
                 if (data.length != 0) {
-                    $('#subscriptionModalLabelUserName').html("for " + data);
+                    $('#subscriptionModalLabelUserName').html("@Translations.app_subscription_popup_subscription_heading_binding " + data);
                 } 
 
             });
@@ -166,7 +169,7 @@
                 if (data.length != 0) {
                     data.forEach(appendToItems);
                 } else {
-                    $('.subscriptionModalContent').html("No subscriptions available.");
+                    $('.subscriptionModalContent').html("@Translations.app_subscription_popup_subscription_noitems");
                 }
 
             });

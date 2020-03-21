@@ -7,6 +7,7 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
 using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Resources;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
 using Microsoft.AspNet.Identity;
 
@@ -33,6 +34,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         {
             if (string.IsNullOrEmpty(userId)) return BadRequest();
 
+            var dateFormat = "dd.MM.yyyy hh:mm";
             int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(userId);
             int existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
 
@@ -43,21 +45,21 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
             foreach (var subscription in subscriptions)
             {
                 SubscriptionPlan subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
-                
+
                 var item = new SubscriptionDto
                 {
                     Id = subscription.Id,
                     Key = subscription.Key,
-                    StartDateTime = subscription.StartDateTime.ToString("dd.MM.yyyy hh:mm"),
-                    EndDateTime = _subscriptionService.GetSubscriptionEndDate(subscription).ToString("dd.MM.yyyy hh:mm"),
-                    IsPaid = subscription.IsPaid,
-                    IsActive = subscription.IsActive,
+                    StartDateTime = subscription.StartDateTime.ToString(dateFormat),
+                    EndDateTime = _subscriptionService.GetSubscriptionEndDate(subscription).ToString(dateFormat),
+                    PaidOrPending = subscription.IsPaid ? Translations.app_subscription_paymentbadge_paid : Translations.app_subscription_paymentbadge_pending,
+                    ActiveOrInactive = subscription.IsActive ? Translations.app_subscription_activebadge_active : Translations.app_subscription_activebadge_inactive,
                     SubscriptionPlanName = subscriptionPlan.Name,
                     PossibleAmountOfBrands = subscriptionPlan.AmountOfBrands,
                     PricePerMonth = subscriptionPlan.PricePerMonth,
                     CurrentAmountOfBrands = existingBrands,
                 };
-                
+
                 result.Add(item);
             }
 
