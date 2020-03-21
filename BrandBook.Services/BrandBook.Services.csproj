@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\CompanyAuthorizationService.cs" />
+    <Compile Include="Authentication\ReCaptchaService.cs" />
     <Compile Include="Authentication\SignInService.cs" />
     <Compile Include="Email\EmailService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

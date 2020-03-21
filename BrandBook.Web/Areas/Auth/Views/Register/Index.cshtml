@@ -1,12 +1,30 @@
-﻿@model BrandBook.Core.ViewModels.Auth.RegisterViewModel 
+﻿@model BrandBook.Core.ViewModels.Auth.RegisterViewModel
+@using System.Configuration
 @using BrandBook.Web.Framework.HtmlHelpers
 
 
 @{
     ViewBag.Title = @Translations.auth_register_title;
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+
+    var reCaptchaSiteKey = ConfigurationManager.AppSettings["ReCaptchaSiteKey"];
+    var reCaptchaActive = ConfigurationManager.AppSettings["ReCaptchaActive"];
 }
 
+@section header {
+    @if (reCaptchaActive == "1")
+    {
+        <script src="https://www.google.com/recaptcha/api.js?render=@reCaptchaSiteKey"></script>
+        <script>
+
+            grecaptcha.ready(function() {
+                grecaptcha.execute('@reCaptchaSiteKey', { action: 'registration' }).then(function (token) {
+                    $('#ReCaptchaToken').val(token);
+                });
+            });
+        </script>
+    }
+}
 
 @AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
 
@@ -62,32 +80,37 @@
                 </label>
                 @Html.ValidationMessageFor(m => m.PrivacyPolicyAccepted, "", new { @class = "text-danger" })
 
+                if (reCaptchaActive == "1")
+                {
+                     @Html.HiddenFor(m => m.ReCaptchaToken);
+                }
+
 
                 <div class="form-button">
                     <button id="submit" type="submit" class="ibtn">@Translations.auth_register_register_button_title</button>
                     <a href="@Url.Action("Index", "Login")">@Translations.auth_register_login_title</a>
                 </div>
 
-            }
+                }
 
-            @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
-
-
-            <!--
-            <div class="other-links">
-                <div class="text">@Translations.auth_register_external_title</div>
-                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
-                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
-            </div>
-            -->
-
-            <div class="page-links mt-5">
-                <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
-                <a href="@Url.Action("PrivacyPolicy", "Legal", new { area=""})" target="_blank">Privacy Policy&nbsp;<i class="fas fa-gavel"></i>&nbsp;<i class="fas fa-chevron-right"></i></a>
-            </div>
+                @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
 
 
-
+                <!--
+        <div class="other-links">
+            <div class="text">@Translations.auth_register_external_title</div>
+            <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
+            <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
         </div>
+        -->
+
+                <div class="page-links mt-5">
+                    <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
+                    <a href="@Url.Action("PrivacyPolicy", "Legal", new { area=""})" target="_blank">Privacy Policy&nbsp;<i class="fas fa-gavel"></i>&nbsp;<i class="fas fa-chevron-right"></i></a>
+                </div>
+
+
+
+            </div>
     </div>
 </div>

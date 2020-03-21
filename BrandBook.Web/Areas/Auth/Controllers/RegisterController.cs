@@ -9,16 +9,21 @@ using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Configuration;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Resources;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthMvcControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly SubscriptionService _subscriptionService;
+        private readonly ISubscriptionService _subscriptionService;
+        private readonly IReCaptchaService _recaptchaService;
 
 
         #region Constructor
@@ -27,6 +32,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
+            _recaptchaService = new ReCaptchaService();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
@@ -35,6 +41,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             SignInService = signInService;
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
+            _recaptchaService = new ReCaptchaService();
         }
 
         #endregion
@@ -83,9 +90,22 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            
+            if (_recaptchaService.IsCaptchaActive())
             {
-                var company = new Company()
+                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "registration");
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("GoogleCaptcha", @Translations.auth_register_validation_captcha_invalid);
+                    return View(model);
+                }
+            }
+
+            
+
+            var company = new Company()
                 {
                     Name = model.Username,
                     ContactEmail = model.Email,
@@ -103,9 +123,9 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                 var result = await UserManager.CreateAsync(user, model.Password);
 
+
                 if (result.Succeeded)
                 {
-
                     var initialSubscription = new Subscription()
                     {
                         Key = _subscriptionService.GenerateSubscriptionKey(),
@@ -121,13 +141,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     _unitOfWork.SubscriptionRepository.Add(initialSubscription);
                     _unitOfWork.SaveChanges();
 
-
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
+
                 }
-            }
+           
+            
 
             return View(model);
         }
@@ -137,5 +158,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             return View();
         }
+
+
     }
 }

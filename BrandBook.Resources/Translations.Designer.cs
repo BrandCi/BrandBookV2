@@ -889,6 +889,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string auth_register_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("auth_register_validation_captcha_invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-Mail.
         /// </summary>
         public static string auth_resetpassword_input_email {
@@ -1020,6 +1029,15 @@ namespace BrandBook.Resources {
         public static string frontend_contact_input_subject {
             get {
                 return ResourceManager.GetString("frontend_contact_input_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string frontend_contact_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("frontend_contact_validation_captcha_invalid", resourceCulture);
             }
         }
         
