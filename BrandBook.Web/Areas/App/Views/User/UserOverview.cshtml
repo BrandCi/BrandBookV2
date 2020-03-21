@@ -125,12 +125,18 @@
                             <strong>@Translations.app_subscription_popup_subscription_pricepermonth:</strong>
                             <span class="badge subscription badge-primary"> ${pricePerMonth}.00 €</span>
                         </p>
-                        <p><button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id})">@Translations.app_subscription_popup_subscription_activate</button>
-                            <button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
-                        </p>
+                        <p id="changeStatusButton-${id}"></p>
                     </div>
                 </div>
             </div>
+        `;
+
+        const ActivateButton = ({ id }) => `
+            <button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id})">@Translations.app_subscription_popup_subscription_activate</button>
+        `;
+
+        const DeactivateButton = ({ id }) => `
+            <button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
         `;
 
         var _userId;
@@ -182,7 +188,7 @@
             $.ajax({
                 type: "Post",
                 url: "/api/v1/subscriptions/activate/" + subscriptionId
-            }).then(function (data) {
+            }).then(function(data) {
                 updateModalContent();
             });
         }
@@ -191,7 +197,7 @@
             $.ajax({
                 type: "Post",
                 url: "/api/v1/subscriptions/deactivate/" + subscriptionId
-            }).then(function (data) {
+            }).then(function(data) {
                 updateModalContent();
             });
         }
@@ -212,10 +218,14 @@
         function appendToItems(item) {
             $('.subscriptionModalContent').append([item].map(SubscriptionItem).join(''));
             $('.subscriptionModalContent').append("<br />");
+
+            if (item.isActive) {
+                $('#changeStatusButton-' + item.id).html([item].map(DeactivateButton).join(''));
+            } else {
+                $('#changeStatusButton-' + item.id).html([item].map(ActivateButton).join(''));
+            }
+
         }
-
-
-
 
     </script>
 }

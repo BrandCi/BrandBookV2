@@ -10,6 +10,7 @@ namespace BrandBook.Core.Dto.App.UserManagement
     {
         public int Id { get; set; }
         public string Key { get; set; }
+        public bool IsActive { get; set; }
         public string SubscriptionPlanName { get; set; }
         public double PricePerMonth { get; set; }
 

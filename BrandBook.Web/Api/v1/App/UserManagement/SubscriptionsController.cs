@@ -51,6 +51,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 {
                     Id = subscription.Id,
                     Key = subscription.Key,
+                    IsActive = subscription.IsActive,
                     StartDateTime = subscription.StartDateTime.ToString(dateFormat),
                     EndDateTime = _subscriptionService.GetSubscriptionEndDate(subscription).ToString(dateFormat),
                     PaidOrPending = subscription.IsPaid ? Translations.app_subscription_paymentbadge_paid : Translations.app_subscription_paymentbadge_pending,
