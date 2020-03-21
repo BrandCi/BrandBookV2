@@ -61,18 +61,22 @@
 </div> <!-- end row -->
 
 
-<div id="subscriptionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+<div id="subscriptionModal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="subscriptionModalLabel">Subscriptions of </h4>
+                <h4 class="modal-title" id="subscriptionModalLabel">Subscriptions <span id="subscriptionModalLabelUserName"></span></h4>
             </div>
             <div class="modal-body">
-                
-            </div>
+
+                <div id="accordion" role="tablist" aria-multiselectable="false" class="m-b-20 subscriptionModalContent">
+
+                    
+                </div>
+
+             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary waves-effect" onclick="closeSubscriptionModal()">Close</button>
             </div>
         </div>
     </div>
@@ -91,11 +95,98 @@
 
     <script type="text/javascript">
 
+        const SubscriptionItem = ({ key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth }) => `
+            <div class="card">
+                <div class="card-header" role="tab" id="heading-${key}">
+                    <h5 class="mb-0 mt-0 font-16">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-${key}" aria-expanded="false" aria-controls="collapse-${key}">
+                            <strong>Subscription #${key}</strong> (${subscriptionPlanName})
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-${key}" class="collapse" role="tabpanel" aria-labelledby="heading-${key}">
+                    <div class="card-body">
+                        <p>
+                            <strong>Brands created</strong>
+                            <span class="badge subscription badge-primary">${currentAmountOfBrands} / ${possibleAmountOfBrands}</span>
+                            <br>
+                            <strong>Active since:</strong>
+                            <span class="badge subscription badge-primary"> ${startDateTime}</span>
+                            <br>
+                            <strong>Active until:</strong>
+                            <span class="badge subscription badge-primary"> ${endDateTime}</span>
+                            <br><br>
+                            <strong>Subscription:</strong>
+                            <span class="badge subscription badge-primary"> ${subscriptionPlanName}</span>
+                            <br>
+                            <strong>Price per Month:</strong>
+                            <span class="badge subscription badge-primary"> ${pricePerMonth}.00 €</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+
 
         function loadSubscriptionModal(userId) {
             $('#subscriptionModal').modal('show');
+
+            getAndDisplayUserName(userId);
+            getAndAppendSubscriptions(userId);
+
         }
+
+        function closeSubscriptionModal() {
+            $('#subscriptionModal').modal('hide');
+
+            $('.subscriptionModalContent').html("");
+            $('#subscriptionModalLabelUserName').html("");
+        }
+
+
+
+
+        function getAndDisplayUserName(userId) {
+            $.ajax({
+                url: "/api/v1/users/getUserNameById/" + userId
+            }).then(function(data) {
+
+                if (data.length != 0) {
+                    $('#subscriptionModalLabelUserName').html("for " + data);
+                } 
+
+            });
+        }
+
+        function getAndAppendSubscriptions(userId) {
+            $.ajax({
+                url: "/api/v1/subscriptions/" + userId
+            }).then(function(data) {
+
+                if (data.length != 0) {
+                    data.forEach(appendToItems);
+                } else {
+                    $('.subscriptionModalContent').html("No subscriptions available.");
+                }
+
+            });
+        }
+
+        function appendToItems(item) {
+            $('.subscriptionModalContent').append([item].map(SubscriptionItem).join(''));
+            $('.subscriptionModalContent').append("<br />");
+        }
+
 
 
     </script>
 }
+
+
+
+
+
+
+
+
+

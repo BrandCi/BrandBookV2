@@ -34,6 +34,16 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
 
         }
 
+        [Route("getUserNameById/{userId}")]
+        public async Task<IHttpActionResult> GetUserNameById(string userId)
+        {
+            if (string.IsNullOrEmpty(userId)) return BadRequest();
+
+            var user = await _unitOfWork.AppUserRepository.FindByIdAsync(userId);
+
+            return Ok(user.UserName);
+        }
+
 
 
 

@@ -33,6 +33,8 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         {
             if (string.IsNullOrEmpty(userId)) return BadRequest();
 
+            int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(userId);
+            int existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
 
             List<Subscription> subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
 
@@ -41,22 +43,19 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
             foreach (var subscription in subscriptions)
             {
                 SubscriptionPlan subscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId);
-
-                int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(User.Identity.GetUserId());
-                int existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
-
+                
                 var item = new SubscriptionDto
                 {
                     Id = subscription.Id,
                     Key = subscription.Key,
-                    StartDateTime = subscription.StartDateTime,
+                    StartDateTime = subscription.StartDateTime.ToString("dd.MM.yyyy hh:mm"),
+                    EndDateTime = _subscriptionService.GetSubscriptionEndDate(subscription).ToString("dd.MM.yyyy hh:mm"),
                     IsPaid = subscription.IsPaid,
                     IsActive = subscription.IsActive,
                     SubscriptionPlanName = subscriptionPlan.Name,
                     PossibleAmountOfBrands = subscriptionPlan.AmountOfBrands,
                     PricePerMonth = subscriptionPlan.PricePerMonth,
                     CurrentAmountOfBrands = existingBrands,
-                    EndDateTime = _subscriptionService.GetSubscriptionEndDate(subscription)
                 };
                 
                 result.Add(item);

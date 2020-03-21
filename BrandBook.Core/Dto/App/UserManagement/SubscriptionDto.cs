@@ -13,14 +13,13 @@ namespace BrandBook.Core.Dto.App.UserManagement
         public string SubscriptionPlanName { get; set; }
         public double PricePerMonth { get; set; }
 
-        public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
+        public string StartDateTime { get; set; }
+        public string EndDateTime { get; set; }
 
         public int PossibleAmountOfBrands { get; set; }
         public int CurrentAmountOfBrands { get; set; }
 
         public bool IsPaid { get; set; }
         public bool IsActive { get; set; }
-
     }
 }
