@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity;
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
     [RoutePrefix("api/v1/subscriptions")]
+    [Authorize(Roles = "Administrator")]
     public class SubscriptionsController : AppApiControllerBase
     {
 
