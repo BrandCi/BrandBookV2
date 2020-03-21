@@ -457,6 +457,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        public static string app_subscription_popup_subscription_activate {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active since.
         /// </summary>
         public static string app_subscription_popup_subscription_activesince {
@@ -489,6 +498,15 @@ namespace BrandBook.Resources {
         public static string app_subscription_popup_subscription_close {
             get {
                 return ResourceManager.GetString("app_subscription_popup_subscription_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deactivate.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivate {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivate", resourceCulture);
             }
         }
         

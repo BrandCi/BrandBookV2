@@ -807,6 +807,9 @@
   <data name="app_subscription_paymentbadge_pending" xml:space="preserve">
     <value>Pending</value>
   </data>
+  <data name="app_subscription_popup_subscription_activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
   <data name="app_subscription_popup_subscription_activesince" xml:space="preserve">
     <value>Active since</value>
   </data>
@@ -818,6 +821,9 @@
   </data>
   <data name="app_subscription_popup_subscription_close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivate" xml:space="preserve">
+    <value>Deactivate</value>
   </data>
   <data name="app_subscription_popup_subscription_heading" xml:space="preserve">
     <value>Subscriptions</value>

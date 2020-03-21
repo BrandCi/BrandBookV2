@@ -66,5 +66,33 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
             return Ok(result);
         }
 
+        [Route("deactivate/{subscriptionId}")]
+        public IHttpActionResult DeactivateById(int subscriptionId)
+        {
+            if (subscriptionId == 0) return BadRequest();
+
+            var subscription = _unitOfWork.SubscriptionRepository.FindById(subscriptionId);
+            subscription.IsActive = false;
+
+            _unitOfWork.SubscriptionRepository.Update(subscription);
+            _unitOfWork.SaveChanges();
+
+            return Ok();
+        }
+
+        [Route("activate/{subscriptionId}")]
+        public IHttpActionResult ActivateById(int subscriptionId)
+        {
+            if (subscriptionId == 0) return BadRequest();
+
+            var subscription = _unitOfWork.SubscriptionRepository.FindById(subscriptionId);
+            subscription.IsActive = true;
+
+            _unitOfWork.SubscriptionRepository.Update(subscription);
+            _unitOfWork.SaveChanges();
+
+            return Ok();
+        }
+
     }
 }

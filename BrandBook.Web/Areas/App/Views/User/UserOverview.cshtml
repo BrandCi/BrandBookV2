@@ -96,7 +96,7 @@
 
     <script type="text/javascript">
 
-        const SubscriptionItem = ({ key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
+        const SubscriptionItem = ({ id, key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
             <div class="card">
                 <div class="card-header" role="tab" id="heading-${key}">
                     <h5 class="mb-0 mt-0 font-16">
@@ -125,33 +125,36 @@
                             <strong>@Translations.app_subscription_popup_subscription_pricepermonth:</strong>
                             <span class="badge subscription badge-primary"> ${pricePerMonth}.00 €</span>
                         </p>
+                        <p><button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id})">@Translations.app_subscription_popup_subscription_activate</button>
+                            <button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
+                        </p>
                     </div>
                 </div>
             </div>
         `;
 
+        var _userId;
 
         function loadSubscriptionModal(userId) {
+
+            _userId = userId;
+
             $('#subscriptionModal').modal('show');
 
-            getAndDisplayUserName(userId);
-            getAndAppendSubscriptions(userId);
+            updateModalContent();
 
         }
 
         function closeSubscriptionModal() {
             $('#subscriptionModal').modal('hide');
-
-            $('.subscriptionModalContent').html("");
-            $('#subscriptionModalLabelUserName').html("");
         }
 
 
 
 
-        function getAndDisplayUserName(userId) {
+        function getAndDisplayUserName() {
             $.ajax({
-                url: "/api/v1/users/getUserNameById/" + userId
+                url: "/api/v1/users/getUserNameById/" + _userId
             }).then(function(data) {
 
                 if (data.length != 0) {
@@ -161,9 +164,9 @@
             });
         }
 
-        function getAndAppendSubscriptions(userId) {
+        function getAndAppendSubscriptions() {
             $.ajax({
-                url: "/api/v1/subscriptions/" + userId
+                url: "/api/v1/subscriptions/" + _userId
             }).then(function(data) {
 
                 if (data.length != 0) {
@@ -175,10 +178,42 @@
             });
         }
 
+        function activateSubscription(subscriptionId) {
+            $.ajax({
+                type: "Post",
+                url: "/api/v1/subscriptions/activate/" + subscriptionId
+            }).then(function (data) {
+                updateModalContent();
+            });
+        }
+
+        function deactivateSubscription(subscriptionId) {
+            $.ajax({
+                type: "Post",
+                url: "/api/v1/subscriptions/deactivate/" + subscriptionId
+            }).then(function (data) {
+                updateModalContent();
+            });
+        }
+
+        function updateModalContent() {
+            resetModalContent();
+            getAndDisplayUserName();
+            getAndAppendSubscriptions();
+        }
+
+
+        function resetModalContent() {
+            $('.subscriptionModalContent').html("");
+            $('#subscriptionModalLabelUserName').html("");
+        }
+
+
         function appendToItems(item) {
             $('.subscriptionModalContent').append([item].map(SubscriptionItem).join(''));
             $('.subscriptionModalContent').append("<br />");
         }
+
 
 
 
