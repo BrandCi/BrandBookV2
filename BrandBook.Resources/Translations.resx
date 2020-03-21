@@ -825,6 +825,9 @@
   <data name="app_subscription_popup_subscription_deactivate" xml:space="preserve">
     <value>Deactivate</value>
   </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_button" xml:space="preserve">
+    <value>Yes, deactivate subscription!</value>
+  </data>
   <data name="app_subscription_popup_subscription_heading" xml:space="preserve">
     <value>Subscriptions</value>
   </data>
@@ -854,5 +857,8 @@
   </data>
   <data name="app_usermanagement_table_head_username" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_title" xml:space="preserve">
+    <value>Do you really want to deactivate this subscription?</value>
   </data>
 </root>

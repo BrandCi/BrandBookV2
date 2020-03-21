@@ -511,6 +511,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yes, deactivate subscription!.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivateapprove_button {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivateapprove_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to deactivate this subscription?.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivateapprove_title {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivateapprove_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subscriptions.
         /// </summary>
         public static string app_subscription_popup_subscription_heading {

@@ -77,7 +77,7 @@
 
              </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" onclick="closeSubscriptionModal()">@Translations.app_subscription_popup_subscription_close</button>
+                <button type="button" class="btn btn-primary waves-effect" onclick="closeSubscriptionModal()">@Translations.app_subscription_popup_subscription_close</button>
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@
         `;
 
         const DeactivateButton = ({ id }) => `
-            <button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
+            <button type="button" class="btn btn-danger waves-effect" onclick="showDeactivateApprove(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
         `;
 
         var _userId;
@@ -191,6 +191,12 @@
             }).then(function(data) {
                 updateModalContent();
             });
+        }
+
+        function showDeactivateApprove(subscriptionId) {
+            $('#changeStatusButton-' + subscriptionId)
+                .html('@Translations.app_subscription_popup_subscription_deactivateapprove_title<br>' +
+                    '<button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(' + subscriptionId + ')">@Translations.app_subscription_popup_subscription_deactivateapprove_button</button>');
         }
 
         function deactivateSubscription(subscriptionId) {
