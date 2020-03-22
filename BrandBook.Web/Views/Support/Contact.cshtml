@@ -1,26 +1,29 @@
 ﻿@model BrandBook.Core.ViewModels.Frontend.Support.ContactFormViewModel
+@using System.Configuration
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
 }
 
+@section styles {
+    @CustomHelper.RenderReCaptchaRequest("frontend_contact")
+}
 
 
 
-
-    <section class="breadcrumb_area">
-        @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
-        <div class="container">
-            <div class="breadcrumb_content text-center">
-                <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
-                    Contact us
-                </h1>
-                <p class="f_400 w_color f_size_16 l_height26">
-                    We are pleased about your message!
-                </p>
-            </div>
+<section class="breadcrumb_area">
+    @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                Contact us
+            </h1>
+            <p class="f_400 w_color f_size_16 l_height26">
+                We are pleased about your message!
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="contact_info_area sec_pad bg_color">
     <div class="container">
@@ -32,42 +35,46 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 mt-5">
                 <div class="contact_form">
-                    @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new {@class = "form-validation", role = "form"}))
+                    @using (Html.BeginForm("Contact", "Support", FormMethod.Post, new { @class = "form-validation", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
 
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Name, new {placeholder = Html.DisplayNameFor(m => m.Name)})
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Email, new {@type = "Email", placeholder = Html.DisplayNameFor(m => m.Email) + "*"})
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Subject, new {placeholder = Html.DisplayNameFor(m => m.Subject)})
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group text_box">
-                                    @Html.TextAreaFor(m => m.Message, new {placeholder = Html.DisplayNameFor(m => m.Message)})
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    @Html.CheckBoxFor(m => m.PrivacyPolicy)
-                                    @Html.LabelFor(m => m.PrivacyPolicy) *
-                                    &nbsp;
-                                    <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
-                                        <i class="fas fa-file-alt"></i>
-                                    </a>
-                                </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group text_box">
+                                @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name) })
                             </div>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-group text_box">
+                                @Html.TextBoxFor(m => m.Email, new { @type = "Email", placeholder = Html.DisplayNameFor(m => m.Email) + "*" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group text_box">
+                                @Html.TextBoxFor(m => m.Subject, new { placeholder = Html.DisplayNameFor(m => m.Subject) })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group text_box">
+                                @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message) })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.CheckBoxFor(m => m.PrivacyPolicy)
+                                @Html.LabelFor(m => m.PrivacyPolicy) *
+                                &nbsp;
+                                <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
+                                    <i class="fas fa-file-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        @if (CustomHelper.IsReCaptchaActive())
+                        {
+                            @Html.HiddenFor(m => m.ReCaptchaToken);
+                        }
+                    </div>
                         <button type="submit" class="btn_three">Send Message</button>
 
                     }

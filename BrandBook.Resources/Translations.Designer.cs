@@ -772,6 +772,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You could not be logged in .
+        /// </summary>
+        public static string auth_login_validation_notloggedin {
+            get {
+                return ResourceManager.GetString("auth_login_validation_notloggedin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
         /// </summary>
         public static string auth_register_checkbox_privacypolicy_title {
@@ -885,6 +894,15 @@ namespace BrandBook.Resources {
         public static string auth_register_title {
             get {
                 return ResourceManager.GetString("auth_register_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string auth_register_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("auth_register_validation_captcha_invalid", resourceCulture);
             }
         }
         
@@ -1020,6 +1038,15 @@ namespace BrandBook.Resources {
         public static string frontend_contact_input_subject {
             get {
                 return ResourceManager.GetString("frontend_contact_input_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string frontend_contact_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("frontend_contact_validation_captcha_invalid", resourceCulture);
             }
         }
         

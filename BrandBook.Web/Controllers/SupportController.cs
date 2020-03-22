@@ -5,12 +5,24 @@ using log4net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BrandBook.Core.Services.Authentication;
+using BrandBook.Resources;
+using BrandBook.Services.Authentication;
 
 namespace BrandBook.Web.Controllers
 {
     public class SupportController : FrontendMvcControllerBase
     {
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        private readonly IReCaptchaService _recaptchaService;
+
+        public SupportController()
+        {
+            _recaptchaService = new ReCaptchaService();
+        }
+
+
+
         public ActionResult Contact()
         {
             ViewBag.Title = "Contact";
@@ -26,11 +38,17 @@ namespace BrandBook.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Contact(ContactFormViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
+            if (_recaptchaService.IsCaptchaActive())
+            {
+                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "frontend_contact");
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("GoogleCaptcha", @Translations.auth_register_validation_captcha_invalid);
+                    return View(model);
+                }
+            }
 
             var message = new StringBuilder();
 

@@ -861,4 +861,13 @@
   <data name="app_subscription_popup_subscription_deactivateapprove_title" xml:space="preserve">
     <value>Do you really want to deactivate this subscription?</value>
   </data>
+  <data name="auth_register_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="frontend_contact_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="auth_login_validation_notloggedin" xml:space="preserve">
+    <value>You could not be logged in </value>
+  </data>
 </root>

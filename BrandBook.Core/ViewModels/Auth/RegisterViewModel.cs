@@ -36,5 +36,7 @@ namespace BrandBook.Core.ViewModels.Auth
         [Display(Name = "Promotioncode")]
         public string PromotionCode { get; set; }
 
+        public string ReCaptchaToken { get; set; }
+
     }
 }
