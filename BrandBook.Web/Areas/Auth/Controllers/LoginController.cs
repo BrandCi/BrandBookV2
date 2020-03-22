@@ -15,6 +15,8 @@ using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Core.Services.Authentication;
+using BrandBook.Resources;
 
 
 namespace BrandBook.Web.Areas.Auth.Controllers
@@ -24,6 +26,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
+        private readonly IReCaptchaService _recaptchaService;
 
 
         #region Constructor
@@ -32,6 +35,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
+            _recaptchaService = new ReCaptchaService();
         }
 
         public LoginController(UserService userService, SignInService signInService)
@@ -40,6 +44,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             SignInService = signInService;
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
+            _recaptchaService = new ReCaptchaService();
         }
 
         #endregion
@@ -91,9 +96,16 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Index(LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            if (_recaptchaService.IsCaptchaActive())
             {
-                return View(model);
+                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "auth_login");
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("GoogleCaptcha", @Translations.auth_login_validation_notloggedin);
+                    return View(model);
+                }
             }
 
             var result = await SignInService.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: true);
@@ -106,7 +118,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     return RedirectToAction("Locked", "Processes", new { area = "Auth" });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Du konntest nicht angemeldet werden.");
+                    ModelState.AddModelError("", @Translations.auth_login_validation_notloggedin);
                     return View(model);
             }
 

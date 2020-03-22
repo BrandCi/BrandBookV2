@@ -3,23 +3,10 @@
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
-    var reCaptchaSiteKey = ConfigurationManager.AppSettings["ReCaptchaSiteKey"];
-    var reCaptchaActive = "1";
 }
 
 @section styles {
-    @if (reCaptchaActive == "1")
-    {
-        <script src="https://www.google.com/recaptcha/api.js?render=@reCaptchaSiteKey"></script>
-        <script>
-
-            grecaptcha.ready(function() {
-                grecaptcha.execute('@reCaptchaSiteKey', { action: 'registration' }).then(function (token) {
-                    $('#ReCaptchaToken').val(token);
-                });
-            });
-        </script>
-    }
+    @CustomHelper.RenderReCaptchaRequest("frontend_contact")
 }
 
 
@@ -83,7 +70,7 @@
                                 </a>
                             </div>
                         </div>
-                        @if (reCaptchaActive == "1")
+                        @if (CustomHelper.IsReCaptchaActive())
                         {
                             @Html.HiddenFor(m => m.ReCaptchaToken);
                         }

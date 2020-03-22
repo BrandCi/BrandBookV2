@@ -39,7 +39,7 @@ namespace BrandBook.Services.Authentication
             }
             catch (Exception ex)
             {
-                return false;
+                throw new Exception(ex.Message);
             }
 
         }

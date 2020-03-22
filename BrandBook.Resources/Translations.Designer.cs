@@ -772,6 +772,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You could not be logged in .
+        /// </summary>
+        public static string auth_login_validation_notloggedin {
+            get {
+                return ResourceManager.GetString("auth_login_validation_notloggedin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
         /// </summary>
         public static string auth_register_checkbox_privacypolicy_title {

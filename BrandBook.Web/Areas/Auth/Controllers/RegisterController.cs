@@ -91,18 +91,16 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
-
             
             if (_recaptchaService.IsCaptchaActive())
             {
-                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "registration");
+                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "auth_registration");
                 if (!isCaptchaValid)
                 {
                     ModelState.AddModelError("GoogleCaptcha", @Translations.auth_register_validation_captcha_invalid);
                     return View(model);
                 }
             }
-
             
 
             var company = new Company()
