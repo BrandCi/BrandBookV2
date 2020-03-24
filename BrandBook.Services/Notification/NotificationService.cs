@@ -12,29 +12,38 @@ namespace BrandBook.Services.Notification
 {
     public class NotificationService : INotificationService
     {
+        public string _apiBasicUrl;
+        public string _apiPrivateKey;
+        public string _siteName;
+        public string _sender;
+
+
+        public NotificationService()
+        {
+            _apiBasicUrl = ConfigurationManager.AppSettings["MailgunApiBasicUrl"];
+            _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
+            _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
+            _sender = ConfigurationManager.AppSettings["MailgunApiSender"];
+        }
+
+
         public IRestResponse SendNotification(string receiver, string subject, string content)
         {
-            var apiBasicUrl = ConfigurationManager.AppSettings["MailgunApiBasicUrl"];
-            var apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
-            var siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
-            var sender = ConfigurationManager.AppSettings["MailgunApiSender"];
-
-
             var client = new RestClient
             {
-                BaseUrl = new Uri(apiBasicUrl),
-                Authenticator = new HttpBasicAuthenticator("api", apiPrivateKey)
+                BaseUrl = new Uri(_apiBasicUrl),
+                Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
             var request = new RestRequest();
 
-            request.AddParameter("domain", siteName, ParameterType.UrlSegment);
+            request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
 
-            request.AddParameter("from", sender);
+            request.AddParameter("from", _sender);
             request.AddParameter("to", receiver);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", content);
+            request.AddParameter("html", content);
 
             request.Method = Method.POST;
 
