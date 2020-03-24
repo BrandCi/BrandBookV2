@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Services.Messaging
 {
-    interface INotificationService
+    public interface INotificationService
     {
+        IRestResponse SendNotification(string receiver, string subject, string content);
     }
 }
