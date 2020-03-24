@@ -87,6 +87,7 @@
     <Compile Include="Authentication\ReCaptchaService.cs" />
     <Compile Include="Authentication\SignInService.cs" />
     <Compile Include="Email\EmailService.cs" />
+    <Compile Include="Notification\NotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ImageService.cs" />
     <Compile Include="Subscriptions\SubscriptionService.cs" />
@@ -113,5 +114,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
