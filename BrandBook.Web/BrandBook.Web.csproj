@@ -776,42 +776,42 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\fa805559-1642-4951-ad35-a2d7cc46c16a.png" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
-    <Content Include="Content\App\bootstrap-rtl.css">
+    <Content Include="Content\Style\App\bootstrap-rtl.css">
       <DependentUpon>bootstrap-rtl.scss</DependentUpon>
     </Content>
-    <Content Include="Content\App\bootstrap-rtl.min.css">
+    <Content Include="Content\Style\App\bootstrap-rtl.min.css">
       <DependentUpon>bootstrap-rtl.css</DependentUpon>
     </Content>
-    <Content Include="Content\App\style.css">
+    <Content Include="Content\Style\App\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
-    <Content Include="Content\App\style.min.css">
+    <Content Include="Content\Style\App\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
-    <Content Include="Content\Auth\Styles.css">
+    <Content Include="Content\Style\Auth\Styles.css">
       <DependentUpon>Styles.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Auth\Styles.min.css">
+    <Content Include="Content\Style\Auth\Styles.min.css">
       <DependentUpon>Styles.css</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Flag-Icon\flag-icon.css">
+    <Content Include="Content\Style\bootstrap-grid.css" />
+    <Content Include="Content\Style\bootstrap-grid.min.css" />
+    <Content Include="Content\Style\bootstrap-reboot.css" />
+    <Content Include="Content\Style\bootstrap-reboot.min.css" />
+    <Content Include="Content\Style\bootstrap.css" />
+    <Content Include="Content\Style\bootstrap.min.css" />
+    <Content Include="Content\Style\Flag-Icon\flag-icon.css">
       <DependentUpon>flag-icon.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Flag-Icon\flag-icon.min.css">
+    <Content Include="Content\Style\Flag-Icon\flag-icon.min.css">
       <DependentUpon>flag-icon.css</DependentUpon>
     </Content>
-    <Content Include="Content\Frontend\responsive.css" />
-    <Content Include="Content\Frontend\rtl.css" />
-    <Content Include="Content\Frontend\style.css">
+    <Content Include="Content\Style\Frontend\responsive.css" />
+    <Content Include="Content\Style\Frontend\rtl.css" />
+    <Content Include="Content\Style\Frontend\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Frontend\style.min.css">
+    <Content Include="Content\Style\Frontend\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
     <Content Include="Error\400.html" />
@@ -822,7 +822,7 @@
     <Content Include="Error\resource\default-particles.js" />
     <Content Include="Error\resource\default.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Style\Site.css" />
     <Compile Include="App_Start\StartupConfig.cs" />
     <Content Include="Plugins\animated-headlines\animated-headlines.css" />
     <Content Include="Plugins\animated-headlines\animated-headlines.js" />
@@ -1168,12 +1168,12 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\Style\bootstrap.min.css.map" />
+    <Content Include="Content\Style\bootstrap.css.map" />
+    <Content Include="Content\Style\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Style\bootstrap-reboot.css.map" />
+    <Content Include="Content\Style\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Style\bootstrap-grid.css.map" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="Areas\Auth\Views\web.config" />
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
@@ -1233,88 +1233,88 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Auth\Styles.scss" />
-    <Content Include="Content\Auth\_Customize.scss" />
-    <Content Include="Content\App\style.scss" />
-    <Content Include="Content\App\Basic\_account-pages.scss" />
-    <Content Include="Content\App\Basic\_alerts.scss" />
-    <Content Include="Content\App\Basic\_animation.scss" />
-    <Content Include="Content\App\Basic\_badge.scss" />
-    <Content Include="Content\App\Basic\_bootstrap-reset.scss" />
-    <Content Include="Content\App\Basic\_buttons.scss" />
-    <Content Include="Content\App\Basic\_calendar.scss" />
-    <Content Include="Content\App\Basic\_carousel.scss" />
-    <Content Include="Content\App\Basic\_charts.scss" />
-    <Content Include="Content\App\Basic\_checkbox-radio.scss" />
-    <Content Include="Content\App\Basic\_common.scss" />
-    <Content Include="Content\App\Basic\_count-down.scss" />
-    <Content Include="Content\App\Basic\_demo-only.scss" />
-    <Content Include="Content\App\Basic\_email.scss" />
-    <Content Include="Content\App\Basic\_faq.scss" />
-    <Content Include="Content\App\Basic\_form-advanced.scss" />
-    <Content Include="Content\App\Basic\_form-elements.scss" />
-    <Content Include="Content\App\Basic\_form-upload.scss" />
-    <Content Include="Content\App\Basic\_form-validation.scss" />
-    <Content Include="Content\App\Basic\_form-wizard.scss" />
-    <Content Include="Content\App\Basic\_gallery.scss" />
-    <Content Include="Content\App\_helper.scss" />
-    <Content Include="Content\App\Basic\_kanban.scss" />
-    <Content Include="Content\App\Basic\_maintenance.scss" />
-    <Content Include="Content\App\Basic\_maps.scss" />
-    <Content Include="Content\App\Basic\_menu.scss" />
-    <Content Include="Content\App\Basic\_modal.scss" />
-    <Content Include="Content\App\Basic\_nestable.scss" />
-    <Content Include="Content\App\Basic\_notification.scss" />
-    <Content Include="Content\App\Basic\_pagination.scss" />
-    <Content Include="Content\App\Basic\_portlets.scss" />
-    <Content Include="Content\App\Basic\_pricing.scss" />
-    <Content Include="Content\App\Basic\_print.scss" />
-    <Content Include="Content\App\Basic\_progressbar.scss" />
-    <Content Include="Content\App\_responsive.scss" />
-    <Content Include="Content\App\Basic\_summernote.scss" />
-    <Content Include="Content\App\Basic\_sweetalert.scss" />
-    <Content Include="Content\App\Basic\_tables.scss" />
-    <Content Include="Content\App\Basic\_tabs.scss" />
-    <Content Include="Content\App\Basic\_timeline.scss" />
-    <Content Include="Content\App\Basic\_tooltips-popover.scss" />
-    <Content Include="Content\App\Basic\_treeview.scss" />
-    <Content Include="Content\App\_variables.scss" />
-    <Content Include="Content\App\Basic\_waves.scss" />
-    <Content Include="Content\App\Basic\_widgets.scss" />
-    <Content Include="Content\App\Basic\_wysiwig.scss" />
-    <Content Include="Content\Flag-Icon\flag-icon.scss" />
-    <Content Include="Content\Flag-Icon\_flag-icon-base.scss" />
-    <Content Include="Content\Flag-Icon\_flag-icon-list.scss" />
-    <Content Include="Content\Flag-Icon\_variables.scss" />
+    <Content Include="Content\Style\Auth\Styles.scss" />
+    <Content Include="Content\Style\Auth\_Customize.scss" />
+    <Content Include="Content\Style\App\style.scss" />
+    <Content Include="Content\Style\App\Basic\_account-pages.scss" />
+    <Content Include="Content\Style\App\Basic\_alerts.scss" />
+    <Content Include="Content\Style\App\Basic\_animation.scss" />
+    <Content Include="Content\Style\App\Basic\_badge.scss" />
+    <Content Include="Content\Style\App\Basic\_bootstrap-reset.scss" />
+    <Content Include="Content\Style\App\Basic\_buttons.scss" />
+    <Content Include="Content\Style\App\Basic\_calendar.scss" />
+    <Content Include="Content\Style\App\Basic\_carousel.scss" />
+    <Content Include="Content\Style\App\Basic\_charts.scss" />
+    <Content Include="Content\Style\App\Basic\_checkbox-radio.scss" />
+    <Content Include="Content\Style\App\Basic\_common.scss" />
+    <Content Include="Content\Style\App\Basic\_count-down.scss" />
+    <Content Include="Content\Style\App\Basic\_demo-only.scss" />
+    <Content Include="Content\Style\App\Basic\_email.scss" />
+    <Content Include="Content\Style\App\Basic\_faq.scss" />
+    <Content Include="Content\Style\App\Basic\_form-advanced.scss" />
+    <Content Include="Content\Style\App\Basic\_form-elements.scss" />
+    <Content Include="Content\Style\App\Basic\_form-upload.scss" />
+    <Content Include="Content\Style\App\Basic\_form-validation.scss" />
+    <Content Include="Content\Style\App\Basic\_form-wizard.scss" />
+    <Content Include="Content\Style\App\Basic\_gallery.scss" />
+    <Content Include="Content\Style\App\_helper.scss" />
+    <Content Include="Content\Style\App\Basic\_kanban.scss" />
+    <Content Include="Content\Style\App\Basic\_maintenance.scss" />
+    <Content Include="Content\Style\App\Basic\_maps.scss" />
+    <Content Include="Content\Style\App\Basic\_menu.scss" />
+    <Content Include="Content\Style\App\Basic\_modal.scss" />
+    <Content Include="Content\Style\App\Basic\_nestable.scss" />
+    <Content Include="Content\Style\App\Basic\_notification.scss" />
+    <Content Include="Content\Style\App\Basic\_pagination.scss" />
+    <Content Include="Content\Style\App\Basic\_portlets.scss" />
+    <Content Include="Content\Style\App\Basic\_pricing.scss" />
+    <Content Include="Content\Style\App\Basic\_print.scss" />
+    <Content Include="Content\Style\App\Basic\_progressbar.scss" />
+    <Content Include="Content\Style\App\_responsive.scss" />
+    <Content Include="Content\Style\App\Basic\_summernote.scss" />
+    <Content Include="Content\Style\App\Basic\_sweetalert.scss" />
+    <Content Include="Content\Style\App\Basic\_tables.scss" />
+    <Content Include="Content\Style\App\Basic\_tabs.scss" />
+    <Content Include="Content\Style\App\Basic\_timeline.scss" />
+    <Content Include="Content\Style\App\Basic\_tooltips-popover.scss" />
+    <Content Include="Content\Style\App\Basic\_treeview.scss" />
+    <Content Include="Content\Style\App\_variables.scss" />
+    <Content Include="Content\Style\App\Basic\_waves.scss" />
+    <Content Include="Content\Style\App\Basic\_widgets.scss" />
+    <Content Include="Content\Style\App\Basic\_wysiwig.scss" />
+    <Content Include="Content\Style\Flag-Icon\flag-icon.scss" />
+    <Content Include="Content\Style\Flag-Icon\_flag-icon-base.scss" />
+    <Content Include="Content\Style\Flag-Icon\_flag-icon-list.scss" />
+    <Content Include="Content\Style\Flag-Icon\_variables.scss" />
     <Content Include="MachineAppSettings.config" />
-    <Content Include="Content\App\_Customize.scss" />
+    <Content Include="Content\Style\App\_Customize.scss" />
     <Content Include="Plugins\datatables\json\scroller-demo.json" />
-    <Content Include="Content\Frontend\style.scss" />
-    <Content Include="Content\Frontend\Elements\_about.scss" />
-    <Content Include="Content\Frontend\Elements\_banner.scss" />
-    <Content Include="Content\Frontend\Elements\_blog.scss" />
-    <Content Include="Content\Frontend\Elements\_breadcrumb.scss" />
-    <Content Include="Content\Frontend\Elements\_button.scss" />
-    <Content Include="Content\Frontend\Elements\_contact.scss" />
-    <Content Include="Content\Frontend\Elements\_error.scss" />
-    <Content Include="Content\Frontend\Elements\_faq.scss" />
-    <Content Include="Content\Frontend\Elements\_features.scss" />
-    <Content Include="Content\Frontend\Elements\_footer.scss" />
-    <Content Include="Content\Frontend\Elements\_header.scss" />
-    <Content Include="Content\Frontend\Elements\_hosting.scss" />
-    <Content Include="Content\Frontend\Elements\_joblist.scss" />
-    <Content Include="Content\Frontend\Elements\_portfolio.scss" />
-    <Content Include="Content\Frontend\Elements\_predefine.scss" />
-    <Content Include="Content\Frontend\Elements\_preloader.scss" />
-    <Content Include="Content\Frontend\Elements\_price.scss" />
-    <Content Include="Content\Frontend\Elements\_screenshot.scss" />
-    <Content Include="Content\Frontend\Elements\_search.scss" />
-    <Content Include="Content\Frontend\Elements\_service.scss" />
-    <Content Include="Content\Frontend\Elements\_shop.scss" />
-    <Content Include="Content\Frontend\Elements\_split-home.scss" />
-    <Content Include="Content\Frontend\Elements\_testimonial.scss" />
-    <Content Include="Content\Frontend\Elements\_typography.scss" />
-    <Content Include="Content\Frontend\_variables.scss" />
+    <Content Include="Content\Style\Frontend\style.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_about.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_banner.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_blog.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_breadcrumb.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_button.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_contact.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_error.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_faq.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_features.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_footer.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_header.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_hosting.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_joblist.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_portfolio.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_predefine.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_preloader.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_price.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_screenshot.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_search.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_service.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_shop.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_split-home.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_testimonial.scss" />
+    <Content Include="Content\Style\Frontend\Elements\_typography.scss" />
+    <Content Include="Content\Style\Frontend\_variables.scss" />
     <Content Include="Plugins\Frontend\bootstrap-selector\css\bootstrap-select.css.map" />
     <Content Include="Plugins\Frontend\bootstrap-selector\js\bootstrap-select.js.map" />
     <Content Include="Plugins\Frontend\elagent\fonts\ElegantIcons.eot" />
@@ -1339,8 +1339,8 @@
     <Content Include="Plugins\Frontend\simple-line-icon\fonts\Simple-Line-Icons.woff" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.ttf" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.woff" />
-    <Content Include="Content\Frontend\_custom.scss" />
-    <Content Include="Content\App\bootstrap-rtl.scss" />
+    <Content Include="Content\Style\Frontend\_custom.scss" />
+    <Content Include="Content\Style\App\bootstrap-rtl.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />

@@ -22,12 +22,12 @@ namespace BrandBook.Web
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Style/bootstrap.css",
+                      "~/Content/Style/site.css"));
 
 
             bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
-                        "~/Content/Flag-Icon/flag-icon.min.css"));
+                        "~/Content/Style/Flag-Icon/flag-icon.min.css"));
 
 
 
@@ -68,7 +68,7 @@ namespace BrandBook.Web
 
             // Bundles for Frontend
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
-                        "~/Content/bootstrap.min.css",
+                        "~/Content/Style/bootstrap.min.css",
 
                         /* Plugins */
                         "~/Plugins/Frontend/themify-icon/themify-icons.css",
@@ -80,11 +80,11 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
                         /* ./Plugins */
 
-                        "~/Content/Frontend/style.min.css",
-                        "~/Content/Frontend/responsive.css"));
+                        "~/Content/Style/Frontend/style.min.css",
+                        "~/Content/Style/Frontend/responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
-                "~/Content/Frontend/rtl.css"));
+                "~/Content/Style/Frontend/rtl.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
@@ -133,8 +133,8 @@ namespace BrandBook.Web
              */
 
             bundles.Add(new StyleBundle("~/Content/Css/Auth/Main").Include(
-                        "~/Content/bootstrap.min.css",
-                        "~/Content/Auth/Styles.min.css"));
+                        "~/Content/Style/bootstrap.min.css",
+                        "~/Content/Style/Auth/Styles.min.css"));
 
 
 
@@ -148,11 +148,11 @@ namespace BrandBook.Web
              */
             bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
                 "~/Plugins/switchery/switchery.min.css",
-                "~/Content/bootstrap.min.css",
-                "~/Content/App/style.min.css"));
+                "~/Content/Style/bootstrap.min.css",
+                "~/Content/Style/App/style.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
-                "~/Content/App/bootstrap-rtl.min.css"));
+                "~/Content/Style/App/bootstrap-rtl.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
