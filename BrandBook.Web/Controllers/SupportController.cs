@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Messaging;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Notification;
 
 namespace BrandBook.Web.Controllers
 {
@@ -15,10 +17,12 @@ namespace BrandBook.Web.Controllers
     {
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IReCaptchaService _recaptchaService;
+        private readonly INotificationService _notificationService;
 
         public SupportController()
         {
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
 
@@ -57,18 +61,10 @@ namespace BrandBook.Web.Controllers
             message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
             message.Append("<strong>Message:</strong> " + model.Message);
 
-            if (await EmailService.SendEmailAsync(message.ToString()))
-            {
-                return RedirectToAction("Contact", "Support");
-            }
-            else
-            {
-                var error = "This Email could not be sent. Please try again later.";
+            _notificationService.SendNotification("brandci@philipp-moser.de", "Contact Request - BrandCi",
+                message.ToString());
 
-                ModelState.AddModelError("NotSent", error);
-                Logger.Error(error);
-            }
-
+            
             return View(model);
         }
     }
