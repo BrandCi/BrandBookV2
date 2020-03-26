@@ -38,34 +38,5 @@ namespace BrandBook.Web.Controllers
         }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(ContactFormViewModel model)
-        {
-            if (!ModelState.IsValid) return View(model);
-
-            if (_recaptchaService.IsCaptchaActive())
-            {
-                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "frontend_contact");
-                if (!isCaptchaValid)
-                {
-                    ModelState.AddModelError("GoogleCaptcha", @Translations.auth_register_validation_captcha_invalid);
-                    return View(model);
-                }
-            }
-
-            var message = new StringBuilder();
-
-            message.Append("<strong>Name:</strong> " + model.Name + "<br />");
-            message.Append("<strong>Email:</strong> " + model.Email + "<br />");
-            message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
-            message.Append("<strong>Message:</strong> " + model.Message);
-
-            _notificationService.SendNotification("brandci@philipp-moser.de", "Contact Request - BrandCi",
-                message.ToString());
-
-            
-            return View(model);
-        }
     }
 }

@@ -196,6 +196,7 @@
     <Compile Include="Api\v1\App\UserManagement\SubscriptionsController.cs" />
     <Compile Include="Api\v1\App\UserManagement\UsersController.cs" />
     <Compile Include="Api\v1\Frontend\BlogsController.cs" />
+    <Compile Include="Api\v1\Frontend\ContactsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
