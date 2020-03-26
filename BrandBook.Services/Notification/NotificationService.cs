@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Services.Messaging;
+using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
 
@@ -12,6 +13,8 @@ namespace BrandBook.Services.Notification
 {
     public class NotificationService : INotificationService
     {
+        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
         public string _apiBasicUrl;
         public string _apiPrivateKey;
         public string _siteName;
@@ -27,7 +30,7 @@ namespace BrandBook.Services.Notification
         }
 
 
-        public IRestResponse SendNotification(string receiver, string subject, string content)
+        public bool SendNotification(string receiver, string subject, string content)
         {
             var client = new RestClient
             {
@@ -47,7 +50,21 @@ namespace BrandBook.Services.Notification
 
             request.Method = Method.POST;
 
-            return client.Execute(request);
+
+            var execution = client.Execute(request);
+
+            if (execution.IsSuccessful)
+            {
+                Logger.Info("Notification {'to': '" + receiver + "'}, {'subject': '" + subject + "'}");
+
+                return true;
+            }
+            else
+            {
+                Logger.Error("Notification: {" + execution.ErrorMessage + "}");
+
+                return false;
+            }
         }
     }
 }

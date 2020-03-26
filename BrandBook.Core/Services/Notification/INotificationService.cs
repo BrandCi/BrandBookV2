@@ -9,6 +9,6 @@ namespace BrandBook.Core.Services.Messaging
 {
     public interface INotificationService
     {
-        IRestResponse SendNotification(string receiver, string subject, string content);
+        bool SendNotification(string receiver, string subject, string content);
     }
 }
