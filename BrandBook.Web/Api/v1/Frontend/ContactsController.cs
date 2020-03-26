@@ -32,9 +32,12 @@ namespace BrandBook.Web.Api.v1.Frontend
             _recaptchaService = reCaptchaService;
         }
 
+        [HttpPost]
         [Route("send")]
         public async Task<IHttpActionResult> Send([FromBody] ContactFormViewModel model)
         {
+            return BadRequest();
+
             if (_recaptchaService.IsCaptchaActive())
             {
                 var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, HttpContext.Current.Request.UserHostAddress, "frontend_contact");
