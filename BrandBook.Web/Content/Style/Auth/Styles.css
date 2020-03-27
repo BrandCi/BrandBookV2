@@ -82,6 +82,15 @@ a.ibtn:hover, a.ibtn:focus {
   -webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16); }
 
+p.status-badge {
+  text-align: center !important; }
+  p.status-badge i {
+    font-size: 100pt; }
+    p.status-badge i.success {
+      color: #4dbd10; }
+    p.status-badge i.error {
+      color: #db5341; }
+
 /* -----------------------------------
     1 - General Styles
 ------------------------------------*/

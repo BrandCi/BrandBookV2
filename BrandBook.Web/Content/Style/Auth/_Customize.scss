@@ -86,3 +86,19 @@ a.ibtn:hover, a.ibtn:focus {
     -webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
 }
+
+p.status-badge {
+    text-align: center !important;
+
+    i {
+        font-size: 100pt;
+
+        &.success {
+            color: #4dbd10;
+        }
+
+        &.error {
+            color: #db5341;
+        }
+    }
+}
