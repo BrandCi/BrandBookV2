@@ -14,8 +14,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Resources;
+using BrandBook.Services.Notification;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -24,6 +26,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
+        private readonly INotificationService _notificationService;
 
 
         #region Constructor
@@ -33,6 +36,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
@@ -42,6 +46,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
         #endregion
@@ -141,7 +146,16 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
+
+                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+
+                    _notificationService.SendNotification(user.Email, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+
+                
                     await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
 
                 }
