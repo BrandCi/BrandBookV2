@@ -8,6 +8,6 @@ namespace BrandBook.Core.Services.Notification
 {
     public interface IEmailBuilder
     {
-        string BuildEmail();
+        string BuildEmail(string emailName);
     }
 }

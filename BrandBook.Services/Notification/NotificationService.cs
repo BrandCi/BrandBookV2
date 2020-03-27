@@ -44,6 +44,10 @@ namespace BrandBook.Services.Notification
             };
 
             var emailContent = _emailBuilder.BuildEmail();
+            if (string.IsNullOrEmpty(emailContent))
+            {
+                return false;
+            }
 
             var request = new RestRequest();
 

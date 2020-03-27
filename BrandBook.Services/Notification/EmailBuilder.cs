@@ -11,22 +11,34 @@ namespace BrandBook.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {
+        private string _emailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/Email";
 
-        public string BuildEmail()
+
+        public string BuildEmail(string emailName)
         {
-            var emailContent = GetTemplate("User_AccountVerification.html");
+            var emailContent = GetTemplate(emailName + ".html");
 
-            emailContent = emailContent.Replace("{{Subject}}", "Welcome to BrandCi");
-            emailContent = emailContent.Replace("{{TargetUrl}}", "https://brandci.philipp-moser.de/Blog/Overview");
+            emailContent = emailContent.Replace("{{StylesPath}}", _emailFolderPath + "/styles.css");
+
+            switch (emailName)
+            {
+                case "User_AccountVerification":
+                    emailContent = emailContent.Replace("{{Subject}}", "Welcome to BrandCi");
+                    emailContent = emailContent.Replace("{{TargetUrl}}", "https://brandci.philipp-moser.de/Blog/Overview");
+                    break;
+                default:
+                    return null;
+            }
+
+            
 
             return emailContent;
 
         }
 
-        private static string GetTemplate(string emailName)
+        private string GetTemplate(string emailName)
         {
-            var templateFolder = HostingEnvironment.ApplicationPhysicalPath + "/Content/Email/";
-            var templateFile = templateFolder  + emailName;
+            var templateFile = _emailFolderPath + emailName;
 
             return File.Exists(templateFile) ? File.ReadAllText(templateFile) : null;
         }
