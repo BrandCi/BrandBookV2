@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.ViewModels.Process.Notification;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
@@ -60,8 +61,13 @@ namespace BrandBook.Web.Controllers
             message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
             message.Append("<strong>Message:</strong> " + model.Message);
 
-            _notificationService.SendNotification("brandci@philipp-moser.de", "Contact Request - BrandCi",
-                message.ToString());
+            var emailContent = new EmailTemplateViewModel()
+            {
+                Type = EmailTemplateType.Plain,
+                Subject = "BrandCi - Contact Request"
+            };
+
+            _notificationService.SendNotification(emailContent);
 
             return View(model);
         }

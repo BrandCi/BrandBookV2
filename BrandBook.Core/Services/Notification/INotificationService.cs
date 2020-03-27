@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BrandBook.Core.ViewModels.Process.Notification;
 
 namespace BrandBook.Core.Services.Messaging
 {
     public interface INotificationService
     {
-        bool SendNotification(string receiver, string subject, string content);
+        bool SendNotification(EmailTemplateViewModel model);
     }
 }

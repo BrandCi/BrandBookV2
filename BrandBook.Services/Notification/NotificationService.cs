@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
+using BrandBook.Core.ViewModels.Process.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -35,7 +36,7 @@ namespace BrandBook.Services.Notification
         }
 
 
-        public bool SendNotification(string receiver, string subject, string content)
+        public bool SendNotification(EmailTemplateViewModel model)
         {
             var client = new RestClient
             {
@@ -43,7 +44,7 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
-            var emailContent = _emailBuilder.BuildEmail("User_AccountVerification");
+            var emailContent = _emailBuilder.BuildEmail(model);
             if (string.IsNullOrEmpty(emailContent))
             {
                 return false;
@@ -55,8 +56,8 @@ namespace BrandBook.Services.Notification
             request.Resource = "{domain}/messages";
 
             request.AddParameter("from", _sender);
-            request.AddParameter("to", receiver);
-            request.AddParameter("subject", subject);
+            request.AddParameter("to", model.Receiver);
+            request.AddParameter("subject", model.Subject);
             request.AddParameter("html", emailContent);
 
             request.Method = Method.POST;
@@ -66,7 +67,7 @@ namespace BrandBook.Services.Notification
 
             if (execution.IsSuccessful)
             {
-                Logger.Info("Notification {'to': '" + receiver + "'}, {'subject': '" + subject + "'}");
+                Logger.Info("Notification {'to': '" + model.Receiver + "'}, {'subject': '" + model.Subject + "'}");
 
                 return true;
             }

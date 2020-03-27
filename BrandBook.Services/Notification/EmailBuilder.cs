@@ -6,25 +6,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Hosting;
 using BrandBook.Core.Services.Notification;
+using BrandBook.Core.ViewModels.Process.Notification;
 
 namespace BrandBook.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {
-        private string _emailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/Email";
+        private readonly string _emailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/Email";
 
 
-        public string BuildEmail(string emailName)
+        public string BuildEmail(EmailTemplateViewModel model)
         {
-            var emailContent = GetTemplate(emailName + ".html");
-
+            var emailContent = GetTemplate(model.Type + ".html");
             emailContent = emailContent.Replace("{{StylesPath}}", _emailFolderPath + "/styles.css");
+            emailContent = emailContent.Replace("{{Title}}", model.Subject);
 
-            switch (emailName)
+            switch (model.Type)
             {
-                case "User_AccountVerification":
-                    emailContent = emailContent.Replace("{{Subject}}", "Welcome to BrandCi");
-                    emailContent = emailContent.Replace("{{TargetUrl}}", "https://brandci.philipp-moser.de/Blog/Overview");
+                case EmailTemplateType.User_AccountVerification:
+                    emailContent = emailContent.Replace("{{Username}}", model.User_AccountVerification.Username);
+                    emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountVerification.TargetUrl);
+                    break;
+                case EmailTemplateType.Plain:
+                    emailContent = "";
                     break;
                 default:
                     return null;
@@ -38,7 +42,7 @@ namespace BrandBook.Services.Notification
 
         private string GetTemplate(string emailName)
         {
-            var templateFile = _emailFolderPath + emailName;
+            var templateFile = _emailFolderPath + "/" + emailName;
 
             return File.Exists(templateFile) ? File.ReadAllText(templateFile) : null;
         }

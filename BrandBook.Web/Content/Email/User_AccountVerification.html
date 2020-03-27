@@ -5,7 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{Subject}}</title>
+    <title>{{Title}}</title>
     <link rel="stylesheet" type="text/css" href="{{StylesPath}}"/>
 </head>
 
@@ -18,7 +18,7 @@
                     <table class="main" width="100%" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="topheader">
-                                {{Subject}}
+                                {{Title}}
                             </td>
                         </tr>
                         <tr>
@@ -26,7 +26,7 @@
                                 <table width="100%" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td class="content-block salutation">
-                                            Hello,
+                                            Hello {{Username}},
                                         </td>
                                     </tr>
                                     <tr>
@@ -37,7 +37,7 @@
                                     <tr>
                                         <td class="content-block button">
                                             <a href="{{TargetUrl}}" class="btn-primary">
-                                                Confirm your Account
+                                            Confirm your Account
                                             </a>
                                         </td>
                                     </tr>

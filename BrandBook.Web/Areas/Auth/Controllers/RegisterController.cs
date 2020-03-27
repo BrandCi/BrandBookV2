@@ -16,6 +16,8 @@ using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Notification;
 
@@ -150,7 +152,19 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 
-                    _notificationService.SendNotification(user.Email, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    var emailContent = new EmailTemplateViewModel()
+                    {
+                        Type = EmailTemplateType.User_AccountVerification,
+                        Receiver = user.Email,
+                        Subject = "Confirm your Account",
+                        User_AccountVerification = new User_AccountVerification()
+                        {
+                            Username = user.UserName,
+                            TargetUrl = callbackUrl
+                        }
+                    };
+
+                    _notificationService.SendNotification(emailContent);
 
 
                 
