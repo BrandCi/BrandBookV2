@@ -52,6 +52,7 @@ namespace BrandBook.Services.Subscriptions
                 .Select(s => s[random.Next(s.Length)])
                 .ToArray());
         }
+        #endregion
 
         public DateTime GetSubscriptionEndDate(Subscription subscription)
         {
