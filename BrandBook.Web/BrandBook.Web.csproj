@@ -1231,6 +1231,7 @@
     <Content Include="Areas\App\Views\BlogEntry\Edit.cshtml" />
     <Content Include="Areas\App\Views\Shared\_Partial\_VersionInfo.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ConfirmAccount.cshtml" />
+    <Content Include="Areas\Auth\Views\Shared\Error.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
