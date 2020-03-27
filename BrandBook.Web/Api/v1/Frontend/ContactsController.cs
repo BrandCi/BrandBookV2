@@ -37,27 +37,6 @@ namespace BrandBook.Web.Api.v1.Frontend
         public async Task<IHttpActionResult> Send([FromBody] ContactFormViewModel model)
         {
             return BadRequest();
-
-            if (_recaptchaService.IsCaptchaActive())
-            {
-                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, HttpContext.Current.Request.UserHostAddress, "frontend_contact");
-                if (!isCaptchaValid)
-                {
-                    return BadRequest();
-                }
-            }
-
-            var message = new StringBuilder();
-
-            message.Append("<strong>Name:</strong> " + model.Name + "<br />");
-            message.Append("<strong>Email:</strong> " + model.Email + "<br />");
-            message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
-            message.Append("<strong>Message:</strong> " + model.Message);
-
-            _notificationService.SendNotification("brandci@philipp-moser.de", "Contact Request - BrandCi",
-                message.ToString());
-
-            return Ok();
         }
     }
 }
