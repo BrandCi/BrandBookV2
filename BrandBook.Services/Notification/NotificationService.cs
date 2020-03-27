@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -13,7 +14,9 @@ namespace BrandBook.Services.Notification
 {
     public class NotificationService : INotificationService
     {
+        private readonly IEmailBuilder _emailBuilder;
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
 
         public string _apiBasicUrl;
         public string _apiPrivateKey;
@@ -23,6 +26,8 @@ namespace BrandBook.Services.Notification
 
         public NotificationService()
         {
+            _emailBuilder = new EmailBuilder();
+
             _apiBasicUrl = ConfigurationManager.AppSettings["MailgunApiBasicUrl"];
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
             _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
@@ -38,6 +43,8 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
+            var emailContent = _emailBuilder.BuildEmail();
+
             var request = new RestRequest();
 
             request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
@@ -46,7 +53,7 @@ namespace BrandBook.Services.Notification
             request.AddParameter("from", _sender);
             request.AddParameter("to", receiver);
             request.AddParameter("subject", subject);
-            request.AddParameter("html", content);
+            request.AddParameter("html", emailContent);
 
             request.Method = Method.POST;
 
