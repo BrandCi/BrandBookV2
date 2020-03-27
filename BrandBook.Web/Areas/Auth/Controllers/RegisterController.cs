@@ -154,8 +154,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
 
                 
-                    await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
 
                 }
