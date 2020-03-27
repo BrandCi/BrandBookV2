@@ -13,23 +13,36 @@ namespace BrandBook.Infrastructure.Repositories.User
         }
 
 
-        public AppUser FindByUsername(string username)
+        public AppUser FindByUsername(string userName)
         {
-            return Set.FirstOrDefault(x => x.UserName == username);
+            return Set.FirstOrDefault(x => x.UserName == userName);
         }
 
 
         public int CountUserForCompanyId(int companyId)
         {
 
-            return Set.Where(au => au.Company.Id == companyId)
+            return Set.Where(x => x.Company.Id == companyId)
                 .Count();
 
         }
 
-        public int GetCompanyIdByUsername(string username)
+        public int GetCompanyIdByUsername(string userName)
         {
-            return Set.FirstOrDefault(x => x.UserName == username).CompanyId;
+            return Set
+                .Where(x => x.UserName == userName)
+                .Select(x => x.CompanyId)
+                .DefaultIfEmpty(0)
+                .First();
+        }
+
+        public int GetCompanyIdByUserId(string userId)
+        {
+            return Set
+                .Where(x => x.Id == userId)
+                .Select(x => x.CompanyId)
+                .DefaultIfEmpty(0)
+                .First();
         }
 
     }

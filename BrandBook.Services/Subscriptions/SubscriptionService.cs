@@ -54,6 +54,14 @@ namespace BrandBook.Services.Subscriptions
         }
         #endregion
 
+        public DateTime GetSubscriptionEndDate(Subscription subscription)
+        {
+            var validityInMonths = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId).ValidityInMonths;
+
+            return subscription.StartDateTime.AddMonths(validityInMonths);
+        }
+        #endregion
+
 
 
 

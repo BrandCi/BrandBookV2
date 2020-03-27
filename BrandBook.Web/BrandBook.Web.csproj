@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\v1\App\UserManagement\SubscriptionsController.cs" />
     <Compile Include="Api\v1\App\UserManagement\UsersController.cs" />
     <Compile Include="Api\v1\Frontend\BlogsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

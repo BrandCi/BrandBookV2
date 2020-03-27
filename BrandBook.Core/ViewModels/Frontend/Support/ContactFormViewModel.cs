@@ -23,5 +23,7 @@ namespace BrandBook.Core.ViewModels.Frontend.Support
         [Display(Name = "frontend_contact_input_privacypolicy", ResourceType = typeof(Translations))]
         public bool PrivacyPolicy { get; set; }
 
+        public string ReCaptchaToken { get; set; }
+
     }
 }

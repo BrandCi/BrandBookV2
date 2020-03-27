@@ -792,4 +792,82 @@
   <data name="frontend_navigation_authorized_openprofile" xml:space="preserve">
     <value>Open your profile</value>
   </data>
+  <data name="app_pagetitle_usermanagement_useroverview" xml:space="preserve">
+    <value>Useroverview</value>
+  </data>
+  <data name="app_subscription_activebadge_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="app_subscription_activebadge_inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="app_subscription_paymentbadge_paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="app_subscription_paymentbadge_pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activesince" xml:space="preserve">
+    <value>Active since</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activeuntil" xml:space="preserve">
+    <value>Active until</value>
+  </data>
+  <data name="app_subscription_popup_subscription_brandscreated" xml:space="preserve">
+    <value>Brands created</value>
+  </data>
+  <data name="app_subscription_popup_subscription_close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivate" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_button" xml:space="preserve">
+    <value>Yes, deactivate subscription!</value>
+  </data>
+  <data name="app_subscription_popup_subscription_heading" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="app_subscription_popup_subscription_heading_binding" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="app_subscription_popup_subscription_noitems" xml:space="preserve">
+    <value>No subscriptions available</value>
+  </data>
+  <data name="app_subscription_popup_subscription_pricepermonth" xml:space="preserve">
+    <value>Price per month</value>
+  </data>
+  <data name="app_subscription_popup_subscription_title" xml:space="preserve">
+    <value>Subscription</value>
+  </data>
+  <data name="app_subscription_popup_subscription_type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="app_usermanagement_table_head_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="app_usermanagement_table_head_firstname" xml:space="preserve">
+    <value>Firstname</value>
+  </data>
+  <data name="app_usermanagement_table_head_lastname" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="app_usermanagement_table_head_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_title" xml:space="preserve">
+    <value>Do you really want to deactivate this subscription?</value>
+  </data>
+  <data name="auth_register_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="frontend_contact_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="auth_login_validation_notloggedin" xml:space="preserve">
+    <value>You could not be logged in </value>
+  </data>
 </root>

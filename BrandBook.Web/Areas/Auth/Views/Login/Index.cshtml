@@ -7,6 +7,10 @@
     Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
 }
 
+@section header {
+    @CustomHelper.RenderReCaptchaRequest("auth_login")
+}
+
 
 @AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
 
@@ -40,17 +44,22 @@
 
                 <label class="container">
                     @Html.DisplayNameFor(m => m.RememberMe)
-                @Html.CheckBoxFor(m => m.RememberMe)
-                <span class="auth-custom-checkbox"></span>
-            </label>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    <span class="auth-custom-checkbox"></span>
+                </label>
+
+                if (CustomHelper.IsReCaptchaActive())
+                {
+                    @Html.HiddenFor(m => m.ReCaptchaToken);
+                }
 
 
-            <div class="form-button mt-5">
-                <button id="submit" type="submit" class="ibtn">@Translations.auth_login_login_button_title</button>
-                <a href="@Url.Action("ForgotPassword", "Processes")">@Translations.auth_login_resetpassword_title</a>
-            </div>
+                <div class="form-button mt-5">
+                    <button id="submit" type="submit" class="ibtn">@Translations.auth_login_login_button_title</button>
+                    <a href="@Url.Action("ForgotPassword", "Processes")">@Translations.auth_login_resetpassword_title</a>
+                </div>
 
-        }
+            }
 
 
 

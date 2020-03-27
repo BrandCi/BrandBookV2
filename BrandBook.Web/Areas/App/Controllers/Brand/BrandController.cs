@@ -26,7 +26,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
-        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
         {

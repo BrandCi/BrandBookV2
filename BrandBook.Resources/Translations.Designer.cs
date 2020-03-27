@@ -241,6 +241,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Useroverview.
+        /// </summary>
+        public static string app_pagetitle_usermanagement_useroverview {
+            get {
+                return ResourceManager.GetString("app_pagetitle_usermanagement_useroverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string app_settings_back_button_title {
@@ -412,6 +421,204 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string app_subscription_activebadge_active {
+            get {
+                return ResourceManager.GetString("app_subscription_activebadge_active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string app_subscription_activebadge_inactive {
+            get {
+                return ResourceManager.GetString("app_subscription_activebadge_inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paid.
+        /// </summary>
+        public static string app_subscription_paymentbadge_paid {
+            get {
+                return ResourceManager.GetString("app_subscription_paymentbadge_paid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pending.
+        /// </summary>
+        public static string app_subscription_paymentbadge_pending {
+            get {
+                return ResourceManager.GetString("app_subscription_paymentbadge_pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        public static string app_subscription_popup_subscription_activate {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active since.
+        /// </summary>
+        public static string app_subscription_popup_subscription_activesince {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_activesince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active until.
+        /// </summary>
+        public static string app_subscription_popup_subscription_activeuntil {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_activeuntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brands created.
+        /// </summary>
+        public static string app_subscription_popup_subscription_brandscreated {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_brandscreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string app_subscription_popup_subscription_close {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deactivate.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivate {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes, deactivate subscription!.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivateapprove_button {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivateapprove_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to deactivate this subscription?.
+        /// </summary>
+        public static string app_subscription_popup_subscription_deactivateapprove_title {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_deactivateapprove_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscriptions.
+        /// </summary>
+        public static string app_subscription_popup_subscription_heading {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_heading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to for.
+        /// </summary>
+        public static string app_subscription_popup_subscription_heading_binding {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_heading_binding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No subscriptions available.
+        /// </summary>
+        public static string app_subscription_popup_subscription_noitems {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_noitems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price per month.
+        /// </summary>
+        public static string app_subscription_popup_subscription_pricepermonth {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_pricepermonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription.
+        /// </summary>
+        public static string app_subscription_popup_subscription_title {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string app_subscription_popup_subscription_type {
+            get {
+                return ResourceManager.GetString("app_subscription_popup_subscription_type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail.
+        /// </summary>
+        public static string app_usermanagement_table_head_email {
+            get {
+                return ResourceManager.GetString("app_usermanagement_table_head_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firstname.
+        /// </summary>
+        public static string app_usermanagement_table_head_firstname {
+            get {
+                return ResourceManager.GetString("app_usermanagement_table_head_firstname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lastname.
+        /// </summary>
+        public static string app_usermanagement_table_head_lastname {
+            get {
+                return ResourceManager.GetString("app_usermanagement_table_head_lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string app_usermanagement_table_head_username {
+            get {
+                return ResourceManager.GetString("app_usermanagement_table_head_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
         public static string app_usermenu_languageselection {
@@ -565,6 +772,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You could not be logged in .
+        /// </summary>
+        public static string auth_login_validation_notloggedin {
+            get {
+                return ResourceManager.GetString("auth_login_validation_notloggedin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I have read and accept the Privacy Policy.
         /// </summary>
         public static string auth_register_checkbox_privacypolicy_title {
@@ -678,6 +894,15 @@ namespace BrandBook.Resources {
         public static string auth_register_title {
             get {
                 return ResourceManager.GetString("auth_register_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string auth_register_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("auth_register_validation_captcha_invalid", resourceCulture);
             }
         }
         
@@ -813,6 +1038,15 @@ namespace BrandBook.Resources {
         public static string frontend_contact_input_subject {
             get {
                 return ResourceManager.GetString("frontend_contact_input_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReCaptcha is invalid.
+        /// </summary>
+        public static string frontend_contact_validation_captcha_invalid {
+            get {
+                return ResourceManager.GetString("frontend_contact_validation_captcha_invalid", resourceCulture);
             }
         }
         

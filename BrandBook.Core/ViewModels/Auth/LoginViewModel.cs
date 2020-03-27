@@ -18,5 +18,7 @@ namespace BrandBook.Core.ViewModels.Auth
         [Display(Name = "auth_login_input_rememberme", ResourceType = typeof(Translations))]
         public bool RememberMe { get; set; }
 
+        public string ReCaptchaToken { get; set; }
+
     }
 }

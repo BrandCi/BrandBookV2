@@ -1,6 +1,7 @@
 ﻿using BrandBook.Core.Repositories.Setting;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Setting;
+using System.Configuration;
 using System.Text;
 using System.Web;
 
@@ -32,7 +33,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             }
             return "https://" + contentServer + "/" + contentKey + "/" + imageName;
         }
-
 
         public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
         {
@@ -66,7 +66,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             return new HtmlString(html.ToString());
         }
-
 
         public static IHtmlString SharedStorageImage(string imageNameAndType, string classes = "", string styles = "", string additionalAttributes = "")
         {
@@ -102,6 +101,33 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             return new HtmlString(html.ToString());
         }
 
+        public static IHtmlString RenderReCaptchaRequest(string action)
+        {
+            var html = new StringBuilder();
+            var recaptchaActive = ConfigurationManager.AppSettings["ReCaptchaActive"];
+
+            if (recaptchaActive != "1") return new HtmlString(html.ToString());
+
+            var recaptchaSiteKey = ConfigurationManager.AppSettings["ReCaptchaSiteKey"];
+
+            html.Append("<script src=\"https://www.google.com/recaptcha/api.js?render="+ recaptchaSiteKey +"\"></script>");
+            html.Append("<script>");
+
+            html.Append("grecaptcha.ready(function() {");
+            html.Append("grecaptcha.execute('" + recaptchaSiteKey + "', { action: '" + action + "' }).then(function (token) {");
+            html.Append("$('#ReCaptchaToken').val(token);");
+            html.Append("});");
+            html.Append("});");
+
+            html.Append("</script>");
+
+            return new HtmlString(html.ToString());
+        }
+
+        public static bool IsReCaptchaActive()
+        {
+            return ConfigurationManager.AppSettings["ReCaptchaActive"] == "1";
+        }
     }
 
 }

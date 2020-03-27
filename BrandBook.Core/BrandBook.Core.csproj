@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -80,6 +83,7 @@
     <Compile Include="Domain\User\Subscription.cs" />
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
+    <Compile Include="Dto\App\UserManagement\SubscriptionDto.cs" />
     <Compile Include="Dto\App\UserManagement\UserDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogDetailDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogOverviewDto.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="Repositories\User\ISubscriptionPlanRepository.cs" />
     <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
+    <Compile Include="Services\Authentication\IReCaptchaService.cs" />
     <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
@@ -152,6 +157,7 @@
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
+    <Compile Include="ViewModels\ReCaptchaResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
