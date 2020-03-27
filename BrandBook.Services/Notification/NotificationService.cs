@@ -43,7 +43,7 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
-            var emailContent = _emailBuilder.BuildEmail();
+            var emailContent = _emailBuilder.BuildEmail("User_AccountVerification");
             if (string.IsNullOrEmpty(emailContent))
             {
                 return false;

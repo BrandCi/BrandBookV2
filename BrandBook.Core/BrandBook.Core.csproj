@@ -163,7 +163,7 @@
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
-    <Compile Include="ViewModels\ReCaptchaResponseViewModel.cs" />
+    <Compile Include="ViewModels\Process\ReCaptchaResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
