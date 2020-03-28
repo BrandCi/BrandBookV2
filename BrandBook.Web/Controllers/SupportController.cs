@@ -64,6 +64,7 @@ namespace BrandBook.Web.Controllers
                     Name = model.Name,
                     Email = model.Email,
                     Subject = model.Subject,
+                    RequestIp = Request.UserHostAddress,
                     Message = model.Message
                 }
             };

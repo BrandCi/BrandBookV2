@@ -50,6 +50,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Subject}}", model.General_ContactRequest.Subject);
                     emailContent = emailContent.Replace("{{Name}}", model.General_ContactRequest.Name);
                     emailContent = emailContent.Replace("{{Email}}", model.General_ContactRequest.Email);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.General_ContactRequest.RequestIp);
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
                 case EmailTemplateType.Plain:

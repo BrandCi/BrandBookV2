@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Process.Notification;
@@ -69,13 +70,13 @@ namespace BrandBook.Services.Notification
 
             if (execution.IsSuccessful)
             {
-                Logger.Info("Notification {'to': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}");
+                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
 
                 return true;
             }
             else
             {
-                Logger.Error("Notification: {" + execution.ErrorMessage + "}");
+                Logger.Error("Notification: {" + execution.ErrorMessage + "}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
 
                 return false;
             }
