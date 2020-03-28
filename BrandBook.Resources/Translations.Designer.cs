@@ -1033,11 +1033,83 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send message.
+        /// </summary>
+        public static string frontend_contact_input_sendbutton {
+            get {
+                return ResourceManager.GetString("frontend_contact_input_sendbutton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your subject.
         /// </summary>
         public static string frontend_contact_input_subject {
             get {
                 return ResourceManager.GetString("frontend_contact_input_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your message has been sent..
+        /// </summary>
+        public static string frontend_contact_status_success_content_1 {
+            get {
+                return ResourceManager.GetString("frontend_contact_status_success_content_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We will get back to you soon!.
+        /// </summary>
+        public static string frontend_contact_status_success_content_2 {
+            get {
+                return ResourceManager.GetString("frontend_contact_status_success_content_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awesome!.
+        /// </summary>
+        public static string frontend_contact_status_success_title {
+            get {
+                return ResourceManager.GetString("frontend_contact_status_success_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check your input.
+        /// </summary>
+        public static string frontend_contact_status_warning_content {
+            get {
+                return ResourceManager.GetString("frontend_contact_status_warning_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erm....
+        /// </summary>
+        public static string frontend_contact_status_warning_title {
+            get {
+                return ResourceManager.GetString("frontend_contact_status_warning_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We would love to hear from you..
+        /// </summary>
+        public static string frontend_contact_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_contact_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact us.
+        /// </summary>
+        public static string frontend_contact_title {
+            get {
+                return ResourceManager.GetString("frontend_contact_title", resourceCulture);
             }
         }
         

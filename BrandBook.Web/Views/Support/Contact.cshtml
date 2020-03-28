@@ -2,7 +2,7 @@
 @using System.Configuration
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = Translations.frontend_contact_title;
 }
 
 @section styles {
@@ -10,16 +10,15 @@
 }
 
 
-
 <section class="breadcrumb_area">
     @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
     <div class="container">
         <div class="breadcrumb_content text-center">
             <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
-                Contact us
+                @Translations.frontend_contact_title
             </h1>
             <p class="f_400 w_color f_size_16 l_height26">
-                We are pleased about your message!
+                @Translations.frontend_contact_subtitle
             </p>
         </div>
     </div>
@@ -35,9 +34,9 @@
                     <div class="box_alert media box_warning">
                         <div class="icon"><i class="fas fa-exclamation"></i></div>
                         <div class="media-body">
-                            <h5 style="color: #e7b931;">Erm...</h5>
+                            <h5 style="color: #e7b931;">@Translations.frontend_contact_status_warning_title</h5>
                             <p>
-                                <span style="font-weight: 600;">Please check your input:</span> <br />
+                                <span style="font-weight: 600;">@Translations.frontend_contact_status_warning_content:</span> <br />
                                 @Html.ValidationSummary()
                             </p>
                         </div>
@@ -48,8 +47,8 @@
                 <div class="box_alert media box_success" id="contact-success" style="display: none;">
                     <div class="icon"><i class="fas fa-check"></i></div>
                     <div class="media-body">
-                        <h5 style="color: #4acc43;">Awesome!</h5>
-                        <p><span style="font-weight: 600;">Your message has been sent.</span> We will get back to you soon!</p>
+                        <h5 style="color: #4acc43;">@Translations.frontend_contact_status_success_title</h5>
+                        <p><span style="font-weight: 600;">@Translations.frontend_contact_status_success_content_1</span> @Translations.frontend_contact_status_success_content_2</p>
                     </div>
                 </div>
 
@@ -98,13 +97,9 @@
                                 @Html.HiddenFor(m => m.ReCaptchaToken);
                             }
                         </div>
-                        <button type="submit" class="btn_three">Send Message</button>
+                        <button type="submit" class="btn_three">@Translations.frontend_contact_input_sendbutton</button>
 
                     }
-
-
-                    <div id="success">Your message succesfully sent!</div>
-                    <div id="error">Opps! There is something wrong. Please try again</div>
                 </div>
             </div>
         </div>
@@ -123,11 +118,8 @@
             if ('@Model.IsSent' == 'True') {
                 $('#contact-success').show();    
             }
-
-            
         });
         
-
     </script>
 
 }

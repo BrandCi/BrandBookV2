@@ -870,4 +870,28 @@
   <data name="auth_login_validation_notloggedin" xml:space="preserve">
     <value>You could not be logged in </value>
   </data>
+  <data name="frontend_contact_input_sendbutton" xml:space="preserve">
+    <value>Send message</value>
+  </data>
+  <data name="frontend_contact_status_success_content_1" xml:space="preserve">
+    <value>Your message has been sent.</value>
+  </data>
+  <data name="frontend_contact_status_success_content_2" xml:space="preserve">
+    <value>We will get back to you soon!</value>
+  </data>
+  <data name="frontend_contact_status_success_title" xml:space="preserve">
+    <value>Awesome!</value>
+  </data>
+  <data name="frontend_contact_status_warning_content" xml:space="preserve">
+    <value>Please check your input</value>
+  </data>
+  <data name="frontend_contact_status_warning_title" xml:space="preserve">
+    <value>Erm...</value>
+  </data>
+  <data name="frontend_contact_subtitle" xml:space="preserve">
+    <value>We would love to hear from you.</value>
+  </data>
+  <data name="frontend_contact_title" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
 </root>
