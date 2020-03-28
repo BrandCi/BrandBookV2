@@ -1,0 +1,28 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers;
+@{
+    ViewBag.Title = @Translations.auth_unlockaccount_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Thank you</h3>
+            <p>
+                You have successfully confirmed your BrandCi Account.<br /><br />
+                Please click on the following button to create your first brand:
+            </p>
+            
+
+            <div class="mt-5">
+                <a href="@Url.Action("Index", "Dashboard", new { area = "App" })" class="ibtn">Start now</a>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

@@ -46,9 +46,13 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,6 +113,8 @@
     <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
     <Compile Include="Services\Authentication\IReCaptchaService.cs" />
+    <Compile Include="Services\Notification\IEmailBuilder.cs" />
+    <Compile Include="Services\Notification\INotificationService.cs" />
     <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
@@ -157,7 +163,11 @@
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
-    <Compile Include="ViewModels\ReCaptchaResponseViewModel.cs" />
+    <Compile Include="ViewModels\Process\Notification\EmailTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Process\Notification\TemplateType\General_ContactRequest.cs" />
+    <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerification.cs" />
+    <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />
+    <Compile Include="ViewModels\Process\ReCaptchaResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">

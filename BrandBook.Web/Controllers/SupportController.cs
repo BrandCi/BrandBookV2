@@ -6,8 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
+using BrandBook.Services.Notification;
 
 namespace BrandBook.Web.Controllers
 {
@@ -15,10 +19,12 @@ namespace BrandBook.Web.Controllers
     {
         protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IReCaptchaService _recaptchaService;
+        private readonly INotificationService _notificationService;
 
         public SupportController()
         {
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
 
@@ -32,7 +38,6 @@ namespace BrandBook.Web.Controllers
             var model = new ContactFormViewModel();
             return View(model);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -49,27 +54,26 @@ namespace BrandBook.Web.Controllers
                     return View(model);
                 }
             }
-
-            var message = new StringBuilder();
-
-            message.Append("<strong>Name:</strong> " + model.Name + "<br />");
-            message.Append("<strong>Email:</strong> " + model.Email + "<br />");
-            message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
-            message.Append("<strong>Message:</strong> " + model.Message);
-
-            if (await EmailService.SendEmailAsync(message.ToString()))
+            
+            var emailContent = new EmailTemplateViewModel()
             {
-                return RedirectToAction("Contact", "Support");
-            }
-            else
-            {
-                var error = "This Email could not be sent. Please try again later.";
+                Type = EmailTemplateType.General_ContactRequest,
+                Subject = "BrandCi - Contact Request",
+                General_ContactRequest = new General_ContactRequest()
+                {
+                    Name = model.Name,
+                    Email = model.Email,
+                    Subject = model.Subject,
+                    RequestIp = Request.UserHostAddress,
+                    Message = model.Message
+                }
+            };
 
-                ModelState.AddModelError("NotSent", error);
-                Logger.Error(error);
-            }
+            _notificationService.SendNotification(emailContent);
 
             return View(model);
         }
+
+
     }
 }
