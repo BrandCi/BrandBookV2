@@ -14,8 +14,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Resources;
+using BrandBook.Services.Notification;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -24,6 +28,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
+        private readonly INotificationService _notificationService;
 
 
         #region Constructor
@@ -33,6 +38,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
         public RegisterController(UserService userService, SignInService signInService)
@@ -42,6 +48,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
+            _notificationService = new NotificationService();
         }
 
         #endregion
@@ -141,7 +148,27 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
                     await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
-                    await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+
+                    var emailContent = new EmailTemplateViewModel()
+                    {
+                        Type = EmailTemplateType.User_AccountVerification,
+                        Receiver = user.Email,
+                        Subject = "Verify your E-Mail Address",
+                        User_AccountVerification = new User_AccountVerification()
+                        {
+                            Username = user.UserName,
+                            EmailAddress = user.Email,
+                            TargetUrl = callbackUrl
+                        }
+                    };
+
+                    _notificationService.SendNotification(emailContent);
+
+
+                
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
 
                 }

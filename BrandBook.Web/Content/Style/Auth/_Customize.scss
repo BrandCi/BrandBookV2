@@ -63,3 +63,42 @@
 .alert-summary.alert > ul > li {
     list-style-type: none;    
 }
+
+a.ibtn {
+    background-color: #191eae;
+    color: #fff;
+    -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
+    box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
+    border-radius: 6px;
+    border: 0;
+    padding: 6px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+a.ibtn:hover, a.ibtn:focus {
+    -webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
+}
+
+p.status-badge {
+    text-align: center !important;
+
+    i {
+        font-size: 100pt;
+
+        &.success {
+            color: #4dbd10;
+        }
+
+        &.error {
+            color: #db5341;
+        }
+    }
+}

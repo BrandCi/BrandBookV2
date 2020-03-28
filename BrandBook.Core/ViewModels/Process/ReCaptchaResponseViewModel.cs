@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace BrandBook.Core.ViewModels
+namespace BrandBook.Core.ViewModels.Process
 {
     public class ReCaptchaResponseViewModel
     {

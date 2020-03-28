@@ -12,15 +12,18 @@
 <div class="form-holder">
     <div class="form-content">
         <div class="form-items">
-            <h3>Welcome, @User.Identity.Name</h3>
+            <h3>Success!</h3>
             <p>
-                Your account is created! <br /><br />
-                Thank you for taking time to register. We hope you will enjoy BrandCi.
+                Your account has been created. <br /><br />
+                Please confirm your email by clicking on the link we have sent you.
+            </p>
+            <p class="status-badge">
+                <i class="far fa-check-circle success"></i>
             </p>
 
 
             <div class="page-links mt-5">
-                <a href="@Url.Action("Index", "Dashboard", new {area = "App"} )">Ok, continue&nbsp;<i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("Index", "Login", new {area = "Auth"} )">Ok, login&nbsp;<i class="fas fa-chevron-right"></i></a>
                 
             </div>
 
