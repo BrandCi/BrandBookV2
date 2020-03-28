@@ -5,20 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Hosting;
+using BrandBook.Core;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Infrastructure;
 
 namespace BrandBook.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {
-        private readonly string _emailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/Email";
+        private readonly string _localEmailFolderPath;
+        private readonly string _publicEmailFolderPath;
+        private readonly string _emailSubfolder;
 
+        public EmailBuilder()
+        {
+            IUnitOfWork unitOfWork = new UnitOfWork();
+
+            _emailSubfolder = "/Content/Email";
+            _localEmailFolderPath = HostingEnvironment.ApplicationPhysicalPath + _emailSubfolder;
+            _publicEmailFolderPath = unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl").Value;
+        }
+        
 
         public string BuildEmail(EmailTemplateViewModel model)
         {
             var emailContent = GetTemplate(model.Type + ".html");
-            emailContent = emailContent.Replace("{{StylesPath}}", _emailFolderPath + "/styles.css");
+            emailContent = emailContent.Replace("{{StylesPath}}", _publicEmailFolderPath + _emailSubfolder + "/styles.css");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
 
             switch (model.Type)
@@ -50,7 +63,7 @@ namespace BrandBook.Services.Notification
 
         private string GetTemplate(string emailName)
         {
-            var templateFile = _emailFolderPath + "/" + emailName;
+            var templateFile = _localEmailFolderPath + "/" + emailName;
 
             return File.Exists(templateFile) ? File.ReadAllText(templateFile) : null;
         }
