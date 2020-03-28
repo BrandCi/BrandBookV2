@@ -1,4 +1,4 @@
-﻿using BrandBook.Services.Email;
+using BrandBook.Services.Email;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.Frontend.Support;
 using log4net;
@@ -71,7 +71,12 @@ namespace BrandBook.Web.Controllers
 
             _notificationService.SendNotification(emailContent);
 
-            return View(model);
+            var sentModel = new ContactFormViewModel()
+            {
+                IsSent = true
+            };
+            
+            return View(sentModel);
         }
 
 

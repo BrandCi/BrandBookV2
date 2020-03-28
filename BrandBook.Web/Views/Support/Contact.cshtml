@@ -29,7 +29,30 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                @Html.ValidationSummary()
+
+                @if (!Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="box_alert media box_warning">
+                        <div class="icon"><i class="fas fa-check"></i></div>
+                        <div class="media-body">
+                            <h5 style="color: #e7b931;">Erm...</h5>
+                            <p>
+                                <span style="font-weight: 600;">Please check your input:</span> <br />
+                                @Html.ValidationSummary()
+                            </p>
+                        </div>
+                    </div>
+                }
+                
+
+                <div class="box_alert media box_success" id="contact-success" style="display: none;">
+                    <div class="icon"><i class="fas fa-check"></i></div>
+                    <div class="media-body">
+                        <h5 style="color: #4acc43;">Awesome!</h5>
+                        <p><span style="font-weight: 600;">Your message has been sent.</span> We will get back to you soon!</p>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row">
@@ -39,42 +62,42 @@
                     {
                         @Html.AntiForgeryToken()
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group text_box">
-                                @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name) })
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group text_box">
+                                    @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name) })
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group text_box">
-                                @Html.TextBoxFor(m => m.Email, new { @type = "Email", placeholder = Html.DisplayNameFor(m => m.Email) + "*" })
+                            <div class="col-lg-6">
+                                <div class="form-group text_box">
+                                    @Html.TextBoxFor(m => m.Email, new { @type = "Email", placeholder = Html.DisplayNameFor(m => m.Email) + "*" })
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-group text_box">
-                                @Html.TextBoxFor(m => m.Subject, new { placeholder = Html.DisplayNameFor(m => m.Subject) })
+                            <div class="col-lg-12">
+                                <div class="form-group text_box">
+                                    @Html.TextBoxFor(m => m.Subject, new { placeholder = Html.DisplayNameFor(m => m.Subject) })
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-group text_box">
-                                @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message) })
+                            <div class="col-lg-12">
+                                <div class="form-group text_box">
+                                    @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message) })
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                @Html.CheckBoxFor(m => m.PrivacyPolicy)
-                                @Html.LabelFor(m => m.PrivacyPolicy) *
-                                &nbsp;
-                                <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
-                                    <i class="fas fa-file-alt"></i>
-                                </a>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    @Html.CheckBoxFor(m => m.PrivacyPolicy)
+                                    @Html.LabelFor(m => m.PrivacyPolicy) *
+                                    &nbsp;
+                                    <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
+                                        <i class="fas fa-file-alt"></i>
+                                    </a>
+                                </div>
                             </div>
+                            @if (CustomHelper.IsReCaptchaActive())
+                            {
+                                @Html.HiddenFor(m => m.ReCaptchaToken);
+                            }
                         </div>
-                        @if (CustomHelper.IsReCaptchaActive())
-                        {
-                            @Html.HiddenFor(m => m.ReCaptchaToken);
-                        }
-                    </div>
                         <button type="submit" class="btn_three">Send Message</button>
 
                     }
@@ -87,3 +110,24 @@
         </div>
     </div>
 </section>
+
+
+
+@section scripts
+{
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            if ('@Model.IsSent' == 'True') {
+                $('#contact-success').show();    
+            }
+
+            
+        });
+        
+
+    </script>
+
+}
