@@ -26,7 +26,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult LoggingMessages()
         {
 
-            var loggingMessages = _unitOfWork.Log4NetLogRepository.GetAll().OrderBy(m => m.Date);
+            var loggingMessages = _unitOfWork.Log4NetLogRepository.GetAll().OrderByDescending(m => m.Date);
 
             var viewModel = new LoggingMessagesViewModel()
             {
