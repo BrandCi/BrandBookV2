@@ -53,16 +53,20 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestIp}}", model.General_ContactRequest.RequestIp);
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
+                case EmailTemplateType.User_AccountVerificationConfirmation:
+                    if (model.User_AccountVerificationConfirmation == null) return null;
+
+                    emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerificationConfirmation.EmailAddress);
+                    break;
                 case EmailTemplateType.Plain:
                 default:
                     return null;
             }
-
             
 
             return emailContent;
-
         }
+
 
         private string GetTemplate(string emailName)
         {

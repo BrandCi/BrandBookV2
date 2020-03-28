@@ -156,7 +156,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     {
                         Type = EmailTemplateType.User_AccountVerification,
                         Receiver = user.Email,
-                        Subject = "Confirm your Account",
+                        Subject = "Verify your E-Mail Address",
                         User_AccountVerification = new User_AccountVerification()
                         {
                             Username = user.UserName,

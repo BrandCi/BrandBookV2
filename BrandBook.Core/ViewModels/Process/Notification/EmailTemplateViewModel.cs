@@ -15,6 +15,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification
         public string Receiver { get; set; }
 
         public User_AccountVerification User_AccountVerification { get; set; }
+        public User_AccountVerificationConfirmation User_AccountVerificationConfirmation { get; set; }
         public General_ContactRequest General_ContactRequest { get; set; }
     }
 
@@ -22,6 +23,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification
     {
         Plain,
         User_AccountVerification,
+        User_AccountVerificationConfirmation,
         General_ContactRequest
     }
 }
