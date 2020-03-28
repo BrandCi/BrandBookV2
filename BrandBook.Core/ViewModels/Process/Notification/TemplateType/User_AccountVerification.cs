@@ -10,6 +10,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification.TemplateType
     public class User_AccountVerification
     {
         public string Username { get; set; }
+        public string EmailAddress { get; set; }
         public string TargetUrl { get; set; }
 
     }

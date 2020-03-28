@@ -160,6 +160,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                         User_AccountVerification = new User_AccountVerification()
                         {
                             Username = user.UserName,
+                            EmailAddress = user.Email,
                             TargetUrl = callbackUrl
                         }
                     };

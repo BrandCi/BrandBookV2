@@ -31,7 +31,8 @@ namespace BrandBook.Services.Notification
         public string BuildEmail(EmailTemplateViewModel model)
         {
             var emailContent = GetTemplate(model.Type + ".html");
-            emailContent = emailContent.Replace("{{StylesPath}}", _publicEmailFolderPath + _emailSubfolder + "/styles.css");
+            emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
+            emailContent = emailContent.Replace("{{FileServerUrl}}", "https://cnt.01.bb.delivery.philipp-moser.de");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
 
             switch (model.Type)
@@ -40,6 +41,7 @@ namespace BrandBook.Services.Notification
                     if (model.User_AccountVerification == null) return null;
 
                     emailContent = emailContent.Replace("{{Username}}", model.User_AccountVerification.Username);
+                    emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerification.EmailAddress);
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountVerification.TargetUrl);
                     break;
                 case EmailTemplateType.General_ContactRequest:
