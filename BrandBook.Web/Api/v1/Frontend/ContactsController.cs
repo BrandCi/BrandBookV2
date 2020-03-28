@@ -32,11 +32,5 @@ namespace BrandBook.Web.Api.v1.Frontend
             _recaptchaService = reCaptchaService;
         }
 
-        [HttpPost]
-        [Route("send")]
-        public async Task<IHttpActionResult> Send([FromBody] ContactFormViewModel model)
-        {
-            return BadRequest();
-        }
     }
 }
