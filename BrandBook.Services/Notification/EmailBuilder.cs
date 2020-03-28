@@ -22,7 +22,7 @@ namespace BrandBook.Services.Notification
         {
             IUnitOfWork unitOfWork = new UnitOfWork();
 
-            _emailSubfolder = "/Content/Email";
+            _emailSubfolder = "/Content/EmailTemplates";
             _localEmailFolderPath = HostingEnvironment.ApplicationPhysicalPath + _emailSubfolder;
             _publicEmailFolderPath = unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl").Value;
         }

@@ -777,8 +777,8 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\fa805559-1642-4951-ad35-a2d7cc46c16a.png" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
-    <Content Include="Content\Email\General_ContactRequest.html" />
-    <Content Include="Content\Email\User_AccountVerification.html" />
+    <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
+    <Content Include="Content\EmailTemplates\User_AccountVerification.html" />
     <Content Include="Content\Style\App\bootstrap-rtl.css">
       <DependentUpon>bootstrap-rtl.scss</DependentUpon>
     </Content>
