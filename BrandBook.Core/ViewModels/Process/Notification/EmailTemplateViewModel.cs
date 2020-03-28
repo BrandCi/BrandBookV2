@@ -15,11 +15,13 @@ namespace BrandBook.Core.ViewModels.Process.Notification
         public string Receiver { get; set; }
 
         public User_AccountVerification User_AccountVerification { get; set; }
+        public General_ContactRequest General_ContactRequest { get; set; }
     }
 
     public enum EmailTemplateType
     {
         Plain,
-        User_AccountVerification
+        User_AccountVerification,
+        General_ContactRequest
     }
 }

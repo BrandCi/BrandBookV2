@@ -24,12 +24,20 @@ namespace BrandBook.Services.Notification
             switch (model.Type)
             {
                 case EmailTemplateType.User_AccountVerification:
+                    if (model.User_AccountVerification == null) return null;
+
                     emailContent = emailContent.Replace("{{Username}}", model.User_AccountVerification.Username);
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountVerification.TargetUrl);
                     break;
-                case EmailTemplateType.Plain:
-                    emailContent = "";
+                case EmailTemplateType.General_ContactRequest:
+                    if (model.General_ContactRequest == null) return null;
+
+                    emailContent = emailContent.Replace("{{Subject}}", model.General_ContactRequest.Subject);
+                    emailContent = emailContent.Replace("{{Name}}", model.General_ContactRequest.Name);
+                    emailContent = emailContent.Replace("{{Email}}", model.General_ContactRequest.Email);
+                    emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
+                case EmailTemplateType.Plain:
                 default:
                     return null;
             }

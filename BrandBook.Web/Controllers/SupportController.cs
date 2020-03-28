@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
@@ -53,18 +54,18 @@ namespace BrandBook.Web.Controllers
                     return View(model);
                 }
             }
-
-            var message = new StringBuilder();
-
-            message.Append("<strong>Name:</strong> " + model.Name + "<br />");
-            message.Append("<strong>Email:</strong> " + model.Email + "<br />");
-            message.Append("<strong>Subject:</strong> " + model.Subject + "<br />");
-            message.Append("<strong>Message:</strong> " + model.Message);
-
+            
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.Plain,
-                Subject = "BrandCi - Contact Request"
+                Type = EmailTemplateType.General_ContactRequest,
+                Subject = "BrandCi - Contact Request",
+                General_ContactRequest = new General_ContactRequest()
+                {
+                    Name = model.Name,
+                    Email = model.Email,
+                    Subject = model.Subject,
+                    Message = model.Message
+                }
             };
 
             _notificationService.SendNotification(emailContent);
