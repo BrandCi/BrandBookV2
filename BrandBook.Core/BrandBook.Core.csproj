@@ -164,6 +164,7 @@
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
     <Compile Include="ViewModels\Process\Notification\EmailTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Process\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\General_ContactRequest.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerification.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />
