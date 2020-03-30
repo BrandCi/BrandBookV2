@@ -23,7 +23,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class LoginController : AuthMvcControllerBase
     {
-
+        private SignInService _signInService;
+        public UserService _userService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
