@@ -129,59 +129,64 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
 
 
-                if (result.Succeeded)
+                if (!result.Succeeded) return View(model);
+
+
+                var initialSubscription = new Subscription()
                 {
-                    var initialSubscription = new Subscription()
-                    {
-                        Key = _subscriptionService.GenerateSubscriptionKey(),
-                        AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
-                        AppUserId = user.Id,
-                        IsActive = true,
-                        IsPaid = true,
-                        StartDateTime = DateTime.Now,
-                        SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
-                        SubscriptionPlanId = 7
-                    };
+                    Key = _subscriptionService.GenerateSubscriptionKey(),
+                    AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                    AppUserId = user.Id,
+                    IsActive = true,
+                    IsPaid = true,
+                    StartDateTime = DateTime.Now,
+                    SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                    SubscriptionPlanId = 7
+                };
 
-                    _unitOfWork.SubscriptionRepository.Add(initialSubscription);
-                    _unitOfWork.SaveChanges();
+                _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+                _unitOfWork.SaveChanges();
 
-                    await UserManager.AddToRoleAsync(user.Id, "AppUser");
+                await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
 
-                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-
-                    var emailContent = new EmailTemplateViewModel()
-                    {
-                        Type = EmailTemplateType.User_AccountVerification,
-                        Receiver = user.Email,
-                        Subject = "Verify your E-Mail Address",
-                        User_AccountVerification = new User_AccountVerification()
-                        {
-                            Username = user.UserName,
-                            EmailAddress = user.Email,
-                            TargetUrl = callbackUrl
-                        }
-                    };
-
-                    _notificationService.SendNotification(emailContent);
-
+                var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 
                 
+                if (ProceedVerificationEmail(user.Email, user.UserName, callbackUrl))
+                {
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
-
                 }
-           
-            
+                
 
-            return View(model);
+                return View("Error");
+
         }
 
 
         public ActionResult Success()
         {
             return View();
+        }
+
+
+        private bool ProceedVerificationEmail(string userEmail, string userName, string callbackUrl)
+        {
+            var emailContent = new EmailTemplateViewModel()
+            {
+                Type = EmailTemplateType.User_AccountVerification,
+                Receiver = userEmail,
+                Subject = "Verify your E-Mail Address",
+                User_AccountVerification = new User_AccountVerification()
+                {
+                    Username = userName,
+                    EmailAddress = userEmail,
+                    TargetUrl = callbackUrl
+                }
+            };
+            
+            return _notificationService.SendNotification(emailContent); ;
         }
 
 
