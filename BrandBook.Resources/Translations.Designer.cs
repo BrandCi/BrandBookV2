@@ -1276,6 +1276,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Privacy Request.
+        /// </summary>
+        public static string frontend_footer_support_privacyrequest {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_privacyrequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report a bug.
         /// </summary>
         public static string frontend_footer_support_reportabug {
