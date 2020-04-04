@@ -93,7 +93,7 @@ namespace BrandBook.Web.Controllers
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                    RequestIp = Request.UserHostAddress,
+                    RequestIp = Request.UserHostAddress,    
                 }
             };
 
@@ -104,14 +104,17 @@ namespace BrandBook.Web.Controllers
             }
 
 
-            _notificationService.SendNotification(emailContent);
-
-
             var sentModel = new PrivacyRequestViewModel()
             {
-                IsSent = true
+                IsSent = false
             };
-            return View(model);
+
+            if(_notificationService.SendNotification(emailContent))
+            {
+                sentModel.IsSent = true;
+            }
+
+            return View(sentModel);
         }
     }
 }

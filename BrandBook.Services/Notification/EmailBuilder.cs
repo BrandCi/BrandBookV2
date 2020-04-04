@@ -38,6 +38,9 @@ namespace BrandBook.Services.Notification
         public string BuildEmail(EmailTemplateViewModel model)
         {
             var emailContent = GetTemplate(model.Type + ".html");
+
+            if (emailContent == null) return null;
+
             emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
             emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/Email");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
