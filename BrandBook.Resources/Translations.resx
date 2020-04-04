@@ -915,4 +915,13 @@
   <data name="frontend_legal_privacyrequest_input_message" xml:space="preserve">
     <value>Your Message</value>
   </data>
+  <data name="frontend_legal_privacyrequest_input_sendbutton" xml:space="preserve">
+    <value>Send request</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_subtitle" xml:space="preserve">
+    <value>You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_title" xml:space="preserve">
+    <value>Privacy Request</value>
+  </data>
 </root>

@@ -2167,6 +2167,33 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send request.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_input_sendbutton {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_input_sendbutton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Request.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {
