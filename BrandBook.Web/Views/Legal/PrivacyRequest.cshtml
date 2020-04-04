@@ -61,20 +61,29 @@
                         @Html.AntiForgeryToken()
 
                         <div class="row">
+
                             <div class="col-lg-6">
-                                <div class="form-group text_box">
-                                    @Html.TextBoxFor(m => m.Type, new { placeholder = Html.DisplayNameFor(m => m.Type) })
+                                <div class="form-group">
+                                    <select id="Type" name="Type" class="form-control custom-select">
+                                        <option selected="true" disabled="disabled">Select a Type</option>
+                                        <option value="Information">Information</option>
+                                        <option value="Cancellation">Cancellation</option>
+                                        <option value="Contradiction">Contradiction</option>
+                                    </select>
                                 </div>
                             </div>
+
+
                             <div class="col-lg-12">
                                 <div class="form-group text_box">
-                                    @Html.TextAreaFor(m => m.Message, new { placeholder = Html.DisplayNameFor(m => m.Message) })
+                                    @Html.TextAreaFor(m => m.Message, new {placeholder = Html.DisplayNameFor(m => m.Message)})
                                 </div>
                             </div>
-                            
+
                             @if (CustomHelper.IsReCaptchaActive())
                             {
-                                @Html.HiddenFor(m => m.ReCaptchaToken);
+                                @Html.HiddenFor(m => m.ReCaptchaToken)
+                                ;
                             }
                         </div>
                         <button type="submit" class="btn_three">@Translations.frontend_legal_privacyrequest_input_sendbutton</button>
