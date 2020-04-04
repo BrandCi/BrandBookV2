@@ -108,8 +108,9 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 }
             }
 
-            var isConfirmed = _unitOfWork.AppUserRepository.FindByUsername(model.UserName).EmailConfirmed;
-            if (!isConfirmed)
+            
+            var user = _unitOfWork.AppUserRepository.FindByUsername(model.UserName);
+            if (user != null && !user.EmailConfirmed)
             {
                 ModelState.AddModelError("", "Please verify your email to login.");
                 return View(model);
