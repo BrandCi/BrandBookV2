@@ -31,5 +31,10 @@ namespace BrandBook.Web.Controllers
 
             return View();
         }
+
+        public ActionResult PrivacyRequest()
+        {
+            return View();
+        }
     }
 }

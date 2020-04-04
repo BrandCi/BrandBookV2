@@ -1433,6 +1433,7 @@
     <Content Include="Views\Product\Optimization.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
+    <Content Include="Views\Legal\PrivacyRequest.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
