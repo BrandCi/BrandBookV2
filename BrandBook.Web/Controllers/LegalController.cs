@@ -75,7 +75,7 @@ namespace BrandBook.Web.Controllers
 
             if (_recaptchaService.IsCaptchaActive())
             {
-                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "frontend_contact");
+                var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "frontend_privacyrequest");
                 if (!isCaptchaValid)
                 {
                     ModelState.AddModelError("GoogleCaptcha", @Translations.auth_register_validation_captcha_invalid);
