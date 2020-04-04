@@ -193,7 +193,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 Subject = "New Account Creation",
                 Admin_AccountCreationInformation = new Admin_AccountCreationInformation()
                 {
-                    Creationdate = DateTime.Now.ToString("dd.MM.yyyy"),
+                    Creationdate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                     Username = userName,
                     Email = userEmail,
                     Promocode = promoCode,
