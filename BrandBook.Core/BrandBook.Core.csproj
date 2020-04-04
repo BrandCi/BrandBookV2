@@ -155,6 +155,7 @@
     <Compile Include="ViewModels\Frontend\Blog\SingleBlogOverviewViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
+    <Compile Include="ViewModels\Frontend\Legal\PrivacyRequestViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
     <Compile Include="ViewModels\Process\Notification\EmailTemplateViewModel.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\Admin_AccountCreationInformation.cs" />

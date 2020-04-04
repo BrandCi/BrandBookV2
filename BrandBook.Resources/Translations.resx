@@ -912,4 +912,7 @@
   <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
     <value>Welcome to BrandCi!</value>
   </data>
+  <data name="frontend_legal_privacyrequest_input_message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
 </root>

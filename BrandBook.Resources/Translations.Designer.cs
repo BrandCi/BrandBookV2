@@ -2158,6 +2158,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Message.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_input_message {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_input_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open App.
         /// </summary>
         public static string frontend_navigation_authorized_gotoapp {
