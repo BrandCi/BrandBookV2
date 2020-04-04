@@ -20,10 +20,10 @@ namespace BrandBook.Services.Notification
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
 
-        public string _apiBasicUrl;
-        public string _apiPrivateKey;
-        public string _siteName;
-        public string _sender;
+        private readonly string _apiBasicUrl;
+        private readonly string _apiPrivateKey;
+        private readonly string _siteName;
+        private readonly string _sender;
 
 
         public NotificationService()
