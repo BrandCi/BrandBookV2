@@ -15,6 +15,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class ProcessesController : AuthMvcControllerBase
     {
+        public UserService _userService;
         private readonly INotificationService _notificationService;
         private readonly IUnitOfWork _unitOfWork;
 

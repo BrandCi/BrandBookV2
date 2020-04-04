@@ -25,5 +25,6 @@ namespace BrandBook.Core.ViewModels.Frontend.Support
 
         public string ReCaptchaToken { get; set; }
 
+        public bool IsSent { get; set; }
     }
 }

@@ -37,6 +37,15 @@ namespace BrandBook.Services.Notification
 
             switch (model.Type)
             {
+                case EmailTemplateType.Admin_AccountCreationInformation:
+                    if (model.Admin_AccountCreationInformation == null) return null;
+
+                    emailContent = emailContent.Replace("{{Creationdate}}", model.Admin_AccountCreationInformation.Creationdate);
+                    emailContent = emailContent.Replace("{{Username}}", model.Admin_AccountCreationInformation.Username);
+                    emailContent = emailContent.Replace("{{Email}}", model.Admin_AccountCreationInformation.Email);
+                    emailContent = emailContent.Replace("{{Promocode}}", model.Admin_AccountCreationInformation.Promocode);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.Admin_AccountCreationInformation.RequestIp);
+                    break;
                 case EmailTemplateType.User_AccountVerification:
                     if (model.User_AccountVerification == null) return null;
 

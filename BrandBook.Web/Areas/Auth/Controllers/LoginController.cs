@@ -23,7 +23,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class LoginController : AuthMvcControllerBase
     {
-
+        private SignInService _signInService;
+        public UserService _userService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
@@ -108,8 +109,9 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 }
             }
 
-            var isConfirmed = _unitOfWork.AppUserRepository.FindByUsername(model.UserName).EmailConfirmed;
-            if (!isConfirmed)
+            
+            var user = _unitOfWork.AppUserRepository.FindByUsername(model.UserName);
+            if (user != null && !user.EmailConfirmed)
             {
                 ModelState.AddModelError("", "Please verify your email to login.");
                 return View(model);

@@ -9,7 +9,6 @@ using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.Auth;
 using Microsoft.AspNet.Identity.Owin;
 using System;
-using System.Configuration;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -25,6 +24,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthMvcControllerBase
     {
+        public UserService _userService;
+        private SignInService _signInService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
@@ -129,59 +130,80 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
 
 
-                if (result.Succeeded)
+                if (!result.Succeeded) return View(model);
+
+
+                var initialSubscription = new Subscription()
                 {
-                    var initialSubscription = new Subscription()
-                    {
-                        Key = _subscriptionService.GenerateSubscriptionKey(),
-                        AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
-                        AppUserId = user.Id,
-                        IsActive = true,
-                        IsPaid = true,
-                        StartDateTime = DateTime.Now,
-                        SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
-                        SubscriptionPlanId = 7
-                    };
+                    Key = _subscriptionService.GenerateSubscriptionKey(),
+                    AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                    AppUserId = user.Id,
+                    IsActive = true,
+                    IsPaid = true,
+                    StartDateTime = DateTime.Now,
+                    SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                    SubscriptionPlanId = 7
+                };
 
-                    _unitOfWork.SubscriptionRepository.Add(initialSubscription);
-                    _unitOfWork.SaveChanges();
+                _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+                _unitOfWork.SaveChanges();
 
-                    await UserManager.AddToRoleAsync(user.Id, "AppUser");
+                await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
 
-                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-
-                    var emailContent = new EmailTemplateViewModel()
-                    {
-                        Type = EmailTemplateType.User_AccountVerification,
-                        Receiver = user.Email,
-                        Subject = "Verify your E-Mail Address",
-                        User_AccountVerification = new User_AccountVerification()
-                        {
-                            Username = user.UserName,
-                            EmailAddress = user.Email,
-                            TargetUrl = callbackUrl
-                        }
-                    };
-
-                    _notificationService.SendNotification(emailContent);
-
+                var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 
                 
+                if (ProceedVerificationEmail(user.Email, user.UserName, callbackUrl, model.PromotionCode))
+                {
                     return RedirectToAction("Success", "Register", new { area = "Auth" });
-
                 }
-           
-            
+                
 
-            return View(model);
+                return View("Error");
+
         }
 
 
         public ActionResult Success()
         {
             return View();
+        }
+
+
+        private bool ProceedVerificationEmail(string userEmail, string userName, string callbackUrl, string promoCode)
+        {
+            var emailContent = new EmailTemplateViewModel()
+            {
+                Type = EmailTemplateType.User_AccountVerification,
+                Receiver = userEmail,
+                Subject = "Verify your E-Mail Address",
+                User_AccountVerification = new User_AccountVerification()
+                {
+                    Username = userName,
+                    EmailAddress = userEmail,
+                    TargetUrl = callbackUrl
+                }
+            };
+
+            var adminInfo = new EmailTemplateViewModel()
+            {
+                Type = EmailTemplateType.Admin_AccountCreationInformation,
+                Subject = "New Account Creation",
+                Admin_AccountCreationInformation = new Admin_AccountCreationInformation()
+                {
+                    Creationdate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                    Username = userName,
+                    Email = userEmail,
+                    Promocode = promoCode,
+                    RequestIp = Request.UserHostAddress
+                }
+            };
+
+            _notificationService.SendNotification(adminInfo);
+            
+            return _notificationService.SendNotification(emailContent); ;
         }
 
 
