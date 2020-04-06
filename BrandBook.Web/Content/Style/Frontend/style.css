@@ -14214,6 +14214,9 @@ a .h_head:hover {
 .language-selection-item {
   visibility: hidden; }
 
+.btn_get.btn_hover.top-home-section {
+  color: #ffffff; }
+
 /* Pricing */
 .plan-included {
   color: #5f2eed; }

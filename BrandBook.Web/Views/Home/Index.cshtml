@@ -24,7 +24,7 @@
                 
                 @if (!User.Identity.IsAuthenticated)
                 {
-                    <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="software_banner_btn">
+                    <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_get btn_hover top-home-section">
                         @Translations.frontend_home_index_topsection_registernow_button
                     </a>
                 }
