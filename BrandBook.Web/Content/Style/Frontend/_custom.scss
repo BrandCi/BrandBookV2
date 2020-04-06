@@ -74,6 +74,26 @@
     }
 }
 
+.header_area.navbar_fixed {
+    .nav-logo-bright {
+        display: none !important;
+    }
+
+    .nav-logo-dark {
+        display: block !important;
+    }
+}
+
+.header_area:not(.navbar_fixed) {
+    .nav-logo-bright {
+        display: block !important;
+    }
+
+    .nav-logo-dark {
+        display: none !important;
+    }
+}
+
 
 
 /*
@@ -87,7 +107,7 @@
         color: #3d64f4;
         display: inline-block;
     }
-    
+
     .current-user-profile-link {
         color: #3d64f4;
         margin-left: 5%;
@@ -97,7 +117,7 @@
     .auth-user-fe-buttons {
         margin-left: 5%;
     }
- 
+           
 }
 
 @media screen and (max-width: 418px) {

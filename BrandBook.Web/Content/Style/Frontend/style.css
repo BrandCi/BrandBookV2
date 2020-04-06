@@ -14257,6 +14257,18 @@ a .h_head:hover {
       font-size: 10px;
       line-height: 1.5; } }
 
+.header_area.navbar_fixed .nav-logo-bright {
+  display: none !important; }
+
+.header_area.navbar_fixed .nav-logo-dark {
+  display: block !important; }
+
+.header_area:not(.navbar_fixed) .nav-logo-bright {
+  display: block !important; }
+
+.header_area:not(.navbar_fixed) .nav-logo-dark {
+  display: none !important; }
+
 /*
     RESPONSIVE STYLINGS
 */
