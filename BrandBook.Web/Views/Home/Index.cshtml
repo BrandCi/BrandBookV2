@@ -12,49 +12,27 @@
 }
 
 
-<section class="software_banner_area d-flex align-items-center">
+<section class="pos_banner_area">
+    <div class="pos_slider owl-carousel">
+        <div class="pos_banner_item" style="background: url(@CustomHelper.ImagePath("FrontendData/97890464-ff47-4dd0-b0a7-600ca16b325d", "png"));"></div>
+    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 d-flex align-items-center">
-                <div class="software_banner_content">
-                    <p class="f_500 f_size_50 w_color wow fadeInLeft" data-wow-delay="0.2s">
-                            
-                            <h1 class="bci-headline letters type">
-                                <span class="bci-words-wrapper waiting">
-                                    <b class="is-visible">@Translations.frontend_home_index_topsection_title_dynamic_create</b>
-                                    <b>@Translations.frontend_home_index_topsection_title_dynamic_share</b>
-                                    <b>@Translations.frontend_home_index_topsection_title_dynamic_improve</b>
-                                </span>
-                                <br />
-                                <span>@Translations.frontend_home_index_topsection_title_static</span>
-                            </h1>
-                            
+        <div class="pos_banner_text text-center">
+            <h6>@Translations.frontend_home_index_topsection_welcome_title_top</h6>
+            <h2>@Translations.frontend_home_index_topsection_welcome_subtitle <span>@Translations.brandci.</span></h2>
+            <div class="action_btn d-flex align-items-center justify-content-center wow fadeInLeft" data-wow-delay="0.6s">
+                
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Index", "Register", new {area = "Auth"})" class="btn_get btn_hover top-home-section">
+                        @Translations.frontend_home_index_topsection_registernow_button
+                    </a>
+                }
 
-                    </p>
-                    <p class="w_color f_size_18 l_height30 mt_30 wow fadeInLeft" data-wow-delay="0.4s">
-                        @Translations.frontend_home_index_topsection_subtitle
-                    </p>
-                    <div class="action_btn d-flex align-items-center mt_40 wow fadeInLeft home-button-group" data-wow-delay="0.6s">
-
-                        <a href="@Url.Action("Overview", "Product" , new {area="" })" class="btn_hover agency_banner_btn cus_mb-10">
-                            @Translations.frontend_home_index_topsection_discover_button_title
-                        </a>
-
-
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            <a href="@Url.Action("Index", "Register" , new {area="Auth" })" class="btn_hover agency_banner_btn pay_btn pay_btn_two cus_mb-10">
-                                @Translations.frontend_home_index_topsection_test_button_title
-                            </a>
-                        }
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="software_img wow fadeInRight" data-wow-delay="0.2s">
-                    @CustomHelper.Image("FrontendData/046415b9-2de1-4d91-a239-e55f6d166da7", "svg")
-                </div>
+                <a href="#feature-area" class="video_btn">
+                    <div class="icon"><i class="fas fa-chevron-down"></i></div>
+                    <span>@Translations.frontend_home_index_topsection_features_button</span>
+                </a>
             </div>
         </div>
     </div>
@@ -123,7 +101,7 @@
 
 
 
-<section class="software_service_area sec_pad">
+<section class="software_service_area sec_pad" id="feature-area">
     <div class="container">
         <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.2s">
             <h2 class="f_p f_size_30 l_height50 f_600 t_color3">

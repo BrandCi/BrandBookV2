@@ -666,4 +666,16 @@
   <data name="app_pagetitle_subscriptions" xml:space="preserve">
     <value>Meine Abonnements</value>
   </data>
+  <data name="brandci" xml:space="preserve">
+    <value>BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_features_button" xml:space="preserve">
+    <value>Funktionen erkunden</value>
+  </data>
+  <data name="frontend_home_index_topsection_registernow_button" xml:space="preserve">
+    <value>Jetzt registrieren</value>
+  </data>
+  <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
+    <value>Willkommen auf BrandCi!</value>
+  </data>
 </root>

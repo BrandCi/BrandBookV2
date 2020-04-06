@@ -14,17 +14,24 @@ namespace BrandBook.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly string _localEmailFolderPath;
         private readonly string _publicEmailFolderPath;
-        private readonly string _emailSubfolder;
+        private readonly string _fileServerUrlWithKey;
 
         public EmailBuilder()
         {
-            IUnitOfWork unitOfWork = new UnitOfWork();
+            _unitOfWork = new UnitOfWork();
 
-            _emailSubfolder = "/Content/EmailTemplates";
-            _localEmailFolderPath = HostingEnvironment.ApplicationPhysicalPath + _emailSubfolder;
-            _publicEmailFolderPath = unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl").Value;
+            _localEmailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/EmailTemplates";
+            _publicEmailFolderPath = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl").Value;
+
+            var urlBuilder = new StringBuilder();
+            urlBuilder.Append(_unitOfWork.SettingRepository.GetSettingByKey("conf_media_server").Value);
+            urlBuilder.Append("/");
+            urlBuilder.Append(_unitOfWork.SettingRepository.GetSettingByKey("conf_media_key").Value);
+
+            _fileServerUrlWithKey = urlBuilder.ToString();
         }
         
 
@@ -32,7 +39,7 @@ namespace BrandBook.Services.Notification
         {
             var emailContent = GetTemplate(model.Type + ".html");
             emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
-            emailContent = emailContent.Replace("{{FileServerUrl}}", "https://cnt.01.bb.delivery.philipp-moser.de");
+            emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/Email");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
 
             switch (model.Type)

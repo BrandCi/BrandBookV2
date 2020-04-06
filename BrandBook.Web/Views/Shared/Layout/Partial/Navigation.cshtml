@@ -6,7 +6,13 @@
     <nav class="navbar navbar-expand-lg menu_one menu_five">
         <div class="container">
             <a class="navbar-brand sticky_logo" href="@Url.Action("Index", "Home")">
-                @CustomHelper.Image("06b354ec-78ad-4bac-bafa-5afcddb75de5", "png", "d-inline-block align-top", "", "width=\"50\" height=\"50\"")
+                <span class="nav-logo-bright">
+                    @CustomHelper.Image("d7eea268-cd8e-4bdf-8281-de8551afc7fe", "svg", "d-inline-block align-top", "", "width=\"200\"")
+                </span>
+                <span class="nav-logo-dark" style="display: none;">
+                    @CustomHelper.Image("7996c187-3620-495d-985d-e823b3f96c5c", "svg", "d-inline-block align-top", "", "width=\"200\"")
+                </span>
+                
             </a>
 
 

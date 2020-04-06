@@ -979,6 +979,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BrandCi.
+        /// </summary>
+        public static string brandci {
+            get {
+                return ResourceManager.GetString("brandci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At the moment we are preparing interesting blog entries round about the topic Company Branding for you..
         /// </summary>
         public static string frontend_blog_noavailableblogs_description {
@@ -1933,6 +1942,24 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discover features.
+        /// </summary>
+        public static string frontend_home_index_topsection_features_button {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_features_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register now.
+        /// </summary>
+        public static string frontend_home_index_topsection_registernow_button {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_registernow_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage and improve your brand to success with BrandCi..
         /// </summary>
         public static string frontend_home_index_topsection_subtitle {
@@ -2010,6 +2037,24 @@ namespace BrandBook.Resources {
         public static string frontend_home_index_topsection_title_static {
             get {
                 return ResourceManager.GetString("frontend_home_index_topsection_title_static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Give your Brand the best chance of success with.
+        /// </summary>
+        public static string frontend_home_index_topsection_welcome_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_welcome_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to BrandCi!.
+        /// </summary>
+        public static string frontend_home_index_topsection_welcome_title_top {
+            get {
+                return ResourceManager.GetString("frontend_home_index_topsection_welcome_title_top", resourceCulture);
             }
         }
         
