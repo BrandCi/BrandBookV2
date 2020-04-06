@@ -894,4 +894,19 @@
   <data name="frontend_contact_title" xml:space="preserve">
     <value>Contact us</value>
   </data>
+  <data name="brandci" xml:space="preserve">
+    <value>BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_features_button" xml:space="preserve">
+    <value>Discover features</value>
+  </data>
+  <data name="frontend_home_index_topsection_registernow_button" xml:space="preserve">
+    <value>Register now</value>
+  </data>
+  <data name="frontend_home_index_topsection_welcome_subtitle" xml:space="preserve">
+    <value>Give your Brand the best chance of success with</value>
+  </data>
+  <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
+    <value>Welcome to BrandCi!</value>
+  </data>
 </root>
