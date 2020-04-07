@@ -14211,6 +14211,17 @@ a .h_head:hover {
 html {
   scroll-behavior: smooth; }
 
+/* Pages */
+/* Homepage */
+.pos_slider:before {
+  opacity: 0.5 !important; }
+
+/* SubPage */
+.breadcrumb_area.subpage img:before {
+  background-color: #1a1a3a;
+  opacity: 0.7; }
+
+/* ./Pages */
 .navbar-nav {
   margin-right: 5%; }
 
@@ -14268,6 +14279,11 @@ html {
 
 .header_area.navbar_fixed .nav-logo-dark {
   display: block !important; }
+
+.header_area.navbar_fixed .custom_button_primary {
+  background-image: -moz-linear-gradient(0deg, #21d4fd 0%, 7121ff 100%);
+  background-image: -webkit-linear-gradient(0deg, #21d4fd 0%, 7121ff 100%);
+  background-image: -ms-linear-gradient(0deg, #21d4fd 0%, 7121ff 100%); }
 
 .header_area:not(.navbar_fixed) .nav-logo-bright {
   display: block !important; }
