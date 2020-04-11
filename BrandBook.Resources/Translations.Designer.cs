@@ -1132,6 +1132,33 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Frequently Asked Questions.
+        /// </summary>
+        public static string frontend_faq_long_title {
+            get {
+                return ResourceManager.GetString("frontend_faq_long_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAQs.
+        /// </summary>
+        public static string frontend_faq_short_title {
+            get {
+                return ResourceManager.GetString("frontend_faq_short_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you find quick answers to common questions!.
+        /// </summary>
+        public static string frontend_faq_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_faq_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Rights Reserved..
         /// </summary>
         public static string frontend_footer_allrightsreserved {

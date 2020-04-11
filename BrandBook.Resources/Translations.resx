@@ -927,4 +927,13 @@
   <data name="frontend_footer_support_faq" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="frontend_faq_long_title" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="frontend_faq_short_title" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="frontend_faq_subtitle" xml:space="preserve">
+    <value>Here you find quick answers to common questions!</value>
+  </data>
 </root>
