@@ -17,6 +17,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification
         public User_AccountVerification User_AccountVerification { get; set; }
         public User_AccountVerificationConfirmation User_AccountVerificationConfirmation { get; set; }
         public General_ContactRequest General_ContactRequest { get; set; }
+        public General_PrivacyRequest General_PrivacyRequest { get; set; }
     }
 
     public enum EmailTemplateType
@@ -25,6 +26,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification
         Admin_AccountCreationInformation,
         User_AccountVerification,
         User_AccountVerificationConfirmation,
-        General_ContactRequest
+        General_ContactRequest,
+        General_PrivacyRequest
     }
 }

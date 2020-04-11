@@ -38,6 +38,9 @@ namespace BrandBook.Services.Notification
         public string BuildEmail(EmailTemplateViewModel model)
         {
             var emailContent = GetTemplate(model.Type + ".html");
+
+            if (emailContent == null) return null;
+
             emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
             emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/Email");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
@@ -68,6 +71,16 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Email}}", model.General_ContactRequest.Email);
                     emailContent = emailContent.Replace("{{RequestIp}}", model.General_ContactRequest.RequestIp);
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
+                    break;
+                case EmailTemplateType.General_PrivacyRequest:
+                    if (model.General_PrivacyRequest == null) return null;
+
+                    emailContent = emailContent.Replace("{{UserId}}", model.General_PrivacyRequest.UserId);
+                    emailContent = emailContent.Replace("{{Email}}", model.General_PrivacyRequest.Email);
+                    emailContent = emailContent.Replace("{{RequestType}}", model.General_PrivacyRequest.RequestType);
+                    emailContent = emailContent.Replace("{{Message}}", model.General_PrivacyRequest.Message);
+                    emailContent = emailContent.Replace("{{RequestDate}}", model.General_PrivacyRequest.RequestDate);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.General_PrivacyRequest.RequestIp);
                     break;
                 case EmailTemplateType.User_AccountVerificationConfirmation:
                     if (model.User_AccountVerificationConfirmation == null) return null;

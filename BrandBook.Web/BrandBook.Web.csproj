@@ -804,6 +804,7 @@
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
     <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
+    <Content Include="Content\EmailTemplates\General_PrivacyRequest.html" />
     <Content Include="Content\EmailTemplates\User_AccountVerificationConfirmation.html" />
     <Content Include="Content\EmailTemplates\User_AccountVerification.html" />
     <Content Include="Content\Style\App\bootstrap-rtl.css">
@@ -1433,6 +1434,7 @@
     <Content Include="Views\Product\Optimization.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
+    <Content Include="Views\Legal\PrivacyRequest.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

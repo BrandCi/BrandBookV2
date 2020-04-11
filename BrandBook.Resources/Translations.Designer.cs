@@ -1276,6 +1276,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Privacy Request.
+        /// </summary>
+        public static string frontend_footer_support_privacyrequest {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_privacyrequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report a bug.
         /// </summary>
         public static string frontend_footer_support_reportabug {
@@ -2145,6 +2154,42 @@ namespace BrandBook.Resources {
         public static string frontend_legal_privacypolicy_pagetitle {
             get {
                 return ResourceManager.GetString("frontend_legal_privacypolicy_pagetitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Message.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_input_message {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_input_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send request.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_input_sendbutton {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_input_sendbutton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Request.
+        /// </summary>
+        public static string frontend_legal_privacyrequest_title {
+            get {
+                return ResourceManager.GetString("frontend_legal_privacyrequest_title", resourceCulture);
             }
         }
         

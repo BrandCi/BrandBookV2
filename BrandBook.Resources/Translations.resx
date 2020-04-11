@@ -894,6 +894,9 @@
   <data name="frontend_contact_title" xml:space="preserve">
     <value>Contact us</value>
   </data>
+  <data name="frontend_footer_support_privacyrequest" xml:space="preserve">
+    <value>Privacy Request</value>
+  </data>
   <data name="brandci" xml:space="preserve">
     <value>BrandCi</value>
   </data>
@@ -908,5 +911,17 @@
   </data>
   <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
     <value>Welcome to BrandCi!</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_sendbutton" xml:space="preserve">
+    <value>Send request</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_subtitle" xml:space="preserve">
+    <value>You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_title" xml:space="preserve">
+    <value>Privacy Request</value>
   </data>
 </root>
