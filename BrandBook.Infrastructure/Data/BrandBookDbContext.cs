@@ -12,7 +12,7 @@ using System.Data.Entity;
 
 namespace BrandBook.Infrastructure.Data
 {
-    public class BrandBookDbContext : IdentityDbContext<AppUser>
+    public class BrandBookDbContext : IdentityDbContext<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         // General
         public DbSet<Log4NetLog> Log4NetLogs { get; set; }
