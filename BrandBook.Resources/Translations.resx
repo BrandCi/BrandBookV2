@@ -924,4 +924,7 @@
   <data name="frontend_legal_privacyrequest_title" xml:space="preserve">
     <value>Privacy Request</value>
   </data>
+  <data name="frontend_footer_support_faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
 </root>

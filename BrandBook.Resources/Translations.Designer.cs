@@ -1267,6 +1267,15 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FAQ.
+        /// </summary>
+        public static string frontend_footer_support_faq {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_faq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forum.
         /// </summary>
         public static string frontend_footer_support_forum {
