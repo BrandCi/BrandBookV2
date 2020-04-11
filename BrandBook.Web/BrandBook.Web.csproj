@@ -1435,6 +1435,7 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
     <Content Include="Views\Legal\PrivacyRequest.cshtml" />
+    <Content Include="Views\Support\Faq.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
