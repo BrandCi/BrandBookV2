@@ -7,6 +7,7 @@ namespace BrandBook.Infrastructure.Migrations
     {
         public override void Up()
         {
+            /*
             DropForeignKey("dbo.BlogEntries", "AppUserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Subscriptions", "AppUserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -56,6 +57,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.UserRoleRolePermissions", "UserRole_Id", "dbo.AspNetRoles", "Id", cascadeDelete: true);
             AddForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles", "Id", cascadeDelete: true);
             DropColumn("dbo.AspNetRoles", "Discriminator");
+            */
         }
         
         public override void Down()

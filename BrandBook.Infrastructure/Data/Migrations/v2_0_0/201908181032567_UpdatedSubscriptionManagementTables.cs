@@ -11,7 +11,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropColumn("dbo.Subscriptions", "AppUserId");
             RenameColumn(table: "dbo.Subscriptions", name: "AppUser_Id", newName: "AppUserId");
             AddColumn("dbo.SubscriptionPlans", "PricePerMonth", c => c.Double(nullable: false));
-            AlterColumn("dbo.Subscriptions", "AppUserId", c => c.String(maxLength: 128));
+            AlterColumn("dbo.Subscriptions", "AppUserId", c => c.Int(nullable: false));
             CreateIndex("dbo.Subscriptions", "AppUserId");
             
             Sql("UPDATE dbo.SubscriptionPlans SET PricePerMonth = Price;");

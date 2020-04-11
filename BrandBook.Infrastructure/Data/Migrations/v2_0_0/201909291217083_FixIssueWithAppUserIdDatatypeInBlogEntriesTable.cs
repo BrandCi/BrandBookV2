@@ -10,7 +10,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropIndex("dbo.BlogEntries", new[] { "AppUser_Id" });
             DropColumn("dbo.BlogEntries", "AppUserId");
             RenameColumn(table: "dbo.BlogEntries", name: "AppUser_Id", newName: "AppUserId");
-            AlterColumn("dbo.BlogEntries", "AppUserId", c => c.String(maxLength: 128));
+            AlterColumn("dbo.BlogEntries", "AppUserId", c => c.Int(nullable: false));
             CreateIndex("dbo.BlogEntries", "AppUserId");
         }
         

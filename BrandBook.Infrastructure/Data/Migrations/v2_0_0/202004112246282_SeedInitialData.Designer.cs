@@ -7,13 +7,13 @@ namespace BrandBook.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SeedBuiltInUserWithBuiltInRoles : IMigrationMetadata
+    public sealed partial class SeedInitialData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedBuiltInUserWithBuiltInRoles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedInitialData));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904221920086_SeedBuiltInUserWithBuiltInRoles"; }
+            get { return "202004112246282_SeedInitialData"; }
         }
         
         string IMigrationMetadata.Source
