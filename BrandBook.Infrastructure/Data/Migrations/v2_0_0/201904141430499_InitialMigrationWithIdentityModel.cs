@@ -11,7 +11,7 @@ namespace BrandBook.Infrastructure.Migrations
                 "dbo.AspNetRoles",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 256),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
@@ -35,7 +35,7 @@ namespace BrandBook.Infrastructure.Migrations
                 "dbo.AspNetUsers",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
