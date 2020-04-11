@@ -1105,7 +1105,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We would love to hear from you..
+        ///   Looks up a localized string similar to Feel free to contact us any time. We will get back to you as soon as we can!.
         /// </summary>
         public static string frontend_contact_subtitle {
             get {
