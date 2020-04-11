@@ -8,7 +8,7 @@ namespace BrandBook.Core.ViewModels.Process.Notification.TemplateType
     // ReSharper disable once InconsistentNaming
     public class General_PrivacyRequest
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public string Email { get; set; }
         public string RequestType { get; set; }
         public string Message { get; set; }

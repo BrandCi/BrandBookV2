@@ -89,7 +89,7 @@ namespace BrandBook.Web.Controllers
                 Subject = "BrandCi - Privacy Request",
                 General_PrivacyRequest = new General_PrivacyRequest()
                 {
-                    UserId = User.Identity.GetUserId(),
+                    UserId = User.Identity.GetUserId<int>(),
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),

@@ -5,9 +5,9 @@ namespace BrandBook.Core.Repositories.User
 {
     public interface ISubscriptionRepository : IRepository<Subscription>
     {
-        List<Subscription> GetAllUserSubscriptions(string userId);
-        List<Subscription> GetActiveUserSubscriptions(string userId);
-        List<Subscription> GetActiveAndPaidUserSubscriptions(string userId);
+        List<Subscription> GetAllUserSubscriptions(int userId);
+        List<Subscription> GetActiveUserSubscriptions(int userId);
+        List<Subscription> GetActiveAndPaidUserSubscriptions(int userId);
 
     }
 }

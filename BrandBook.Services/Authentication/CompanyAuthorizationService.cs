@@ -19,10 +19,10 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public bool IsAuthorized(string appUserGuid, int? id)
+        public bool IsAuthorized(int appUserId, int? id)
         {
             
-            var appUser = _unitOfWork.AppUserRepository.FindById(appUserGuid);
+            var appUser = _unitOfWork.AppUserRepository.FindById(appUserId);
 
             // TODO: UnitTest
             var idIsNotNull = id != null && id != 0;
@@ -55,9 +55,9 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<Brand> GetBrandAsync(string appUserGuid, int? brandId)
+        public async Task<Brand> GetBrandAsync(int appUserId, int? brandId)
         {
-            if (IsAuthorized(appUserGuid, brandId))
+            if (IsAuthorized(appUserId, brandId))
             {
                 return await _unitOfWork.BrandRepository.FindByIdAsync(brandId);
             }
@@ -67,7 +67,7 @@ namespace BrandBook.Services.Authentication
         }
 
 
-        public async Task<List<Brand>> GetAllBrandsAsync(string appUserId)
+        public async Task<List<Brand>> GetAllBrandsAsync(int appUserId)
         {
 
             var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(appUserId);

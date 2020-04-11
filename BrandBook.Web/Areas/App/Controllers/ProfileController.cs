@@ -65,7 +65,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Subscriptions()
         {
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId<int>();
             var subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
 
 
