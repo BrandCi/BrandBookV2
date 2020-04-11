@@ -39,11 +39,25 @@
                         </h3>
                         <ul class="list-unstyled f_list">
                             <li>
-                                <a href="@Url.Action("Contact", "Support", new { area = "" })">
+                                <a href="@Url.Action("Faq", "Support", new { area = "" })">
+                                    @Translations.frontend_footer_support_faq
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Contact", "Support", new {area = ""})">
                                     @Translations.frontend_footer_support_contact
                                 </a>
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    <a href="@Url.Action("PrivacyRequest", "Legal", new {area = ""})">
+                                        @Translations.frontend_footer_support_privacyrequest
+                                    </a>
+                                </li>
+                            }
                         </ul>
+                        
                     </div>
                 </div>
                 

@@ -2,6 +2,20 @@ html {
     scroll-behavior: smooth;
 }
 
+
+/* Pages */
+/* Homepage */
+.pos_slider:before {
+    opacity: 0.25 !important;
+}
+/* SubPage */
+.breadcrumb_area.subpage img:before {
+    background-color: #1a1a3a;
+    opacity: 0.7;
+}
+/* ./Pages */
+
+
 .navbar-nav {
     margin-right: 5%;
 }
@@ -14,7 +28,9 @@ html {
     color: #ffffff;
 }
 
+.btn_hover.agency_banner_btn.pay_btn pay_btn_two cus_mb-10 {
 
+}
 /* Pricing */
 .plan-included {
     color: #5f2eed;
@@ -90,6 +106,12 @@ html {
     .nav-logo-dark {
         display: block !important;
     }
+
+    .custom_button_primary {
+        background-image: -moz-linear-gradient(0deg,#21d4fd 0%,7121ff 100%);
+        background-image: -webkit-linear-gradient(0deg,#21d4fd 0%,7121ff 100%);
+        background-image: -ms-linear-gradient(0deg,#21d4fd 0%,7121ff 100%);
+    }
 }
 
 .header_area:not(.navbar_fixed) {
@@ -102,6 +124,18 @@ html {
     }
 }
 
+
+select.custom-select {
+    font: 400 15px/60px "Poppins",sans-serif;
+    color: #222d39;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(12,0,46,.04);
+    width: 100%;
+    border: 1px solid #fff;
+    padding-left: 30px;
+}
 
 
 /*

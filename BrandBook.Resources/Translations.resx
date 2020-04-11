@@ -889,10 +889,13 @@
     <value>Erm...</value>
   </data>
   <data name="frontend_contact_subtitle" xml:space="preserve">
-    <value>We would love to hear from you.</value>
+    <value>Feel free to contact us any time. We will get back to you as soon as we can!</value>
   </data>
   <data name="frontend_contact_title" xml:space="preserve">
     <value>Contact us</value>
+  </data>
+  <data name="frontend_footer_support_privacyrequest" xml:space="preserve">
+    <value>Privacy Request</value>
   </data>
   <data name="brandci" xml:space="preserve">
     <value>BrandCi</value>
@@ -908,5 +911,29 @@
   </data>
   <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
     <value>Welcome to BrandCi!</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_sendbutton" xml:space="preserve">
+    <value>Send request</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_subtitle" xml:space="preserve">
+    <value>You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_title" xml:space="preserve">
+    <value>Privacy Request</value>
+  </data>
+  <data name="frontend_footer_support_faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="frontend_faq_long_title" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="frontend_faq_short_title" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="frontend_faq_subtitle" xml:space="preserve">
+    <value>Here you find quick answers to common questions!</value>
   </data>
 </root>

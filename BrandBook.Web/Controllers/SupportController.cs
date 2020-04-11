@@ -80,5 +80,11 @@ namespace BrandBook.Web.Controllers
         }
 
 
+        public ActionResult Faq()
+        {
+            return View();
+        }
+
+
     }
 }
