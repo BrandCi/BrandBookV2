@@ -8,17 +8,17 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BrandBook.Infrastructure.Data
 {
-    public class UserStore : UserStore<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public class AppUserStore : UserStore<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
-        public UserStore(BrandBookDbContext context)
+        public AppUserStore(BrandBookDbContext context)
             : base(context)
         {
         }
     }
 
-    public class RoleStore : RoleStore<UserRole, int, CustomUserRole>
+    public class UserRoleStore : RoleStore<UserRole, int, CustomUserRole>
     {
-        public RoleStore(BrandBookDbContext context)
+        public UserRoleStore(BrandBookDbContext context)
             : base(context)
         {
         }

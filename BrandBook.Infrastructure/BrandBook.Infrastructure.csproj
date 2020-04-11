@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BrandBookDbContext.cs" />
-    <Compile Include="Data\UserStore.cs" />
+    <Compile Include="Data\AppUserStore.cs" />
     <Compile Include="Mapping\MappingProfile.cs" />
     <Compile Include="Data\Migrations\v2_0_0\201904141430499_InitialMigrationWithIdentityModel.cs" />
     <Compile Include="Data\Migrations\v2_0_0\201904141430499_InitialMigrationWithIdentityModel.Designer.cs">
