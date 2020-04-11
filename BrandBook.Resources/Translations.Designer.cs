@@ -1105,7 +1105,7 @@ namespace BrandBook.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We would love to hear from you..
+        ///   Looks up a localized string similar to Feel free to contact us any time. We will get back to you as soon as we can!.
         /// </summary>
         public static string frontend_contact_subtitle {
             get {
@@ -1128,6 +1128,33 @@ namespace BrandBook.Resources {
         public static string frontend_contact_validation_captcha_invalid {
             get {
                 return ResourceManager.GetString("frontend_contact_validation_captcha_invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequently Asked Questions.
+        /// </summary>
+        public static string frontend_faq_long_title {
+            get {
+                return ResourceManager.GetString("frontend_faq_long_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAQs.
+        /// </summary>
+        public static string frontend_faq_short_title {
+            get {
+                return ResourceManager.GetString("frontend_faq_short_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you find quick answers to common questions!.
+        /// </summary>
+        public static string frontend_faq_subtitle {
+            get {
+                return ResourceManager.GetString("frontend_faq_subtitle", resourceCulture);
             }
         }
         
@@ -1263,6 +1290,15 @@ namespace BrandBook.Resources {
         public static string frontend_footer_support_contact {
             get {
                 return ResourceManager.GetString("frontend_footer_support_contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAQ.
+        /// </summary>
+        public static string frontend_footer_support_faq {
+            get {
+                return ResourceManager.GetString("frontend_footer_support_faq", resourceCulture);
             }
         }
         
