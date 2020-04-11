@@ -14214,7 +14214,7 @@ html {
 /* Pages */
 /* Homepage */
 .pos_slider:before {
-  opacity: 0.5 !important; }
+  opacity: 0.25 !important; }
 
 /* SubPage */
 .breadcrumb_area.subpage img:before {
@@ -14290,6 +14290,17 @@ html {
 
 .header_area:not(.navbar_fixed) .nav-logo-dark {
   display: none !important; }
+
+select.custom-select {
+  font: 400 15px/60px "Poppins",sans-serif;
+  color: #222d39;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(12, 0, 46, 0.04);
+  width: 100%;
+  border: 1px solid #fff;
+  padding-left: 30px; }
 
 /*
     RESPONSIVE STYLINGS
