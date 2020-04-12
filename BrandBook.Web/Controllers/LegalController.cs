@@ -97,7 +97,7 @@ namespace BrandBook.Web.Controllers
                 }
             };
 
-            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
             if (applicant != null)
             {
                 emailContent.General_PrivacyRequest.Email = applicant.Email;
