@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -14,6 +15,8 @@ using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using log4net;
 using Microsoft.AspNet.Identity;
+using System.IO;
+using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Controllers
 {
@@ -38,8 +41,18 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            var staticContent = GetStaticContent(CultureHelper.GetCurrentNeutralCulture());
+            return View(model: staticContent);
         }
+
+        private string GetStaticContent(string language)
+        {
+            var staticContent = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages" + "/Imprint/" + language + ".html";
+
+            return System.IO.File.Exists(staticContent) ? System.IO.File.ReadAllText(staticContent) : null;
+        }
+
+
 
         public ActionResult PrivacyPolicy()
         {
