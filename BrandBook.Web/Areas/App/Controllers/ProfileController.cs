@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
-            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
 
 
             var model = new GeneralUserDataViewModel()
@@ -48,7 +48,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Index", "Profile", new { area = "App" });
             }
 
-            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
 
             appUser.FirstName = model.FirstName;
             appUser.LastName = model.LastName;
