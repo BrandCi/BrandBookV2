@@ -41,35 +41,9 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            var staticContent = GetStaticLegalContent("Imprint");
-
-            return View(model: staticContent);
+            return View(model: GetStaticLegalContent("Imprint"));
         }
-
-        private static string GetStaticLegalContent(string subFolder)
-        {
-            return GetStaticLegalContent(subFolder, CultureHelper.GetCurrentNeutralCulture());
-        }
-
-
-        private static string GetStaticLegalContent(string subFolder, string currentCulture)
-        {
-            var filePath = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages/" + subFolder + "/" + currentCulture + ".html";
-            var staticContent = "";
-
-            if (System.IO.File.Exists(filePath))
-            {
-                staticContent = System.IO.File.ReadAllText(filePath);
-            }
-
-            if (string.IsNullOrEmpty(staticContent) && currentCulture != "de")
-            {
-                staticContent = GetStaticLegalContent(subFolder, "de");
-            }
-
-            return staticContent;
-        }
-
+        
 
         public ActionResult PrivacyPolicy()
         {
@@ -77,7 +51,7 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return View(model: GetStaticLegalContent("PrivacyPolicy"));
         }
 
         public ActionResult Cookie()
@@ -86,7 +60,7 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return View(model: GetStaticLegalContent("CookiePolicy"));
         }
 
         [Authorize]
@@ -146,5 +120,33 @@ namespace BrandBook.Web.Controllers
 
             return View(sentModel);
         }
+
+
+
+        #region Private Helpers
+        private static string GetStaticLegalContent(string subFolder)
+        {
+            return GetStaticLegalContent(subFolder, CultureHelper.GetCurrentNeutralCulture());
+        }
+
+
+        private static string GetStaticLegalContent(string subFolder, string currentCulture)
+        {
+            var filePath = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages/" + subFolder + "/" + currentCulture + ".html";
+            var staticContent = "";
+
+            if (System.IO.File.Exists(filePath))
+            {
+                staticContent = System.IO.File.ReadAllText(filePath);
+            }
+
+            if (string.IsNullOrEmpty(staticContent) && currentCulture != "de")
+            {
+                staticContent = GetStaticLegalContent(subFolder, "de");
+            }
+
+            return staticContent;
+        }
+        #endregion
     }
 }
