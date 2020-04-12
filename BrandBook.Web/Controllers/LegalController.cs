@@ -89,7 +89,7 @@ namespace BrandBook.Web.Controllers
                 Subject = "BrandCi - Privacy Request",
                 General_PrivacyRequest = new General_PrivacyRequest()
                 {
-                    UserId = User.Identity.GetUserId(),
+                    UserId = User.Identity.GetUserId<int>(),
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
@@ -97,7 +97,7 @@ namespace BrandBook.Web.Controllers
                 }
             };
 
-            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
             if (applicant != null)
             {
                 emailContent.General_PrivacyRequest.Email = applicant.Email;

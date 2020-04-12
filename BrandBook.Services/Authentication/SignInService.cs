@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Services.Authentication
 {
-    public class SignInService : SignInManager<AppUser, string>
+    public class SignInService : SignInManager<AppUser, int>
     {
         public SignInService(UserService userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)

@@ -36,7 +36,7 @@ namespace BrandBook.Infrastructure.Repositories.User
                 .First();
         }
 
-        public int GetCompanyIdByUserId(string userId)
+        public int GetCompanyIdByUserId(int userId)
         {
             return Set
                 .Where(x => x.Id == userId)

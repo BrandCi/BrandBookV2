@@ -62,12 +62,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmAccount(string userId, string code)
+        public async Task<ActionResult> ConfirmAccount(int userId, string code)
         {
-            if (userId == null || code == null)
-            {
-                return View("Error");
-            }
+            if (userId == 0 || code == null) return View("Error");
+
 
             var result = await UserManager.ConfirmEmailAsync(userId, code);
 

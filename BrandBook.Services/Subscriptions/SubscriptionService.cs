@@ -17,10 +17,10 @@ namespace BrandBook.Services.Subscriptions
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
-        }      
+        }
 
 
-        public bool HasValidSubscription(string userId)
+        public bool HasValidSubscription(int userId)
         {
             var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
 
@@ -28,7 +28,7 @@ namespace BrandBook.Services.Subscriptions
         }
 
 
-        public bool AllowedToCreateNewBrands(string userId)
+        public bool AllowedToCreateNewBrands(int userId)
         {
             var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
             
@@ -65,7 +65,7 @@ namespace BrandBook.Services.Subscriptions
 
 
         #region Private Methods
-        private bool IsAnySubscriptionValid(string userId, IEnumerable<Subscription> subscriptions)
+        private bool IsAnySubscriptionValid(int userId, IEnumerable<Subscription> subscriptions)
         {
             /*            
             if (IsMaximumOfBrandsReached(userId, subscriptions))
@@ -99,7 +99,7 @@ namespace BrandBook.Services.Subscriptions
 
 
 
-        private bool BrandLimitReached(string userId, IEnumerable<Subscription> subscriptions)
+        private bool BrandLimitReached(int userId, IEnumerable<Subscription> subscriptions)
         {
             var usersCompanyId = _unitOfWork.AppUserRepository.FindById(userId).CompanyId;
             var amountOfBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(usersCompanyId);

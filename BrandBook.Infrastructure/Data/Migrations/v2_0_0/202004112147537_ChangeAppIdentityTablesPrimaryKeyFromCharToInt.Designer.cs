@@ -7,13 +7,13 @@ namespace BrandBook.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SeedCompaniesTable : IMigrationMetadata
+    public sealed partial class ChangeAppIdentityTablesPrimaryKeyFromCharToInt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedCompaniesTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeAppIdentityTablesPrimaryKeyFromCharToInt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907111954521_SeedCompaniesTable"; }
+            get { return "202004112147537_ChangeAppIdentityTablesPrimaryKeyFromCharToInt"; }
         }
         
         string IMigrationMetadata.Source

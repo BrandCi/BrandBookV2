@@ -31,9 +31,9 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
 
 
         [Route("{userId}")]
-        public IHttpActionResult GetByUserId(string userId)
+        public IHttpActionResult GetByUserId(int userId)
         {
-            if (string.IsNullOrEmpty(userId)) return BadRequest();
+            if (userId == 0) return BadRequest();
 
             var dateFormat = "dd.MM.yyyy hh:mm";
             int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(userId);

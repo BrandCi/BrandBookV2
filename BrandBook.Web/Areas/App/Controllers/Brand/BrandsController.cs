@@ -46,14 +46,13 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId<int>();
             var singleBrandViewModels = new List<SingleBrandOverviewViewModel>();
 
             foreach (var singleBrand in allBrands)
             {
-                var userGuid = User.Identity.GetUserId();
 
-                if (_cmpAuthService.IsAuthorized(userGuid, singleBrand.Id))
+                if (_cmpAuthService.IsAuthorized(userId, singleBrand.Id))
                 {
                     var brandImage = _unitOfWork.ImageRepository.FindById(singleBrand.ImageId);
 
@@ -103,7 +102,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         [ValidateAntiForgeryToken]
         public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
         {
-            if (!ModelState.IsValid || !_subscriptionService.HasValidSubscription(User.Identity.GetUserId()))
+            if (!ModelState.IsValid || !_subscriptionService.HasValidSubscription(User.Identity.GetUserId<int>()))
             {
                 return View(model);
             }
