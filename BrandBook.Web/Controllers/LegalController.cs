@@ -41,17 +41,34 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            var staticContent = GetStaticContent(CultureHelper.GetCurrentNeutralCulture());
+            var staticContent = GetStaticLegalContent("Imprint");
+
             return View(model: staticContent);
         }
 
-        private string GetStaticContent(string language)
+        private static string GetStaticLegalContent(string subFolder)
         {
-            var staticContent = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages" + "/Imprint/" + language + ".html";
-
-            return System.IO.File.Exists(staticContent) ? System.IO.File.ReadAllText(staticContent) : null;
+            return GetStaticLegalContent(subFolder, CultureHelper.GetCurrentNeutralCulture());
         }
 
+
+        private static string GetStaticLegalContent(string subFolder, string currentCulture)
+        {
+            var filePath = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages/" + subFolder + "/" + currentCulture + ".html";
+            var staticContent = "";
+
+            if (System.IO.File.Exists(filePath))
+            {
+                staticContent = System.IO.File.ReadAllText(filePath);
+            }
+
+            if (string.IsNullOrEmpty(staticContent) && currentCulture != "de")
+            {
+                staticContent = GetStaticLegalContent(subFolder, "de");
+            }
+
+            return staticContent;
+        }
 
 
         public ActionResult PrivacyPolicy()
