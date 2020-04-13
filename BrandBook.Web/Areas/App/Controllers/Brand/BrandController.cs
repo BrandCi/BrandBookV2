@@ -48,7 +48,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
             
-            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId(), brandId);
+            var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId<int>(), brandId);
             var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
             var model = new BrandOverviewViewModel()
@@ -61,7 +61,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 Image = new BrandImageViewModel()
                 {
                     Id = brandImage.Id,
-                    Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
+                    Name = "/SharedStorage/BrandImages/" + brandImage.Name
                 }
             };
 
@@ -485,7 +485,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
         private bool UserIsNotAuthorizedForBrand(int brandId)
         {
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId<int>();
             var allowedToAccessBrand = _cmpAuthService.IsAuthorized(userId, brandId) && _subscriptionService.HasValidSubscription(userId);
 
             if (allowedToAccessBrand)

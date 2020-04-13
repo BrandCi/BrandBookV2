@@ -8,19 +8,19 @@ using System;
 
 namespace BrandBook.Services.Users
 {
-    public class UserService : UserManager<AppUser>
+    public class UserService : UserManager<AppUser, int>
     {
-        public UserService(IUserStore<AppUser> store)
+        public UserService(IUserStore<AppUser, int> store)
             : base(store)
         {
         }
 
         public static UserService Create(IdentityFactoryOptions<UserService> options, IOwinContext context)
         {
-            var manager = new UserService(new UserStore<AppUser>(context.Get<BrandBookDbContext>()));
+            var manager = new UserService(new AppUserStore(context.Get<BrandBookDbContext>()));
 
             // Validation for usernames
-            manager.UserValidator = new UserValidator<AppUser>(manager)
+            manager.UserValidator = new UserValidator<AppUser, int>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
@@ -46,7 +46,7 @@ namespace BrandBook.Services.Users
             if (dataProtectionProvider != null)
             {
                 manager.UserTokenProvider =
-                    new DataProtectorTokenProvider<AppUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                    new DataProtectorTokenProvider<AppUser, int>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
         }

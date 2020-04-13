@@ -20,7 +20,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddColumn("dbo.BlogEntries", "AdditionalStyles", c => c.String());
             AddColumn("dbo.BlogEntries", "BlogImageId", c => c.Int(nullable: false));
             AddColumn("dbo.BlogEntries", "AppUserId", c => c.Int(nullable: false));
-            AddColumn("dbo.BlogEntries", "AppUser_Id", c => c.String(maxLength: 128));
+            AddColumn("dbo.BlogEntries", "AppUser_Id", c => c.Int(nullable: false));
             CreateIndex("dbo.BlogEntries", "BlogImageId");
             CreateIndex("dbo.BlogEntries", "AppUser_Id");
             AddForeignKey("dbo.BlogEntries", "AppUser_Id", "dbo.AspNetUsers", "Id");

@@ -66,7 +66,7 @@
                     </div>
 
 
-                    <button class="btn btn-primary waves-effect waves-light w-md" type="submit">
+                    <button class="btn btn-primary btn-custom waves-effect waves-light w-md" type="submit">
                         <i class="fas fa-save"></i>&nbsp;&nbsp;Speichern
                     </button>
 
@@ -77,12 +77,40 @@
             </p>
         </div>
 
+        @if (ViewBag.IsDarkmodeEnabled)
+        {
+            <div class="card m-b-20 card-body">
+                <h4 class="card-title">
+                    <i class="fas fa-lightbulb"></i>&nbsp;
+                    Switch to Light-Mode
+                </h4>
+                <p class="card-text">
+                    <a href="@Url.Action("ChangeAppColorMode", "Profile", new { area = "App" })" class="btn btn-primary btn-custom waves-effect waves-light w-md">Use Light-Mode</a>
+                </p>
+            </div>
+        }
+
+        else if (!ViewBag.IsDarkmodeEnabled)
+        {
+            <div class="card m-b-20 card-body">
+                <h4 class="card-title">
+                    <i class="fas fa-lightbulb"></i>&nbsp;
+                    Switch to Dark-Mode
+                </h4>
+                <p class="card-text">
+                    <a href="@Url.Action("ChangeAppColorMode", "Profile", new { area = "App", mode="dark" })" class="btn btn-primary btn-custom waves-effect waves-light w-md">Use Dark-Mode</a>
+                </p>
+            </div>
+        }
+
+
+
         <div class="card m-b-20 card-body">
             <p class="card-text">
-                <a href="#changePasswordModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary waves-effect waves-light w-md mt-2 mb-2">
+                <a href="#changePasswordModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary btn-custom waves-effect waves-light w-md mt-2 mb-2">
                     <i class="fas fa-fingerprint"></i>&nbsp;&nbsp;Passwort ändern
                 </a>
-                <a href="#changeEmailModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary waves-effect waves-light w-md mt-2 mb-2">
+                <a href="#changeEmailModal" data-animation="blur" data-plugin="custommodal" data-overlaySpeed="100" data-overlayColor="#36404a" class="btn btn-primary btn-custom waves-effect waves-light w-md mt-2 mb-2">
                     <i class="fas fa-envelope"></i>&nbsp;&nbsp;E-Mail Adresse ändern
                 </a>
             </p>

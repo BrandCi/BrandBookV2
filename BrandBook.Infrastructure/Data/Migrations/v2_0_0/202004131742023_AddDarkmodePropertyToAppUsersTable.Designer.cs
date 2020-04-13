@@ -7,13 +7,13 @@ namespace BrandBook.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SeedBuiltInUserWithBuiltInRoles : IMigrationMetadata
+    public sealed partial class AddDarkmodePropertyToAppUsersTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedBuiltInUserWithBuiltInRoles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDarkmodePropertyToAppUsersTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904221920086_SeedBuiltInUserWithBuiltInRoles"; }
+            get { return "202004131742023_AddDarkmodePropertyToAppUsersTable"; }
         }
         
         string IMigrationMetadata.Source

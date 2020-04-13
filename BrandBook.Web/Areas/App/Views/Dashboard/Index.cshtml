@@ -12,6 +12,29 @@
 }
 
 
+@if (!ViewBag.IsDarkmodeEnabled)
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box" style="background-color: #d6d8d9 !important;">
+                <h4 class="m-t-0 header-title">
+                    <i class="fas fa-moon"></i>&nbsp;
+                    Join the dark side!
+                </h4>
+                <p class="card-text">
+                    We are very happy to announce our new Dark Mode, that is now available in a Beta-Version for you!
+                </p>
+                <p class="card-text">
+                    <a href="@Url.Action("ChangeAppColorMode", "Profile", new { area = "App", mode="dark" })" class="btn btn-dark btn-custom">Start using Dark-Mode</a>
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
 
 <div class="row">
     <div class="col-12">
@@ -25,7 +48,6 @@
 
 
 
-
 <div class="row">
 
     <!-- Area Chart -->
@@ -35,7 +57,7 @@
             <div class="portlet-heading">
                 <h3 class="header-title text-dark mb-0 mt-2">
                     Your brand activity
-                    <a data-toggle="tooltip" data-placement="right" title="Your Brand Activity based on your contributions">
+                    <a data-toggle="tooltip" data-placement="right" title="Your Brand Activity based on your contributions" class="d-none d-md-inline">
                         <i class="fas fa-info-circle"></i>
                     </a>
                 </h3>
@@ -65,7 +87,7 @@
         <div class="card-box">
             <h4 class="text-dark  header-title mb-4">
                 Recent Activity
-                <a data-toggle="tooltip" data-placement="right" title="The last activity across your most active projects.">
+                <a data-toggle="tooltip" data-placement="right" title="The last activity across your most active projects." class="d-none d-md-inline">
                     <i class="fas fa-info-circle"></i>
                 </a>
             </h4>

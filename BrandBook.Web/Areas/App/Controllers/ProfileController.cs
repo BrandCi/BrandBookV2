@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Index()
         {
-            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
 
 
             var model = new GeneralUserDataViewModel()
@@ -48,7 +48,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return RedirectToAction("Index", "Profile", new { area = "App" });
             }
 
-            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
 
             appUser.FirstName = model.FirstName;
             appUser.LastName = model.LastName;
@@ -65,7 +65,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult Subscriptions()
         {
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId<int>();
             var subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
 
 
@@ -102,5 +102,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+        public ActionResult ChangeAppColorMode(string mode)
+        {
+            var user = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
+
+            user.IsDarkmodeEnabled = false;
+
+            if (mode == "dark")
+            {
+                user.IsDarkmodeEnabled = true;
+            }
+
+            _unitOfWork.AppUserRepository.Update(user);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Index", "Dashboard", new { area="App" });
+        }
     }
 }

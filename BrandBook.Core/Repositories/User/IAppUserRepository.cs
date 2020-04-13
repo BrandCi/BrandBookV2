@@ -7,6 +7,6 @@ namespace BrandBook.Core.Repositories.User
         AppUser FindByUsername(string userName);
         int CountUserForCompanyId(int companyId);
         int GetCompanyIdByUsername(string userName);
-        int GetCompanyIdByUserId(string userId);
+        int GetCompanyIdByUserId(int userId);
     }
 }

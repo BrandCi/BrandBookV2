@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 using BrandBook.Core;
@@ -14,6 +15,8 @@ using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using log4net;
 using Microsoft.AspNet.Identity;
+using System.IO;
+using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Controllers
 {
@@ -34,29 +37,27 @@ namespace BrandBook.Web.Controllers
 
         public ActionResult Imprint()
         {
-            ViewBag.Title = "Imprint";
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return View(model: GetStaticLegalContent("Imprint"));
         }
+        
 
         public ActionResult PrivacyPolicy()
         {
-            ViewBag.Title = "Privacy Policy";
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return View(model: GetStaticLegalContent("PrivacyPolicy"));
         }
 
         public ActionResult Cookie()
         {
-            ViewBag.Title = "Cookie Policy";
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return View(model: GetStaticLegalContent("CookiePolicy"));
         }
 
         [Authorize]
@@ -89,7 +90,7 @@ namespace BrandBook.Web.Controllers
                 Subject = "BrandCi - Privacy Request",
                 General_PrivacyRequest = new General_PrivacyRequest()
                 {
-                    UserId = User.Identity.GetUserId(),
+                    UserId = User.Identity.GetUserId<int>(),
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
@@ -97,7 +98,7 @@ namespace BrandBook.Web.Controllers
                 }
             };
 
-            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId());
+            var applicant = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
             if (applicant != null)
             {
                 emailContent.General_PrivacyRequest.Email = applicant.Email;
@@ -116,5 +117,33 @@ namespace BrandBook.Web.Controllers
 
             return View(sentModel);
         }
+
+
+
+        #region Private Helpers
+        private static string GetStaticLegalContent(string subFolder)
+        {
+            return GetStaticLegalContent(subFolder, CultureHelper.GetCurrentNeutralCulture());
+        }
+
+
+        private static string GetStaticLegalContent(string subFolder, string currentCulture)
+        {
+            var filePath = HostingEnvironment.ApplicationPhysicalPath + "/Content/LegalPages/" + subFolder + "/" + currentCulture + ".html";
+            var staticContent = "";
+
+            if (System.IO.File.Exists(filePath))
+            {
+                staticContent = System.IO.File.ReadAllText(filePath);
+            }
+
+            if (string.IsNullOrEmpty(staticContent) && currentCulture != "de")
+            {
+                staticContent = GetStaticLegalContent(subFolder, "de");
+            }
+
+            return staticContent;
+        }
+        #endregion
     }
 }

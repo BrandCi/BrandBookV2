@@ -5,17 +5,23 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Core.Domain.User
 {
-    public class AppUser : IdentityUser
+    public class CustomUserLogin : IdentityUserLogin<int> { }
+    public class CustomUserClaim : IdentityUserClaim<int> { }
+
+
+    public class AppUser : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool PrivacyPolicyAccepted { get; set; }
         public bool IsActive { get; set; }
 
+        public bool IsDarkmodeEnabled { get; set; }
+
         public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
 
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser, int> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
@@ -25,4 +31,5 @@ namespace BrandBook.Core.Domain.User
 
 
     }
+    
 }

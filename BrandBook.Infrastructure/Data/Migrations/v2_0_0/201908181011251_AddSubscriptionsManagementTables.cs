@@ -28,7 +28,7 @@ namespace BrandBook.Infrastructure.Migrations
                         IsActive = c.Boolean(nullable: false),
                         AppUserId = c.Int(nullable: false),
                         SubscriptionPlanId = c.Int(nullable: false),
-                        AppUser_Id = c.String(maxLength: 128),
+                        AppUser_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AppUser_Id)

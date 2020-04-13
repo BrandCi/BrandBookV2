@@ -75,7 +75,7 @@ namespace BrandBook.Services.Notification
                 case EmailTemplateType.General_PrivacyRequest:
                     if (model.General_PrivacyRequest == null) return null;
 
-                    emailContent = emailContent.Replace("{{UserId}}", model.General_PrivacyRequest.UserId);
+                    emailContent = emailContent.Replace("{{UserId}}", model.General_PrivacyRequest.UserId.ToString());
                     emailContent = emailContent.Replace("{{Email}}", model.General_PrivacyRequest.Email);
                     emailContent = emailContent.Replace("{{RequestType}}", model.General_PrivacyRequest.RequestType);
                     emailContent = emailContent.Replace("{{Message}}", model.General_PrivacyRequest.Message);

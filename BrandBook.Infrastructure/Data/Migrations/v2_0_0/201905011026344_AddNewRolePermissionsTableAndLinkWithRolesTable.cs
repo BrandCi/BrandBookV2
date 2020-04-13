@@ -22,7 +22,7 @@ namespace BrandBook.Infrastructure.Migrations
                 "dbo.UserRoleRolePermissions",
                 c => new
                     {
-                        UserRole_Id = c.String(nullable: false, maxLength: 128),
+                        UserRole_Id = c.Int(nullable: false),
                         RolePermission_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.UserRole_Id, t.RolePermission_Id })
