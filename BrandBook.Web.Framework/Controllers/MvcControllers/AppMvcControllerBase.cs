@@ -12,7 +12,6 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
     public class AppMvcControllerBase : MvcControllerBase
     {
         #region Fields
-        protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IAppUserRepository _appUserRepository;
         #endregion
 
@@ -20,7 +19,6 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
         public AppMvcControllerBase()
         {
             this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
-
         }
 
 
