@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -90,7 +90,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 CreationDateTime = DateTime.Now,
 
                 BlogImageId = 1,
-                AppUserId = User.Identity.GetUserId()
+                AppUserId = User.Identity.GetUserId<int>()
 
             };
 
