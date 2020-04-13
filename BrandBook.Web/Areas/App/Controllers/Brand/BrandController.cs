@@ -61,7 +61,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 Image = new BrandImageViewModel()
                 {
                     Id = brandImage.Id,
-                    Name = Path.Combine(Server.MapPath("SharedStorage/BrandImages"), brandImage.Name)
+                    Name = "/SharedStorage/BrandImages/" + brandImage.Name
                 }
             };
 
