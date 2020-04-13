@@ -8,18 +8,6 @@
     @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_BrandNavigation.cshtml")
 }
 
-<style>
-
-    .brand-title-container {
-        width: 100%;
-        text-align: center;
-    }
-
-        .brand-title-container .brand-title-img {
-            max-width: 25%;
-        }
-</style>
-
 
 <div class="row">
     <div class="col-12">
@@ -28,7 +16,7 @@
                 @Model.Name
             </h4>
             <div class="brand-title-container">
-                @CustomHelper.SharedStorageImage(Model.Image.Name, "", "brand-title-img")
+                @CustomHelper.SharedStorageImage(Model.Image.Name, "brand-title-img")
             </div>
 
 
