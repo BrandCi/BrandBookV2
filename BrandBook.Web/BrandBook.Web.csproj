@@ -224,6 +224,7 @@
     <Content Include="App_Data\BrandBook_Content\06b354ec-78ad-4bac-bafa-5afcddb75de5.png" />
     <Content Include="App_Data\BrandBook_Content\7996c187-3620-495d-985d-e823b3f96c5c.svg" />
     <Content Include="App_Data\BrandBook_Content\AuthData\b14828a6-69ac-4d63-a7e0-0f442729e318.svg" />
+    <Content Include="App_Data\BrandBook_Content\b3eb0b70-1229-4b6c-9819-fbd1a3e7db70.svg" />
     <Content Include="App_Data\BrandBook_Content\BrandData\1e829ca5-c778-4529-b5e8-01ee8ead6633.jpg" />
     <Content Include="App_Data\BrandBook_Content\BrandData\4444eb1a-83ce-499d-8901-febbfd680bd8.jpg" />
     <Content Include="App_Data\BrandBook_Content\BrandData\96abb3a0-38c4-4f58-9f7b-fda37ebded25.jpg" />
@@ -825,6 +826,12 @@
     <Content Include="Content\Style\App\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Content\Style\App\style_dark.css">
+      <DependentUpon>style_dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Style\App\style_dark.min.css">
+      <DependentUpon>style_dark.css</DependentUpon>
+    </Content>
     <Content Include="Content\Style\Auth\Styles.css">
       <DependentUpon>Styles.scss</DependentUpon>
     </Content>
@@ -1380,6 +1387,53 @@
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.woff" />
     <Content Include="Content\Style\Frontend\_custom.scss" />
     <Content Include="Content\Style\App\bootstrap-rtl.scss" />
+    <Content Include="Content\Style\App\Dark\icons.scss" />
+    <Content Include="Content\Style\App\Dark\_account-pages.scss" />
+    <Content Include="Content\Style\App\Dark\_alerts.scss" />
+    <Content Include="Content\Style\App\Dark\_animation.scss" />
+    <Content Include="Content\Style\App\Dark\_badge.scss" />
+    <Content Include="Content\Style\App\Dark\_bootstrap-reset.scss" />
+    <Content Include="Content\Style\App\Dark\_buttons.scss" />
+    <Content Include="Content\Style\App\Dark\_calendar.scss" />
+    <Content Include="Content\Style\App\Dark\_carousel.scss" />
+    <Content Include="Content\Style\App\Dark\_charts.scss" />
+    <Content Include="Content\Style\App\Dark\_checkbox-radio.scss" />
+    <Content Include="Content\Style\App\Dark\_common.scss" />
+    <Content Include="Content\Style\App\Dark\_count-down.scss" />
+    <Content Include="Content\Style\App\Dark\_demo-only.scss" />
+    <Content Include="Content\Style\App\Dark\_email.scss" />
+    <Content Include="Content\Style\App\Dark\_faq.scss" />
+    <Content Include="Content\Style\App\Dark\_form-advanced.scss" />
+    <Content Include="Content\Style\App\Dark\_form-elements.scss" />
+    <Content Include="Content\Style\App\Dark\_form-upload.scss" />
+    <Content Include="Content\Style\App\Dark\_form-validation.scss" />
+    <Content Include="Content\Style\App\Dark\_form-wizard.scss" />
+    <Content Include="Content\Style\App\Dark\_gallery.scss" />
+    <Content Include="Content\Style\App\Dark\_helper.scss" />
+    <Content Include="Content\Style\App\Dark\_maintenance.scss" />
+    <Content Include="Content\Style\App\Dark\_maps.scss" />
+    <Content Include="Content\Style\App\Dark\_menu_dark.scss" />
+    <Content Include="Content\Style\App\Dark\_modal.scss" />
+    <Content Include="Content\Style\App\Dark\_nestable.scss" />
+    <Content Include="Content\Style\App\Dark\_notification.scss" />
+    <Content Include="Content\Style\App\Dark\_pagination.scss" />
+    <Content Include="Content\Style\App\Dark\_portlets.scss" />
+    <Content Include="Content\Style\App\Dark\_pricing.scss" />
+    <Content Include="Content\Style\App\Dark\_print.scss" />
+    <Content Include="Content\Style\App\Dark\_progressbar.scss" />
+    <Content Include="Content\Style\App\Dark\_responsive.scss" />
+    <Content Include="Content\Style\App\Dark\_summernote.scss" />
+    <Content Include="Content\Style\App\Dark\_sweetalert.scss" />
+    <Content Include="Content\Style\App\Dark\_tables.scss" />
+    <Content Include="Content\Style\App\Dark\_tabs.scss" />
+    <Content Include="Content\Style\App\Dark\_timeline.scss" />
+    <Content Include="Content\Style\App\Dark\_tooltips-popover.scss" />
+    <Content Include="Content\Style\App\Dark\_treeview.scss" />
+    <Content Include="Content\Style\App\Dark\_variables.scss" />
+    <Content Include="Content\Style\App\Dark\_waves.scss" />
+    <Content Include="Content\Style\App\Dark\_widgets.scss" />
+    <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
+    <Content Include="Content\Style\App\style_dark.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />

@@ -148,8 +148,15 @@ namespace BrandBook.Web
              */
             bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
                 "~/Plugins/switchery/switchery.min.css",
-                "~/Content/Style/bootstrap.min.css",
+                "~/Content/Style/bootstrap.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Basic").Include(
                 "~/Content/Style/App/style.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Dark").Include(
+                "~/Content/Style/App/style_dark.min.css"));
+
+
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
                 "~/Content/Style/App/bootstrap-rtl.min.css"));

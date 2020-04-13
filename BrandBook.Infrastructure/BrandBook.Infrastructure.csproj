@@ -258,6 +258,10 @@
     <Compile Include="Data\Migrations\v2_0_0\202004112246282_SeedInitialData.Designer.cs">
       <DependentUpon>202004112246282_SeedInitialData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\v2_0_0\202004131742023_AddDarkmodePropertyToAppUsersTable.cs" />
+    <Compile Include="Data\Migrations\v2_0_0\202004131742023_AddDarkmodePropertyToAppUsersTable.Designer.cs">
+      <DependentUpon>202004131742023_AddDarkmodePropertyToAppUsersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
@@ -446,6 +450,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\v2_0_0\202004112246282_SeedInitialData.resx">
       <DependentUpon>202004112246282_SeedInitialData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\v2_0_0\202004131742023_AddDarkmodePropertyToAppUsersTable.resx">
+      <DependentUpon>202004131742023_AddDarkmodePropertyToAppUsersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

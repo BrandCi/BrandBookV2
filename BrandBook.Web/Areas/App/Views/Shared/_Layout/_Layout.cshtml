@@ -5,7 +5,7 @@
 <html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRightToLeft() ? "rtl" : "ltr")">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="Philipp C. Moser">
     <meta name="description" content="Brand Book V2">
 
@@ -14,6 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - @ViewBag.MetaAppTitle</title>
     @Styles.Render("~/Content/Css/App/Main")
+
+    @if (ViewBag.IsDarkModeEnabled)
+    {
+        @Styles.Render("~/Content/Css/App/Mode/Dark")
+    }
+    else
+    {
+        @Styles.Render("~/Content/Css/App/Mode/Basic")
+    }
+
+
 
     @if (CultureHelper.IsRightToLeft())
     {
