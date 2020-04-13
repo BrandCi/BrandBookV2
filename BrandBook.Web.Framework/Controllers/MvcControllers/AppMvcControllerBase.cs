@@ -26,7 +26,7 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId()).IsDarkmodeEnabled;
+            ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId<int>()).IsDarkmodeEnabled;
 
             return base.BeginExecuteCore(callback, state);
         }
