@@ -102,5 +102,22 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
 
 
+        public ActionResult ChangeAppColorMode(string mode)
+        {
+            var user = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
+
+            user.IsDarkmodeEnabled = false;
+
+            if (mode == "dark")
+            {
+                user.IsDarkmodeEnabled = true;
+            }
+
+            _unitOfWork.AppUserRepository.Update(user);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Index", "Dashboard", new { area="App" });
+        }
     }
 }
