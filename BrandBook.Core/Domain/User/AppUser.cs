@@ -16,6 +16,8 @@ namespace BrandBook.Core.Domain.User
         public bool PrivacyPolicyAccepted { get; set; }
         public bool IsActive { get; set; }
 
+        public bool IsDarkmodeEnabled { get; set; }
+
         public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
 
