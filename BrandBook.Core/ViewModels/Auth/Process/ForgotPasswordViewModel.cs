@@ -13,5 +13,9 @@ namespace BrandBook.Core.ViewModels.Auth.Process
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
     }
 }

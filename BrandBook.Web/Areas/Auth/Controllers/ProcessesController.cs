@@ -97,10 +97,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
+                var user = await UserManager.FindByNameAsync(model.Username);
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
-                    return View("ForgotPasswordConfirmation");
+                    return View(model);
                 }
 
                 var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
@@ -110,7 +110,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 var adminInfo = new EmailTemplateViewModel()
                 {
                     Type = EmailTemplateType.User_AccountForgotPassword,
-                    Subject = "New Account Creation",
+                    Subject = "Password reset request",
                     User_AccountForgotPassword = new User_AccountForgotPassword()
                     {
                         TargetUrl = targetUrl
