@@ -123,6 +123,35 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             return code == null ? View("Error") : View();
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByNameAsync(model.Email);
+            if (user == null)
+            {
+                return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
+            }
+            var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
+            }
+            
+            return View();
+        }
+
+        public ActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
         #endregion
     }
 }
