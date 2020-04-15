@@ -102,9 +102,23 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 {
                     return View("ForgotPasswordConfirmation");
                 }
-                
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+
+                var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
+
+
+                var adminInfo = new EmailTemplateViewModel()
+                {
+                    Type = EmailTemplateType.User_AccountForgotPassword,
+                    Subject = "New Account Creation",
+                    User_AccountForgotPassword = new User_AccountForgotPassword()
+                    {
+                        TargetUrl = targetUrl
+                    }
+                };
+
+                _notificationService.SendNotification(adminInfo);
+
                 return RedirectToAction("ForgotPasswordConfirmation", "Processes", new { area = "Auth" });
             }
 
