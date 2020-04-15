@@ -98,10 +98,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Username);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
-                {
-                    return View(model);
-                }
+
+                var isRequestInvalid = user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)) ||
+                                     model.Email != user.Email;
+
+                if (isRequestInvalid) return View(model);
 
                 var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
@@ -148,12 +149,16 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 return View(model);
             }
 
-            var user = await UserManager.FindByNameAsync(model.Email);
-            if (user == null)
+            var user = await UserManager.FindByNameAsync(model.Username);
+
+            if (user == null || string.IsNullOrEmpty(model.Code))
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
+                return View("Error");
             }
+
+            
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
+
             if (result.Succeeded)
             {
                 return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
