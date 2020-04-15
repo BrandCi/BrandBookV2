@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
-using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;

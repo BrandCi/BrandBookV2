@@ -15,8 +15,8 @@ using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Core.ViewModels.Process.Notification;
-using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Notification;
 

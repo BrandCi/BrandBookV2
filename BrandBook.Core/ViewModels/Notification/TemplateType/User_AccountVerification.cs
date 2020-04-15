@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BrandBook.Core.ViewModels.Process.Notification.TemplateType
+﻿namespace BrandBook.Core.ViewModels.Notification.TemplateType
 {
     // ReSharper disable once InconsistentNaming
     public class User_AccountVerification

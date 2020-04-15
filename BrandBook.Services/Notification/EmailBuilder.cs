@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using BrandBook.Core;
 using BrandBook.Core.Services.Notification;
-using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Infrastructure;
 
 namespace BrandBook.Services.Notification

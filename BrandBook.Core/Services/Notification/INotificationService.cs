@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Notification;
 
 namespace BrandBook.Core.Services.Messaging
 {

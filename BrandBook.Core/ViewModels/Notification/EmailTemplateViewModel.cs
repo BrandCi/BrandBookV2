@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
+﻿using BrandBook.Core.ViewModels.Notification.TemplateType;
+
 // ReSharper disable InconsistentNaming
 
-namespace BrandBook.Core.ViewModels.Process.Notification
+namespace BrandBook.Core.ViewModels.Notification
 {
     public class EmailTemplateViewModel
     {
