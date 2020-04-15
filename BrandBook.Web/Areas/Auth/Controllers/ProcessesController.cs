@@ -4,6 +4,7 @@ using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 using BrandBook.Core;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.ViewModels.Auth.Process;
 using BrandBook.Core.ViewModels.Process.Notification;
 using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Infrastructure;
@@ -36,19 +37,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _notificationService = new NotificationService();
             _unitOfWork = new UnitOfWork();
         }
-
-
-        // GET: Auth/ForgotPassword
-        public ActionResult ForgotPassword()
-        {
-            if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Home", new { area = "" });
-            }
-
-            return View();
-        }
-
+        
 
         public ActionResult Locked() {
 
@@ -89,5 +78,38 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             return View("ConfirmAccount");
 
         }
+
+
+        #region ForgotPassword
+
+        // GET: Auth/ForgotPassword
+        public ActionResult ForgotPassword()
+        {
+            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home", new { area = "" });
+
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await UserManager.FindByNameAsync(model.Email);
+                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                {
+                    return View("ForgotPasswordConfirmation");
+                }
+                
+                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                return RedirectToAction("ForgotPasswordConfirmation", "Processes", new { area = "Auth" });
+            }
+
+            return View(model);
+        }
+        #endregion
     }
 }
