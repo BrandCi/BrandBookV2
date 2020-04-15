@@ -165,7 +165,7 @@
     <Compile Include="ViewModels\Process\Notification\TemplateType\General_ContactRequest.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerification.cs" />
     <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />
-    <Compile Include="ViewModels\Process\ReCaptchaResponseViewModel.cs" />
+    <Compile Include="ViewModels\Auth\Process\ReCaptchaResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">
