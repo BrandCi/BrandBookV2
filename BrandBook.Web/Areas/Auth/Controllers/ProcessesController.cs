@@ -110,6 +110,13 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             return View(model);
         }
+
+        public ActionResult ForgotPasswordConfirmation()
+        {
+            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home", new { area = "" });
+
+            return View();
+        }
         #endregion
     }
 }
