@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.ViewModels.Auth
+namespace BrandBook.Core.ViewModels.Auth.Process
 {
     public class ResetPasswordViewModel
     {
