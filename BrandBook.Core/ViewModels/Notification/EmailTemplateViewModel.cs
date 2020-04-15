@@ -16,14 +16,4 @@ namespace BrandBook.Core.ViewModels.Notification
         public General_ContactRequest General_ContactRequest { get; set; }
         public General_PrivacyRequest General_PrivacyRequest { get; set; }
     }
-
-    public enum EmailTemplateType
-    {
-        Plain,
-        Admin_AccountCreationInformation,
-        User_AccountVerification,
-        User_AccountVerificationConfirmation,
-        General_ContactRequest,
-        General_PrivacyRequest
-    }
 }
