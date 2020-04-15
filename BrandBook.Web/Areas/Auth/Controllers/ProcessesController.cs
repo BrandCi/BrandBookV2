@@ -117,6 +117,12 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             return View();
         }
+
+
+        public ActionResult ResetPassword(string code)
+        {
+            return code == null ? View("Error") : View();
+        }
         #endregion
     }
 }
