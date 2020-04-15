@@ -92,6 +92,10 @@ namespace BrandBook.Services.Notification
 
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountForgotPassword.TargetUrl);
                     break;
+                case EmailTemplateType.User_AccountForgotPasswordConfirmation:
+                    if (model.User_AccountForgotPasswordConfirmation == null) return null;
+
+                    break;
                 case EmailTemplateType.Plain:
                 default:
                     return null;

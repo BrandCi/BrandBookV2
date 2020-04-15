@@ -164,6 +164,7 @@
     <Compile Include="ViewModels\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\General_PrivacyRequest.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\General_ContactRequest.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\User_AccountForgotPasswordConfirmation.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\User_AccountForgotPassword.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\User_AccountVerification.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />

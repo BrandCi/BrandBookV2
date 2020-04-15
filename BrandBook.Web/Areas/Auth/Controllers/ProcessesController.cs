@@ -95,35 +95,33 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+            
+            var user = await UserManager.FindByNameAsync(model.Username);
+
+            var isRequestInvalid = user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)) ||
+                                 model.Email != user.Email;
+
+            if (isRequestInvalid) return View(model);
+
+            var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+            var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
+
+
+            var email = new EmailTemplateViewModel()
             {
-                var user = await UserManager.FindByNameAsync(model.Username);
-
-                var isRequestInvalid = user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)) ||
-                                     model.Email != user.Email;
-
-                if (isRequestInvalid) return View(model);
-
-                var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
-
-
-                var adminInfo = new EmailTemplateViewModel()
+                Type = EmailTemplateType.User_AccountForgotPassword,
+                Subject = "Password reset request",
+                User_AccountForgotPassword = new User_AccountForgotPassword()
                 {
-                    Type = EmailTemplateType.User_AccountForgotPassword,
-                    Subject = "Password reset request",
-                    User_AccountForgotPassword = new User_AccountForgotPassword()
-                    {
-                        TargetUrl = targetUrl
-                    }
-                };
+                    TargetUrl = targetUrl
+                }
+            };
 
-                _notificationService.SendNotification(adminInfo);
+            _notificationService.SendNotification(email);
 
-                return RedirectToAction("ForgotPasswordConfirmation", "Processes", new { area = "Auth" });
-            }
-
-            return View(model);
+            return RedirectToAction("ForgotPasswordConfirmation", "Processes", new { area = "Auth" });
+            
         }
 
         public ActionResult ForgotPasswordConfirmation()
@@ -144,10 +142,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
             var user = await UserManager.FindByNameAsync(model.Username);
 
@@ -159,12 +154,20 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
 
-            if (result.Succeeded)
+            if (!result.Succeeded) return View();
+
+
+            var email = new EmailTemplateViewModel()
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
-            }
-            
-            return View();
+                Type = EmailTemplateType.User_AccountForgotPasswordConfirmation,
+                Subject = "Password successfully changed",
+                User_AccountForgotPasswordConfirmation = new User_AccountForgotPasswordConfirmation()
+            };
+
+            _notificationService.SendNotification(email);
+
+            return RedirectToAction("ResetPasswordConfirmation", "Processes", new { area = "Auth" });
+
         }
 
         public ActionResult ResetPasswordConfirmation()
