@@ -99,10 +99,18 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             
             var user = await UserManager.FindByNameAsync(model.Username);
 
-            var isRequestInvalid = user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)) ||
-                                 model.Email != user.Email;
+            if (user == null || model.Email != user.Email)
+            {
+                ModelState.AddModelError("User not found", "This user could not be found.");
+                return View(model);
+            }
 
-            if (isRequestInvalid) return View(model);
+            if (!(await UserManager.IsEmailConfirmedAsync(user.Id)))
+            {
+                ModelState.AddModelError("User not confirmed", "Please confirm your Email.");
+                return View(model);
+            }
+            
 
             var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
             var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
