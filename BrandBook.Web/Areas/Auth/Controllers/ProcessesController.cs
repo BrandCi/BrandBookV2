@@ -162,7 +162,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
 
-            if (!result.Succeeded) return View();
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("Could not be saved", "Your password could not be saved. Please try again.");
+                return View(model);
+            }
 
 
             var email = new EmailTemplateViewModel()

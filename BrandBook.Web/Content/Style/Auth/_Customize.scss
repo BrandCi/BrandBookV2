@@ -60,9 +60,11 @@
 }
 
 
-.alert-summary.alert > ul > li {
-    list-style-type: none;    
+.alert-summary.alert > ul > li,
+.validation-summary-errors > ul > li {
+    list-style-type: none;
 }
+
 
 a.ibtn {
     background-color: #191eae;
