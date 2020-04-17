@@ -120,6 +120,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 Type = EmailTemplateType.User_AccountForgotPassword,
                 Subject = "Password reset request",
+                Receiver = user.Email,
                 User_AccountForgotPassword = new User_AccountForgotPassword()
                 {
                     TargetUrl = targetUrl
@@ -173,6 +174,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 Type = EmailTemplateType.User_AccountForgotPasswordConfirmation,
                 Subject = "Password successfully changed",
+                Receiver = user.Email,
                 User_AccountForgotPasswordConfirmation = new User_AccountForgotPasswordConfirmation()
             };
 
