@@ -124,7 +124,9 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     Email = model.Email,
                     Company = company,
                     PrivacyPolicyAccepted = true,
-                    IsActive = true
+                    IsActive = true,
+                    LastLogin = DateTime.Now,
+                    LastModified = DateTime.Now
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
