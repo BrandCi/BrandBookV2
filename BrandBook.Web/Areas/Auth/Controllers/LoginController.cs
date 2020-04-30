@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
     public class LoginController : AuthMvcControllerBase
     {
         private SignInService _signInService;
-        public UserAuthenticationService _userService;
+        public UserAuthenticationService _userAuthenticationService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
@@ -68,11 +68,19 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             get
             {
-                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
+                return _userAuthenticationService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
             }
             private set
             {
-                _userService = value;
+                _userAuthenticationService = value;
+            }
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
             }
         }
 
@@ -275,15 +283,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         #region Helpers
         private const string XsrfKey = "XsrfId";
-
-
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
 
         private void AddErrors(IdentityResult result)
         {
