@@ -125,6 +125,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     Company = company,
                     PrivacyPolicyAccepted = true,
                     IsActive = true,
+                    CreationDate = DateTime.Now,
                     LastLogin = DateTime.Now,
                     LastModified = DateTime.Now
                 };

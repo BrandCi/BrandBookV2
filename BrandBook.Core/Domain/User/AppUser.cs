@@ -19,6 +19,7 @@ namespace BrandBook.Core.Domain.User
 
         public bool IsDarkmodeEnabled { get; set; }
 
+        public DateTime CreationDate { get; set; }
         public DateTime LastModified { get; set; }
         public DateTime LastLogin { get; set; }
 

@@ -266,6 +266,10 @@
     <Compile Include="Data\Migrations\v2_0_0\202004301956529_AddLastModifiedAndLastLoginToAppUsersTable.Designer.cs">
       <DependentUpon>202004301956529_AddLastModifiedAndLastLoginToAppUsersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\v2_0_0\202004302014121_AddCreationDateToAppUsersTable.cs" />
+    <Compile Include="Data\Migrations\v2_0_0\202004302014121_AddCreationDateToAppUsersTable.Designer.cs">
+      <DependentUpon>202004302014121_AddCreationDateToAppUsersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
@@ -460,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\v2_0_0\202004301956529_AddLastModifiedAndLastLoginToAppUsersTable.resx">
       <DependentUpon>202004301956529_AddLastModifiedAndLastLoginToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\v2_0_0\202004302014121_AddCreationDateToAppUsersTable.resx">
+      <DependentUpon>202004302014121_AddCreationDateToAppUsersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
