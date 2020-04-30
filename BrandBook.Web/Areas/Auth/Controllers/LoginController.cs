@@ -295,6 +295,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         private void UpdateLastLoginDate(AppUser user)
         {
+            if (user != null) return;
+
             user.LastLogin = DateTime.Now;
             _unitOfWork.AppUserRepository.Update(user);
             _unitOfWork.SaveChanges();
