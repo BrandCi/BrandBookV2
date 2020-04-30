@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -17,6 +18,9 @@ namespace BrandBook.Core.Domain.User
         public bool IsActive { get; set; }
 
         public bool IsDarkmodeEnabled { get; set; }
+
+        public DateTime LastModified { get; set; }
+        public DateTime LastLogin { get; set; }
 
         public int CompanyId { get; set; }
         public Company.Company Company { get; set; }
