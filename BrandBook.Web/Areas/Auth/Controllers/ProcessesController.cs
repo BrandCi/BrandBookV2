@@ -8,6 +8,7 @@ using BrandBook.Core.ViewModels.Auth.Process;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Infrastructure;
+using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Services.Users;
 using Microsoft.AspNet.Identity.Owin;
@@ -16,15 +17,15 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class ProcessesController : AuthMvcControllerBase
     {
-        public UserService _userService;
+        public UserAuthenticationService _userService;
         private readonly INotificationService _notificationService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserService UserManager
+        public UserAuthenticationService UserManager
         {
             get
             {
-                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserService>();
+                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
             }
             private set
             {

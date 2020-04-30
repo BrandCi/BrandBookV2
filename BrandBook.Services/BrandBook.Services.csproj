@@ -90,7 +90,7 @@
     <Compile Include="Resources\ImageService.cs" />
     <Compile Include="Subscriptions\SubscriptionService.cs" />
     <Compile Include="Users\RoleService.cs" />
-    <Compile Include="Users\UserService.cs" />
+    <Compile Include="Authentication\UserAuthenticationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
