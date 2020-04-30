@@ -122,6 +122,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    UpdateLastLoginDate(user);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return RedirectToAction("Locked", "Processes", new { area = "Auth" });
@@ -290,6 +291,13 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+        private void UpdateLastLoginDate(AppUser user)
+        {
+            user.LastLogin = DateTime.Now;
+            _unitOfWork.AppUserRepository.Update(user);
+            _unitOfWork.SaveChanges();
         }
 
 
