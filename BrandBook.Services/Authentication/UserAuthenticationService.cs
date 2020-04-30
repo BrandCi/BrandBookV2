@@ -1,23 +1,22 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using System;
+using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure.Data;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using System;
 
-namespace BrandBook.Services.Users
+namespace BrandBook.Services.Authentication
 {
-    public class UserService : UserManager<AppUser, int>
+    public class UserAuthenticationService : UserManager<AppUser, int>
     {
-        public UserService(IUserStore<AppUser, int> store)
+        public UserAuthenticationService(IUserStore<AppUser, int> store)
             : base(store)
         {
         }
 
-        public static UserService Create(IdentityFactoryOptions<UserService> options, IOwinContext context)
+        public static UserAuthenticationService Create(IdentityFactoryOptions<UserAuthenticationService> options, IOwinContext context)
         {
-            var manager = new UserService(new AppUserStore(context.Get<BrandBookDbContext>()));
+            var manager = new UserAuthenticationService(new AppUserStore(context.Get<BrandBookDbContext>()));
 
             // Validation for usernames
             manager.UserValidator = new UserValidator<AppUser, int>(manager)

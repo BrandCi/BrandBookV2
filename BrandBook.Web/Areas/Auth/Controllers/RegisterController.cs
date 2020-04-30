@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthMvcControllerBase
     {
-        public UserService _userService;
+        public UserAuthenticationService _userService;
         private SignInService _signInService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
@@ -42,7 +42,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _notificationService = new NotificationService();
         }
 
-        public RegisterController(UserService userService, SignInService signInService)
+        public RegisterController(UserAuthenticationService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
@@ -68,11 +68,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             }
         }
 
-        public UserService UserManager
+        public UserAuthenticationService UserManager
         {
             get
             {
-                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserService>();
+                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
             }
             private set
             {

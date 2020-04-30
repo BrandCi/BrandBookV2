@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
     public class LoginController : AuthMvcControllerBase
     {
         private SignInService _signInService;
-        public UserService _userService;
+        public UserAuthenticationService _userService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
@@ -39,7 +39,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _recaptchaService = new ReCaptchaService();
         }
 
-        public LoginController(UserService userService, SignInService signInService)
+        public LoginController(UserAuthenticationService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
@@ -64,11 +64,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             }
         }
 
-        public UserService UserManager
+        public UserAuthenticationService UserManager
         {
             get
             {
-                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserService>();
+                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
             }
             private set
             {

@@ -18,7 +18,7 @@ namespace BrandBook.Web
         public void ConfigureAuth(IAppBuilder app)
         {
             app.CreatePerOwinContext(BrandBookDbContext.Create);
-            app.CreatePerOwinContext<UserService>(UserService.Create);
+            app.CreatePerOwinContext<UserAuthenticationService>(UserAuthenticationService.Create);
             app.CreatePerOwinContext<SignInService>(SignInService.Create);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
@@ -27,7 +27,7 @@ namespace BrandBook.Web
                 LoginPath = new PathString("/Auth/Login/Index"),
                 Provider = new CookieAuthenticationProvider
                 {
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserService, AppUser, int>(
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<UserAuthenticationService, AppUser, int>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentityCallback: (manager, user) => user.GenerateUserIdentityAsync(manager), getUserIdCallback: (id) => (id.GetUserId<int>()))
                 }
