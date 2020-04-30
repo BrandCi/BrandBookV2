@@ -53,7 +53,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             appUser.FirstName = model.FirstName;
             appUser.LastName = model.LastName;
 
-            _unitOfWork.AppUserRepository.Update(appUser);
+            _unitOfWork.AppUserRepository.UpdateWithModification(appUser);
             _unitOfWork.SaveChanges();
 
 
@@ -113,7 +113,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 user.IsDarkmodeEnabled = true;
             }
 
-            _unitOfWork.AppUserRepository.Update(user);
+            _unitOfWork.AppUserRepository.UpdateWithModification(user);
             _unitOfWork.SaveChanges();
 
 

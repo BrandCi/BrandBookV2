@@ -8,5 +8,10 @@ namespace BrandBook.Core.Repositories.User
         int CountUserForCompanyId(int companyId);
         int GetCompanyIdByUsername(string userName);
         int GetCompanyIdByUserId(int userId);
+
+        /// <summary>
+        /// Automatically updates the LastModified Property
+        /// </summary>
+        void UpdateWithModification(AppUser user);
     }
 }
