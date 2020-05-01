@@ -29,10 +29,11 @@ namespace BrandBook.Services.Storage
             _containerClient = new BlobContainerClient(storageConnectionString, containerName);
             _containerPublicUrl = _containerClient.Uri.AbsoluteUri;
 
-            _containerClient.CreateIfNotExists();
+            SetUpDefaultFolderStructure();
         }
 
 
+        #region Service-Methods
         public string GetItemUrlByRelativePath(string relativePath)
         {
             var selectedBlob = _containerClient.GetBlobs(prefix: relativePath).FirstOrDefault();
@@ -41,6 +42,19 @@ namespace BrandBook.Services.Storage
 
             return _containerPublicUrl + relativePath;
         }
+        #endregion
+
+
+        #region Private Methods
+        private void SetUpDefaultFolderStructure()
+        {
+            _containerClient.CreateIfNotExists();
+            // TODO: Implement routine to add default folders, if they are not existing
+            // BrandData
+            // UserData
+            // BlogData
+        }
+        #endregion
 
     }
 }
