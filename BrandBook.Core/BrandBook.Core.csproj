@@ -108,6 +108,7 @@
     <Compile Include="Services\Authentication\IReCaptchaService.cs" />
     <Compile Include="Services\Notification\IEmailBuilder.cs" />
     <Compile Include="Services\Notification\INotificationService.cs" />
+    <Compile Include="Services\Storage\IStorageService.cs" />
     <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
