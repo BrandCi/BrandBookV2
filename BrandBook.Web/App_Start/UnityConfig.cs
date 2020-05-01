@@ -5,11 +5,13 @@ using Unity.WebApi;
 using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Storage;
 using BrandBook.Infrastructure;
 
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
+using BrandBook.Services.Storage;
 using BrandBook.Services.Subscriptions;
 
 namespace BrandBook.Web
@@ -28,6 +30,7 @@ namespace BrandBook.Web
             container.RegisterType<ISubscriptionService, SubscriptionService>();
             container.RegisterType<IReCaptchaService, ReCaptchaService>();
             container.RegisterType<INotificationService, NotificationService>();
+            container.RegisterType<IStorageService, BlobStorageService>();
             #endregion
 
             
