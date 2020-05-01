@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Storage.Blobs;
+﻿using Azure.Storage.Blobs;
 using BrandBook.Core.Services.Storage;
 using ConfigurationManager = System.Configuration.ConfigurationManager;
 
@@ -17,6 +11,11 @@ namespace BrandBook.Services.Storage
         #endregion
 
 
+        /// <summary>
+        /// BlobStorageService
+        /// Contains Methods for working with Azure Blob Storage
+        /// Check Api-Reference: https://docs.microsoft.com/en-us/dotnet/api/azure.storage.blobs.blobcontainerclient?view=azure-dotnet
+        /// </summary>
         public BlobStorageService()
         {
             var storageConnectionString = ConfigurationManager.ConnectionStrings["BlobStorageConnection"].ToString();
@@ -25,7 +24,6 @@ namespace BrandBook.Services.Storage
             _blobServiceClient = new BlobContainerClient(storageConnectionString, containerName);
 
             _blobServiceClient.CreateIfNotExists();
-
         }
 
     }
