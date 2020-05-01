@@ -1,5 +1,9 @@
-﻿using Azure.Storage.Blobs;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Azure.Storage.Blobs;
 using BrandBook.Core.Services.Storage;
+using Microsoft.Extensions.Azure;
 using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace BrandBook.Services.Storage
@@ -7,7 +11,8 @@ namespace BrandBook.Services.Storage
     public class BlobStorageService : IStorageService
     {
         #region Fields
-        private readonly BlobContainerClient _blobServiceClient;
+        private readonly BlobContainerClient _containerClient;
+        private readonly string _containerPublicUrl;
         #endregion
 
 
@@ -21,9 +26,20 @@ namespace BrandBook.Services.Storage
             var storageConnectionString = ConfigurationManager.ConnectionStrings["BlobStorageConnection"].ToString();
             var containerName = ConfigurationManager.AppSettings["BlobStorageContainer"];
 
-            _blobServiceClient = new BlobContainerClient(storageConnectionString, containerName);
+            _containerClient = new BlobContainerClient(storageConnectionString, containerName);
+            _containerPublicUrl = _containerClient.Uri.AbsoluteUri;
 
-            _blobServiceClient.CreateIfNotExists();
+            _containerClient.CreateIfNotExists();
+        }
+
+
+        public string GetItemUrlByRelativePath(string relativePath)
+        {
+            var selectedBlob = _containerClient.GetBlobs(prefix: relativePath).FirstOrDefault();
+
+            if (selectedBlob == null) return "";
+
+            return _containerPublicUrl + relativePath;
         }
 
     }

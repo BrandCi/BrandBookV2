@@ -8,5 +8,6 @@ namespace BrandBook.Core.Services.Storage
 {
     public interface IStorageService
     {
+        string GetItemUrlByRelativePath(string relativePath);
     }
 }
