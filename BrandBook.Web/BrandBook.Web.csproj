@@ -1300,6 +1300,7 @@
     <Content Include="Areas\App\ClientApp\tsconfig.json" />
     <Content Include="Areas\App\ClientApp\tsconfig.spec.json" />
     <Content Include="Areas\App\ClientApp\tslint.json" />
+    <Content Include="Areas\App\Views\Dashboard\AngularTest.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -1522,7 +1523,9 @@
     <Content Include="Views\Legal\PrivacyRequest.cshtml" />
     <Content Include="Views\Support\Faq.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\ClientApps\AppOutput\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
