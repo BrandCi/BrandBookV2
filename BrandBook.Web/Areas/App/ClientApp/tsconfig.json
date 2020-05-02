@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "../../../Content/ClientApps/AppOutput/Ts-Out",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
