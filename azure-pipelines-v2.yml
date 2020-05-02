@@ -26,6 +26,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
+    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
     customCommand: 'run custom-build-dev'
   displayName: 'npm custom build'
 
