@@ -21,7 +21,14 @@ steps:
   inputs:
     command: 'install'
     workingDir: 'BrandBook.Web/Areas/App/ClientApp'
-    
+  displayName: 'npm install'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run custom-build-dev'
+  displayName: 'npm custom build'
+
   
 
 - task: VSBuild@1
