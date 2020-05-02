@@ -293,6 +293,32 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Datepicker").Include(
                 "~/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
 
+
+
+
+
+
+
+
+
+
+
+            /*
+             * CLIENT APP - APP AREA
+             */
+            bundles.Add(new StyleBundle("~/ClientApp/App").Include(
+                "~/Content/ClientApps/AppOutput/ClientApp/styles.*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ClientApp/App").Include(
+                "~/Content/ClientApps/AppOutput/ClientApp/runtime-es2015.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/runtime-es5.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/polyfills-es5.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/polyfills-es2015.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/vendor-es2015.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/vendor-es5.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/main-es2015.js",
+                "~/Content/ClientApps/AppOutput/ClientApp/main-es5.js"));
+
         }
     }
 }
