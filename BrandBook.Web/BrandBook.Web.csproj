@@ -803,6 +803,11 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\fa805559-1642-4951-ad35-a2d7cc46c16a.png" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
+    <Content Include="Areas\App\ClientApp\e2e\protractor.conf.js" />
+    <Content Include="Areas\App\ClientApp\karma.conf.js" />
+    <Content Include="Areas\App\ClientApp\src\app\app.component.html" />
+    <Content Include="Areas\App\ClientApp\src\favicon.ico" />
+    <Content Include="Areas\App\ClientApp\src\index.html" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
     <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
     <Content Include="Content\EmailTemplates\General_PrivacyRequest.html" />
@@ -1280,6 +1285,21 @@
     <Content Include="Areas\Auth\Views\Processes\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPassword.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\App\ClientApp\.editorconfig" />
+    <Content Include="Areas\App\ClientApp\.gitignore" />
+    <Content Include="Areas\App\ClientApp\angular.json" />
+    <Content Include="Areas\App\ClientApp\browserslist" />
+    <Content Include="Areas\App\ClientApp\e2e\tsconfig.json" />
+    <Content Include="Areas\App\ClientApp\package-lock.json" />
+    <Content Include="Areas\App\ClientApp\package.json" />
+    <Content Include="Areas\App\ClientApp\README.md" />
+    <Content Include="Areas\App\ClientApp\src\app\app.component.scss" />
+    <Content Include="Areas\App\ClientApp\src\assets\.gitkeep" />
+    <Content Include="Areas\App\ClientApp\src\styles.scss" />
+    <Content Include="Areas\App\ClientApp\tsconfig.app.json" />
+    <Content Include="Areas\App\ClientApp\tsconfig.json" />
+    <Content Include="Areas\App\ClientApp\tsconfig.spec.json" />
+    <Content Include="Areas\App\ClientApp\tslint.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -1534,6 +1554,15 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Areas\App\ClientApp\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\main.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="Areas\App\ClientApp\src\test.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
