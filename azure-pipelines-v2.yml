@@ -48,7 +48,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApps'
 # ./ClientApps
 
 
