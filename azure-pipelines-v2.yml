@@ -11,26 +11,13 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@0
+  displayName: 'Initialize NuGet'
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+  displayName: 'Install NuGet Packages'
 
-
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
-  displayName: 'npm install'
-
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
-    customCommand: 'run custom-build-dev'
-  displayName: 'npm custom build'
-
-  
 
 - task: VSBuild@1
   inputs:
@@ -38,13 +25,35 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+  displayName: 'Build Application'
 
+
+# ClientApp
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
+  displayName: 'npm install'
+  
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
+    customCommand: 'run custom-build-dev'
+  displayName: 'npm custom build'
+# ./ClientApp
+
+
+# Unit Tests
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+  displayName: 'UnitTests Application'
+# ./Unit Tests
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
+  displayName: 'Publish Build Artifacts'
