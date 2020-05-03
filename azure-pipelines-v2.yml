@@ -45,7 +45,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
+    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps/AppOutput'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
