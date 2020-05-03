@@ -10,6 +10,8 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+# Solution
 - task: NuGetToolInstaller@0
   displayName: 'Initialize NuGet'
 
@@ -18,7 +20,6 @@ steps:
     restoreSolution: '$(solution)'
   displayName: 'Install NuGet Packages'
 
-
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
@@ -26,28 +27,29 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
   displayName: 'Build Application'
+# ./Solution
 
 
-# ClientApp
+# ClientApps
 - task: Npm@1
   inputs:
     command: 'install'
     workingDir: 'BrandBook.Web/Areas/App/ClientApp'
   displayName: 'npm install'
-  
+
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: 'BrandBook.Web/Areas/App/ClientApp'
     customCommand: 'run custom-build-dev'
   displayName: 'npm custom build'
-# ./ClientApp
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps/AppOutput'
+    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+# ./ClientApps
 
 
 # Unit Tests
@@ -57,6 +59,7 @@ steps:
     configuration: '$(buildConfiguration)'
   displayName: 'UnitTests Application'
 # ./Unit Tests
+
 
 - task: PublishBuildArtifacts@1
   inputs:
