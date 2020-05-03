@@ -43,6 +43,12 @@ steps:
   displayName: 'npm custom build'
 # ./ClientApp
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 
 # Unit Tests
 - task: VSTest@2
