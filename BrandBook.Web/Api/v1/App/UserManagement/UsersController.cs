@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using BrandBook.Web.Framework.HtmlHelpers;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
@@ -72,7 +73,9 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 TwoFactorEnabled = Convert.ToInt32(user.TwoFactorEnabled),
                 LockoutEnabled = Convert.ToInt32(user.LockoutEnabled),
                 PrivacyPolicyAccepted = Convert.ToInt32(user.PrivacyPolicyAccepted),
-                IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled)
+                IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled),
+
+                ProfileImagePath = CustomHelper.ImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
             };
 
 

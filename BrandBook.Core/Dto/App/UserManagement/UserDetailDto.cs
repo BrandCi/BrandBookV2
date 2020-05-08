@@ -25,5 +25,7 @@ namespace BrandBook.Core.Dto.App.UserManagement
         public int LockoutEnabled { get; set; }
         public int PrivacyPolicyAccepted { get; set; }
         public int IsDarkmodeEnabled { get; set; }
+
+        public string ProfileImagePath { get; set; }
     }
 }

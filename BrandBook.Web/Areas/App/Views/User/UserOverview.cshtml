@@ -119,12 +119,25 @@
     <!-- User Subscription Modal -->
     <script>
 
-        const SubscriptionItem = ({ id, key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
+        const SubscriptionItem = ({
+                id,
+                key,
+                subscriptionPlanName,
+                startDateTime,
+                endDateTime,
+                currentAmountOfBrands,
+                possibleAmountOfBrands,
+                pricePerMonth,
+                paidOrPending,
+                activeOrInactive
+            }) => `
             <div class="card">
                 <div class="card-header" role="tab" id="heading-${key}">
                     <h5 class="mb-0 mt-0 font-16">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-${key}" aria-expanded="false" aria-controls="collapse-${key}">
-                            <strong>@Translations.app_subscription_popup_subscription_title #${key}</strong> (${subscriptionPlanName})
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-${key
+            }" aria-expanded="false" aria-controls="collapse-${key}">
+                            <strong>@Translations.app_subscription_popup_subscription_title #${key}</strong> (${
+            subscriptionPlanName})
                             <span class="badge subscription badge-primary">${paidOrPending}</span>
                             <span class="badge subscription badge-primary">${activeOrInactive}</span>
                         </a>
@@ -134,7 +147,8 @@
                     <div class="card-body">
                         <p>
                             <strong>@Translations.app_subscription_popup_subscription_brandscreated:</strong>
-                            <span class="badge subscription badge-primary">${currentAmountOfBrands} / ${possibleAmountOfBrands}</span>
+                            <span class="badge subscription badge-primary">${currentAmountOfBrands} / ${
+            possibleAmountOfBrands}</span>
                             <br>
                             <strong>@Translations.app_subscription_popup_subscription_activesince:</strong>
                             <span class="badge subscription badge-primary"> ${startDateTime}</span>
@@ -155,11 +169,13 @@
         `;
 
         const ActivateButton = ({ id }) => `
-            <button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id})">@Translations.app_subscription_popup_subscription_activate</button>
+            <button type="button" class="btn btn-success waves-effect" onclick="activateSubscription(${id
+            })">@Translations.app_subscription_popup_subscription_activate</button>
         `;
 
         const DeactivateButton = ({ id }) => `
-            <button type="button" class="btn btn-danger waves-effect" onclick="showDeactivateApprove(${id})">@Translations.app_subscription_popup_subscription_deactivate</button>
+            <button type="button" class="btn btn-danger waves-effect" onclick="showDeactivateApprove(${id
+            })">@Translations.app_subscription_popup_subscription_deactivate</button>
         `;
 
         var _userId;
@@ -179,15 +195,14 @@
         }
 
 
-
-
         function getAndDisplayUserName() {
             $.ajax({
                 url: "/api/v1/users/getUserNameById/" + _userId
             }).then(function(data) {
 
                 if (data.length != 0) {
-                    $('#subscriptionModalLabelUserName').html("@Translations.app_subscription_popup_subscription_heading_binding " + data);
+                    $('#subscriptionModalLabelUserName')
+                        .html("@Translations.app_subscription_popup_subscription_heading_binding " + data);
                 }
 
             });
@@ -219,7 +234,9 @@
         function showDeactivateApprove(subscriptionId) {
             $('#changeStatusButton-' + subscriptionId)
                 .html('@Translations.app_subscription_popup_subscription_deactivateapprove_title<br>' +
-                    '<button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(' + subscriptionId + ')">@Translations.app_subscription_popup_subscription_deactivateapprove_button</button>');
+                    '<button type="button" class="btn btn-danger waves-effect" onclick="deactivateSubscription(' +
+                    subscriptionId +
+                    ')">@Translations.app_subscription_popup_subscription_deactivateapprove_button</button>');
         }
 
         function deactivateSubscription(subscriptionId) {
@@ -261,9 +278,28 @@
     <!-- User Details Modal -->
     <script>
 
-        const DetailsItem = ({ id, firstname, lastname, username, email, phoneNumber, creationDate, lastLoginDate, lastModifiedDate, isActive, isEmailConfirmed, privacyPolicyAccepted, isDarkmodeEnabled }) => `
+        const DetailsItem = ({
+            id,
+            firstname,
+            lastname,
+            username,
+            email,
+            phoneNumber,
+            creationDate,
+            lastLoginDate,
+            lastModifiedDate,
+            isActive,
+            isEmailConfirmed,
+            privacyPolicyAccepted,
+            isDarkmodeEnabled,
+            profileImagePath
+        }) => `
             <div class="text-center card-box">
                 <div class="member-card">
+
+                    <div class="thumb-lg member-thumb m-b-10 center-page">
+                        <img src="${profileImagePath}" class="rounded-circle img-thumbnail" alt="user-profile-image">
+                    </div>
 
                     <div class="">
                         <h4 class="m-b-5 mt-2">
