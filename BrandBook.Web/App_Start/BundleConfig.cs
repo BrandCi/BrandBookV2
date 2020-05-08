@@ -305,7 +305,7 @@ namespace BrandBook.Web
 
             /*
              * CLIENT APP - APP AREA
-             */
+             
 
             bundles.Add(new StyleBundle("~/ClientApp/App").Include(
                 "~/Content/ClientApps/AppOutput/ClientApp/styles.*"));
@@ -319,7 +319,7 @@ namespace BrandBook.Web
                 "~/Content/ClientApps/AppOutput/ClientApp/vendor-es5.js",
                 "~/Content/ClientApps/AppOutput/ClientApp/main-es2015.js",
                 "~/Content/ClientApps/AppOutput/ClientApp/main-es5.js"));
-
+*/
         }
     }
 }
