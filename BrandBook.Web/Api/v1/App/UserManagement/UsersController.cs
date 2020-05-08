@@ -45,6 +45,13 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         }
 
 
+        [Route("getUserDetailsById/{userId}")]
+        public async Task<IHttpActionResult> GetUserDetailsById(int userId)
+        {
+            return Ok();
+        }
+
+
 
 
     }
