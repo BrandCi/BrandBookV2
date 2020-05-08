@@ -61,9 +61,7 @@
 
             }
 
-
-
-            @Html.ValidationSummary(true, "", new { @class = "alert-summary alert alert-danger mt-5" })
+            @Html.ValidationSummary(false, "", new { @class = "text-danger mt-5" })
 
 
             @Html.Partial("~/Areas/Auth/Views/Shared/Partial/_ExternalLoginList.cshtml")

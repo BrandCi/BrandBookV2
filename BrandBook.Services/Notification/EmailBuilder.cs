@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using BrandBook.Core;
 using BrandBook.Core.Services.Notification;
-using BrandBook.Core.ViewModels.Process.Notification;
+using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Infrastructure;
 
 namespace BrandBook.Services.Notification
@@ -86,6 +86,15 @@ namespace BrandBook.Services.Notification
                     if (model.User_AccountVerificationConfirmation == null) return null;
 
                     emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerificationConfirmation.EmailAddress);
+                    break;
+                case EmailTemplateType.User_AccountForgotPassword:
+                    if (model.User_AccountForgotPassword == null) return null;
+
+                    emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountForgotPassword.TargetUrl);
+                    break;
+                case EmailTemplateType.User_AccountForgotPasswordConfirmation:
+                    if (model.User_AccountForgotPasswordConfirmation == null) return null;
+
                     break;
                 case EmailTemplateType.Plain:
                 default:

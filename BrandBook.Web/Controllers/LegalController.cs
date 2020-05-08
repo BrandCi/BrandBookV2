@@ -7,8 +7,6 @@ using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Legal;
-using BrandBook.Core.ViewModels.Process.Notification;
-using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
 using BrandBook.Infrastructure;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
@@ -16,6 +14,8 @@ using BrandBook.Services.Notification;
 using log4net;
 using Microsoft.AspNet.Identity;
 using System.IO;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Controllers

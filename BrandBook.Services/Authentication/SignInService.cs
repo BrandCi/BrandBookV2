@@ -10,19 +10,19 @@ namespace BrandBook.Services.Authentication
 {
     public class SignInService : SignInManager<AppUser, int>
     {
-        public SignInService(UserService userManager, IAuthenticationManager authenticationManager)
+        public SignInService(UserAuthenticationService userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
         }
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(AppUser appUser)
         {
-            return appUser.GenerateUserIdentityAsync((UserService)UserManager);
+            return appUser.GenerateUserIdentityAsync((UserAuthenticationService)UserManager);
         }
 
         public static SignInService Create(IdentityFactoryOptions<SignInService> options, IOwinContext context)
         {
-            return new SignInService(context.GetUserManager<UserService>(), context.Authentication);
+            return new SignInService(context.GetUserManager<UserAuthenticationService>(), context.Authentication);
         }
     }
 }

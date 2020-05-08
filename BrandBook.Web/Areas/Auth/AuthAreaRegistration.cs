@@ -22,6 +22,25 @@ namespace BrandBook.Web.Areas.Auth
                 new { controller = "Processes", action = "ForgotPassword" },
                 new[] { "BrandBook.Web.Areas.Auth.Controllers" }
             );
+            context.MapRoute(
+                "ForgotPasswordConfirmation",
+                "Auth/ForgotPasswordConfirmation",
+                new { controller = "Processes", action = "ForgotPasswordConfirmation" },
+                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+            );
+
+            context.MapRoute(
+                "ResetPassword",
+                "Auth/ResetPassword",
+                new { controller = "Processes", action = "ResetPassword" },
+                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+            );
+            context.MapRoute(
+                "ResetPasswordConfirmation",
+                "Auth/ResetPasswordConfirmation",
+                new { controller = "Processes", action = "ResetPasswordConfirmation" },
+                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+            );
 
             context.MapRoute(
                 "UnlockAccount",

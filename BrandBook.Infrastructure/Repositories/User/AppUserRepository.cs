@@ -1,4 +1,6 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using System;
+using System.Data.Entity;
+using BrandBook.Core.Domain.User;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using System.Linq;
@@ -7,9 +9,11 @@ namespace BrandBook.Infrastructure.Repositories.User
 {
     public class AppUserRepository : Repository<AppUser>, IAppUserRepository
     {
+        private readonly BrandBookDbContext _brandBookDbContext;
         public AppUserRepository(BrandBookDbContext context)
             : base(context)
         {
+            _brandBookDbContext = context;
         }
 
 
@@ -43,6 +47,13 @@ namespace BrandBook.Infrastructure.Repositories.User
                 .Select(x => x.CompanyId)
                 .DefaultIfEmpty(0)
                 .First();
+        }
+
+        
+        public void UpdateWithModification(AppUser user)
+        {
+            user.LastModified = DateTime.Now;
+            _brandBookDbContext.Entry(user).State = EntityState.Modified;
         }
 
     }

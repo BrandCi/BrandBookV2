@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
+﻿using BrandBook.Core.ViewModels.Notification.TemplateType;
+
 // ReSharper disable InconsistentNaming
 
-namespace BrandBook.Core.ViewModels.Process.Notification
+namespace BrandBook.Core.ViewModels.Notification
 {
     public class EmailTemplateViewModel
     {
@@ -16,17 +13,9 @@ namespace BrandBook.Core.ViewModels.Process.Notification
         public Admin_AccountCreationInformation Admin_AccountCreationInformation { get; set; }
         public User_AccountVerification User_AccountVerification { get; set; }
         public User_AccountVerificationConfirmation User_AccountVerificationConfirmation { get; set; }
+        public User_AccountForgotPassword User_AccountForgotPassword { get; set; }
+        public User_AccountForgotPasswordConfirmation User_AccountForgotPasswordConfirmation { get; set; }
         public General_ContactRequest General_ContactRequest { get; set; }
         public General_PrivacyRequest General_PrivacyRequest { get; set; }
-    }
-
-    public enum EmailTemplateType
-    {
-        Plain,
-        Admin_AccountCreationInformation,
-        User_AccountVerification,
-        User_AccountVerificationConfirmation,
-        General_ContactRequest,
-        General_PrivacyRequest
     }
 }

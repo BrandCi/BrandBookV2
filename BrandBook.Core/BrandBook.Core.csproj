@@ -81,6 +81,7 @@
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Dto\App\UserManagement\SubscriptionDto.cs" />
+    <Compile Include="Dto\App\UserManagement\UserDetailDto.cs" />
     <Compile Include="Dto\App\UserManagement\UserDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogDetailDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogOverviewDto.cs" />
@@ -148,8 +149,10 @@
     <Compile Include="ViewModels\App\UserManagement\RoleViewModel.cs" />
     <Compile Include="ViewModels\App\UserManagement\SingleAppUserViewModel.cs" />
     <Compile Include="ViewModels\Auth\External\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Auth\Process\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Auth\LoginViewModel.cs" />
     <Compile Include="ViewModels\Auth\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Auth\Process\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\BlogEntryViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\BlogOverviewViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Blog\SingleBlogOverviewViewModel.cs" />
@@ -157,13 +160,16 @@
     <Compile Include="ViewModels\Frontend\Layout\UserLikeViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Legal\PrivacyRequestViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
-    <Compile Include="ViewModels\Process\Notification\EmailTemplateViewModel.cs" />
-    <Compile Include="ViewModels\Process\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
-    <Compile Include="ViewModels\Process\Notification\TemplateType\General_PrivacyRequest.cs" />
-    <Compile Include="ViewModels\Process\Notification\TemplateType\General_ContactRequest.cs" />
-    <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerification.cs" />
-    <Compile Include="ViewModels\Process\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />
-    <Compile Include="ViewModels\Process\ReCaptchaResponseViewModel.cs" />
+    <Compile Include="ViewModels\Notification\EmailTemplateType.cs" />
+    <Compile Include="ViewModels\Notification\EmailTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\General_PrivacyRequest.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\General_ContactRequest.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\User_AccountForgotPasswordConfirmation.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\User_AccountForgotPassword.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\User_AccountVerification.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\User_AccountVerificationConfirmation.cs" />
+    <Compile Include="ViewModels\Auth\Process\ReCaptchaResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BrandBook.Web\ConnectionStrings.config">

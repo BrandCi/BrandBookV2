@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.ViewModels;
-using BrandBook.Core.ViewModels.Process;
+using BrandBook.Core.ViewModels.Auth.Process;
 using Newtonsoft.Json;
 
 namespace BrandBook.Services.Authentication

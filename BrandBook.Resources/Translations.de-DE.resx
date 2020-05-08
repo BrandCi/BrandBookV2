@@ -289,7 +289,7 @@
     <value>Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.</value>
   </data>
   <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
-    <value>Sei müssen die Datenschutzerklärung akzeptieren.</value>
+    <value>Sie müssen die Datenschutzerklärung akzeptieren.</value>
   </data>
   <data name="app_settings_back_button_title" xml:space="preserve">
     <value>Zurück</value>

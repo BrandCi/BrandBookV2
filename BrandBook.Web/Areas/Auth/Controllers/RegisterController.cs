@@ -15,8 +15,8 @@ using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Core.ViewModels.Process.Notification;
-using BrandBook.Core.ViewModels.Process.Notification.TemplateType;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Notification;
 
@@ -24,7 +24,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthMvcControllerBase
     {
-        public UserService _userService;
+        public UserAuthenticationService _userService;
         private SignInService _signInService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
@@ -42,7 +42,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _notificationService = new NotificationService();
         }
 
-        public RegisterController(UserService userService, SignInService signInService)
+        public RegisterController(UserAuthenticationService userService, SignInService signInService)
         {
             UserManager = userService;
             SignInService = signInService;
@@ -68,11 +68,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             }
         }
 
-        public UserService UserManager
+        public UserAuthenticationService UserManager
         {
             get
             {
-                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserService>();
+                return _userService ?? HttpContext.GetOwinContext().GetUserManager<UserAuthenticationService>();
             }
             private set
             {
@@ -124,7 +124,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     Email = model.Email,
                     Company = company,
                     PrivacyPolicyAccepted = true,
-                    IsActive = true
+                    IsActive = true,
+                    CreationDate = DateTime.Now,
+                    LastLogin = DateTime.Now,
+                    LastModified = DateTime.Now
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);

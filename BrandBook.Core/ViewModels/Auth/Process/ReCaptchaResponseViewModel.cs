@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BrandBook.Core.ViewModels.Process
+namespace BrandBook.Core.ViewModels.Auth.Process
 {
     public class ReCaptchaResponseViewModel
     {

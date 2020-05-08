@@ -58,7 +58,8 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-.alert-summary.alert > ul > li {
+.alert-summary.alert > ul > li,
+.validation-summary-errors > ul > li {
   list-style-type: none; }
 
 a.ibtn {
