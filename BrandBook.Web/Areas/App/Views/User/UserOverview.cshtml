@@ -48,8 +48,12 @@
                                 @user.Email
                             </td>
                             <td>
-                                <a href="#" onclick="loadSubscriptionModal('@user.Id')">
+                                <a href="#" onclick="loadSubscriptionModal('@user.Id')" class="no-link">
                                     <i class="fas fa-key"></i>
+                                </a>
+                                &nbsp;
+                                <a href="#" onclick="loadDetailsModal('@user.Id')" class="no-link">
+                                    <i class="fas fa-info-circle"></i>
                                 </a>
                             </td>
                         </tr>
@@ -60,8 +64,7 @@
         </div>
     </div>
 </div> <!-- end row -->
-
-
+<!-- User Subscription Modal -->
 <div id="subscriptionModal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -72,19 +75,38 @@
 
                 <div id="accordion" role="tablist" aria-multiselectable="false" class="m-b-20 subscriptionModalContent">
 
-                    
+
                 </div>
 
-             </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary waves-effect" onclick="closeSubscriptionModal()">@Translations.app_subscription_popup_subscription_close</button>
             </div>
         </div>
     </div>
 </div>
+<!-- ./User Subscription Modal -->
+<!-- User Details Modal -->
+<div id="detailsModal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="detailsModalLabel">User Details</h4>
+            </div>
+            <div class="modal-body">
 
+                <div class="m-b-20 detailsModalContent">
 
+                </div>
 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary waves-effect" onclick="closeDetailsModal()">@Translations.app_subscription_popup_subscription_close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./User Details Modal -->
 
 
 
@@ -94,7 +116,8 @@
     @Scripts.Render("~/bundles/packages/app/um-users-overview");
 
 
-    <script type="text/javascript">
+    <!-- User Subscription Modal -->
+    <script>
 
         const SubscriptionItem = ({ id, key, subscriptionPlanName, startDateTime, endDateTime, currentAmountOfBrands, possibleAmountOfBrands, pricePerMonth, paidOrPending, activeOrInactive }) => `
             <div class="card">
@@ -165,7 +188,7 @@
 
                 if (data.length != 0) {
                     $('#subscriptionModalLabelUserName').html("@Translations.app_subscription_popup_subscription_heading_binding " + data);
-                } 
+                }
 
             });
         }
@@ -234,6 +257,129 @@
         }
 
     </script>
+    <!-- ./User Subscription Modal -->
+    <!-- User Details Modal -->
+    <script>
+
+        const DetailsItem = ({ id, firstname, lastname, username, email, phoneNumber, creationDate, lastLoginDate, lastModifiedDate, isActive, isEmailConfirmed, privacyPolicyAccepted, isDarkmodeEnabled }) => `
+            <div class="text-center card-box">
+                <div class="member-card">
+
+                    <div class="">
+                        <h4 class="m-b-5 mt-2">
+                            ${firstname} ${lastname}
+                        </h4>
+                        <p class="text-muted"></p>
+                    </div>
+
+
+                    <div class="text-left m-t-40">
+                        <p class="text-muted font-13">
+                            <strong>UserId:</strong><br/>
+                            ${id}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>Email:</strong><br/>
+                            ${username}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>Email:</strong><br/>
+                            ${email}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>Phone:</strong><br/>
+                            ${phoneNumber}
+                        </p>
+
+                        <p></p>
+
+                        <p class="text-muted font-13">
+                            <strong>CreationDate:</strong><br/>
+                            ${creationDate}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>LastLoginDate:</strong><br/>
+                            ${lastLoginDate}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>LastModified:</strong><br/>
+                            ${lastModifiedDate}
+                        </p>
+
+                        <p></p>
+
+                        <p class="text-muted font-13">
+                            <strong>Is Active:</strong><br/>
+                            ${isActive}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>Is Email Confirmed:</strong><br/>
+                            ${isEmailConfirmed}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>PrivacyPolicy Accepted:</strong><br/>
+                            ${privacyPolicyAccepted}
+                        </p>
+
+                        <p class="text-muted font-13">
+                            <strong>Darkmode enabled:</strong><br/>
+                            ${isDarkmodeEnabled}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        `;
+
+        var _userId;
+
+        function loadDetailsModal(userId) {
+
+            _userId = userId;
+
+            $('#detailsModal').modal('show');
+
+            updateDetailsModalContent();
+
+        }
+
+        function closeDetailsModal() {
+            $('#detailsModal').modal('hide');
+        }
+
+        function updateDetailsModalContent() {
+            resetDetailsModalContent();
+            getAndDisplayUserDetails();
+        }
+
+
+        function getAndDisplayUserDetails() {
+            $.ajax({
+                url: "/api/v1/users/getUserDetailsById/" + _userId
+            }).then(function(data) {
+
+                if (data.length != 0) {
+                    $('.detailsModalContent').append([data].map(DetailsItem).join(''));
+                } else {
+                    $('.detailsModalContent').html("Userdetails could not be load.");
+                }
+
+            });
+        }
+
+        function resetDetailsModalContent() {
+            $('.detailsModalContent').html("");
+        }
+
+    </script>
+    <!-- ./User Details Modal -->
 }
 
 
