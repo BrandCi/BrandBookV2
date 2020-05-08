@@ -48,7 +48,34 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("getUserDetailsById/{userId}")]
         public async Task<IHttpActionResult> GetUserDetailsById(int userId)
         {
-            return Ok();
+            if (userId == 0) return BadRequest();
+
+            var dateFormat = "dd.MM.yyyy hh:mm";
+            var user = await _unitOfWork.AppUserRepository.FindByIdAsync(userId);
+
+            var result = new UserDetailDto()
+            {
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                IsActive = Convert.ToInt32(user.IsActive),
+
+                CreationDate = user.CreationDate.ToString(dateFormat),
+                LastLoginDate = user.LastLogin.ToString(dateFormat),
+                LastModifiedDate = user.LastModified.ToString(dateFormat),
+
+                IsEmailConfirmed = Convert.ToInt32(user.EmailConfirmed),
+                TwoFactorEnabled = Convert.ToInt32(user.TwoFactorEnabled),
+                LockoutEnabled = Convert.ToInt32(user.LockoutEnabled),
+                PrivacyPolicyAccepted = Convert.ToInt32(user.PrivacyPolicyAccepted),
+                IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled)
+            };
+
+
+            return Ok(result);
         }
 
 
