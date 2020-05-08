@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
@@ -14,6 +14,7 @@ using System.Web.Http;
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
     [RoutePrefix("api/v1/users")]
+    [Authorize(Roles = "Administrator")]
     public class UsersController : AppApiControllerBase
     {
 
