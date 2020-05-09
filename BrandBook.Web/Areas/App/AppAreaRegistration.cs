@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
+using BrandBook.Web.Routes;
 
 namespace BrandBook.Web.Areas.App
 {
@@ -17,7 +19,22 @@ namespace BrandBook.Web.Areas.App
             context.MapRoute(
                 "App_default",
                 "App/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                constraints: new
+                {
+                    serverRoute = new ServerRouteConstraint(url =>
+                        {
+                            return url.PathAndQuery.StartsWith("/App/Profile",
+                                StringComparison.InvariantCultureIgnoreCase);
+                        })
+                }
+            );
+
+
+            context.MapRoute(
+                "Client_App",
+                "App/{*url}",
+                new {controller = "Dashboard", action = "AngularTest"}
             );
         }
     }
