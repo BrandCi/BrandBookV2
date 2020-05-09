@@ -6,6 +6,7 @@ trigger:
 #- hotfix/*
 
 #- feature/*
+- feature/bb-159-storage-goes-azure-blob
 
 #- architecture/*
 

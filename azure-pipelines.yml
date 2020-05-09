@@ -1,7 +1,6 @@
 trigger:
 - master
 
-- feature/bb-159-storage-goes-azure-blob
 - feature/bb-92-darkmode
 - feature/bb-105-Seo-Optimizations
 
