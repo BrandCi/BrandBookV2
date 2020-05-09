@@ -1,6 +1,13 @@
 trigger:
-- feasibility/bb-170-angular-framework-for-app-area
-- feasibility/bb-170-angular-routing
+#- master
+- develop
+
+#- release/*
+#- hotfix/*
+
+#- feature/*
+
+#- architecture/*
 
 pool:
   vmImage: 'VS2017-Win2016'
