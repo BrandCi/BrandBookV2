@@ -23,7 +23,7 @@ namespace BrandBook.Web.Areas.App
                 constraints: new
                 {
                     serverRoute = new ServerRouteConstraint(url => 
-                        url.PathAndQuery.StartsWith("/App/Profile",
+                        url.PathAndQuery.StartsWith("/App",
                         StringComparison.InvariantCultureIgnoreCase))
                 }
             );
