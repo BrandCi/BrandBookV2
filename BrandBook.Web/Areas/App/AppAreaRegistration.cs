@@ -22,11 +22,9 @@ namespace BrandBook.Web.Areas.App
                 new { action = "Index", id = UrlParameter.Optional },
                 constraints: new
                 {
-                    serverRoute = new ServerRouteConstraint(url =>
-                        {
-                            return url.PathAndQuery.StartsWith("/App/Profile",
-                                StringComparison.InvariantCultureIgnoreCase);
-                        })
+                    serverRoute = new ServerRouteConstraint(url => 
+                        url.PathAndQuery.StartsWith("/App/Profile",
+                        StringComparison.InvariantCultureIgnoreCase))
                 }
             );
 
