@@ -187,7 +187,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Dashboard", new { area = "App" });
+                return RedirectToRoute("App_entrypoint");
             }
 
             if (ModelState.IsValid)
@@ -273,7 +273,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Dashboard", new { area = "App" });
+
+            return RedirectToRoute("App_entrypoint");
         }
 
 

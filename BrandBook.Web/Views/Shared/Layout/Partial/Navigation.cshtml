@@ -71,7 +71,7 @@
                         {
                             @Html.AntiForgeryToken()
 
-                            <a href="/App/Profile/Index" class="current-user-profile-link" title="@Translations.frontend_navigation_authorized_openprofile">
+                            <a href="@Url.RouteUrl("App_entrypoint")" class="current-user-profile-link" title="@Translations.frontend_navigation_authorized_openprofile">
                                 <i class="fas fa-user"></i>&nbsp;
                                 @User.Identity.GetUserName() &nbsp; &nbsp;
                             </a>
@@ -79,7 +79,7 @@
                             <div class="current-user-mobile-separation"><br /></div>
 
                             <span class="auth-user-fe-buttons">
-                                <a class="btn btn-success nav-button" href="/App/Dashboard/Index">
+                                <a class="btn btn-success nav-button" href="@Url.RouteUrl("App_entrypoint")">
                                     @Translations.frontend_navigation_authorized_gotoapp
                                 </a>
 
