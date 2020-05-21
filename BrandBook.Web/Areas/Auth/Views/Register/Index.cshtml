@@ -43,12 +43,20 @@
                         <div class="input-group mb-3">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) + "*", aria_describedby = "button-password-info" })
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="button-password-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="togglePasswordInfoBox()">
                                     <i class="fas fa-info-circle"></i>
                                 </button>
                             </div>
                         </div>
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="alert alert-secondary" role="alert" id="password-info-box" style="display: none; font-weight: 200;">
+                            At least 8 characters, 1 special character, 1 digit, and at least one uppercase character.
+                        </div>
                     </div>
                 </div>
 
@@ -90,12 +98,12 @@
 
 
             <!--
-            <div class="other-links">
-                <div class="text">@Translations.auth_register_external_title</div>
-                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
-                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
-            </div>
-            -->
+    <div class="other-links">
+        <div class="text">@Translations.auth_register_external_title</div>
+        <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
+        <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
+    </div>
+    -->
 
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
@@ -112,9 +120,11 @@
 
 @section scripts {
     <script>
-        $(function() {
-            $('[data-toggle="popover"]').popover()
-        });
+
+        function togglePasswordInfoBox() {
+            $('#password-info-box').toggle('fast');
+        }
+
     </script>
 
 }
