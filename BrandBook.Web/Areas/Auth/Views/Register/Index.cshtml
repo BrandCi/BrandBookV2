@@ -26,14 +26,34 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @Value = Model.Email, @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) + "*" })
+                        <div class="input-group mb-3">
+                            @Html.TextBoxFor(m => m.Email, new { @Value = Model.Email, @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) + "*", aria_describedby = "check-email-icon" })
+                            <div class="input-group-append">
+                                <span class="input-group-text text-success" id="check-email-icon-success" style="display: none;">
+                                    <i class="far fa-check-circle"></i>
+                                </span>
+                                <span class="input-group-text text-danger" id="check-email-icon-error" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Username, new { @Value = Model.Username, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) + "*" })
+                        <div class="input-group mb-3">
+                            @Html.TextBoxFor(m => m.Username, new { @Value = Model.Username, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) + "*" })
+                            <div class="input-group-append">
+                                <span class="input-group-text text-success" id="check-username-icon-success" style="display: none;">
+                                    <i class="far fa-check-circle"></i>
+                                </span>
+                                <span class="input-group-text text-danger" id="check-username-icon-error" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -124,6 +144,53 @@
 @section scripts {
     <script>
 
+        // EMail Validation
+        $('input[type=email]').keyup(function () {
+            checkEmailPattern(this);
+        }).focus(function () {
+            checkEmailPattern(this);
+        }).blur(function () {
+            checkEmailPattern(this);
+        });
+
+        function checkEmailPattern(obj) {
+            var successIcon = $('#check-email-icon-success');
+            var errorIcon = $('#check-email-icon-error');
+
+            if ($(obj).val().match(/\b[\w\.-]+@@[\w\.-]+\.\w{2,4}\b/gi)) {
+                successIcon.show();
+                errorIcon.hide();
+            } else {
+                successIcon.hide();
+                errorIcon.show();
+            }
+        }
+        // ./EMail Validation
+
+        // Username Validation
+        $('#@Html.IdFor(m => m.Username)').keyup(function () {
+            checkUsernamePattern(this);
+        }).focus(function () {
+            checkUsernamePattern(this);
+        }).blur(function () {
+            checkUsernamePattern(this);
+        });
+
+        function checkUsernamePattern(obj) {
+            var successIcon = $('#check-username-icon-success');
+            var errorIcon = $('#check-username-icon-error');
+
+            if ($(obj).val().match(/[^\s]+/)) {
+                successIcon.show();
+                errorIcon.hide();
+            } else {
+                successIcon.hide();
+                errorIcon.show();
+            }
+        }
+        // ./Username Validation
+
+        // Password Validation
         $('input[type=password]').keyup(function() {
             checkPasswordComplexity(this);
         }).focus(function() {
@@ -146,6 +213,7 @@
         function togglePasswordInfoBox() {
             $('#password-info-box').toggle('fast');
         }
+        // ./Password Validation
 
     </script>
 
