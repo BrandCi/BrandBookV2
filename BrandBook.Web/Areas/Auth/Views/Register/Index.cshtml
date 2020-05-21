@@ -49,6 +49,9 @@
                             </div>
                         </div>
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="validation-password" style="display: none;">
+                            The password you entered does not conform to the password policy.
+                        </span>
                     </div>
                 </div>
 
@@ -120,6 +123,25 @@
 
 @section scripts {
     <script>
+
+        $('input[type=password]').keyup(function() {
+            checkPasswordComplexity(this);
+        }).focus(function() {
+            checkPasswordComplexity(this);
+        }).blur(function() {
+            checkPasswordComplexity(this);
+        });
+
+
+        function checkPasswordComplexity(obj) {
+            var valPassword = $('#validation-password');
+
+            if ($(obj).val().match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$/)) {
+                valPassword.hide();
+            } else {
+                valPassword.show();
+            }
+        }
 
         function togglePasswordInfoBox() {
             $('#password-info-box').toggle('fast');
