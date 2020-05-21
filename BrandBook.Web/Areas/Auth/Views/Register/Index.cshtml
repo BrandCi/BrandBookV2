@@ -63,7 +63,7 @@
                         <div class="input-group mb-3">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) + "*", aria_describedby = "button-password-info" })
                             <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="togglePasswordInfoBox()">
+                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="togglePasswordInfoBox()" tabIndex="-1">
                                     <i class="fas fa-info-circle"></i>
                                 </button>
                             </div>
@@ -145,7 +145,7 @@
     <script>
 
         // EMail Validation
-        $('input[type=email]').keyup(function () {
+        $('#@Html.IdFor(m => m.Email)').keyup(function () {
             checkEmailPattern(this);
         }).focus(function () {
             checkEmailPattern(this);
@@ -191,7 +191,7 @@
         // ./Username Validation
 
         // Password Validation
-        $('input[type=password]').keyup(function() {
+        $('#@Html.IdFor(m => m.Password)').keyup(function() {
             checkPasswordComplexity(this);
         }).focus(function() {
             checkPasswordComplexity(this);
