@@ -36,14 +36,14 @@ namespace BrandBook.Web
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            var isFacebookEnabled = ConfigurationManager.AppSettings["IsSocialFacebookEnabled"];
-            if (isFacebookEnabled == "true" || isFacebookEnabled == "1")
-            {
-                app.UseFacebookAuthentication(
-                    appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
-                    appSecret: ConfigurationManager.AppSettings["SocialFacebookAppSecret"]
-                );
-            }
+            // var isFacebookEnabled = ConfigurationManager.AppSettings["IsSocialFacebookEnabled"];
+            // if (isFacebookEnabled == "true" || isFacebookEnabled == "1")
+            // {
+            //     app.UseFacebookAuthentication(
+            //         appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
+            //         appSecret: ConfigurationManager.AppSettings["SocialFacebookAppSecret"]
+            //     );
+            // }
 
 
         }
