@@ -4746,6 +4746,11 @@ File: Responsive
   .enlarged .side-menu.left {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important; } }
 
+/* General */
+.no-link {
+  text-decoration: none !important; }
+
+/* ./General */
 .custombox-modal-wrapper,
 .modal-demo {
   text-align: left !important; }

@@ -81,6 +81,7 @@
     <Compile Include="Domain\User\SubscriptionPlan.cs" />
     <Compile Include="Domain\User\UserRole.cs" />
     <Compile Include="Dto\App\UserManagement\SubscriptionDto.cs" />
+    <Compile Include="Dto\App\UserManagement\UserDetailDto.cs" />
     <Compile Include="Dto\App\UserManagement\UserDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogDetailDto.cs" />
     <Compile Include="Dto\Frontend\Blog\BlogOverviewDto.cs" />
