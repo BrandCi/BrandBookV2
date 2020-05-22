@@ -54,7 +54,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             foreach (var brand in model)
             {
-                var linkTargetImage = false;
+                var linkTargetImage = model.HasValidSubscription;
                 var linkAndClassesOpenBrandButton = "";
                 
 
@@ -62,18 +62,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 {
                     brand.MainHexColor = "193357";
                 }
-
-                if (model.HasValidSubscription)
-                {
-                    linkTargetImage = true;
-                    linkAndClassesOpenBrandButton = "href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\"";
-                }
-                else
-                {
-                    linkAndClassesOpenBrandButton = "href=\"\" class=\"btn btn-secondary disabled\"";
-                }
-
-
 
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
@@ -99,14 +87,25 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("</p>");
 
 
+                if (model.HasValidSubscription)
+                {
+                    html.Append("<a ");
+                    html.Append("href=\"" + "/App/Brand/Index/" + brand.Id + "\" class=\"btn btn-primary\" ");
+                    html.Append("style =\"background-color: #" + brand.MainHexColor + "; border: none;\">");
 
-                html.Append("<a ");
-                html.Append(linkAndClassesOpenBrandButton);                
-                html.Append("style =\"background-color: #" + brand.MainHexColor + "; border: none;\">");
 
+                    html.Append(Translations.app_brandoverview_openbrand_button_title);
+                    html.Append("</a>");
+                }
+                else
+                {
+                    html.Append("<div class=\"alert alert-warning alert-dismissible bg-light border-warning text-warning fade show\" role=\"alert\" style=\"background-color: transparent !important;\">");
+                    html.Append("Update your subscription to continue working on your brand");
+                    html.Append("</div>");
+                }
+                
 
-                html.Append(Translations.app_brandoverview_openbrand_button_title);
-                html.Append("</a>");
+                
 
                 html.Append("</div>");
                 html.Append("</div>");
