@@ -1446,6 +1446,7 @@
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />
     <Content Include="Scripts\Packages\App\UserManagement\app-um-users-overview.js" />
+    <Content Include="Scripts\Packages\Auth\Validation\custom.registration.validation.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
     <Content Include="Scripts\Dependencies\Frontend\plugins.js" />

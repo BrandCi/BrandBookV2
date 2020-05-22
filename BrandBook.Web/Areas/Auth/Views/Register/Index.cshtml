@@ -132,12 +132,12 @@
 
 
             <!--
-    <div class="other-links">
-        <div class="text">@Translations.auth_register_external_title</div>
-        <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
-        <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
-    </div>
-    -->
+            <div class="other-links">
+                <div class="text">@Translations.auth_register_external_title</div>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-facebook-f"></i>@Translations.auth_register_external_facebook_title @Translations.auth_register_external_soonavailable</a>
+                <a href="#" class="mt-1 mb-1" style="pointer-events: none; cursor: default;"><i class="fab fa-microsoft"></i>@Translations.auth_register_external_microsoft_title @Translations.auth_register_external_soonavailable</a>
+            </div>
+            -->
 
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
@@ -151,114 +151,4 @@
 </div>
 
 
-
-@section scripts {
-    <script>
-
-        // EMail Validation
-        $('#@Html.IdFor(m => m.Email)').keyup(function () {
-            checkEmailPattern(this);
-        }).focus(function () {
-            checkEmailPattern(this);
-        }).blur(function () {
-            checkEmailPattern(this);
-        });
-
-        function checkEmailPattern(obj) {
-            var successIcon = $('#check-email-icon-success');
-            var errorIcon = $('#check-email-icon-error');
-
-            if ($(obj).val().match(/\b[\w\.-]+@@[\w\.-]+\.\w{2,4}\b/gi)) {
-                successIcon.show();
-                errorIcon.hide();
-            } else {
-                successIcon.hide();
-                errorIcon.show();
-            }
-        }
-        // ./EMail Validation
-
-        // Username Validation
-        $('#@Html.IdFor(m => m.Username)').keyup(function () {
-            checkUsernamePattern(this);
-        }).focus(function () {
-            checkUsernamePattern(this);
-        }).blur(function () {
-            checkUsernamePattern(this);
-        });
-
-        function checkUsernamePattern(obj) {
-            var successIcon = $('#check-username-icon-success');
-            var errorIcon = $('#check-username-icon-error');
-
-            if ($(obj).val().match(/[^\s]+/)) {
-                successIcon.show();
-                errorIcon.hide();
-            } else {
-                successIcon.hide();
-                errorIcon.show();
-            }
-        }
-        // ./Username Validation
-
-        // Password Validation
-        $('#@Html.IdFor(m => m.Password)').keyup(function() {
-            checkPassword(this);
-        }).focus(function() {
-            checkPassword(this);
-        }).blur(function() {
-            checkPassword(this);
-        });
-
-
-        function checkPassword(obj) {
-            var valPassword = $('#validation-password');
-
-            if (checkPasswordComplexity($(obj).val())) {
-                valPassword.hide();
-            } else {
-                valPassword.show();
-            }
-        }
-
-        function togglePasswordInfoBox() {
-            $('#password-info-box').toggle('fast');
-        }
-        // ./Password Validation
-
-        // Confirm Password Validation
-        $('#@Html.IdFor(m => m.ConfirmPassword)').keyup(function () {
-            checkConfirmPassword(this);
-        }).focus(function () {
-            checkConfirmPassword(this);
-        }).blur(function () {
-            checkConfirmPassword(this);
-        });
-
-        function checkConfirmPassword(obj) {
-            var successIcon = $('#check-confirmpassword-icon-success');
-            var errorIcon = $('#check-confirmpassword-icon-error');
-
-            var passwordInputField = $('#@Html.IdFor(m => m.Password)');
-
-            if ($(obj).val() === passwordInputField.val() && checkPasswordComplexity($(obj).val())) {
-                successIcon.show();
-                errorIcon.hide();
-            } else {
-                successIcon.hide();
-                errorIcon.show();
-            }
-        }
-        // ./Confirm Password Validation
-
-        function checkPasswordComplexity(password) {
-            if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$/)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-    </script>
-
-}
+@Scripts.Render("~/bundles/packages/auth/registration/validation")
