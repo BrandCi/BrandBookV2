@@ -92,6 +92,11 @@ p.status-badge {
     p.status-badge i.error {
       color: #db5341; }
 
+/* Register Validation */
+.custom-inputvalidation-box {
+  background-color: #f7f7f7;
+  border: none; }
+
 /* -----------------------------------
     1 - General Styles
 ------------------------------------*/
