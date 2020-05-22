@@ -218,6 +218,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routes\ServerRouteConstraint.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1280,6 +1281,7 @@
     <Content Include="Areas\Auth\Views\Processes\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPassword.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\App\Views\Dashboard\AngularTest.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -1440,9 +1442,11 @@
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Dependencies\Auth\popper.min.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />
     <Content Include="Scripts\Packages\App\UserManagement\app-um-users-overview.js" />
+    <Content Include="Scripts\Packages\Auth\Validation\custom.registration.validation.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
     <Content Include="Scripts\Dependencies\Frontend\plugins.js" />
@@ -1502,7 +1506,9 @@
     <Content Include="Views\Legal\PrivacyRequest.cshtml" />
     <Content Include="Views\Support\Faq.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\ClientApps\AppOutput\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
