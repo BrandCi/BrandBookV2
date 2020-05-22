@@ -55,8 +55,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             foreach (var brand in model)
             {
                 var linkTargetImage = model.HasValidSubscription;
-                var linkAndClassesOpenBrandButton = "";
-                
 
                 if (brand.MainHexColor == null || brand.MainHexColor == "ffffff")
                 {
