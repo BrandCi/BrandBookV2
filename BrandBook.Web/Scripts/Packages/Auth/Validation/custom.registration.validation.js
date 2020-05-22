@@ -1,5 +1,5 @@
 ﻿// EMail Validation
-    $('#@Html.IdFor(m => m.Email)').keyup(function () {
+    $('#Email').keyup(function () {
         checkEmailPattern(this);
     }).focus(function () {
         checkEmailPattern(this);
@@ -22,7 +22,7 @@
 // ./EMail Validation
 
 // Username Validation
-    $('#@Html.IdFor(m => m.Username)').keyup(function () {
+    $('#Username').keyup(function () {
         checkUsernamePattern(this);
     }).focus(function () {
         checkUsernamePattern(this);
@@ -45,7 +45,7 @@
 // ./Username Validation
 
 // Password Validation
-    $('#@Html.IdFor(m => m.Password)').keyup(function () {
+    $('#Password').keyup(function () {
         checkPassword(this);
     }).focus(function () {
         checkPassword(this);
@@ -66,7 +66,7 @@
 // ./Password Validation
 
 // Confirm Password Validation
-    $('#@Html.IdFor(m => m.ConfirmPassword)').keyup(function () {
+    $('#ConfirmPassword').keyup(function () {
         checkConfirmPassword(this);
     }).focus(function () {
         checkConfirmPassword(this);
@@ -78,7 +78,7 @@
         var successIcon = $('#check-confirmpassword-icon-success');
         var errorIcon = $('#check-confirmpassword-icon-error');
 
-        var passwordInputField = $('#@Html.IdFor(m => m.Password)');
+        var passwordInputField = $('#Password');
 
         if ($(obj).val() === passwordInputField.val() && checkPasswordComplexity($(obj).val())) {
             successIcon.show();
