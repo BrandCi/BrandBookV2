@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/dist/Frontend/responsive.css",
     "inputFile": "Content/Style/Frontend/responsive.scss"
+  },
+  {
+    "outputFile": "Content/dist/Flag-Icon/flag-icon.css",
+    "inputFile": "Content/Style/Flag-Icon/flag-icon.scss"
   }
 ]

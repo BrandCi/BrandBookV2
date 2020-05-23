@@ -847,12 +847,6 @@
     <Content Include="Content\Style\bootstrap-reboot.min.css" />
     <Content Include="Content\Style\bootstrap.css" />
     <Content Include="Content\Style\bootstrap.min.css" />
-    <Content Include="Content\Style\Flag-Icon\flag-icon.css">
-      <DependentUpon>flag-icon.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Flag-Icon\flag-icon.min.css">
-      <DependentUpon>flag-icon.css</DependentUpon>
-    </Content>
     <None Include="Content\Style\Frontend\responsive.scss" />
     <None Include="Content\Style\Frontend\rtl.scss" />
     <Content Include="Error\400.html" />
