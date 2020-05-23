@@ -817,24 +817,6 @@
     <Content Include="Content\LegalPages\PrivacyPolicy\en.html" />
     <Content Include="Content\LegalPages\Imprint\de.html" />
     <Content Include="Content\LegalPages\Imprint\en.html" />
-    <Content Include="Content\Style\App\bootstrap-rtl.css">
-      <DependentUpon>bootstrap-rtl.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\bootstrap-rtl.min.css">
-      <DependentUpon>bootstrap-rtl.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style.css">
-      <DependentUpon>style.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style.min.css">
-      <DependentUpon>style.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style_dark.css">
-      <DependentUpon>style_dark.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style_dark.min.css">
-      <DependentUpon>style_dark.css</DependentUpon>
-    </Content>
     <Content Include="Content\Style\bootstrap-grid.css" />
     <Content Include="Content\Style\bootstrap-grid.min.css" />
     <Content Include="Content\Style\bootstrap-reboot.css" />

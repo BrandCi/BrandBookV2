@@ -18,5 +18,17 @@
   {
     "outputFile": "Content/dist/Auth/Styles.css",
     "inputFile": "Content/Style/Auth/Styles.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/style_dark.css",
+    "inputFile": "Content/Style/App/style_dark.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/style.css",
+    "inputFile": "Content/Style/App/style.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/bootstrap-rtl.css",
+    "inputFile": "Content/Style/App/bootstrap-rtl.scss"
   }
 ]

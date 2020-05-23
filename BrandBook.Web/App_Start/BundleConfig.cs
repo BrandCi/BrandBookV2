@@ -162,15 +162,15 @@ namespace BrandBook.Web
                 "~/Content/Style/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Basic").Include(
-                "~/Content/Style/App/style.min.css"));
+                "~/Content/dist/App/style.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Dark").Include(
-                "~/Content/Style/App/style_dark.min.css"));
+                "~/Content/dist/App/style_dark.min.css"));
 
 
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
-                "~/Content/Style/App/bootstrap-rtl.min.css"));
+                "~/Content/dist/App/bootstrap-rtl.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
