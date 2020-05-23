@@ -25,6 +25,8 @@ namespace BrandBook.Services.Notification
         private readonly string _siteName;
         private readonly string _sender;
 
+        private readonly string _appEnvironment;
+
 
         public NotificationService()
         {
@@ -34,6 +36,8 @@ namespace BrandBook.Services.Notification
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
             _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
             _sender = ConfigurationManager.AppSettings["MailgunApiSender"];
+
+            _appEnvironment = ConfigurationManager.AppSettings["Environment"];
         }
 
 
@@ -61,6 +65,10 @@ namespace BrandBook.Services.Notification
             request.AddParameter("from", _sender);
             request.AddParameter("to", emailReceiver);
             request.AddParameter("subject", emailSubject);
+
+            request.AddParameter("o:tag", _appEnvironment);
+            request.AddParameter("o:tag", model.Type);
+
             request.AddParameter("html", emailContent);
 
             request.Method = Method.POST;
