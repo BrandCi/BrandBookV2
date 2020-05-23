@@ -261,11 +261,8 @@ __pycache__/
 *.pyc
 
 # BrandBook Custom
-BrandBook.Web/Content/Custom/Styles.min.css
-BrandBook.Web/Content/Custom/Styles.min.css
-BrandBook.Web/Content/Custom/Styles.min.css
-BrandBook.Web/Content/Custom/Styles.css
-
 BrandBook.Web/SharedStorage/
 
-BrandBook.Web/Content/ClientApps
+BrandBook.Web/Content/ClientApps/
+
+BrandBook.Web/Content/dist/
