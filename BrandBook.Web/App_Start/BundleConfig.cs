@@ -91,11 +91,11 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
                         /* ./Plugins */
 
-                        "~/Content/Style/Frontend/style.min.css",
-                        "~/Content/Style/Frontend/responsive.css"));
+                        "~/Content/dist/Frontend/style.min.css",
+                        "~/Content/dist/Frontend/responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
-                "~/Content/Style/Frontend/rtl.css"));
+                "~/Content/dist/Frontend/rtl.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
