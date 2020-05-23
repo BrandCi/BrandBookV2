@@ -835,12 +835,6 @@
     <Content Include="Content\Style\App\style_dark.min.css">
       <DependentUpon>style_dark.css</DependentUpon>
     </Content>
-    <Content Include="Content\Style\Auth\Styles.css">
-      <DependentUpon>Styles.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Auth\Styles.min.css">
-      <DependentUpon>Styles.css</DependentUpon>
-    </Content>
     <Content Include="Content\Style\bootstrap-grid.css" />
     <Content Include="Content\Style\bootstrap-grid.min.css" />
     <Content Include="Content\Style\bootstrap-reboot.css" />

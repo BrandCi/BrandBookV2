@@ -145,7 +145,7 @@ namespace BrandBook.Web
 
             bundles.Add(new StyleBundle("~/Content/Css/Auth/Main").Include(
                         "~/Content/Style/bootstrap.min.css",
-                        "~/Content/Style/Auth/Styles.min.css"));
+                        "~/Content/dist/Auth/Styles.min.css"));
 
 
 
