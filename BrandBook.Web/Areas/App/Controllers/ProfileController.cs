@@ -1,9 +1,9 @@
 ﻿using BrandBook.Core;
+using BrandBook.Core.ViewModels.App.Profile;
+using BrandBook.Core.ViewModels.App.Subscriptions;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.App.Profile;
-using BrandBook.Core.ViewModels.App.Subscriptions;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -117,7 +117,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("Index", "Dashboard", new { area="App" });
+            return RedirectToAction("Index", "Dashboard", new { area = "App" });
         }
     }
 }

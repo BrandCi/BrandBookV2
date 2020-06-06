@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using log4net;
-using Microsoft.AspNet.Identity;
-
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Resource;
+using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Resources;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.App.Brand;
-using BrandBook.Core.Services.Subscriptions;
+using log4net;
+using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
 
 
@@ -28,8 +27,8 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly ISubscriptionService _subscriptionService;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
-        
-        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
+        protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
 
         public BrandsController()
@@ -80,7 +79,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 NoBrandsAvailable = false
             };
 
-            if(singleBrandViewModels.Count() == 0)
+            if (singleBrandViewModels.Count() == 0)
             {
                 viewmodel.NoBrandsAvailable = true;
             }
@@ -144,7 +143,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             _unitOfWork.BrandRepository.Add(brand);
 
             _unitOfWork.SaveChanges();
-            return RedirectToAction("Index", "Brand", new {id = brand.Id, area = "App"});
+            return RedirectToAction("Index", "Brand", new { id = brand.Id, area = "App" });
 
         }
 

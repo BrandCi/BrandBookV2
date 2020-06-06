@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddIsPublicColumnToBrandsTable : DbMigration
     {
         public override void Up()
@@ -15,7 +14,7 @@ namespace BrandBook.Infrastructure.Migrations
             CreateIndex("dbo.Brands", "BrandSettingId");
             AddForeignKey("dbo.Brands", "BrandSettingId", "dbo.BrandSettings", "Id", cascadeDelete: true);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Brands", "BrandSettingId", "dbo.BrandSettings");

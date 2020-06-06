@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddCompaniesTable : DbMigration
     {
         public override void Up()
@@ -10,14 +9,14 @@ namespace BrandBook.Infrastructure.Migrations
             CreateTable(
                 "dbo.Companies",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        UrlName = c.String(),
-                        ContactEmail = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    UrlName = c.String(),
+                    ContactEmail = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             AddColumn("dbo.Brands", "Company_Id", c => c.Int());
             AddColumn("dbo.AspNetUsers", "Company_Id", c => c.Int());
             CreateIndex("dbo.Brands", "Company_Id");
@@ -25,7 +24,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.Brands", "Company_Id", "dbo.Companies", "Id");
             AddForeignKey("dbo.AspNetUsers", "Company_Id", "dbo.Companies", "Id");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUsers", "Company_Id", "dbo.Companies");

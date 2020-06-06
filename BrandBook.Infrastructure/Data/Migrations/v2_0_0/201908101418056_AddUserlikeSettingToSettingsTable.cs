@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddUserlikeSettingToSettingsTable : DbMigration
     {
         public override void Up()
@@ -18,7 +17,7 @@ namespace BrandBook.Infrastructure.Migrations
 
 
         }
-        
+
         public override void Down()
         {
         }

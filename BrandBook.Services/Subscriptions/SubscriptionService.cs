@@ -1,11 +1,10 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.User;
+using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using BrandBook.Core.Services.Subscriptions;
 
 namespace BrandBook.Services.Subscriptions
 {
@@ -31,8 +30,8 @@ namespace BrandBook.Services.Subscriptions
         public bool AllowedToCreateNewBrands(int userId)
         {
             var subscriptions = _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
-            
-            if(!BrandLimitReached(userId, subscriptions))
+
+            if (!BrandLimitReached(userId, subscriptions))
             {
                 return true;
             }
@@ -87,7 +86,7 @@ namespace BrandBook.Services.Subscriptions
             return false;
         }
 
-        
+
 
         private bool IsEndDateInFuture(Subscription subscription, SubscriptionPlan subscriptionPlan)
         {

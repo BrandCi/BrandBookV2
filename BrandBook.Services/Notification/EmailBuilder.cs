@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Hosting;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Infrastructure;
+using System.IO;
+using System.Text;
+using System.Web.Hosting;
 
 namespace BrandBook.Services.Notification
 {
@@ -33,13 +29,16 @@ namespace BrandBook.Services.Notification
 
             _fileServerUrlWithKey = urlBuilder.ToString();
         }
-        
+
 
         public string BuildEmail(EmailTemplateViewModel model)
         {
             var emailContent = GetTemplate(model.Type + ".html");
 
-            if (emailContent == null) return null;
+            if (emailContent == null)
+            {
+                return null;
+            }
 
             emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
             emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/Email");
@@ -48,7 +47,10 @@ namespace BrandBook.Services.Notification
             switch (model.Type)
             {
                 case EmailTemplateType.Admin_AccountCreationInformation:
-                    if (model.Admin_AccountCreationInformation == null) return null;
+                    if (model.Admin_AccountCreationInformation == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{Creationdate}}", model.Admin_AccountCreationInformation.Creationdate);
                     emailContent = emailContent.Replace("{{Username}}", model.Admin_AccountCreationInformation.Username);
@@ -57,14 +59,20 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestIp}}", model.Admin_AccountCreationInformation.RequestIp);
                     break;
                 case EmailTemplateType.User_AccountVerification:
-                    if (model.User_AccountVerification == null) return null;
+                    if (model.User_AccountVerification == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{Username}}", model.User_AccountVerification.Username);
                     emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerification.EmailAddress);
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountVerification.TargetUrl);
                     break;
                 case EmailTemplateType.General_ContactRequest:
-                    if (model.General_ContactRequest == null) return null;
+                    if (model.General_ContactRequest == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{Subject}}", model.General_ContactRequest.Subject);
                     emailContent = emailContent.Replace("{{Name}}", model.General_ContactRequest.Name);
@@ -73,7 +81,10 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
                 case EmailTemplateType.General_PrivacyRequest:
-                    if (model.General_PrivacyRequest == null) return null;
+                    if (model.General_PrivacyRequest == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{UserId}}", model.General_PrivacyRequest.UserId.ToString());
                     emailContent = emailContent.Replace("{{Email}}", model.General_PrivacyRequest.Email);
@@ -83,24 +94,33 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestIp}}", model.General_PrivacyRequest.RequestIp);
                     break;
                 case EmailTemplateType.User_AccountVerificationConfirmation:
-                    if (model.User_AccountVerificationConfirmation == null) return null;
+                    if (model.User_AccountVerificationConfirmation == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerificationConfirmation.EmailAddress);
                     break;
                 case EmailTemplateType.User_AccountForgotPassword:
-                    if (model.User_AccountForgotPassword == null) return null;
+                    if (model.User_AccountForgotPassword == null)
+                    {
+                        return null;
+                    }
 
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountForgotPassword.TargetUrl);
                     break;
                 case EmailTemplateType.User_AccountForgotPasswordConfirmation:
-                    if (model.User_AccountForgotPasswordConfirmation == null) return null;
+                    if (model.User_AccountForgotPasswordConfirmation == null)
+                    {
+                        return null;
+                    }
 
                     break;
                 case EmailTemplateType.Plain:
                 default:
                     return null;
             }
-            
+
 
             return emailContent;
         }

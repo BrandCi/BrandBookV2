@@ -16,7 +16,7 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly ISettingRepository _settingRepository;
         #endregion
-        
+
 
         public MvcControllerBase()
         {

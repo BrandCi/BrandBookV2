@@ -1,24 +1,23 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Services.Users;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.Services.Authentication;
+using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Core.ViewModels.Auth;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
+using BrandBook.Infrastructure;
+using BrandBook.Resources;
+using BrandBook.Services.Authentication;
+using BrandBook.Services.Notification;
+using BrandBook.Services.Subscriptions;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Resources;
-using BrandBook.Services.Notification;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -98,8 +97,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
-            
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             if (_recaptchaService.IsCaptchaActive())
             {
                 var isCaptchaValid = await _recaptchaService.IsCaptchaValid(model.ReCaptchaToken, Request.UserHostAddress, "auth_registration");
@@ -109,62 +111,64 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     return View(model);
                 }
             }
-            
+
 
             var company = new Company()
-                {
-                    Name = model.Username,
-                    ContactEmail = model.Email,
-                    UrlName = model.Username
-                };
+            {
+                Name = model.Username,
+                ContactEmail = model.Email,
+                UrlName = model.Username
+            };
 
-                var user = new AppUser
-                {
-                    UserName = model.Username,
-                    Email = model.Email,
-                    Company = company,
-                    PrivacyPolicyAccepted = true,
-                    IsActive = true,
-                    CreationDate = DateTime.Now,
-                    LastLogin = DateTime.Now,
-                    LastModified = DateTime.Now
-                };
+            var user = new AppUser
+            {
+                UserName = model.Username,
+                Email = model.Email,
+                Company = company,
+                PrivacyPolicyAccepted = true,
+                IsActive = true,
+                CreationDate = DateTime.Now,
+                LastLogin = DateTime.Now,
+                LastModified = DateTime.Now
+            };
 
-                var result = await UserManager.CreateAsync(user, model.Password);
-
-
-                if (!result.Succeeded) return View(model);
+            var result = await UserManager.CreateAsync(user, model.Password);
 
 
-                var initialSubscription = new Subscription()
-                {
-                    Key = _subscriptionService.GenerateSubscriptionKey(),
-                    AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
-                    AppUserId = user.Id,
-                    IsActive = true,
-                    IsPaid = true,
-                    StartDateTime = DateTime.Now,
-                    SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
-                    SubscriptionPlanId = 7
-                };
+            if (!result.Succeeded)
+            {
+                return View(model);
+            }
 
-                _unitOfWork.SubscriptionRepository.Add(initialSubscription);
-                _unitOfWork.SaveChanges();
+            var initialSubscription = new Subscription()
+            {
+                Key = _subscriptionService.GenerateSubscriptionKey(),
+                AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
+                AppUserId = user.Id,
+                IsActive = true,
+                IsPaid = true,
+                StartDateTime = DateTime.Now,
+                SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
+                SubscriptionPlanId = 7
+            };
 
-                await UserManager.AddToRoleAsync(user.Id, "AppUser");
+            _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+            _unitOfWork.SaveChanges();
+
+            await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
 
-                var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+            var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+            var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 
-                
-                if (ProceedVerificationEmail(user.Email, user.UserName, callbackUrl, model.PromotionCode))
-                {
-                    return RedirectToAction("Success", "Register", new { area = "Auth" });
-                }
-                
 
-                return View("Error");
+            if (ProceedVerificationEmail(user.Email, user.UserName, callbackUrl, model.PromotionCode))
+            {
+                return RedirectToAction("Success", "Register", new { area = "Auth" });
+            }
+
+
+            return View("Error");
 
         }
 
@@ -205,7 +209,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             };
 
             _notificationService.SendNotification(adminInfo);
-            
+
             return _notificationService.SendNotification(emailContent); ;
         }
 

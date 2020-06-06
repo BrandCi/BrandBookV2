@@ -1,5 +1,4 @@
 ﻿using BrandBook.Core.Domain.User;
-using BrandBook.Services.Users;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;

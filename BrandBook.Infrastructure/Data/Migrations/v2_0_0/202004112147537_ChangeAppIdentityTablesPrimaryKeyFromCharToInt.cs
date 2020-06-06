@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class ChangeAppIdentityTablesPrimaryKeyFromCharToInt : DbMigration
     {
         public override void Up()
@@ -59,7 +58,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropColumn("dbo.AspNetRoles", "Discriminator");
             */
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.AspNetRoles", "Discriminator", c => c.String(nullable: false, maxLength: 128));

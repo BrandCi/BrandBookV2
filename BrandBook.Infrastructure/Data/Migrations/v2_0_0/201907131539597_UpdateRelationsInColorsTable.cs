@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdateRelationsInColorsTable : DbMigration
     {
         public override void Up()
@@ -26,7 +25,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.Colors", "CmykValueId", "dbo.CmykValues", "Id", cascadeDelete: true);
             AddForeignKey("dbo.Colors", "RgbValueId", "dbo.RgbValues", "Id", cascadeDelete: true);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Colors", "RgbValueId", "dbo.RgbValues");

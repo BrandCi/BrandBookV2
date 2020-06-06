@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
+using System;
 
 namespace BrandBook.Core.Services.Subscriptions
 {
