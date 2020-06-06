@@ -9,7 +9,7 @@ namespace BrandBook.Infrastructure.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private BrandBookDbContext _context;
+        private readonly BrandBookDbContext _context;
         private DbSet<TEntity> _set;
 
         public Repository(BrandBookDbContext context)
