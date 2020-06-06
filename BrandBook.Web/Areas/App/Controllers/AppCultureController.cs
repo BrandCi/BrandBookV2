@@ -70,7 +70,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void GenerateAndSaveTranslationFile(string translationName)
         {
-            var csv = String.Join(
+            var csv = string.Join(
                 Environment.NewLine,
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );

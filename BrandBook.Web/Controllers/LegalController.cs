@@ -21,7 +21,7 @@ namespace BrandBook.Web.Controllers
 {
     public class LegalController : FrontendMvcControllerBase
     {
-        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IReCaptchaService _recaptchaService;
         private readonly INotificationService _notificationService;
         private readonly IUnitOfWork _unitOfWork;

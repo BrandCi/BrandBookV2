@@ -1,4 +1,4 @@
-﻿using BrandBook.Core;
+using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
 using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Core.ViewModels.App.Brand.Colors;
@@ -26,7 +26,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
-        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
         {
