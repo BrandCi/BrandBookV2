@@ -36,7 +36,10 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("getUserNameById/{userId}")]
         public async Task<IHttpActionResult> GetUserNameById(int userId)
         {
-            if (userId == 0) return BadRequest();
+            if (userId == 0)
+            {
+                return BadRequest();
+            }
 
             var user = await _unitOfWork.AppUserRepository.FindByIdAsync(userId);
 
@@ -47,7 +50,10 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("getUserDetailsById/{userId}")]
         public async Task<IHttpActionResult> GetUserDetailsById(int userId)
         {
-            if (userId == 0) return BadRequest();
+            if (userId == 0)
+            {
+                return BadRequest();
+            }
 
             var dateFormat = "dd.MM.yyyy hh:mm";
             var user = await _unitOfWork.AppUserRepository.FindByIdAsync(userId);

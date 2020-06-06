@@ -41,7 +41,10 @@ namespace BrandBook.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Contact(ContactFormViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {

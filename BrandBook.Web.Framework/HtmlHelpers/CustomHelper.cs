@@ -106,7 +106,10 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             var html = new StringBuilder();
             var recaptchaActive = ConfigurationManager.AppSettings["ReCaptchaActive"];
 
-            if (recaptchaActive != "1") return new HtmlString(html.ToString());
+            if (recaptchaActive != "1")
+            {
+                return new HtmlString(html.ToString());
+            }
 
             var recaptchaSiteKey = ConfigurationManager.AppSettings["ReCaptchaSiteKey"];
 

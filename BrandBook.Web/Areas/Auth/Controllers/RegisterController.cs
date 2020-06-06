@@ -97,7 +97,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(RegisterViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {
@@ -132,8 +135,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             var result = await UserManager.CreateAsync(user, model.Password);
 
 
-            if (!result.Succeeded) return View(model);
-
+            if (!result.Succeeded)
+            {
+                return View(model);
+            }
 
             var initialSubscription = new Subscription()
             {

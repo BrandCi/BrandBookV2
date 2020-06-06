@@ -382,7 +382,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private void RemoveBrandImage(Image brandImage)
         {
             // Don't delete the default BrandImage
-            if (brandImage.Id == 1) return;
+            if (brandImage.Id == 1)
+            {
+                return;
+            }
 
             var fullPath = Request.MapPath("~/SharedStorage/BrandImages/" + brandImage.Name);
 

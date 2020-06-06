@@ -54,13 +54,17 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmAccount(int userId, string code)
         {
-            if (userId == 0 || code == null) return View("Error");
-
+            if (userId == 0 || code == null)
+            {
+                return View("Error");
+            }
 
             var result = await UserManager.ConfirmEmailAsync(userId, code);
 
-            if (!result.Succeeded) return View("Error");
-
+            if (!result.Succeeded)
+            {
+                return View("Error");
+            }
 
             var user = _unitOfWork.AppUserRepository.FindById(userId);
             var emailTemplate = new EmailTemplateViewModel()
@@ -86,7 +90,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         // GET: Auth/ForgotPassword
         public ActionResult ForgotPassword()
         {
-            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home", new { area = "" });
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
 
             return View();
         }
@@ -96,7 +103,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             var user = await UserManager.FindByNameAsync(model.Username);
 
@@ -136,7 +146,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         public ActionResult ForgotPasswordConfirmation()
         {
-            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home", new { area = "" });
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
 
             return View();
         }
@@ -152,7 +165,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             var user = await UserManager.FindByNameAsync(model.Username);
 

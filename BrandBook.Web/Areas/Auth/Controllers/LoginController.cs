@@ -104,7 +104,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Index(LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {
@@ -294,7 +297,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
         private void UpdateLastLoginDate(AppUser user)
         {
-            if (user != null) return;
+            if (user != null)
+            {
+                return;
+            }
 
             user.LastLogin = DateTime.Now;
             _unitOfWork.AppUserRepository.Update(user);

@@ -71,7 +71,10 @@ namespace BrandBook.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> PrivacyRequest(PrivacyRequestViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {
