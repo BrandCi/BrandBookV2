@@ -1,8 +1,8 @@
-﻿using System;
-using System.Data.Entity;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
+using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace BrandBook.Infrastructure.Repositories.User
@@ -49,7 +49,7 @@ namespace BrandBook.Infrastructure.Repositories.User
                 .First();
         }
 
-        
+
         public void UpdateWithModification(AppUser user)
         {
             user.LastModified = DateTime.Now;

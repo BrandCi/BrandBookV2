@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Hosting;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Infrastructure;
+using System.IO;
+using System.Text;
+using System.Web.Hosting;
 
 namespace BrandBook.Services.Notification
 {
@@ -33,7 +29,7 @@ namespace BrandBook.Services.Notification
 
             _fileServerUrlWithKey = urlBuilder.ToString();
         }
-        
+
 
         public string BuildEmail(EmailTemplateViewModel model)
         {
@@ -100,7 +96,7 @@ namespace BrandBook.Services.Notification
                 default:
                     return null;
             }
-            
+
 
             return emailContent;
         }

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace BrandBook.Core.ViewModels.Auth.Process
 {
@@ -17,7 +17,7 @@ namespace BrandBook.Core.ViewModels.Auth.Process
         public string HostName { get; set; }
         public double Score { get; set; }
         public string Action { get; set; }
-       
+
 
     }
 }

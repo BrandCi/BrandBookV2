@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdateRelationBetweenFontsAndFontsInclusionsTable : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.Fonts", "FontInclusionId", "dbo.FontInclusions", "Id", cascadeDelete: true);
             DropColumn("dbo.FontInclusions", "FontId");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.FontInclusions", "FontId", c => c.Int(nullable: false));

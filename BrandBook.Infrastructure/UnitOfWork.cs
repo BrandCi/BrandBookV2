@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Repositories.Brand;
 using BrandBook.Core.Repositories.Brand.Font;
 using BrandBook.Core.Repositories.Company;

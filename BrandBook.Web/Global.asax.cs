@@ -1,5 +1,5 @@
-﻿using BrandBook.Infrastructure.Mapping;
-using BrandBook.Infrastructure.Data;
+﻿using BrandBook.Infrastructure.Data;
+using BrandBook.Infrastructure.Mapping;
 using BrandBook.Web.Routes;
 using System.Data.Entity;
 using System.Web.Http;
@@ -12,7 +12,7 @@ namespace BrandBook.Web
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
-        {            
+        {
             AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
 
             AreaRegistration.RegisterAllAreas();

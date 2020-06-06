@@ -1,7 +1,7 @@
 ﻿using BrandBook.Core;
+using BrandBook.Core.ViewModels.App.UserManagement;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.App.UserManagement;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;

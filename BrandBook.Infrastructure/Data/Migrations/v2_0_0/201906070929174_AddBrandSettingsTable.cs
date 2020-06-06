@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddBrandSettingsTable : DbMigration
     {
         public override void Up()
@@ -10,15 +9,15 @@ namespace BrandBook.Infrastructure.Migrations
             CreateTable(
                 "dbo.BrandSettings",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        ContactEmail = c.String(),
-                        PrimaryHexColor = c.String(),
-                        RoundedButtons = c.Boolean(nullable: false, defaultValue: true),
-                        RoundedButtonsPixel = c.Int(nullable: false, defaultValue: 5),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    ContactEmail = c.String(),
+                    PrimaryHexColor = c.String(),
+                    RoundedButtons = c.Boolean(nullable: false, defaultValue: true),
+                    RoundedButtonsPixel = c.Int(nullable: false, defaultValue: 5),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             AddColumn("dbo.Brands", "BrandSetting_Id", c => c.Int());
             CreateIndex("dbo.Brands", "BrandSetting_Id");
             AddForeignKey("dbo.Brands", "BrandSetting_Id", "dbo.BrandSettings", "Id");
@@ -28,7 +27,7 @@ namespace BrandBook.Infrastructure.Migrations
 
             DropColumn("dbo.Brands", "ContactPerson");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.Brands", "ContactPerson", c => c.String());

@@ -1,6 +1,6 @@
-﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandBook.Core.ViewModels.App.Settings;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Web.Framework.Helpers;
-using BrandBook.Core.ViewModels.App.Settings;
 using System;
 using System.Collections;
 using System.Collections.Generic;

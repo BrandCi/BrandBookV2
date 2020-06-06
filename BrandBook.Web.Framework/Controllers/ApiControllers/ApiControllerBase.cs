@@ -1,5 +1,5 @@
-﻿using System.Web.Http;
-using log4net;
+﻿using log4net;
+using System.Web.Http;
 
 namespace BrandBook.Web.Framework.Controllers.ApiControllers
 {

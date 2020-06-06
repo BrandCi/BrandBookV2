@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class CreateNewCategoriesTableForImprint : DbMigration
     {
         public override void Up()
@@ -23,15 +22,15 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories", "Id");
             DropColumn("dbo.ImprintValues", "ColorCategory");*/
         }
-        
+
         public override void Down()
         {
-          /*  AddColumn("dbo.ImprintValues", "ColorCategory", c => c.Int(nullable: false));
-            DropForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories");
-            DropIndex("dbo.ImprintValues", new[] { "Category_Id" });
-            DropColumn("dbo.ImprintValues", "Category_Id");
-            DropColumn("dbo.ImprintValues", "Position");
-            DropTable("dbo.ImprintCategories");*/
+            /*  AddColumn("dbo.ImprintValues", "ColorCategory", c => c.Int(nullable: false));
+              DropForeignKey("dbo.ImprintValues", "Category_Id", "dbo.ImprintCategories");
+              DropIndex("dbo.ImprintValues", new[] { "Category_Id" });
+              DropColumn("dbo.ImprintValues", "Category_Id");
+              DropColumn("dbo.ImprintValues", "Position");
+              DropTable("dbo.ImprintCategories");*/
         }
     }
 }

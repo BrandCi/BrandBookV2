@@ -1,22 +1,21 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web.Hosting;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Legal;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Infrastructure;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using log4net;
 using Microsoft.AspNet.Identity;
-using System.IO;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Web.Framework.Helpers;
+using System;
+using System.Threading.Tasks;
+using System.Web.Hosting;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
@@ -42,7 +41,7 @@ namespace BrandBook.Web.Controllers
 
             return View(model: GetStaticLegalContent("Imprint"));
         }
-        
+
 
         public ActionResult PrivacyPolicy()
         {
@@ -83,7 +82,7 @@ namespace BrandBook.Web.Controllers
                     return View(model);
                 }
             }
-            
+
             var emailContent = new EmailTemplateViewModel()
             {
                 Type = EmailTemplateType.General_PrivacyRequest,
@@ -94,7 +93,7 @@ namespace BrandBook.Web.Controllers
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                    RequestIp = Request.UserHostAddress,    
+                    RequestIp = Request.UserHostAddress,
                 }
             };
 
@@ -110,7 +109,7 @@ namespace BrandBook.Web.Controllers
                 IsSent = false
             };
 
-            if(_notificationService.SendNotification(emailContent))
+            if (_notificationService.SendNotification(emailContent))
             {
                 sentModel.IsSent = true;
             }

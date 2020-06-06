@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Http;
-using AutoMapper;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Resources;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
-using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
+using System.Web.Http;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
@@ -22,7 +18,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         private readonly ISubscriptionService _subscriptionService;
 
         public SubscriptionsController(
-            IUnitOfWork unitOfWork, 
+            IUnitOfWork unitOfWork,
             ISubscriptionService subscriptionService)
         {
             _unitOfWork = unitOfWork;

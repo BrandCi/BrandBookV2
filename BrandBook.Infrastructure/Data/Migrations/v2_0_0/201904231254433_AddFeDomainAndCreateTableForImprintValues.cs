@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddFeDomainAndCreateTableForImprintValues : DbMigration
     {
         public override void Up()
@@ -18,9 +17,9 @@ namespace BrandBook.Infrastructure.Migrations
                         Category = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);*/
-            
+
         }
-        
+
         public override void Down()
         {
             // DropTable("dbo.ImprintValues");

@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdatedSubscriptionManagementTables : DbMigration
     {
         public override void Up()
@@ -13,12 +12,12 @@ namespace BrandBook.Infrastructure.Migrations
             AddColumn("dbo.SubscriptionPlans", "PricePerMonth", c => c.Double(nullable: false));
             AlterColumn("dbo.Subscriptions", "AppUserId", c => c.Int(nullable: false));
             CreateIndex("dbo.Subscriptions", "AppUserId");
-            
+
             Sql("UPDATE dbo.SubscriptionPlans SET PricePerMonth = Price;");
 
             DropColumn("dbo.SubscriptionPlans", "Price");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.SubscriptionPlans", "Price", c => c.Double(nullable: false));

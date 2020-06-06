@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using BrandBook.Core.Services.Messaging;
+﻿using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
+using System;
+using System.Configuration;
+using System.Web;
 
 namespace BrandBook.Services.Notification
 {

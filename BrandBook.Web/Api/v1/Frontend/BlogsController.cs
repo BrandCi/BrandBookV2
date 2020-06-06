@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
-using AutoMapper;
-using System.Threading.Tasks;
-
+﻿using AutoMapper;
 using BrandBook.Core;
 using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Dto.Frontend.Blog;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace BrandBook.Web.Api.Frontend
 {
@@ -26,7 +25,7 @@ namespace BrandBook.Web.Api.Frontend
         {
             var allBlogs = await _unitOfWork.BlogEntryRepository.GetAllPublishedBlogEntriesForAnonymousUserAsync();
 
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 allBlogs = await _unitOfWork.BlogEntryRepository.GetAllPublishedBlogEntriesAsync();
             }
@@ -51,7 +50,7 @@ namespace BrandBook.Web.Api.Frontend
             return Ok(Mapper.Map<BlogEntry, BlogDetailDto>(blog));
 
         }
-        
+
 
     }
 }

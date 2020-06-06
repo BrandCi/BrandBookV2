@@ -110,7 +110,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
             var recaptchaSiteKey = ConfigurationManager.AppSettings["ReCaptchaSiteKey"];
 
-            html.Append("<script src=\"https://www.google.com/recaptcha/api.js?render="+ recaptchaSiteKey +"\"></script>");
+            html.Append("<script src=\"https://www.google.com/recaptcha/api.js?render=" + recaptchaSiteKey + "\"></script>");
             html.Append("<script>");
 
             html.Append("grecaptcha.ready(function() {");

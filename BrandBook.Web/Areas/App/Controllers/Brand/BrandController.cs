@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Authentication;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Core.ViewModels.App.Brand.Colors;
 using BrandBook.Core.ViewModels.App.Brand.Fonts;
 using BrandBook.Core.ViewModels.App.Brand.Icons;
 using BrandBook.Core.ViewModels.App.Brand.Settings;
-using Microsoft.AspNet.Identity;
-using Image = BrandBook.Core.Domain.Resource.Image;
+using BrandBook.Infrastructure;
+using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using log4net;
+using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
@@ -38,7 +38,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         // GET: App/Brand
         public async Task<ActionResult> Index(int id)
         {
-            var brandId = id;            
+            var brandId = id;
 
             ViewBag.BrandId = brandId;
 
@@ -47,7 +47,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            
+
             var brand = await _cmpAuthService.GetBrandAsync(User.Identity.GetUserId<int>(), brandId);
             var brandImage = await _unitOfWork.ImageRepository.FindByIdAsync(brand.ImageId);
 
@@ -94,7 +94,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 }
             };
 
-                
+
 
 
             foreach (var category in categories)
@@ -338,7 +338,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-           
+
             var rgbColor = System.Drawing.ColorTranslator.FromHtml("#" + model.HexColor);
             var cmykColor = ConvertRgbToCmyk(rgbColor.R, rgbColor.G, rgbColor.B);
 
@@ -372,7 +372,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App"});
+            return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App" });
 
         }
 
@@ -406,10 +406,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         {
             var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
             var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
-            
+
             System.IO.File.Copy(sourcePath, backupPath);
-            
-            
+
+
         }
 
 

@@ -1,8 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Web;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Auth.Process;
 using BrandBook.Core.ViewModels.Notification;
@@ -10,8 +6,11 @@ using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
-using BrandBook.Services.Users;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity.Owin;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -38,9 +37,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _notificationService = new NotificationService();
             _unitOfWork = new UnitOfWork();
         }
-        
 
-        public ActionResult Locked() {
+
+        public ActionResult Locked()
+        {
 
             if (User.Identity.IsAuthenticated)
             {
@@ -97,7 +97,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
-            
+
             var user = await UserManager.FindByNameAsync(model.Username);
 
             if (user == null || model.Email != user.Email)
@@ -111,10 +111,10 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 ModelState.AddModelError("User not confirmed", "Please confirm your Email.");
                 return View(model);
             }
-            
+
 
             var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-            var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);	
+            var targetUrl = Url.Action("ResetPassword", "Processes", new { area = "Auth", userId = user.Id, code }, protocol: Request.Url.Scheme);
 
 
             var email = new EmailTemplateViewModel()
@@ -131,7 +131,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _notificationService.SendNotification(email);
 
             return RedirectToAction("ForgotPasswordConfirmation", "Processes", new { area = "Auth" });
-            
+
         }
 
         public ActionResult ForgotPasswordConfirmation()
@@ -161,7 +161,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 return View("Error");
             }
 
-            
+
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
 
             if (!result.Succeeded)

@@ -1,10 +1,9 @@
 ﻿using BrandBook.Core;
+using BrandBook.Core.ViewModels.App.System.LoggingMessages;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.App.System.LoggingMessages;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers

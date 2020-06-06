@@ -1,13 +1,14 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.User;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Services.Users;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.ViewModels.Auth;
 using BrandBook.Core.ViewModels.Auth.External;
+using BrandBook.Infrastructure;
+using BrandBook.Resources;
+using BrandBook.Services.Authentication;
+using BrandBook.Services.Subscriptions;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,8 +16,6 @@ using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Resources;
 
 
 namespace BrandBook.Web.Areas.Auth.Controllers
@@ -117,7 +116,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 }
             }
 
-            
+
             var user = _unitOfWork.AppUserRepository.FindByUsername(model.UserName);
             if (user != null && !user.EmailConfirmed)
             {

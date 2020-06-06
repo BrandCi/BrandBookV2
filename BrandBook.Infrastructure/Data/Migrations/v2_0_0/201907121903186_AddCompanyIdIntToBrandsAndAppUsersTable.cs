@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddCompanyIdIntToBrandsAndAppUsersTable : DbMigration
     {
         public override void Up()
@@ -20,7 +19,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.Brands", "CompanyId", "dbo.Companies", "Id", cascadeDelete: true);
             AddForeignKey("dbo.AspNetUsers", "CompanyId", "dbo.Companies", "Id", cascadeDelete: true);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUsers", "CompanyId", "dbo.Companies");

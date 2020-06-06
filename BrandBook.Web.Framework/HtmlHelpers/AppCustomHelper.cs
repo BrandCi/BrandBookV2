@@ -1,5 +1,5 @@
-﻿using BrandBook.Resources;
-using BrandBook.Core.ViewModels.App.Brand;
+﻿using BrandBook.Core.ViewModels.App.Brand;
+using BrandBook.Resources;
 using System.Text;
 using System.Web;
 
@@ -64,18 +64,18 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                 html.Append("<div class=\"col-sm-6 col-lg-4 col-xs-12\">");
                 html.Append("<div class=\"card m-b-20\">");
 
-                if(linkTargetImage)
+                if (linkTargetImage)
                 {
                     html.Append("<a href=\"" + "/App/Brand/Index/" + brand.Id + "\">");
 
                 }
                 html.Append("<img class=\"card-img-top img-fluid\" src=\"/SharedStorage/BrandImages/" + brand.BrandImage.Name + "\" alt=\"" + brand.Name + "\" />");
 
-                if(linkTargetImage)
+                if (linkTargetImage)
                 {
                     html.Append("</a>");
                 }
-                
+
 
                 html.Append("<div class=\"card-body\">");
 
@@ -101,9 +101,9 @@ namespace BrandBook.Web.Framework.HtmlHelpers
                     html.Append("Update your subscription to continue working on your brand");
                     html.Append("</div>");
                 }
-                
 
-                
+
+
 
                 html.Append("</div>");
                 html.Append("</div>");
