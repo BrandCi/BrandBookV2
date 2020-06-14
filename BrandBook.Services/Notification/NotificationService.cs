@@ -6,7 +6,6 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System;
 using System.Configuration;
-using System.Web;
 
 namespace BrandBook.Services.Notification
 {
@@ -78,11 +77,11 @@ namespace BrandBook.Services.Notification
 
                 return true;
             }
-            
+
             Logger.Error("Notification: {" + execution.ErrorMessage + "}");
 
             return false;
-            
+
         }
 
 
