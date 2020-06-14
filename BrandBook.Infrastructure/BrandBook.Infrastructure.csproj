@@ -270,6 +270,10 @@
     <Compile Include="Data\Migrations\v2_0_0\202004302014121_AddCreationDateToAppUsersTable.Designer.cs">
       <DependentUpon>202004302014121_AddCreationDateToAppUsersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\v2_0_0\202006141116488_AddCompanyMembershipsTable.cs" />
+    <Compile Include="Data\Migrations\v2_0_0\202006141116488_AddCompanyMembershipsTable.Designer.cs">
+      <DependentUpon>202006141116488_AddCompanyMembershipsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
@@ -467,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\v2_0_0\202004302014121_AddCreationDateToAppUsersTable.resx">
       <DependentUpon>202004302014121_AddCreationDateToAppUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\v2_0_0\202006141116488_AddCompanyMembershipsTable.resx">
+      <DependentUpon>202006141116488_AddCompanyMembershipsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

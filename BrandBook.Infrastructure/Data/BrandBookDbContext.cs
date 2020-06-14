@@ -19,6 +19,7 @@ namespace BrandBook.Infrastructure.Data
 
         // User
         public DbSet<Company> Companies { get; set; }
+        public DbSet<CompanyMembership> CompanyMemberships { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
