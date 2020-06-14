@@ -38,6 +38,7 @@ namespace BrandBook.Infrastructure
         private IIconRepository _iconRepository;
         private IIconCategoryRepository _iconCategoryRepository;
         private ICompanyRepository _companyRepository;
+        private ICompanyMembershipRepository _companyMembershipRepository;
         private IImageRepository _imageRepository;
         private ISubscriptionRepository _subscriptionRepository;
         private ISubscriptionPlanRepository _subscriptionPlanRepository;
@@ -121,6 +122,12 @@ namespace BrandBook.Infrastructure
         {
             get { return _companyRepository ?? (_companyRepository = new CompanyRepository(_context)); }
         }
+
+        public ICompanyMembershipRepository CompanyMembershipRepository
+        {
+            get { return _companyMembershipRepository ?? (_companyMembershipRepository = new CompanyMembershipRepository(_context)); }
+        }
+
         public IImageRepository ImageRepository
         {
             get { return _imageRepository ?? (_imageRepository = new ImageRepository(_context)); }
@@ -178,6 +185,7 @@ namespace BrandBook.Infrastructure
             _iconRepository = null;
             _iconCategoryRepository = null;
             _companyRepository = null;
+            _companyMembershipRepository = null;
             _imageRepository = null;
             _subscriptionRepository = null;
             _subscriptionPlanRepository = null;

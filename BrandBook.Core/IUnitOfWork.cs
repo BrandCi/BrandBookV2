@@ -28,6 +28,7 @@ namespace BrandBook.Core
         IIconRepository IconRepository { get; }
         IIconCategoryRepository IconCategoryRepository { get; }
         ICompanyRepository CompanyRepository { get; }
+        ICompanyMembershipRepository CompanyMembershipRepository { get; }
         IImageRepository ImageRepository { get; }
         ISubscriptionRepository SubscriptionRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }

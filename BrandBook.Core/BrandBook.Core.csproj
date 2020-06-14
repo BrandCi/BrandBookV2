@@ -96,6 +96,7 @@
     <Compile Include="Repositories\Brand\Font\IFontRepository.cs" />
     <Compile Include="Repositories\Brand\IIconCategoryRepository.cs" />
     <Compile Include="Repositories\Brand\IIconRepository.cs" />
+    <Compile Include="Repositories\Company\ICompanyMembershipRepository.cs" />
     <Compile Include="Repositories\Company\ICompanyRepository.cs" />
     <Compile Include="Repositories\Frontend\IBlogEntryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
