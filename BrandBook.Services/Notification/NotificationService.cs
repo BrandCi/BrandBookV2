@@ -74,16 +74,15 @@ namespace BrandBook.Services.Notification
 
             if (execution.IsSuccessful)
             {
-                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
+                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}");
 
                 return true;
             }
-            else
-            {
-                Logger.Error("Notification: {" + execution.ErrorMessage + "}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
+            
+            Logger.Error("Notification: {" + execution.ErrorMessage + "}");
 
-                return false;
-            }
+            return false;
+            
         }
 
 

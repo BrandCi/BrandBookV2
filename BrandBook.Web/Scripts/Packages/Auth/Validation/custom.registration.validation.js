@@ -11,7 +11,7 @@
         var successIcon = $('#check-email-icon-success');
         var errorIcon = $('#check-email-icon-error');
 
-        if ($(obj).val().match(/\b[\w\.-]+@@[\w\.-]+\.\w{2,4}\b/gi)) {
+        if ($(obj).val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
             successIcon.show();
             errorIcon.hide();
         } else {
