@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddCompanyMembershipsTable : DbMigration
     {
         public override void Up()
@@ -13,12 +12,12 @@ namespace BrandBook.Infrastructure.Migrations
             CreateTable(
                 "dbo.CompanyMemberships",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        AppUserId = c.Int(nullable: false),
-                        CompanyId = c.Int(nullable: false),
-                        IsCompanyManager = c.Boolean(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    AppUserId = c.Int(nullable: false),
+                    CompanyId = c.Int(nullable: false),
+                    IsCompanyManager = c.Boolean(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AppUserId, cascadeDelete: true)
                 .ForeignKey("dbo.Companies", t => t.CompanyId, cascadeDelete: true)
@@ -26,10 +25,10 @@ namespace BrandBook.Infrastructure.Migrations
                 .Index(t => t.CompanyId);
 
             // Sql("INSERT INTO dbo.CompanyMemberships (AppUserId, CompanyId, IsCompanyManager) VALUES ((SELECT Id AS AppUserId, CompanyId AS CompanyId, 'False' AS IsCompanyManager FROM AspNetUsers));");
-            
+
             DropColumn("dbo.AspNetUsers", "CompanyId");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.AspNetUsers", "CompanyId", c => c.Int(nullable: false));

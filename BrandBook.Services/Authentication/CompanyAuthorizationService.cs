@@ -2,7 +2,6 @@
 using BrandBook.Core.Domain.Brand;
 using BrandBook.Infrastructure;
 using log4net;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BrandBook.Services.Authentication

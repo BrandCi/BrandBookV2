@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using BrandBook.Core.Domain.Company;
+﻿using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Repositories.Company;
 using BrandBook.Infrastructure.Data;
+using System.Linq;
 
 namespace BrandBook.Infrastructure.Repositories.Company
 {
