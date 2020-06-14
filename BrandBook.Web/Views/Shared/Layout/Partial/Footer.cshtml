@@ -1,4 +1,5 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
+﻿@using System.Configuration
+@using BrandBook.Web.Framework.HtmlHelpers
 <footer class="footer_area footer_three">
     <div class="footer_top">
         <div class="container">
@@ -74,7 +75,7 @@
                 <div class="col-lg-6">
 
                     <p class="mb-0 f_400">
-                        <a href="@Url.Action("Index", "Home")">
+                        <a href="@(ConfigurationManager.AppSettings["AuthorMainWebsiteUrl"])" target="_blank">
                             @Translations.frontend_footer_copyright
                         </a>
                         © @DateTime.Now.ToString("yyyy") @Translations.frontend_footer_allrightsreserved
