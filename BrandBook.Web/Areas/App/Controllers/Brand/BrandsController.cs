@@ -137,7 +137,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 MainHexColor = model.MainColor,
                 ImageId = brandImage.Id,
                 Image = brandImage,
-                CompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUsername(User.Identity.GetUserName())
+                CompanyId = _unitOfWork.CompanyMembershipRepository.GetCompanyIdByUserId(User.Identity.GetUserId<int>())
             };
 
             _unitOfWork.BrandRepository.Add(brand);

@@ -214,7 +214,6 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    Company = company,
                     PrivacyPolicyAccepted = true,
                     IsActive = true
                 };
@@ -226,8 +225,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
-
-                        var initialSubscription = new Subscription()
+                        #region Add Required Userrelations
+                        var initialSubscription = new Subscription
                         {
                             Key = _subscriptionService.GenerateSubscriptionKey(),
                             AppUser = _unitOfWork.AppUserRepository.FindById(user.Id),
@@ -240,10 +239,20 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                         };
 
                         _unitOfWork.SubscriptionRepository.Add(initialSubscription);
-                        _unitOfWork.SaveChanges();
+
+                        var companyMembership = new CompanyMembership
+                        {
+                            AppUser = user,
+                            Company = company,
+                            IsCompanyManager = true
+                        };
+
+                        _unitOfWork.CompanyMembershipRepository.Add(companyMembership);
+
+                        _unitOfWork.SaveChangesAsync();
 
                         await UserManager.AddToRoleAsync(user.Id, "AppUser");
-
+                        #endregion
 
                         await SignInService.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);

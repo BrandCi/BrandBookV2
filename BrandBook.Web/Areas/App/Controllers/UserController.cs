@@ -56,7 +56,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             foreach (var singleCompany in allCompanies)
             {
-                var numberOfUser = _unitOfWork.AppUserRepository.CountUserForCompanyId(singleCompany.Id);
+                var numberOfUser = _unitOfWork.CompanyMembershipRepository.GetAmountOfUsersForCompany(singleCompany.Id);
 
                 singleCompanyViewModels.Add(new SingleCompanyViewModel()
                 {

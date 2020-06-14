@@ -35,7 +35,7 @@ namespace BrandBook.Services.Authentication
                 {
                     var brand = _unitOfWork.BrandRepository.FindById(brandId);
 
-                    if (appUser.CompanyId == brand.CompanyId)
+                    if (_unitOfWork.CompanyMembershipRepository.GetCompanyIdByUserId(appUser.Id) == brand.CompanyId)
                     {
                         return true;
                     }
@@ -65,17 +65,5 @@ namespace BrandBook.Services.Authentication
             return new Brand();
 
         }
-
-
-        public async Task<List<Brand>> GetAllBrandsAsync(int appUserId)
-        {
-
-            var appUser = await _unitOfWork.AppUserRepository.FindByIdAsync(appUserId);
-
-            return await _unitOfWork.BrandRepository.GetBrandsByCompanyAsync(appUser.CompanyId);
-
-        }
-
-
     }
 }

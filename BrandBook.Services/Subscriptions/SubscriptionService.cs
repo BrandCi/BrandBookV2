@@ -100,7 +100,7 @@ namespace BrandBook.Services.Subscriptions
 
         private bool BrandLimitReached(int userId, IEnumerable<Subscription> subscriptions)
         {
-            var usersCompanyId = _unitOfWork.AppUserRepository.FindById(userId).CompanyId;
+            var usersCompanyId = _unitOfWork.CompanyMembershipRepository.GetCompanyIdByUserId(userId);
             var amountOfBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(usersCompanyId);
 
             return amountOfBrands >= CalcAmountOfPossibleBrands(subscriptions);

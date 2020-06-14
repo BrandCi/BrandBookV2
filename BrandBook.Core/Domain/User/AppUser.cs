@@ -23,9 +23,6 @@ namespace BrandBook.Core.Domain.User
         public DateTime LastModified { get; set; }
         public DateTime LastLogin { get; set; }
 
-        public int CompanyId { get; set; }
-        public Company.Company Company { get; set; }
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser, int> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

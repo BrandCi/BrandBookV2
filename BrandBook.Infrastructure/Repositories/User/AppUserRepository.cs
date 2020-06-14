@@ -23,33 +23,6 @@ namespace BrandBook.Infrastructure.Repositories.User
         }
 
 
-        public int CountUserForCompanyId(int companyId)
-        {
-
-            return Set.Where(x => x.Company.Id == companyId)
-                .Count();
-
-        }
-
-        public int GetCompanyIdByUsername(string userName)
-        {
-            return Set
-                .Where(x => x.UserName == userName)
-                .Select(x => x.CompanyId)
-                .DefaultIfEmpty(0)
-                .First();
-        }
-
-        public int GetCompanyIdByUserId(int userId)
-        {
-            return Set
-                .Where(x => x.Id == userId)
-                .Select(x => x.CompanyId)
-                .DefaultIfEmpty(0)
-                .First();
-        }
-
-
         public void UpdateWithModification(AppUser user)
         {
             user.LastModified = DateTime.Now;

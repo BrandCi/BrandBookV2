@@ -120,11 +120,13 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 UrlName = model.Username
             };
 
+            _unitOfWork.CompanyRepository.Add(company);
+            _unitOfWork.SaveChanges();
+
             var user = new AppUser
             {
                 UserName = model.Username,
                 Email = model.Email,
-                Company = company,
                 PrivacyPolicyAccepted = true,
                 IsActive = true,
                 CreationDate = DateTime.Now,
@@ -135,10 +137,14 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             var result = await UserManager.CreateAsync(user, model.Password);
 
 
+
+
             if (!result.Succeeded)
             {
                 return View(model);
             }
+
+            #region Add Required Userrelations
 
             var initialSubscription = new Subscription()
             {
@@ -153,10 +159,25 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             };
 
             _unitOfWork.SubscriptionRepository.Add(initialSubscription);
+
+
+            var companyMembership = new CompanyMembership()
+            {
+                AppUserId = user.Id,
+                CompanyId = company.Id,
+                IsCompanyManager = true
+            };
+
+            _unitOfWork.CompanyMembershipRepository.Add(companyMembership);
+
             _unitOfWork.SaveChanges();
+
 
             await UserManager.AddToRoleAsync(user.Id, "AppUser");
 
+            #endregion
+
+            #region User Verification Nofitication
 
             var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
             var callbackUrl = Url.Action("ConfirmAccount", "Processes", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
@@ -166,6 +187,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             {
                 return RedirectToAction("Success", "Register", new { area = "Auth" });
             }
+
+            #endregion
 
 
             return View("Error");

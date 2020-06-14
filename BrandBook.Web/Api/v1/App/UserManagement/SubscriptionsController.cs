@@ -35,7 +35,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
             }
 
             var dateFormat = "dd.MM.yyyy hh:mm";
-            int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(userId);
+            int userCompanyId = _unitOfWork.CompanyMembershipRepository.GetCompanyIdByUserId(userId);
             int existingBrands = _unitOfWork.BrandRepository.CountBrandsByCompany(userCompanyId);
 
             List<Subscription> subscriptions = _unitOfWork.SubscriptionRepository.GetAllUserSubscriptions(userId);
