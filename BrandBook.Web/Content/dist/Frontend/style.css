@@ -7247,7 +7247,7 @@ a, .btn, button {
   z-index: 1; }
   .seo_fact_info:before {
     content: "";
-    background: url("../../Style/img/seo/shap.png") no-repeat scroll center center;
+    background: url("") no-repeat scroll center center;
     position: absolute;
     left: 0;
     width: 100%;
