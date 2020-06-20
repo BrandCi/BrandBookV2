@@ -1,38 +1,34 @@
 ﻿[
   {
-    "outputFile": "Content/Custom/Styles.css",
-    "inputFile": "Content/Custom/Styles.scss"
+    "outputFile": "Content/dist/Frontend/style.css",
+    "inputFile": "Content/Style/Frontend/style.scss"
   },
   {
-    "outputFile": "Content/Auth/Styles.css",
-    "inputFile": "Content/Auth/Styles.scss"
+    "outputFile": "Content/dist/Frontend/rtl.css",
+    "inputFile": "Content/Style/Frontend/rtl.scss"
   },
   {
-    "outputFile": "Content/App/style.css",
-    "inputFile": "Content/App/style.scss"
+    "outputFile": "Content/dist/Frontend/responsive.css",
+    "inputFile": "Content/Style/Frontend/responsive.scss"
   },
   {
-    "outputFile": "Content/Flags/flag-icon.css",
-    "inputFile": "Content/Flags/flag-icon.scss"
+    "outputFile": "Content/dist/Flag-Icon/flag-icon.css",
+    "inputFile": "Content/Style/Flag-Icon/flag-icon.scss"
   },
   {
-    "outputFile": "Content/Frontend/Styles.css",
-    "inputFile": "Content/Frontend/Styles.scss"
-  },
-  {
-    "outputFile": "Content/Flag-Icon/flag-icon.css",
-    "inputFile": "Content/Flag-Icon/flag-icon.scss"
-  },
-  {
-    "outputFile": "Content/Frontend/style.css",
-    "inputFile": "Content/Frontend/style.scss"
-  },
-  {
-    "outputFile": "Content/App/bootstrap-rtl.css",
-    "inputFile": "Content/App/bootstrap-rtl.scss"
-  },
-  {
-    "outputFile": "Content/Style/Auth/Styles.css",
+    "outputFile": "Content/dist/Auth/Styles.css",
     "inputFile": "Content/Style/Auth/Styles.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/style_dark.css",
+    "inputFile": "Content/Style/App/style_dark.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/style.css",
+    "inputFile": "Content/Style/App/style.scss"
+  },
+  {
+    "outputFile": "Content/dist/App/bootstrap-rtl.css",
+    "inputFile": "Content/Style/App/bootstrap-rtl.scss"
   }
 ]
