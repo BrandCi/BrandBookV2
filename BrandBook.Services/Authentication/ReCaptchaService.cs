@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.ViewModels;
+﻿using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.ViewModels.Auth.Process;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace BrandBook.Services.Authentication
 {

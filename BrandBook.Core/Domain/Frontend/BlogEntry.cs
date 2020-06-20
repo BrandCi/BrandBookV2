@@ -1,5 +1,5 @@
-﻿using System;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
+using System;
 
 namespace BrandBook.Core.Domain.Frontend
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BrandBook.Core.Domain.Brand.Font;
+﻿using BrandBook.Core.Domain.Brand.Font;
+using System.Collections.Generic;
 
 namespace BrandBook.Core.Repositories.Brand.Font
 {

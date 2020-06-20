@@ -1,23 +1,21 @@
-using BrandBook.Services.Email;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.Frontend.Support;
-using log4net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.ViewModels.Frontend.Support;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using log4net;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
     public class SupportController : FrontendMvcControllerBase
     {
-        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IReCaptchaService _recaptchaService;
         private readonly INotificationService _notificationService;
 
@@ -43,7 +41,10 @@ namespace BrandBook.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Contact(ContactFormViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {
@@ -54,7 +55,7 @@ namespace BrandBook.Web.Controllers
                     return View(model);
                 }
             }
-            
+
             var emailContent = new EmailTemplateViewModel()
             {
                 Type = EmailTemplateType.General_ContactRequest,
@@ -75,7 +76,7 @@ namespace BrandBook.Web.Controllers
             {
                 IsSent = true
             };
-            
+
             return View(sentModel);
         }
 

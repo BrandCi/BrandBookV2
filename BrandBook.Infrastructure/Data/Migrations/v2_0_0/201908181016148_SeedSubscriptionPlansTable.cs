@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class SeedSubscriptionPlansTable : DbMigration
     {
         public override void Up()
@@ -19,7 +18,7 @@ namespace BrandBook.Infrastructure.Migrations
             Sql("SET IDENTITY_INSERT [dbo].[SubscriptionPlans] OFF");
 
         }
-        
+
         public override void Down()
         {
         }

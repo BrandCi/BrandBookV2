@@ -27,7 +27,7 @@ namespace BrandBook.Web
 
 
             bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
-                        "~/Content/Style/Flag-Icon/flag-icon.min.css"));
+                        "~/Content/dist/Flag-Icon/flag-icon.min.css"));
 
 
 
@@ -91,11 +91,11 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
                         /* ./Plugins */
 
-                        "~/Content/Style/Frontend/style.min.css",
-                        "~/Content/Style/Frontend/responsive.css"));
+                        "~/Content/dist/Frontend/style.min.css",
+                        "~/Content/dist/Frontend/responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
-                "~/Content/Style/Frontend/rtl.css"));
+                "~/Content/dist/Frontend/rtl.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
@@ -145,7 +145,7 @@ namespace BrandBook.Web
 
             bundles.Add(new StyleBundle("~/Content/Css/Auth/Main").Include(
                         "~/Content/Style/bootstrap.min.css",
-                        "~/Content/Style/Auth/Styles.min.css"));
+                        "~/Content/dist/Auth/Styles.min.css"));
 
 
 
@@ -162,15 +162,15 @@ namespace BrandBook.Web
                 "~/Content/Style/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Basic").Include(
-                "~/Content/Style/App/style.min.css"));
+                "~/Content/dist/App/style.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Dark").Include(
-                "~/Content/Style/App/style_dark.min.css"));
+                "~/Content/dist/App/style_dark.min.css"));
 
 
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
-                "~/Content/Style/App/bootstrap-rtl.min.css"));
+                "~/Content/dist/App/bootstrap-rtl.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
@@ -296,7 +296,7 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Dropzone").Include(
                 "~/Plugins/dropzone/dropzone.js"));
 
-            
+
             // Bootstrap-Datepicker
             bundles.Add(new StyleBundle("~/Content/Plugins/Datepicker").Include(
                 "~/Plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"));

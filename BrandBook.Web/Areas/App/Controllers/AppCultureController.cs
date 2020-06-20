@@ -1,6 +1,6 @@
-﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandBook.Core.ViewModels.App.Settings;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using BrandBook.Web.Framework.Helpers;
-using BrandBook.Core.ViewModels.App.Settings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -70,7 +70,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         private void GenerateAndSaveTranslationFile(string translationName)
         {
-            var csv = String.Join(
+            var csv = string.Join(
                 Environment.NewLine,
                 LoadListOfTranslations().Select(d => d.Key + ";" + d.Value + ";")
             );

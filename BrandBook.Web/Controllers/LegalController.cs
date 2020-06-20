@@ -1,28 +1,27 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web.Hosting;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using System.Web.Mvc;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Legal;
+using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Infrastructure;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using log4net;
 using Microsoft.AspNet.Identity;
-using System.IO;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Web.Framework.Helpers;
+using System;
+using System.Threading.Tasks;
+using System.Web.Hosting;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
     public class LegalController : FrontendMvcControllerBase
     {
-        protected new static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
         private readonly IReCaptchaService _recaptchaService;
         private readonly INotificationService _notificationService;
         private readonly IUnitOfWork _unitOfWork;
@@ -42,7 +41,7 @@ namespace BrandBook.Web.Controllers
 
             return View(model: GetStaticLegalContent("Imprint"));
         }
-        
+
 
         public ActionResult PrivacyPolicy()
         {
@@ -72,7 +71,10 @@ namespace BrandBook.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> PrivacyRequest(PrivacyRequestViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (_recaptchaService.IsCaptchaActive())
             {
@@ -83,7 +85,7 @@ namespace BrandBook.Web.Controllers
                     return View(model);
                 }
             }
-            
+
             var emailContent = new EmailTemplateViewModel()
             {
                 Type = EmailTemplateType.General_PrivacyRequest,
@@ -94,7 +96,7 @@ namespace BrandBook.Web.Controllers
                     RequestType = model.Type,
                     Message = model.Message,
                     RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                    RequestIp = Request.UserHostAddress,    
+                    RequestIp = Request.UserHostAddress,
                 }
             };
 
@@ -110,7 +112,7 @@ namespace BrandBook.Web.Controllers
                 IsSent = false
             };
 
-            if(_notificationService.SendNotification(emailContent))
+            if (_notificationService.SendNotification(emailContent))
             {
                 sentModel.IsSent = true;
             }

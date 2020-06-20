@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrandBook.Core.ViewModels.App.Brand.Fonts
 {

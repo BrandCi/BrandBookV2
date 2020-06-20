@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Http;
-using AutoMapper;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Resources;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
-using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
+using System.Web.Http;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
@@ -22,7 +18,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         private readonly ISubscriptionService _subscriptionService;
 
         public SubscriptionsController(
-            IUnitOfWork unitOfWork, 
+            IUnitOfWork unitOfWork,
             ISubscriptionService subscriptionService)
         {
             _unitOfWork = unitOfWork;
@@ -33,7 +29,10 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("{userId}")]
         public IHttpActionResult GetByUserId(int userId)
         {
-            if (userId == 0) return BadRequest();
+            if (userId == 0)
+            {
+                return BadRequest();
+            }
 
             var dateFormat = "dd.MM.yyyy hh:mm";
             int userCompanyId = _unitOfWork.AppUserRepository.GetCompanyIdByUserId(userId);
@@ -71,7 +70,10 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("deactivate/{subscriptionId}")]
         public IHttpActionResult DeactivateById(int subscriptionId)
         {
-            if (subscriptionId == 0) return BadRequest();
+            if (subscriptionId == 0)
+            {
+                return BadRequest();
+            }
 
             var subscription = _unitOfWork.SubscriptionRepository.FindById(subscriptionId);
             subscription.IsActive = false;
@@ -85,7 +87,10 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
         [Route("activate/{subscriptionId}")]
         public IHttpActionResult ActivateById(int subscriptionId)
         {
-            if (subscriptionId == 0) return BadRequest();
+            if (subscriptionId == 0)
+            {
+                return BadRequest();
+            }
 
             var subscription = _unitOfWork.SubscriptionRepository.FindById(subscriptionId);
             subscription.IsActive = true;

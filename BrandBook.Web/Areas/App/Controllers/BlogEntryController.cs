@@ -1,15 +1,15 @@
+using BrandBook.Core;
+using BrandBook.Core.Domain.Frontend;
+using BrandBook.Core.ViewModels.App.Blog;
+using BrandBook.Core.ViewModels.App.Blog.Overview;
+using BrandBook.Infrastructure;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BrandBook.Core;
-using BrandBook.Core.Domain.Frontend;
-using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.App.Blog;
-using BrandBook.Core.ViewModels.App.Blog.Overview;
-using Microsoft.AspNet.Identity;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -47,7 +47,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                     PublishDate = blog.PublishDate
                 });
             }
-            
+
             return View(viewModel);
         }
 
@@ -70,7 +70,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public ActionResult Add(AddBlogEntryViewModel model)
         {
 
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -98,7 +98,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             _unitOfWork.SaveChanges();
 
 
-            return RedirectToAction("Index", "BlogEntry", new { area="App" });
+            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
 
         }
 
@@ -108,9 +108,9 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
             {
-                return RedirectToAction("Index", "BlogEntry", new {area = "App"});
+                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
             }
-            
+
             var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
 
             var viewModel = new EditBlogEntryViewModel()
@@ -138,7 +138,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         [ValidateInput(false)]
         public async Task<ActionResult> Edit(EditBlogEntryViewModel model)
         {
-            
+
             if (!ModelState.IsValid || !_unitOfWork.BlogEntryRepository.BlogEntryIdExists(model.Id) || _unitOfWork.BlogEntryRepository.BlogEntryKeyExists(model.UrlKey))
             {
                 return View(model);
@@ -158,13 +158,13 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             _unitOfWork.BlogEntryRepository.Update(blogEntry);
             _unitOfWork.SaveChanges();
-            
 
-            return RedirectToAction("Index", "BlogEntry", new {area = "App"});
+
+            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
 
         }
 
-        
+
 
 
         public ActionResult Delete(int id)

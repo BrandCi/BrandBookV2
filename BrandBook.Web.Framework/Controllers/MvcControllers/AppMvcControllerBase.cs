@@ -1,10 +1,9 @@
-﻿using System;
-using System.Web.Mvc;
-using BrandBook.Core.Repositories.User;
+﻿using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
-using log4net;
 using Microsoft.AspNet.Identity;
+using System;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Framework.Controllers.MvcControllers
 {

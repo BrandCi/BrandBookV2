@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddNewBrandIdToColorCategoriesTable : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace BrandBook.Infrastructure.Migrations
             CreateIndex("dbo.ColorCategories", "BrandId");
             AddForeignKey("dbo.ColorCategories", "BrandId", "dbo.Brands", "Id", cascadeDelete: false);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.ColorCategories", "BrandId", "dbo.Brands");

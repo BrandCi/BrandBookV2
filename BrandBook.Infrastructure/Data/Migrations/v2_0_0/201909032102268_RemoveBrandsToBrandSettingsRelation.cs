@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class RemoveBrandsToBrandSettingsRelation : DbMigration
     {
         public override void Up()
@@ -15,21 +14,21 @@ namespace BrandBook.Infrastructure.Migrations
             DropColumn("dbo.Brands", "BrandSettingId");
             DropTable("dbo.BrandSettings");
         }
-        
+
         public override void Down()
         {
             CreateTable(
                 "dbo.BrandSettings",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        ContactEmail = c.String(),
-                        PrimaryHexColor = c.String(),
-                        RoundedButtons = c.Boolean(nullable: false),
-                        RoundedButtonsPixel = c.Int(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    ContactEmail = c.String(),
+                    PrimaryHexColor = c.String(),
+                    RoundedButtons = c.Boolean(nullable: false),
+                    RoundedButtonsPixel = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             AddColumn("dbo.Brands", "BrandSettingId", c => c.Int(nullable: false));
             AddColumn("dbo.Brands", "BrandPublicSettingId", c => c.Int(nullable: false));
             CreateIndex("dbo.Brands", "BrandSettingId");

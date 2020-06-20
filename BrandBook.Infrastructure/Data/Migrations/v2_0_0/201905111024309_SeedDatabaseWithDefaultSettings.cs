@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class SeedDatabaseWithDefaultSettings : DbMigration
     {
         public override void Up()
@@ -32,9 +31,9 @@ namespace BrandBook.Infrastructure.Migrations
 
             Sql("SET IDENTITY_INSERT[dbo].[Settings] OFF");
 
-    }
+        }
 
-    public override void Down()
+        public override void Down()
         {
         }
     }
