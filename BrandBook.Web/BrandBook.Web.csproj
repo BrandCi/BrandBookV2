@@ -224,6 +224,7 @@
   <ItemGroup>
     <Content Include="App_Data\BrandBook_Content\06b354ec-78ad-4bac-bafa-5afcddb75de5.png" />
     <Content Include="App_Data\BrandBook_Content\7996c187-3620-495d-985d-e823b3f96c5c.svg" />
+    <Content Include="App_Data\BrandBook_Content\apple-touch-icon.png" />
     <Content Include="App_Data\BrandBook_Content\AuthData\b14828a6-69ac-4d63-a7e0-0f442729e318.svg" />
     <Content Include="App_Data\BrandBook_Content\b3eb0b70-1229-4b6c-9819-fbd1a3e7db70.svg" />
     <Content Include="App_Data\BrandBook_Content\BrandData\1e829ca5-c778-4529-b5e8-01ee8ead6633.jpg" />
@@ -265,6 +266,7 @@
     <Content Include="App_Data\BrandBook_Content\EmailData\images\vpn_key-48-primary.png" />
     <Content Include="App_Data\BrandBook_Content\EmailData\images\vpn_key-48-white.png" />
     <Content Include="App_Data\BrandBook_Content\EmailData\images\warning-24-white.png" />
+    <Content Include="App_Data\BrandBook_Content\favicon.ico" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\ad.svg" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\ae.svg" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\af.svg" />
@@ -1485,6 +1487,8 @@
     <Content Include="Views\Blog\Overview.cshtml" />
     <Content Include="Views\Legal\PrivacyRequest.cshtml" />
     <Content Include="Views\Support\Faq.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerHeadComponent.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerBodyComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
