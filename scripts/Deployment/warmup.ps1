@@ -57,5 +57,3 @@ Foreach ($url IN $urls)
 Write-Host "`n`n"
 Write-Host "Warmup completed"
 Write-Host "Touched" $urls.count "Routes"
-
-Read-Host
