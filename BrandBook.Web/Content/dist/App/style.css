@@ -2548,7 +2548,7 @@ label {
 
 /* Multiple select*/
 .ms-container {
-  background: transparent url("../images/multiple-arrow.png") no-repeat 50% 50%; }
+  background: transparent url("../../Style/images/multiple-arrow.png") no-repeat 50% 50%; }
   .ms-container .ms-list {
     box-shadow: none;
     border: 1px solid #f3f3f3; }
