@@ -57,7 +57,18 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApps'
+  displayName: 'Copy Client App Builds'
 # ./ClientApps
+
+
+# Scripts-Folder
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/scripts'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/scripts'
+  displayName: 'Copy Scripts Folder'
+# ./Scripts
 
 
 # Unit Tests
