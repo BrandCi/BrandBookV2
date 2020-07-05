@@ -60,6 +60,15 @@ steps:
 # ./ClientApps
 
 
+# Scripts-Folder
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/scripts'
+    Content: '**'
+    TargetFoler: '$(Build.ArtifactStagingDirectory)/scripts'
+# ./Scripts
+
+
 # Unit Tests
 - task: VSTest@2
   inputs:
