@@ -7,7 +7,19 @@ $urls = @(
     '/Product/Documentation',
     '/Product/Collaboration',
     '/Product/Sharing',
-    '/Product/Optimization'
+    '/Product/Optimization',
+    '/Pricing/Index',
+    '/Blog/Overview',
+    '/Blog/Index',
+    '/Support/Contact',
+    '/Support/Faq',
+    '/Auth/Login/Index',
+    '/Auth/Register/Index',
+    '/Auth/ForgotPassword',
+    '/Legal/Imprint',
+    '/Legal/PrivacyPolicy',
+    '/Legal/Cookie',
+    '/Legal/PrivacyRequest'
 )
 
 
@@ -30,10 +42,11 @@ Foreach ($url IN $urls)
     elseif($statusCodeGroup -eq '5') {
         $status = 'Red'
     }
-    
+
 
     # Output
     Write-Host "Url: " $url
+    Write-Host "Method: GET"
     Write-Host "Status: " $statusCode "`n`n" -ForegroundColor $status
 
 }
