@@ -65,8 +65,8 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/scripts'
-    Content: '**'
-    TargetFoler: '$(Build.ArtifactStagingDirectory)/scripts'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/scripts'
   displayName: 'Copy Scripts Folder'
 # ./Scripts
 
