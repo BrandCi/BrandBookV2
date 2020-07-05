@@ -25,13 +25,15 @@ $urls = @(
 
 Foreach ($url IN $urls)
 {
+    #region Preparation
     $completeUrl = $baseUrl + $url
     $response = Invoke-WebRequest -Uri $completeUrl -Method Get
 
     $statusCode = $response.StatusCode
     $statusCodeGroup = $statusCode.ToString().substring(0,1)
+    #endregion
 
-
+    #region Determine Status
     $status = 'Yellow'
     if($statusCodeGroup -eq '2') {
         $status = 'Green'
@@ -42,19 +44,18 @@ Foreach ($url IN $urls)
     elseif($statusCodeGroup -eq '5') {
         $status = 'Red'
     }
+    #endregion
 
-
-    # Output
+    #region Output
     Write-Host "Url: " $url
     Write-Host "Method: GET"
     Write-Host "Status: " $statusCode "`n`n" -ForegroundColor $status
-
+    #endregion
 }
 
 
 Write-Host "`n`n"
 Write-Host "Warmup completed"
 Write-Host "Touched" $urls.count "Routes"
-
 
 Read-Host
