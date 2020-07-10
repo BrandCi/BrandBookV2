@@ -411,12 +411,17 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
         private void BackupBrandImage(Image brandImage)
         {
-            var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
-            var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
+            try
+            {
+                var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
+                var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
 
-            System.IO.File.Copy(sourcePath, backupPath);
-
-
+                System.IO.File.Copy(sourcePath, backupPath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
         }
 
 
