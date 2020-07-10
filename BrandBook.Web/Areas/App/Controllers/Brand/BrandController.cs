@@ -17,6 +17,8 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BrandBook.Core.Services.Application;
+using BrandBook.Services.Application;
 using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
@@ -26,6 +28,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
+        private readonly IBrandService _brandService;
         protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
@@ -33,6 +36,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
             this._subscriptionService = new SubscriptionService();
+            _brandService = new BrandService();
         }
 
         // GET: App/Brand
