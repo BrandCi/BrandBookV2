@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BrandBook.Core.Services.Application
 {
     public interface IBrandService
     {
+        string BuildGoogleFontLink(int fontId);
+        List<int> ConvertRgbToCmyk(int r, int g, int b);
     }
 }
