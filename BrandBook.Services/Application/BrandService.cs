@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Application;
 using BrandBook.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace BrandBook.Services.Application
 {
@@ -45,7 +45,7 @@ namespace BrandBook.Services.Application
 
                 googleFontLink.Append(",");
             }
-            
+
 
             return googleFontLink.ToString();
         }
@@ -62,12 +62,13 @@ namespace BrandBook.Services.Application
             var m = SaveCmyk((1 - gConvert - k) / (1 - k));
             var y = SaveCmyk((1 - bConvert - k) / (1 - k));
 
-            var cmyk = new List<int>();
-
-            cmyk.Add(c);
-            cmyk.Add(m);
-            cmyk.Add(y);
-            cmyk.Add(k);
+            var cmyk = new List<int>
+            {
+                c,
+                m,
+                y,
+                k
+            };
 
 
             return cmyk;

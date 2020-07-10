@@ -1,11 +1,13 @@
 using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
+using BrandBook.Core.Services.Application;
 using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Core.ViewModels.App.Brand.Colors;
 using BrandBook.Core.ViewModels.App.Brand.Fonts;
 using BrandBook.Core.ViewModels.App.Brand.Icons;
 using BrandBook.Core.ViewModels.App.Brand.Settings;
 using BrandBook.Infrastructure;
+using BrandBook.Services.Application;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
@@ -16,8 +18,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BrandBook.Core.Services.Application;
-using BrandBook.Services.Application;
 using Image = BrandBook.Core.Domain.Resource.Image;
 
 namespace BrandBook.Web.Areas.App.Controllers.Brand
@@ -378,7 +378,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App" });
 
         }
-        
+
 
 
         private void RemoveBrandImage(Image brandImage)
@@ -415,7 +415,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
                 System.IO.File.Copy(sourcePath, backupPath);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception();
             }
