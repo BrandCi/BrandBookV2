@@ -7,23 +7,25 @@ namespace BrandBook.Web.Routes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute(
+                url: "{resource}.axd/{*pathInfo}"
+            );
 
             routes.MapMvcAttributeRoutes();
 
 
             routes.MapRoute(
-                "BlogOverview",
-                "Blog/Overview",
-                new { controller = "Blog", action = "Overview" },
-                new[] { "BrandBook.Web.Controllers.BlogController" }
+                name: "BlogOverview",
+                url: "Blog/Overview",
+                defaults: new { controller = "Blog", action = "Overview" },
+                namespaces: new[] { "BrandBook.Web.Controllers.BlogController" }
             );
 
             routes.MapRoute(
-                "Blog",
-                "Blog/{blogName}",
-                new { controller = "Blog", action = "Index" },
-                new[] { "BrandBook.Web.Controllers.BlogController" }
+                name: "Blog",
+                url: "Blog/{blogName}",
+                defaults: new { controller = "Blog", action = "Index" },
+                namespaces: new[] { "BrandBook.Web.Controllers.BlogController" }
             );
 
 
