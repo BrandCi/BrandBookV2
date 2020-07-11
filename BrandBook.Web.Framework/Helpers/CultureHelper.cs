@@ -92,20 +92,16 @@ namespace BrandBook.Web.Framework.Helpers
 
         public static Dictionary<string, string> GetEnabledCultures()
         {
-            var enabledCultures = new Dictionary<string, string>();
+            return _cultures.ToDictionary(culture => culture.ToLower(), GetCultureFullNameByCultureCode);
+        }
 
-            foreach (var culture in _cultures)
-            {
-                var cultureLowerCase = culture.ToLower();
-                var translationName = $"system_culture_{ cultureLowerCase.Replace("-", "_") }_full";
 
-                enabledCultures.Add(
-                    cultureLowerCase,
-                    Translations.ResourceManager.GetString(translationName)
-                  );
-            }
+        private static string GetCultureFullNameByCultureCode(string cultureCode)
+        {
+            var translationName = $"system_culture_{ cultureCode.ToLower().Replace("-", "_") }_full";
+            var translation = Translations.ResourceManager.GetString(translationName);
 
-            return enabledCultures;
+            return !string.IsNullOrEmpty(translation) ? translation : cultureCode;
         }
     }
 }
