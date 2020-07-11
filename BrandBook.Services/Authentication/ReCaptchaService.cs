@@ -51,7 +51,8 @@ namespace BrandBook.Services.Authentication
 
         public bool IsCaptchaActive()
         {
-            return ConfigurationManager.AppSettings["ReCaptchaActive"] == "1";
+            bool.TryParse(ConfigurationManager.AppSettings["ReCaptchaActive"], out var reCaptchaActive);
+            return reCaptchaActive;
         }
     }
 }
