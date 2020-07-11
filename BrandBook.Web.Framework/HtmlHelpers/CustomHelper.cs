@@ -104,9 +104,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         public static IHtmlString RenderReCaptchaRequest(string action)
         {
             var html = new StringBuilder();
-            var recaptchaActive = ConfigurationManager.AppSettings["ReCaptchaActive"];
 
-            if (recaptchaActive != "1")
+            if (!IsReCaptchaActive())
             {
                 return new HtmlString(html.ToString());
             }
@@ -129,7 +128,8 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static bool IsReCaptchaActive()
         {
-            return ConfigurationManager.AppSettings["ReCaptchaActive"] == "1";
+            bool.TryParse(ConfigurationManager.AppSettings["ReCaptchaActive"], out var reCaptchaActive);
+            return reCaptchaActive;
         }
     }
 
