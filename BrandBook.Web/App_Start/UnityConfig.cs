@@ -1,15 +1,15 @@
 using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.Services.Subscriptions;
+using BrandBook.Core.Services.UserManagement;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Services.Subscriptions;
-using System.Web.Http;
-using BrandBook.Core.Services.Notification;
-using BrandBook.Core.Services.UserManagement;
 using BrandBook.Services.UserManagement;
+using System.Web.Http;
 using Unity;
 using Unity.WebApi;
 
