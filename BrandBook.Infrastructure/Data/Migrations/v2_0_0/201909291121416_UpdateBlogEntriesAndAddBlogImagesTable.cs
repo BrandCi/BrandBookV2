@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdateBlogEntriesAndAddBlogImagesTable : DbMigration
     {
         public override void Up()
@@ -10,13 +9,13 @@ namespace BrandBook.Infrastructure.Migrations
             CreateTable(
                 "dbo.BlogImages",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        ContentType = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    ContentType = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             AddColumn("dbo.BlogEntries", "AdditionalStyles", c => c.String());
             AddColumn("dbo.BlogEntries", "BlogImageId", c => c.Int(nullable: false));
             AddColumn("dbo.BlogEntries", "AppUserId", c => c.Int(nullable: false));
@@ -27,7 +26,7 @@ namespace BrandBook.Infrastructure.Migrations
             AddForeignKey("dbo.BlogEntries", "BlogImageId", "dbo.BlogImages", "Id", cascadeDelete: true);
             DropColumn("dbo.BlogEntries", "Image");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.BlogEntries", "Image", c => c.String());

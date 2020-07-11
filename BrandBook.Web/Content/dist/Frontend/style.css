@@ -2209,7 +2209,7 @@ a, .btn, button {
     left: 0;
     top: 0;
     z-index: -1;
-    background: url("../img/home5/shap_tecture.png") no-repeat scroll center 0/cover; }
+    background: url("../../Style/img/home5/shap_tecture.png") no-repeat scroll center 0/cover; }
 
 /*=============== saas banner area ================*/
 .saas_banner_area {
@@ -2233,7 +2233,7 @@ a, .btn, button {
 
 /*============= app_banner_area css ===========*/
 .app_banner_area {
-  background: url(../img/home7/banner.png) no-repeat scroll center 100%;
+  background: url(../../Style/img/home7/banner.png) no-repeat scroll center 100%;
   padding-top: 230px;
   padding-bottom: 210px;
   overflow: hidden;
@@ -2599,7 +2599,7 @@ a, .btn, button {
   z-index: 0; }
   .new_startup_banner_area:before {
     content: "";
-    background: url("../img/new/startup_banner_bg.png") no-repeat scroll center bottom;
+    background: url("../../Style/img/new/startup_banner_bg.png") no-repeat scroll center bottom;
     position: absolute;
     left: 0;
     width: 100%;
@@ -2658,7 +2658,7 @@ a, .btn, button {
     top: 0;
     left: 0;
     position: absolute;
-    background: url("../img/new/startup_shap.png") no-repeat scroll center bottom/cover;
+    background: url("../../Style/img/new/startup_shap.png") no-repeat scroll center bottom/cover;
     z-index: -1; }
 
 .startup_content_three h2 {
@@ -2709,7 +2709,7 @@ a, .btn, button {
     right: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/new/digital_img.png") no-repeat scroll right 0;
+    background: url("../../Style/img/new/digital_img.png") no-repeat scroll right 0;
     top: 0;
     z-index: -1; }
   .digital_banner_area .round_shap {
@@ -4201,7 +4201,7 @@ a, .btn, button {
   float: left; }
   .payment_features_img:before {
     content: "";
-    background: url(../img/new/shape_bg.png) no-repeat scroll center left;
+    background: url(../../Style/img/new/shape_bg.png) no-repeat scroll center left;
     position: absolute;
     left: -65px;
     top: -20px;
@@ -4290,7 +4290,7 @@ a, .btn, button {
     padding: 0px;
     position: relative; }
     .perfect_solution_area .perfect_solution_right .bg_img {
-      background: url("../img/new/solution_01.jpg") no-repeat scroll center 0;
+      background: url("../../Style/img/new/solution_01.jpg") no-repeat scroll center 0;
       position: absolute;
       left: 0;
       top: 0;
@@ -4299,7 +4299,7 @@ a, .btn, button {
       height: 130%;
       background-size: cover; }
       .perfect_solution_area .perfect_solution_right .bg_img.bg_two {
-        background: url("../img/new/solution_02.jpg") no-repeat scroll center 0; }
+        background: url("../../Style/img/new/solution_02.jpg") no-repeat scroll center 0; }
 
 /*=========== startup_fuatures_area css ==========*/
 .startup_tab {
@@ -4371,7 +4371,7 @@ a, .btn, button {
   .startup_tab_img:before {
     content: "";
     height: 100%;
-    background: url("../img/new/tab_shape_bg.png") no-repeat scroll center 0/contain;
+    background: url("../../Style/img/new/tab_shape_bg.png") no-repeat scroll center 0/contain;
     top: 0px;
     right: -55px;
     left: -55px;
@@ -5068,7 +5068,7 @@ a, .btn, button {
   padding-bottom: 150px;
   position: relative;
   z-index: 2;
-  background: url("../img/home9/shape_two.png") no-repeat scroll center 0;
+  background: url("../../Style/img/home9/shape_two.png") no-repeat scroll center 0;
   background-size: cover; }
   .payment_service_area .image_shape {
     position: absolute;
@@ -5084,7 +5084,7 @@ a, .btn, button {
     font-size: 18px; }
 
 .pay_icon {
-  background: url("../img/home9/icon_shape_two.png") no-repeat scroll center 0;
+  background: url("../../Style/img/home9/icon_shape_two.png") no-repeat scroll center 0;
   width: 110px;
   height: 103px;
   text-align: center;
@@ -5118,7 +5118,7 @@ a, .btn, button {
     right: 0;
     top: 0;
     bottom: 0;
-    background: url(../img/new/new_shape.png) no-repeat scroll left 0;
+    background: url(../../Style/img/new/new_shape.png) no-repeat scroll left 0;
     z-index: -1;
     background-size: contain; }
   .stratup_service_img .phone_img {
@@ -5454,7 +5454,7 @@ a, .btn, button {
     content: "";
     width: 100%;
     height: 100%;
-    background: url("../img/saas/map.png") no-repeat scroll center 0;
+    background: url("../../Style/img/saas/map.png") no-repeat scroll center 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -5681,7 +5681,7 @@ a, .btn, button {
     top: 0;
     left: 0;
     position: absolute;
-    background: url("../img/home2/action_bg.png") no-repeat scroll center 0; }
+    background: url("../../Style/img/home2/action_bg.png") no-repeat scroll center 0; }
   .call_action_area .action_one {
     left: -240px;
     bottom: 0;
@@ -5799,7 +5799,7 @@ a, .btn, button {
     height: 100px;
     left: 0;
     z-index: -1;
-    background: url("../img/home4/action_shap.png") no-repeat scroll center top;
+    background: url("../../Style/img/home4/action_shap.png") no-repeat scroll center top;
     top: 0;
     background-size: contain; }
   .action_area_three .action_content h2 {
@@ -5833,7 +5833,7 @@ a, .btn, button {
     height: 100%;
     top: 0;
     left: 0;
-    background: url("../img/new/price_bg.png") no-repeat scroll center;
+    background: url("../../Style/img/new/price_bg.png") no-repeat scroll center;
     position: absolute;
     z-index: -1; }
   .payment_priceing_area .payment_price_info {
@@ -6563,7 +6563,7 @@ a, .btn, button {
     height: 100%;
     top: 0;
     left: 0;
-    background: url("../img/new/feedback_shap.png") no-repeat scroll center 0;
+    background: url("../../Style/img/new/feedback_shap.png") no-repeat scroll center 0;
     position: absolute;
     z-index: -1; }
   .feedback_area_two .sec_title {
@@ -6847,7 +6847,7 @@ a, .btn, button {
     height: 85px;
     top: -82px;
     left: 0;
-    background: url("../img/home9/triangle_top.png") no-repeat; }
+    background: url("../../Style/img/home9/triangle_top.png") no-repeat; }
   .payment_clients_area .clients_bg_shape_right {
     width: 1600px;
     height: 1253px;
@@ -6955,7 +6955,7 @@ a, .btn, button {
     height: 85px;
     top: 0px;
     left: 0;
-    background: url("../img/home9/triangle_bottom.png") no-repeat;
+    background: url("../../Style/img/home9/triangle_bottom.png") no-repeat;
     background-size: contain; }
 
 .payment_action_content .pay_icon {
@@ -7101,7 +7101,7 @@ a, .btn, button {
   position: relative; }
   .stratup_testimonial_info:before {
     content: "";
-    background: url("../img/new/testimonial_bg.png") no-repeat scroll center 0/contain;
+    background: url("../../Style/img/new/testimonial_bg.png") no-repeat scroll center 0/contain;
     width: 100%;
     height: 100%;
     top: 0;
@@ -7141,7 +7141,7 @@ a, .btn, button {
 .testimonial_area_five {
   position: relative; }
   .testimonial_area_five .stratup_testimonial_info:before {
-    background: url("../img/new/testimonial_bg_two.png") no-repeat scroll center 0/contain; }
+    background: url("../../Style/img/new/testimonial_bg_two.png") no-repeat scroll center 0/contain; }
   .testimonial_area_five .testimonial_title h6 {
     color: #26c4e5; }
   .testimonial_area_five .testimonial_title .owl-next:hover, .testimonial_area_five .testimonial_title .owl-prev:hover {
@@ -7159,7 +7159,7 @@ a, .btn, button {
   position: absolute;
   left: 85px;
   top: -80px;
-  background: url("../img/new/leaf.png") no-repeat scroll;
+  background: url("../../Style/img/new/leaf.png") no-repeat scroll;
   z-index: -2; }
 
 .cup {
@@ -7172,7 +7172,7 @@ a, .btn, button {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  background: linear-gradient(50deg, rgba(58, 43, 220, 0.9) 0%, rgba(23, 199, 189, 0.9) 100%), url("../img/new/video_bg.jpg") no-repeat;
+  background: linear-gradient(50deg, rgba(58, 43, 220, 0.9) 0%, rgba(23, 199, 189, 0.9) 100%), url("../../Style/img/new/video_bg.jpg") no-repeat;
   background-size: cover;
   box-shadow: 0px 50px 70px 0px rgba(0, 11, 40, 0.24);
   height: 450px;
@@ -7247,7 +7247,7 @@ a, .btn, button {
   z-index: 1; }
   .seo_fact_info:before {
     content: "";
-    background: url("../img/seo/shap.png") no-repeat scroll center center;
+    background: url("") no-repeat scroll center center;
     position: absolute;
     left: 0;
     width: 100%;
@@ -8509,7 +8509,7 @@ a, .btn, button {
   .seo_subscribe_area .seo_sec_title h2, .seo_subscribe_area .seo_sec_title p {
     color: #fff; }
   .seo_subscribe_area .overlay_img {
-    background: url("../img/seo/cloud_bg.png") no-repeat scroll center 0/cover;
+    background: url("../../Style/img/seo/cloud_bg.png") no-repeat scroll center 0/cover;
     position: absolute;
     top: 0;
     width: 100%;
@@ -8564,9 +8564,9 @@ a, .btn, button {
 /*====================================================*/
 /*================= error_area css ==================*/
 .error_area {
-  background: -moz-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
-  background: -webkit-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
-  background: -ms-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
+  background: -moz-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../../Style/img/error_bg.png") no-repeat scroll center 100%;
+  background: -webkit-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../../Style/img/error_bg.png") no-repeat scroll center 100%;
+  background: -ms-linear-gradient(180deg, rgba(94, 44, 237, 0.93) 0%, rgba(164, 133, 253, 0.9) 100%), url("../../Style/img/error_bg.png") no-repeat scroll center 100%;
   display: flex;
   align-items: center;
   position: relative;
@@ -8666,7 +8666,7 @@ a, .btn, button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../img/new/case/parallax.png") no-repeat scroll center center;
+  background: url("../../Style/img/new/case/parallax.png") no-repeat scroll center center;
   z-index: -1; }
 
 .download_content .download_btn {
@@ -11658,7 +11658,7 @@ input[type="text"] {
 .split_banner .contact_bg {
   position: absolute;
   top: 0;
-  background: url("../img/new/home-split/contact.png");
+  background: url("../../Style/img/new/home-split/contact.png");
   width: 100%;
   height: 100%;
   background-size: cover; }
@@ -11826,7 +11826,7 @@ input[type="text"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/hosting/map.png") no-repeat scroll center 0/cover;
+  background: url("../../Style/img/hosting/map.png") no-repeat scroll center 0/cover;
   z-index: -1; }
 
 .domain_box_info {
@@ -12174,7 +12174,7 @@ a .h_head:hover {
     margin-bottom: 0; }
 
 .h_map {
-  background: url("../img/hosting/region_map.png") no-repeat scroll center top;
+  background: url("../../Style/img/hosting/region_map.png") no-repeat scroll center top;
   height: 595px; }
   .h_map ul {
     height: 100%;
@@ -12343,7 +12343,7 @@ a .h_head:hover {
     content: "";
     width: 100%;
     height: 100%;
-    background: url(../img/pos/wave_two.png) no-repeat scroll center bottom;
+    background: url(../../Style/img/pos/wave_two.png) no-repeat scroll center bottom;
     position: absolute;
     left: 0;
     top: -100%;
@@ -12772,7 +12772,7 @@ a .h_head:hover {
 
 /*=========== erp_analytics_area css ============*/
 .erp_analytics_area {
-  background: url("../img/erp-home/background.png") no-repeat scroll center 0/cover;
+  background: url("../../Style/img/erp-home/background.png") no-repeat scroll center 0/cover;
   padding: 100px 0px 220px; }
 
 .erp_analytics_item {
@@ -12882,7 +12882,7 @@ a .h_head:hover {
   .erp_call_action_area:before {
     content: "";
     position: absolute;
-    background: url("../img/erp-home/shape.png") no-repeat scroll center bottom/cover;
+    background: url("../../Style/img/erp-home/shape.png") no-repeat scroll center bottom/cover;
     width: 100%;
     left: 0;
     height: 100%;
@@ -13130,7 +13130,7 @@ a .h_head:hover {
     content: "";
     width: 100%;
     height: 10px;
-    background: url("../img/pos/shape_bg.png") no-repeat scroll center bottom/cover;
+    background: url("../../Style/img/pos/shape_bg.png") no-repeat scroll center bottom/cover;
     position: absolute;
     bottom: -10px;
     left: 0; }
@@ -13980,7 +13980,7 @@ a .h_head:hover {
   position: relative; }
   .footer_nine_area .footer_shap {
     position: absolute;
-    background: url("../img/home9/footer.png") no-repeat scroll center;
+    background: url("../../Style/img/home9/footer.png") no-repeat scroll center;
     left: 0;
     width: 100%;
     background-size: cover;
@@ -14061,9 +14061,9 @@ a .h_head:hover {
         background: #18295c;
         left: -15px; }
       .footer_nine_bottom .flag_selector .flag-icon.flag-icon-us {
-        background-image: url(../img/home9/flag.png); }
+        background-image: url(../../Style/img/home9/flag.png); }
       .footer_nine_bottom .flag_selector .flag-icon.flag-icon-mx {
-        background-image: url(../img/home9/flag.png); }
+        background-image: url(../../Style/img/home9/flag.png); }
     .footer_nine_bottom .flag_selector .dropdown-menu {
       padding: 0px;
       border-radius: 0px;
@@ -14168,11 +14168,11 @@ a .h_head:hover {
   .new_footer_top .footer_bg {
     position: absolute;
     bottom: 0;
-    background: url("../img/seo/footer_bg.png") no-repeat scroll center 0;
+    background: url("../../Style/img/seo/footer_bg.png") no-repeat scroll center 0;
     width: 100%;
     height: 266px; }
     .new_footer_top .footer_bg .footer_bg_one {
-      background: url("../img/seo/car.png") no-repeat center center;
+      background: url("../../Style/img/seo/car.png") no-repeat center center;
       width: 70px;
       height: 50px;
       position: absolute;
@@ -14180,7 +14180,7 @@ a .h_head:hover {
       left: 30%;
       animation: myfirst 22s  linear infinite; }
     .new_footer_top .footer_bg .footer_bg_two {
-      background: url("../img/seo/bike.png") no-repeat center center;
+      background: url("../../Style/img/seo/bike.png") no-repeat center center;
       width: 50px;
       height: 52px;
       bottom: 0;

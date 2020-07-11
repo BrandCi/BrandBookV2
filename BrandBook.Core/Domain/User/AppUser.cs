@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -36,5 +36,5 @@ namespace BrandBook.Core.Domain.User
 
 
     }
-    
+
 }

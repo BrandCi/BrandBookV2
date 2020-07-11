@@ -111,6 +111,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\BrandService.cs" />
     <Compile Include="Authentication\CompanyAuthorizationService.cs" />
     <Compile Include="Authentication\ReCaptchaService.cs" />
     <Compile Include="Authentication\SignInService.cs" />

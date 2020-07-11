@@ -1,10 +1,9 @@
-﻿using System;
-using System.Web.Mvc;
-using BrandBook.Core.Repositories.User;
+﻿using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
-using log4net;
 using Microsoft.AspNet.Identity;
+using System;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Framework.Controllers.MvcControllers
 {
@@ -24,7 +23,13 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId<int>()).IsDarkmodeEnabled;
+            ViewBag.IsDarkmodeEnabled = false;
+
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId<int>()).IsDarkmodeEnabled;
+            }
+
 
             return base.BeginExecuteCore(callback, state);
         }

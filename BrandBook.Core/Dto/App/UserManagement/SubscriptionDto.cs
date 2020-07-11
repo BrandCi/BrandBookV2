@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BrandBook.Core.Dto.App.UserManagement
+﻿namespace BrandBook.Core.Dto.App.UserManagement
 {
     public class SubscriptionDto
     {

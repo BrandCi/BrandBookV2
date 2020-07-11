@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class FixIssueWithAppUserIdDatatypeInBlogEntriesTable : DbMigration
     {
         public override void Up()
@@ -13,7 +12,7 @@ namespace BrandBook.Infrastructure.Migrations
             AlterColumn("dbo.BlogEntries", "AppUserId", c => c.Int(nullable: false));
             CreateIndex("dbo.BlogEntries", "AppUserId");
         }
-        
+
         public override void Down()
         {
             DropIndex("dbo.BlogEntries", new[] { "AppUserId" });

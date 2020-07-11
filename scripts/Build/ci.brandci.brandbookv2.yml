@@ -1,14 +1,13 @@
 trigger:
-#- master
+- master
 - develop
 
-#- release/*
-#- hotfix/*
+- release/*
+- hotfix/*
 
-#- feature/*
-- feature/bb-159-storage-goes-azure-blob
+- feature/*
 
-#- architecture/*
+- architecture/*
 
 pool:
   vmImage: 'VS2017-Win2016'
@@ -58,7 +57,18 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApps'
+  displayName: 'Copy Client App Builds'
 # ./ClientApps
+
+
+# Scripts-Folder
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/scripts'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/scripts'
+  displayName: 'Copy Scripts Folder'
+# ./Scripts
 
 
 # Unit Tests

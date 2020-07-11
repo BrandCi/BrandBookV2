@@ -1,4 +1,5 @@
-﻿@{
+﻿@using BrandBook.Web.Framework.Helpers
+@{
     var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
     var routeData = ViewContext.RouteData;
 }
@@ -21,22 +22,10 @@
 
 @helper CurrentLanguageName(string culture)
 {
+    var currentCulture = CultureHelper.GetEnabledCultures().FirstOrDefault(x => x.Key == culture);
 
-    if (culture == "de-de")
-    {
-        @:@Translations.system_culture_de_de_full
-    }
-    else if (culture == "ar-sa")
-    {
-        @:@Translations.system_culture_ar_sa_full
-    }
-    else
-    {
-        @:@Translations.system_culture_en_us_full
-    }
+    @:@currentCulture.Value
 }
-
-
 
 
 
@@ -57,26 +46,15 @@
                     @CurrentLanguageName(culture)
                 </a>
                 <ul role="menu" class="dropdown-menu languageSelection">
-
-                    <li class="nav-item">
-                        <label class="nav-link" for="de-de">
-                            <input name="culture" class="language-selection-item" id="de-de" value="de-de" type="radio" @Selected("de-de", culture) />
-                            @Translations.system_culture_de_de_full
-                        </label>
-                    </li>
-                    <li class="nav-item">
-                        <label class="nav-link" for="en-us">
-                            <input name="culture" class="language-selection-item" id="en-us" value="en-us" type="radio" @Selected("en-us", culture) />
-                            @Translations.system_culture_en_us_full
-                        </label>
-                    </li>
-                    <li class="nav-item">
-                        <label class="nav-link" for="ar-sa">
-                            <input name="culture" class="language-selection-item" id="ar-sa" value="ar-sa" type="radio" @Selected("ar-sa", culture) />
-                            @Translations.system_culture_ar_sa_full
-                        </label>
-                    </li>
-
+                    @foreach (var enabledCulture in CultureHelper.GetEnabledCultures())
+                    {
+                        <li class="nav-item">
+                            <label class="nav-link" for="@enabledCulture.Key">
+                                <input name="culture" class="language-selection-item" id="@enabledCulture.Key" value="@enabledCulture.Key" type="radio" @Selected(enabledCulture.Key, culture)/>
+                                @enabledCulture.Value
+                            </label>
+                        </li>
+                    }
                 </ul>
             </li>
         </ul>

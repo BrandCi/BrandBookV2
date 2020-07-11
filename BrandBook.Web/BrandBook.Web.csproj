@@ -224,6 +224,7 @@
   <ItemGroup>
     <Content Include="App_Data\BrandBook_Content\06b354ec-78ad-4bac-bafa-5afcddb75de5.png" />
     <Content Include="App_Data\BrandBook_Content\7996c187-3620-495d-985d-e823b3f96c5c.svg" />
+    <Content Include="App_Data\BrandBook_Content\apple-touch-icon.png" />
     <Content Include="App_Data\BrandBook_Content\AuthData\b14828a6-69ac-4d63-a7e0-0f442729e318.svg" />
     <Content Include="App_Data\BrandBook_Content\b3eb0b70-1229-4b6c-9819-fbd1a3e7db70.svg" />
     <Content Include="App_Data\BrandBook_Content\BrandData\1e829ca5-c778-4529-b5e8-01ee8ead6633.jpg" />
@@ -265,6 +266,7 @@
     <Content Include="App_Data\BrandBook_Content\EmailData\images\vpn_key-48-primary.png" />
     <Content Include="App_Data\BrandBook_Content\EmailData\images\vpn_key-48-white.png" />
     <Content Include="App_Data\BrandBook_Content\EmailData\images\warning-24-white.png" />
+    <Content Include="App_Data\BrandBook_Content\favicon.ico" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\ad.svg" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\ae.svg" />
     <Content Include="App_Data\BrandBook_Content\Flag-Icon\1x1\af.svg" />
@@ -804,6 +806,22 @@
     <Content Include="App_Data\BrandBook_Content\FrontendData\f1facc1e-d48a-4cc9-9853-1895d7d1a739.svg" />
     <Content Include="App_Data\BrandBook_Content\FrontendData\fa805559-1642-4951-ad35-a2d7cc46c16a.png" />
     <Content Include="App_Data\BrandBook_Content\UserData\94c87e0c-4c8a-4398-ab25-37a6333de0e0.jpg" />
+    <Content Include="Content\dist\App\bootstrap-rtl.css" />
+    <Content Include="Content\dist\App\bootstrap-rtl.min.css" />
+    <Content Include="Content\dist\App\style.css" />
+    <Content Include="Content\dist\App\style.min.css" />
+    <Content Include="Content\dist\App\style_dark.css" />
+    <Content Include="Content\dist\App\style_dark.min.css" />
+    <Content Include="Content\dist\Auth\Styles.css" />
+    <Content Include="Content\dist\Auth\Styles.min.css" />
+    <Content Include="Content\dist\Flag-Icon\flag-icon.css" />
+    <Content Include="Content\dist\Flag-Icon\flag-icon.min.css" />
+    <Content Include="Content\dist\Frontend\responsive.css" />
+    <Content Include="Content\dist\Frontend\responsive.min.css" />
+    <Content Include="Content\dist\Frontend\rtl.css" />
+    <Content Include="Content\dist\Frontend\rtl.min.css" />
+    <Content Include="Content\dist\Frontend\style.css" />
+    <Content Include="Content\dist\Frontend\style.min.css" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
     <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
     <Content Include="Content\EmailTemplates\General_PrivacyRequest.html" />
@@ -817,50 +835,14 @@
     <Content Include="Content\LegalPages\PrivacyPolicy\en.html" />
     <Content Include="Content\LegalPages\Imprint\de.html" />
     <Content Include="Content\LegalPages\Imprint\en.html" />
-    <Content Include="Content\Style\App\bootstrap-rtl.css">
-      <DependentUpon>bootstrap-rtl.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\bootstrap-rtl.min.css">
-      <DependentUpon>bootstrap-rtl.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style.css">
-      <DependentUpon>style.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style.min.css">
-      <DependentUpon>style.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style_dark.css">
-      <DependentUpon>style_dark.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\App\style_dark.min.css">
-      <DependentUpon>style_dark.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Auth\Styles.css">
-      <DependentUpon>Styles.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Auth\Styles.min.css">
-      <DependentUpon>Styles.css</DependentUpon>
-    </Content>
     <Content Include="Content\Style\bootstrap-grid.css" />
     <Content Include="Content\Style\bootstrap-grid.min.css" />
     <Content Include="Content\Style\bootstrap-reboot.css" />
     <Content Include="Content\Style\bootstrap-reboot.min.css" />
     <Content Include="Content\Style\bootstrap.css" />
     <Content Include="Content\Style\bootstrap.min.css" />
-    <Content Include="Content\Style\Flag-Icon\flag-icon.css">
-      <DependentUpon>flag-icon.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Flag-Icon\flag-icon.min.css">
-      <DependentUpon>flag-icon.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Frontend\responsive.css" />
-    <Content Include="Content\Style\Frontend\rtl.css" />
-    <Content Include="Content\Style\Frontend\style.css">
-      <DependentUpon>style.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Style\Frontend\style.min.css">
-      <DependentUpon>style.css</DependentUpon>
-    </Content>
+    <None Include="Content\Style\Frontend\responsive.scss" />
+    <None Include="Content\Style\Frontend\rtl.scss" />
     <Content Include="Error\400.html" />
     <Content Include="Error\401.html" />
     <Content Include="Error\403.html" />
@@ -1442,9 +1424,11 @@
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Dependencies\Auth\popper.min.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
     <Content Include="Scripts\Dependencies\Frontend\main.js" />
     <Content Include="Scripts\Packages\App\UserManagement\app-um-users-overview.js" />
+    <Content Include="Scripts\Packages\Auth\Validation\custom.registration.validation.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
     <Content Include="Scripts\Dependencies\Frontend\plugins.js" />
@@ -1503,6 +1487,8 @@
     <Content Include="Views\Blog\Overview.cshtml" />
     <Content Include="Views\Legal\PrivacyRequest.cshtml" />
     <Content Include="Views\Support\Faq.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerHeadComponent.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerBodyComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
@@ -1574,7 +1560,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

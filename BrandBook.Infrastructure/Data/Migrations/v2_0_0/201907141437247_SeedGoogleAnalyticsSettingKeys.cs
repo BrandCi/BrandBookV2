@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class SeedGoogleAnalyticsSettingKeys : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace BrandBook.Infrastructure.Migrations
             Sql("INSERT INTO[dbo].[Settings] ([Id], [Key], [Value], [Category], [AccessLevel]) VALUES(15, N'google_analytics_trackingkey', N'', 3, 1)");
             Sql("SET IDENTITY_INSERT[dbo].[Settings] OFF");
         }
-        
+
         public override void Down()
         {
         }

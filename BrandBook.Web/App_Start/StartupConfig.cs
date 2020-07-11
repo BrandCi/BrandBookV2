@@ -1,14 +1,12 @@
 ﻿using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Services.Authentication;
-using BrandBook.Services.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
-using System.Configuration;
 
 
 namespace BrandBook.Web
@@ -36,14 +34,14 @@ namespace BrandBook.Web
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            var isFacebookEnabled = ConfigurationManager.AppSettings["IsSocialFacebookEnabled"];
-            if (isFacebookEnabled == "true" || isFacebookEnabled == "1")
-            {
-                app.UseFacebookAuthentication(
-                    appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
-                    appSecret: ConfigurationManager.AppSettings["SocialFacebookAppSecret"]
-                );
-            }
+            // var isFacebookEnabled = ConfigurationManager.AppSettings["IsSocialFacebookEnabled"];
+            // if (isFacebookEnabled == "true" || isFacebookEnabled == "1")
+            // {
+            //     app.UseFacebookAuthentication(
+            //         appId: ConfigurationManager.AppSettings["SocialFacebookAppId"],
+            //         appSecret: ConfigurationManager.AppSettings["SocialFacebookAppSecret"]
+            //     );
+            // }
 
 
         }

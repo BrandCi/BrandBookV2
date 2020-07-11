@@ -21,7 +21,7 @@ namespace BrandBook.Services.Authentication
 
         public bool IsAuthorized(int appUserId, int? id)
         {
-            
+
             var appUser = _unitOfWork.AppUserRepository.FindById(appUserId);
 
             // TODO: UnitTest

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using BrandBook.Core.Services.Messaging;
+﻿using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
+using System;
+using System.Configuration;
 
 namespace BrandBook.Services.Notification
 {
@@ -25,6 +20,8 @@ namespace BrandBook.Services.Notification
         private readonly string _siteName;
         private readonly string _sender;
 
+        private readonly string _appEnvironment;
+
 
         public NotificationService()
         {
@@ -34,6 +31,8 @@ namespace BrandBook.Services.Notification
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
             _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
             _sender = ConfigurationManager.AppSettings["MailgunApiSender"];
+
+            _appEnvironment = ConfigurationManager.AppSettings["Environment"];
         }
 
 
@@ -61,6 +60,10 @@ namespace BrandBook.Services.Notification
             request.AddParameter("from", _sender);
             request.AddParameter("to", emailReceiver);
             request.AddParameter("subject", emailSubject);
+
+            request.AddParameter("o:tag", _appEnvironment);
+            request.AddParameter("o:tag", model.Type);
+
             request.AddParameter("html", emailContent);
 
             request.Method = Method.POST;
@@ -70,16 +73,15 @@ namespace BrandBook.Services.Notification
 
             if (execution.IsSuccessful)
             {
-                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
+                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}");
 
                 return true;
             }
-            else
-            {
-                Logger.Error("Notification: {" + execution.ErrorMessage + "}, {'requestip': '" + HttpContext.Current.Request.UserHostAddress + "'}");
 
-                return false;
-            }
+            Logger.Error("Notification: {" + execution.ErrorMessage + "}");
+
+            return false;
+
         }
 
 

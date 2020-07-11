@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddIconsTablesAndAdjustedRelationsInColorsTable : DbMigration
     {
         public override void Up()
@@ -13,34 +12,34 @@ namespace BrandBook.Infrastructure.Migrations
             CreateTable(
                 "dbo.IconCategories",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Sorting = c.Int(nullable: false),
-                        BrandId = c.Int(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Sorting = c.Int(nullable: false),
+                    BrandId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Brands", t => t.BrandId, cascadeDelete: true)
                 .Index(t => t.BrandId);
-            
+
             CreateTable(
                 "dbo.Icons",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        ClassName = c.String(),
-                        Prefix = c.String(),
-                        IconCategoryId = c.Int(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    ClassName = c.String(),
+                    Prefix = c.String(),
+                    IconCategoryId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.IconCategories", t => t.IconCategoryId, cascadeDelete: true)
                 .Index(t => t.IconCategoryId);
-            
+
             AlterColumn("dbo.Colors", "Brand_Id", c => c.Int());
             CreateIndex("dbo.Colors", "Brand_Id");
             AddForeignKey("dbo.Colors", "Brand_Id", "dbo.Brands", "Id");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Colors", "Brand_Id", "dbo.Brands");

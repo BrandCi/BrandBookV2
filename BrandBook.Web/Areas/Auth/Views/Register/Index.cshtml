@@ -26,28 +26,77 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @Value = Model.Email, @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) + "*" })
+                        <div class="input-group mb-3">
+                            @Html.TextBoxFor(m => m.Email, new { @Value = Model.Email, @type = "Email", @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) + "*", aria_describedby = "check-email-icon" })
+                            <div class="input-group-append">
+                                <span class="input-group-text text-success custom-inputvalidation-box" id="check-email-icon-success" style="display: none;">
+                                    <i class="far fa-check-circle"></i>
+                                </span>
+                                <span class="input-group-text text-danger custom-inputvalidation-box" id="check-email-icon-error" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Username, new { @Value = Model.Username, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) + "*" })
+                        <div class="input-group mb-3">
+                            @Html.TextBoxFor(m => m.Username, new { @Value = Model.Username, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) + "*" })
+                            <div class="input-group-append">
+                                <span class="input-group-text text-success custom-inputvalidation-box" id="check-username-icon-success" style="display: none;">
+                                    <i class="far fa-check-circle"></i>
+                                </span>
+                                <span class="input-group-text text-danger custom-inputvalidation-box" id="check-username-icon-error" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) + "*" })
+                        <div class="input-group mb-3">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) + "*", aria_describedby = "button-password-info" })
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="togglePasswordInfoBox()" tabIndex="-1">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="validation-password" style="display: none;">
+                            The password you entered does not conform to the password policy.
+                        </span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) + "*" })
+                        <div class="alert alert-secondary" role="alert" id="password-info-box" style="display: none; font-weight: 200;">
+                            At least 8 characters, 1 special character, 1 digit, and at least one uppercase character.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="input-group mb-3">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) + "*" })
+                            <div class="input-group-append">
+                                <span class="input-group-text text-success custom-inputvalidation-box" id="check-confirmpassword-icon-success" style="display: none;">
+                                    <i class="far fa-check-circle"></i>
+                                </span>
+                                <span class="input-group-text text-danger custom-inputvalidation-box" id="check-confirmpassword-icon-error" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -100,3 +149,8 @@
         </div>
     </div>
 </div>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/packages/auth/registration/validation")    
+}

@@ -1,9 +1,9 @@
-﻿using System;
-using BrandBook.Core.Domain.User;
+﻿using BrandBook.Core.Domain.User;
 using BrandBook.Infrastructure.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using System;
 
 namespace BrandBook.Services.Authentication
 {
@@ -28,7 +28,7 @@ namespace BrandBook.Services.Authentication
             // Validation for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
+                RequiredLength = 8,
                 RequireNonLetterOrDigit = true,
                 RequireDigit = true,
                 RequireLowercase = true,

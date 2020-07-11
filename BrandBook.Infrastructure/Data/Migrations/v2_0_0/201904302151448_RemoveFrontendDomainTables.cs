@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class RemoveFrontendDomainTables : DbMigration
     {
         public override void Up()
@@ -12,7 +11,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropTable("dbo.ImprintCategories");
             DropTable("dbo.ImprintValues");*/
         }
-        
+
         public override void Down()
         {/*
             CreateTable(

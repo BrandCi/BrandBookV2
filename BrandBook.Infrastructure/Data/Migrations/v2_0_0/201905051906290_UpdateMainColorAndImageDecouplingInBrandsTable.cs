@@ -1,8 +1,7 @@
 namespace BrandBook.Infrastructure.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdateMainColorAndImageDecouplingInBrandsTable : DbMigration
     {
         public override void Up()
@@ -13,7 +12,7 @@ namespace BrandBook.Infrastructure.Migrations
             DropColumn("dbo.Brands", "Image");
             DropColumn("dbo.Brands", "MainColor");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.Brands", "MainColor", c => c.String());

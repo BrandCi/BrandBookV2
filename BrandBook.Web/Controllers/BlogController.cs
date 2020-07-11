@@ -1,11 +1,7 @@
-﻿using BrandBook.Core.Domain.Frontend;
-using BrandBook.Core.Repositories.Frontend;
+﻿using BrandBook.Core.Repositories.Frontend;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.Frontend;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Core.ViewModels.Frontend.Blog;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
@@ -34,14 +30,14 @@ namespace BrandBook.Web.Controllers
             ViewBag.Title = blog.Title;
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
-           
+
 
             return View();
         }
 
 
         public ActionResult Overview()
-        {  
+        {
 
             return View();
         }
