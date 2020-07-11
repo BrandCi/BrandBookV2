@@ -1,11 +1,13 @@
 using BrandBook.Core;
 using BrandBook.Core.Domain.Brand.Color;
+using BrandBook.Core.Services.Application;
 using BrandBook.Core.ViewModels.App.Brand;
 using BrandBook.Core.ViewModels.App.Brand.Colors;
 using BrandBook.Core.ViewModels.App.Brand.Fonts;
 using BrandBook.Core.ViewModels.App.Brand.Icons;
 using BrandBook.Core.ViewModels.App.Brand.Settings;
 using BrandBook.Infrastructure;
+using BrandBook.Services.Application;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
@@ -14,7 +16,6 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Image = BrandBook.Core.Domain.Resource.Image;
@@ -26,6 +27,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
+        private readonly IBrandService _brandService;
         protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
         public BrandController()
@@ -33,6 +35,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             this._unitOfWork = new UnitOfWork();
             this._cmpAuthService = new CompanyAuthorizationService();
             this._subscriptionService = new SubscriptionService();
+            _brandService = new BrandService();
         }
 
         // GET: App/Brand
@@ -165,7 +168,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 {
                     Name = font.Name,
                     Family = font.Family,
-                    GoogleFontLink = BuildGoogleFontLink(font.Id),
+                    GoogleFontLink = _brandService.BuildGoogleFontLink(font.Id),
                     FontInclusion = new FontInclusionViewModel()
                     {
                         HtmlInline = fontInclusion.HtmlInline,
@@ -340,7 +343,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
             var rgbColor = System.Drawing.ColorTranslator.FromHtml("#" + model.HexColor);
-            var cmykColor = ConvertRgbToCmyk(rgbColor.R, rgbColor.G, rgbColor.B);
+            var cmykColor = _brandService.ConvertRgbToCmyk(rgbColor.R, rgbColor.G, rgbColor.B);
 
 
             var color = new Color()
@@ -378,7 +381,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
 
-
         private void RemoveBrandImage(Image brandImage)
         {
             // Don't delete the default BrandImage
@@ -404,87 +406,20 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
         }
 
-
         private void BackupBrandImage(Image brandImage)
         {
-            var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
-            var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
-
-            System.IO.File.Copy(sourcePath, backupPath);
-
-
-        }
-
-
-        private string BuildGoogleFontLink(int fontId)
-        {
-            var googleFontLink = new StringBuilder();
-            googleFontLink.Append("https://fonts.googleapis.com/css?");
-
-            var font = _unitOfWork.FontRepository.FindById(fontId);
-
-            googleFontLink.Append($"family={font.Family}:");
-
-            var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(fontId);
-
-            foreach (var fontStyle in fontStyles)
+            try
             {
-                googleFontLink.Append(fontStyle.Weight);
+                var sourcePath = Server.MapPath("/SharedStorage/BrandImages/" + brandImage.Name);
+                var backupPath = Server.MapPath("/SharedStorage/_Backup_/BrandImages/" + brandImage.Name);
 
-                if (fontStyle.Style == "italic")
-                {
-                    googleFontLink.Append("i");
-                }
-
-                googleFontLink.Append(",");
+                System.IO.File.Copy(sourcePath, backupPath);
             }
-
-
-
-            return googleFontLink.ToString();
-        }
-
-
-
-
-        private List<int> ConvertRgbToCmyk(int r, int g, int b)
-        {
-            var cmyk = new List<int>();
-            int c, m, y, k;
-            float rConvert, gConvert, bConvert;
-
-            rConvert = r / 255F;
-            gConvert = g / 255F;
-            bConvert = b / 255F;
-
-            k = SaveCmyk(1 - Math.Max(Math.Max(rConvert, gConvert), bConvert));
-            c = SaveCmyk((1 - rConvert - k) / (1 - k));
-            m = SaveCmyk((1 - gConvert - k) / (1 - k));
-            y = SaveCmyk((1 - bConvert - k) / (1 - k));
-
-
-            cmyk.Add(c);
-            cmyk.Add(m);
-            cmyk.Add(y);
-            cmyk.Add(k);
-
-
-            return cmyk;
-
-        }
-
-
-
-        private int SaveCmyk(float value)
-        {
-            if (value < 0 || float.IsNaN(value))
+            catch (Exception)
             {
-                value = 0;
+                throw new Exception();
             }
-
-            return (int)Math.Round(value);
         }
-
 
         private bool UserIsNotAuthorizedForBrand(int brandId)
         {

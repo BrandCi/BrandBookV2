@@ -29,7 +29,7 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
             {
                 ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId<int>()).IsDarkmodeEnabled;
             }
-            
+
 
             return base.BeginExecuteCore(callback, state);
         }
