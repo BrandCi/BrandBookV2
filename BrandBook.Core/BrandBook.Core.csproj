@@ -109,9 +109,12 @@
     <Compile Include="Repositories\User\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
     <Compile Include="Services\Authentication\IReCaptchaService.cs" />
-    <Compile Include="Services\Notification\IEmailBuilder.cs" />
+    <Compile Include="Services\Notification\IEmailBuilderService.cs" />
     <Compile Include="Services\Notification\INotificationService.cs" />
     <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />
+    <Compile Include="Services\UserManagement\ICompanyService.cs" />
+    <Compile Include="Services\UserManagement\IRoleService.cs" />
+    <Compile Include="Services\UserManagement\IUserService.cs" />
     <Compile Include="ViewModels\App\Blog\AddBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\EditBlogEntryViewModel.cs" />
     <Compile Include="ViewModels\App\Blog\Overview\BlogOverviewViewModel.cs" />

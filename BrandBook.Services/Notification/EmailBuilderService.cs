@@ -8,14 +8,14 @@ using System.Web.Hosting;
 
 namespace BrandBook.Services.Notification
 {
-    public class EmailBuilder : IEmailBuilder
+    public class EmailBuilderService : IEmailBuilderService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly string _localEmailFolderPath;
         private readonly string _publicEmailFolderPath;
         private readonly string _fileServerUrlWithKey;
 
-        public EmailBuilder()
+        public EmailBuilderService()
         {
             _unitOfWork = new UnitOfWork();
 

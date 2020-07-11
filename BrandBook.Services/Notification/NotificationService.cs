@@ -11,7 +11,7 @@ namespace BrandBook.Services.Notification
 {
     public class NotificationService : INotificationService
     {
-        private readonly IEmailBuilder _emailBuilder;
+        private readonly IEmailBuilderService _emailBuilderService;
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
 
@@ -25,7 +25,7 @@ namespace BrandBook.Services.Notification
 
         public NotificationService()
         {
-            _emailBuilder = new EmailBuilder();
+            _emailBuilderService = new EmailBuilderService();
 
             _apiBasicUrl = ConfigurationManager.AppSettings["MailgunApiBasicUrl"];
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
@@ -44,7 +44,7 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
-            var emailContent = _emailBuilder.BuildEmail(model);
+            var emailContent = _emailBuilderService.BuildEmail(model);
             if (string.IsNullOrEmpty(emailContent))
             {
                 return false;

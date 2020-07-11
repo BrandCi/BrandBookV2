@@ -2,7 +2,7 @@
 
 namespace BrandBook.Core.Services.Notification
 {
-    public interface IEmailBuilder
+    public interface IEmailBuilderService
     {
         string BuildEmail(EmailTemplateViewModel model);
     }

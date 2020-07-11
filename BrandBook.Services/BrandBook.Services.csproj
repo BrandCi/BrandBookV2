@@ -84,12 +84,14 @@
     <Compile Include="Authentication\ReCaptchaService.cs" />
     <Compile Include="Authentication\SignInService.cs" />
     <Compile Include="Email\EmailService.cs" />
-    <Compile Include="Notification\EmailBuilder.cs" />
+    <Compile Include="Notification\EmailBuilderService.cs" />
     <Compile Include="Notification\NotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ImageService.cs" />
     <Compile Include="Subscriptions\SubscriptionService.cs" />
-    <Compile Include="Users\RoleService.cs" />
+    <Compile Include="UserManagement\CompanyService.cs" />
+    <Compile Include="UserManagement\UserService.cs" />
+    <Compile Include="UserManagement\RoleService.cs" />
     <Compile Include="Authentication\UserAuthenticationService.cs" />
   </ItemGroup>
   <ItemGroup>
