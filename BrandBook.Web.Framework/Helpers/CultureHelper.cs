@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using BrandBook.Resources;
 
 namespace BrandBook.Web.Framework.Helpers
 {
@@ -86,6 +87,25 @@ namespace BrandBook.Web.Framework.Helpers
         public static bool IsRightToLeft()
         {
             return Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft;
+        }
+
+
+        public static Dictionary<string, string> GetEnabledCultures()
+        {
+            var enabledCultures = new Dictionary<string, string>();
+
+            foreach (var culture in _cultures)
+            {
+                var cultureLowerCase = culture.ToLower();
+                var translationName = $"system_culture_{ cultureLowerCase.Replace("-", "_") }_full";
+
+                enabledCultures.Add(
+                    cultureLowerCase,
+                    Translations.ResourceManager.GetString(translationName)
+                  );
+            }
+
+            return enabledCultures;
         }
     }
 }
