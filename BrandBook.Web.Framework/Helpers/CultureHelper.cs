@@ -1,9 +1,9 @@
-﻿using System;
+﻿using BrandBook.Resources;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading;
-using BrandBook.Resources;
 
 namespace BrandBook.Web.Framework.Helpers
 {
@@ -56,7 +56,7 @@ namespace BrandBook.Web.Framework.Helpers
 
             return GetDefaultCulture();
         }
-        
+
 
         public static string GetDefaultCulture()
         {
@@ -92,7 +92,7 @@ namespace BrandBook.Web.Framework.Helpers
             return _cultures.ToDictionary(culture => culture.ToLower(), GetCultureFullNameByCultureCode);
         }
         #endregion
-        
+
 
         #region Helper Methods
         private static string GetCultureFullNameByCultureCode(string cultureCode)
