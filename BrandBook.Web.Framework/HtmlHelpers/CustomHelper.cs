@@ -104,7 +104,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         public static IHtmlString RenderReCaptchaRequest(string action)
         {
             var html = new StringBuilder();
-  
+
             if (!IsReCaptchaActive())
             {
                 return new HtmlString(html.ToString());
