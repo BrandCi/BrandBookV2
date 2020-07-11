@@ -32,8 +32,7 @@ namespace BrandBook.Web.Framework.Helpers
         private static readonly List<string> _cultures = new List<string>
         {
             "en-US",
-            "de-DE",
-            "ar-SA"
+            "de-DE"
         };
 
 
