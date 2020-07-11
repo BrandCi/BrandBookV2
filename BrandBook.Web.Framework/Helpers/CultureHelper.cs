@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading;
 using BrandBook.Resources;
@@ -8,6 +9,7 @@ namespace BrandBook.Web.Framework.Helpers
 {
     public static class CultureHelper
     {
+        #region Fields
         private static readonly List<string> _validCultures = new List<string>
         {
             "af", "af-ZA", "sq", "sq-AL", "gsw-FR", "am-ET", "ar", "ar-DZ", "ar-BH", "ar-EG", "ar-IQ", "ar-JO", "ar-KW", "ar-LB", "ar-LY", "ar-MA",
@@ -29,13 +31,11 @@ namespace BrandBook.Web.Framework.Helpers
             "tk-TM", "ug-CN", "uk", "uk-UA", "wen-DE", "ur", "ur-PK", "uz", "uz-Cyrl-UZ", "uz-Latn-UZ", "vi", "vi-VN", "cy-GB", "wo-SN", "sah-RU", "ii-CN", "yo-NG"
         };
 
-        private static readonly List<string> _cultures = new List<string>
-        {
-            "en-US",
-            "de-DE"
-        };
+        private static readonly List<string> _cultures = GetEnabledCulturesFromConfiguration();
+        #endregion
 
 
+        #region Public Static Methods
         public static string GetImplementedCulture(string name)
         {
             if (string.IsNullOrEmpty(name))
@@ -56,9 +56,7 @@ namespace BrandBook.Web.Framework.Helpers
 
             return GetDefaultCulture();
         }
-
-
-
+        
 
         public static string GetDefaultCulture()
         {
@@ -93,8 +91,10 @@ namespace BrandBook.Web.Framework.Helpers
         {
             return _cultures.ToDictionary(culture => culture.ToLower(), GetCultureFullNameByCultureCode);
         }
+        #endregion
+        
 
-
+        #region Helper Methods
         private static string GetCultureFullNameByCultureCode(string cultureCode)
         {
             var translationName = $"system_culture_{ cultureCode.ToLower().Replace("-", "_") }_full";
@@ -102,5 +102,13 @@ namespace BrandBook.Web.Framework.Helpers
 
             return !string.IsNullOrEmpty(translation) ? translation : cultureCode;
         }
+
+        private static List<string> GetEnabledCulturesFromConfiguration()
+        {
+            var enabledCulturesFromConfiguration = ConfigurationManager.AppSettings["EnabledAppCultures"];
+
+            return enabledCulturesFromConfiguration.Split(',').ToList();
+        }
+        #endregion
     }
 }
