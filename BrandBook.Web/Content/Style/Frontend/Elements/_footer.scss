@@ -247,9 +247,9 @@
     background: #1b1e29;
     .footer_top{
         border-color: #252130;
-        color: #b2b6c4;
+        color: $footer-link-text-color;
         p{
-            color: #b2b6c4;
+            color: $footer-link-text-color;
         }
         .f-title{
             color: #fff;
@@ -258,7 +258,7 @@
             .f_list{
                 li{
                     a{
-                        color: #b2b6c4;
+                        color: $footer-link-text-color;
                         &:before{
                             background: #a8a9ab;
                         }
@@ -291,9 +291,9 @@
         }
     }
     .footer_bottom{
-        color: #b2b6c4;
+        color: $footer-link-text-color;
         .f_menu li a{
-            color: #b2b6c4;
+            color: $footer-link-text-color;
             &:hover{
                 color: #fff;
             }

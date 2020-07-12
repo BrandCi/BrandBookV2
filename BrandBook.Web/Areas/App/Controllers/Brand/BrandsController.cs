@@ -16,21 +16,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
-
-
 namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
     public class BrandsController : AppMvcControllerBase
     {
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISubscriptionService _subscriptionService;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly ImageService _imageService;
 
         protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        #endregion
 
 
+        #region Constructor
         public BrandsController()
         {
             _unitOfWork = new UnitOfWork();
@@ -38,10 +38,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             _imageService = new ImageService();
             _subscriptionService = new SubscriptionService();
         }
+        #endregion
 
 
-
-        // GET: App/Brands
+        #region Public Actions
         public ActionResult Overview()
         {
             var allBrands = _unitOfWork.BrandRepository.GetAll().OrderBy(b => b.Name);
@@ -88,15 +88,16 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return View(viewmodel);
         }
 
-
         public ActionResult Add()
         {
             var model = new AddNewBrandViewModel();
 
             return View(model);
         }
+        #endregion
+        
 
-
+        #region Public POST Actions
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Add(AddNewBrandViewModel model, HttpPostedFileBase image)
@@ -146,10 +147,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return RedirectToAction("Index", "Brand", new { id = brand.Id, area = "App" });
 
         }
+        #endregion
+        
 
-
-
-
+        #region Helper Methods
         private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)
         {
             var filePath = Server.MapPath("/SharedStorage/BrandImages");
@@ -168,7 +169,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
         }
-
-
+        #endregion
     }
 }

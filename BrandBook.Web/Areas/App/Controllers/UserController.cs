@@ -11,16 +11,20 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "Administrator")]
     public class UserController : AppMvcControllerBase
     {
-
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
+        #endregion
 
+
+        #region Constructor
         public UserController()
         {
             this._unitOfWork = new UnitOfWork();
         }
+        #endregion
 
 
-        // GET: App/User
+        #region Actions
         public async Task<ActionResult> UserOverview()
         {
 
@@ -46,7 +50,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
-
 
         public async Task<ActionResult> CompanyOverview()
         {
@@ -80,7 +83,6 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(viewmodel);
         }
 
-
         public ActionResult RoleOverview()
         {
 
@@ -103,5 +105,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(model);
         }
+        #endregion
     }
 }

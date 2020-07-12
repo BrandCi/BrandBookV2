@@ -16,16 +16,20 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "BlogManager")]
     public class BlogEntryController : AppMvcControllerBase
     {
-
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
+        #endregion
 
+
+        #region Constructor
         public BlogEntryController()
         {
             this._unitOfWork = new UnitOfWork();
         }
+        #endregion
 
 
-        // GET: App/Blog
+        #region Actions
         public async Task<ActionResult> Index()
         {
 
@@ -50,9 +54,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
-
-
-
+        
         public ActionResult Add()
         {
             var viewModel = new AddBlogEntryViewModel()
@@ -62,8 +64,54 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
+        
+        public async Task<ActionResult> Edit(int id)
+        {
+            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
+            {
+                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+            }
+
+            var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
+
+            var viewModel = new EditBlogEntryViewModel()
+            {
+                Id = blogEntry.Id,
+                Title = blogEntry.Title,
+                SubTitle = blogEntry.SubTitle,
+                IsPublished = blogEntry.IsPublished,
+                IsVisibleForAnonymous = blogEntry.IsVisibleForAnonymous,
+                UrlKey = blogEntry.UrlKey,
+                AdditionalStyles = blogEntry.AdditionalStyles,
+                Content = blogEntry.Content,
+                Author = blogEntry.Author,
+                PublishDate = blogEntry.PublishDate
+            };
 
 
+
+            return View(viewModel);
+        }
+        
+        public ActionResult Delete(int id)
+        {
+            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
+            {
+                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+            }
+
+            var blogEntry = _unitOfWork.BlogEntryRepository.FindById(id);
+
+            _unitOfWork.BlogEntryRepository.Remove(blogEntry);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
+        }
+        #endregion
+
+
+        #region Public POST Actions
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -102,37 +150,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         }
 
-
-
-        public async Task<ActionResult> Edit(int id)
-        {
-            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
-            {
-                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
-            }
-
-            var blogEntry = await _unitOfWork.BlogEntryRepository.FindByIdAsync(id);
-
-            var viewModel = new EditBlogEntryViewModel()
-            {
-                Id = blogEntry.Id,
-                Title = blogEntry.Title,
-                SubTitle = blogEntry.SubTitle,
-                IsPublished = blogEntry.IsPublished,
-                IsVisibleForAnonymous = blogEntry.IsVisibleForAnonymous,
-                UrlKey = blogEntry.UrlKey,
-                AdditionalStyles = blogEntry.AdditionalStyles,
-                Content = blogEntry.Content,
-                Author = blogEntry.Author,
-                PublishDate = blogEntry.PublishDate
-            };
-
-
-
-            return View(viewModel);
-        }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -163,35 +180,10 @@ namespace BrandBook.Web.Areas.App.Controllers
             return RedirectToAction("Index", "BlogEntry", new { area = "App" });
 
         }
+        #endregion
 
 
-
-
-        public ActionResult Delete(int id)
-        {
-            if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
-            {
-                return RedirectToAction("Index", "BlogEntry", new { area = "App" });
-            }
-
-            var blogEntry = _unitOfWork.BlogEntryRepository.FindById(id);
-
-            _unitOfWork.BlogEntryRepository.Remove(blogEntry);
-            _unitOfWork.SaveChanges();
-
-
-            return RedirectToAction("Index", "BlogEntry", new { area = "App" });
-        }
-
-
-
-
-
-
-
-
-
-
+        #region Helper Methods
         private static string GenerateUrlKey()
         {
             var random = new Random();
@@ -202,7 +194,6 @@ namespace BrandBook.Web.Areas.App.Controllers
                 .Select(s => s[random.Next(s.Length)])
                 .ToArray());
         }
-
-
+        #endregion
     }
 }

@@ -14302,6 +14302,13 @@ select.custom-select {
   border: 1px solid #fff;
   padding-left: 30px; }
 
+footer.footer_area .footer-social-links {
+  margin-top: 5%; }
+  footer.footer_area .footer-social-links a {
+    font-size: 20px;
+    margin: 10%;
+    color: #b2b6c4; }
+
 /*
     RESPONSIVE STYLINGS
 */

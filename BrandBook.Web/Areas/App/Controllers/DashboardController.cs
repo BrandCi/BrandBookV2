@@ -5,7 +5,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class DashboardController : AppMvcControllerBase
     {
-        // GET: App/Dashboard
+        #region Actions
         public ActionResult Index()
         {
             return View();
@@ -15,5 +15,6 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             return View();
         }
+        #endregion
     }
 }

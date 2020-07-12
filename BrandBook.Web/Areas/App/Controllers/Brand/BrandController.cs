@@ -24,12 +24,16 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 {
     public class BrandController : AppMvcControllerBase
     {
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
         private readonly CompanyAuthorizationService _cmpAuthService;
         private readonly SubscriptionService _subscriptionService;
         private readonly IBrandService _brandService;
         protected static new readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+        #endregion
 
+
+        #region Constructor
         public BrandController()
         {
             this._unitOfWork = new UnitOfWork();
@@ -37,8 +41,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             this._subscriptionService = new SubscriptionService();
             _brandService = new BrandService();
         }
+        #endregion
 
-        // GET: App/Brand
+
+        #region Public Actions
         public async Task<ActionResult> Index(int id)
         {
             var brandId = id;
@@ -72,8 +78,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
         }
-
-
 
         public ActionResult Colors(int id)
         {
@@ -238,9 +242,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return View(model);
         }
 
-
-
-
         public ActionResult Settings(int id)
         {
             var brandId = id;
@@ -281,34 +282,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return View(model);
         }
 
-
-
-
-
-
-        [HttpPost]
-        public ActionResult UpdateGeneralSettings(BrandSettingsViewModel model)
-        {
-            if (!ModelState.IsValid && UserIsNotAuthorizedForBrand(model.Id))
-            {
-                return RedirectToAction("Overview", "Brands", new { area = "App" });
-            }
-
-            var brand = _unitOfWork.BrandRepository.FindById(model.Id);
-
-            brand.Name = model.GeneralSettingsViewModel.Name;
-            brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
-
-            _unitOfWork.BrandRepository.Update(brand);
-            _unitOfWork.SaveChanges();
-
-
-            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
-        }
-
-
-
-
         public ActionResult Delete(int id)
         {
             var brandId = id;
@@ -329,8 +302,29 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
             return RedirectToAction("Overview", "Brands", new { area = "App" });
         }
+        #endregion
 
 
+        #region Public POST Actions
+        [HttpPost]
+        public ActionResult UpdateGeneralSettings(BrandSettingsViewModel model)
+        {
+            if (!ModelState.IsValid && UserIsNotAuthorizedForBrand(model.Id))
+            {
+                return RedirectToAction("Overview", "Brands", new { area = "App" });
+            }
+
+            var brand = _unitOfWork.BrandRepository.FindById(model.Id);
+
+            brand.Name = model.GeneralSettingsViewModel.Name;
+            brand.MainHexColor = model.GeneralSettingsViewModel.MainHexColor;
+
+            _unitOfWork.BrandRepository.Update(brand);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Settings", "Brand", new { id = model.Id, area = "App" });
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -380,9 +374,10 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return RedirectToAction("Colors", "Brand", new { id = model.BrandId, area = "App" });
 
         }
+        #endregion
 
 
-
+        #region Helper Methods
         private void RemoveBrandImage(Image brandImage)
         {
             // Don't delete the default BrandImage
@@ -438,9 +433,6 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return true;
 
         }
-
-
-
-
+        #endregion
     }
 }

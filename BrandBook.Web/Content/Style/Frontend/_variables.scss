@@ -8,6 +8,9 @@ $h_dk:#051441;
 $p-color:#677294;
 
 
+$footer-link-text-color: #b2b6c4;
+
+
 // Mixins
 @mixin transition($property: all, $duration: 400ms, $animate: linear, $delay:0s){
     transition: $property $duration $animate $delay; 

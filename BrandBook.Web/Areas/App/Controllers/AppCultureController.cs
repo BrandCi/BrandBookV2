@@ -14,7 +14,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class AppCultureController : AppMvcControllerBase
     {
-
+        #region Actions
         public ActionResult Index()
         {
             var amountOfTranslations = LoadListOfTranslations().Count;
@@ -28,8 +28,6 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
-
-        // GET: App/Culture
         public ActionResult SetCulture(string culture)
         {
             culture = CultureHelper.GetImplementedCulture(culture);
@@ -54,9 +52,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return RedirectToAction("Index", "AppCulture", new { area = "App" });
         }
+        #endregion
 
 
-
+        #region Public Methods
         public FileResult ExportTranslationsByCulture(AppCultureViewModel model)
         {
             var translationName = GenerateTranslationExportName();
@@ -66,8 +65,10 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             // return RedirectToAction("Index", "AppCulture", new {area = "App"});
         }
+        #endregion
 
 
+        #region Helper Methods
         private void GenerateAndSaveTranslationFile(string translationName)
         {
             var csv = string.Join(
@@ -78,8 +79,6 @@ namespace BrandBook.Web.Areas.App.Controllers
             System.IO.File.WriteAllText(GetAbsoluteFilePath(translationName), csv);
 
         }
-
-
 
         private Dictionary<string, string> LoadListOfTranslations()
         {
@@ -102,7 +101,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         }
 
-
         private string GenerateTranslationExportName()
         {
             var currentDate = DateTime.Now;
@@ -116,5 +114,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return Path.Combine(folder, translationName);
         }
+        #endregion 
     }
 }

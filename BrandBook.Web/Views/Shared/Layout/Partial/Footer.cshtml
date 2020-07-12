@@ -1,5 +1,13 @@
 ﻿@using System.Configuration
 @using BrandBook.Web.Framework.HtmlHelpers
+
+@{
+    var currentYear = DateTime.Now.ToString("yyyy");
+
+    var facebookPageLink = ConfigurationManager.AppSettings["FacebookPageLink"];
+    var githubPageLink = ConfigurationManager.AppSettings["GithubPageLink"];
+}
+
 <footer class="footer_area footer_three">
     <div class="footer_top">
         <div class="container">
@@ -11,6 +19,19 @@
                         </a>
                         <p class="f_400 f_p f_size_15 mb-0 l_height28 mt_30">
                             @Translations.frontend_footer_slogan
+                        </p>
+                        <p>
+                            <div class="footer-social-links">
+                                <a href="@facebookPageLink" rel="nofollow" target="_blank" title="Open Facebook Page">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="@githubPageLink" rel="nofollow" target="_blank" title="Open Github Page">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="@Url.Action("Contact", "Support", new { area = "" })" title="Send Contact Request">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
                         </p>
                     </div>
                 </div>
@@ -78,7 +99,7 @@
                         <a href="@(ConfigurationManager.AppSettings["AuthorMainWebsiteUrl"])" target="_blank">
                             @Translations.frontend_footer_copyright
                         </a>
-                        © @DateTime.Now.ToString("yyyy") @Translations.frontend_footer_allrightsreserved
+                        © @currentYear @Translations.frontend_footer_allrightsreserved
                     </p>
 
                 </div>

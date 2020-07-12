@@ -12,16 +12,22 @@ namespace BrandBook.Web.Areas.App.Controllers
 {
     public class ProfileController : AppMvcControllerBase
     {
-
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
         private readonly SubscriptionService _subscriptionService;
+        #endregion
 
+
+        #region Constructor
         public ProfileController()
         {
             _unitOfWork = new UnitOfWork();
             _subscriptionService = new SubscriptionService();
         }
+        #endregion
 
+
+        #region Actions
         public ActionResult Index()
         {
             var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
@@ -37,31 +43,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(model);
         }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult UpdateUserData(GeneralUserDataViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Index", "Profile", new { area = "App" });
-            }
-
-            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
-
-            appUser.FirstName = model.FirstName;
-            appUser.LastName = model.LastName;
-
-            _unitOfWork.AppUserRepository.UpdateWithModification(appUser);
-            _unitOfWork.SaveChanges();
-
-
-            return RedirectToAction("Index", "Profile", new { area = "App" });
-        }
-
-
-
 
         public ActionResult Subscriptions()
         {
@@ -101,7 +82,6 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View(viewModel);
         }
 
-
         public ActionResult ChangeAppColorMode(string mode)
         {
             var user = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
@@ -119,5 +99,30 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return RedirectToAction("Index", "Dashboard", new { area = "App" });
         }
+        #endregion
+
+
+        #region Public POST Actions
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateUserData(GeneralUserDataViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "Profile", new { area = "App" });
+            }
+
+            var appUser = _unitOfWork.AppUserRepository.FindById(User.Identity.GetUserId<int>());
+
+            appUser.FirstName = model.FirstName;
+            appUser.LastName = model.LastName;
+
+            _unitOfWork.AppUserRepository.UpdateWithModification(appUser);
+            _unitOfWork.SaveChanges();
+
+
+            return RedirectToAction("Index", "Profile", new { area = "App" });
+        }
+        #endregion
     }
 }
