@@ -138,6 +138,17 @@ select.custom-select {
 }
 
 
+footer.footer_area .footer-social-links {
+    margin-top: 5%;
+
+    a {
+        font-size: 20px;
+        margin: 2.5%;
+        color: $footer-link-text-color;
+    }
+}
+
+
 /*
     RESPONSIVE STYLINGS
 */
@@ -159,7 +170,6 @@ select.custom-select {
     .auth-user-fe-buttons {
         margin-left: 5%;
     }
-           
 }
 
 @media screen and (max-width: 418px) {
