@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Configuration;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace BrandBook.Web
 {
@@ -13,7 +15,12 @@ namespace BrandBook.Web
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             settings.Formatting = Formatting.Indented;
 
-            config.EnableCors();
+            #region CORS Handling
+            var applicationMainDomain = ConfigurationManager.AppSettings["ApplicationMainDomain"];
+
+            var cors = new EnableCorsAttribute(applicationMainDomain, "*", "*");
+            config.EnableCors(cors);
+            #endregion
 
             config.MapHttpAttributeRoutes();
 
