@@ -13,7 +13,6 @@ namespace BrandBook.Web
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             settings.Formatting = Formatting.Indented;
 
-            config.EnableCors();
 
             config.MapHttpAttributeRoutes();
 
