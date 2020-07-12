@@ -6,11 +6,9 @@ using BrandBook.Web.Framework.Controllers.ApiControllers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace BrandBook.Web.Api.Frontend
 {
-    [DisableCors]
     [RoutePrefix("api/v1/blogs")]
     public class BlogsController : FrontendApiControllerBase
     {
