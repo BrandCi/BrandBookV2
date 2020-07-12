@@ -129,7 +129,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
 
-            return View(model);
+            return View("~/Areas/App/Views/Brand/Colors/Colors.cshtml", model);
         }
 
         public ActionResult Fonts(int id)

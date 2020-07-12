@@ -1236,7 +1236,7 @@
     <Content Include="Areas\App\Views\User\CompanyOverview.cshtml" />
     <Content Include="Areas\App\Views\Brands\Add.cshtml" />
     <Content Include="Areas\App\Views\Brand\Settings.cshtml" />
-    <Content Include="Areas\App\Views\Brand\Colors.cshtml" />
+    <Content Include="Areas\App\Views\Brand\Colors\Colors.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\Shared\Layout\_Layout.cshtml" />
     <Content Include="Areas\Public\Views\Shared\Layout\Partial\_Navigation.cshtml" />
