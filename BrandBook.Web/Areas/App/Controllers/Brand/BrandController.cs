@@ -333,6 +333,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddColorItem(AddColorItemViewModel model)
         {
 
