@@ -11,17 +11,20 @@ namespace BrandBook.Web.Areas.App.Controllers
     [Authorize(Roles = "Administrator")]
     public class LoggingController : AppMvcControllerBase
     {
-
+        #region Fields
         private readonly IUnitOfWork _unitOfWork;
+        #endregion
 
+
+        #region Constructor
         public LoggingController()
         {
             _unitOfWork = new UnitOfWork();
         }
+        #endregion
 
 
-
-        // GET: App/Logging
+        #region Actions
         public ActionResult LoggingMessages()
         {
 
@@ -49,5 +52,6 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
+        #endregion
     }
 }
