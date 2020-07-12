@@ -847,6 +847,7 @@
     <Content Include="Content\Style\bootstrap-reboot.min.css" />
     <Content Include="Content\Style\bootstrap.css" />
     <Content Include="Content\Style\bootstrap.min.css" />
+    <Content Include="Areas\App\Views\Brand\Colors\AddColorItem.cshtml" />
     <None Include="Content\Style\Frontend\responsive.scss" />
     <None Include="Content\Style\Frontend\rtl.scss" />
     <Content Include="Error\400.html" />
