@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrandBook.Services.Email
 {
+    [Obsolete("This Service is no longer supported! Use NotificationService instead.", false)]
     public class EmailService
     {
 

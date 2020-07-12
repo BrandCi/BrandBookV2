@@ -6,6 +6,7 @@ trigger:
 - hotfix/*
 
 - feature/*
+- bugfix/*
 
 - architecture/*
 

@@ -129,7 +129,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
 
-            return View(model);
+            return View("~/Areas/App/Views/Brand/Colors/Colors.cshtml", model);
         }
 
         public ActionResult Fonts(int id)
@@ -333,6 +333,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddColorItem(AddColorItemViewModel model)
         {
 
@@ -350,6 +351,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             {
                 Name = model.Name,
                 Sorting = 1,
+                HexColorCode = model.HexColor,
 
                 Category = new ColorCategory()
                 {
