@@ -351,6 +351,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             {
                 Name = model.Name,
                 Sorting = 1,
+                HexColorCode =  model.HexColor,
 
                 Category = new ColorCategory()
                 {
