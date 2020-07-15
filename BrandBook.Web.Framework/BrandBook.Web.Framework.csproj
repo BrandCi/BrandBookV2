@@ -119,7 +119,7 @@
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\AppCustomHelper.cs" />
     <Compile Include="HtmlHelpers\AuthCustomHelper.cs" />
-    <Compile Include="HtmlHelpers\CustomHelper.cs" />
+    <Compile Include="HtmlHelpers\CustomHtmlHelper.cs" />
     <Compile Include="HtmlHelpers\FrontendCustomHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

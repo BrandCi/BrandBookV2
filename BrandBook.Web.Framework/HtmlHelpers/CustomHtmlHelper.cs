@@ -7,12 +7,12 @@ using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
-    public static class CustomHelper
+    public static class CustomHtmlHelper
     {
 
         private static readonly ISettingRepository settingRepository;
 
-        static CustomHelper()
+        static CustomHtmlHelper()
         {
             settingRepository = new SettingRepository(new BrandBookDbContext());
         }

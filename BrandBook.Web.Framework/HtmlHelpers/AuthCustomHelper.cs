@@ -16,7 +16,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             {
                 html.Append("<div class=\"info-holder\">");
                 html.Append("<img src=\"");
-                html.Append(CustomHelper.ImagePath(imageName, imageType, "AuthData"));
+                html.Append(CustomHtmlHelper.ImagePath(imageName, imageType, "AuthData"));
                 html.Append("\" />");
                 html.Append("</div>");
             }

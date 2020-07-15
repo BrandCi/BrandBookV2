@@ -78,7 +78,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 PrivacyPolicyAccepted = Convert.ToInt32(user.PrivacyPolicyAccepted),
                 IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled),
 
-                ProfileImagePath = CustomHelper.ImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
+                ProfileImagePath = CustomHtmlHelper.ImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
             };
 
 
