@@ -19,7 +19,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         }
 
 
-        public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
+        public static IHtmlString Image(string imageFileName, string classes = "", string styles = "", string additionalAttributes = "")
         {
 
             var html = new StringBuilder();
@@ -27,7 +27,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append("<img");
 
             html.Append(" src=\"");
-            html.Append(CustomHelper.GetImagePath(imageName, imageType: imageType));
+            html.Append(CustomHelper.GetImagePath(imageFileName));
             html.Append("\" ");
 
             if (classes != "")

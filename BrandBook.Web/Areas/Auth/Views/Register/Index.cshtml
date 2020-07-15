@@ -1,5 +1,6 @@
 ﻿@model BrandBook.Core.ViewModels.Auth.RegisterViewModel
 @using System.Configuration
+@using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 
 
@@ -9,7 +10,7 @@
 }
 
 @section header {
-    @CustomHelper.RenderReCaptchaRequest("auth_registration")
+    @CustomHtmlHelper.RenderReCaptchaRequest("auth_registration")
 }
 
 @AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
