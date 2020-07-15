@@ -29,7 +29,7 @@ namespace BrandBook.Web.Framework.Helpers
 
             imagePath.Append(GetCdnBaseUrl());
 
-            if (string.IsNullOrEmpty(area))
+            if (!string.IsNullOrEmpty(area))
             {
                 imagePath.Append($"/{area}");
             }
