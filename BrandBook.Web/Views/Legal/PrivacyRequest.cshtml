@@ -1,16 +1,17 @@
 ﻿@model BrandBook.Core.ViewModels.Frontend.Legal.PrivacyRequestViewModel
+@using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = Translations.frontend_legal_privacyrequest_title;
 }
 
 @section styles {
-    @CustomHelper.RenderReCaptchaRequest("frontend_privacyrequest")
+    @CustomHtmlHelper.RenderReCaptchaRequest("frontend_privacyrequest")
 }
 
 
 <section class="breadcrumb_area">
-    @CustomHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
+    @CustomHtmlHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6", "png", "breadcrumb_shap")
     <div class="container">
         <div class="breadcrumb_content text-center">
             <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">

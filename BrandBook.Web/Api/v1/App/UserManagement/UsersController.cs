@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
+using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {
@@ -78,7 +79,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 PrivacyPolicyAccepted = Convert.ToInt32(user.PrivacyPolicyAccepted),
                 IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled),
 
-                ProfileImagePath = CustomHtmlHelper.ImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
+                ProfileImagePath = CustomHelper.GetImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
             };
 
 

@@ -16,6 +16,13 @@ namespace BrandBook.Web.Framework.Helpers
             return $"https://{cdnServerUrl}/{cdnServerKey}";
         }
 
+        public static string GetImagePath(string imageName, string imageType, string area = "")
+        {
+            var imageFileName = $"{imageName}.{imageType}";
+
+            return GetImagePath(imageFileName, area);
+        }
+
         public static string GetImagePath(string imageName, string area = "")
         {
             var imagePath = new StringBuilder();
@@ -31,6 +38,12 @@ namespace BrandBook.Web.Framework.Helpers
 
 
             return imagePath.ToString();
+        }
+
+        public static bool IsReCaptchaActive()
+        {
+            bool.TryParse(ConfigurationManager.AppSettings["ReCaptchaActive"], out var reCaptchaActive);
+            return reCaptchaActive;
         }
         #endregion
     }

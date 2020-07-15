@@ -1,17 +1,17 @@
 ﻿@model BrandBook.Core.ViewModels.Frontend.Support.ContactFormViewModel
-@using System.Configuration
+@using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 @{
     ViewBag.Title = Translations.frontend_contact_title;
 }
 
 @section styles {
-    @CustomHelper.RenderReCaptchaRequest("frontend_contact")
+    @CustomHtmlHelper.RenderReCaptchaRequest("frontend_contact")
 }
 
 
 <section class="breadcrumb_area subpage">
-    @CustomHelper.Image("FrontendData/97890464-ff47-4dd0-b0a7-600ca16b325d", "png", "breadcrumb_shap")
+    @CustomHtmlHelper.Image("FrontendData/97890464-ff47-4dd0-b0a7-600ca16b325d", "png", "breadcrumb_shap")
     <div class="container">
         <div class="breadcrumb_content text-center">
             <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">

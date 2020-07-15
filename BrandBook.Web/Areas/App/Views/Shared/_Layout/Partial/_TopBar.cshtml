@@ -6,7 +6,7 @@
     <div class="topbar-left">
         <div class="text-center">
             <a href="@Url.Action("Index", "Dashboard", new {area = "App"})" class="logo">
-                @CustomHelper.Image("b3eb0b70-1229-4b6c-9819-fbd1a3e7db70", "svg", additionalAttributes: "height=\"30\"") <span></span>
+                @CustomHtmlHelper.Image("b3eb0b70-1229-4b6c-9819-fbd1a3e7db70", "svg", additionalAttributes: "height=\"30\"") <span></span>
             </a>
         </div>
     </div>
@@ -19,7 +19,7 @@
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    @CustomHelper.Image("UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "rounded-circle")
+                    @CustomHtmlHelper.Image("UserData/94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "rounded-circle")
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                     <!-- item-->
