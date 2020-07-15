@@ -10,15 +10,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 {
     public static class CustomHtmlHelper
     {
-
-        private static readonly ISettingRepository settingRepository;
-
-        static CustomHtmlHelper()
-        {
-            settingRepository = new SettingRepository(new BrandBookDbContext());
-        }
-
-
         public static IHtmlString Image(string imageFileName, string classes = "", string styles = "", string additionalAttributes = "")
         {
 
