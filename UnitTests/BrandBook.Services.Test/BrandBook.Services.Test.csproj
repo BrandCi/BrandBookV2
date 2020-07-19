@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\BrandServiceTests.cs" />
     <Compile Include="Resources\ImageServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BrandBook.Core\BrandBook.Core.csproj">
+      <Project>{095315A3-F944-4219-BBFF-DAAA4D214C03}</Project>
+      <Name>BrandBook.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\BrandBook.Services\BrandBook.Services.csproj">
       <Project>{8c90c0cd-8087-4521-b92f-f2845be4e5f6}</Project>
       <Name>BrandBook.Services</Name>
