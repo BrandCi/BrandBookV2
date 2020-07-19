@@ -1,5 +1,4 @@
 ﻿@using BrandBook.Web.Framework.Helpers
-@using BrandBook.Web.Framework.HtmlHelpers
 
 <!DOCTYPE html>
 <html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRightToLeft() ? "rtl" : "ltr")">
@@ -9,8 +8,8 @@
     <meta name="author" content="Philipp C. Moser">
     <meta name="description" content="Brand Book V2">
 
-    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.ImagePath("favicon", "ico")">
-    <link rel="apple-touch-icon" href="@CustomHelper.ImagePath("apple-touch-icon", "png")">
+    <link rel="icon" type="image/png" sizes="100x100" href="@CustomHelper.GetImagePath("favicon", imageType: "ico")">
+    <link rel="apple-touch-icon" href="@CustomHelper.GetImagePath("apple-touch-icon", imageType: "png")">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - @ViewBag.MetaAppTitle</title>

@@ -109,6 +109,7 @@
     <Compile Include="Repositories\User\IUserRoleRepository.cs" />
     <Compile Include="Services\Application\IBrandService.cs" />
     <Compile Include="Services\Authentication\IReCaptchaService.cs" />
+    <Compile Include="Services\ISettingService.cs" />
     <Compile Include="Services\Notification\IEmailBuilder.cs" />
     <Compile Include="Services\Notification\INotificationService.cs" />
     <Compile Include="Services\Subscriptions\ISubscriptionService.cs" />

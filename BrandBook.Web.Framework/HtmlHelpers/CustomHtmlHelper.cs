@@ -1,40 +1,13 @@
-﻿using BrandBook.Core.Repositories.Setting;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
+﻿using BrandBook.Web.Framework.Helpers;
 using System.Configuration;
 using System.Text;
 using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {
-    public static class CustomHelper
+    public static class CustomHtmlHelper
     {
-
-        private static readonly ISettingRepository settingRepository;
-
-        static CustomHelper()
-        {
-            settingRepository = new SettingRepository(new BrandBookDbContext());
-        }
-
-        public static string ImagePath(string imageName, string imageType, string imageSection = "")
-        {
-            var contentServer = settingRepository.GetSettingByKey("conf_media_server").Value;
-            var contentKey = settingRepository.GetSettingByKey("conf_media_key").Value;
-
-            if (imageType != "")
-            {
-                imageName = imageName + "." + imageType;
-            }
-
-            if (imageSection != "")
-            {
-                return "https://" + contentServer + "/" + contentKey + "/" + imageSection + "/" + imageName;
-            }
-            return "https://" + contentServer + "/" + contentKey + "/" + imageName;
-        }
-
-        public static IHtmlString Image(string imageName, string imageType, string classes = "", string styles = "", string additionalAttributes = "")
+        public static IHtmlString Image(string imageFileName, string classes = "", string styles = "", string additionalAttributes = "")
         {
 
             var html = new StringBuilder();
@@ -42,7 +15,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append("<img");
 
             html.Append(" src=\"");
-            html.Append(ImagePath(imageName, imageType));
+            html.Append(CustomHelper.GetImagePath(imageFileName));
             html.Append("\" ");
 
             if (classes != "")
@@ -69,8 +42,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
 
         public static IHtmlString SharedStorageImage(string imageNameAndType, string classes = "", string styles = "", string additionalAttributes = "")
         {
-
-
             var html = new StringBuilder();
 
             html.Append("<img");
@@ -95,7 +66,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             }
 
 
-
             html.Append(" />");
 
             return new HtmlString(html.ToString());
@@ -105,7 +75,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
         {
             var html = new StringBuilder();
 
-            if (!IsReCaptchaActive())
+            if (!CustomHelper.IsReCaptchaActive())
             {
                 return new HtmlString(html.ToString());
             }
@@ -124,12 +94,6 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             html.Append("</script>");
 
             return new HtmlString(html.ToString());
-        }
-
-        public static bool IsReCaptchaActive()
-        {
-            bool.TryParse(ConfigurationManager.AppSettings["ReCaptchaActive"], out var reCaptchaActive);
-            return reCaptchaActive;
         }
     }
 
