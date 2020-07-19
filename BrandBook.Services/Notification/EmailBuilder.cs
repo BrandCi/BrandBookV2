@@ -1,33 +1,25 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services.Notification;
+﻿using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Infrastructure;
+using System.Configuration;
 using System.IO;
-using System.Text;
 using System.Web.Hosting;
 
 namespace BrandBook.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly string _localEmailFolderPath;
         private readonly string _publicEmailFolderPath;
         private readonly string _fileServerUrlWithKey;
 
         public EmailBuilder()
         {
-            _unitOfWork = new UnitOfWork();
-
             _localEmailFolderPath = HostingEnvironment.ApplicationPhysicalPath + "/Content/EmailTemplates";
-            _publicEmailFolderPath = _unitOfWork.SettingRepository.GetSettingByKey("conf_system_baseisurl").Value;
 
-            var urlBuilder = new StringBuilder();
-            urlBuilder.Append(_unitOfWork.SettingRepository.GetSettingByKey("conf_media_server").Value);
-            urlBuilder.Append("/");
-            urlBuilder.Append(_unitOfWork.SettingRepository.GetSettingByKey("conf_media_key").Value);
+            var settingService = new SettingService();
+            _publicEmailFolderPath = settingService.GetSettingValueByKey("conf_system_baseisurl");
 
-            _fileServerUrlWithKey = urlBuilder.ToString();
+            _fileServerUrlWithKey = $"{ConfigurationManager.AppSettings["CdnServerUrl"]}/{ConfigurationManager.AppSettings["CdnServerKey"]}";
         }
 
 

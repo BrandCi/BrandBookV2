@@ -27,6 +27,8 @@ Foreach ($url IN $urls)
 {
     #region Preparation
     $completeUrl = $baseUrl + $url
+
+    Write-Host "Touching " $completeUrl
     $response = Invoke-WebRequest -Uri $completeUrl -Method Get
 
     $statusCode = $response.StatusCode
