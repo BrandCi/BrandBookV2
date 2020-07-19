@@ -9,11 +9,13 @@ namespace BrandBook.Services.Test.Subscriptinos
     public class SubscriptionServiceTests
     {
         private ISubscriptionService _subscriptionService;
+        private string _subscriptionKeyChars;
 
         [TestInitialize]
         public void TestInitialization()
         {
             _subscriptionService = new SubscriptionService();
+            _subscriptionKeyChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         }
 
 
@@ -32,6 +34,22 @@ namespace BrandBook.Services.Test.Subscriptinos
             var subscriptionKey2 = _subscriptionService.GenerateSubscriptionKey();
 
             Assert.AreNotSame(subscriptionKey1, subscriptionKey2);
+        }
+
+        [TestMethod]
+        public void GenerateSubscriptionKey_WhenGenerated_EnsureComplexityValidity()
+        {
+            var isCharInPool = false;
+            var subscriptionKey = _subscriptionService.GenerateSubscriptionKey();
+
+            foreach (var subscriptionKeyChar in subscriptionKey)
+            {
+                if (!_subscriptionKeyChars.Contains(subscriptionKeyChar.ToString())) break;
+
+                isCharInPool = true;
+            }
+
+            Assert.IsTrue(isCharInPool);
         }
     }
 }
