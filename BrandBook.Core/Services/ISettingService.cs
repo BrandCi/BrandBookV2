@@ -1,4 +1,7 @@
-﻿namespace BrandBook.Core.Services
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace BrandBook.Core.Services
 {
     public interface ISettingService
     {
@@ -14,6 +17,13 @@
         /// </summary>
         /// <param name="settingKey"></param>
         /// <param name="newValue"></param>
-        void UpdateSettingValue(string settingKey, string newValue);
+        bool UpdateSettingValue(string settingKey, string newValue);
+
+        /// <summary>
+        /// Update Settings in Dictionary
+        /// </summary>
+        /// <param name="settingDictionary">Key, NewValue</param>
+        /// <returns></returns>
+        bool UpdateSettingsValue(Dictionary<string, string> settingDictionary);
     }
 }

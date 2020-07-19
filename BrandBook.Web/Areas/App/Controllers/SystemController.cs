@@ -1,10 +1,13 @@
-﻿using System.Configuration;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using BrandBook.Core;
 using BrandBook.Core.ViewModels.App.Settings;
 using BrandBook.Core.ViewModels.Frontend.Layout;
 using BrandBook.Infrastructure;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
+using BrandBook.Core.Services;
+using BrandBook.Services;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -13,6 +16,7 @@ namespace BrandBook.Web.Areas.App.Controllers
     {
         #region Fields
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ISettingService _settingService;
         #endregion
 
 
@@ -20,6 +24,7 @@ namespace BrandBook.Web.Areas.App.Controllers
         public SystemController()
         {
             this._unitOfWork = new UnitOfWork();
+            _settingService = new SettingService();
         }
         #endregion
 
@@ -34,9 +39,9 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var model = new SystemSettingsViewModel()
             {
-                AppTitle = GetSettingValueByKey("conf_system_apptitle"),
-                BasicUrl = GetSettingValueByKey("conf_system_baseisurl"),
-                EmailAddress = GetSettingValueByKey("conf_system_email")
+                AppTitle = _settingService.GetSettingValueByKey("conf_system_apptitle"),
+                BasicUrl = _settingService.GetSettingValueByKey("conf_system_baseisurl"),
+                EmailAddress = _settingService.GetSettingValueByKey("conf_system_email")
             };
 
             return View(model);
@@ -46,14 +51,14 @@ namespace BrandBook.Web.Areas.App.Controllers
         {
             var model = new UserSettingsViewModel()
             {
-                Password_ReqLength = GetSettingValueByKey("conf_user_pass_requiredlength"),
-                Password_ReqNonLetterOrDigit = GetSettingValueByKey("conf_user_pass_requirenonletterordigit"),
-                Password_ReqDigit = GetSettingValueByKey("conf_user_pass_requiredigit"),
-                Password_ReqLowerCase = GetSettingValueByKey("conf_user_pass_requirelowercase"),
-                Password_ReqUpperCase = GetSettingValueByKey("conf_user_pass_requireuppercase"),
-                Lockout_Enabled = GetSettingValueByKey("conf_user_lockout_enable"),
-                Lockout_LockoutTime = GetSettingValueByKey("conf_user_lockout_lockouttime"),
-                Lockout_FailedAttempts = GetSettingValueByKey("conf_user_lockout_failedattemtsbeforelockout")
+                Password_ReqLength = _settingService.GetSettingValueByKey("conf_user_pass_requiredlength"),
+                Password_ReqNonLetterOrDigit = _settingService.GetSettingValueByKey("conf_user_pass_requirenonletterordigit"),
+                Password_ReqDigit = _settingService.GetSettingValueByKey("conf_user_pass_requiredigit"),
+                Password_ReqLowerCase = _settingService.GetSettingValueByKey("conf_user_pass_requirelowercase"),
+                Password_ReqUpperCase = _settingService.GetSettingValueByKey("conf_user_pass_requireuppercase"),
+                Lockout_Enabled = _settingService.GetSettingValueByKey("conf_user_lockout_enable"),
+                Lockout_LockoutTime = _settingService.GetSettingValueByKey("conf_user_lockout_lockouttime"),
+                Lockout_FailedAttempts = _settingService.GetSettingValueByKey("conf_user_lockout_failedattemtsbeforelockout")
             };
 
             return View(model);
@@ -85,14 +90,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var isActive = false;
 
-            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_enabled");
+            var isEnabled = _settingService.GetSettingValueByKey("google_analytics_enabled");
 
-            if (isEnabled.Value == "1")
+            if (isEnabled == "1")
             {
                 isActive = true;
             }
 
-            var trackingKey = _unitOfWork.SettingRepository.GetSettingByKey("google_analytics_trackingkey").Value;
+            var trackingKey = _settingService.GetSettingValueByKey("google_analytics_trackingkey");
 
 
             var model = new GoogleAnalyticsViewModel()
@@ -111,14 +116,14 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             var isActive = false;
 
-            var isEnabled = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_enabled");
+            var isEnabled = _settingService.GetSettingValueByKey("ext_userlike_enabled");
 
-            if (isEnabled.Value == "1")
+            if (isEnabled == "1")
             {
                 isActive = true;
             }
 
-            var trackingkey = _unitOfWork.SettingRepository.GetSettingByKey("ext_userlike_source").Value;
+            var trackingkey = _settingService.GetSettingValueByKey("ext_userlike_source");
 
 
             var model = new UserLikeViewModel()
@@ -144,24 +149,18 @@ namespace BrandBook.Web.Areas.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UserLike(UserLikeViewModel model)
         {
-
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            if (model.IsActive)
+            var settingUpdateDictionary = new Dictionary<string, string>()
             {
-                UpdateSettingValue("ext_userlike_enabled", "1");
-            }
-            else
-            {
-                UpdateSettingValue("ext_userlike_enabled", "0");
-            }
+                {"ext_userlike_enabled", model.IsActive ? "1" : "0"},
+                {"ext_userlike_source", model.Source}
+            };
 
-            UpdateSettingValue("ext_userlike_source", model.Source);
-
-            _unitOfWork.SaveChanges();
+            _settingService.UpdateSettingsValue(settingUpdateDictionary);
 
 
             return RedirectToAction("UserLike", "System", new { area = "App" });
@@ -177,19 +176,13 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return View(model);
             }
 
-            if (model.IsActive)
+            var settingUpdateDictionary = new Dictionary<string, string>()
             {
-                UpdateSettingValue("google_analytics_enabled", "1");
-            }
-            else
-            {
-                UpdateSettingValue("google_analytics_enabled", "0");
-            }
-
-            UpdateSettingValue("google_analytics_trackingkey", model.TrackingKey);
-
-            _unitOfWork.SaveChanges();
-
+                {"google_analytics_enabled", model.IsActive ? "1" : "0"},
+                {"google_analytics_trackingkey", model.TrackingKey}
+            };
+            
+            _settingService.UpdateSettingsValue(settingUpdateDictionary);
 
             return RedirectToAction("GoogleAnalytics", "System", new { area = "App" });
         }
@@ -203,17 +196,19 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return View(model);
             }
 
-            UpdateSettingValue("conf_user_pass_requiredlength", model.Password_ReqLength);
-            UpdateSettingValue("conf_user_pass_requirenonletterordigit", model.Password_ReqNonLetterOrDigit);
-            UpdateSettingValue("conf_user_pass_requiredigit", model.Password_ReqDigit);
-            UpdateSettingValue("conf_user_pass_requirelowercase", model.Password_ReqLowerCase);
-            UpdateSettingValue("conf_user_pass_requireuppercase", model.Password_ReqUpperCase);
-            UpdateSettingValue("conf_user_lockout_enable", model.Lockout_Enabled);
-            UpdateSettingValue("conf_user_lockout_lockouttime", model.Lockout_LockoutTime);
-            UpdateSettingValue("conf_user_lockout_failedattemtsbeforelockout", model.Lockout_FailedAttempts);
+            var settingUpdateDictionary = new Dictionary<string, string>
+            {
+                {"conf_user_pass_requiredlength", model.Password_ReqLength},
+                {"conf_user_pass_requirenonletterordigit", model.Password_ReqNonLetterOrDigit},
+                {"conf_user_pass_requiredigit", model.Password_ReqDigit},
+                {"conf_user_pass_requirelowercase", model.Password_ReqLowerCase},
+                {"conf_user_pass_requireuppercase", model.Password_ReqUpperCase},
+                {"conf_user_lockout_enable", model.Lockout_Enabled},
+                {"conf_user_lockout_lockouttime", model.Lockout_LockoutTime},
+                {"conf_user_lockout_failedattemtsbeforelockout", model.Lockout_FailedAttempts}
+            };
 
-            _unitOfWork.SaveChanges();
-
+            _settingService.UpdateSettingsValue(settingUpdateDictionary);
 
             return RedirectToAction("UserSettings", "System", new { area = "App" });
         }
@@ -227,12 +222,14 @@ namespace BrandBook.Web.Areas.App.Controllers
                 return View(model);
             }
 
-            UpdateSettingValue("conf_system_apptitle", model.AppTitle);
-            UpdateSettingValue("conf_system_baseisurl", model.BasicUrl);
-            UpdateSettingValue("conf_system_email", model.EmailAddress);
+            var settingUpdateDictionary = new Dictionary<string, string>()
+            {
+                {"conf_system_apptitle", model.AppTitle},
+                {"conf_system_baseisurl", model.BasicUrl},
+                {"conf_system_email", model.EmailAddress}
+            };
 
-            _unitOfWork.SaveChanges();
-
+            _settingService.UpdateSettingsValue(settingUpdateDictionary);
 
             return RedirectToAction("SystemSettings", "System", new { area = "App" });
 
@@ -240,24 +237,6 @@ namespace BrandBook.Web.Areas.App.Controllers
         }
         #endregion
 
-
-        #region Helper Methods
-        private string GetSettingValueByKey(string settingKey)
-        {
-            return _unitOfWork.SettingRepository.GetSettingByKey(settingKey).Value;
-        }
-
-        private void UpdateSettingValue(string settingKey, string newValue)
-        {
-
-            var setting = _unitOfWork.SettingRepository.GetSettingByKey(settingKey);
-            setting.Value = newValue;
-
-            _unitOfWork.SettingRepository.Update(setting);
-
-
-        }
-        #endregion
     }
 
 }
