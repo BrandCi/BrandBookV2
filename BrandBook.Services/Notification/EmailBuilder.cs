@@ -1,9 +1,8 @@
-﻿using System.Configuration;
-using BrandBook.Core.Services.Notification;
+﻿using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
+using System.Configuration;
 using System.IO;
 using System.Web.Hosting;
-using BrandBook.Core.Services;
 
 namespace BrandBook.Services.Notification
 {
