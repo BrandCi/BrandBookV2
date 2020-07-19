@@ -1,4 +1,5 @@
 ﻿@model BrandBook.Core.ViewModels.Auth.LoginViewModel
+@using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 
 
@@ -8,7 +9,7 @@
 }
 
 @section header {
-    @CustomHelper.RenderReCaptchaRequest("auth_login")
+    @CustomHtmlHelper.RenderReCaptchaRequest("auth_login")
 }
 
 

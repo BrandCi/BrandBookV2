@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using BrandBook.Web.Framework.Helpers;
+using System.Text;
 using System.Web;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
@@ -16,7 +17,7 @@ namespace BrandBook.Web.Framework.HtmlHelpers
             {
                 html.Append("<div class=\"info-holder\">");
                 html.Append("<img src=\"");
-                html.Append(CustomHelper.ImagePath(imageName, imageType, "AuthData"));
+                html.Append(CustomHelper.GetImagePath(imageName, imageType, "AuthData"));
                 html.Append("\" />");
                 html.Append("</div>");
             }

@@ -3,7 +3,7 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
-using BrandBook.Web.Framework.HtmlHelpers;
+using BrandBook.Web.Framework.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -78,7 +78,7 @@ namespace BrandBook.Web.Api.v1.App.UserManagement
                 PrivacyPolicyAccepted = Convert.ToInt32(user.PrivacyPolicyAccepted),
                 IsDarkmodeEnabled = Convert.ToInt32(user.IsDarkmodeEnabled),
 
-                ProfileImagePath = CustomHelper.ImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
+                ProfileImagePath = CustomHelper.GetImagePath("94c87e0c-4c8a-4398-ab25-37a6333de0e0", "jpg", "UserData")
             };
 
 
