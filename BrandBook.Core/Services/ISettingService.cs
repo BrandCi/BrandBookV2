@@ -13,6 +13,14 @@ namespace BrandBook.Core.Services
         string GetSettingValueByKey(string settingKey);
 
         /// <summary>
+        /// Get Settings Values from Database-Settings Pool
+        /// </summary>
+        /// <param name="settingsKey"></param>
+        /// <returns></returns>
+        Dictionary<string, string> GetSettingsValueByKey(List<string> settingsKey);
+
+
+        /// <summary>
         /// Update Setting Value in Database-Settings Pool
         /// </summary>
         /// <param name="settingKey"></param>

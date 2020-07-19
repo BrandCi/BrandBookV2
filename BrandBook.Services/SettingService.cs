@@ -24,6 +24,19 @@ namespace BrandBook.Services
             return setting?.Value;
         }
 
+        public Dictionary<string, string> GetSettingsValueByKey(List<string> settingsKey)
+        {
+            var settingsValues = new Dictionary<string, string>();
+
+            foreach (var settingKey in settingsKey)
+            {
+                var setting = _unitOfWork.SettingRepository.GetSettingByKey(settingKey);
+                settingsValues.Add(settingKey, setting?.Value);
+            }
+
+            return settingsValues;
+        }
+
         public bool UpdateSettingValue(string settingKey, string newValue)
         {
             var setting = _unitOfWork.SettingRepository.GetSettingByKey(settingKey);
