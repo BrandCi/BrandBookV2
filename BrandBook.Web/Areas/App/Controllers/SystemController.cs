@@ -1,4 +1,5 @@
-﻿using BrandBook.Core;
+﻿using System.Configuration;
+using BrandBook.Core;
 using BrandBook.Core.ViewModels.App.Settings;
 using BrandBook.Core.ViewModels.Frontend.Layout;
 using BrandBook.Infrastructure;
@@ -60,14 +61,11 @@ namespace BrandBook.Web.Areas.App.Controllers
 
         public ActionResult MediaSettings()
         {
-            // Media Settings should not be changed via UI.
-            // They are part of the initial configuration!
             var model = new MediaSettingsViewModel()
             {
-                Key = GetSettingValueByKey("conf_media_key"),
-                Server = GetSettingValueByKey("conf_media_server")
+                Server = ConfigurationManager.AppSettings["CdnServerUrl"],
+                Key = ConfigurationManager.AppSettings["CdnServerKey"]
             };
-
 
             return View(model);
         }
