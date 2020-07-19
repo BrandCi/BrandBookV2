@@ -3,12 +3,11 @@ using BrandBook.Core;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Dto.App.UserManagement;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
-using BrandBook.Web.Framework.HtmlHelpers;
+using BrandBook.Web.Framework.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Api.v1.App.UserManagement
 {

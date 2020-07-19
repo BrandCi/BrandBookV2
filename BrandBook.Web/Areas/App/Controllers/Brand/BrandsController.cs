@@ -95,7 +95,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             return View(model);
         }
         #endregion
-        
+
 
         #region Public POST Actions
         [HttpPost]
@@ -148,7 +148,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
 
         }
         #endregion
-        
+
 
         #region Helper Methods
         private void SaveBrandImageInStorage(HttpPostedFileBase image, string fileName)

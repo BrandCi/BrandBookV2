@@ -54,7 +54,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
-        
+
         public ActionResult Add()
         {
             var viewModel = new AddBlogEntryViewModel()
@@ -64,7 +64,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
-        
+
         public async Task<ActionResult> Edit(int id)
         {
             if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))
@@ -92,7 +92,7 @@ namespace BrandBook.Web.Areas.App.Controllers
 
             return View(viewModel);
         }
-        
+
         public ActionResult Delete(int id)
         {
             if (!_unitOfWork.BlogEntryRepository.BlogEntryIdExists(id))

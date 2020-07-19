@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services;
 using BrandBook.Infrastructure;
+using System.Collections.Generic;
 
 namespace BrandBook.Services
 {

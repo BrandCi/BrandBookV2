@@ -1,10 +1,7 @@
-﻿using BrandBook.Core.Repositories.Setting;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
+﻿using BrandBook.Web.Framework.Helpers;
 using System.Configuration;
 using System.Text;
 using System.Web;
-using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Framework.HtmlHelpers
 {

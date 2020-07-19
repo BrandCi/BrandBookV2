@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
-using BrandBook.Core;
+﻿using BrandBook.Core;
+using BrandBook.Core.Services;
 using BrandBook.Core.ViewModels.App.Settings;
 using BrandBook.Core.ViewModels.Frontend.Layout;
 using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using System.Web.Mvc;
-using BrandBook.Core.Services;
 using BrandBook.Services;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Areas.App.Controllers
 {
@@ -123,13 +123,13 @@ namespace BrandBook.Web.Areas.App.Controllers
                 isActive = true;
             }
 
-            var trackingkey = _settingService.GetSettingValueByKey("ext_userlike_source");
+            var trackingKey = _settingService.GetSettingValueByKey("ext_userlike_source");
 
 
             var model = new UserLikeViewModel()
             {
                 IsActive = isActive,
-                Source = trackingkey
+                Source = trackingKey
             };
 
 
@@ -181,7 +181,7 @@ namespace BrandBook.Web.Areas.App.Controllers
                 {"google_analytics_enabled", model.IsActive ? "1" : "0"},
                 {"google_analytics_trackingkey", model.TrackingKey}
             };
-            
+
             _settingService.UpdateSettingsValue(settingUpdateDictionary);
 
             return RedirectToAction("GoogleAnalytics", "System", new { area = "App" });
