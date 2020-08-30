@@ -108,6 +108,14 @@ namespace BrandBook.Services.Notification
                     }
 
                     break;
+                case EmailTemplateType.General_RequestClosedBeta:
+                    if (model.General_RequestClosedBeta == null)
+                    {
+                        return null;
+                    }
+
+                    emailContent = emailContent.Replace("{{Email}}", model.General_RequestClosedBeta.Email);
+                    break;
                 case EmailTemplateType.Plain:
                 default:
                     return null;

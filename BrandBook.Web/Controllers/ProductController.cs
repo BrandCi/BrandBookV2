@@ -98,7 +98,7 @@ namespace BrandBook.Web.Controllers
 
             _notificationService.SendNotification(emailContent);
 
-            var sentModel = new ContactFormViewModel()
+            var sentModel = new ClosedBetaViewModel()
             {
                 IsSent = true
             };

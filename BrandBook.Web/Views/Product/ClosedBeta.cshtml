@@ -25,19 +25,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">We're in  <span class="f_700">closed beta</span> and <br>accepting a limited number of companies.</h2>
+                    <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">We're in <span class="f_700">closed beta</span> and <br>accepting a limited number of companies.</h2>
                     <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">
                         Help us making the release of BrandCi the best! Sign up for closed beta-tester today and let us know what you think.
                     </p>
-                    @using (Html.BeginForm("ClosedBeta", "Product", FormMethod.Post, new { @class = "wow fadeInUp form-validation", id = "contact-form", role = "form" }))
+                    @using (Html.BeginForm("ClosedBeta", "Product", FormMethod.Post, new {@class = "wow fadeInUp form-validation", id = "contact-form", role = "form"}))
                     {
                         @Html.AntiForgeryToken()
                         <div class="input-group subcribes">
-                            @Html.TextBoxFor(m => m.Email, new { type = "email", @class = "form-control email", style = "height: 50px;", placeholder = "designer@brandci.cloud" })
+                            @Html.TextBoxFor(m => m.Email, new {type = "email", @class = "form-control email", style = "height: 50px;", placeholder = "designer@brandci.cloud"})
                             <button class="btn btn_submit f_size_15 f_500" type="submit">Join our waitlist</button>
                         </div>
-                        <br />
-                        <br />
+                        <br/>
+                        <br/>
                         <div class="form-group">
                             @Html.CheckBoxFor(m => m.PrivacyPolicy)
                             @Html.LabelFor(m => m.PrivacyPolicy) *
@@ -55,6 +55,49 @@
                     }
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @if (!Html.ViewData.ModelState.IsValid)
+                    {
+                        <div class="box_alert media box_warning">
+                            <div class="icon"><i class="fas fa-exclamation"></i></div>
+                            <div class="media-body">
+                                <h5 style="color: #e7b931;">@Translations.frontend_contact_status_warning_title</h5>
+                                <p>
+                                    <span style="font-weight: 600;">@Translations.frontend_contact_status_warning_content:</span> <br />
+                                    @Html.ValidationSummary()
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="box_alert media box_success" id="contact-success" style="display: none;">
+                        <div class="icon"><i class="fas fa-check"></i></div>
+                        <div class="media-body">
+                            <h5 style="color: #4acc43;">@Translations.frontend_contact_status_success_title</h5>
+                            <p><span style="font-weight: 600;">@Translations.frontend_contact_status_success_content_1</span> @Translations.frontend_contact_status_success_content_2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
+@section scripts
+{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            if ('@Model.IsSent' == 'True') {
+                $('#contact-success').show();
+            }
+        });
+
+    </script>
+
+}
