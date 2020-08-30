@@ -30,8 +30,17 @@
                             <input type="text" name="email" class="form-control email" placeholder="designers@brandci.cloud" style="height: 50px;">
                             <button class="btn btn_submit f_size_15 f_500" type="submit">Join our waitlist</button>
                         </div>
-                        <p class="mchimp-errmessage" style="display: none;"></p>
-                        <p class="mchimp-sucmessage" style="display: none;"></p>
+                        <br /><br />
+                        <div class="input-group subcribes">
+                            <input id="PrivacyPolicy" name="PrivacyPolicy" type="checkbox">
+                            <label for="PrivacyPolicy">Accept Privacy Policy</label> *
+                            &nbsp;
+                            <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
+                                <i class="fas fa-file-alt"></i>
+                            </a>
+                        </div>
+
+
                     </form>
                 </div>
             </div>
