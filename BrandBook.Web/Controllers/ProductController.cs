@@ -40,5 +40,10 @@ namespace BrandBook.Web.Controllers
             return View();
         }
 
+        public ActionResult ClosedBeta()
+        {
+            return View();
+        }
+
     }
 }

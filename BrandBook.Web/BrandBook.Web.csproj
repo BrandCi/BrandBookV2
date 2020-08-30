@@ -1496,6 +1496,7 @@
     <Content Include="Views\Support\Faq.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerHeadComponent.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerBodyComponent.cshtml" />
+    <Content Include="Views\Product\ClosedBeta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
