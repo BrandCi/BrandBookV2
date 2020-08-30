@@ -167,6 +167,7 @@
     <Compile Include="ViewModels\Notification\EmailTemplateType.cs" />
     <Compile Include="ViewModels\Notification\EmailTemplateViewModel.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
+    <Compile Include="ViewModels\Notification\TemplateType\General_RequestClosedBeta.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\General_PrivacyRequest.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\General_ContactRequest.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\User_AccountForgotPasswordConfirmation.cs" />

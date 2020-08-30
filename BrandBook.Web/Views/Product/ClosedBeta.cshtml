@@ -1,10 +1,14 @@
-﻿@using BrandBook.Web.Framework.HtmlHelpers
+﻿@model BrandBook.Core.ViewModels.Frontend.Product.ClosedBetaViewModel
+@using BrandBook.Web.Framework.Helpers
+@using BrandBook.Web.Framework.HtmlHelpers
 
 @{
     ViewBag.Title = "Closed Beta";
 }
 
-
+@section styles {
+    @CustomHtmlHelper.RenderReCaptchaRequest("frontend_contact")
+}
 
 <section class="breadcrumb_area">
     @CustomHtmlHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6.png", "breadcrumb_shap")
@@ -25,23 +29,30 @@
                     <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">
                         Help us making the release of BrandCi the best! Sign up for closed beta-tester today and let us know what you think.
                     </p>
-                    <form class="mailchimp wow fadeInUp" data-wow-delay="0.7s" method="post">
+                    @using (Html.BeginForm("ClosedBeta", "Product", FormMethod.Post, new { @class = "wow fadeInUp form-validation", id = "contact-form", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
                         <div class="input-group subcribes">
-                            <input type="text" name="email" class="form-control email" placeholder="designers@brandci.cloud" style="height: 50px;">
+                            @Html.TextBoxFor(m => m.Email, new { type = "email", @class = "form-control email", style = "height: 50px;", placeholder = "designer@brandci.cloud" })
                             <button class="btn btn_submit f_size_15 f_500" type="submit">Join our waitlist</button>
                         </div>
-                        <br /><br />
-                        <div class="input-group subcribes">
-                            <input id="PrivacyPolicy" name="PrivacyPolicy" type="checkbox">
-                            <label for="PrivacyPolicy">Accept Privacy Policy</label> *
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            @Html.CheckBoxFor(m => m.PrivacyPolicy)
+                            @Html.LabelFor(m => m.PrivacyPolicy) *
                             &nbsp;
                             <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
                                 <i class="fas fa-file-alt"></i>
                             </a>
                         </div>
+                        if (CustomHelper.IsReCaptchaActive())
+                        {
+                            @Html.HiddenFor(m => m.ReCaptchaToken)
+                            ;
+                        }
 
-
-                    </form>
+                    }
                 </div>
             </div>
         </div>
