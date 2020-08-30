@@ -830,6 +830,7 @@
     <Content Include="Content\dist\Frontend\style.min.css" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
     <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
+    <Content Include="Content\EmailTemplates\General_RequestClosedBeta.html" />
     <Content Include="Content\EmailTemplates\General_PrivacyRequest.html" />
     <Content Include="Content\EmailTemplates\User_AccountForgotPassword.html" />
     <Content Include="Content\EmailTemplates\User_AccountForgotPasswordConfirmation.html" />
@@ -1496,6 +1497,7 @@
     <Content Include="Views\Support\Faq.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerHeadComponent.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_GoogleTagManagerBodyComponent.cshtml" />
+    <Content Include="Views\Product\ClosedBeta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
