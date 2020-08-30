@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 using BrandBook.Core.Services.Authentication;
@@ -93,6 +94,7 @@ namespace BrandBook.Web.Controllers
                 General_RequestClosedBeta = new General_RequestClosedBeta()
                 {
                     Email = model.Email,
+                    RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm")
                 }
             };
 

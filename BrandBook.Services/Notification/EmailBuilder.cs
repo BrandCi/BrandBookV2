@@ -115,6 +115,7 @@ namespace BrandBook.Services.Notification
                     }
 
                     emailContent = emailContent.Replace("{{Email}}", model.General_RequestClosedBeta.Email);
+                    emailContent = emailContent.Replace("{{RequestDate}}", model.General_RequestClosedBeta.RequestDate);
                     break;
                 case EmailTemplateType.Plain:
                 default:
