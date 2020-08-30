@@ -17,5 +17,6 @@ namespace BrandBook.Core.ViewModels.Notification
         public User_AccountForgotPasswordConfirmation User_AccountForgotPasswordConfirmation { get; set; }
         public General_ContactRequest General_ContactRequest { get; set; }
         public General_PrivacyRequest General_PrivacyRequest { get; set; }
+        public General_RequestClosedBeta General_RequestClosedBeta { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace BrandBook.Core.ViewModels.Notification
         User_AccountForgotPassword,
         User_AccountForgotPasswordConfirmation,
         General_ContactRequest,
-        General_PrivacyRequest
+        General_PrivacyRequest,
+        General_RequestClosedBeta
     }
 }
