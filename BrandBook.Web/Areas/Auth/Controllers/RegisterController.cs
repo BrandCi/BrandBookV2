@@ -112,6 +112,12 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 }
             }
 
+            if (string.IsNullOrEmpty(model.PromotionCode) || model.PromotionCode != "nvse-eimv-wasd-vbwi")
+            {
+                ModelState.AddModelError("Promotioncode", "Please enter an valid Promotioncode");
+                return View(model);
+            }
+
 
             var company = new Company()
             {
