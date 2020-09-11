@@ -146,45 +146,87 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 return RedirectToAction("Overview", "Brands", new { area = "App" });
             }
 
-            var fonts = _unitOfWork.FontRepository.GetAllFromBrand(brandId);
-
             var viewModel = new FontsViewModel()
             {
                 Fonts = new List<SingleFontViewModel>()
             };
 
-            foreach (var font in fonts)
+            if (ViewBag.IsRegisteredForBetaContent)
             {
-                var fontInclusion = _unitOfWork.FontInclusionRepository.FindById(font.FontInclusionId);
-                var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(font.Id);
-                var fontStylesViewModel = new List<FontStyleViewModel>();
+                var fonts = _unitOfWork.FontRepository.GetAllFromBrand(brandId);
 
-                foreach (var fontStyle in fontStyles)
+                foreach (var font in fonts)
                 {
-                    fontStylesViewModel.Add(new FontStyleViewModel()
+                    var fontInclusion = _unitOfWork.FontInclusionRepository.FindById(font.FontInclusionId);
+                    var fontStyles = _unitOfWork.FontStyleRepository.GetAllForFont(font.Id);
+                    var fontStylesViewModel = new List<FontStyleViewModel>();
+
+                    foreach (var fontStyle in fontStyles)
                     {
-                        Weight = fontStyle.Weight,
-                        Style = fontStyle.Style
+                        fontStylesViewModel.Add(new FontStyleViewModel()
+                        {
+                            Weight = fontStyle.Weight,
+                            Style = fontStyle.Style
+                        });
+                    }
+
+                    viewModel.Fonts.Add(new SingleFontViewModel()
+                    {
+                        Name = font.Name,
+                        Family = font.Family,
+                        GoogleFontLink = _brandService.BuildGoogleFontLink(font.Id),
+                        FontInclusion = new FontInclusionViewModel()
+                        {
+                            HtmlInline = fontInclusion.HtmlInline,
+                            CssImport = fontInclusion.CssImport,
+                            CssProperty = fontInclusion.CssProperty
+                        },
+                        FontStyles = fontStylesViewModel
                     });
+
                 }
-
-                viewModel.Fonts.Add(new SingleFontViewModel()
+            }
+            else
+            {
+                var fontInclusionViewModel = new FontInclusionViewModel()
                 {
-                    Name = font.Name,
-                    Family = font.Family,
-                    GoogleFontLink = _brandService.BuildGoogleFontLink(font.Id),
-                    FontInclusion = new FontInclusionViewModel()
-                    {
-                        HtmlInline = fontInclusion.HtmlInline,
-                        CssImport = fontInclusion.CssImport,
-                        CssProperty = fontInclusion.CssProperty
-                    },
-                    FontStyles = fontStylesViewModel
-                });
+                    HtmlInline = "<link href=\"https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap\" rel=\"stylesheet\">",
+                    CssImport = "@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');",
+                    CssProperty = "font-family: 'Lato', sans-serif;"
+                };
 
+                var fontStylesViewModel = new List<FontStyleViewModel>()
+                {
+                    new FontStyleViewModel()
+                    {
+                        Style = "Light",
+                        Weight = "300",
+                    },
+                    new FontStyleViewModel()
+                    {
+                        Style = "Regular",
+                        Weight = "400",
+                    },
+                    new FontStyleViewModel()
+                    {
+                        Style = "Black",
+                        Weight = "900",
+                    }
+                };
+
+                var singleFontViewModel = new SingleFontViewModel()
+                {
+                    Name = "Lato (Sample Font)",
+                    Family = "Lato",
+                    GoogleFontLink = "https://fonts.googleapis.com/css2?family=Lato&display=swap",
+                    FontInclusion = fontInclusionViewModel,
+                    FontStyles = fontStylesViewModel
+                };
+
+                viewModel.Fonts.Add(singleFontViewModel);
             }
 
-
+            
             return View(viewModel);
         }
 

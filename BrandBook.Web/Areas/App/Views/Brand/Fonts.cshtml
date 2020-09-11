@@ -1,4 +1,4 @@
-﻿@model BrandBook.Core.ViewModels.App.Brand.Fonts.FontsViewModel
+@model BrandBook.Core.ViewModels.App.Brand.Fonts.FontsViewModel
 @{
     ViewBag.Title = "Fonts";
 }
@@ -8,6 +8,27 @@
 }
 
 @section styles {}
+
+
+@if (!ViewBag.IsRegisteredForBetaContent)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="header-title m-t-0 m-b-30">Fonts</h4>
+                        This section is currently under Beta. The functionality is only available for Beta-Users for the moment.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end col -12 -->
+    </div>
+    <!-- end row -->
+
+}
+
 
 <style>
     @foreach (var font in Model.Fonts)
