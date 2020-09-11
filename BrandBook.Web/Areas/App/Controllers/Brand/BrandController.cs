@@ -241,47 +241,47 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
             }
 
 
+            IconsViewModel viewModel = null;
 
-            var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(brandId);
-
-            var model = new IconsViewModel
+            if (ViewBag.IsRegisteredForBetaContent)
             {
-                Categories = new List<IconCategoryViewModel>()
-            };
+                var categories = _unitOfWork.IconCategoryRepository.GetCategoriesForBrand(brandId);
 
-
-            foreach (var category in categories)
-            {
-                var icons = _unitOfWork.IconRepository.GetAllIconsFromCategory(category.Id);
-
-                var singleIcons = new List<SingleIconViewModel>();
-
-                foreach (var icon in icons)
+                viewModel = new IconsViewModel
                 {
+                    Categories = new List<IconCategoryViewModel>()
+                };
 
-                    singleIcons.Add(new SingleIconViewModel()
-                    {
-                        ClassName = icon.ClassName,
-                        Prefix = icon.Prefix
-                    });
-                }
 
-                if (singleIcons.Count > 0)
+                foreach (var category in categories)
                 {
-                    model.Categories.Add(new IconCategoryViewModel()
+                    var icons = _unitOfWork.IconRepository.GetAllIconsFromCategory(category.Id);
+
+                    var singleIcons = new List<SingleIconViewModel>();
+
+                    foreach (var icon in icons)
                     {
-                        Name = category.Name,
-                        Icons = singleIcons
+                        singleIcons.Add(new SingleIconViewModel()
+                        {
+                            ClassName = icon.ClassName,
+                            Prefix = icon.Prefix
+                        });
+                    }
 
-                    });
+                    if (singleIcons.Count > 0)
+                    {
+                        viewModel.Categories.Add(new IconCategoryViewModel()
+                        {
+                            Name = category.Name,
+                            Icons = singleIcons
+
+                        });
+                    }
                 }
-
             }
 
-
-
-
-            return View(model);
+            
+            return View(viewModel);
         }
 
         public ActionResult Settings(int id)
