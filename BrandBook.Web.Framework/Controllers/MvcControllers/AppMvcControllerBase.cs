@@ -4,6 +4,7 @@ using BrandBook.Infrastructure.Repositories.User;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Web.Mvc;
+using BrandBook.Core.Domain.User;
 
 namespace BrandBook.Web.Framework.Controllers.MvcControllers
 {
@@ -24,10 +25,14 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
             ViewBag.IsDarkmodeEnabled = false;
+            ViewBag.IsRegisteredForBetaContent = false;
 
             if (User.Identity.IsAuthenticated)
             {
-                ViewBag.IsDarkmodeEnabled = _appUserRepository.FindById(User.Identity.GetUserId<int>()).IsDarkmodeEnabled;
+                AppUser currentAppUser = _appUserRepository.FindById(User.Identity.GetUserId<int>());
+
+                ViewBag.IsDarkmodeEnabled = currentAppUser.IsDarkmodeEnabled;
+                ViewBag.IsRegisteredForBetaContent = currentAppUser.IsRegisteredForBetaContent;
             }
 
 

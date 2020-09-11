@@ -756,11 +756,12 @@ a {
   max-width: 280px; }
 
 code {
-  color: #193357;
+  color: #ffaa00;
   border-radius: 4px; }
 
 code, pre {
-  background-color: #343d52; }
+  padding: 1%;
+  background-color: #585858; }
 
 /* Background Colors */
 .bg-empty {
@@ -4632,12 +4633,6 @@ h3.timeline-title {
   margin-bottom: 40px;
   line-height: 26px; }
 
-/*
-Template Name: Minton Dashboard
-Author: CoderThemes
-Email: coderthemes@gmail.com
-File: Responsive
-*/
 @media only screen and (max-width: 6000px) and (min-width: 700px) {
   .wrapper.right-bar-enabled .right-bar {
     right: 0;

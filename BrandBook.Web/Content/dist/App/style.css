@@ -4520,12 +4520,6 @@ h3.timeline-title {
   background-color: rgba(238, 238, 238, 0.2) !important;
   padding: 20px; }
 
-/*
-Template Name: Minton Dashboard
-Author: CoderThemes
-Email: coderthemes@gmail.com
-File: Responsive
-*/
 @media only screen and (max-width: 6000px) and (min-width: 700px) {
   .wrapper.right-bar-enabled .right-bar {
     right: 0;
