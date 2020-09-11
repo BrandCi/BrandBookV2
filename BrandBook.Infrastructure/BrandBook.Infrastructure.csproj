@@ -275,6 +275,10 @@
     <Compile Include="Data\Migrations\v2_0_0\202007152113022_RemoveNoLongerRequiredCdnSettingsEntries.Designer.cs">
       <DependentUpon>202007152113022_RemoveNoLongerRequiredCdnSettingsEntries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009111711045_AddIsRegisteredForBetaContentFlagForAppUserTable.cs" />
+    <Compile Include="Migrations\202009111711045_AddIsRegisteredForBetaContentFlagForAppUserTable.Designer.cs">
+      <DependentUpon>202009111711045_AddIsRegisteredForBetaContentFlagForAppUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Brand\BrandRepository.cs" />
     <Compile Include="Repositories\Brand\ColorCategoryRepository.cs" />
@@ -475,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\v2_0_0\202007152113022_RemoveNoLongerRequiredCdnSettingsEntries.resx">
       <DependentUpon>202007152113022_RemoveNoLongerRequiredCdnSettingsEntries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009111711045_AddIsRegisteredForBetaContentFlagForAppUserTable.resx">
+      <DependentUpon>202009111711045_AddIsRegisteredForBetaContentFlagForAppUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

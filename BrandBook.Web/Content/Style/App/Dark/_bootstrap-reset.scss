@@ -91,12 +91,13 @@ a {
 }
 
 code {
-  color: $primary;
-  border-radius: 4px;
+    color: $warning;
+    border-radius: 4px;
 }
 
 code, pre {
-  background-color: lighten($dark,5%);
+    padding: 1%;
+    background-color: lighten($lightdark5,1%);
 }
 
 /* Background Colors */
