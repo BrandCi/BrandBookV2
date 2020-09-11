@@ -18,6 +18,7 @@ namespace BrandBook.Core.Domain.User
         public bool IsActive { get; set; }
 
         public bool IsDarkmodeEnabled { get; set; }
+        public bool IsRegisteredForBetaContent { get; set; }
 
         public DateTime CreationDate { get; set; }
         public DateTime LastModified { get; set; }
