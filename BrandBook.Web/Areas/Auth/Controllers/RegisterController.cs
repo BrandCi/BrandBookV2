@@ -19,7 +19,6 @@ using System.Configuration;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {

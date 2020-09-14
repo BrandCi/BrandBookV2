@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Repositories.User;
+﻿using BrandBook.Core.Domain.User;
+using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Web.Mvc;
-using BrandBook.Core.Domain.User;
 
 namespace BrandBook.Web.Framework.Controllers.MvcControllers
 {

@@ -226,7 +226,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 viewModel.Fonts.Add(singleFontViewModel);
             }
 
-            
+
             return View(viewModel);
         }
 
@@ -280,7 +280,7 @@ namespace BrandBook.Web.Areas.App.Controllers.Brand
                 }
             }
 
-            
+
             return View(viewModel);
         }
 

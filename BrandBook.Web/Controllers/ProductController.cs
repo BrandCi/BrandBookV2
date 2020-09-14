@@ -1,17 +1,16 @@
-﻿using System;
-using System.Threading.Tasks;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using System.Web.Mvc;
-using BrandBook.Core.Services.Authentication;
+﻿using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Product;
-using BrandBook.Core.ViewModels.Frontend.Support;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Core.ViewModels.Notification.TemplateType;
 using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
+using BrandBook.Web.Framework.Controllers.MvcControllers;
 using log4net;
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace BrandBook.Web.Controllers
 {
