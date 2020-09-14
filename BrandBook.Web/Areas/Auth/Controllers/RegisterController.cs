@@ -15,9 +15,11 @@ using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Configuration;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrandBook.Web.Framework.Helpers;
 
 namespace BrandBook.Web.Areas.Auth.Controllers
 {
@@ -29,6 +31,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private readonly ISubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
         private readonly INotificationService _notificationService;
+        private readonly int _trialSubscriptionPlanId;
 
 
         #region Constructor
@@ -39,6 +42,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
             _notificationService = new NotificationService();
+            int.TryParse(ConfigurationManager.AppSettings["TrialSubscriptionPlanId"], out _trialSubscriptionPlanId);
         }
 
         public RegisterController(UserAuthenticationService userService, SignInService signInService)
@@ -49,6 +53,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
             _notificationService = new NotificationService();
+            int.TryParse(ConfigurationManager.AppSettings["TrialSubscriptionPlanId"], out _trialSubscriptionPlanId);
         }
 
         #endregion
@@ -155,7 +160,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 IsPaid = true,
                 StartDateTime = DateTime.Now,
                 SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
-                SubscriptionPlanId = 7
+                SubscriptionPlanId = _trialSubscriptionPlanId
             };
 
             _unitOfWork.SubscriptionRepository.Add(initialSubscription);
