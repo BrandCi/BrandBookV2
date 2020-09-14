@@ -1,4 +1,4 @@
-@using System.Configuration
+﻿@using System.Configuration
 @using BrandBook.Web.Framework.HtmlHelpers
 
 @{
@@ -22,10 +22,10 @@
                         </p>
                         <p>
                             <div class="footer-social-links">
-                                <a href="@facebookPageLink" rel="nofollow" target="_blank" title="Open Facebook Page">
+                                <a href="@facebookPageLink" target="_blank" rel="nofollow noopener" title="Open Facebook Page">
                                     <i class="fab fa-facebook"></i>
                                 </a>
-                                <a href="@githubPageLink" rel="nofollow" target="_blank" title="Open Github Page">
+                                <a href="@githubPageLink" target="_blank" rel="nofollow noopener" title="Open Github Page">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="@Url.Action("Contact", "Support", new { area = "" })" title="Send Contact Request">
@@ -101,7 +101,7 @@
                 <div class="col-lg-6">
 
                     <p class="mb-0 f_400">
-                        <a href="@(ConfigurationManager.AppSettings["AuthorMainWebsiteUrl"])" target="_blank">
+                        <a href="@(ConfigurationManager.AppSettings["AuthorMainWebsiteUrl"])" target="_blank" rel="nofollow noopener">
                             @Translations.frontend_footer_copyright
                         </a>
                         © @currentYear @Translations.frontend_footer_allrightsreserved

@@ -1,4 +1,4 @@
-﻿@model BrandBook.Core.ViewModels.Frontend.Product.ClosedBetaViewModel
+@model BrandBook.Core.ViewModels.Frontend.Product.ClosedBetaViewModel
 @using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
 
@@ -42,14 +42,13 @@
                             @Html.CheckBoxFor(m => m.PrivacyPolicy)
                             @Html.LabelFor(m => m.PrivacyPolicy) *
                             &nbsp;
-                            <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank">
+                            <a href="@Url.Action("PrivacyPolicy", "Legal")" target="_blank" rel="nofollow noopener">
                                 <i class="fas fa-file-alt"></i>
                             </a>
                         </div>
                         if (CustomHelper.IsReCaptchaActive())
                         {
                             @Html.HiddenFor(m => m.ReCaptchaToken)
-                            ;
                         }
 
                     }
