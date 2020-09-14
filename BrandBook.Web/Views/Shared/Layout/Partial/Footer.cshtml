@@ -4,8 +4,8 @@
 @{
     var currentYear = DateTime.Now.ToString("yyyy");
 
-    var facebookPageLink = ConfigurationManager.AppSettings["FacebookPageLink"];
-    var githubPageLink = ConfigurationManager.AppSettings["GithubPageLink"];
+    var facebookPageUrl = ConfigurationManager.AppSettings["FacebookPageUrl"];
+    var githubPageUrl = ConfigurationManager.AppSettings["GithubPageUrl"];
 }
 
 <footer class="footer_area footer_three">
@@ -22,10 +22,10 @@
                         </p>
                         <p>
                             <div class="footer-social-links">
-                                <a href="@facebookPageLink" target="_blank" rel="nofollow noopener" title="Open Facebook Page">
+                                <a href="@facebookPageUrl" target="_blank" rel="nofollow noopener" title="Open Facebook Page">
                                     <i class="fab fa-facebook"></i>
                                 </a>
-                                <a href="@githubPageLink" target="_blank" rel="nofollow noopener" title="Open Github Page">
+                                <a href="@githubPageUrl" target="_blank" rel="nofollow noopener" title="Open Github Page">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="@Url.Action("Contact", "Support", new { area = "" })" title="Send Contact Request">
@@ -52,7 +52,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="@(ConfigurationManager.AppSettings["BrandCiDocumentation"])" target="_blank" rel="nofollow noopener">
+                                <a href="@(ConfigurationManager.AppSettings["BrandCiDocumentationUrl"])" target="_blank" rel="nofollow noopener">
                                     @Translations.frontend_footer_product_documentation
                                 </a>
                             </li>
