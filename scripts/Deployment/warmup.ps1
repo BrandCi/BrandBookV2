@@ -8,18 +8,27 @@ $urls = @(
     '/Product/Collaboration',
     '/Product/Sharing',
     '/Product/Optimization',
+    '/Product/ClosedBeta'
     '/Pricing/Index',
     '/Blog/Overview',
     '/Blog/Index',
     '/Support/Contact',
     '/Support/Faq',
-    '/Auth/Login/Index',
-    '/Auth/Register/Index',
-    '/Auth/ForgotPassword',
     '/Legal/Imprint',
     '/Legal/PrivacyPolicy',
     '/Legal/Cookie',
-    '/Legal/PrivacyRequest'
+    '/Legal/PrivacyRequest',
+
+    '/Auth/Login/Index',
+    '/Auth/Register/Index',
+    '/Auth/ForgotPassword',
+
+    '/App/Dashboard/Index',
+    '/App/Brands/Overview',
+    '/App/Brands/Add',
+    '/App/Profile/Index',
+    '/App/AppCulture/Index',
+    '/App/Profile/Subscriptions'
 )
 
 
