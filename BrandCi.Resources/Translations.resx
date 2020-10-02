@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="auth_back_button_title" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="auth_login_input_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="auth_login_input_rememberme" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="auth_login_input_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="auth_login_login_button_title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="auth_login_register_button_title" xml:space="preserve">
+    <value>Register now</value>
+  </data>
+  <data name="auth_login_resetpassword_title" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="auth_login_title" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="auth_register_input_confirmpassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="auth_register_input_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="auth_register_input_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="auth_register_input_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="auth_register_login_title" xml:space="preserve">
+    <value>Login here</value>
+  </data>
+  <data name="auth_register_register_button_title" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="auth_register_title" xml:space="preserve">
+    <value>Register here</value>
+  </data>
+  <data name="auth_resetpassword_input_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="auth_resetpassword_input_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="auth_resetpassword_login_button_title" xml:space="preserve">
+    <value>Login here</value>
+  </data>
+  <data name="auth_resetpassword_resetpassword_button_title" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="auth_resetpassword_title" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="frontend_navigation_authorized_gotoapp" xml:space="preserve">
+    <value>Open App</value>
+  </data>
+  <data name="frontend_navigation_contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_navigation_product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="frontend_navigation_product_brandimprovement" xml:space="preserve">
+    <value>Brand Optimization</value>
+  </data>
+  <data name="frontend_navigation_product_brandmanagement" xml:space="preserve">
+    <value>Brand Management</value>
+  </data>
+  <data name="frontend_navigation_product_plannedfeatures" xml:space="preserve">
+    <value>Planned Features</value>
+  </data>
+  <data name="frontend_navigation_homepage" xml:space="preserve">
+    <value>Homepage</value>
+  </data>
+  <data name="frontend_navigation_login_button" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="frontend_navigation_pricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="frontend_navigation_register_button" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="frontend_footer_legal_imprint" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
+  <data name="frontend_footer_legal_privacypolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="frontend_footer_legal_terms" xml:space="preserve">
+    <value>Terms and conditions</value>
+  </data>
+  <data name="frontend_footer_legal_title" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="frontend_footer_product_documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="frontend_footer_product_examples" xml:space="preserve">
+    <value>Examples</value>
+  </data>
+  <data name="frontend_footer_product_pricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="frontend_footer_product_solutions" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="frontend_footer_product_title" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="frontend_footer_support_contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_footer_support_forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="frontend_footer_support_reportabug" xml:space="preserve">
+    <value>Report a bug</value>
+  </data>
+  <data name="frontend_footer_support_title" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="auth_login_external_facebook_title" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="auth_login_external_microsoft_title" xml:space="preserve">
+    <value>Microsoft</value>
+  </data>
+  <data name="auth_login_external_soonavailable" xml:space="preserve">
+    <value>(available soon)</value>
+  </data>
+  <data name="auth_login_external_title" xml:space="preserve">
+    <value>External Login</value>
+  </data>
+  <data name="auth_register_external_facebook_title" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="auth_register_external_microsoft_title" xml:space="preserve">
+    <value>Microsoft</value>
+  </data>
+  <data name="auth_register_external_soonavailable" xml:space="preserve">
+    <value>(available soon)</value>
+  </data>
+  <data name="auth_register_external_title" xml:space="preserve">
+    <value>External Login</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_accept_button_text" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_link_text" xml:space="preserve">
+    <value>Find out more here</value>
+  </data>
+  <data name="frontend_legal_cookieconsent_text" xml:space="preserve">
+    <value>We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our cookie policy.</value>
+  </data>
+  <data name="frontend_footer_legal_cookieterms" xml:space="preserve">
+    <value>Cookie Terms</value>
+  </data>
+  <data name="app_brandoverview_openbrand_button_title" xml:space="preserve">
+    <value>Open Brand</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_title" xml:space="preserve">
+    <value>I have read and accept the Privacy Policy</value>
+  </data>
+  <data name="auth_register_checkbox_privacypolicy_validation" xml:space="preserve">
+    <value>You need to accept the Privacy Policy</value>
+  </data>
+  <data name="app_settings_back_button_title" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="app_settings_brand_description" xml:space="preserve">
+    <value>Settings regarding the Brands</value>
+  </data>
+  <data name="app_settings_brand_title" xml:space="preserve">
+    <value>Brand Settings</value>
+  </data>
+  <data name="app_settings_media_description" xml:space="preserve">
+    <value>Usage of Media</value>
+  </data>
+  <data name="app_settings_media_title" xml:space="preserve">
+    <value>Media Settings</value>
+  </data>
+  <data name="app_settings_overview_description" xml:space="preserve">
+    <value>On this page you find all relevant Settings. Please contact the administrator if you have questions.</value>
+  </data>
+  <data name="app_settings_overview_open_button_title" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="app_settings_overview_title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="app_settings_system_apptitle_description" xml:space="preserve">
+    <value>The App Title will is shown in the Browser Tab.</value>
+  </data>
+  <data name="app_settings_system_apptitle_title" xml:space="preserve">
+    <value>App Title</value>
+  </data>
+  <data name="app_settings_system_description" xml:space="preserve">
+    <value>Important System Settings</value>
+  </data>
+  <data name="app_settings_system_emailsender_description" xml:space="preserve">
+    <value>Change the Email to specify from which E-Mail Address System-E-Mails should be sent.</value>
+  </data>
+  <data name="app_settings_system_emailsender_title" xml:space="preserve">
+    <value>E-Mail Sender</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_description" xml:space="preserve">
+    <value>This is the Base Url of the BrandBook Installation. This setting is important for Systemmails and larger redirects.</value>
+  </data>
+  <data name="app_settings_system_systembaseurl_title" xml:space="preserve">
+    <value>System Base Url</value>
+  </data>
+  <data name="app_settings_system_title" xml:space="preserve">
+    <value>System Settings</value>
+  </data>
+  <data name="app_settings_update_button_title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="app_settings_user_description" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="app_settings_user_title" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="app_culturesetting_description" xml:space="preserve">
+    <value>Please select your preferred language for the userinterface</value>
+  </data>
+  <data name="app_culturesetting_save_button_title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="app_culturesetting_title" xml:space="preserve">
+    <value>Language Selection</value>
+  </data>
+  <data name="app_culturesetting_value_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="system_culture_de_de" xml:space="preserve">
+    <value>de-DE</value>
+  </data>
+  <data name="system_culture_de_de_full" xml:space="preserve">
+    <value>German (Germany)</value>
+  </data>
+  <data name="system_culture_en_us" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="system_culture_en_us_full" xml:space="preserve">
+    <value>English (United States)</value>
+  </data>
+  <data name="app_mainnavigation_dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_company" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_user" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="app_mainnavigation_usermanagement_usermanagement" xml:space="preserve">
+    <value>Usermanagement</value>
+  </data>
+  <data name="app_mainnavigation_yourbrands" xml:space="preserve">
+    <value>Your Brands</value>
+  </data>
+  <data name="app_usermenu_languageselection" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="app_usermenu_leaveapp" xml:space="preserve">
+    <value>Leave app</value>
+  </data>
+  <data name="app_usermenu_logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="app_usermenu_profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="app_usermenu_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="frontend_navigation_product_overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="frontend_footer_allrightsreserved" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="frontend_footer_copyright" xml:space="preserve">
+    <value>Philipp C. Moser</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_description" xml:space="preserve">
+    <value>Create and document your company branding step by step. Our intelligent editor helps you with your existing data.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_01_title" xml:space="preserve">
+    <value>Creation</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_description" xml:space="preserve">
+    <value>Through many tips and tricks you will learn how to use your brand to advantage and provide it to others.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_02_title" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_description" xml:space="preserve">
+    <value>Continuous and automated tests constantly check your brand for optimization possibilities and implement them as you wish.</value>
+  </data>
+  <data name="frontend_home_index_features_feature_03_title" xml:space="preserve">
+    <value>Improvement</value>
+  </data>
+  <data name="frontend_home_index_features_title_l1" xml:space="preserve">
+    <value>Why BrandCi leads your Brand</value>
+  </data>
+  <data name="frontend_home_index_features_title_l2" xml:space="preserve">
+    <value>to success</value>
+  </data>
+  <data name="frontend_home_index_intro_button_description" xml:space="preserve">
+    <value>Would you like to know more?</value>
+  </data>
+  <data name="frontend_home_index_intro_button_title" xml:space="preserve">
+    <value>Click here.</value>
+  </data>
+  <data name="frontend_home_index_intro_heading" xml:space="preserve">
+    <value>Let us introduce you BrandCi</value>
+  </data>
+  <data name="frontend_home_index_intro_subheading" xml:space="preserve">
+    <value>What is BrandCi?</value>
+  </data>
+  <data name="frontend_home_index_intro_subtext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_intro_text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_services_button_title" xml:space="preserve">
+    <value>Learn more.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_description" xml:space="preserve">
+    <value>Plan and improve your brand online without any additional software and work together with your colleagues on the success of your brand.</value>
+  </data>
+  <data name="frontend_home_index_services_service_01_title" xml:space="preserve">
+    <value>Access to your brand. From everywhere.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_description" xml:space="preserve">
+    <value>A redesign of your brand contributes to the brand's success through intelligent advance planning.</value>
+  </data>
+  <data name="frontend_home_index_services_service_02_title" xml:space="preserve">
+    <value>Expand your brand. Well planned.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_description" xml:space="preserve">
+    <value>Through the use of Artificial Intelligence, we provide you and your brand a steady improvement.</value>
+  </data>
+  <data name="frontend_home_index_services_service_03_title" xml:space="preserve">
+    <value>Continuous improvement. Thanks to AI.</value>
+  </data>
+  <data name="frontend_home_index_topsection_discover_button_title" xml:space="preserve">
+    <value>Discover BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_subtitle" xml:space="preserve">
+    <value>Manage and improve your brand to success with BrandCi.</value>
+  </data>
+  <data name="frontend_home_index_topsection_test_button_title" xml:space="preserve">
+    <value>Test Brand Ci for free</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l1" xml:space="preserve">
+    <value>Your digital brand.</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_l2" xml:space="preserve">
+    <value>Your success.</value>
+  </data>
+  <data name="frontend_home_index_services_service_04_description" xml:space="preserve">
+    <value>Give your agencies access to your brand. Set up a private space with a lot of information for your agencies. You can also publish your brands for everyone.</value>
+  </data>
+  <data name="frontend_home_index_services_service_04_title" xml:space="preserve">
+    <value>Share your brand. With everybody you want.</value>
+  </data>
+  <data name="frontend_navigation_product_brandcreation" xml:space="preserve">
+    <value>Brand Creation</value>
+  </data>
+  <data name="frontend_navigation_blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_improve" xml:space="preserve">
+    <value>Improve</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_dynamic_share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="frontend_home_index_topsection_title_static" xml:space="preserve">
+    <value>your corporate branding.</value>
+  </data>
+  <data name="frontend_blog_noavailableblogs_description" xml:space="preserve">
+    <value>At the moment we are preparing interesting blog entries round about the topic Company Branding for you.</value>
+  </data>
+  <data name="frontend_blog_noavailableblogs_title" xml:space="preserve">
+    <value>We do not have any published blog entries yet</value>
+  </data>
+  <data name="frontend_home_index_bubbles_brandingscreated" xml:space="preserve">
+    <value>Brandings created</value>
+  </data>
+  <data name="frontend_home_index_bubbles_brandingsimproved" xml:space="preserve">
+    <value>Brandings improved</value>
+  </data>
+  <data name="frontend_home_index_bubbles_happyusers" xml:space="preserve">
+    <value>Happy users</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_button_title" xml:space="preserve">
+    <value>Select your plan</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_1" xml:space="preserve">
+    <value>Ready to get started?</value>
+  </data>
+  <data name="frontend_home_index_calltoaction_title_2" xml:space="preserve">
+    <value>It's fast and very easy!</value>
+  </data>
+  <data name="frontend_home_index_features_allfeatures" xml:space="preserve">
+    <value>All features</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_accessrights_description" xml:space="preserve">
+    <value>Determine granular which team member works in which areas.</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_accessrights_title" xml:space="preserve">
+    <value>Granular access rights</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_feedback_description" xml:space="preserve">
+    <value>Receive continuous feedback from your team. This will allow your brand to grow optimally.</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_feedback_title" xml:space="preserve">
+    <value>Get Feedback</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_title" xml:space="preserve">
+    <value>Brand Collaboration</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_together_description" xml:space="preserve">
+    <value>Optimize your work results by collaborating on your brand.</value>
+  </data>
+  <data name="frontend_home_index_supporting_collaboration_together_title" xml:space="preserve">
+    <value>Work together with others</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_assistance_description" xml:space="preserve">
+    <value>Get the support you need to build your brand. We recommend the appropriate steps based on your current status.</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_assistance_title" xml:space="preserve">
+    <value>Extensive assistance</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_inspiration_description" xml:space="preserve">
+    <value>Get contextual inspiration through appropriate suggestions from our intelligent library.</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_inspiration_title" xml:space="preserve">
+    <value>Creative inspiration</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_resources_description" xml:space="preserve">
+    <value>You already have a finished brand. No problem. An import of existing data is possible at any time.</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_resources_title" xml:space="preserve">
+    <value>Existing resources</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_scopes_description" xml:space="preserve">
+    <value>Whether you create your brand for you privately or for your business. We offer you the right functions for every size.</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_scopes_title" xml:space="preserve">
+    <value>Different scopes</value>
+  </data>
+  <data name="frontend_home_index_supporting_creation_title" xml:space="preserve">
+    <value>Brand Creation</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_contenttypes_description" xml:space="preserve">
+    <value>For documentation, use different content types to record your color values ​​and their usage scenarios, for example.</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_contenttypes_title" xml:space="preserve">
+    <value>Use different content types</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_save_description" xml:space="preserve">
+    <value>Capture the essence of your brand in a perfect environment.</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_save_title" xml:space="preserve">
+    <value>Save your brand approach</value>
+  </data>
+  <data name="frontend_home_index_supporting_documentation_title" xml:space="preserve">
+    <value>Brand Documentation</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_assistance_description" xml:space="preserve">
+    <value>Do you want to get the most out of your brand? We help you with that. Our automatic support knows how.</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_assistance_title" xml:space="preserve">
+    <value>Automatic assistance</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_history_description" xml:space="preserve">
+    <value>Use our version management to access previous content from your brand at any time.</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_history_title" xml:space="preserve">
+    <value>Manage history of your branding</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_improvements_description" xml:space="preserve">
+    <value>Have your brand regularly reviewed for improvement potential. This will help you to keep improving your brand.</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_improvements_title" xml:space="preserve">
+    <value>Check for improvements</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_suggestions_description" xml:space="preserve">
+    <value>You decide which proposals should be implemented. By clicking you integrate them directly into your brand.</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_suggestions_title" xml:space="preserve">
+    <value>Accept suggestions for improvement</value>
+  </data>
+  <data name="frontend_home_index_supporting_improvement_title" xml:space="preserve">
+    <value>Brand Improvement</value>
+  </data>
+  <data name="frontend_home_index_supporting_section_subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frontend_home_index_supporting_section_title" xml:space="preserve">
+    <value>How BrandCi supports your branding process</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_agencies_description" xml:space="preserve">
+    <value>Share your brand with, for example, an agency to enable a quick completion of follow-up projects.</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_agencies_title" xml:space="preserve">
+    <value>Share with your agencies</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_limitaccess_description" xml:space="preserve">
+    <value>You do not want to publish your brand yet? No problem, you decide what you publish.</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_limitaccess_title" xml:space="preserve">
+    <value>Limit access for others</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_publish_description" xml:space="preserve">
+    <value>Publish your brand to others.</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_publish_title" xml:space="preserve">
+    <value>Publish you brand</value>
+  </data>
+  <data name="frontend_home_index_supporting_sharing_title" xml:space="preserve">
+    <value>Brand Sharing</value>
+  </data>
+  <data name="frontend_contact_input_email" xml:space="preserve">
+    <value>Your email</value>
+  </data>
+  <data name="frontend_contact_input_message" xml:space="preserve">
+    <value>Your message</value>
+  </data>
+  <data name="frontend_contact_input_name" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="frontend_contact_input_privacypolicy" xml:space="preserve">
+    <value>Accept Privacy Policy</value>
+  </data>
+  <data name="frontend_contact_input_subject" xml:space="preserve">
+    <value>Your subject</value>
+  </data>
+  <data name="frontend_footer_language_title" xml:space="preserve">
+    <value>Language Selection</value>
+  </data>
+  <data name="frontend_home_index_supporting_badge_availablesoon" xml:space="preserve">
+    <value>Available soon</value>
+  </data>
+  <data name="frontend_home_index_supporting_badge_beta" xml:space="preserve">
+    <value>Beta</value>
+  </data>
+  <data name="system_culture_ar_sa" xml:space="preserve">
+    <value>ar-SA</value>
+  </data>
+  <data name="system_culture_ar_sa_full" xml:space="preserve">
+    <value>Arabic (Saudi Arabia)</value>
+  </data>
+  <data name="app_mainnavigation_subscriptions" xml:space="preserve">
+    <value>My subscriptions</value>
+  </data>
+  <data name="app_pagetitle_subscriptions" xml:space="preserve">
+    <value>My subscriptions</value>
+  </data>
+  <data name="app_brands_addbrand_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="app_brands_addbrand_image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="app_brands_addbrand_maincolor" xml:space="preserve">
+    <value>Primary Color</value>
+  </data>
+  <data name="app_brands_addbrand_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="app_brands_addbrand_shortdescription" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
+  <data name="app_brands_addbrand_submit" xml:space="preserve">
+    <value>Add brand</value>
+  </data>
+  <data name="app_pagetitle_addbrand" xml:space="preserve">
+    <value>Add new brand</value>
+  </data>
+  <data name="frontend_product_process_pagetitle" xml:space="preserve">
+    <value>Define your Brand in a continuous process</value>
+  </data>
+  <data name="frontend_product_process_startprocess_buttontitle" xml:space="preserve">
+    <value>Start your journey here</value>
+  </data>
+  <data name="frontend_product_process_step_collaboration_description" xml:space="preserve">
+    <value>You work in a team? No problem. With BrandCi you have the opportunity at any time to let other people participate in the growth of your brand. You decide who can edit which elements.</value>
+  </data>
+  <data name="frontend_product_process_step_collaboration_title" xml:space="preserve">
+    <value>Brand Collaboration</value>
+  </data>
+  <data name="frontend_product_process_step_documentation_description" xml:space="preserve">
+    <value>Document your entire brand image. No matter whether it is your recognizable logo, your distinctive font or the overall appearance that speaks for itself. We help you to document your brand.</value>
+  </data>
+  <data name="frontend_product_process_step_documentation_title" xml:space="preserve">
+    <value>Brand Documentation</value>
+  </data>
+  <data name="frontend_product_process_step_optimization_description" xml:space="preserve">
+    <value>You think your brand has room for improvement. Check your brand for optimizations with our intelligent assistant. These can be implemented at the push of a button. Keep an overview of your changes through the automatically maintained history.</value>
+  </data>
+  <data name="frontend_product_process_step_optimization_title" xml:space="preserve">
+    <value>Brand Optimization</value>
+  </data>
+  <data name="frontend_product_process_step_overview_description" xml:space="preserve">
+    <value>Start your brand journey by creating your first brand with BrandCi today. Our smart editor will help you with the first steps.</value>
+  </data>
+  <data name="frontend_product_process_step_overview_title" xml:space="preserve">
+    <value>Brand Overview</value>
+  </data>
+  <data name="frontend_product_process_step_sharing_description" xml:space="preserve">
+    <value>You have implemented your wonderful brand? Wonderful. Then share it with your agencies so they can use your brand experience as the essence of their results.</value>
+  </data>
+  <data name="frontend_product_process_step_sharing_title" xml:space="preserve">
+    <value>Brand Sharing</value>
+  </data>
+  <data name="frontend_footer_slogan" xml:space="preserve">
+    <value>Your digital brand. Your success</value>
+  </data>
+  <data name="auth_unlockaccount_description_first" xml:space="preserve">
+    <value>Your account has been locked!</value>
+  </data>
+  <data name="auth_unlockaccount_description_second" xml:space="preserve">
+    <value>Please try again in a few minutes.</value>
+  </data>
+  <data name="auth_unlockaccount_title" xml:space="preserve">
+    <value>Account locked</value>
+  </data>
+  <data name="frontend_legal_cookiepolicy_pagetitle" xml:space="preserve">
+    <value>Cookie Policy</value>
+  </data>
+  <data name="frontend_legal_imprint_contact_email_title" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="frontend_legal_imprint_contact_phone_title" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="frontend_legal_imprint_contact_title" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="frontend_legal_imprint_general_title" xml:space="preserve">
+    <value>According to § 5 TMG</value>
+  </data>
+  <data name="frontend_legal_imprint_pagetitle" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
+  <data name="frontend_legal_privacypolicy_pagetitle" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="frontend_navigation_authorized_openprofile" xml:space="preserve">
+    <value>Open your profile</value>
+  </data>
+  <data name="app_pagetitle_usermanagement_useroverview" xml:space="preserve">
+    <value>Useroverview</value>
+  </data>
+  <data name="app_subscription_activebadge_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="app_subscription_activebadge_inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="app_subscription_paymentbadge_paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="app_subscription_paymentbadge_pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activesince" xml:space="preserve">
+    <value>Active since</value>
+  </data>
+  <data name="app_subscription_popup_subscription_activeuntil" xml:space="preserve">
+    <value>Active until</value>
+  </data>
+  <data name="app_subscription_popup_subscription_brandscreated" xml:space="preserve">
+    <value>Brands created</value>
+  </data>
+  <data name="app_subscription_popup_subscription_close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivate" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_button" xml:space="preserve">
+    <value>Yes, deactivate subscription!</value>
+  </data>
+  <data name="app_subscription_popup_subscription_heading" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="app_subscription_popup_subscription_heading_binding" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="app_subscription_popup_subscription_noitems" xml:space="preserve">
+    <value>No subscriptions available</value>
+  </data>
+  <data name="app_subscription_popup_subscription_pricepermonth" xml:space="preserve">
+    <value>Price per month</value>
+  </data>
+  <data name="app_subscription_popup_subscription_title" xml:space="preserve">
+    <value>Subscription</value>
+  </data>
+  <data name="app_subscription_popup_subscription_type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="app_usermanagement_table_head_email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="app_usermanagement_table_head_firstname" xml:space="preserve">
+    <value>Firstname</value>
+  </data>
+  <data name="app_usermanagement_table_head_lastname" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="app_usermanagement_table_head_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="app_subscription_popup_subscription_deactivateapprove_title" xml:space="preserve">
+    <value>Do you really want to deactivate this subscription?</value>
+  </data>
+  <data name="auth_register_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="frontend_contact_validation_captcha_invalid" xml:space="preserve">
+    <value>ReCaptcha is invalid</value>
+  </data>
+  <data name="auth_login_validation_notloggedin" xml:space="preserve">
+    <value>You could not be logged in </value>
+  </data>
+  <data name="frontend_contact_input_sendbutton" xml:space="preserve">
+    <value>Send message</value>
+  </data>
+  <data name="frontend_contact_status_success_content_1" xml:space="preserve">
+    <value>Your message has been sent.</value>
+  </data>
+  <data name="frontend_contact_status_success_content_2" xml:space="preserve">
+    <value>We will get back to you soon!</value>
+  </data>
+  <data name="frontend_contact_status_success_title" xml:space="preserve">
+    <value>Awesome!</value>
+  </data>
+  <data name="frontend_contact_status_warning_content" xml:space="preserve">
+    <value>Please check your input</value>
+  </data>
+  <data name="frontend_contact_status_warning_title" xml:space="preserve">
+    <value>Erm...</value>
+  </data>
+  <data name="frontend_contact_subtitle" xml:space="preserve">
+    <value>Feel free to contact us any time. We will get back to you as soon as we can!</value>
+  </data>
+  <data name="frontend_contact_title" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="frontend_footer_support_privacyrequest" xml:space="preserve">
+    <value>Privacy Request</value>
+  </data>
+  <data name="brandci" xml:space="preserve">
+    <value>BrandCi</value>
+  </data>
+  <data name="frontend_home_index_topsection_features_button" xml:space="preserve">
+    <value>Discover features</value>
+  </data>
+  <data name="frontend_home_index_topsection_registernow_button" xml:space="preserve">
+    <value>Register now</value>
+  </data>
+  <data name="frontend_home_index_topsection_welcome_subtitle" xml:space="preserve">
+    <value>Give your Brand the best chance of success with</value>
+  </data>
+  <data name="frontend_home_index_topsection_welcome_title_top" xml:space="preserve">
+    <value>Welcome to BrandCi!</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_input_sendbutton" xml:space="preserve">
+    <value>Send request</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_subtitle" xml:space="preserve">
+    <value>You can contact us with questions about the collection, processing or use of your personal data and their correction, blocking or deletion</value>
+  </data>
+  <data name="frontend_legal_privacyrequest_title" xml:space="preserve">
+    <value>Privacy Request</value>
+  </data>
+  <data name="frontend_footer_support_faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="frontend_faq_long_title" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="frontend_faq_short_title" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="frontend_faq_subtitle" xml:space="preserve">
+    <value>Here you find quick answers to common questions!</value>
+  </data>
+</root>
