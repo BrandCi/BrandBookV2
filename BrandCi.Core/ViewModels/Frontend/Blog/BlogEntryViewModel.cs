@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrandBook.Core.ViewModels.Frontend.Blog
+namespace BrandCi.Core.ViewModels.Frontend.Blog
 {
     public class BlogEntryViewModel
     {

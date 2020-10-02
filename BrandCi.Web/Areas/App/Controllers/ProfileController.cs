@@ -1,14 +1,14 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.ViewModels.App.Profile;
-using BrandBook.Core.ViewModels.App.Subscriptions;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.ViewModels.App.Profile;
+using BrandCi.Core.ViewModels.App.Subscriptions;
+using BrandCi.Infrastructure;
+using BrandCi.Services.Subscriptions;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandCi.Web.Areas.App.Controllers
 {
     public class ProfileController : AppMvcControllerBase
     {

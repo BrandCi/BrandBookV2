@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Brand.Color
+﻿namespace BrandCi.Core.Domain.Brand.Color
 {
     public class RgbValue : BaseEntity
     {

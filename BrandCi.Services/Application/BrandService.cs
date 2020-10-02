@@ -1,11 +1,11 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services.Application;
-using BrandBook.Infrastructure;
+﻿using BrandCi.Core;
+using BrandCi.Core.Services.Application;
+using BrandCi.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BrandBook.Services.Application
+namespace BrandCi.Services.Application
 {
     public class BrandService : IBrandService
     {

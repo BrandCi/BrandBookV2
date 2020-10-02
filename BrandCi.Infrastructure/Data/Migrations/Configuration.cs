@@ -1,15 +1,15 @@
-namespace BrandBook.Infrastructure.Migrations
+namespace BrandCi.Infrastructure.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    public sealed class Configuration : DbMigrationsConfiguration<BrandBook.Infrastructure.Data.BrandBookDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<BrandCi.Infrastructure.Data.BrandBookDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BrandBook.Infrastructure.Data.BrandBookDbContext context)
+        protected override void Seed(BrandCi.Infrastructure.Data.BrandBookDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

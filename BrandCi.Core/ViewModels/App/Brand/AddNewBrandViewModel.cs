@@ -1,7 +1,7 @@
-﻿using BrandBook.Resources;
+﻿using BrandCi.Resources;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.App.Brand
+namespace BrandCi.Core.ViewModels.App.Brand
 {
     public class AddNewBrandViewModel
     {

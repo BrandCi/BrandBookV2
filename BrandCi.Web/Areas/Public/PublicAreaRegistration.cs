@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Public
+namespace BrandCi.Web.Areas.Public
 {
     public class PublicAreaRegistration : AreaRegistration
     {

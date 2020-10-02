@@ -1,7 +1,7 @@
-﻿using BrandBook.Resources;
+﻿using BrandCi.Resources;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.Auth
+namespace BrandCi.Core.ViewModels.Auth
 {
     public class RegisterViewModel
     {

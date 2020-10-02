@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.System
+﻿namespace BrandCi.Core.Domain.System
 {
     public enum AccessLevel
     {

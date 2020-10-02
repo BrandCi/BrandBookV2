@@ -1,10 +1,10 @@
-﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Web.Framework.Helpers;
+﻿using BrandCi.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Web.Framework.Helpers;
 using System;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Controllers
+namespace BrandCi.Web.Controllers
 {
     public class CultureController : FrontendMvcControllerBase
     {

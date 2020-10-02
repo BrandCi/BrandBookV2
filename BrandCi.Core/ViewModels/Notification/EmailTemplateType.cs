@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace BrandBook.Core.ViewModels.Notification
+namespace BrandCi.Core.ViewModels.Notification
 {
     public enum EmailTemplateType
     {

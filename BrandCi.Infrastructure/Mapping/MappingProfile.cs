@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 
-using BrandBook.Core.Domain.Frontend;
-using BrandBook.Core.Dto.Frontend.Blog;
+using BrandCi.Core.Domain.Frontend;
+using BrandCi.Core.Dto.Frontend.Blog;
 
 
-namespace BrandBook.Infrastructure.Mapping
+namespace BrandCi.Infrastructure.Mapping
 {
     public class MappingProfile : Profile
     {

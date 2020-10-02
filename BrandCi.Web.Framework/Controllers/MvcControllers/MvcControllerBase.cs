@@ -1,14 +1,14 @@
-﻿using BrandBook.Core.Repositories.Setting;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Setting;
-using BrandBook.Web.Framework.Helpers;
+﻿using BrandCi.Core.Repositories.Setting;
+using BrandCi.Infrastructure.Data;
+using BrandCi.Infrastructure.Repositories.Setting;
+using BrandCi.Web.Framework.Helpers;
 using log4net;
 using System;
 using System.Globalization;
 using System.Threading;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Framework.Controllers.MvcControllers
+namespace BrandCi.Web.Framework.Controllers.MvcControllers
 {
     public class MvcControllerBase : Controller
     {

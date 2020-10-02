@@ -1,7 +1,7 @@
-﻿using BrandBook.Resources;
+﻿using BrandCi.Resources;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.Frontend.Support
+namespace BrandCi.Core.ViewModels.Frontend.Support
 {
     public class ContactFormViewModel
     {

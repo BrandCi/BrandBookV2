@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrandBook.Core.Dto.Frontend.Blog
+namespace BrandCi.Core.Dto.Frontend.Blog
 {
     public class BlogDetailDto
     {

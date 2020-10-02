@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.ViewModels.App.Settings;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Web.Framework.Helpers;
+﻿using BrandCi.Core.ViewModels.App.Settings;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Web.Framework.Helpers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandCi.Web.Areas.App.Controllers
 {
     public class AppCultureController : AppMvcControllerBase
     {

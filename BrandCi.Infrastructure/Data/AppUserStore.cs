@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace BrandBook.Infrastructure.Data
+namespace BrandCi.Infrastructure.Data
 {
     public class AppUserStore : UserStore<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {

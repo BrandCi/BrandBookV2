@@ -1,8 +1,8 @@
-﻿using BrandBook.Web.Framework.Helpers;
+﻿using BrandCi.Web.Framework.Helpers;
 using System.Text;
 using System.Web;
 
-namespace BrandBook.Web.Framework.HtmlHelpers
+namespace BrandCi.Web.Framework.HtmlHelpers
 {
     public static class AuthCustomHelper
     {

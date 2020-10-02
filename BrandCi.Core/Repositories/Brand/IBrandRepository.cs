@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.Repositories.Brand
+namespace BrandCi.Core.Repositories.Brand
 {
     public interface IBrandRepository : IRepository<Domain.Brand.Brand>
     {

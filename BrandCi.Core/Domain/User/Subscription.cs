@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrandBook.Core.Domain.User
+namespace BrandCi.Core.Domain.User
 {
     public class Subscription : BaseEntity
     {

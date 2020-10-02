@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.Domain.User
+namespace BrandCi.Core.Domain.User
 {
     public class CustomUserLogin : IdentityUserLogin<int> { }
     public class CustomUserClaim : IdentityUserClaim<int> { }

@@ -1,25 +1,25 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Domain.Company;
-using BrandBook.Core.Domain.User;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Core.ViewModels.Auth;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Infrastructure;
-using BrandBook.Resources;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Notification;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.Domain.Company;
+using BrandCi.Core.Domain.User;
+using BrandCi.Core.Services.Authentication;
+using BrandCi.Core.Services.Messaging;
+using BrandCi.Core.Services.Subscriptions;
+using BrandCi.Core.ViewModels.Auth;
+using BrandCi.Core.ViewModels.Notification;
+using BrandCi.Core.ViewModels.Notification.TemplateType;
+using BrandCi.Infrastructure;
+using BrandCi.Resources;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Notification;
+using BrandCi.Services.Subscriptions;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Auth.Controllers
+namespace BrandCi.Web.Areas.Auth.Controllers
 {
     public class RegisterController : AuthMvcControllerBase
     {

@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Frontend
+﻿namespace BrandCi.Core.Domain.Frontend
 {
     public class BlogImage : BaseEntity
     {

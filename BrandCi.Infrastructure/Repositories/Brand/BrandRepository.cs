@@ -1,11 +1,11 @@
-﻿using BrandBook.Core.Repositories.Brand;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Repositories.Brand;
+using BrandCi.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BrandBook.Infrastructure.Repositories.Brand
+namespace BrandCi.Infrastructure.Repositories.Brand
 {
     public class BrandRepository : Repository<Core.Domain.Brand.Brand>, IBrandRepository
     {

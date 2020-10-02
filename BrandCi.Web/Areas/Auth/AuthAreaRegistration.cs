@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Auth
+namespace BrandCi.Web.Areas.Auth
 {
     public class AuthAreaRegistration : AreaRegistration
     {
@@ -20,33 +20,33 @@ namespace BrandBook.Web.Areas.Auth
                 "ForgotPassword",
                 "Auth/ForgotPassword",
                 new { controller = "Processes", action = "ForgotPassword" },
-                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+                new[] { "BrandCi.Web.Areas.Auth.Controllers" }
             );
             context.MapRoute(
                 "ForgotPasswordConfirmation",
                 "Auth/ForgotPasswordConfirmation",
                 new { controller = "Processes", action = "ForgotPasswordConfirmation" },
-                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+                new[] { "BrandCi.Web.Areas.Auth.Controllers" }
             );
 
             context.MapRoute(
                 "ResetPassword",
                 "Auth/ResetPassword",
                 new { controller = "Processes", action = "ResetPassword" },
-                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+                new[] { "BrandCi.Web.Areas.Auth.Controllers" }
             );
             context.MapRoute(
                 "ResetPasswordConfirmation",
                 "Auth/ResetPasswordConfirmation",
                 new { controller = "Processes", action = "ResetPasswordConfirmation" },
-                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+                new[] { "BrandCi.Web.Areas.Auth.Controllers" }
             );
 
             context.MapRoute(
                 "UnlockAccount",
                 "Auth/Locked",
                 new { controller = "Processes", action = "Locked" },
-                new[] { "BrandBook.Web.Areas.Auth.Controllers" }
+                new[] { "BrandCi.Web.Areas.Auth.Controllers" }
             );
 
 

@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.Brand.Color;
+﻿using BrandCi.Core.Domain.Brand.Color;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.Brand
+namespace BrandCi.Core.Repositories.Brand
 {
     public interface IColorRepository : IRepository<Color>
     {

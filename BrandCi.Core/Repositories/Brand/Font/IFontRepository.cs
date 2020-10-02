@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.Brand.Font
+namespace BrandCi.Core.Repositories.Brand.Font
 {
     public interface IFontRepository : IRepository<Domain.Brand.Font.Font>
     {

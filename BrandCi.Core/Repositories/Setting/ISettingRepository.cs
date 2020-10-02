@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.System;
+﻿using BrandCi.Core.Domain.System;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.Setting
+namespace BrandCi.Core.Repositories.Setting
 {
     public interface ISettingRepository : IRepository<Domain.System.Setting>
     {

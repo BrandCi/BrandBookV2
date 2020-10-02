@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.Brand.Icon;
+﻿using BrandCi.Core.Domain.Brand.Icon;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.Brand
+namespace BrandCi.Core.Repositories.Brand
 {
     public interface IIconRepository : IRepository<Icon>
     {

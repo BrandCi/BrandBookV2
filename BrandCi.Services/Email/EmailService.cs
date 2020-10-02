@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace BrandBook.Services.Email
+namespace BrandCi.Services.Email
 {
     [Obsolete("This Service is no longer supported! Use NotificationService instead.", false)]
     public class EmailService

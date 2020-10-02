@@ -1,9 +1,9 @@
-using BrandBook.Core;
-using BrandBook.Core.Domain.Frontend;
-using BrandBook.Core.ViewModels.App.Blog;
-using BrandBook.Core.ViewModels.App.Blog.Overview;
-using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Core;
+using BrandCi.Core.Domain.Frontend;
+using BrandCi.Core.ViewModels.App.Blog;
+using BrandCi.Core.ViewModels.App.Blog.Overview;
+using BrandCi.Infrastructure;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandCi.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "BlogManager")]
     public class BlogEntryController : AppMvcControllerBase

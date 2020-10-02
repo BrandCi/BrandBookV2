@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Resource
+﻿namespace BrandCi.Core.Domain.Resource
 {
     public class Image : BaseEntity
     {

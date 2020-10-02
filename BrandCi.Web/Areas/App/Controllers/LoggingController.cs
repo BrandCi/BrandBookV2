@@ -1,12 +1,12 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.ViewModels.App.System.LoggingMessages;
-using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.ViewModels.App.System.LoggingMessages;
+using BrandCi.Infrastructure;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandCi.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class LoggingController : AppMvcControllerBase

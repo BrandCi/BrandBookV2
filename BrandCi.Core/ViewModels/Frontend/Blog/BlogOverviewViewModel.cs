@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.Frontend.Blog
+namespace BrandCi.Core.ViewModels.Frontend.Blog
 {
     public class BlogOverviewViewModel : IEnumerable<SingleBlogOverviewViewModel>
     {

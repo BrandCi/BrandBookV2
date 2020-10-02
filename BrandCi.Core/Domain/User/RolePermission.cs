@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrandBook.Core.Domain.User
+namespace BrandCi.Core.Domain.User
 {
     public class RolePermission : BaseEntity
     {

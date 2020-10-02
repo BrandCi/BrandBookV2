@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrandBook.Core.Services
+namespace BrandCi.Core.Services
 {
     public interface ISettingService
     {

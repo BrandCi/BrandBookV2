@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.App.Brand
+namespace BrandCi.Core.ViewModels.App.Brand
 {
     public class SingleBrandOverviewViewModel
     {

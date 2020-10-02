@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.ViewModels.Notification;
+﻿using BrandCi.Core.ViewModels.Notification;
 
-namespace BrandBook.Core.Services.Notification
+namespace BrandCi.Core.Services.Notification
 {
     public interface IEmailBuilder
     {

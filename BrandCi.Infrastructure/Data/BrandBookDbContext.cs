@@ -1,16 +1,16 @@
-﻿using BrandBook.Core.Domain.Brand;
-using BrandBook.Core.Domain.Brand.Color;
-using BrandBook.Core.Domain.Brand.Font;
-using BrandBook.Core.Domain.Brand.Icon;
-using BrandBook.Core.Domain.Company;
-using BrandBook.Core.Domain.Frontend;
-using BrandBook.Core.Domain.Resource;
-using BrandBook.Core.Domain.System;
-using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.Brand;
+using BrandCi.Core.Domain.Brand.Color;
+using BrandCi.Core.Domain.Brand.Font;
+using BrandCi.Core.Domain.Brand.Icon;
+using BrandCi.Core.Domain.Company;
+using BrandCi.Core.Domain.Frontend;
+using BrandCi.Core.Domain.Resource;
+using BrandCi.Core.Domain.System;
+using BrandCi.Core.Domain.User;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
-namespace BrandBook.Infrastructure.Data
+namespace BrandCi.Infrastructure.Data
 {
     public class BrandBookDbContext : IdentityDbContext<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {

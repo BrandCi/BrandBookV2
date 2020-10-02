@@ -1,8 +1,8 @@
-﻿using BrandBook.Web.Routes;
+﻿using BrandCi.Web.Routes;
 using System;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App
+namespace BrandCi.Web.Areas.App
 {
     public class AppAreaRegistration : AreaRegistration
     {

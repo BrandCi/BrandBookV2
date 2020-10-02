@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.ViewModels.App.Subscriptions
+﻿namespace BrandCi.Core.ViewModels.App.Subscriptions
 {
     public class SingleSubscriptionViewModel
     {

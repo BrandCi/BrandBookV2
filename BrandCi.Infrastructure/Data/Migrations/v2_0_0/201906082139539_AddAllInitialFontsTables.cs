@@ -1,4 +1,4 @@
-namespace BrandBook.Infrastructure.Migrations
+namespace BrandCi.Infrastructure.Migrations
 {
     using System.Data.Entity.Migrations;
 

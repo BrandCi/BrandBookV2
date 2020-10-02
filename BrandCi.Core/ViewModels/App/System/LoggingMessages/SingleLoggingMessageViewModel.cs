@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.ViewModels.App.System.LoggingMessages
+﻿namespace BrandCi.Core.ViewModels.App.System.LoggingMessages
 {
     public class SingleLoggingMessageViewModel
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.Brand.Icons
+namespace BrandCi.Core.ViewModels.App.Brand.Icons
 {
     public class IconCategoryViewModel : IEnumerable<SingleIconViewModel>
     {

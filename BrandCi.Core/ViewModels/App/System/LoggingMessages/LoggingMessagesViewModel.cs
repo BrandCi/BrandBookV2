@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.System.LoggingMessages
+namespace BrandCi.Core.ViewModels.App.System.LoggingMessages
 {
     public class LoggingMessagesViewModel : IEnumerable<SingleLoggingMessageViewModel>
     {

@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Company
+﻿namespace BrandCi.Core.Domain.Company
 {
     public class Company : BaseEntity
     {

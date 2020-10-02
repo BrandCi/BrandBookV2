@@ -1,9 +1,9 @@
-﻿using BrandBook.Core.ViewModels.App.Brand;
-using BrandBook.Resources;
+﻿using BrandCi.Core.ViewModels.App.Brand;
+using BrandCi.Resources;
 using System.Text;
 using System.Web;
 
-namespace BrandBook.Web.Framework.HtmlHelpers
+namespace BrandCi.Web.Framework.HtmlHelpers
 {
     public static class AppCustomHelper
     {

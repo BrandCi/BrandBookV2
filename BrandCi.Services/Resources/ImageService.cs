@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace BrandBook.Services.Resources
+namespace BrandCi.Services.Resources
 {
     public class ImageService
     {

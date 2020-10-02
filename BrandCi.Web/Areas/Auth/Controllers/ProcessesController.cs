@@ -1,18 +1,18 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.ViewModels.Auth.Process;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Notification;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.Services.Messaging;
+using BrandCi.Core.ViewModels.Auth.Process;
+using BrandCi.Core.ViewModels.Notification;
+using BrandCi.Core.ViewModels.Notification.TemplateType;
+using BrandCi.Infrastructure;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Notification;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Auth.Controllers
+namespace BrandCi.Web.Areas.Auth.Controllers
 {
     public class ProcessesController : AuthMvcControllerBase
     {

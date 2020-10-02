@@ -1,16 +1,16 @@
-using BrandBook.Core;
-using BrandBook.Core.Domain.Brand.Color;
-using BrandBook.Core.Services.Application;
-using BrandBook.Core.ViewModels.App.Brand;
-using BrandBook.Core.ViewModels.App.Brand.Colors;
-using BrandBook.Core.ViewModels.App.Brand.Fonts;
-using BrandBook.Core.ViewModels.App.Brand.Icons;
-using BrandBook.Core.ViewModels.App.Brand.Settings;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Application;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Core;
+using BrandCi.Core.Domain.Brand.Color;
+using BrandCi.Core.Services.Application;
+using BrandCi.Core.ViewModels.App.Brand;
+using BrandCi.Core.ViewModels.App.Brand.Colors;
+using BrandCi.Core.ViewModels.App.Brand.Fonts;
+using BrandCi.Core.ViewModels.App.Brand.Icons;
+using BrandCi.Core.ViewModels.App.Brand.Settings;
+using BrandCi.Infrastructure;
+using BrandCi.Services.Application;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Subscriptions;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using log4net;
 using Microsoft.AspNet.Identity;
 using System;
@@ -18,9 +18,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Image = BrandBook.Core.Domain.Resource.Image;
+using Image = BrandCi.Core.Domain.Resource.Image;
 
-namespace BrandBook.Web.Areas.App.Controllers.Brand
+namespace BrandCi.Web.Areas.App.Controllers.Brand
 {
     public class BrandController : AppMvcControllerBase
     {

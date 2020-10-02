@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Domain.Brand.Font;
-using BrandBook.Core.Repositories.Brand.Font;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.Brand.Font;
+using BrandCi.Core.Repositories.Brand.Font;
+using BrandCi.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BrandBook.Infrastructure.Repositories.Brand.Font
+namespace BrandCi.Infrastructure.Repositories.Brand.Font
 {
     public class FontStyleRepository : Repository<FontStyle>, IFontStyleRepository
     {

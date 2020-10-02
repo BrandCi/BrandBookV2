@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.UserManagement
+namespace BrandCi.Core.ViewModels.App.UserManagement
 {
     public class AppUserViewModel : IEnumerable<SingleAppUserViewModel>
     {

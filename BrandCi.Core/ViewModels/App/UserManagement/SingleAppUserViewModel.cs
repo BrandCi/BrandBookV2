@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.ViewModels.App.UserManagement
+﻿namespace BrandCi.Core.ViewModels.App.UserManagement
 {
     public class SingleAppUserViewModel
     {

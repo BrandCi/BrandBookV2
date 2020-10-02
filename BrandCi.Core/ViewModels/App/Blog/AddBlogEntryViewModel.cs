@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.App.Blog
+namespace BrandCi.Core.ViewModels.App.Blog
 {
     public class AddBlogEntryViewModel
     {

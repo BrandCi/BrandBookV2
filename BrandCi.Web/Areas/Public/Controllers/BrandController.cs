@@ -1,7 +1,7 @@
-﻿using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Public.Controllers
+namespace BrandCi.Web.Areas.Public.Controllers
 {
     public class BrandController : PublicMvcControllerBase
     {

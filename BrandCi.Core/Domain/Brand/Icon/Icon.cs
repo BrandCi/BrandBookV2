@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Brand.Icon
+﻿namespace BrandCi.Core.Domain.Brand.Icon
 {
     public class Icon : BaseEntity
     {

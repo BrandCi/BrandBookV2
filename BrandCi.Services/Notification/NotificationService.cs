@@ -1,13 +1,13 @@
-﻿using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.Services.Notification;
-using BrandBook.Core.ViewModels.Notification;
+﻿using BrandCi.Core.Services.Messaging;
+using BrandCi.Core.Services.Notification;
+using BrandCi.Core.ViewModels.Notification;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
 using System;
 using System.Configuration;
 
-namespace BrandBook.Services.Notification
+namespace BrandCi.Services.Notification
 {
     public class NotificationService : INotificationService
     {

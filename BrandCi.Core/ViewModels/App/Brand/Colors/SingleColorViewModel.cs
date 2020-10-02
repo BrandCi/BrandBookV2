@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.App.Brand.Colors
+namespace BrandCi.Core.ViewModels.App.Brand.Colors
 {
     public class SingleColorViewModel
     {

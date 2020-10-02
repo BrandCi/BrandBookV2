@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BrandBook.Web.Routes
+namespace BrandCi.Web.Routes
 {
     public class RouteConfig
     {
@@ -18,14 +18,14 @@ namespace BrandBook.Web.Routes
                 name: "BlogOverview",
                 url: "Blog/Overview",
                 defaults: new { controller = "Blog", action = "Overview" },
-                namespaces: new[] { "BrandBook.Web.Controllers.BlogController" }
+                namespaces: new[] { "BrandCi.Web.Controllers.BlogController" }
             );
 
             routes.MapRoute(
                 name: "Blog",
                 url: "Blog/{blogName}",
                 defaults: new { controller = "Blog", action = "Index" },
-                namespaces: new[] { "BrandBook.Web.Controllers.BlogController" }
+                namespaces: new[] { "BrandCi.Web.Controllers.BlogController" }
             );
 
 

@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 using System;
 
-namespace BrandBook.Core.Services.Subscriptions
+namespace BrandCi.Core.Services.Subscriptions
 {
     public interface ISubscriptionService
     {

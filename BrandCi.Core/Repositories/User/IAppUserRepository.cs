@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 
-namespace BrandBook.Core.Repositories.User
+namespace BrandCi.Core.Repositories.User
 {
     public interface IAppUserRepository : IRepository<AppUser>
     {

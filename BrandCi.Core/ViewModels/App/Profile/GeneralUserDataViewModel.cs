@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.App.Profile
+namespace BrandCi.Core.ViewModels.App.Profile
 {
     public class GeneralUserDataViewModel
     {

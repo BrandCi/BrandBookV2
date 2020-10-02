@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.User
+namespace BrandCi.Core.Repositories.User
 {
     public interface ISubscriptionRepository : IRepository<Subscription>
     {

@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Text;
 
-namespace BrandBook.Web.Framework.Helpers
+namespace BrandCi.Web.Framework.Helpers
 {
     public static class CustomHelper
     {

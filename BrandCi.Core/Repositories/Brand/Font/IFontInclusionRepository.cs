@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.Domain.Brand.Font;
+﻿using BrandCi.Core.Domain.Brand.Font;
 
-namespace BrandBook.Core.Repositories.Brand.Font
+namespace BrandCi.Core.Repositories.Brand.Font
 {
     public interface IFontInclusionRepository : IRepository<FontInclusion>
     {

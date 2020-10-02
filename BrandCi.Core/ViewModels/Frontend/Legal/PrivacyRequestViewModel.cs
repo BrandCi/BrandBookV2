@@ -1,7 +1,7 @@
-﻿using BrandBook.Resources;
+﻿using BrandCi.Resources;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.Frontend.Legal
+namespace BrandCi.Core.ViewModels.Frontend.Legal
 {
     public class PrivacyRequestViewModel
     {

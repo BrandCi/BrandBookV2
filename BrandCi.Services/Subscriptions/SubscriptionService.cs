@@ -1,12 +1,12 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Domain.User;
-using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Infrastructure;
+﻿using BrandCi.Core;
+using BrandCi.Core.Domain.User;
+using BrandCi.Core.Services.Subscriptions;
+using BrandCi.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BrandBook.Services.Subscriptions
+namespace BrandCi.Services.Subscriptions
 {
     public class SubscriptionService : ISubscriptionService
     {

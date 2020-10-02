@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.Brand.Font;
+﻿using BrandCi.Core.Domain.Brand.Font;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Repositories.Brand.Font
+namespace BrandCi.Core.Repositories.Brand.Font
 {
     public interface IFontStyleRepository : IRepository<FontStyle>
     {

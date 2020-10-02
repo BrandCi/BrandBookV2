@@ -1,9 +1,9 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services;
-using BrandBook.Infrastructure;
+﻿using BrandCi.Core;
+using BrandCi.Core.Services;
+using BrandCi.Infrastructure;
 using System.Collections.Generic;
 
-namespace BrandBook.Services
+namespace BrandCi.Services
 {
     public class SettingService : ISettingService
     {

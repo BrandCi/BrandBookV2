@@ -1,15 +1,15 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services;
-using BrandBook.Core.ViewModels.App.Settings;
-using BrandBook.Core.ViewModels.Frontend.Layout;
-using BrandBook.Infrastructure;
-using BrandBook.Services;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.Services;
+using BrandCi.Core.ViewModels.App.Settings;
+using BrandCi.Core.ViewModels.Frontend.Layout;
+using BrandCi.Infrastructure;
+using BrandCi.Services;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers
+namespace BrandCi.Web.Areas.App.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class SystemController : AppMvcControllerBase

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.App.Settings
+namespace BrandCi.Core.ViewModels.App.Settings
 {
     public class UserSettingsViewModel
     {

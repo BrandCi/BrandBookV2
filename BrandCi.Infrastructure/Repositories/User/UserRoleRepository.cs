@@ -1,8 +1,8 @@
-﻿using BrandBook.Core.Domain.User;
-using BrandBook.Core.Repositories.User;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.User;
+using BrandCi.Core.Repositories.User;
+using BrandCi.Infrastructure.Data;
 
-namespace BrandBook.Infrastructure.Repositories.User
+namespace BrandCi.Infrastructure.Repositories.User
 {
     internal class UserRoleRepository : Repository<UserRole>, IUserRoleRepository
     {

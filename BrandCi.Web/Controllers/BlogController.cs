@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Repositories.Frontend;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Frontend;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core.Repositories.Frontend;
+using BrandCi.Infrastructure.Data;
+using BrandCi.Infrastructure.Repositories.Frontend;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Controllers
+namespace BrandCi.Web.Controllers
 {
     public class BlogController : FrontendMvcControllerBase
     {

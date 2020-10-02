@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrandBook.Core.Services.Application
+namespace BrandCi.Core.Services.Application
 {
     public interface IBrandService
     {

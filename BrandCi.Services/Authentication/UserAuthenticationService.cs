@@ -1,11 +1,11 @@
-﻿using BrandBook.Core.Domain.User;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.User;
+using BrandCi.Infrastructure.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using System;
 
-namespace BrandBook.Services.Authentication
+namespace BrandCi.Services.Authentication
 {
     public class UserAuthenticationService : UserManager<AppUser, int>
     {

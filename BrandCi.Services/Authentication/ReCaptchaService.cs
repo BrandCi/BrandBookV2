@@ -1,5 +1,5 @@
-﻿using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.ViewModels.Auth.Process;
+﻿using BrandCi.Core.Services.Authentication;
+using BrandCi.Core.ViewModels.Auth.Process;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BrandBook.Services.Authentication
+namespace BrandCi.Services.Authentication
 {
     public class ReCaptchaService : IReCaptchaService
     {

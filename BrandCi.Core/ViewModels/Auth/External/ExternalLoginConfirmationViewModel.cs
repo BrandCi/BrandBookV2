@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.Auth.External
+namespace BrandCi.Core.ViewModels.Auth.External
 {
     public class ExternalLoginConfirmationViewModel
     {

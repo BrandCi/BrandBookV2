@@ -1,11 +1,11 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BrandBook.Services.Authentication
+namespace BrandCi.Services.Authentication
 {
     public class SignInService : SignInManager<AppUser, int>
     {

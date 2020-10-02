@@ -1,11 +1,11 @@
-﻿using BrandBook.Core.Repositories;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Repositories;
+using BrandCi.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BrandBook.Infrastructure.Repositories
+namespace BrandCi.Infrastructure.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

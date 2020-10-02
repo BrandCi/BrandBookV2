@@ -1,23 +1,23 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Repositories.Brand;
-using BrandBook.Core.Repositories.Brand.Font;
-using BrandBook.Core.Repositories.Company;
-using BrandBook.Core.Repositories.Frontend;
-using BrandBook.Core.Repositories.Resource;
-using BrandBook.Core.Repositories.Setting;
-using BrandBook.Core.Repositories.System;
-using BrandBook.Core.Repositories.User;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.Brand;
-using BrandBook.Infrastructure.Repositories.Brand.Font;
-using BrandBook.Infrastructure.Repositories.Company;
-using BrandBook.Infrastructure.Repositories.Frontend;
-using BrandBook.Infrastructure.Repositories.Resource;
-using BrandBook.Infrastructure.Repositories.Setting;
-using BrandBook.Infrastructure.Repositories.System;
-using BrandBook.Infrastructure.Repositories.User;
+﻿using BrandCi.Core;
+using BrandCi.Core.Repositories.Brand;
+using BrandCi.Core.Repositories.Brand.Font;
+using BrandCi.Core.Repositories.Company;
+using BrandCi.Core.Repositories.Frontend;
+using BrandCi.Core.Repositories.Resource;
+using BrandCi.Core.Repositories.Setting;
+using BrandCi.Core.Repositories.System;
+using BrandCi.Core.Repositories.User;
+using BrandCi.Infrastructure.Data;
+using BrandCi.Infrastructure.Repositories.Brand;
+using BrandCi.Infrastructure.Repositories.Brand.Font;
+using BrandCi.Infrastructure.Repositories.Company;
+using BrandCi.Infrastructure.Repositories.Frontend;
+using BrandCi.Infrastructure.Repositories.Resource;
+using BrandCi.Infrastructure.Repositories.Setting;
+using BrandCi.Infrastructure.Repositories.System;
+using BrandCi.Infrastructure.Repositories.User;
 
-namespace BrandBook.Infrastructure
+namespace BrandCi.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {

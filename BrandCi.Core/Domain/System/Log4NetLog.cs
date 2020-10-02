@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrandBook.Core.Domain.System
+namespace BrandCi.Core.Domain.System
 {
     public class Log4NetLog
     {

@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Services.Notification;
-using BrandBook.Core.ViewModels.Notification;
+﻿using BrandCi.Core.Services.Notification;
+using BrandCi.Core.ViewModels.Notification;
 using System.Configuration;
 using System.IO;
 using System.Web.Hosting;
 
-namespace BrandBook.Services.Notification
+namespace BrandCi.Services.Notification
 {
     public class EmailBuilder : IEmailBuilder
     {

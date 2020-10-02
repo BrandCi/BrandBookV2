@@ -1,8 +1,8 @@
-﻿using BrandBook.Core.Domain.Frontend;
+﻿using BrandCi.Core.Domain.Frontend;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BrandBook.Core.Repositories.Frontend
+namespace BrandCi.Core.Repositories.Frontend
 {
     public interface IBlogEntryRepository : IRepository<BlogEntry>
     {

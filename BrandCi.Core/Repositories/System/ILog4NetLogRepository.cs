@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.Domain.System;
+﻿using BrandCi.Core.Domain.System;
 
-namespace BrandBook.Core.Repositories.System
+namespace BrandCi.Core.Repositories.System
 {
     public interface ILog4NetLogRepository : IRepository<Log4NetLog>
     {

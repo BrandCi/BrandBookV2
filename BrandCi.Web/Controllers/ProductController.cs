@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.ViewModels.Frontend.Product;
-using BrandBook.Core.ViewModels.Frontend.Support;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Resources;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Notification;
+using BrandCi.Core.Services.Authentication;
+using BrandCi.Core.Services.Messaging;
+using BrandCi.Core.ViewModels.Frontend.Product;
+using BrandCi.Core.ViewModels.Frontend.Support;
+using BrandCi.Core.ViewModels.Notification;
+using BrandCi.Core.ViewModels.Notification.TemplateType;
+using BrandCi.Resources;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Notification;
 using log4net;
 
-namespace BrandBook.Web.Controllers
+namespace BrandCi.Web.Controllers
 {
     public class ProductController : FrontendMvcControllerBase
     {

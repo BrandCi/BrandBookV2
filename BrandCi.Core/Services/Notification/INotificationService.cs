@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.ViewModels.Notification;
+﻿using BrandCi.Core.ViewModels.Notification;
 
-namespace BrandBook.Core.Services.Messaging
+namespace BrandCi.Core.Services.Messaging
 {
     public interface INotificationService
     {

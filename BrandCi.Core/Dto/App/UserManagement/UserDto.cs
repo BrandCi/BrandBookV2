@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Dto.App.UserManagement
+﻿namespace BrandCi.Core.Dto.App.UserManagement
 {
     public class UserDto
     {

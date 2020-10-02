@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Domain.User
+namespace BrandCi.Core.Domain.User
 {
     public class CustomUserRole : IdentityUserRole<int> { }
 

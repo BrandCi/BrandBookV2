@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.Brand
+namespace BrandCi.Core.ViewModels.App.Brand
 {
     public class BrandsOverviewViewModel : IEnumerable<SingleBrandOverviewViewModel>
     {

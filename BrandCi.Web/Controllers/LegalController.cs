@@ -1,15 +1,15 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
-using BrandBook.Core.ViewModels.Frontend.Legal;
-using BrandBook.Core.ViewModels.Notification;
-using BrandBook.Core.ViewModels.Notification.TemplateType;
-using BrandBook.Infrastructure;
-using BrandBook.Resources;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Notification;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
-using BrandBook.Web.Framework.Helpers;
+﻿using BrandCi.Core;
+using BrandCi.Core.Services.Authentication;
+using BrandCi.Core.Services.Messaging;
+using BrandCi.Core.ViewModels.Frontend.Legal;
+using BrandCi.Core.ViewModels.Notification;
+using BrandCi.Core.ViewModels.Notification.TemplateType;
+using BrandCi.Infrastructure;
+using BrandCi.Resources;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Notification;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
+using BrandCi.Web.Framework.Helpers;
 using log4net;
 using Microsoft.AspNet.Identity;
 using System;
@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Controllers
+namespace BrandCi.Web.Controllers
 {
     public class LegalController : FrontendMvcControllerBase
     {

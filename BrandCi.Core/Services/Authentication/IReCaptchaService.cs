@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BrandBook.Core.Services.Authentication
+namespace BrandCi.Core.Services.Authentication
 {
     public interface IReCaptchaService
     {

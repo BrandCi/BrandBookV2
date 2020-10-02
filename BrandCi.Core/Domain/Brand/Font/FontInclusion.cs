@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Brand.Font
+﻿namespace BrandCi.Core.Domain.Brand.Font
 {
     public class FontInclusion : BaseEntity
     {

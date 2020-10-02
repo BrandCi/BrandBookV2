@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Services.Users
+﻿namespace BrandCi.Services.Users
 {
     public class RoleService
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.App.Settings
+namespace BrandCi.Core.ViewModels.App.Settings
 {
     public class MediaSettingsViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BrandBook.Core.ViewModels.Auth.Process
+namespace BrandCi.Core.ViewModels.Auth.Process
 {
     public class ResetPasswordViewModel
     {

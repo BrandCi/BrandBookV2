@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using BrandBook.Resources;
+using BrandCi.Resources;
 
-namespace BrandBook.Core.ViewModels.Frontend.Product
+namespace BrandCi.Core.ViewModels.Frontend.Product
 {
     public class ClosedBetaViewModel
     {

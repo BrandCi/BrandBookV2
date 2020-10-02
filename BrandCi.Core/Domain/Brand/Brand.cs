@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.Resource;
+﻿using BrandCi.Core.Domain.Resource;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.Domain.Brand
+namespace BrandCi.Core.Domain.Brand
 {
     public class Brand : BaseEntity
     {

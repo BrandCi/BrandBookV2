@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.Brand.Fonts
+namespace BrandCi.Core.ViewModels.App.Brand.Fonts
 {
     public class SingleFontViewModel : IEnumerable<FontStyleViewModel>
     {

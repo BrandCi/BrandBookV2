@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.App.Brand.Icons
+namespace BrandCi.Core.ViewModels.App.Brand.Icons
 {
     public class SingleIconViewModel
     {

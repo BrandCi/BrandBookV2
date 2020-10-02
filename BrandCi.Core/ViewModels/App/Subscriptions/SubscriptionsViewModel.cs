@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.Subscriptions
+namespace BrandCi.Core.ViewModels.App.Subscriptions
 {
     public class SubscriptionsViewModel : IEnumerable<SingleSubscriptionViewModel>
     {

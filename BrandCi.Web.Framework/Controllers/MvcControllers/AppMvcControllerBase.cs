@@ -1,12 +1,12 @@
-﻿using BrandBook.Core.Repositories.User;
-using BrandBook.Infrastructure.Data;
-using BrandBook.Infrastructure.Repositories.User;
+﻿using BrandCi.Core.Repositories.User;
+using BrandCi.Infrastructure.Data;
+using BrandCi.Infrastructure.Repositories.User;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Web.Mvc;
-using BrandBook.Core.Domain.User;
+using BrandCi.Core.Domain.User;
 
-namespace BrandBook.Web.Framework.Controllers.MvcControllers
+namespace BrandCi.Web.Framework.Controllers.MvcControllers
 {
     [Authorize]
     public class AppMvcControllerBase : MvcControllerBase

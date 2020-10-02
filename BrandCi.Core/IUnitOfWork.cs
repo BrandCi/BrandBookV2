@@ -1,14 +1,14 @@
-﻿using BrandBook.Core.Repositories.Brand;
-using BrandBook.Core.Repositories.Brand.Font;
-using BrandBook.Core.Repositories.Company;
-using BrandBook.Core.Repositories.Frontend;
-using BrandBook.Core.Repositories.Resource;
-using BrandBook.Core.Repositories.Setting;
-using BrandBook.Core.Repositories.System;
-using BrandBook.Core.Repositories.User;
+﻿using BrandCi.Core.Repositories.Brand;
+using BrandCi.Core.Repositories.Brand.Font;
+using BrandCi.Core.Repositories.Company;
+using BrandCi.Core.Repositories.Frontend;
+using BrandCi.Core.Repositories.Resource;
+using BrandCi.Core.Repositories.Setting;
+using BrandCi.Core.Repositories.System;
+using BrandCi.Core.Repositories.User;
 using System;
 
-namespace BrandBook.Core
+namespace BrandCi.Core
 {
     public interface IUnitOfWork : IDisposable
     {

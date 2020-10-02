@@ -1,5 +1,5 @@
 ﻿
-namespace BrandBook.Core.ViewModels.Frontend.Layout
+namespace BrandCi.Core.ViewModels.Frontend.Layout
 {
     public class UserLikeViewModel
     {

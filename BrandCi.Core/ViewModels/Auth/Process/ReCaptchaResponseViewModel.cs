@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.Auth.Process
+namespace BrandCi.Core.ViewModels.Auth.Process
 {
     public class ReCaptchaResponseViewModel
     {

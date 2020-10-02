@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Repositories.Company;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Repositories.Company;
+using BrandCi.Infrastructure.Data;
 
-namespace BrandBook.Infrastructure.Repositories.Company
+namespace BrandCi.Infrastructure.Repositories.Company
 {
     public class CompanyRepository : Repository<Core.Domain.Company.Company>, ICompanyRepository
     {

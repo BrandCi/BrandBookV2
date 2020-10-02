@@ -1,11 +1,11 @@
-﻿using BrandBook.Core.Domain.User;
-using BrandBook.Core.Repositories.User;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.User;
+using BrandCi.Core.Repositories.User;
+using BrandCi.Infrastructure.Data;
 using System;
 using System.Data.Entity;
 using System.Linq;
 
-namespace BrandBook.Infrastructure.Repositories.User
+namespace BrandCi.Infrastructure.Repositories.User
 {
     public class AppUserRepository : Repository<AppUser>, IAppUserRepository
     {

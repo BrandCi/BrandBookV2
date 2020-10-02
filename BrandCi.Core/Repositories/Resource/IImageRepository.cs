@@ -1,6 +1,6 @@
-﻿using BrandBook.Core.Domain.Resource;
+﻿using BrandCi.Core.Domain.Resource;
 
-namespace BrandBook.Core.Repositories.Resource
+namespace BrandCi.Core.Repositories.Resource
 {
     public interface IImageRepository : IRepository<Image>
     {

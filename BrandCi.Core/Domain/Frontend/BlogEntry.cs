@@ -1,7 +1,7 @@
-﻿using BrandBook.Core.Domain.User;
+﻿using BrandCi.Core.Domain.User;
 using System;
 
-namespace BrandBook.Core.Domain.Frontend
+namespace BrandCi.Core.Domain.Frontend
 {
     public class BlogEntry : BaseEntity
     {

@@ -1,10 +1,10 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.ViewModels.Frontend.Layout;
-using BrandBook.Infrastructure;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.ViewModels.Frontend.Layout;
+using BrandCi.Infrastructure;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Controllers
+namespace BrandCi.Web.Controllers
 {
     public class LayoutController : FrontendMvcControllerBase
     {

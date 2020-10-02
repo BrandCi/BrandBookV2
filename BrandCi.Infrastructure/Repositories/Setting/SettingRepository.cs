@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Domain.System;
-using BrandBook.Core.Repositories.Setting;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.System;
+using BrandCi.Core.Repositories.Setting;
+using BrandCi.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BrandBook.Infrastructure.Repositories.Setting
+namespace BrandCi.Infrastructure.Repositories.Setting
 {
     public class SettingRepository : Repository<Core.Domain.System.Setting>, ISettingRepository
     {

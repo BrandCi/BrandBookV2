@@ -1,12 +1,12 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Domain.Resource;
-using BrandBook.Core.Services.Subscriptions;
-using BrandBook.Core.ViewModels.App.Brand;
-using BrandBook.Infrastructure;
-using BrandBook.Services.Authentication;
-using BrandBook.Services.Resources;
-using BrandBook.Services.Subscriptions;
-using BrandBook.Web.Framework.Controllers.MvcControllers;
+﻿using BrandCi.Core;
+using BrandCi.Core.Domain.Resource;
+using BrandCi.Core.Services.Subscriptions;
+using BrandCi.Core.ViewModels.App.Brand;
+using BrandCi.Infrastructure;
+using BrandCi.Services.Authentication;
+using BrandCi.Services.Resources;
+using BrandCi.Services.Subscriptions;
+using BrandCi.Web.Framework.Controllers.MvcControllers;
 using log4net;
 using Microsoft.AspNet.Identity;
 using System;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.App.Controllers.Brand
+namespace BrandCi.Web.Areas.App.Controllers.Brand
 {
     public class BrandsController : AppMvcControllerBase
     {

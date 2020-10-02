@@ -1,11 +1,11 @@
-﻿using BrandBook.Resources;
+﻿using BrandCi.Resources;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading;
 
-namespace BrandBook.Web.Framework.Helpers
+namespace BrandCi.Web.Framework.Helpers
 {
     public static class CultureHelper
     {

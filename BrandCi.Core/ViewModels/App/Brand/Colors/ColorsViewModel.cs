@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace BrandBook.Core.ViewModels.App.Brand.Colors
+namespace BrandCi.Core.ViewModels.App.Brand.Colors
 {
     public class ColorsViewModel : IEnumerable<ColorCategoryViewModel>
     {

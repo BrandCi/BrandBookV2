@@ -1,4 +1,4 @@
-﻿namespace BrandBook.Core.Domain.Brand
+﻿namespace BrandCi.Core.Domain.Brand
 {
     public class BrandPublicSetting : BaseEntity
     {

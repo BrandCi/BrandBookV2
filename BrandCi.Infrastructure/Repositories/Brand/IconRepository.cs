@@ -1,10 +1,10 @@
-﻿using BrandBook.Core.Domain.Brand.Icon;
-using BrandBook.Core.Repositories.Brand;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.Brand.Icon;
+using BrandCi.Core.Repositories.Brand;
+using BrandCi.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BrandBook.Infrastructure.Repositories.Brand
+namespace BrandCi.Infrastructure.Repositories.Brand
 {
     public class IconRepository : Repository<Icon>, IIconRepository
     {

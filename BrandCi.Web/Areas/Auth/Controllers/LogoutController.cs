@@ -3,7 +3,7 @@ using Microsoft.Owin.Security;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BrandBook.Web.Areas.Auth.Controllers
+namespace BrandCi.Web.Areas.Auth.Controllers
 {
     public class LogoutController : Controller
     {

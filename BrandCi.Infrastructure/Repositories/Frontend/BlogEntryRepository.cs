@@ -1,13 +1,13 @@
-﻿using BrandBook.Core.Domain.Frontend;
-using BrandBook.Core.Repositories.Frontend;
-using BrandBook.Infrastructure.Data;
+﻿using BrandCi.Core.Domain.Frontend;
+using BrandCi.Core.Repositories.Frontend;
+using BrandCi.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BrandBook.Infrastructure.Repositories.Frontend
+namespace BrandCi.Infrastructure.Repositories.Frontend
 {
     public class BlogEntryRepository : Repository<BlogEntry>, IBlogEntryRepository
     {

@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Routing;
 
-namespace BrandBook.Web.Routes
+namespace BrandCi.Web.Routes
 {
     public class ServerRouteConstraint : IRouteConstraint
     {

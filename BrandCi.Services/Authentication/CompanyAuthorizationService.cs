@@ -1,11 +1,11 @@
-﻿using BrandBook.Core;
-using BrandBook.Core.Domain.Brand;
-using BrandBook.Infrastructure;
+﻿using BrandCi.Core;
+using BrandCi.Core.Domain.Brand;
+using BrandCi.Infrastructure;
 using log4net;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BrandBook.Services.Authentication
+namespace BrandCi.Services.Authentication
 {
     public class CompanyAuthorizationService
     {

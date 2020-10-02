@@ -1,6 +1,6 @@
 ﻿
 
-namespace BrandBook.Core.Repositories.Company
+namespace BrandCi.Core.Repositories.Company
 {
     public interface ICompanyRepository : IRepository<Domain.Company.Company>
     {
