@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BrandCi.Core\BrandCi.Core.csproj" />
+    <ProjectReference Include="..\BrandCi.Infrastructure\BrandCi.Infrastructure.csproj" />
+    <ProjectReference Include="..\BrandCi.Resources\BrandCi.Resources.csproj" />
+    <ProjectReference Include="..\BrandCi.Services\BrandCi.Services.csproj" />
+    <ProjectReference Include="..\BrandCi.Web.Framework\BrandCi.Web.Framework.csproj" />
+  </ItemGroup>
+
 </Project>

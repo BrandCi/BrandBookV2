@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BrandCi.Core\BrandCi.Core.csproj" />
+    <ProjectReference Include="..\BrandCi.Infrastructure\BrandCi.Infrastructure.csproj" />
+    <ProjectReference Include="..\BrandCi.Resources\BrandCi.Resources.csproj" />
+    <ProjectReference Include="..\BrandCi.Services\BrandCi.Services.csproj" />
+  </ItemGroup>
+
 </Project>
