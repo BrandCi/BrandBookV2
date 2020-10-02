@@ -1,0 +1,110 @@
+﻿@model BrandBook.Core.ViewModels.App.Settings.AppCultureViewModel
+@using BrandBook.Resources
+@using BrandBook.Web.Framework.Helpers
+
+@{
+    ViewBag.Title = "Sprachauswahl";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+
+
+@helper selected(string code, string culture)
+{
+    if (code == culture)
+    {
+        @:@Translations.app_culturesetting_value_active
+    }
+    else
+    {
+        @:&nbsp;
+    }
+}
+
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12">
+        <div class="card m-b-20 card-body">
+            <h4 class="card-title">@Translations.app_culturesetting_title</h4>
+            <p class="card-text">
+                @Translations.app_culturesetting_description
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    
+    @foreach (var enabledCulture in CultureHelper.GetEnabledCultures())
+    {
+        <div class="col-lg-4 col-md-6">
+            <div class="widget-bg-color-icon card-box">
+                <p class="card-text" style="text-align: right">
+                    <small class="text-muted">@selected(enabledCulture.Key, culture)</small>
+                </p>
+                <div class="bg-icon bg-icon-primary pull-left">
+                    <span class="flag-icon flag-icon-de" style="font-size: 1.5rem; padding-top: 50%;"></span>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-dark mt-3"><b class="counter">@enabledCulture.Value</b></h3>
+                </div>
+                <a href="@Url.Action("SetCulture", "AppCulture", new { area = "App", culture = enabledCulture.Key })" class="btn btn-primary btn-custom mt-4">
+                    @Translations.app_culturesetting_save_button_title&nbsp;&nbsp;<i class="fas fa-globe"></i>
+                </a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
+@if (User.IsInRole("Administrator"))
+{
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="card m-b-20 card-body">
+                <h4 class="card-title">Export Translations</h4>
+                <p class="card-text">
+                    
+                    <p>
+                        Anzahl Default Übersetzungen:
+                    </p>
+                    
+
+                
+                    @using (Html.BeginForm("ExportTranslationsByCulture", "AppCulture", FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <select class="form-control" name="exportCulture">
+                                    <option value="de-de">@Translations.system_culture_de_de_full [@Translations.system_culture_de_de]</option>
+                                    <option value="en-us">@Translations.system_culture_en_us_full [@Translations.system_culture_en_us]</option>
+                                    <option value="ar-sa">@Translations.system_culture_ar_sa_full [@Translations.system_culture_ar_sa]</option>
+
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-download"></i>&nbsp;
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+
+                    }
+
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+}

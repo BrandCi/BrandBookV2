@@ -1,0 +1,79 @@
+﻿@model BrandBook.Core.ViewModels.App.System.LoggingMessages.LoggingMessagesViewModel
+@{
+    ViewBag.Title = "LoggingMessages";
+}
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+@section styles {
+    @Styles.Render("~/Content/Plugins/Datatables")
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title">@ViewBag.Title</h4>
+            <p class="text-muted font-14 m-b-30"></p>
+
+            <table id="loggingMessages-datatable" class="table table-bordered dt-responsive">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Date</th>
+                    <th>Level</th>
+                    <th>Message</th>
+                    <th>Exception</th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+              
+                
+                @foreach (var loggingMessage in Model)
+                {
+                    <tr>
+                        <td>
+                            @loggingMessage.Id
+                        </td>
+                        <td>
+                            @loggingMessage.Date
+                        </td>
+                        <td>
+                            @loggingMessage.Level
+                        </td>
+                        <td>
+                            @loggingMessage.Message
+                        </td>
+                        <td>
+                            @loggingMessage.Exception
+                        </td>
+                    </tr>
+                }
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/Plugins/Datatables")
+
+    <script type="text/javascript">
+
+        $('#loggingMessages-datatable').DataTable({
+            select: {
+                style: 'multi'
+            },
+            order: [[0, 'desc']],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json'
+            }
+        });
+
+    </script>
+}

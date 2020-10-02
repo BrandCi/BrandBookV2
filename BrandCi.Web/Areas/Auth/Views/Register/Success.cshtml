@@ -1,0 +1,33 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+
+
+@{
+    ViewBag.Title = @Translations.auth_register_title;
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+
+@AuthCustomHelper.RenderBackground("b14828a6-69ac-4d63-a7e0-0f442729e318", "svg")
+
+<div class="form-holder">
+    <div class="form-content">
+        <div class="form-items">
+            <h3>Success!</h3>
+            <p>
+                Your account has been created. <br /><br />
+                Please confirm your email by clicking on the link we have sent you.
+            </p>
+            <p class="status-badge">
+                <i class="far fa-check-circle success"></i>
+            </p>
+
+
+            <div class="page-links mt-5">
+                <a href="@Url.Action("Index", "Login", new {area = "Auth"} )">Ok, login&nbsp;<i class="fas fa-chevron-right"></i></a>
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>

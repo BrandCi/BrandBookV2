@@ -1,0 +1,97 @@
+﻿@using BrandBook.Web.Framework.HtmlHelpers
+@{
+    ViewBag.Title = Translations.frontend_faq_short_title;
+}
+
+<section class="breadcrumb_area">
+    @CustomHtmlHelper.Image("FrontendData/6de4d537-9a97-4b39-bda4-7b491a3d2ce6.png", "breadcrumb_shap")
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">
+                @Translations.frontend_faq_long_title
+            </h1>
+            <p class="f_400 w_color f_size_16 l_height26">
+                @Translations.frontend_faq_subtitle
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="faq_area bg_color sec_pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 pr_50">
+                <div class="faq_tab">
+                    <h4 class="f_p t_color3 f_600 f_size_22 mb_40">Navigation</h4>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="faq-general-tab" data-toggle="tab" href="#faq-general" role="tab" aria-controls="faq-general" aria-selected="true">General</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="faq-account-tab" data-toggle="tab" href="#faq-account" role="tab" aria-controls="faq-accoutn" aria-selected="false">My Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                    <div class="tab-content faq_content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="faq-general" role="tabpanel" aria-labelledby="faq-general-tab">
+                            <h3 class="f_p f_size_22 f_500 t_color3 mb_20">How to get started?</h3>
+                            <div id="faq-general-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="heading-general-01">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-general-01" aria-expanded="false" aria-controls="collapse-general-01">
+                                                I am excited. How can I start?<i class="fas fa-plus"></i><i class="fas fa-minus"></i>
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapse-general-01" class="collapse" aria-labelledby="heading-general-01" data-parent="#faq-general-accordion">
+                                        <div class="card-body">
+                                            Starting with BrandCi is very simple! Just click on the Register-Button on top of the page and enter your data. With your first registration, we give you a free trial of 1 Month, you are free to test all our Professional-Features without adding any payment-method.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading-general-02">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-general-02" aria-expanded="false" aria-controls="collapse-general-02">
+                                                Which subscription is right for me?<i class="fas fa-plus"></i><i class="fas fa-minus"></i>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse-general-02" class="collapse" aria-labelledby="heading-general-02" data-parent="#faq-general-accordion">
+                                        <div class="card-body">
+                                            This depends on your approach. If you only want to create and edit your Brand in a small team, we recommend you the Professional-Plan. If you work in a larger team, and don't want to miss the automatic assistance features, you should think about the Business-Plan.<br /><br />If you want to create Brands for your customers with BrandCi, let us talk about an individual Plan only for you. <a href="@Url.Action("Contact", "Support", new {area = ""})" title="Contact Form">Please feel free to contact us!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="faq-account" role="tabpanel" aria-labelledby="faq-account-tab">
+                            <h3 class="f_p f_size_22 f_500 t_color3 mb_20">My account</h3>
+                            <div id="faq-account-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="heading-account-01">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-account-01" aria-expanded="true" aria-controls="collapse-account-01">
+                                                Who should I contact, if I have questions regarding my account?<i class="fas fa-plus"></i><i class="fas fa-minus"></i>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse-account-01" class="collapse" aria-labelledby="heading-account-01" data-parent="#faq-account-accordion">
+                                        <div class="card-body">
+                                            Oh that is easy. Just leave us a message via our <a href="@Url.Action("Contact", "Support", new {area = ""})" title="Contact Form">Contact Form.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>

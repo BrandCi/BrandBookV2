@@ -263,4 +263,4 @@ __pycache__/
 # BrandBook Custom
 # BrandBook.Web/SharedStorage/
 
-BrandBook.Web/Content/ClientApps/
+BrandCi.Web/wwwroot/Content/ClientApps/

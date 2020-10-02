@@ -1,0 +1,164 @@
+﻿@model BrandBook.Core.ViewModels.App.Settings.UserSettingsViewModel
+@using BrandBook.Resources
+
+@{
+    ViewBag.Title = Translations.app_settings_user_title;
+}
+
+@section navigation {
+    @Html.Partial("~/Areas/App/Views/Shared/_Layout/Partial/_LeftNavigation.cshtml")
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">
+                @Translations.app_settings_user_title
+            </h4>
+            <p class="text-muted m-b-30 font-14">
+                @Translations.app_settings_user_description
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+                        @using (Html.BeginForm("UserSettings", "System", new { area = "App" }, FormMethod.Post, new { @class = "form-validation", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+
+                            <h2>
+                                Lockout
+                            </h2>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Lockout_Enabled, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Lockout_Enabled, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Lockout_LockoutTime, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Lockout_LockoutTime, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Lockout_FailedAttempts, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Lockout_FailedAttempts, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <h2>
+                                Password
+                            </h2>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Password_ReqLength, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Password_ReqLength, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Password_ReqDigit, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Password_ReqDigit, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Password_ReqNonLetterOrDigit, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Password_ReqNonLetterOrDigit, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Password_ReqLowerCase, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Password_ReqLowerCase, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Password_ReqUpperCase, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(m => m.Password_ReqUpperCase, new { @class = "form-control" })
+                                    <span class="help-block">
+                                        <small>
+
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-5 mb-0">
+                                <a href="@Url.Action("Settings", "System", new {area = "App"})" class="btn btn-danger btn-custom mr-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_back_button_title
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <i class="fas fa-save"></i>
+                                    &nbsp;
+                                    @Translations.app_settings_update_button_title
+                                </button>
+                            </div>
+
+                        }
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>
+
+@Html.Partial("~/Areas/App/Views/Shared/_Partial/_VersionInfo.cshtml")
