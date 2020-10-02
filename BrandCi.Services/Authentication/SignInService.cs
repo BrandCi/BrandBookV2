@@ -1,7 +1,7 @@
 ﻿using BrandCi.Core.Domain.User;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
+using Microsoft.AspNetCore.Identity.Owin;
+using Microsoft.AspNetCore.Owin;
+using Microsoft.AspNetCore.Owin.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
 

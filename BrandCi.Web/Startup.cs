@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BrandCi.Core.Domain.User;
+using BrandCi.Infrastructure.Data;
 
 namespace BrandCi.Web
 {
@@ -25,11 +28,11 @@ namespace BrandCi.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add EF services to the services container.
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<BrandBookDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<BrandBookDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();

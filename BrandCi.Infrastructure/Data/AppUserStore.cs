@@ -1,9 +1,9 @@
 ﻿using BrandCi.Core.Domain.User;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace BrandCi.Infrastructure.Data
 {
-    public class AppUserStore : UserStore<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public class AppUserStore : UserStore
     {
         public AppUserStore(BrandBookDbContext context)
             : base(context)
@@ -11,7 +11,7 @@ namespace BrandCi.Infrastructure.Data
         }
     }
 
-    public class UserRoleStore : RoleStore<UserRole, int, CustomUserRole>
+    public class UserRoleStore : RoleStore
     {
         public UserRoleStore(BrandBookDbContext context)
             : base(context)

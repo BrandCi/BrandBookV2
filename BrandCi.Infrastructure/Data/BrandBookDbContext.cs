@@ -7,12 +7,13 @@ using BrandCi.Core.Domain.Frontend;
 using BrandCi.Core.Domain.Resource;
 using BrandCi.Core.Domain.System;
 using BrandCi.Core.Domain.User;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace BrandCi.Infrastructure.Data
 {
-    public class BrandBookDbContext : IdentityDbContext<AppUser, UserRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public class BrandBookDbContext : IdentityDbContext<AppUser>
     {
         // General
         public DbSet<Log4NetLog> Log4NetLogs { get; set; }
@@ -58,16 +59,16 @@ namespace BrandCi.Infrastructure.Data
 
 
 
-        public BrandBookDbContext()
-            : base("name=DefaultConnection")
+        public BrandBookDbContext(DbContextOptions<BrandBookDbContext> options)
+            : base(options)
         {
 
         }
-
-        public static BrandBookDbContext Create()
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            return new BrandBookDbContext();
+            base.OnModelCreating(builder);
         }
+
 
     }
 }
