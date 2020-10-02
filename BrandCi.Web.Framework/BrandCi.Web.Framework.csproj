@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BrandCi.Core\BrandCi.Core.csproj" />
     <ProjectReference Include="..\BrandCi.Infrastructure\BrandCi.Infrastructure.csproj" />
     <ProjectReference Include="..\BrandCi.Resources\BrandCi.Resources.csproj" />
