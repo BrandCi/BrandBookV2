@@ -1,5 +1,6 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
@@ -193,7 +194,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountVerification,
+                Type = NotificationTemplateType.User_AccountVerification,
                 Receiver = userEmail,
                 Subject = "Verify your E-Mail Address",
                 User_AccountVerification = new User_AccountVerification()
@@ -206,7 +207,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var adminInfo = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.Admin_AccountCreationInformation,
+                Type = NotificationTemplateType.Admin_AccountCreationInformation,
                 Subject = "New Account Creation",
                 Admin_AccountCreationInformation = new Admin_AccountCreationInformation()
                 {

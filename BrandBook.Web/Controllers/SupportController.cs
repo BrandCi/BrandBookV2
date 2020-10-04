@@ -1,3 +1,4 @@
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Support;
@@ -58,7 +59,7 @@ namespace BrandBook.Web.Controllers
 
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.General_ContactRequest,
+                Type = NotificationTemplateType.General_ContactRequest,
                 Subject = "BrandCi - Contact Request",
                 General_ContactRequest = new General_ContactRequest()
                 {

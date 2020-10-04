@@ -115,6 +115,12 @@ namespace BrandBook.Services.Notification
                 return false;
             }
         }
+
+
+        private static bool ParseContentAndCheckForSpam()
+        {
+            return false;
+        }
         #endregion
     }
 

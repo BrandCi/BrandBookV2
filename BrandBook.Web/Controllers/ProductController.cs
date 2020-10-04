@@ -1,4 +1,5 @@
-﻿using BrandBook.Core.Services.Authentication;
+﻿using BrandBook.Core.Domain.System.Notification;
+using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Product;
 using BrandBook.Core.ViewModels.Notification;
@@ -88,7 +89,7 @@ namespace BrandBook.Web.Controllers
 
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.General_RequestClosedBeta,
+                Type = NotificationTemplateType.General_RequestClosedBeta,
                 Subject = "BrandCi - Closed Beta Request",
                 General_RequestClosedBeta = new General_RequestClosedBeta()
                 {

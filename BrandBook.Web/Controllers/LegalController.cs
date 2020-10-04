@@ -1,4 +1,5 @@
 ﻿using BrandBook.Core;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Legal;
@@ -88,7 +89,7 @@ namespace BrandBook.Web.Controllers
 
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.General_PrivacyRequest,
+                Type = NotificationTemplateType.General_PrivacyRequest,
                 Subject = "BrandCi - Privacy Request",
                 General_PrivacyRequest = new General_PrivacyRequest()
                 {
