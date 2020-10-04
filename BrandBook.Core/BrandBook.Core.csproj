@@ -103,6 +103,7 @@
     <Compile Include="Repositories\Resource\IImageRepository.cs" />
     <Compile Include="Repositories\Setting\ISettingRepository.cs" />
     <Compile Include="Repositories\System\ILog4NetLogRepository.cs" />
+    <Compile Include="Repositories\System\INotificationRepository.cs" />
     <Compile Include="Repositories\User\IAppUserRepository.cs" />
     <Compile Include="Repositories\User\IRolePermissionRepository.cs" />
     <Compile Include="Repositories\User\ISubscriptionPlanRepository.cs" />
