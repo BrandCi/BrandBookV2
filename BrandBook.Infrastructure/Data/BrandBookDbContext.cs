@@ -6,6 +6,7 @@ using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.Frontend;
 using BrandBook.Core.Domain.Resource;
 using BrandBook.Core.Domain.System;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Domain.User;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
@@ -16,6 +17,7 @@ namespace BrandBook.Infrastructure.Data
     {
         // General
         public DbSet<Log4NetLog> Log4NetLogs { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         // User
         public DbSet<Company> Companies { get; set; }

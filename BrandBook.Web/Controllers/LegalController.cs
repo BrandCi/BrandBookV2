@@ -1,4 +1,5 @@
 ﻿using BrandBook.Core;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.ViewModels.Frontend.Legal;
@@ -88,15 +89,15 @@ namespace BrandBook.Web.Controllers
 
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.General_PrivacyRequest,
+                Type = NotificationTemplateType.General_PrivacyRequest,
                 Subject = "BrandCi - Privacy Request",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 General_PrivacyRequest = new General_PrivacyRequest()
                 {
                     UserId = User.Identity.GetUserId<int>(),
                     RequestType = model.Type,
-                    Message = model.Message,
-                    RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                    RequestIp = Request.UserHostAddress,
+                    Message = model.Message
                 }
             };
 
