@@ -32,6 +32,7 @@ namespace BrandBook.Core
         ISubscriptionRepository SubscriptionRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
         ILog4NetLogRepository Log4NetLogRepository { get; }
+        INotificationRepository NotificationRepository { get; }
         IBlogEntryRepository BlogEntryRepository { get; }
 
         #endregion

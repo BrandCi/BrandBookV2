@@ -1,5 +1,6 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Services.Authentication;
 using BrandBook.Core.Services.Messaging;
@@ -13,6 +14,7 @@ using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Configuration;
@@ -193,9 +195,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountVerification,
+                Type = NotificationTemplateType.User_AccountVerification,
                 Receiver = userEmail,
                 Subject = "Verify your E-Mail Address",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountVerification = new User_AccountVerification()
                 {
                     Username = userName,
@@ -206,15 +210,15 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var adminInfo = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.Admin_AccountCreationInformation,
+                Type = NotificationTemplateType.Admin_AccountCreationInformation,
                 Subject = "New Account Creation",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 Admin_AccountCreationInformation = new Admin_AccountCreationInformation()
                 {
-                    Creationdate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                     Username = userName,
                     Email = userEmail,
-                    Promocode = promoCode,
-                    RequestIp = Request.UserHostAddress
+                    Promocode = promoCode
                 }
             };
 

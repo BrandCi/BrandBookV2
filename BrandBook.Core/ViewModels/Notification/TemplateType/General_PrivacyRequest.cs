@@ -7,7 +7,5 @@
         public string Email { get; set; }
         public string RequestType { get; set; }
         public string Message { get; set; }
-        public string RequestDate { get; set; }
-        public string RequestIp { get; set; }
     }
 }

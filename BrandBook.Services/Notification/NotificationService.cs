@@ -1,16 +1,21 @@
-﻿using BrandBook.Core.Services.Messaging;
+﻿using BrandBook.Core;
+using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
+using BrandBook.Infrastructure;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace BrandBook.Services.Notification
 {
     public class NotificationService : INotificationService
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailBuilder _emailBuilder;
         protected static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
@@ -20,17 +25,22 @@ namespace BrandBook.Services.Notification
         private readonly string _siteName;
         private readonly string _sender;
 
+        private readonly string _spamFilterIdentificationKeywords;
+
         private readonly string _appEnvironment;
 
 
         public NotificationService()
         {
+            _unitOfWork = new UnitOfWork();
             _emailBuilder = new EmailBuilder();
 
             _apiBasicUrl = ConfigurationManager.AppSettings["MailgunApiBasicUrl"];
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
             _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
             _sender = ConfigurationManager.AppSettings["MailgunApiSender"];
+
+            _spamFilterIdentificationKeywords = ConfigurationManager.AppSettings["NotificationSpamFilterIdentificationKeywords"];
 
             _appEnvironment = ConfigurationManager.AppSettings["Environment"];
         }
@@ -44,22 +54,33 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
+            SetNotificationValues(model);
+
             var emailContent = _emailBuilder.BuildEmail(model);
             if (string.IsNullOrEmpty(emailContent))
             {
+                SaveNotification(model, emailContent, false, false, "Email Content could not be created.");
+
                 return false;
             }
 
-            var emailReceiver = GetEmailReceiver(model.Receiver);
-            var emailSubject = GetEmailSubject(model.Subject);
+
+            if(ContentContainsSpamIdentificationKeywords(emailContent))
+            {
+                SaveNotification(model, emailContent, true, false, "Spam FilterIdentificationKeyword was detected in Notification Content");
+
+                return false;
+            }
+
+            
             var request = new RestRequest();
 
             request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
 
             request.AddParameter("from", _sender);
-            request.AddParameter("to", emailReceiver);
-            request.AddParameter("subject", emailSubject);
+            request.AddParameter("to", model.Receiver);
+            request.AddParameter("subject", model.Subject);
 
             request.AddParameter("o:tag", _appEnvironment);
             request.AddParameter("o:tag", model.Type);
@@ -73,10 +94,15 @@ namespace BrandBook.Services.Notification
 
             if (execution.IsSuccessful)
             {
-                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}");
+                SaveNotification(model, emailContent, isSpam: false, isSent: true);
+
+                Logger.Info("Notification {'receiver': '" + model.Receiver + "'}, {'subject': '" + model.Subject + "'}");
 
                 return true;
             }
+
+
+            SaveNotification(model, emailContent, false, false, execution.ErrorMessage);
 
             Logger.Error("Notification: {" + execution.ErrorMessage + "}");
 
@@ -86,20 +112,50 @@ namespace BrandBook.Services.Notification
 
 
         #region Private Methods
-        private string GetEmailReceiver(string email)
+        private void SetNotificationValues(EmailTemplateViewModel model)
         {
-            var receiver = ConfigurationManager.AppSettings["DefaultNotificationReceiver"];
-            if (IsEmailValid(email))
-            {
-                receiver = email;
-            }
-
-            return receiver;
+            SetEmailReceiver(model);
+            SetEmailSubject(model);
         }
 
-        private static string GetEmailSubject(string subject)
+        /// <summary>
+        /// Saves the notification in the database
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="emailContent"></param>
+        private void SaveNotification(EmailTemplateViewModel model, string emailContent, bool isSpam = false, bool isSent = false, string errorMessage = "")
         {
-            return string.IsNullOrEmpty(subject) ? "Notification from BrandCi" : subject;
+            var notificationModel = new Core.Domain.System.Notification.Notification()
+            {
+                NotificationTemplateType = model.Type,
+                Subject = model.Subject,
+                CreationDate = model.CreationDate,
+                Recipient = model.Receiver,
+                RequestIp = model.RequestIp,
+                EmailContent = emailContent,
+                IsSpam = isSpam,
+                IsSent = isSent,
+                ErrorMessage = errorMessage
+            };
+
+            _unitOfWork.NotificationRepository.Add(notificationModel);
+            _unitOfWork.SaveChanges();
+        }
+
+        private void SetEmailReceiver(EmailTemplateViewModel model)
+        {
+            if (!IsEmailValid(model.Receiver))
+            {
+                model.Receiver = ConfigurationManager.AppSettings["DefaultNotificationReceiver"];
+            }
+        }
+
+        private void SetEmailSubject(EmailTemplateViewModel model)
+        {
+            if(string.IsNullOrEmpty(model.Subject))
+            {
+                model.Subject = "Notification from BrandCi";
+            }    
         }
 
 
@@ -114,6 +170,15 @@ namespace BrandBook.Services.Notification
             {
                 return false;
             }
+        }
+
+
+        private bool ContentContainsSpamIdentificationKeywords(string inputString)
+        {
+            List<string> spamFilterIdentificationKeywords = _spamFilterIdentificationKeywords.Split(',').ToList();
+            inputString = inputString.ToLower();
+
+            return spamFilterIdentificationKeywords.Any(keyword => inputString.Contains(keyword));
         }
         #endregion
     }
