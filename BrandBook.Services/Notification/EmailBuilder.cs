@@ -1,4 +1,5 @@
-﻿using BrandBook.Core.Services.Notification;
+﻿using BrandBook.Core.Domain.System.Notification;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using System.Configuration;
 using System.IO;
@@ -38,7 +39,7 @@ namespace BrandBook.Services.Notification
 
             switch (model.Type)
             {
-                case EmailTemplateType.Admin_AccountCreationInformation:
+                case NotificationTemplateType.Admin_AccountCreationInformation:
                     if (model.Admin_AccountCreationInformation == null)
                     {
                         return null;
@@ -51,7 +52,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestIp}}", model.Admin_AccountCreationInformation.RequestIp);
                     break;
 
-                case EmailTemplateType.User_AccountVerification:
+                case NotificationTemplateType.User_AccountVerification:
                     if (model.User_AccountVerification == null)
                     {
                         return null;
@@ -62,7 +63,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountVerification.TargetUrl);
                     break;
 
-                case EmailTemplateType.General_ContactRequest:
+                case NotificationTemplateType.General_ContactRequest:
                     if (model.General_ContactRequest == null)
                     {
                         return null;
@@ -75,7 +76,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
 
-                case EmailTemplateType.General_PrivacyRequest:
+                case NotificationTemplateType.General_PrivacyRequest:
                     if (model.General_PrivacyRequest == null)
                     {
                         return null;
@@ -89,7 +90,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestIp}}", model.General_PrivacyRequest.RequestIp);
                     break;
 
-                case EmailTemplateType.User_AccountVerificationConfirmation:
+                case NotificationTemplateType.User_AccountVerificationConfirmation:
                     if (model.User_AccountVerificationConfirmation == null)
                     {
                         return null;
@@ -97,7 +98,7 @@ namespace BrandBook.Services.Notification
 
                     emailContent = emailContent.Replace("{{EmailAddress}}", model.User_AccountVerificationConfirmation.EmailAddress);
                     break;
-                case EmailTemplateType.User_AccountForgotPassword:
+                case NotificationTemplateType.User_AccountForgotPassword:
                     if (model.User_AccountForgotPassword == null)
                     {
                         return null;
@@ -106,7 +107,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{TargetUrl}}", model.User_AccountForgotPassword.TargetUrl);
                     break;
 
-                case EmailTemplateType.User_AccountForgotPasswordConfirmation:
+                case NotificationTemplateType.User_AccountForgotPasswordConfirmation:
                     if (model.User_AccountForgotPasswordConfirmation == null)
                     {
                         return null;
@@ -114,7 +115,7 @@ namespace BrandBook.Services.Notification
 
                     break;
 
-                case EmailTemplateType.General_RequestClosedBeta:
+                case NotificationTemplateType.General_RequestClosedBeta:
                     if (model.General_RequestClosedBeta == null)
                     {
                         return null;
@@ -124,7 +125,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{RequestDate}}", model.General_RequestClosedBeta.RequestDate);
                     break;
 
-                case EmailTemplateType.Plain:
+                case NotificationTemplateType.Plain:
                 default:
                     return null;
             }

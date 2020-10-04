@@ -1,4 +1,5 @@
-﻿using BrandBook.Core.ViewModels.Notification.TemplateType;
+﻿using BrandBook.Core.Domain.System.Notification;
+using BrandBook.Core.ViewModels.Notification.TemplateType;
 
 // ReSharper disable InconsistentNaming
 
@@ -6,7 +7,7 @@ namespace BrandBook.Core.ViewModels.Notification
 {
     public class EmailTemplateViewModel
     {
-        public EmailTemplateType Type { get; set; }
+        public NotificationTemplateType Type { get; set; }
         public string Subject { get; set; }
         public string Receiver { get; set; }
 

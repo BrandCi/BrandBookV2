@@ -75,6 +75,7 @@
     <Compile Include="Domain\System\AccessLevel.cs" />
     <Compile Include="Domain\System\Category.cs" />
     <Compile Include="Domain\System\Log4NetLog.cs" />
+    <Compile Include="Domain\System\Notification\Notification.cs" />
     <Compile Include="Domain\System\Setting.cs" />
     <Compile Include="Domain\User\AppUser.cs" />
     <Compile Include="Domain\User\RolePermission.cs" />
@@ -164,7 +165,7 @@
     <Compile Include="ViewModels\Frontend\Legal\PrivacyRequestViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Product\ClosedBetaViewModel.cs" />
     <Compile Include="ViewModels\Frontend\Support\ContactFormViewModel.cs" />
-    <Compile Include="ViewModels\Notification\EmailTemplateType.cs" />
+    <Compile Include="Domain\System\Notification\NotificationTemplateType.cs" />
     <Compile Include="ViewModels\Notification\EmailTemplateViewModel.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\Admin_AccountCreationInformation.cs" />
     <Compile Include="ViewModels\Notification\TemplateType\General_RequestClosedBeta.cs" />

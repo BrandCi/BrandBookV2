@@ -1,7 +1,7 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace BrandBook.Core.ViewModels.Notification
+namespace BrandBook.Core.Domain.System.Notification
 {
-    public enum EmailTemplateType
+    public enum NotificationTemplateType
     {
         Plain,
         Admin_AccountCreationInformation,
