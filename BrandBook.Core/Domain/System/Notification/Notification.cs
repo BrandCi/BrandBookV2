@@ -10,5 +10,6 @@ namespace BrandBook.Core.Domain.System.Notification
         public string UserName { get; set;}
         public string RequestId { get; set; }
         public string EmailContent { get; set; }
+        public bool IsSpam { get; set; }
     }
 }
