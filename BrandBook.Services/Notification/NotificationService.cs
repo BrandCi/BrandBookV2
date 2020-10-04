@@ -1,4 +1,4 @@
-using BrandBook.Core;
+﻿using BrandBook.Core;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
@@ -7,7 +7,9 @@ using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace BrandBook.Services.Notification
 {
@@ -23,6 +25,8 @@ namespace BrandBook.Services.Notification
         private readonly string _siteName;
         private readonly string _sender;
 
+        private readonly string _spamFilterIdentificationKeywords;
+
         private readonly string _appEnvironment;
 
 
@@ -35,6 +39,8 @@ namespace BrandBook.Services.Notification
             _apiPrivateKey = ConfigurationManager.AppSettings["MailgunApiPrivateKey"];
             _siteName = ConfigurationManager.AppSettings["MailgunApiSiteName"];
             _sender = ConfigurationManager.AppSettings["MailgunApiSender"];
+
+            _spamFilterIdentificationKeywords = ConfigurationManager.AppSettings["NotificationSpamFilterIdentificationKeywords"];
 
             _appEnvironment = ConfigurationManager.AppSettings["Environment"];
         }
@@ -59,6 +65,14 @@ namespace BrandBook.Services.Notification
             }
 
 
+            if(ContentContainsSpamIdentificationKeywords(emailContent))
+            {
+                SaveNotification(model, emailContent, true, false, "Spam FilterIdentificationKeyword was detected in Notification Content");
+
+                return false;
+            }
+
+            
             var request = new RestRequest();
 
             request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
@@ -159,9 +173,12 @@ namespace BrandBook.Services.Notification
         }
 
 
-        private static bool ParseContentAndCheckForSpam()
+        private bool ContentContainsSpamIdentificationKeywords(string emailContent)
         {
-            return false;
+            List<string> spamFilterIdentificationKeywords = _spamFilterIdentificationKeywords.Split(',').ToList();
+            emailContent = emailContent.ToLower();
+
+            return spamFilterIdentificationKeywords.Any(keyword => emailContent.Contains(keyword));
         }
         #endregion
     }
