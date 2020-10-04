@@ -48,6 +48,8 @@ namespace BrandBook.Services.Notification
                 Authenticator = new HttpBasicAuthenticator("api", _apiPrivateKey)
             };
 
+            SetNotificationValues(model);
+
             var emailContent = _emailBuilder.BuildEmail(model);
             if (string.IsNullOrEmpty(emailContent))
             {
@@ -56,16 +58,15 @@ namespace BrandBook.Services.Notification
                 return false;
             }
 
-            var emailReceiver = GetEmailReceiver(model.Receiver);
-            var emailSubject = GetEmailSubject(model.Subject);
+            
             var request = new RestRequest();
 
             request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
 
             request.AddParameter("from", _sender);
-            request.AddParameter("to", emailReceiver);
-            request.AddParameter("subject", emailSubject);
+            request.AddParameter("to", model.Receiver);
+            request.AddParameter("subject", model.Subject);
 
             request.AddParameter("o:tag", _appEnvironment);
             request.AddParameter("o:tag", model.Type);
@@ -81,7 +82,7 @@ namespace BrandBook.Services.Notification
             {
                 SaveNotification(model, emailContent, isSpam: false, isSent: true);
 
-                Logger.Info("Notification {'receiver': '" + emailReceiver + "'}, {'subject': '" + emailSubject + "'}");
+                Logger.Info("Notification {'receiver': '" + model.Receiver + "'}, {'subject': '" + model.Subject + "'}");
 
                 return true;
             }
@@ -97,6 +98,11 @@ namespace BrandBook.Services.Notification
 
 
         #region Private Methods
+        private void SetNotificationValues(EmailTemplateViewModel model)
+        {
+            SetEmailReceiver(model);
+            SetEmailSubject(model);
+        }
 
         /// <summary>
         /// Saves the notification in the database
@@ -110,7 +116,7 @@ namespace BrandBook.Services.Notification
                 NotificationTemplateType = model.Type,
                 Subject = model.Subject,
                 CreationDate = model.CreationDate,
-                EmailAddress = model.Receiver,
+                Recipient = model.Receiver,
                 RequestIp = model.RequestIp,
                 EmailContent = emailContent,
                 IsSpam = isSpam,
@@ -122,20 +128,20 @@ namespace BrandBook.Services.Notification
             _unitOfWork.SaveChanges();
         }
 
-        private string GetEmailReceiver(string email)
+        private void SetEmailReceiver(EmailTemplateViewModel model)
         {
-            var receiver = ConfigurationManager.AppSettings["DefaultNotificationReceiver"];
-            if (IsEmailValid(email))
+            if (!IsEmailValid(model.Receiver))
             {
-                receiver = email;
+                model.Receiver = ConfigurationManager.AppSettings["DefaultNotificationReceiver"];
             }
-
-            return receiver;
         }
 
-        private static string GetEmailSubject(string subject)
+        private void SetEmailSubject(EmailTemplateViewModel model)
         {
-            return string.IsNullOrEmpty(subject) ? "Notification from BrandCi" : subject;
+            if(string.IsNullOrEmpty(model.Subject))
+            {
+                model.Subject = "Notification from BrandCi";
+            }    
         }
 
 
