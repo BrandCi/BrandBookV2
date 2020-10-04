@@ -1,5 +1,4 @@
 ﻿using BrandBook.Core;
-using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Infrastructure;
@@ -111,6 +110,31 @@ namespace BrandBook.Services.Notification
         }
 
 
+        #region Public Helper Methods
+        public bool IsEmailValid(string email)
+        {
+            try
+            {
+                var address = new System.Net.Mail.MailAddress(email);
+                return address.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public bool ContentContainsSpamIdentificationKeywords(string inputString)
+        {
+            List<string> spamFilterIdentificationKeywords = _spamFilterIdentificationKeywords.Split(',').ToList();
+            inputString = inputString.ToLower();
+
+            return spamFilterIdentificationKeywords.Any(keyword => inputString.Contains(keyword));
+        }
+        #endregion
+
+
         #region Private Methods
         private void SetNotificationValues(EmailTemplateViewModel model)
         {
@@ -156,29 +180,6 @@ namespace BrandBook.Services.Notification
             {
                 model.Subject = "Notification from BrandCi";
             }    
-        }
-
-
-        private static bool IsEmailValid(string email)
-        {
-            try
-            {
-                var address = new System.Net.Mail.MailAddress(email);
-                return address.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-
-        private bool ContentContainsSpamIdentificationKeywords(string inputString)
-        {
-            List<string> spamFilterIdentificationKeywords = _spamFilterIdentificationKeywords.Split(',').ToList();
-            inputString = inputString.ToLower();
-
-            return spamFilterIdentificationKeywords.Any(keyword => inputString.Contains(keyword));
         }
         #endregion
     }

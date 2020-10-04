@@ -1,5 +1,5 @@
 ﻿using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Web.Framework.Controllers.ApiControllers;
 using System.Web.Http;
 

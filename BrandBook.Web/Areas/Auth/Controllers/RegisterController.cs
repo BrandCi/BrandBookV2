@@ -3,7 +3,7 @@ using BrandBook.Core.Domain.Company;
 using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Core.ViewModels.Auth;
 using BrandBook.Core.ViewModels.Notification;

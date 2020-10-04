@@ -1,6 +1,6 @@
 ﻿using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Frontend.Product;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Core.ViewModels.Notification.TemplateType;
