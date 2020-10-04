@@ -8,6 +8,7 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
 using System.Web;
@@ -73,6 +74,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 Type = NotificationTemplateType.User_AccountVerificationConfirmation,
                 Receiver = user.Email,
                 Subject = "Your Email Verification was successful",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountVerificationConfirmation = new User_AccountVerificationConfirmation()
                 {
                     EmailAddress = user.Email
@@ -133,6 +136,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 Type = NotificationTemplateType.User_AccountForgotPassword,
                 Subject = "Password reset request",
                 Receiver = user.Email,
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountForgotPassword = new User_AccountForgotPassword()
                 {
                     TargetUrl = targetUrl
@@ -193,6 +198,8 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 Type = NotificationTemplateType.User_AccountForgotPasswordConfirmation,
                 Subject = "Password successfully changed",
                 Receiver = user.Email,
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountForgotPasswordConfirmation = new User_AccountForgotPasswordConfirmation()
             };
 

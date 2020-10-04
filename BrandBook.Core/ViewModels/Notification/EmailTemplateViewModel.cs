@@ -10,6 +10,8 @@ namespace BrandBook.Core.ViewModels.Notification
         public NotificationTemplateType Type { get; set; }
         public string Subject { get; set; }
         public string Receiver { get; set; }
+        public string CreationDate { get; set; }
+        public string RequestIp { get; set; }
 
         public Admin_AccountCreationInformation Admin_AccountCreationInformation { get; set; }
         public User_AccountVerification User_AccountVerification { get; set; }

@@ -20,7 +20,7 @@ namespace BrandBook.Services.Notification
             var settingService = new SettingService();
             _publicEmailFolderPath = settingService.GetSettingValueByKey("conf_system_baseisurl");
 
-            _fileServerUrlWithKey = $"{ConfigurationManager.AppSettings["CdnServerUrl"]}/{ConfigurationManager.AppSettings["CdnServerKey"]}";
+            _fileServerUrlWithKey = $"{ ConfigurationManager.AppSettings["CdnServerUrl"] }/{ ConfigurationManager.AppSettings["CdnServerKey"] }";
         }
 
 
@@ -45,11 +45,11 @@ namespace BrandBook.Services.Notification
                         return null;
                     }
 
-                    emailContent = emailContent.Replace("{{Creationdate}}", model.Admin_AccountCreationInformation.Creationdate);
+                    emailContent = emailContent.Replace("{{Creationdate}}", model.CreationDate);
                     emailContent = emailContent.Replace("{{Username}}", model.Admin_AccountCreationInformation.Username);
                     emailContent = emailContent.Replace("{{Email}}", model.Admin_AccountCreationInformation.Email);
                     emailContent = emailContent.Replace("{{Promocode}}", model.Admin_AccountCreationInformation.Promocode);
-                    emailContent = emailContent.Replace("{{RequestIp}}", model.Admin_AccountCreationInformation.RequestIp);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.RequestIp);
                     break;
 
                 case NotificationTemplateType.User_AccountVerification:
@@ -72,7 +72,7 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Subject}}", model.General_ContactRequest.Subject);
                     emailContent = emailContent.Replace("{{Name}}", model.General_ContactRequest.Name);
                     emailContent = emailContent.Replace("{{Email}}", model.General_ContactRequest.Email);
-                    emailContent = emailContent.Replace("{{RequestIp}}", model.General_ContactRequest.RequestIp);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.RequestIp);
                     emailContent = emailContent.Replace("{{Message}}", model.General_ContactRequest.Message);
                     break;
 
@@ -86,8 +86,8 @@ namespace BrandBook.Services.Notification
                     emailContent = emailContent.Replace("{{Email}}", model.General_PrivacyRequest.Email);
                     emailContent = emailContent.Replace("{{RequestType}}", model.General_PrivacyRequest.RequestType);
                     emailContent = emailContent.Replace("{{Message}}", model.General_PrivacyRequest.Message);
-                    emailContent = emailContent.Replace("{{RequestDate}}", model.General_PrivacyRequest.RequestDate);
-                    emailContent = emailContent.Replace("{{RequestIp}}", model.General_PrivacyRequest.RequestIp);
+                    emailContent = emailContent.Replace("{{RequestDate}}", model.CreationDate);
+                    emailContent = emailContent.Replace("{{RequestIp}}", model.RequestIp);
                     break;
 
                 case NotificationTemplateType.User_AccountVerificationConfirmation:
@@ -122,7 +122,7 @@ namespace BrandBook.Services.Notification
                     }
 
                     emailContent = emailContent.Replace("{{Email}}", model.General_RequestClosedBeta.Email);
-                    emailContent = emailContent.Replace("{{RequestDate}}", model.General_RequestClosedBeta.RequestDate);
+                    emailContent = emailContent.Replace("{{RequestDate}}", model.CreationDate);
                     break;
 
                 case NotificationTemplateType.Plain:

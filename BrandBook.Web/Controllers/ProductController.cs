@@ -8,6 +8,7 @@ using BrandBook.Resources;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using log4net;
 using System;
 using System.Threading.Tasks;
@@ -91,10 +92,11 @@ namespace BrandBook.Web.Controllers
             {
                 Type = NotificationTemplateType.General_RequestClosedBeta,
                 Subject = "BrandCi - Closed Beta Request",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 General_RequestClosedBeta = new General_RequestClosedBeta()
                 {
-                    Email = model.Email,
-                    RequestDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm")
+                    Email = model.Email
                 }
             };
 
