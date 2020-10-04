@@ -173,12 +173,12 @@ namespace BrandBook.Services.Notification
         }
 
 
-        private bool ContentContainsSpamIdentificationKeywords(string emailContent)
+        private bool ContentContainsSpamIdentificationKeywords(string inputString)
         {
             List<string> spamFilterIdentificationKeywords = _spamFilterIdentificationKeywords.Split(',').ToList();
-            emailContent = emailContent.ToLower();
+            inputString = inputString.ToLower();
 
-            return spamFilterIdentificationKeywords.Any(keyword => emailContent.Contains(keyword));
+            return spamFilterIdentificationKeywords.Any(keyword => inputString.Contains(keyword));
         }
         #endregion
     }
