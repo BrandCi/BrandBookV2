@@ -1,8 +1,9 @@
 ﻿using BrandBook.Core;
 using BrandBook.Core.Domain.Company;
+using BrandBook.Core.Domain.System.Notification;
 using BrandBook.Core.Domain.User;
 using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Core.ViewModels.Auth;
 using BrandBook.Core.ViewModels.Notification;
@@ -13,8 +14,10 @@ using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Services.Subscriptions;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Configuration;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -29,6 +32,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         private readonly ISubscriptionService _subscriptionService;
         private readonly IReCaptchaService _recaptchaService;
         private readonly INotificationService _notificationService;
+        private readonly int _trialSubscriptionPlanId;
 
 
         #region Constructor
@@ -39,6 +43,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
             _notificationService = new NotificationService();
+            int.TryParse(ConfigurationManager.AppSettings["TrialSubscriptionPlanId"], out _trialSubscriptionPlanId);
         }
 
         public RegisterController(UserAuthenticationService userService, SignInService signInService)
@@ -49,6 +54,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             _subscriptionService = new SubscriptionService();
             _recaptchaService = new ReCaptchaService();
             _notificationService = new NotificationService();
+            int.TryParse(ConfigurationManager.AppSettings["TrialSubscriptionPlanId"], out _trialSubscriptionPlanId);
         }
 
         #endregion
@@ -155,7 +161,7 @@ namespace BrandBook.Web.Areas.Auth.Controllers
                 IsPaid = true,
                 StartDateTime = DateTime.Now,
                 SubscriptionPlan = _unitOfWork.SubscriptionPlanRepository.FindById(7),
-                SubscriptionPlanId = 7
+                SubscriptionPlanId = _trialSubscriptionPlanId
             };
 
             _unitOfWork.SubscriptionRepository.Add(initialSubscription);
@@ -189,9 +195,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
         {
             var emailContent = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountVerification,
+                Type = NotificationTemplateType.User_AccountVerification,
                 Receiver = userEmail,
                 Subject = "Verify your E-Mail Address",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountVerification = new User_AccountVerification()
                 {
                     Username = userName,
@@ -202,15 +210,15 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var adminInfo = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.Admin_AccountCreationInformation,
+                Type = NotificationTemplateType.Admin_AccountCreationInformation,
                 Subject = "New Account Creation",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 Admin_AccountCreationInformation = new Admin_AccountCreationInformation()
                 {
-                    Creationdate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                     Username = userName,
                     Email = userEmail,
-                    Promocode = promoCode,
-                    RequestIp = Request.UserHostAddress
+                    Promocode = promoCode
                 }
             };
 

@@ -42,6 +42,7 @@ namespace BrandBook.Infrastructure
         private ISubscriptionRepository _subscriptionRepository;
         private ISubscriptionPlanRepository _subscriptionPlanRepository;
         private ILog4NetLogRepository _log4NetLogRepository;
+        private INotificationRepository _notificationRepository;
         private IBlogEntryRepository _blogEntryRepository;
 
         #endregion
@@ -140,6 +141,11 @@ namespace BrandBook.Infrastructure
             get { return _log4NetLogRepository ?? (_log4NetLogRepository = new Log4NetLogRepository(_context)); }
         }
 
+        public INotificationRepository NotificationRepository
+        {
+            get { return _notificationRepository ?? (_notificationRepository = new NotificationRepository(_context)); }
+        }
+
         public IBlogEntryRepository BlogEntryRepository
         {
             get { return _blogEntryRepository ?? (_blogEntryRepository = new BlogEntryRepository(_context)); }
@@ -182,6 +188,7 @@ namespace BrandBook.Infrastructure
             _subscriptionRepository = null;
             _subscriptionPlanRepository = null;
             _log4NetLogRepository = null;
+            _notificationRepository = null;
             _blogEntryRepository = null;
 
             _context.Dispose();

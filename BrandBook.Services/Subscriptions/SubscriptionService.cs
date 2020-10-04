@@ -4,6 +4,7 @@ using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace BrandBook.Services.Subscriptions
@@ -11,11 +12,14 @@ namespace BrandBook.Services.Subscriptions
     public class SubscriptionService : ISubscriptionService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly int _trialSubscriptionPlanId;
 
         #region Public Methods
         public SubscriptionService()
         {
             this._unitOfWork = new UnitOfWork();
+
+            int.TryParse(ConfigurationManager.AppSettings["TrialSubscriptionPlanId"], out _trialSubscriptionPlanId);
         }
 
 
@@ -57,6 +61,14 @@ namespace BrandBook.Services.Subscriptions
             var validityInMonths = _unitOfWork.SubscriptionPlanRepository.FindById(subscription.SubscriptionPlanId).ValidityInMonths;
 
             return subscription.StartDateTime.AddMonths(validityInMonths);
+        }
+
+        public bool UserHasPaidMembership(int userId)
+        {
+            var subscriptions =
+                _unitOfWork.SubscriptionRepository.GetActiveAndPaidUserSubscriptions(userId);
+
+            return subscriptions.Any(x => x.SubscriptionPlanId != _trialSubscriptionPlanId);
         }
         #endregion
 

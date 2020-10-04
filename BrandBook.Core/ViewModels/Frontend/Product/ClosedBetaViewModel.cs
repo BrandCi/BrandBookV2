@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using BrandBook.Resources;
+﻿using BrandBook.Resources;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrandBook.Core.ViewModels.Frontend.Product
 {

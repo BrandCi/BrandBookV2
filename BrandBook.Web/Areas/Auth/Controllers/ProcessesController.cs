@@ -1,5 +1,6 @@
 ﻿using BrandBook.Core;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Domain.System.Notification;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Auth.Process;
 using BrandBook.Core.ViewModels.Notification;
 using BrandBook.Core.ViewModels.Notification.TemplateType;
@@ -7,6 +8,7 @@ using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
 using BrandBook.Services.Notification;
 using BrandBook.Web.Framework.Controllers.MvcControllers;
+using BrandBook.Web.Framework.Helpers;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
 using System.Web;
@@ -69,9 +71,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
             var user = _unitOfWork.AppUserRepository.FindById(userId);
             var emailTemplate = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountVerificationConfirmation,
+                Type = NotificationTemplateType.User_AccountVerificationConfirmation,
                 Receiver = user.Email,
                 Subject = "Your Email Verification was successful",
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountVerificationConfirmation = new User_AccountVerificationConfirmation()
                 {
                     EmailAddress = user.Email
@@ -129,9 +133,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var email = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountForgotPassword,
+                Type = NotificationTemplateType.User_AccountForgotPassword,
                 Subject = "Password reset request",
                 Receiver = user.Email,
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountForgotPassword = new User_AccountForgotPassword()
                 {
                     TargetUrl = targetUrl
@@ -189,9 +195,11 @@ namespace BrandBook.Web.Areas.Auth.Controllers
 
             var email = new EmailTemplateViewModel()
             {
-                Type = EmailTemplateType.User_AccountForgotPasswordConfirmation,
+                Type = NotificationTemplateType.User_AccountForgotPasswordConfirmation,
                 Subject = "Password successfully changed",
                 Receiver = user.Email,
+                CreationDate = CustomHelper.GetCurrentDateTimeFormattedForNotification(),
+                RequestIp = Request.UserHostAddress,
                 User_AccountForgotPasswordConfirmation = new User_AccountForgotPasswordConfirmation()
             };
 

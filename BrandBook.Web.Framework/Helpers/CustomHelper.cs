@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Text;
 
 namespace BrandBook.Web.Framework.Helpers
@@ -44,6 +45,11 @@ namespace BrandBook.Web.Framework.Helpers
         {
             bool.TryParse(ConfigurationManager.AppSettings["ReCaptchaActive"], out var reCaptchaActive);
             return reCaptchaActive;
+        }
+
+        public static string GetCurrentDateTimeFormattedForNotification()
+        {
+            return DateTime.Now.ToString("dd.MM.yyyy HH:mm");
         }
         #endregion
     }

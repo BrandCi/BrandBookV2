@@ -9,5 +9,6 @@ namespace BrandBook.Core.Services.Subscriptions
         bool AllowedToCreateNewBrands(int userId);
         string GenerateSubscriptionKey();
         DateTime GetSubscriptionEndDate(Subscription subscription);
+        bool UserHasPaidMembership(int userId);
     }
 }

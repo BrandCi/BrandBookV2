@@ -1,6 +1,6 @@
 using BrandBook.Core;
 using BrandBook.Core.Services.Authentication;
-using BrandBook.Core.Services.Messaging;
+using BrandBook.Core.Services.Notification;
 using BrandBook.Core.Services.Subscriptions;
 using BrandBook.Infrastructure;
 using BrandBook.Services.Authentication;
