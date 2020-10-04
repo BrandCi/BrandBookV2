@@ -1,4 +1,4 @@
-﻿using BrandBook.Core;
+using BrandBook.Core;
 using BrandBook.Core.Services.Messaging;
 using BrandBook.Core.Services.Notification;
 using BrandBook.Core.ViewModels.Notification;
@@ -53,12 +53,12 @@ namespace BrandBook.Services.Notification
             var emailContent = _emailBuilder.BuildEmail(model);
             if (string.IsNullOrEmpty(emailContent))
             {
-                SaveNotification(model, emailContent, isSpam: false, isSent: false, "Email Content could not be created.");
+                SaveNotification(model, emailContent, false, false, "Email Content could not be created.");
 
                 return false;
             }
 
-            
+
             var request = new RestRequest();
 
             request.AddParameter("domain", _siteName, ParameterType.UrlSegment);
@@ -88,7 +88,7 @@ namespace BrandBook.Services.Notification
             }
 
 
-            SaveNotification(model, emailContent, isSpam: false, isSent: false, execution.ErrorMessage);
+            SaveNotification(model, emailContent, false, false, execution.ErrorMessage);
 
             Logger.Error("Notification: {" + execution.ErrorMessage + "}");
 
