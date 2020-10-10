@@ -12,5 +12,7 @@
   "keywords": [],
   "author": "brandci",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.5.2"
+  }
 }
