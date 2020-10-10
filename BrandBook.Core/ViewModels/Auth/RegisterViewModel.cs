@@ -33,6 +33,7 @@ namespace BrandBook.Core.ViewModels.Auth
         [Display(Name = "auth_register_checkbox_privacypolicy_title", ResourceType = typeof(Translations))]
         public bool PrivacyPolicyAccepted { get; set; }
 
+        [Required]
         [Display(Name = "Beta Accesscode")]
         public string PromotionCode { get; set; }
 
