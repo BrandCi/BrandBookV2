@@ -42,24 +42,23 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'BrandBook.Web/Frontend'
+    workingDir: 'BrandBook.Web.Frontend'
   displayName: 'Frontend Bundling: npm install'
 
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: 'BrandBook.Web/Frontend'
+    workingDir: 'BrandBook.Web.Frontend'
     customCommand: 'run build'
   displayName: 'Frontend Bundling: npm run build'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Frontend/dist'
+    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Frontend/dist'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/FrontendBundle'
   displayName: 'Frontend Bundling: Copy Bundle'
 # ./Frontend Packaging / Bundling
-
 
 # ClientApps
 - task: Npm@1
@@ -83,7 +82,6 @@ steps:
   displayName: 'ClientApp: Copy ClientApp Builds'
 # ./ClientApps
 
-
 # Scripts-Folder
 - task: CopyFiles@2
   inputs:
@@ -93,7 +91,6 @@ steps:
   displayName: 'Copy Scripts Folder'
 # ./Scripts
 
-
 # Unit Tests
 - task: VSTest@2
   inputs:
@@ -101,7 +98,6 @@ steps:
     configuration: '$(buildConfiguration)'
   displayName: 'UnitTests Application'
 # ./Unit Tests
-
 
 - task: PublishBuildArtifacts@1
   inputs:
