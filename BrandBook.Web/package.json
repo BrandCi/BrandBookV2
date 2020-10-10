@@ -1,5 +1,5 @@
 {
-  "name": "brandci-package",
+  "name": "@brandci/packageloader",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,6 @@
     "url": "https://github.com/BrandCi/BrandBookV2.git"
   },
   "keywords": [],
-  "author": "philipp-c-moser",
+  "author": "brandci",
   "devDependencies": {}
 }
