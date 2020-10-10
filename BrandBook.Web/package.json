@@ -1,6 +1,15 @@
 {
-  "name": "brandci-packages",
+  "name": "brandci-package",
   "version": "2.0.0",
   "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrandCi/BrandBookV2.git"
+  },
+  "keywords": [],
+  "author": "philipp-c-moser",
   "devDependencies": {}
 }
