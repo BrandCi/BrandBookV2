@@ -44,5 +44,12 @@ module.exports = {
             filename: 'bundle.css'
         })
     ],
+
+    resolve: {
+      alias: {
+          jquery: "jquery/src/jquery"
+      }
+    },
+
     mode: 'development'
 }

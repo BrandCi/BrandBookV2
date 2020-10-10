@@ -22,6 +22,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
+    <link href="~/Frontend/dist/bundle.css" rel="stylesheet">
+
     <!-- Style Bundles -->
     @Styles.Render("~/Content/Css/Frontend/Main")
     @Styles.Render("~/Content/Css/Flag-Icon")
@@ -67,7 +69,7 @@
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->
 
-            
+
 
             @RenderBody()
 
@@ -78,22 +80,23 @@
                 @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
                 <!-- ./ Cookie-Consent -->
             }
-        
+
 
 
             <!-- Footer -->
             @Html.Partial("~/Views/Shared/Layout/Partial/Footer.cshtml")
             <!-- ./ Footer -->
 
+
+            <script src="~/Frontend/dist/bundle.js" async defer></script>
+
             <!-- Js Bundles -->
             @Scripts.Render("~/bundles/Frontend/Main")
-            
+
             @RenderSection("pageScriptBundle", required: false)
 
             @Scripts.Render("~/bundles/Frontend/General")
             <!-- ./ Js Bundles -->
-
-
             <!-- Culture Switcher -->
             <script type="text/javascript">
                 (function ($) {
@@ -103,7 +106,6 @@
                 })(jQuery);
             </script>
             <!-- ./ Culture Switcher-->
-
             <!-- Set Cookie-Acceptance Cookie -->
             <script type="text/javascript">
                 $("#acceptCookiesButton").click(function () {
@@ -115,7 +117,7 @@
 
 
             @RenderSection("scripts", required: false)
-            
+
 
         </div> <!-- /.body_wrapper -->
     </body>
