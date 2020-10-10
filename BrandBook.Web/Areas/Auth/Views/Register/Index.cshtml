@@ -1,4 +1,4 @@
-﻿@model BrandBook.Core.ViewModels.Auth.RegisterViewModel
+@model BrandBook.Core.ViewModels.Auth.RegisterViewModel
 @using System.Configuration
 @using BrandBook.Web.Framework.Helpers
 @using BrandBook.Web.Framework.HtmlHelpers
@@ -64,7 +64,7 @@
                         <div class="input-group mb-3">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) + "*", aria_describedby = "button-password-info" })
                             <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="togglePasswordInfoBox()" tabIndex="-1">
+                                <button class="btn btn-secondary" type="button" id="button-password-info" onclick="toggleInfoBox('password-info-box')" tabIndex="-1">
                                     <i class="fas fa-info-circle"></i>
                                 </button>
                             </div>
@@ -102,10 +102,26 @@
                     </div>
                 </div>
 
-                <div class="form-group mt-4 mb-4">
+
+                <div class="form-group">
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.PromotionCode, new { @value = Model.PromotionCode, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.PromotionCode) })
+                        <div class="input-group mb-3">
+                            @Html.TextBoxFor(m => m.PromotionCode, new { @value = Model.PromotionCode, @class = "form-control", placeholder = Html.DisplayNameFor(m => m.PromotionCode) + "*", aria_describedby = "button-promocode-info" })
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="button-promocode-info" onclick="toggleInfoBox('promocode-info-box')" tabIndex="-1">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
                         @Html.ValidationMessageFor(m => m.PromotionCode, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="alert alert-secondary" role="alert" id="promocode-info-box" style="display: none; font-weight: 200;">
+                            Please enter the Access Code you got from us after registering to our Beta-Program.
+                        </div>
                     </div>
                 </div>
 
@@ -142,7 +158,7 @@
 
             <div class="page-links mt-5">
                 <a href="@Url.Action("Index", "Home", new {area = ""})"><i class="fas fa-chevron-left"></i>&nbsp;@Translations.auth_back_button_title</a>
-                <a href="@Url.Action("PrivacyPolicy", "Legal", new { area=""})" target="_blank"  rel="nofollow noopener">Privacy Policy&nbsp;<i class="fas fa-gavel"></i>&nbsp;<i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("PrivacyPolicy", "Legal", new { area=""})" target="_blank" rel="nofollow noopener">Privacy Policy&nbsp;<i class="fas fa-gavel"></i>&nbsp;<i class="fas fa-chevron-right"></i></a>
             </div>
 
 
