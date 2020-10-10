@@ -38,6 +38,21 @@ steps:
   displayName: 'Build Application'
 # ./Solution
 
+# Frontend Packaging / Bundling
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'BrandBook.Web/Frontend'
+  displayName: 'Frontend Bundling: npm install'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: 'BrandBook.Web/Frontend'
+    customCommand: 'run build'
+  displayName: 'Frontend Bundling: npm run build'
+# ./Frontend Packaging / Bundling
+
 
 # ClientApps
 - task: Npm@1
