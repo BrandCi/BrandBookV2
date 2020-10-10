@@ -100,7 +100,7 @@ function checkPasswordComplexity(password) {
     }
 }
 
-function togglePasswordInfoBox() {
-    $('#password-info-box').toggle('fast');
+function toggleInfoBox(infoBoxId) {
+    $('#' + infoBoxId).toggle('fast');
 }
 // ./Helper
