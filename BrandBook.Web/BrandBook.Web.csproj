@@ -1431,6 +1431,7 @@
     <Content Include="Content\Style\App\Dark\_widgets.scss" />
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
+    <Content Include="Frontend\package.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Dependencies\Auth\popper.min.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
@@ -1501,7 +1502,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
-    <Folder Include="Frontend\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
