@@ -860,8 +860,7 @@
     <Content Include="Error\resource\default.css" />
     <Content Include="Frontend\package-lock.json" />
     <Content Include="Frontend\package.json" />
-    <Content Include="Frontend\src\scripts\frontend.js" />
-    <Content Include="Frontend\src\styles\frontend.scss" />
+    <Content Include="Frontend\src\scripts\app.js" />
     <Content Include="Frontend\webpack.config.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Style\Site.css" />
@@ -1436,6 +1435,7 @@
     <Content Include="Content\Style\App\Dark\_widgets.scss" />
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
+    <Content Include="Frontend\src\styles\app.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Dependencies\Auth\popper.min.js" />
     <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />

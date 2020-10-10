@@ -2,10 +2,10 @@ const path =  require('path');
 const extract = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: './src/scripts/frontend.js',
+    entry: './src/scripts/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.frontend.js'
+        filename: 'bundle.js'
     },
 
     module: {
@@ -36,23 +36,12 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            outputPath: 'images'
-                        }
-                    }
-                ]
             }
         ]
     },
     plugins: [
         new extract({
-            filename: 'bundle.frontend.css'
+            filename: 'bundle.css'
         })
     ],
     mode: 'development'
