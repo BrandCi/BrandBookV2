@@ -6,3 +6,8 @@ updates:
     directory: "BrandBook.Web/Areas/App/ClientApp"
     schedule:
       interval: "daily"
+
+    reviewers:
+      - "philipp-c-moser"
+
+    target-branch: "develop"
