@@ -51,6 +51,13 @@ steps:
     workingDir: 'BrandBook.Web/Frontend'
     customCommand: 'run build'
   displayName: 'Frontend Bundling: npm run build'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Frontend/dist'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/FrontendBundle'
+  displayName: 'Frontend Bundling: Copy Bundle'
 # ./Frontend Packaging / Bundling
 
 
@@ -73,7 +80,7 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApps'
-  displayName: 'ClientApp: Copy Client App Builds'
+  displayName: 'ClientApp: Copy ClientApp Builds'
 # ./ClientApps
 
 
