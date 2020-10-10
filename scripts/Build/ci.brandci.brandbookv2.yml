@@ -64,21 +64,21 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
+    workingDir: 'BrandBook.Web.Application'
   displayName: 'ClientApp: npm install'
 
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: 'BrandBook.Web/Areas/App/ClientApp'
+    workingDir: 'BrandBook.Web.Application'
     customCommand: 'run custom-build-dev'
   displayName: 'ClientApp: npm custom build'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web/Content/ClientApps'
+    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Application/dist'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApps'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApplication'
   displayName: 'ClientApp: Copy ClientApp Builds'
 # ./ClientApps
 

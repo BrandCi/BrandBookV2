@@ -1,6 +1,7 @@
 {
-  "name": "client-app",
-  "version": "0.0.0",
+  "name": "@brandci/application",
+  "version": "2.0.0",
+  "author": "brandci",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

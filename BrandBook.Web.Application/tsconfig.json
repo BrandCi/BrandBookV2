@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "../../../Content/ClientApps/AppOutput/Ts-Out",
+    "outDir": "dist",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
