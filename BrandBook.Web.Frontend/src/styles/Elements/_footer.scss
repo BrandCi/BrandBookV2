@@ -749,7 +749,6 @@
     position: relative;
     .footer_shap{
         position: absolute;
-        background: url("../img/home9/footer.png") no-repeat scroll center;
         left: 0;
         width: 100%;
         background-size: cover;
@@ -854,12 +853,6 @@
                 display: inline-block;
                 background: #18295c;
                 left: -15px;
-            }
-            &.flag-icon-us{
-                background-image: url(../img/home9/flag.png);
-            }
-            &.flag-icon-mx{
-                background-image: url(../img/home9/flag.png);
             }
         }
         .dropdown-menu{
@@ -1023,11 +1016,9 @@
     .footer_bg{
         position: absolute;
         bottom: 0;
-        background: url("../img/seo/footer_bg.png") no-repeat scroll center 0;
         width: 100%;
         height: 266px;
         .footer_bg_one{
-            background: url("../img/seo/car.png") no-repeat center center;
             width: 70px;
             height: 50px;
             position: absolute;
@@ -1036,8 +1027,6 @@
             animation: myfirst 22s  linear infinite;
         }
         .footer_bg_two{
-            background: url("../img/seo/bike.png") no-repeat center center;
-            width: 50px;
             height: 52px;
             bottom: 0;
             left: 38%;

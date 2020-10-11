@@ -223,7 +223,6 @@
         left: 0;
         top: 0;
         z-index: -1;
-        background: url("../img/home5/shap_tecture.png") no-repeat scroll center 0 / cover;
     }
 }
 
@@ -253,7 +252,6 @@
 
 /*============= app_banner_area css ===========*/
 .app_banner_area{
-    background: url(../img/home7/banner.png) no-repeat scroll center 100%;
     padding-top: 230px;
     padding-bottom: 210px;
     overflow: hidden;
@@ -684,7 +682,6 @@
     z-index: 0;
     &:before{
         content: "";
-        background: url("../img/new/startup_banner_bg.png") no-repeat scroll center bottom;
         position: absolute;
         left: 0;
         width: 100%;
@@ -755,7 +752,6 @@
         top: 0;
         left: 0;
         position: absolute;
-        background: url("../img/new/startup_shap.png") no-repeat scroll center bottom / cover;
         z-index: -1;
     }
 }
@@ -815,7 +811,6 @@
         right: 0;
         width: 100%;
         height: 100%;
-        background: url("../img/new/digital_img.png") no-repeat scroll right 0;
         top: 0;
         z-index: -1;
     }

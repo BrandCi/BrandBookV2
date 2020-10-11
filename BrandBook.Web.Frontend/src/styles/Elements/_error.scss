@@ -1,8 +1,5 @@
 /*================= error_area css ==================*/
 .error_area{
-    background: -moz-linear-gradient( 180deg, rgba(94,44,237, 0.93) 0%, rgba(164,133,253, 0.90) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
-    background: -webkit-linear-gradient( 180deg, rgba(94,44,237, 0.93) 0%, rgba(164,133,253, 0.90) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
-    background: -ms-linear-gradient( 180deg, rgba(94,44,237, 0.93) 0%, rgba(164,133,253, 0.90) 100%), url("../img/error_bg.png") no-repeat scroll center 100%;
     display: flex;
     align-items: center;
     position: relative;
@@ -107,7 +104,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url("../img/new/case/parallax.png") no-repeat scroll center center;
     z-index: -1;
 }
 .download_content{
