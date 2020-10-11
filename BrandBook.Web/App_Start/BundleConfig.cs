@@ -37,54 +37,6 @@ namespace BrandBook.Web
 
             /* ./MODULES / PACKAGES */
 
-
-
-
-            /*
-             *
-             * Styles
-             * Frontend
-             *
-             */
-
-            // Bundles for Frontend
-            bundles.Add(new StyleBundle("~/Content/Css/Frontend/Main").Include(
-
-                        /* Plugins */
-                        "~/Plugins/Frontend/themify-icon/themify-icons.css",
-                        "~/Plugins/Frontend/flaticon/flaticon.css",
-                        "~/Plugins/Frontend/animation/animate.css",
-                        "~/Plugins/owl-carousel/owl.carousel.min.css",
-                        "~/Plugins/Frontend/magnify-pop/magnific-popup.css",
-                        "~/Plugins/Frontend/elagent/style.css",
-                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css"));
-
-
-            bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
-
-                        /* Plugins */
-                        "~/Plugins/Frontend/sckroller/jquery.parallax-scroll.js",
-                        "~/Plugins/Frontend/imagesloaded/imagesloaded.pkgd.min.js",
-                        "~/Plugins/Frontend/isotope/isotope-min.js",
-                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.concat.min.js",
-                        "~/Plugins/Frontend/magnify-pop/jquery.magnific-popup.min.js"));
-
-
-
-            /* Page Bundles */
-            bundles.Add(new ScriptBundle("~/bundles/Frontend/Page/Homepage").Include(
-                "~/Plugins/Frontend/circle-progress/circle-progress.js",
-                "~/Plugins/Frontend/counterup/jquery.counterup.min.js",
-                "~/Plugins/Frontend/counterup/jquery.waypoints.min.js",
-                "~/Plugins/Frontend/counterup/appear.js",
-                "~/Plugins/Frontend/multiscroll/jquery.easings.min.js",
-                "~/Plugins/Frontend/multiscroll/multiscroll.responsiveExpand.limited.min.js",
-                "~/Plugins/Frontend/multiscroll/jquery.multiscroll.extensions.min.js"));
-
-
-
-
-
             /*
              *
              * Styles
