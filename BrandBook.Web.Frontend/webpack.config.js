@@ -3,7 +3,8 @@ const extract = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        frontend: './src/frontend/scripts/app.js'
+        frontend: './src/frontend/scripts/app.js',
+        auth: './src/auth/scripts/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

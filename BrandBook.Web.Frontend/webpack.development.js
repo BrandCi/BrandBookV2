@@ -8,8 +8,8 @@ module.exports = merge(webpackConfig, {
     mode: 'development',
 
     output: {
-        path: path.resolve(__dirname, '../BrandBook.Web/Content/dist/Frontend'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, '../BrandBook.Web/Content/dist'),
+        filename: '[name].bundle.js'
     }
 
 });
