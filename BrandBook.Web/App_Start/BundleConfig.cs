@@ -1,4 +1,4 @@
-﻿using System.Web.Optimization;
+using System.Web.Optimization;
 
 namespace BrandBook.Web
 {
@@ -89,57 +89,57 @@ namespace BrandBook.Web
 
             // Jquery.Validation
             bundles.Add(new ScriptBundle("~/bundles/Plugins/JqueryValidation").Include(
-                "~/Plugins/jquery-validation/js/jquery.validate.min.js"
+                "~/Content/dist/App/Plugins/jquery-validation/js/jquery.validate.min.js"
                 ));
 
 
             // Modals
             bundles.Add(new StyleBundle("~/Content/Plugins/Modals").Include(
-                    "~/Plugins/custombox/dist/custombox.min.css",
-                    "~/Plugins/morris/morris.css"));
+                    "~/Content/dist/App/Plugins/custombox/dist/custombox.min.css",
+                    "~/Content/dist/App/Plugins/morris/morris.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Modals").Include(
-                "~/Plugins/custombox/dist/custombox.min.js",
-                "~/Plugins/custombox/dist/legacy.min.js"));
+                "~/Content/dist/App/Plugins/custombox/dist/custombox.min.js",
+                "~/Content/dist/App/Plugins/custombox/dist/legacy.min.js"));
 
 
 
             // Morris Chart
             bundles.Add(new StyleBundle("~/Content/Plugins/MorrisChart").Include(
-                "~/Plugins/morris/morris.css"));
+                "~/Content/dist/App/Plugins/morris/morris.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/MorrisChart").Include(
-                "~/Plugins/morris/morris.min.js",
-                "~/Plugins/raphael/raphael-min.js"));
+                "~/Content/dist/App/Plugins/morris/morris.min.js",
+                "~/Content/dist/App/Plugins/raphael/raphael-min.js"));
 
 
             // Datatables
             bundles.Add(new StyleBundle("~/Content/Plugins/Datatables").Include(
-                "~/Plugins/datatables/dataTables.bootstrap4.min.css",
-                "~/Plugins/datatables/buttons.bootstrap4.min.css",
-                "~/Plugins/datatables/responsive.bootstrap4.min.css"));
+                "~/Content/dist/App/Plugins/datatables/dataTables.bootstrap4.min.css",
+                "~/Content/dist/App/Plugins/datatables/buttons.bootstrap4.min.css",
+                "~/Content/dist/App/Plugins/datatables/responsive.bootstrap4.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Datatables").Include(
-                "~/Plugins/datatables/jquery.dataTables.min.js",
-                "~/Plugins/datatables/dataTables.bootstrap4.min.js",
-                "~/Plugins/datatables/dataTables.buttons.min.js",
-                "~/Plugins/datatables/buttons.bootstrap4.min.js",
-                "~/Plugins/datatables/jszip.min.js",
-                "~/Plugins/datatables/pdfmake.min.js",
-                "~/Plugins/datatables/vfs_fonts.js",
-                "~/Plugins/datatables/buttons.html5.min.js",
-                "~/Plugins/datatables/buttons.print.min.js",
-                "~/Plugins/datatables/dataTables.keyTable.min.js",
-                "~/Plugins/datatables/dataTables.responsive.min.js",
-                "~/Plugins/datatables/responsive.bootstrap4.min.js",
-                "~/Plugins/datatables/dataTables.select.min.js"));
+                "~/Content/dist/App/Plugins/datatables/jquery.dataTables.min.js",
+                "~/Content/dist/App/Plugins/datatables/dataTables.bootstrap4.min.js",
+                "~/Content/dist/App/Plugins/datatables/dataTables.buttons.min.js",
+                "~/Content/dist/App/Plugins/datatables/buttons.bootstrap4.min.js",
+                "~/Content/dist/App/Plugins/datatables/jszip.min.js",
+                "~/Content/dist/App/Plugins/datatables/pdfmake.min.js",
+                "~/Content/dist/App/Plugins/datatables/vfs_fonts.js",
+                "~/Content/dist/App/Plugins/datatables/buttons.html5.min.js",
+                "~/Content/dist/App/Plugins/datatables/buttons.print.min.js",
+                "~/Content/dist/App/Plugins/datatables/dataTables.keyTable.min.js",
+                "~/Content/dist/App/Plugins/datatables/dataTables.responsive.min.js",
+                "~/Content/dist/App/Plugins/datatables/responsive.bootstrap4.min.js",
+                "~/Content/dist/App/Plugins/datatables/dataTables.select.min.js"));
 
             // Bootstrap-Datepicker
             bundles.Add(new StyleBundle("~/Content/Plugins/Datepicker").Include(
-                "~/Plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"));
+                "~/Content/dist/App/Plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/Plugins/Datepicker").Include(
-                "~/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
+                "~/Content/dist/App/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
 
 
         }
