@@ -1126,11 +1126,6 @@
     <Content Include="Plugins\Frontend\multiscroll\multiscroll.responsiveExpand.limited.min.js" />
     <Content Include="Plugins\Frontend\nice-select\jquery.nice-select.min.js" />
     <Content Include="Plugins\Frontend\nice-select\nice-select.css" />
-    <Content Include="Plugins\Frontend\owl-carousel\assets\ajax-loader.gif" />
-    <Content Include="Plugins\Frontend\owl-carousel\assets\owl.carousel.css" />
-    <Content Include="Plugins\Frontend\owl-carousel\assets\owl.carousel.min.css" />
-    <Content Include="Plugins\Frontend\owl-carousel\owl.carousel.min.js" />
-    <Content Include="Plugins\Frontend\owl-carousel\owl.carousel2.thumbs.js" />
     <Content Include="Plugins\Frontend\sckroller\jquery.parallax-scroll.js" />
     <Content Include="Plugins\Frontend\sckroller\sckroller.js" />
     <Content Include="Plugins\Frontend\scroll\jquery.mCustomScrollbar.concat.min.js" />
@@ -1144,7 +1139,6 @@
     <Content Include="Plugins\Frontend\ui-fliter\jquery-ui.js" />
     <Content Include="Plugins\Frontend\ui-fliter\nouislider.js" />
     <Content Include="Plugins\Frontend\ui-fliter\nouislider.min.css" />
-    <Content Include="Plugins\Frontend\wow\wow.min.js" />
     <Content Include="Plugins\html5shiv.js" />
     <Content Include="Plugins\jquery-easing\jquery.easing.min.js" />
     <Content Include="Plugins\jquery-validation\js\jquery.validate.min.js" />
@@ -1392,15 +1386,9 @@
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\Dependencies\Auth\popper.min.js" />
-    <Content Include="Scripts\Dependencies\Frontend\jquery.cookie.js" />
-    <Content Include="Scripts\Dependencies\Frontend\main.js" />
     <Content Include="Scripts\Packages\App\UserManagement\app-um-users-overview.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
-    <Content Include="Scripts\Dependencies\Frontend\plugins.js" />
-    <Content Include="Scripts\Dependencies\Frontend\propper.js" />
-    <Content Include="Scripts\Dependencies\Frontend\theme.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

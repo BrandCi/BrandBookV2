@@ -7,10 +7,6 @@ namespace BrandBook.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
-
             bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
                         "~/Content/dist/Flag-Icon/flag-icon.min.css"));
 
@@ -58,7 +54,7 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/themify-icon/themify-icons.css",
                         "~/Plugins/Frontend/flaticon/flaticon.css",
                         "~/Plugins/Frontend/animation/animate.css",
-                        "~/Plugins/Frontend/owl-carousel/assets/owl.carousel.min.css",
+                        "~/Plugins/owl-carousel/owl.carousel.min.css",
                         "~/Plugins/Frontend/magnify-pop/magnific-popup.css",
                         "~/Plugins/Frontend/elagent/style.css",
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css"));
@@ -67,20 +63,11 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
 
                         /* Plugins */
-                        "~/Plugins/Frontend/wow/wow.min.js",
                         "~/Plugins/Frontend/sckroller/jquery.parallax-scroll.js",
-                        "~/Plugins/Frontend/owl-carousel/owl.carousel.min.js",
                         "~/Plugins/Frontend/imagesloaded/imagesloaded.pkgd.min.js",
                         "~/Plugins/Frontend/isotope/isotope-min.js",
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.concat.min.js",
                         "~/Plugins/Frontend/magnify-pop/jquery.magnific-popup.min.js"));
-
-
-
-            bundles.Add(new ScriptBundle("~/bundles/Frontend/General").Include(
-                "~/Scripts/Dependencies/Frontend/plugins.js",
-                "~/Scripts/Dependencies/Frontend/main.js",
-                "~/Scripts/Dependencies/Frontend/jquery.cookie.js"));
 
 
 
@@ -114,10 +101,9 @@ namespace BrandBook.Web
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Dark").Include(
                 "~/Content/dist/App/style_dark.min.css"));
 
-
-
             bundles.Add(new StyleBundle("~/Content/Css/App/Main/RTL").Include(
                 "~/Content/dist/App/bootstrap-rtl.min.css"));
+
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
@@ -252,32 +238,6 @@ namespace BrandBook.Web
                 "~/Plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"));
 
 
-
-
-
-
-
-
-
-
-
-            /*
-             * CLIENT APP - APP AREA
-             
-
-            bundles.Add(new StyleBundle("~/ClientApp/App").Include(
-                "~/Content/ClientApps/AppOutput/ClientApp/styles.*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/ClientApp/App").Include(
-                "~/Content/ClientApps/AppOutput/ClientApp/runtime-es2015.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/runtime-es5.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/polyfills-es5.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/polyfills-es2015.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/vendor-es2015.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/vendor-es5.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/main-es2015.js",
-                "~/Content/ClientApps/AppOutput/ClientApp/main-es5.js"));
-*/
         }
     }
 }
