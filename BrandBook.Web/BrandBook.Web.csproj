@@ -851,7 +851,6 @@
     <Content Include="Error\resource\default-particles.js" />
     <Content Include="Error\resource\default.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Style\Site.css" />
     <Compile Include="App_Start\StartupConfig.cs" />
     <Content Include="Plugins\animated-headlines\animated-headlines.css" />
     <Content Include="Plugins\animated-headlines\animated-headlines.js" />
