@@ -22,18 +22,21 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
-    <link href="~/Frontend/dist/bundle.css" rel="stylesheet">
+    <link href="~/Content/dist/Frontend/bundle.css" rel="stylesheet">
 
     <!-- Style Bundles -->
     @Styles.Render("~/Content/Css/Frontend/Main")
     @Styles.Render("~/Content/Css/Flag-Icon")
     <!-- Style Bundles -->
 
-    @if (CultureHelper.IsRightToLeft())
-    {
-        @Styles.Render("~/Content/Css/Frontend/RTL")
-        ;
-    }
+
+    @*@if (CultureHelper.IsRightToLeft())
+      {
+        @Styles.Render("~/Content/Css/Frontend/RTL");
+      }
+    *@
+
+
 
 
     @RenderSection("styles", required: false)
@@ -88,7 +91,7 @@
             <!-- ./ Footer -->
 
 
-            <script src="~/Frontend/dist/bundle.js"></script>
+            <script src="~/Content/dist/Frontend/bundle.js"></script>
 
             <!-- Js Bundles -->
             @Scripts.Render("~/bundles/Frontend/Main")

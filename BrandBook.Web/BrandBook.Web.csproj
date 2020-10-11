@@ -822,12 +822,6 @@
     <Content Include="Content\dist\Auth\Styles.min.css" />
     <Content Include="Content\dist\Flag-Icon\flag-icon.css" />
     <Content Include="Content\dist\Flag-Icon\flag-icon.min.css" />
-    <Content Include="Content\dist\Frontend\responsive.css" />
-    <Content Include="Content\dist\Frontend\responsive.min.css" />
-    <Content Include="Content\dist\Frontend\rtl.css" />
-    <Content Include="Content\dist\Frontend\rtl.min.css" />
-    <Content Include="Content\dist\Frontend\style.css" />
-    <Content Include="Content\dist\Frontend\style.min.css" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
     <Content Include="Content\EmailTemplates\General_ContactRequest.html" />
     <Content Include="Content\EmailTemplates\General_RequestClosedBeta.html" />
@@ -849,8 +843,6 @@
     <Content Include="Content\Style\bootstrap.css" />
     <Content Include="Content\Style\bootstrap.min.css" />
     <Content Include="Areas\App\Views\Brand\Colors\AddColorItem.cshtml" />
-    <None Include="Content\Style\Frontend\responsive.scss" />
-    <None Include="Content\Style\Frontend\rtl.scss" />
     <Content Include="Error\400.html" />
     <Content Include="Error\401.html" />
     <Content Include="Error\403.html" />
@@ -1332,32 +1324,6 @@
     <Content Include="MachineAppSettings.config" />
     <Content Include="Content\Style\App\_Customize.scss" />
     <Content Include="Plugins\datatables\json\scroller-demo.json" />
-    <Content Include="Content\Style\Frontend\style.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_about.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_banner.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_blog.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_breadcrumb.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_button.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_contact.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_error.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_faq.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_features.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_footer.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_header.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_hosting.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_joblist.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_portfolio.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_predefine.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_preloader.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_price.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_screenshot.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_search.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_service.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_shop.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_split-home.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_testimonial.scss" />
-    <Content Include="Content\Style\Frontend\Elements\_typography.scss" />
-    <Content Include="Content\Style\Frontend\_variables.scss" />
     <Content Include="Plugins\Frontend\bootstrap-selector\css\bootstrap-select.css.map" />
     <Content Include="Plugins\Frontend\bootstrap-selector\js\bootstrap-select.js.map" />
     <Content Include="Plugins\Frontend\elagent\fonts\ElegantIcons.eot" />
@@ -1382,7 +1348,6 @@
     <Content Include="Plugins\Frontend\simple-line-icon\fonts\Simple-Line-Icons.woff" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.ttf" />
     <Content Include="Plugins\Frontend\themify-icon\fonts\themify.woff" />
-    <Content Include="Content\Style\Frontend\_custom.scss" />
     <Content Include="Content\Style\App\bootstrap-rtl.scss" />
     <Content Include="Content\Style\App\Dark\icons.scss" />
     <Content Include="Content\Style\App\Dark\_account-pages.scss" />
@@ -1501,6 +1466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ClientApps\AppOutput\" />
+    <Folder Include="Content\dist\Frontend\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

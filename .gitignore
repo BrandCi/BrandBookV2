@@ -264,5 +264,5 @@ __pycache__/
 # BrandBook.Web/SharedStorage/
 
 BrandBook.Web/Content/ClientApps/
-BrandBook.Web/Frontend/dist/
+BrandBook.Web/Content/dist/Frontend/
 BrandBook.Web.Frontend/dist/

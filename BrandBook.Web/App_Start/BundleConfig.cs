@@ -10,14 +10,6 @@ namespace BrandBook.Web
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-
 
             bundles.Add(new StyleBundle("~/Content/Css/Flag-Icon").Include(
                         "~/Content/dist/Flag-Icon/flag-icon.min.css"));
@@ -80,13 +72,7 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/owl-carousel/assets/owl.carousel.min.css",
                         "~/Plugins/Frontend/magnify-pop/magnific-popup.css",
                         "~/Plugins/Frontend/elagent/style.css",
-                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
-                        /* ./Plugins */
-
-                        "~/Content/dist/Frontend/responsive.css"));
-
-            bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
-                "~/Content/dist/Frontend/rtl.css"));
+                        "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/Frontend/Main").Include(
