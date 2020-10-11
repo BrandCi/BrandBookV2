@@ -43,21 +43,21 @@ steps:
   inputs:
     command: 'install'
     workingDir: 'BrandBook.Web.Frontend'
-  displayName: 'Frontend Bundling: npm install'
+  displayName: 'Frontend-Bundling: npm install'
 
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: 'BrandBook.Web.Frontend'
     customCommand: 'run build'
-  displayName: 'Frontend Bundling: npm run build'
+  displayName: 'Frontend-Bundling: npm run build'
 
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Frontend/dist'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles'
-  displayName: 'Frontend Bundling: Copy Bundle'
+  displayName: 'Frontend-Bundling: Copy Bundle'
 # ./Frontend Packaging / Bundling
 
 # ClientApps
@@ -65,21 +65,21 @@ steps:
   inputs:
     command: 'install'
     workingDir: 'BrandBook.Web.Application'
-  displayName: 'ClientApp: npm install'
+  displayName: 'Application-Bundling: npm install'
 
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: 'BrandBook.Web.Application'
     customCommand: 'run custom-build-dev'
-  displayName: 'ClientApp: npm custom build'
+  displayName: 'Application-Bundling: npm custom build'
 
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Application/dist'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/ClientApplication'
-  displayName: 'ClientApp: Copy ClientApp Builds'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles/application.bundle'
+  displayName: 'Application-Bundling: Copy Application Bundles'
 # ./ClientApps
 
 # Scripts-Folder

@@ -12,6 +12,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  name = 'BrandCi Angular ClientApp';
+  name = 'BrandCi Angular application';
 
 }
