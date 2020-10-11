@@ -1016,10 +1016,6 @@
     <Content Include="Plugins\jquery.2.2.3.min.js" />
     <Content Include="Plugins\jquery.appear.js" />
     <Content Include="Plugins\jquery.countTo.js" />
-    <Content Include="Plugins\jquery.steps\css\jquery.steps.css" />
-    <Content Include="Plugins\jquery.steps\js\jquery.steps.min.js" />
-    <Content Include="Plugins\language-switcher\jquery.polyglot.language.switcher.js" />
-    <Content Include="Plugins\language-switcher\polyglot-language-switcher.css" />
     <Content Include="Plugins\menu\dist\css\slimmenu.css" />
     <Content Include="Plugins\morris\morris.css" />
     <Content Include="Plugins\morris\morris.js" />
