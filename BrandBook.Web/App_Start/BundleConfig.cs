@@ -38,13 +38,6 @@ namespace BrandBook.Web
             // ./APP
 
 
-            // AUTH
-            bundles.Add(new ScriptBundle("~/bundles/packages/auth/registration/validation").Include(
-                "~/Scripts/Packages/Auth/Validation/custom.registration.validation.js"
-                ));
-            // ./AUTH
-
-
 
             /* ./MODULES / PACKAGES */
 

@@ -4,10 +4,6 @@
     "inputFile": "Content/Style/Flag-Icon/flag-icon.scss"
   },
   {
-    "outputFile": "Content/dist/Auth/Styles.css",
-    "inputFile": "Content/Style/Auth/Styles.scss"
-  },
-  {
     "outputFile": "Content/dist/App/style_dark.css",
     "inputFile": "Content/Style/App/style_dark.scss"
   },
