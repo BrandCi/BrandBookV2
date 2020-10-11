@@ -1014,8 +1014,6 @@
     <Content Include="Plugins\html5shiv.js" />
     <Content Include="Plugins\jquery-validation\js\jquery.validate.min.js" />
     <Content Include="Plugins\jquery.2.2.3.min.js" />
-    <Content Include="Plugins\jquery.appear.js" />
-    <Content Include="Plugins\jquery.countTo.js" />
     <Content Include="Plugins\morris\morris.css" />
     <Content Include="Plugins\morris\morris.js" />
     <Content Include="Plugins\morris\morris.min.js" />
