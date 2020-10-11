@@ -1172,17 +1172,6 @@ import '../styles/app.scss';
           });
         }
 
-        // ------------------------------------- Fancybox
-        var fancy = $ (".fancybox");
-        if(fancy.length) {
-          fancy.fancybox({
-            arrows: true,
-            animationEffect: "zoom-in-out",
-            transitionEffect: "zoom-in-out",
-          });
-        }
-
-
          // ------------------------------ Language Switcher
          var plang = $('#polyglotLanguageSwitcher');
          if (plang.length) {
