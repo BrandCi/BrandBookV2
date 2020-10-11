@@ -56,7 +56,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Frontend/dist'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/FrontendBundle'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles'
   displayName: 'Frontend Bundling: Copy Bundle'
 # ./Frontend Packaging / Bundling
 
