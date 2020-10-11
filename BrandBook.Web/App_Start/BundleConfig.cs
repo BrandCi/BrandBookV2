@@ -137,16 +137,6 @@ namespace BrandBook.Web
 
 
 
-
-            // Sweet Alerts
-            bundles.Add(new StyleBundle("~/Content/Plugins/SweetAlerts").Include(
-                "~/Plugins/sweet-alert/sweetalert2.min.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/Plugins/SweetAlerts").Include(
-                "~/Plugins/sweet-alert/sweetalert2.min.js"));
-
-
-
             // Switchery
             bundles.Add(new StyleBundle("~/Content/Plugins/Switchery").Include(
                 "~/Plugins/switchery/switchery.min.css"));
