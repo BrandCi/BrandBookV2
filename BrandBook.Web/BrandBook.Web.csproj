@@ -818,8 +818,6 @@
     <Content Include="Content\dist\App\style.min.css" />
     <Content Include="Content\dist\App\style_dark.css" />
     <Content Include="Content\dist\App\style_dark.min.css" />
-    <Content Include="Content\dist\Auth\Styles.css" />
-    <Content Include="Content\dist\Auth\Styles.min.css" />
     <Content Include="Content\dist\Flag-Icon\flag-icon.css" />
     <Content Include="Content\dist\Flag-Icon\flag-icon.min.css" />
     <Content Include="Content\EmailTemplates\Admin_AccountCreationInformation.html" />
