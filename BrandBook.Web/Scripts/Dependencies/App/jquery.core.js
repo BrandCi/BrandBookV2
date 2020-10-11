@@ -215,15 +215,7 @@ function($) {
         $.fn.slider && $('[data-plugin="range-slider"]').slider({});
     },
 
-    /* -------------
-     * Form related controls
-     */
-    //switch
-    Components.prototype.initSwitchery = function() {
-        $('[data-plugin="switchery"]').each(function (idx, obj) {
-            new Switchery($(this)[0], $(this).data());
-        });
-    },
+
     //multiselect
     Components.prototype.initMultiSelect = function() {
         if($('[data-plugin="multiselect"]').length > 0)

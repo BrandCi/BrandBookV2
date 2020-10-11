@@ -44,7 +44,6 @@ namespace BrandBook.Web
              *
              */
             bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
-                "~/Plugins/switchery/switchery.min.css",
                 "~/Content/Style/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Basic").Include(
@@ -134,16 +133,6 @@ namespace BrandBook.Web
                 "~/Plugins/datatables/dataTables.responsive.min.js",
                 "~/Plugins/datatables/responsive.bootstrap4.min.js",
                 "~/Plugins/datatables/dataTables.select.min.js"));
-
-
-
-            // Switchery
-            bundles.Add(new StyleBundle("~/Content/Plugins/Switchery").Include(
-                "~/Plugins/switchery/switchery.min.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/Plugins/Switchery").Include(
-                "~/Plugins/switchery/switchery.min.js"));
-
 
             // Bootstrap-Datepicker
             bundles.Add(new StyleBundle("~/Content/Plugins/Datepicker").Include(

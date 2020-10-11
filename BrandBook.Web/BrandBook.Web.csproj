@@ -1022,8 +1022,6 @@
     <Content Include="Plugins\popper.js\popper.min.js" />
     <Content Include="Plugins\raphael\raphael-min.js" />
     <Content Include="Plugins\raphael\raphael.js" />
-    <Content Include="Plugins\switchery\switchery.min.css" />
-    <Content Include="Plugins\switchery\switchery.min.js" />
     <Content Include="Scripts\Dependencies\App\Main\detect.js" />
     <Content Include="Scripts\Dependencies\App\Main\fastclick.js" />
     <Content Include="Scripts\Dependencies\App\jquery.app.js" />
@@ -1080,8 +1078,6 @@
     <Content Include="Areas\App\Views\Brand\Colors\Colors.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\Shared\Layout\_Layout.cshtml" />
-    <Content Include="Areas\Public\Views\Shared\Layout\Partial\_Navigation.cshtml" />
-    <Content Include="Areas\Public\Views\Shared\Layout\Partial\_TopBar.cshtml" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Brand\Overview.cshtml" />
     <Content Include="Areas\App\Views\Brand\Fonts.cshtml" />
