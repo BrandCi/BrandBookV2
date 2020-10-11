@@ -44,7 +44,7 @@ namespace BrandBook.Web
              *
              */
             bundles.Add(new StyleBundle("~/Content/Css/App/Main").Include(
-                "~/Content/Style/bootstrap.min.css"));
+                "~/Content/dist/App/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/App/Mode/Basic").Include(
                 "~/Content/dist/App/style.min.css"));

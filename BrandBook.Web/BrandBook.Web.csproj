@@ -837,12 +837,7 @@
     <Content Include="Content\LegalPages\PrivacyPolicy\en.html" />
     <Content Include="Content\LegalPages\Imprint\de.html" />
     <Content Include="Content\LegalPages\Imprint\en.html" />
-    <Content Include="Content\Style\bootstrap-grid.css" />
-    <Content Include="Content\Style\bootstrap-grid.min.css" />
-    <Content Include="Content\Style\bootstrap-reboot.css" />
-    <Content Include="Content\Style\bootstrap-reboot.min.css" />
-    <Content Include="Content\Style\bootstrap.css" />
-    <Content Include="Content\Style\bootstrap.min.css" />
+    <Content Include="Content\dist\App\bootstrap.min.css" />
     <Content Include="Areas\App\Views\Brand\Colors\AddColorItem.cshtml" />
     <Content Include="Error\400.html" />
     <Content Include="Error\401.html" />
@@ -1034,12 +1029,6 @@
     <Content Include="Scripts\Dependencies\App\Main\waves.js" />
     <Content Include="Scripts\Dependencies\App\Main\wow.min.js" />
     <Content Include="Scripts\Dependencies\App\Main\bootstrap.min.js" />
-    <Content Include="Content\Style\bootstrap.min.css.map" />
-    <Content Include="Content\Style\bootstrap.css.map" />
-    <Content Include="Content\Style\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\Style\bootstrap-reboot.css.map" />
-    <Content Include="Content\Style\bootstrap-grid.min.css.map" />
-    <Content Include="Content\Style\bootstrap-grid.css.map" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="Areas\Auth\Views\web.config" />
     <Content Include="Areas\Auth\Views\Login\Index.cshtml" />
