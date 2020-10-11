@@ -1013,7 +1013,6 @@
     <Content Include="Plugins\datatables\vfs_fonts.js" />
     <Content Include="Plugins\html5shiv.js" />
     <Content Include="Plugins\jquery-validation\js\jquery.validate.min.js" />
-    <Content Include="Plugins\jquery.2.2.3.min.js" />
     <Content Include="Plugins\morris\morris.css" />
     <Content Include="Plugins\morris\morris.js" />
     <Content Include="Plugins\morris\morris.min.js" />
@@ -1029,17 +1028,9 @@
     <Content Include="Scripts\Dependencies\App\Main\jquery.scrollTo.min.js" />
     <Content Include="Scripts\Dependencies\App\Main\jquery.slimscroll.js" />
     <Content Include="Scripts\Dependencies\App\Main\popper.min.js" />
-    <Content Include="Scripts\Dependencies\App\Main\skycons.min.js" />
     <Content Include="Scripts\Dependencies\App\Main\waves.js" />
     <Content Include="Scripts\Dependencies\App\Main\wow.min.js" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\Dependencies\App\Main\bootstrap.min.js" />
     <Content Include="Content\Style\bootstrap.min.css.map" />
     <Content Include="Content\Style\bootstrap.css.map" />
     <Content Include="Content\Style\bootstrap-reboot.min.css.map" />
@@ -1211,24 +1202,10 @@
     <Content Include="Content\Style\App\Dark\_widgets.scss" />
     <Content Include="Content\Style\App\Dark\_wysiwig.scss" />
     <Content Include="Content\Style\App\style_dark.scss" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Packages\App\UserManagement\app-um-users-overview.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-item.js" />
     <Content Include="Scripts\Packages\Frontend\fe-blog-overview.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Dependencies\App\Main\jquery-3.3.1.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1242,10 +1219,6 @@
     <Content Include="Views\Shared\Layout\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\Layout\Partial\Navigation.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\Footer.cshtml" />
     <Content Include="Views\Pricing\Index.cshtml" />
@@ -1275,8 +1248,6 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrandBook.Core\BrandBook.Core.csproj">
@@ -1302,9 +1273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

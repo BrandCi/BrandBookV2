@@ -58,9 +58,9 @@ namespace BrandBook.Web
 
 
             bundles.Add(new ScriptBundle("~/bundles/App/Main").Include(
-                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/Dependencies/App/Main/jquery-{version}.js",
                 "~/Scripts/Dependencies/App/Main/popper.min.js",
-                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/Dependencies/App/Main/bootstrap.min.js",
                 "~/Scripts/Dependencies/App/Main/detect.js",
                 "~/Scripts/Dependencies/App/Main/fastclick.js",
                 "~/Scripts/Dependencies/App/Main/jquery.slimscroll.js",
