@@ -37,12 +37,8 @@ namespace BrandBook.Web
                 ));
             // ./APP
 
-            // AUTH
-            bundles.Add(new ScriptBundle("~/bundles/packages/auth/scripts").Include(
-                "~/Scripts/bootstrap.js",
-                "~/Scripts/Dependencies/Auth/popper.min.js"
-            ));
 
+            // AUTH
             bundles.Add(new ScriptBundle("~/bundles/packages/auth/registration/validation").Include(
                 "~/Scripts/Packages/Auth/Validation/custom.registration.validation.js"
                 ));
