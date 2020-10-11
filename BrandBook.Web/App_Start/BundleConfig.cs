@@ -83,7 +83,6 @@ namespace BrandBook.Web
                         "~/Plugins/Frontend/scroll/jquery.mCustomScrollbar.min.css",
                         /* ./Plugins */
 
-                        "~/Content/dist/Frontend/style.min.css",
                         "~/Content/dist/Frontend/responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/Css/Frontend/RTL").Include(
