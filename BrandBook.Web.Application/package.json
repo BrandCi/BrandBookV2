@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "custom-build-dev": "ng build --extractCss"
+    "build-dev": "ng build --extractCss",
+    "build-prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
