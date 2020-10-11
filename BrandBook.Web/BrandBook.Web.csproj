@@ -850,8 +850,6 @@
     <Content Include="Error\resource\default.css" />
     <Content Include="Global.asax" />
     <Compile Include="App_Start\StartupConfig.cs" />
-    <Content Include="Plugins\animated-headlines\animated-headlines.css" />
-    <Content Include="Plugins\animated-headlines\animated-headlines.js" />
     <Content Include="Plugins\aos-next\dist\aos.css" />
     <Content Include="Plugins\aos-next\dist\aos.js" />
     <Content Include="Plugins\bootstrap-datepicker\dist\css\bootstrap-datepicker.css" />
