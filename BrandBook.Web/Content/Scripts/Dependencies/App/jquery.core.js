@@ -1,9 +1,3 @@
-/**
-* Theme: Minton Admin Template
-* Author: Coderthemes
-* Module/App: Core js
-*/
-
 //portlets
 !function($) {
     "use strict";
@@ -281,7 +275,6 @@ function($) {
         this.initNiceScrollPlugin(),
         this.initCustomModalPlugin(),
         this.initRangeSlider(),
-        this.initSwitchery(),
         this.initMultiSelect(),
         this.initPeityCharts(),
         //creating portles
