@@ -22,16 +22,21 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
-    <!-- Style Bundles -->
-    @Styles.Render("~/Content/Css/Frontend/Main")
-    @Styles.Render("~/Content/Css/Flag-Icon")
-    <!-- Style Bundles -->
 
-    @if (CultureHelper.IsRightToLeft())
-    {
-        @Styles.Render("~/Content/Css/Frontend/RTL")
-        ;
-    }
+    <!-- Style Bundles -->
+    <link href="~/Content/dist/frontend.bundle.css" rel="stylesheet">
+
+    @Styles.Render("~/Content/Css/Flag-Icon")
+    <!-- ./Style Bundles -->
+    
+    
+    @*@if (CultureHelper.IsRightToLeft())
+        {
+          @Styles.Render("~/Content/Css/Frontend/RTL");
+        }
+    *@
+
+
 
 
     @RenderSection("styles", required: false)
@@ -67,7 +72,7 @@
             @Html.Partial("~/Views/Shared/Layout/Partial/Navigation.cshtml")
             <!-- ./ Navigation -->
 
-            
+
 
             @RenderBody()
 
@@ -78,7 +83,7 @@
                 @Html.Partial("~/Views/Shared/Layout/Partial/_CookieConsent.cshtml")
                 <!-- ./ Cookie-Consent -->
             }
-        
+
 
 
             <!-- Footer -->
@@ -86,14 +91,11 @@
             <!-- ./ Footer -->
 
             <!-- Js Bundles -->
-            @Scripts.Render("~/bundles/Frontend/Main")
-            
+            <script src="~/Content/dist/frontend.bundle.js"></script>
+
             @RenderSection("pageScriptBundle", required: false)
 
-            @Scripts.Render("~/bundles/Frontend/General")
             <!-- ./ Js Bundles -->
-
-
             <!-- Culture Switcher -->
             <script type="text/javascript">
                 (function ($) {
@@ -104,18 +106,9 @@
             </script>
             <!-- ./ Culture Switcher-->
 
-            <!-- Set Cookie-Acceptance Cookie -->
-            <script type="text/javascript">
-                $("#acceptCookiesButton").click(function () {
-                    $.cookie("_cookieConsent", 1, { expires: 365 });
-                    $("#cookieConsentBox").fadeOut(400);
-                });
-            </script>
-            <!-- ./Set Cookie-Acceptance Cookie -->
-
 
             @RenderSection("scripts", required: false)
-            
+
 
         </div> <!-- /.body_wrapper -->
     </body>

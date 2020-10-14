@@ -3,7 +3,18 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "BrandBook.Web/Areas/App/ClientApp"
+    directory: "BrandBook.Web.Application"
+    schedule:
+      interval: "daily"
+
+    reviewers:
+      - "philipp-c-moser"
+
+    target-branch: "develop"
+
+
+  - package-ecosystem: "npm"
+    directory: "BrandBook.Web.Frontend"
     schedule:
       interval: "daily"
 
