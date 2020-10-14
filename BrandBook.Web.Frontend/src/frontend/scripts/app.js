@@ -180,12 +180,7 @@ import '../styles/app.scss';
 })(jQuery)
 
 
-/*
-    THEME
-*/
 
-(function($) {
-    "use strict";
 
     $(document).on ('ready', function (){
 
