@@ -2,6 +2,7 @@ import 'bootstrap';
 import * as WOW from 'wow.js';
 import 'owl.carousel';
 import '../styles/app.scss';
+import Cookies from 'js-cookie';
 
 
 /*
@@ -177,8 +178,10 @@ import '../styles/app.scss';
     active_dropdown();
 
 
-})(jQuery)
-
+    document.querySelector('#acceptCookiesButton').addEventListener("click", function() {
+        Cookies.set('_cookieConsent', 'true');
+        $("#cookieConsentBox").fadeOut(400);
+    });
 
 
 

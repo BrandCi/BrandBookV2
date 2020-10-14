@@ -105,14 +105,6 @@
                 })(jQuery);
             </script>
             <!-- ./ Culture Switcher-->
-            <!-- Set Cookie-Acceptance Cookie -->
-            <script type="text/javascript">
-                $("#acceptCookiesButton").click(function () {
-                    $.cookie("_cookieConsent", 1, { expires: 365 });
-                    $("#cookieConsentBox").fadeOut(400);
-                });
-            </script>
-            <!-- ./Set Cookie-Acceptance Cookie -->
 
 
             @RenderSection("scripts", required: false)
