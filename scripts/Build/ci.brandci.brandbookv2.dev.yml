@@ -50,13 +50,6 @@ steps:
     workingDir: 'BrandBook.Web.Frontend'
     customCommand: 'run build-prod'
   displayName: 'Frontend-Bundling: npm run build-prod'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Frontend/dist'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles'
-  displayName: 'Frontend-Bundling: Copy Bundle'
 # ./Frontend Packaging / Bundling
 
 # ClientApplication
@@ -72,13 +65,6 @@ steps:
     workingDir: 'BrandBook.Web.Application'
     customCommand: 'run build-prod'
   displayName: 'Application-Bundling: npm run build-prod'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/BrandBook.Web.Application/dist'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles/application.bundle'
-  displayName: 'Application-Bundling: Copy Application Bundles'
 # ./ClientApplication
 
 # Unit Tests
@@ -88,9 +74,3 @@ steps:
     configuration: '$(buildConfiguration)'
   displayName: 'UnitTests Application'
 # ./Unit Tests
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-  displayName: 'Publish Build Artifacts'
