@@ -3,11 +3,6 @@ trigger:
     include:
     exclude:
       - '*'
-  pr:
-    branches:
-      include:
-      exclude:
-        - '*'
 
 
 pool:
