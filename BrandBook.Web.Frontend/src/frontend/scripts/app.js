@@ -192,10 +192,16 @@ import Cookies from 'js-cookie';
     active_dropdown();
 
 
-    document.querySelector('#acceptCookiesButton').addEventListener("click", function() {
-        Cookies.set('_cookieConsent', 'true');
-        $("#cookieConsentBox").fadeOut(400);
-    });
+    // Accept Cookies Button
+    var acceptCookiesButton = document.querySelector('#acceptCookiesButton');
+    if(acceptCookiesButton) {
+        acceptCookiesButton.addEventListener("click", function() {
+            Cookies.set('_cookieConsent', 'true');
+            $("#cookieConsentBox").fadeOut(400);
+        });
+    }
+    // ./ Accept Cookies Button
+
 
 
 
