@@ -57,12 +57,12 @@ namespace BrandBook.Web.Framework.Helpers
 
 
         #region UserProfilePictures
-        public static string GetUserimageFromGravatarOrLocal(string userEmailAddress, int size = 20)
+        public static string GetUserimageFromGravatarOrLocal(string userEmailAddress)
         {
-            return GetGravatarImageUrl(userEmailAddress, size);
+            return GetGravatarImageUrl(userEmailAddress);
         }
 
-        public static string GetGravatarImageUrl(string userEmailAddress, int size)
+        public static string GetGravatarImageUrl(string userEmailAddress)
         {
             var md5 = new MD5CryptoServiceProvider();
 
@@ -76,9 +76,7 @@ namespace BrandBook.Web.Framework.Helpers
                 gravatarImageRequest.Append(value.ToString("x2").ToLower());
             }
 
-            gravatarImageRequest.Append($"?s={ size }");
-
-            gravatarImageRequest.Append($"&d=retro");
+            gravatarImageRequest.Append($"?d=retro");
 
             return gravatarImageRequest.ToString();
         }
