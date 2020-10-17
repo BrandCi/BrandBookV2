@@ -2657,7 +2657,7 @@ label {
 
 /* Multiple select*/
 .ms-container {
-  background: transparent url("../../Style/images/multiple-arrow.png") no-repeat 50% 50%; }
+  background: transparent url("../../Styles/images/multiple-arrow.png") no-repeat 50% 50%; }
   .ms-container .ms-selectable, .ms-container .ms-selection {
     background-color: #30384b; }
   .ms-container .ms-list {
