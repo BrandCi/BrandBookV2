@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.Entity.Infrastructure;
+using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 
 namespace BrandBook.Web.Framework.Helpers
 {
@@ -51,6 +54,33 @@ namespace BrandBook.Web.Framework.Helpers
         {
             return DateTime.Now.ToString("dd.MM.yyyy HH:mm");
         }
+
+
+        #region UserProfilePictures
+        public static string GetUserimageFromGravatarOrLocal(string userEmailAddress)
+        {
+            return GetGravatarImageUrl(userEmailAddress);
+        }
+
+        public static string GetGravatarImageUrl(string userEmailAddress)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+
+            var md5HashValues = Encoding.ASCII.GetBytes(userEmailAddress);
+            md5HashValues = md5.ComputeHash(md5HashValues);
+
+            var gravatarImageRequest = new StringBuilder("https://www.gravatar.com/avatar/");
+
+            foreach(var value in md5HashValues)
+            {
+                gravatarImageRequest.Append(value.ToString("x2").ToLower());
+            }
+
+            gravatarImageRequest.Append($"?d=retro");
+
+            return gravatarImageRequest.ToString();
+        }
+        #endregion
         #endregion
     }
 }
