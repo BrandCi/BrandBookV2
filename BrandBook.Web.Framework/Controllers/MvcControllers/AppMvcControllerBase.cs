@@ -2,6 +2,7 @@
 using BrandBook.Core.Repositories.User;
 using BrandBook.Infrastructure.Data;
 using BrandBook.Infrastructure.Repositories.User;
+using BrandBook.Web.Framework.Helpers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Web.Mvc;
@@ -18,7 +19,7 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
 
         public AppMvcControllerBase()
         {
-            this._appUserRepository = new AppUserRepository(new BrandBookDbContext());
+            _appUserRepository = new AppUserRepository(new BrandBookDbContext());
         }
 
 
@@ -33,6 +34,8 @@ namespace BrandBook.Web.Framework.Controllers.MvcControllers
 
                 ViewBag.IsDarkmodeEnabled = currentAppUser.IsDarkmodeEnabled;
                 ViewBag.IsRegisteredForBetaContent = currentAppUser.IsRegisteredForBetaContent;
+
+                ViewBag.UserProfilePictureUrl = CustomHelper.GetUserimageFromGravatarOrLocal(currentAppUser.Email);
             }
 
 

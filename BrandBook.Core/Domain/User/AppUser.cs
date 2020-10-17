@@ -12,6 +12,7 @@ namespace BrandBook.Core.Domain.User
 
     public class AppUser : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
+        public new string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool PrivacyPolicyAccepted { get; set; }
