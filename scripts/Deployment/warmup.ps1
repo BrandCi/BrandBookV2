@@ -1,4 +1,4 @@
-$baseUrl = 'https://brandci.cloud'
+$baseUrl = $args[0]
 
 $urls = @(
     '/Home/Index',
