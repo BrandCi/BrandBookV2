@@ -1,5 +1,4 @@
 trigger:
-- master
 - develop
 
 - release/*
@@ -81,15 +80,6 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)/Bundles/application.bundle'
   displayName: 'Application-Bundling: Copy Application Bundles'
 # ./ClientApplication
-
-# Scripts-Folder
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/scripts'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/scripts'
-  displayName: 'Copy Scripts Folder'
-# ./Scripts
 
 # Unit Tests
 - task: VSTest@2
