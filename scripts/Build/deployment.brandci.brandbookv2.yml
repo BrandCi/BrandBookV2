@@ -3,6 +3,12 @@ trigger:
     exclude:
       - '*'
 
+trigger:
+  pr:
+    branches:
+      exclude:
+        - '*'
+
 
 pool:
   vmImage: 'VS2017-Win2016'
