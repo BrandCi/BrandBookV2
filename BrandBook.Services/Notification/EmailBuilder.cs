@@ -34,7 +34,7 @@ namespace BrandBook.Services.Notification
             }
 
             emailContent = emailContent.Replace("{{ApplicationUrl}}", _publicEmailFolderPath);
-            emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/Email");
+            emailContent = emailContent.Replace("{{FileServerUrl}}", _fileServerUrlWithKey + "/EmailData");
             emailContent = emailContent.Replace("{{Title}}", model.Subject);
 
             switch (model.Type)
