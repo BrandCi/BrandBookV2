@@ -39,7 +39,7 @@ namespace BrandBook.Web.Areas.App
             context.MapRoute(
                 "Client_App",
                 "App/{*url}",
-                new { controller = "Dashboard", action = "AngularTest" }
+                new { controller = "Dashboard", action = "RedesignEntry" }
             );
         }
     }

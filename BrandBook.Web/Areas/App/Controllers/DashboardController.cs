@@ -11,7 +11,7 @@ namespace BrandBook.Web.Areas.App.Controllers
             return View();
         }
 
-        public ActionResult AngularTest()
+        public ActionResult RedesignEntry()
         {
             return View();
         }
