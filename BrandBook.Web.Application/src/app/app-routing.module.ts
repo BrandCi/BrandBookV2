@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { SubscriptionComponent } from './components/profile/subscription/subscription.component';
 
 
 const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'User/CompanyOverview', component: HomeComponent, pathMatch: 'full' },
-    { path: 'Dashboard/RedesignEntry', component: HomeComponent, pathMatch: 'full' }
+    { path: 'Dashboard/RedesignEntry', component: HomeComponent, pathMatch: 'full' },
+    { path: 'Profile/Subscriptions2', component: SubscriptionComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

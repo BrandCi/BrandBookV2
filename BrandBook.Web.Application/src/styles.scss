@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./theming/theme";
+
+
+@include angular-material-theme($theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}
+
+
+
+
+
+/*
+    HELPER
+*/
+.ml-1 {
+    margin-left: 1%;
+}
+
+.ml-5 {
+    margin-left: 5%;
+}
+
+.ml-10 {
+    margin-left: 10%;
+}
+
+/* 
+    HELPER END
+*/
