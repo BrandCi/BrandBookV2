@@ -22,7 +22,6 @@ namespace BrandBook.Web.Areas.App
                 new { controller = "Dashboard", action = "Index", id = UrlParameter.Optional }
             );
 
-
             context.MapRoute(
                 "App_default",
                 "App/{controller}/{action}/{id}",
@@ -33,13 +32,6 @@ namespace BrandBook.Web.Areas.App
                         url.PathAndQuery.StartsWith("/App",
                         StringComparison.InvariantCultureIgnoreCase))
                 }
-            );
-
-
-            context.MapRoute(
-                "Client_App",
-                "App/{*url}",
-                new { controller = "Dashboard", action = "RedesignEntry" }
             );
         }
     }

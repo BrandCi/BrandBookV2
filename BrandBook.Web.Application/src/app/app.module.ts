@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {APP_BASE_HREF} from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
@@ -31,7 +31,7 @@ import { SubscriptionComponent } from './components/profile/subscription/subscri
     MatListModule,
     MatCardModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/App' }],
+  providers: [{provide: APP_BASE_HREF, useValue : '/App/v2' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

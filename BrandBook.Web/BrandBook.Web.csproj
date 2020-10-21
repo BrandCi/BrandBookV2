@@ -1087,7 +1087,6 @@
     <Content Include="Areas\Auth\Views\Processes\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPassword.cshtml" />
     <Content Include="Areas\Auth\Views\Processes\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Areas\App\Views\Dashboard\RedesignEntry.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
