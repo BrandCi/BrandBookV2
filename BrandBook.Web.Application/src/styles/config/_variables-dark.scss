@@ -56,7 +56,7 @@ $bg-topbar-light:                     #3d4752;
 $bg-topbar-dark:                      #3b4650;
 
 // Leftbar item shadow (Condensed item)
-$box-shadow-condensed:                  3px 5px 10px 0 rgb(50, 58, 66); 
+$box-shadow-condensed:                  3px 5px 10px 0 rgb(50, 58, 66);
 
 
 // Topnav Height (Horizontal)
@@ -93,8 +93,8 @@ $logo-auth-light-display:               block;
 // User authentication Background
 $auth-bg:                             #36404a;
 $auth-bg-alt:                         #3e4852;
-$auth-img-bg:                                     url("https://application-migration-theme.brandci.cloud/assets/images/bg-auth-dark.jpg");
-$auth-img-pattern-bg:                             url("https://application-migration-theme.brandci.cloud/assets/images/bg-pattern.png");
+$auth-img-bg:                                     url("/assets/images/bg-auth-dark.jpg");
+// $auth-img-pattern-bg:                             url("/assets/images/bg-auth-dark.jpg");
 
 // Apex chart
 $apex-grid-color:                     #3e4852;
@@ -106,7 +106,7 @@ $chat-secondary-user-bg:              #404c58;
 // Text-color (h1 to h6)
 $text-color-h:                        #acbfd2;
 
-// Card overlay 
+// Card overlay
 $card-overlay-color:                  #ffffff;
 $card-overlay-bg:                       rgba(#ffffff, 0.1);
 
@@ -123,7 +123,7 @@ $components-shadow-sm:                              none;
 $components-shadow:                                 none;
 $components-shadow-lg:                              none;
 
-// label 
+// label
 $label-font-weight:                                 600;
 
 // Table Head
@@ -132,7 +132,7 @@ $table-head-font-weight:                            $font-weight-semibold;
 
 //
 // Color system
-// 
+//
 
 $white:    #fff;
 $gray-100: #323a46;
@@ -222,7 +222,7 @@ $theme-colors: map-merge(
     "pink":       $pink,
     "purple":     $purple
   ),  $theme-colors);
-  
+
   // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8%;
 

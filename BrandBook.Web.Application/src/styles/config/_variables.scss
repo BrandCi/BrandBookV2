@@ -56,7 +56,7 @@ $bg-topbar-light:                                 #ffffff;
 $bg-topbar-dark:                                  #2a3146;
 
 // Leftbar item shadow (Condensed item)
-$box-shadow-condensed:                              0 1px 7px 0 rgba(154,161,171,.2); 
+$box-shadow-condensed:                              0 1px 7px 0 rgba(154,161,171,.2);
 
 // Topnav Height (Horizontal)
 $topnav-height:                                     55px;
@@ -92,8 +92,8 @@ $logo-auth-light-display:                           none;
 // User authentication Background
 $auth-bg:                                         #ffffff;
 $auth-bg-alt:                                     #6658dd;
-$auth-img-bg:                                     url("https://application-migration-theme.brandci.cloud/assets/images/bg-auth.jpg");
-$auth-img-pattern-bg:                             url("https://application-migration-theme.brandci.cloud/assets/images/bg-pattern.png");
+$auth-img-bg:                                     url("/assets/images/bg-auth.jpg");
+// $auth-img-pattern-bg:                             url("/assets/images/bg-pattern.png");
 
 // Apex chart
 $apex-grid-color:                                 #f9f9fd;
@@ -105,7 +105,7 @@ $chat-secondary-user-bg:                          #d5eef7;
 // Text-color (h1 to h6)
 $text-color-h:                                    #343a40;
 
-// Card overlay 
+// Card overlay
 $card-overlay-color:                              #3e4852;
 $card-overlay-bg:                                   rgba(#ffffff, 0.8);
 
@@ -122,7 +122,7 @@ $components-shadow-sm:                              none;
 $components-shadow:                                 none;
 $components-shadow-lg:                              none;
 
-// label 
+// label
 $label-font-weight:                                 600;
 
 // Table Head
@@ -130,7 +130,7 @@ $table-head-font-weight:                            $font-weight-semibold;
 
 //
 // Color system
-// 
+//
 
 $white:    #fff;
 $gray-100: #f1f5f7;
@@ -220,7 +220,7 @@ $theme-colors: map-merge(
     "pink":       $pink,
     "purple":     $purple
   ),  $theme-colors);
-  
+
   // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8%;
 
