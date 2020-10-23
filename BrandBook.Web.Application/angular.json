@@ -46,6 +46,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "deployUrl": "Content/dist/application.bundle/",
+            "rebaseRootRelativeCssUrls": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
