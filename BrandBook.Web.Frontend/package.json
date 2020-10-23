@@ -26,7 +26,7 @@
     "cssnano": "^4.1.10",
     "file-loader": "^4.2.0",
     "merge": "^1.2.1",
-    "mini-css-extract-plugin": "^1.0.0",
+    "mini-css-extract-plugin": "^1.1.2",
     "sass": "^1.22.12",
     "sass-loader": "^10.0.3",
     "webpack": "^5.1.3",
