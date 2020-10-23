@@ -1,15 +1,117 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>BrandCi</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="mat-typography">
-  <app-root></app-root>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <base href="/">
+        <title>BrandCi Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="BrandCi" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="">
+
+		<!-- icons -->
+		<link href="https://application-migration-theme.brandci.cloud/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="loading" data-layout-mode="two-column" data-layout='{"mode": "dark", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": false}'></body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+    
+                    <ul class="list-unstyled topnav-menu float-right mb-0">
+
+    
+               
+
+                        <li class="dropdown notification-list topbar-dropdown">
+                            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="https://www.gravatar.com/avatar/b4ae48151f3daeeb0f9d2694acfdd9e0?d=retro&s=75" alt="user-image" class="rounded-circle">
+                                <span class="pro-user-name ml-1">
+                                    Philipp Moser <i class="mdi mdi-chevron-down"></i> 
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+    
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-account-circle-line"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-settings-3-line"></i>
+                                    <span>Settings</span>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-logout-box-line"></i>
+                                    <span>Logout</span>
+                                </a>
+    
+                            </div>
+                        </li>
+    
+    
+                    </ul>
+
+                    <!-- LOGO -->
+                    <div class="logo-box">
+                        <a href="index.html" class="logo logo-dark text-center">
+                            <span class="logo-sm">
+                                <span class="logo-lg-text-light">BrandCi</span>
+                            </span>
+                            <span class="logo-lg">
+                                <span class="logo-lg-text-light">BrandCi</span>
+                            </span>
+                        </a>
+                    </div>
+    
+                    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                        <li>
+                            <button class="button-menu-mobile waves-effect waves-light">
+                                <i class="fe-menu"></i>
+                            </button>
+                        </li>
+
+                        <li>
+                            <!-- Mobile menu toggle (Horizontal Layout)-->
+                            <a class="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- end Topbar -->
+
+            <app-root></app-root>
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Vendor js -->
+        <script src="https://application-migration-theme.brandci.cloud/assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="https://application-migration-theme.brandci.cloud/assets/js/app.min.js"></script>
+        
+    </body>
 </html>

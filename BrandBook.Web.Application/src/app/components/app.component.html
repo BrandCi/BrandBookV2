@@ -1,89 +1,44 @@
-<base href="/App">
-<body>
+<app-left-sidebar></app-left-sidebar>
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav">
-      <mat-nav-list role="navigation" class="sidenav-list">
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
 
-        <a mat-list-item routerLink="/" class="sidenav-header">
-          <img src="{{this.assetFolderPath}}brandci-logo.svg" />
-        </a>
-        
-        <a mat-list-item routerLink="Dashboard/AngularTest" routerLinkActive="active">
-          <mat-icon matListIcon>dashboard</mat-icon>
-          Dashboard
-        </a>
+<div class="content-page">
+  <div class="content">
 
-        <a mat-list-item routerLink="/">
-          <mat-icon matListIcon>palette</mat-icon>
-          Your Brands
-        </a>
+      <!-- Start Content-->
+      <div class="container-fluid">
+          
+          <!-- start page title -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="page-title-box">
+                      <h4 class="page-title">Dashboard</h4>
+                      <div class="page-title-right">
+                          <ol class="breadcrumb m-0">
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">BrandCi</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                              <li class="breadcrumb-item active">Home</li>
+                          </ol>
+                      </div>
+                  </div>
+              </div>
+          </div>     
+          <!-- end page title -->
+          
+          <div class="row">
+            <div class="col-12">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+          
+      </div> <!-- container -->
 
-        <a mat-list-item routerLink="dashboard">
-          <mat-icon matListIcon>supervisor_account</mat-icon>
-          Usermanagement
-        </a>
-        <mat-list style="margin-left:30px;">
-            <a mat-list-item routerLink="/">
-              User
-            </a>
-            <a mat-list-item routerLink="/">
-              Roles
-            </a>
-            <a mat-list-item routerLink="/">
-              Companies
-            </a>
-        </mat-list>
+  </div> <!-- content -->
 
-        <a mat-list-item routerLink="/">
-          <mat-icon matListIcon>rss_feed</mat-icon>
-          Blog Entries
-        </a>
+</div>
 
-        <a mat-list-item routerLink="/">
-          <mat-icon matListIcon>settings</mat-icon>
-          System
-        </a>
-        <mat-list style="margin-left:30px;">
-          <a mat-list-item routerLink="/">
-            Settings
-          </a>
-          <a mat-list-item routerLink="/">
-            Services
-          </a>
-          <a mat-list-item routerLink="/">
-            Versioninfo
-          </a>
-      </mat-list>
-
-        <a mat-list-item routerLink="/">
-          <mat-icon matListIcon>sync_alt</mat-icon>
-          Logging
-        </a>
-
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content class="sidenav-content">
-      <mat-toolbar class="toolbar mat-elevation-z4" color="primary">
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-
-        <a routerLink="/" class="navigationbar-logo ml-1">
-          <img src="{{this.assetFolderPath}}brandci-logo.svg" />
-        </a>
-
-        <div class="stretch"></div>
-        
-        <button mat-mini-fab color="link" aria-label="User Menu Icon" (click)="toggleTheme()">
-          <mat-icon>face</mat-icon>
-        </button>
-
-      </mat-toolbar>
-      <main class="content">
-        <router-outlet></router-outlet>
-      </main>      
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
-</body>
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
