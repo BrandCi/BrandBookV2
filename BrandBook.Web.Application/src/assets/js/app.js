@@ -191,12 +191,7 @@ function ($) {
     var LayoutThemeApp = function () {
         this.body = $('body'),
         this.window = $(window),
-        this.config = {},
-        // styles
-        this.defaultBSStyle = $("#bs-default-stylesheet"),
-        this.defaultAppStyle = $("#app-default-stylesheet"),
-        this.darkBSStyle = $("#bs-dark-stylesheet"),
-        this.darkAppStyle = $("#app-dark-stylesheet");
+        this.config = {}
     };
 
     /**
@@ -224,33 +219,20 @@ function ($) {
     }
 
     /**
-     * Loads the config - takes from body if available else uses default one
-     */
-    LayoutThemeApp.prototype.loadConfig = function() {
-        var bodyConfig = JSON.parse(this.body.attr('data-layout') ? this.body.attr('data-layout') : '{}');
-
-        var config = $.extend({}, {
-            mode: "light",
+    * Apply the config
+    */
+    LayoutThemeApp.prototype.applyConfig = function() {
+        // getting the saved config if available
+        this.config = $.extend({}, {
+            mode: "dark",
             width: "fluid",
             menuPosition: 'fixed',
             sidebar: {
                 color: "light",
                 size: "default",
             },
-            showRightSidebarOnPageLoad: false
         });
-        if (bodyConfig) {
-            config = $.extend({}, config, bodyConfig);
-        };
-        return config;
-    },
 
-    /**
-    * Apply the config
-    */
-    LayoutThemeApp.prototype.applyConfig = function() {
-        // getting the saved config if available
-        this.config = this.loadConfig();
         var sidebarConfig = $.extend({}, this.config.sidebar);
 
         // activate menus
@@ -559,37 +541,6 @@ function ($) {
             $('#status').fadeOut();
             $('#preloader').delay(350).fadeOut('slow');
         });
-
-        $('[data-toggle="fullscreen"]').on("click", function (e) {
-            e.preventDefault();
-            $('body').toggleClass('fullscreen-enable');
-            if (!document.fullscreenElement && /* alternative standard method */ !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                } else if (document.documentElement.mozRequestFullScreen) {
-                    document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullscreen) {
-                    document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                }
-            } else {
-                if (document.cancelFullScreen) {
-                    document.cancelFullScreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                }
-            }
-        });
-        document.addEventListener('fullscreenchange', exitHandler );
-        document.addEventListener("webkitfullscreenchange", exitHandler);
-        document.addEventListener("mozfullscreenchange", exitHandler);
-        function exitHandler() {
-            if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
-                console.log('pressed');
-                $('body').removeClass('fullscreen-enable');
-            }
-        }
     },
 
     //initilizing
@@ -603,16 +554,6 @@ function ($) {
         this.layout = $.LayoutThemeApp;
 
         this.layout.init();
-
-
-        // showing the sidebar on load if user is visiting the page first time only
-        var bodyConfig = this.$body.data('layout');
-        if (window.sessionStorage && bodyConfig && bodyConfig.hasOwnProperty('showRightSidebarOnPageLoad') && bodyConfig['showRightSidebarOnPageLoad']) {
-            var alreadyVisited = sessionStorage.getItem("_MINTON_VISITED_");
-            if (!alreadyVisited) {
-                sessionStorage.setItem("_MINTON_VISITED_", true);
-            }
-        }
     },
 
     $.App = new App, $.App.Constructor = App
