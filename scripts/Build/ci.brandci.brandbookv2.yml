@@ -5,6 +5,8 @@ trigger:
 - release/*
 - hotfix/*
 
+- migration/angular/*
+
 - feature/*
 - bugfix/*
 
