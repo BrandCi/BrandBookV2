@@ -351,51 +351,7 @@ function ($) {
 
 }(window.jQuery),
 
-function($) {
-    "use strict";
 
-    /**
-    Portlet Widget
-    */
-    var Portlet = function() {
-        this.$body = $("body"),
-        this.$portletIdentifier = ".card",
-        this.$portletCloser = '.card a[data-toggle="remove"]',
-        this.$portletRefresher = '.card a[data-toggle="reload"]'
-    };
-
-    //on init
-    Portlet.prototype.init = function() {
-        // Panel closest
-        var $this = this;
-        $(document).on("click",this.$portletCloser, function (ev) {
-            ev.preventDefault();
-            var $portlet = $(this).closest($this.$portletIdentifier);
-                var $portlet_parent = $portlet.parent();
-            $portlet.remove();
-            if ($portlet_parent.children().length == 0) {
-                $portlet_parent.remove();
-            }
-        });
-
-        // Panel Reload
-        $(document).on("click",this.$portletRefresher, function (ev) {
-            ev.preventDefault();
-            var $portlet = $(this).closest($this.$portletIdentifier);
-            // This is just a simulation, nothing is going to be reloaded
-            $portlet.append('<div class="card-disabled"><div class="card-portlets-loader"><div class="spinner-border text-primary m-2" role="status"></div></div></div>');
-            var $pd = $portlet.find('.card-disabled');
-            setTimeout(function () {
-                $pd.fadeOut('fast', function () {
-                    $pd.remove();
-                });
-            }, 500 + 300 * (Math.random() * 5));
-        });
-    },
-    //
-    $.Portlet = new Portlet, $.Portlet.Constructor = Portlet
-
-}(window.jQuery),
 
 function ($) {
     'use strict';
@@ -423,7 +379,6 @@ function ($) {
 
     //initilizing
     App.prototype.init = function () {
-        $.Portlet.init();
         $.Components.init();
 
         this.initControls();
