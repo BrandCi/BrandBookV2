@@ -182,7 +182,6 @@
  * Layout and theme manager
  * @param {*} $
  */
-
 function ($) {
     'use strict';
 
@@ -269,13 +268,6 @@ function ($) {
     }
 
     /**
-     * Clear out the saved config
-     */
-    LayoutThemeApp.prototype.clearSavedConfig = function() {
-        this.config = {};
-    },
-
-    /**
      * Gets the config
      */
     LayoutThemeApp.prototype.getConfig = function() {
@@ -286,7 +278,6 @@ function ($) {
      * Reset to default
      */
     LayoutThemeApp.prototype.reset = function() {
-        this.clearSavedConfig();
         this.applyConfig();
     },
 
@@ -361,27 +352,9 @@ function ($) {
         this.$window = $(window)
     };
 
-    /**
-     * Initlizes the controls
-    */
-    App.prototype.initControls = function () {
-        // remove loading
-        setTimeout(function() {
-            document.body.classList.remove('loading');
-        }, 400);
-
-        // Preloader
-        $(window).on('load', function () {
-            $('#status').fadeOut();
-            $('#preloader').delay(350).fadeOut('slow');
-        });
-    },
-
     //initilizing
     App.prototype.init = function () {
         $.Components.init();
-
-        this.initControls();
 
         // init layout
         this.layout = $.LayoutThemeApp;
@@ -393,6 +366,7 @@ function ($) {
 
 
 }(window.jQuery),
+
 //initializing main application module
 function ($) {
     "use strict";
