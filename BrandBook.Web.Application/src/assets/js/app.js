@@ -1,15 +1,6 @@
-/*
-Template Name: Minton - Responsive Bootstrap 4 Admin Dashboard
-Author: CoderThemes
-Website: https://coderthemes.com/
-Contact: support@coderthemes.com
-File: Layouts Js File
-*/
-
-
 /**
  * LeftSidebar
- * @param {*} $ 
+ * @param {*} $
  */
 !function ($) {
     'use strict';
@@ -30,7 +21,7 @@ File: Layouts Js File
 
     /**
      * Changes the color of sidebar
-     * @param {*} color 
+     * @param {*} color
      */
     LeftSidebar.prototype.changeColor = function(color) {
         this.body.attr('data-sidebar-color', color);
@@ -39,7 +30,7 @@ File: Layouts Js File
 
     /**
      * Changes the size of sidebar
-     * @param {*} size 
+     * @param {*} size
      */
     LeftSidebar.prototype.changeSize = function(size) {
         this.body.attr('data-sidebar-size', size);
@@ -48,7 +39,7 @@ File: Layouts Js File
 
     /**
      * Toggle User information
-     * @param {*} showUser 
+     * @param {*} showUser
      */
     LeftSidebar.prototype.showUser = function(showUser) {
         this.body.attr('data-sidebar-showuser', showUser);
@@ -85,7 +76,7 @@ File: Layouts Js File
         });
 
         // sidebar - main menu
-        if ($("#side-menu").length) { 
+        if ($("#side-menu").length) {
             var navCollapse = $('#side-menu li .collapse');
 
             // open one menu at a time only
@@ -104,13 +95,13 @@ File: Layouts Js File
                     $(this).parent().addClass("menuitem-active");
                     $(this).parent().parent().parent().addClass("show");
                     $(this).parent().parent().parent().parent().addClass("menuitem-active"); // add active to li of the current link
-                    
+
                     var firstLevelParent = $(this).parent().parent().parent().parent().parent().parent();
                     if (firstLevelParent.attr('id') !== 'sidebar-menu')
                         firstLevelParent.addClass("show");
-                    
+
                     $(this).parent().parent().parent().parent().parent().parent().parent().addClass("menuitem-active");
-                    
+
                     var secondLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent();
                     if (secondLevelParent.attr('id') !== 'wrapper')
                         secondLevelParent.addClass("show");
@@ -245,14 +236,14 @@ File: Layouts Js File
             self.initLayout();
         });
     },
-  
+
     $.LeftSidebar = new LeftSidebar, $.LeftSidebar.Constructor = LeftSidebar
 }(window.jQuery),
 
 
 /**
  * Topbar
- * @param {*} $ 
+ * @param {*} $
  */
 function ($) {
     'use strict';
@@ -279,7 +270,7 @@ function ($) {
         //activate the menu in topbar(horizontal menu) based on url
         $(".navbar-nav a").each(function () {
             var pageUrl = window.location.href.split(/[?#]/)[0];
-            if (this.href == pageUrl) { 
+            if (this.href == pageUrl) {
                 $(this).addClass("active");
                 $(this).parent().addClass("active");
                 $(this).parent().parent().addClass("active");
@@ -300,7 +291,7 @@ function ($) {
 
     /**
      * Changes the color of topbar
-     * @param {*} color 
+     * @param {*} color
      */
     Topbar.prototype.changeColor = function(color) {
         this.body.attr('data-topbar-color', color);
@@ -319,7 +310,7 @@ function ($) {
 
 /**
  * RightBar
- * @param {*} $ 
+ * @param {*} $
  */
 function ($) {
     'use strict';
@@ -329,14 +320,14 @@ function ($) {
         this.window = $(window)
     };
 
-    /** 
+    /**
      * Select the option based on saved config
     */
    RightBar.prototype.selectOptionsFromConfig = function() {
        var self = this;
 
         var config = self.layout.getConfig();
-        
+
         if (config) {
             $('input[type=radio][name=color-scheme-mode][value=' + config.mode + ']').prop('checked', true);
             $('input[type=radio][name=width][value=' + config.width + ']').prop('checked', true);
@@ -349,7 +340,7 @@ function ($) {
             $('input[type=radio][name=topbar-color][value=' + config.topbar.color + ']').prop('checked', true);
         }
     },
-  
+
     /**
      * Toggles the right sidebar
      */
@@ -439,7 +430,7 @@ function ($) {
 
 /**
  * Layout and theme manager
- * @param {*} $ 
+ * @param {*} $
  */
 
 function ($) {
@@ -468,8 +459,8 @@ function ($) {
 
     /**
      * Update the config for given config
-     * @param {*} param 
-     * @param {*} config 
+     * @param {*} param
+     * @param {*} config
      */
     LayoutThemeApp.prototype.updateConfig = function(param, config) {
         var newObj = {};
@@ -487,7 +478,7 @@ function ($) {
      */
     LayoutThemeApp.prototype.loadConfig = function() {
         var bodyConfig = JSON.parse(this.body.attr('data-layout') ? this.body.attr('data-layout') : '{}');
-        
+
         var config = $.extend({}, {
             mode: "light",
             width: "fluid",
@@ -516,7 +507,7 @@ function ($) {
         this.config = this.loadConfig();
         var topbarConfig = $.extend({}, this.config.topbar);
         var sidebarConfig = $.extend({}, this.config.sidebar);
-        
+
         // activate menus
         this.leftSidebar.init();
         this.topbar.init();
@@ -545,7 +536,7 @@ function ($) {
 
     /**
      * Toggle dark or light mode
-     * @param {*} mode 
+     * @param {*} mode
      */
     LayoutThemeApp.prototype.changeMode = function(mode, notChangeSidebar) {
         // sets the theme
@@ -580,7 +571,7 @@ function ($) {
                 break;
             }
         }
-        
+
         this.rightBar.selectOptionsFromConfig();
     }
 
@@ -785,9 +776,9 @@ File: Main Js File
             }
             var $subMenu = $(this).next(".dropdown-menu");
             $subMenu.toggleClass('show');
-    
+
             return false;
-        });   
+        });
     },
 
     //initilizing
@@ -851,7 +842,7 @@ function($) {
     },
     //
     $.Portlet = new Portlet, $.Portlet.Constructor = Portlet
-    
+
 }(window.jQuery),
 
 function ($) {
@@ -862,7 +853,7 @@ function ($) {
         this.$window = $(window)
     };
 
-    /** 
+    /**
      * Initlizes the controls
     */
     App.prototype.initControls = function () {
@@ -870,7 +861,7 @@ function ($) {
         setTimeout(function() {
             document.body.classList.remove('loading');
         }, 400);
-        
+
         // Preloader
         $(window).on('load', function () {
             $('#status').fadeOut();
@@ -921,10 +912,10 @@ function ($) {
         this.rightBar = $.RightBar;
         this.rightBar.layout = this.layout;
         this.layout.rightBar = this.rightBar;
-    
+
         this.layout.init();
         this.rightBar.init(this.layout);
-        
+
 
         // showing the sidebar on load if user is visiting the page first time only
         var bodyConfig = this.$body.data('layout');
