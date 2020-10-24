@@ -56,10 +56,9 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/node-waves/dist/waves.min.js",
               "node_modules/apexcharts/dist/apexcharts.min.js",
-              "src/assets/js/app.js"
+              "src/assets/js/vendor.min.js",
+              "src/assets/js/app.min.js"
             ]
           },
           "configurations": {
