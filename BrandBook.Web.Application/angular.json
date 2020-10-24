@@ -57,8 +57,8 @@
             ],
             "scripts": [
               "node_modules/apexcharts/dist/apexcharts.min.js",
-              "src/assets/js/vendor.min.js",
-              "src/assets/js/app.min.js"
+              "src/assets/js/vendor.js",
+              "src/assets/js/app.js"
             ]
           },
           "configurations": {
