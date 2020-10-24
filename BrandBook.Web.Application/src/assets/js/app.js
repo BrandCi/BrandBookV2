@@ -224,7 +224,6 @@ function ($) {
     LayoutThemeApp.prototype.applyConfig = function() {
         // getting the saved config if available
         this.config = $.extend({}, {
-            mode: "dark",
             width: "fluid",
             menuPosition: 'fixed',
             sidebar: {
