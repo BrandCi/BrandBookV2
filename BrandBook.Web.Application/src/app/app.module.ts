@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
-import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftSidebarComponent,
-    HomeComponent
+    DashboardComponent,
+    RecentActivityChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
