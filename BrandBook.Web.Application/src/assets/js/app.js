@@ -225,7 +225,6 @@ function ($) {
         // getting the saved config if available
         this.config = $.extend({}, {
             width: "fluid",
-            menuPosition: 'fixed',
             sidebar: {
                 size: "default",
             },
@@ -240,10 +239,6 @@ function ($) {
 
         // width
         this.changeLayoutWidth(this.config.width);
-
-        // menu position
-        this.changeMenuPositions(this.config.menuPosition);
-
         // left sidebar
         this.leftSidebar.changeSize(sidebarConfig.size);
 
@@ -271,13 +266,6 @@ function ($) {
                 break;
             }
         }
-    }
-
-    /**
-     * Changes menu positions
-     */
-    LayoutThemeApp.prototype.changeMenuPositions = function(position) {
-        this.body.attr("data-layout-menu-position", position);
     }
 
     /**
