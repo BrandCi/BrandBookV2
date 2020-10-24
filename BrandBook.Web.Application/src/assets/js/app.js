@@ -304,13 +304,6 @@ function ($) {
 
     $.LayoutThemeApp = new LayoutThemeApp, $.LayoutThemeApp.Constructor = LayoutThemeApp
 }(window.jQuery);
-/*
-Template Name: Minton - Responsive Bootstrap 4 Admin Dashboard
-Author: CoderThemes
-Website: https://coderthemes.com/
-Contact: support@coderthemes.com
-File: Main Js File
-*/
 
 
 !function ($) {
@@ -346,113 +339,12 @@ File: Main Js File
         });
     },
 
-    // Counterup
-    Components.prototype.initCounterUp = function() {
-        var delay = $(this).attr('data-delay')?$(this).attr('data-delay'):100; //default is 100
-        var time = $(this).attr('data-time')?$(this).attr('data-time'):1200; //default is 1200
-         $('[data-plugin="counterup"]').each(function(idx, obj) {
-            $(this).counterUp({
-                delay: delay,
-                time: time
-            });
-         });
-    },
-
-    //peity charts
-    Components.prototype.initPeityCharts = function() {
-        $('[data-plugin="peity-pie"]').each(function(idx, obj) {
-            var colors = $(this).attr('data-colors')?$(this).attr('data-colors').split(","):[];
-            var width = $(this).attr('data-width')?$(this).attr('data-width'):20; //default is 20
-            var height = $(this).attr('data-height')?$(this).attr('data-height'):20; //default is 20
-            $(this).peity("pie", {
-                fill: colors,
-                width: width,
-                height: height
-            });
-        });
-        //donut
-         $('[data-plugin="peity-donut"]').each(function(idx, obj) {
-            var colors = $(this).attr('data-colors')?$(this).attr('data-colors').split(","):[];
-            var width = $(this).attr('data-width')?$(this).attr('data-width'):20; //default is 20
-            var height = $(this).attr('data-height')?$(this).attr('data-height'):20; //default is 20
-            $(this).peity("donut", {
-                fill: colors,
-                width: width,
-                height: height
-            });
-        });
-
-        $('[data-plugin="peity-donut-alt"]').each(function(idx, obj) {
-            $(this).peity("donut");
-        });
-
-        // line
-        $('[data-plugin="peity-line"]').each(function(idx, obj) {
-            $(this).peity("line", $(this).data());
-        });
-
-        // bar
-        $('[data-plugin="peity-bar"]').each(function(idx, obj) {
-            var colors = $(this).attr('data-colors')?$(this).attr('data-colors').split(","):[];
-            var width = $(this).attr('data-width')?$(this).attr('data-width'):20; //default is 20
-            var height = $(this).attr('data-height')?$(this).attr('data-height'):20; //default is 20
-            $(this).peity("bar", {
-                fill: colors,
-                width: width,
-                height: height
-            });
-         });
-    },
-
-    Components.prototype.initKnob = function() {
-        $('[data-plugin="knob"]').each(function(idx, obj) {
-           $(this).knob();
-        });
-    },
-
-    Components.prototype.initTippyTooltips = function () {
-        if($('[data-plugin="tippy"]').length > 0)
-        tippy('[data-plugin="tippy"]');
-    },
-
-    Components.prototype.initShowPassword = function () {
-        $("[data-password]").on('click', function() {
-            if($(this).attr('data-password') == "false"){
-                $(this).siblings("input").attr("type", "text");
-                $(this).attr('data-password', 'true');
-                $(this).addClass("show-password");
-            } else {
-                $(this).siblings("input").attr("type", "password");
-                $(this).attr('data-password', 'false');
-                $(this).removeClass("show-password");
-            }
-        });
-    },
-
-    Components.prototype.initMultiDropdown = function () {
-        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-            if (!$(this).next().hasClass('show')) {
-              $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-            }
-            var $subMenu = $(this).next(".dropdown-menu");
-            $subMenu.toggleClass('show');
-
-            return false;
-        });
-    },
-
     //initilizing
     Components.prototype.init = function () {
         this.initTooltipPlugin(),
         this.initPopoverPlugin(),
         this.initToastPlugin(),
-        this.initFormValidation(),
-        this.initCounterUp(),
-        this.initPeityCharts(),
-        this.initKnob();
-        this.initTippyTooltips();
-        this.initShowPassword();
-        this.initMultiDropdown();
+        this.initFormValidation()
     },
 
     $.Components = new Components, $.Components.Constructor = Components
