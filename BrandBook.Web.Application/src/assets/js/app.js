@@ -228,7 +228,6 @@ function ($) {
             width: "fluid",
             menuPosition: 'fixed',
             sidebar: {
-                color: "light",
                 size: "default",
             },
         });
