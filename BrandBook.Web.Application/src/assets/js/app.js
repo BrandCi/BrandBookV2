@@ -343,34 +343,13 @@ function ($) {
 }(window.jQuery),
 
 
-
-function ($) {
-    'use strict';
-
-    var App = function () {
-        this.$body = $('body'),
-        this.$window = $(window)
-    };
-
-    //initilizing
-    App.prototype.init = function () {
-        $.Components.init();
-
-        // init layout
-        this.layout = $.LayoutThemeApp;
-
-        this.layout.init();
-    },
-
-    $.App = new App, $.App.Constructor = App
-
-
-}(window.jQuery),
-
 //initializing main application module
 function ($) {
     "use strict";
-    $.App.init();
+
+    $.Components.init();
+    $.LayoutThemeApp.init();
+
 }(window.jQuery);
 
 // Waves Effect
