@@ -175,62 +175,6 @@
 }(window.jQuery),
 
 
-/**
- * Topbar
- * @param {*} $
- */
-function ($) {
-    'use strict';
-
-    var Topbar = function () {
-        this.body = $('body'),
-        this.window = $(window)
-    };
-
-    /**
-     * Initilizes the menu
-     */
-    Topbar.prototype.initMenu = function() {
-        // Serach Toggle
-        $('#top-search').on('click', function (e) {
-            $('#search-dropdown').addClass('d-block');
-        });
-
-        // hide search on opening other dropdown
-        $('.topbar-dropdown').on('show.bs.dropdown', function () {
-            $('#search-dropdown').removeClass('d-block');
-        });
-
-        //activate the menu in topbar(horizontal menu) based on url
-        $(".navbar-nav a").each(function () {
-            var pageUrl = window.location.href.split(/[?#]/)[0];
-            if (this.href == pageUrl) {
-                $(this).addClass("active");
-                $(this).parent().addClass("active");
-                $(this).parent().parent().addClass("active");
-                $(this).parent().parent().parent().addClass("active");
-                $(this).parent().parent().parent().parent().addClass("active");
-                var el = $(this).parent().parent().parent().parent().addClass("active").prev();
-                if (el.hasClass("nav-link"))
-                    el.addClass('active');
-            }
-        });
-
-        // Topbar - main menu
-        $('.navbar-toggle').on('click', function (event) {
-            $(this).toggleClass('open');
-            $('#navigation').slideToggle(400);
-        });
-    },
-
-    /**
-     * Initilizes the menu
-     */
-    Topbar.prototype.init = function() {
-        this.initMenu();
-    },
-    $.Topbar = new Topbar, $.Topbar.Constructor = Topbar
-}(window.jQuery),
 
 
 /**
@@ -254,14 +198,10 @@ function ($) {
         var config = self.layout.getConfig();
 
         if (config) {
-            $('input[type=radio][name=color-scheme-mode][value=' + config.mode + ']').prop('checked', true);
             $('input[type=radio][name=width][value=' + config.width + ']').prop('checked', true);
             $('input[type=radio][name=menus-position][value=' + config.menuPosition + ']').prop('checked', true);
 
-            $('input[type=radio][name=leftsidebar-color][value=' + config.sidebar.color + ']').prop('checked', true);
             $('input[type=radio][name=leftsidebar-size][value=' + config.sidebar.size + ']').prop('checked', true);
-
-            $('input[type=radio][name=topbar-color][value=' + config.topbar.color + ']').prop('checked', true);
         }
     },
 
@@ -391,9 +331,6 @@ function ($) {
                 color: "light",
                 size: "default",
             },
-            topbar: {
-                color: "dark"
-            },
             showRightSidebarOnPageLoad: false
         });
         if (bodyConfig) {
@@ -408,15 +345,12 @@ function ($) {
     LayoutThemeApp.prototype.applyConfig = function() {
         // getting the saved config if available
         this.config = this.loadConfig();
-        var topbarConfig = $.extend({}, this.config.topbar);
         var sidebarConfig = $.extend({}, this.config.sidebar);
 
         // activate menus
         this.leftSidebar.init();
-        this.topbar.init();
 
         this.leftSidebar.parent = this;
-        this.topbar.parent = this;
 
         // width
         this.changeLayoutWidth(this.config.width);
@@ -427,7 +361,6 @@ function ($) {
         // left sidebar
         this.leftSidebar.changeSize(sidebarConfig.size);
 
-        // topbar
     },
 
 
@@ -489,10 +422,8 @@ function ($) {
      */
     LayoutThemeApp.prototype.init = function() {
         this.leftSidebar = $.LeftSidebar;
-        this.topbar = $.Topbar;
 
         this.leftSidebar.parent = this;
-        this.topbar.parent = this;
 
         // initilize the menu
         this.applyConfig();
