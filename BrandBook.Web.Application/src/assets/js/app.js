@@ -19,14 +19,6 @@
         this.body.removeAttr('data-sidebar-showuser');
     },
 
-    /**
-     * Changes the color of sidebar
-     * @param {*} color
-     */
-    LeftSidebar.prototype.changeColor = function(color) {
-        this.body.attr('data-sidebar-color', color);
-        this.parent.updateConfig("sidebar", { "color": color });
-    },
 
     /**
      * Changes the size of sidebar
@@ -290,15 +282,6 @@ function ($) {
     },
 
     /**
-     * Changes the color of topbar
-     * @param {*} color
-     */
-    Topbar.prototype.changeColor = function(color) {
-        this.body.attr('data-topbar-color', color);
-        this.parent.updateConfig("topbar", { "color": color });
-    },
-
-    /**
      * Initilizes the menu
      */
     Topbar.prototype.init = function() {
@@ -380,11 +363,6 @@ function ($) {
             return;
         });
 
-        // overall color scheme
-        $('input[type=radio][name=color-scheme-mode]').change(function () {
-            self.layout.changeMode($(this).val());
-        });
-
         // width mode
         $('input[type=radio][name=width]').change(function () {
             self.layout.changeLayoutWidth($(this).val());
@@ -395,11 +373,6 @@ function ($) {
             self.layout.changeMenuPositions($(this).val());
         });
 
-        // left sidebar color
-        $('input[type=radio][name=leftsidebar-color]').change(function () {
-            self.layout.leftSidebar.changeColor($(this).val());
-        });
-
         // left sidebar size
         $('input[type=radio][name=leftsidebar-size]').change(function () {
             self.layout.leftSidebar.changeSize($(this).val());
@@ -408,11 +381,6 @@ function ($) {
         // left sidebar user information
         $('input[type=checkbox][name=leftsidebar-user]').change(function (e) {
             self.layout.leftSidebar.showUser(e.target.checked);
-        });
-
-        // topbar
-        $('input[type=radio][name=topbar-color]').change(function () {
-            self.layout.topbar.changeColor($(this).val());
         });
 
         // reset
@@ -515,10 +483,6 @@ function ($) {
         this.leftSidebar.parent = this;
         this.topbar.parent = this;
 
-
-        // mode
-        this.changeMode(this.config.mode);
-
         // width
         this.changeLayoutWidth(this.config.width);
 
@@ -526,54 +490,12 @@ function ($) {
         this.changeMenuPositions(this.config.menuPosition);
 
         // left sidebar
-        this.leftSidebar.changeColor(sidebarConfig.color);
         this.leftSidebar.changeSize(sidebarConfig.size);
         this.leftSidebar.showUser(sidebarConfig.showuser);
 
         // topbar
-        this.topbar.changeColor(topbarConfig.color);
     },
 
-    /**
-     * Toggle dark or light mode
-     * @param {*} mode
-     */
-    LayoutThemeApp.prototype.changeMode = function(mode, notChangeSidebar) {
-        // sets the theme
-        switch (mode) {
-            case "dark": {
-                this.defaultBSStyle.attr("disabled", true);
-                this.defaultAppStyle.attr("disabled", true);
-
-                this.darkBSStyle.attr("disabled", false);
-                this.darkAppStyle.attr("disabled", false);
-                if (notChangeSidebar)
-                    this._saveConfig({ mode: mode });
-                else {
-                    this.leftSidebar.changeColor("dark");
-                    this._saveConfig({ mode: mode, sidebar: $.extend({}, this.config.sidebar, { color: 'dark' }) });
-                }
-                break;
-            }
-            default: {
-                this.defaultBSStyle.attr("disabled", false);
-                this.defaultAppStyle.attr("disabled", false);
-
-                this.darkBSStyle.attr("disabled", true);
-                this.darkAppStyle.attr("disabled", true);
-
-                if (notChangeSidebar)
-                    this._saveConfig({ mode: mode });
-                else {
-                    this.leftSidebar.changeColor("light");
-                    this._saveConfig({ mode: mode, sidebar: $.extend({}, this.config.sidebar, { color: 'light' }) });
-                }
-                break;
-            }
-        }
-
-        this.rightBar.selectOptionsFromConfig();
-    }
 
     /**
      * Changes the width of layout
