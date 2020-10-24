@@ -14,9 +14,7 @@
      * Reset the theme
      */
     LeftSidebar.prototype._reset = function() {
-        this.body.removeAttr('data-sidebar-color');
         this.body.removeAttr('data-sidebar-size');
-        this.body.removeAttr('data-sidebar-showuser');
     },
 
 
@@ -27,15 +25,6 @@
     LeftSidebar.prototype.changeSize = function(size) {
         this.body.attr('data-sidebar-size', size);
         this.parent.updateConfig("sidebar", { "size": size });
-    },
-
-    /**
-     * Toggle User information
-     * @param {*} showUser
-     */
-    LeftSidebar.prototype.showUser = function(showUser) {
-        this.body.attr('data-sidebar-showuser', showUser);
-        this.parent.updateConfig("sidebar", { "showuser": showUser });
     },
 
     /**
@@ -318,7 +307,6 @@ function ($) {
 
             $('input[type=radio][name=leftsidebar-color][value=' + config.sidebar.color + ']').prop('checked', true);
             $('input[type=radio][name=leftsidebar-size][value=' + config.sidebar.size + ']').prop('checked', true);
-            $('input[type=checkbox][name=leftsidebar-user]').prop('checked', config.sidebar.showuser);
 
             $('input[type=radio][name=topbar-color][value=' + config.topbar.color + ']').prop('checked', true);
         }
@@ -376,11 +364,6 @@ function ($) {
         // left sidebar size
         $('input[type=radio][name=leftsidebar-size]').change(function () {
             self.layout.leftSidebar.changeSize($(this).val());
-        });
-
-        // left sidebar user information
-        $('input[type=checkbox][name=leftsidebar-user]').change(function (e) {
-            self.layout.leftSidebar.showUser(e.target.checked);
         });
 
         // reset
@@ -454,7 +437,6 @@ function ($) {
             sidebar: {
                 color: "light",
                 size: "default",
-                showuser: false
             },
             topbar: {
                 color: "dark"
@@ -491,7 +473,6 @@ function ($) {
 
         // left sidebar
         this.leftSidebar.changeSize(sidebarConfig.size);
-        this.leftSidebar.showUser(sidebarConfig.showuser);
 
         // topbar
     },
