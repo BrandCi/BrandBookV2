@@ -177,100 +177,6 @@
 
 
 
-/**
- * RightBar
- * @param {*} $
- */
-function ($) {
-    'use strict';
-
-    var RightBar = function () {
-        this.body = $('body'),
-        this.window = $(window)
-    };
-
-    /**
-     * Select the option based on saved config
-    */
-   RightBar.prototype.selectOptionsFromConfig = function() {
-       var self = this;
-
-        var config = self.layout.getConfig();
-
-        if (config) {
-            $('input[type=radio][name=width][value=' + config.width + ']').prop('checked', true);
-            $('input[type=radio][name=menus-position][value=' + config.menuPosition + ']').prop('checked', true);
-
-            $('input[type=radio][name=leftsidebar-size][value=' + config.sidebar.size + ']').prop('checked', true);
-        }
-    },
-
-    /**
-     * Toggles the right sidebar
-     */
-    RightBar.prototype.toggleRightSideBar = function() {
-        var self = this;
-        self.body.toggleClass('right-bar-enabled');
-        self.selectOptionsFromConfig();
-    },
-
-    /**
-     * Initilizes the right side bar
-     */
-    RightBar.prototype.init = function() {
-        var self = this;
-
-        // right side-bar toggle
-        $(document).on('click', '.right-bar-toggle', function () {
-            self.toggleRightSideBar();
-        });
-
-        $(document).on('click', 'body', function (e) {
-            // hiding search bar
-            if($(e.target).closest('#top-search').length !== 1) {
-                $('#search-dropdown').removeClass('d-block');
-            }
-            if ($(e.target).closest('.right-bar-toggle, .right-bar').length > 0) {
-                return;
-            }
-
-            if ($(e.target).closest('.left-side-menu, .side-nav').length > 0 || $(e.target).hasClass('button-menu-mobile')
-                || $(e.target).closest('.button-menu-mobile').length > 0) {
-                return;
-            }
-
-            $('body').removeClass('right-bar-enabled');
-            $('body').removeClass('sidebar-enable');
-            return;
-        });
-
-        // width mode
-        $('input[type=radio][name=width]').change(function () {
-            self.layout.changeLayoutWidth($(this).val());
-        });
-
-        // menus-position
-        $('input[type=radio][name=menus-position]').change(function () {
-            self.layout.changeMenuPositions($(this).val());
-        });
-
-        // left sidebar size
-        $('input[type=radio][name=leftsidebar-size]').change(function () {
-            self.layout.leftSidebar.changeSize($(this).val());
-        });
-
-        // reset
-        $('#resetBtn').on('click', function (e) {
-            e.preventDefault();
-            // reset to default
-            self.layout.reset();
-            self.selectOptionsFromConfig();
-        });
-    },
-
-    $.RightBar = new RightBar, $.RightBar.Constructor = RightBar
-}(window.jQuery),
-
 
 /**
  * Layout and theme manager
@@ -385,7 +291,6 @@ function ($) {
                 break;
             }
         }
-        this.rightBar.selectOptionsFromConfig();
     }
 
     /**
@@ -696,12 +601,8 @@ function ($) {
 
         // init layout
         this.layout = $.LayoutThemeApp;
-        this.rightBar = $.RightBar;
-        this.rightBar.layout = this.layout;
-        this.layout.rightBar = this.rightBar;
 
         this.layout.init();
-        this.rightBar.init(this.layout);
 
 
         // showing the sidebar on load if user is visiting the page first time only
@@ -709,7 +610,6 @@ function ($) {
         if (window.sessionStorage && bodyConfig && bodyConfig.hasOwnProperty('showRightSidebarOnPageLoad') && bodyConfig['showRightSidebarOnPageLoad']) {
             var alreadyVisited = sessionStorage.getItem("_MINTON_VISITED_");
             if (!alreadyVisited) {
-                $.RightBar.toggleRightSideBar();
                 sessionStorage.setItem("_MINTON_VISITED_", true);
             }
         }
