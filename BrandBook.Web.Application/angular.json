@@ -47,6 +47,7 @@
             "aot": true,
             "deployUrl": "../../Content/dist/application.bundle/",
             "rebaseRootRelativeCssUrls": true,
+            "outputHashing": "all",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -65,7 +66,6 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
