@@ -10,12 +10,6 @@
         this.window = $(window)
     };
 
-    /**
-     * Reset the theme
-     */
-    LeftSidebar.prototype._reset = function() {
-        this.body.removeAttr('data-sidebar-size');
-    },
 
 
     /**
@@ -37,9 +31,6 @@
         var sidebar = $.extend({}, layout ? layout.sidebar: {});
         var defaultSidebarSize = sidebar.size ? sidebar.size : 'default';
 
-        // resets everything
-        this._reset();
-
         // Left menu collapse
         $('.button-menu-mobile').on('click', function (event) {
             event.preventDefault();
@@ -55,44 +46,6 @@
                 self.body.toggleClass('sidebar-enable');
             }
         });
-
-        // sidebar - main menu
-        if ($("#side-menu").length) {
-            var navCollapse = $('#side-menu li .collapse');
-
-            // open one menu at a time only
-            navCollapse.on({
-                'show.bs.collapse': function (event) {
-                    var parent = $(event.target).parents('.collapse.show');
-                    $('#side-menu .collapse.show').not(parent).collapse('hide');
-                }
-            });
-
-            // activate the menu in left side bar (Vertical Menu) based on url
-            $("#side-menu a").each(function () {
-                var pageUrl = window.location.href.split(/[?#]/)[0];
-                if (this.href == pageUrl) {
-                    $(this).addClass("active");
-                    $(this).parent().addClass("menuitem-active");
-                    $(this).parent().parent().parent().addClass("show");
-                    $(this).parent().parent().parent().parent().addClass("menuitem-active"); // add active to li of the current link
-
-                    var firstLevelParent = $(this).parent().parent().parent().parent().parent().parent();
-                    if (firstLevelParent.attr('id') !== 'sidebar-menu')
-                        firstLevelParent.addClass("show");
-
-                    $(this).parent().parent().parent().parent().parent().parent().parent().addClass("menuitem-active");
-
-                    var secondLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent();
-                    if (secondLevelParent.attr('id') !== 'wrapper')
-                        secondLevelParent.addClass("show");
-
-                    var upperLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent();
-                    if (!upperLevelParent.is('body'))
-                        upperLevelParent.addClass("menuitem-active");
-                }
-            });
-        }
 
 
         // handling two columns menu if present
