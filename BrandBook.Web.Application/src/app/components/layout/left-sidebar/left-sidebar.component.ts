@@ -16,9 +16,7 @@ export class LeftSidebarComponent implements OnInit {
 
         // handling two columns menu if present
         var twoColSideNav = $("#two-col-sidenav-main");
-        console.log('twoColSideNav.length: ' + twoColSideNav.length);
         if (twoColSideNav.length) {
-            console.log('after twoColSiedNav.length');
             var twoColSideNavItems = $("#two-col-sidenav-main .nav-link");
             var sideSubMenus = $(".twocolumn-menu-item");
 
@@ -38,8 +36,6 @@ export class LeftSidebarComponent implements OnInit {
 
             twoColSideNavItems.on('click', function (e) {
                 var target = $($(this).attr('href'));
-
-                console.log('inside changing items');
 
                 if (target.length) {
                     e.preventDefault();
