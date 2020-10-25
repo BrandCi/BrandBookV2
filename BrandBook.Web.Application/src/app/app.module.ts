@@ -7,6 +7,7 @@ import { AppComponent } from './components/app.component';
 
 import { LayoutLeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
 import { LayoutTopBarComponent } from './components/layout/top-bar/top-bar.component';
+import { LayoutTitleAndBreadcrumbComponent } from './components/layout/title-and-breadcrumb/title-and-breadcrumb.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
@@ -23,6 +24,7 @@ import { UserSubscriptionsComponent } from './components/user/subscriptions/user
 
     LayoutLeftSidebarComponent,
     LayoutTopBarComponent,
+    LayoutTitleAndBreadcrumbComponent,
 
     DashboardComponent,
     RecentActivityChartComponent,
