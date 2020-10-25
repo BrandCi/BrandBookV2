@@ -5,9 +5,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-    { path: '', component: DashboardComponent, pathMatch: 'full' },
-    { path: 'v2', component: DashboardComponent, pathMatch: 'full' },
-    { path: 'Dashboard/RedesignEntry', component: DashboardComponent, pathMatch: 'full' }
+    { path: '', component: DashboardComponent },
+    { path: 'v2', component: DashboardComponent },
+    { path: 'Dashboard', component: DashboardComponent }
   ];
 
 @NgModule({
