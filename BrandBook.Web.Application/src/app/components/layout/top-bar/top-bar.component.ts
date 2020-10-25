@@ -4,7 +4,7 @@ declare var $: any;
 
 
 @Component({
-  selector: 'app-layout-top-bar',
+  selector: 'layout-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss']
 })

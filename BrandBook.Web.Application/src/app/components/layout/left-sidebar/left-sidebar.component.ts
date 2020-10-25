@@ -4,11 +4,11 @@ declare var $: any;
 
 
 @Component({
-  selector: 'app-left-sidebar',
+  selector: 'layout-left-sidebar',
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit {
+export class LayoutLeftSidebarComponent implements OnInit {
 
   constructor() { }
 

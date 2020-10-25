@@ -5,7 +5,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 
-import { LeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
+import { LayoutLeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
 import { LayoutTopBarComponent } from './components/layout/top-bar/top-bar.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,7 +21,7 @@ import { UserSubscriptionsComponent } from './components/user/subscriptions/user
   declarations: [
     AppComponent,
 
-    LeftSidebarComponent,
+    LayoutLeftSidebarComponent,
     LayoutTopBarComponent,
 
     DashboardComponent,
