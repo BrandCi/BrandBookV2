@@ -35,7 +35,7 @@ export class LayoutTopBarComponent implements OnInit {
         const defaultSidebarSize = sidebar.size ? sidebar.size : 'default';
 
         // Left menu collapse
-        $('.button-menu-mobile').on('click', function(event) {
+        $('.button-menu-mobile').on('click', (event) => {
             event.preventDefault();
             const sidebarSize = self.body.attr('data-sidebar-size');
             if (self.window.width() >= 993) {
@@ -77,7 +77,7 @@ export class LayoutTopBarComponent implements OnInit {
         this.initLayout();
 
         // on window resize, make menu flipped automatically
-        this.window.on('resize', function(e) {
+        this.window.on('resize', (e) => {
             e.preventDefault();
             self.initLayout();
         });

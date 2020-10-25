@@ -25,12 +25,16 @@ export class LayoutLeftSidebarComponent implements OnInit {
 
             // open one menu at a time only
             navCollapse.on({
-                'show.bs.collapse': function() {
-                    // var nearestNav = $(this).closest(nav).closest(nav).find(navCollapse);
-                    // if (nearestNav.length)
-                        // nearestNav.not($(this)).collapse('hide');
-                    // else
-                        // navCollapse.not($(this)).collapse('hide');
+                'show.bs.collapse'() {
+                    const nearestNav = $(this).closest(nav).closest(nav).find(navCollapse);
+                    if (nearestNav.length)
+                    {
+                        nearestNav.not($(this)).collapse('hide');
+                    }
+                    else
+                    {
+                        navCollapse.not($(this)).collapse('hide');
+                    }
                 }
             });
 
