@@ -7,7 +7,7 @@ import {
   ApexTitleSubtitle,
   NgApexchartsModule,
   ApexFill
-} from "ng-apexcharts";
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -24,7 +24,7 @@ export type ChartOptions = {
 })
 export class RecentActivityChartComponent implements OnInit {
 
-  @ViewChild("chart") chart: ChartComponent;
+  @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
@@ -39,7 +39,7 @@ export class RecentActivityChartComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Recent Activity",
+          name: 'Recent Activity',
           data: [45, 52, 38, 24, 33, 26, 21, 20, 60, 80, 150, 100, 110, 41, 35, 51, 49, 62, 69, 91, 148]
         }
       ],
@@ -52,10 +52,10 @@ export class RecentActivityChartComponent implements OnInit {
       },
       fill: {
           opacity: 0.2,
-          colors: ["#6559cc"]
+          colors: ['#6559cc']
       },
       xaxis: {
-        categories: ["Jul",  "Aug", "Sep", "Oct"]
+        categories: ['Jul',  'Aug', 'Sep', 'Oct']
       }
     };
   }

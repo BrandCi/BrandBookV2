@@ -4,7 +4,7 @@ declare var $: any;
 
 
 @Component({
-  selector: 'layout-left-sidebar',
+  selector: 'app-layout-left-sidebar',
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
@@ -15,17 +15,17 @@ export class LayoutLeftSidebarComponent implements OnInit {
   ngOnInit(): void {
 
         // handling two columns menu if present
-        var twoColSideNav = $("#two-col-sidenav-main");
+        const twoColSideNav = $('#two-col-sidenav-main');
         if (twoColSideNav.length) {
-            var twoColSideNavItems = $("#two-col-sidenav-main .nav-link");
-            var sideSubMenus = $(".twocolumn-menu-item");
+            const twoColSideNavItems = $('#two-col-sidenav-main .nav-link');
+            const sideSubMenus = $('.twocolumn-menu-item');
 
-            var nav = $('.twocolumn-menu-item .nav-second-level');
-            var navCollapse = $('#two-col-menu li .collapse');
+            const nav = $('.twocolumn-menu-item .nav-second-level');
+            const navCollapse = $('#two-col-menu li .collapse');
 
             // open one menu at a time only
             navCollapse.on({
-                'show.bs.collapse': function () {
+                'show.bs.collapse': function() {
                     // var nearestNav = $(this).closest(nav).closest(nav).find(navCollapse);
                     // if (nearestNav.length)
                         // nearestNav.not($(this)).collapse('hide');
@@ -34,8 +34,8 @@ export class LayoutLeftSidebarComponent implements OnInit {
                 }
             });
 
-            twoColSideNavItems.on('click', function (e) {
-                var target = $($(this).attr('href'));
+            twoColSideNavItems.on('click', function(e) {
+                const target = $($(this).attr('href'));
 
                 if (target.length) {
                     e.preventDefault();
@@ -43,8 +43,8 @@ export class LayoutLeftSidebarComponent implements OnInit {
                     twoColSideNavItems.removeClass('active');
                     $(this).addClass('active');
 
-                    sideSubMenus.removeClass("d-block");
-                    target.addClass("d-block");
+                    sideSubMenus.removeClass('d-block');
+                    target.addClass('d-block');
 
                     // showing full sidebar if menu item is clicked
                     // $.LayoutThemeApp.leftSidebar.changeSize('default');
@@ -54,45 +54,50 @@ export class LayoutLeftSidebarComponent implements OnInit {
             });
 
             // activate menu with no child
-            var pageUrl = window.location.href.split(/[?#]/)[0];
-            twoColSideNavItems.each(function () {
-                if (this.href == pageUrl) {
+            const pageUrl = window.location.href.split(/[?#]/)[0];
+            twoColSideNavItems.each(function() {
+                if (this.href === pageUrl) {
                     $(this).addClass('active');
                 }
             });
 
 
             // activate the menu in left side bar (Two column) based on url
-            $("#two-col-menu a").each(function () {
-                if (this.href == pageUrl) {
-                    $(this).addClass("active");
-                    $(this).parent().addClass("menuitem-active");
-                    $(this).parent().parent().parent().addClass("show");
-                    $(this).parent().parent().parent().parent().addClass("menuitem-active"); // add active to li of the current link
+            $('#two-col-menu a').each(function() {
+                if (this.href === pageUrl) {
+                    $(this).addClass('active');
+                    $(this).parent().addClass('menuitem-active');
+                    $(this).parent().parent().parent().addClass('show');
+                    $(this).parent().parent().parent().parent().addClass('menuitem-active'); // add active to li of the current link
 
-                    var firstLevelParent = $(this).parent().parent().parent().parent().parent().parent();
-                    if (firstLevelParent.attr('id') !== 'sidebar-menu')
-                        firstLevelParent.addClass("show");
+                    const firstLevelParent = $(this).parent().parent().parent().parent().parent().parent();
+                    if (firstLevelParent.attr('id') !== 'sidebar-menu') {
+                        firstLevelParent.addClass('show');
+                    }
 
-                    $(this).parent().parent().parent().parent().parent().parent().parent().addClass("menuitem-active");
+                    $(this).parent().parent().parent().parent().parent().parent().parent().addClass('menuitem-active');
 
-                    var secondLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent();
-                    if (secondLevelParent.attr('id') !== 'wrapper')
-                        secondLevelParent.addClass("show");
+                    const secondLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent();
+                    if (secondLevelParent.attr('id') !== 'wrapper') {
+                        secondLevelParent.addClass('show');
+                    }
 
-                    var upperLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent();
-                    if (!upperLevelParent.is('body'))
-                        upperLevelParent.addClass("menuitem-active");
+                    const upperLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent();
+                    if (!upperLevelParent.is('body')) {
+                        upperLevelParent.addClass('menuitem-active');
+                    }
 
                     // opening menu
-                    var matchingItem = null;
-                    var targetEl = '#' + $(this).parents('.twocolumn-menu-item').attr("id");
-                    $("#two-col-sidenav-main .nav-link").each(function () {
+                    let matchingItem = null;
+                    const targetEl = '#' + $(this).parents('.twocolumn-menu-item').attr('id');
+                    $('#two-col-sidenav-main .nav-link').each(function() {
                         if ($(this).attr('href') === targetEl) {
                             matchingItem = $(this);
                         }
                     });
-                    if (matchingItem) matchingItem.trigger('click');
+                    if (matchingItem) {
+                        matchingItem.trigger('click');
+                    }
                 }
             });
         }
