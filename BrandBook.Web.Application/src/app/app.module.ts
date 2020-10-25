@@ -8,13 +8,17 @@ import { LeftSidebarComponent } from './components/layout/left-sidebar/left-side
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
 
+import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftSidebarComponent,
     DashboardComponent,
-    RecentActivityChartComponent
+    RecentActivityChartComponent,
+
+    BrandsOverviewComponent
   ],
   imports: [
     BrowserModule,
