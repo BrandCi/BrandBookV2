@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app.component';
 import { LeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
