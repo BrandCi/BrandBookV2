@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
 
 import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
+import { UserProfileComponent } from './components/user/profile/user-profile.component';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { BrandsOverviewComponent } from './components/brands/overview/brands-ove
     DashboardComponent,
     RecentActivityChartComponent,
 
-    BrandsOverviewComponent
+    BrandsOverviewComponent,
+
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

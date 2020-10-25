@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserProfileComponent } from './components/user/profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
 
     { path: 'Brands/Overview', component: BrandsOverviewComponent },
 
-    { path: 'User/Profile', component: DashboardComponent },
+    { path: 'User/Profile', component: UserProfileComponent },
     { path: 'User/Settings', component: DashboardComponent },
     { path: 'User/Subscriptions', component: DashboardComponent },
 
