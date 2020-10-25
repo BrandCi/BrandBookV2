@@ -11,6 +11,7 @@ import { RecentActivityChartComponent } from './components/dashboard/recent-acti
 import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
 import { UserProfileComponent } from './components/user/profile/user-profile.component';
 import { UserSettingsComponent } from './components/user/settings/user-settings.component';
+import { UserSubscriptionsComponent } from './components/user/subscriptions/user-subscriptions.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UserSettingsComponent } from './components/user/settings/user-settings.
     BrandsOverviewComponent,
 
     UserProfileComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    UserSubscriptionsComponent
   ],
   imports: [
     BrowserModule,
