@@ -81,12 +81,17 @@ export class LayoutLeftSidebarComponent implements OnInit {
 
                     $(this).parent().parent().parent().parent().parent().parent().parent().addClass('menuitem-active');
 
-                    const secondLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent();
+                    const secondLevelParent = $(this).parent().parent().parent()
+                                                    .parent().parent().parent()
+                                                    .parent().parent().parent();
                     if (secondLevelParent.attr('id') !== 'wrapper') {
                         secondLevelParent.addClass('show');
                     }
 
-                    const upperLevelParent = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent();
+                    const upperLevelParent = $(this).parent().parent().parent()
+                                                    .parent().parent().parent()
+                                                    .parent().parent().parent()
+                                                    .parent();
                     if (!upperLevelParent.is('body')) {
                         upperLevelParent.addClass('menuitem-active');
                     }
