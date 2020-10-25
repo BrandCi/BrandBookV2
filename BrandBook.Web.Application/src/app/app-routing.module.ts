@@ -4,6 +4,7 @@ import { BrandsOverviewComponent } from './components/brands/overview/brands-ove
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserProfileComponent } from './components/user/profile/user-profile.component';
+import { UserSettingsComponent } from './components/user/settings/user-settings.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
     { path: 'Brands/Overview', component: BrandsOverviewComponent },
 
     { path: 'User/Profile', component: UserProfileComponent },
-    { path: 'User/Settings', component: DashboardComponent },
+    { path: 'User/Settings', component: UserSettingsComponent },
     { path: 'User/Subscriptions', component: DashboardComponent },
 
   ];
