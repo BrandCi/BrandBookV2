@@ -5,24 +5,31 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 
+import { AppLayoutComponent } from './components/application/app-layout.component';
+import { AuthLayoutComponent } from './components/authentication/auth-layout.component';
+
+
 import { AuthLoginComponent } from './components/authentication/login/auth-login.component';
 
-import { LayoutLeftSidebarComponent } from './components/layout/left-sidebar/left-sidebar.component';
-import { LayoutTopBarComponent } from './components/layout/top-bar/top-bar.component';
-import { LayoutTitleAndBreadcrumbComponent } from './components/layout/title-and-breadcrumb/title-and-breadcrumb.component';
+import { LayoutLeftSidebarComponent } from './components/application/layout/left-sidebar/left-sidebar.component';
+import { LayoutTopBarComponent } from './components/application/layout/top-bar/top-bar.component';
+import { LayoutTitleAndBreadcrumbComponent } from './components/application/layout/title-and-breadcrumb/title-and-breadcrumb.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RecentActivityChartComponent } from './components/dashboard/recent-activity-chart/recent-activity-chart.component';
+import { DashboardComponent } from './components/application/dashboard/dashboard.component';
+import { RecentActivityChartComponent } from './components/application/dashboard/recent-activity-chart/recent-activity-chart.component';
 
-import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
-import { UserProfileComponent } from './components/user/profile/user-profile.component';
-import { UserSettingsComponent } from './components/user/settings/user-settings.component';
-import { UserSubscriptionsComponent } from './components/user/subscriptions/user-subscriptions.component';
+import { BrandsOverviewComponent } from './components/application/brands/overview/brands-overview.component';
+import { UserProfileComponent } from './components/application/user/profile/user-profile.component';
+import { UserSettingsComponent } from './components/application/user/settings/user-settings.component';
+import { UserSubscriptionsComponent } from './components/application/user/subscriptions/user-subscriptions.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    AuthLayoutComponent,
+    AppLayoutComponent,
 
     AuthLoginComponent,
 
@@ -45,6 +52,6 @@ import { UserSubscriptionsComponent } from './components/user/subscriptions/user
     NgApexchartsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AuthLayoutComponent, AppLayoutComponent]
 })
 export class AppModule { }
