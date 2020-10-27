@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthLoginComponent } from './components/authentication/login/auth-login.component';
 import { BrandsOverviewComponent } from './components/brands/overview/brands-overview.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -19,6 +20,9 @@ const routes: Routes = [
     { path: 'User/Profile', component: UserProfileComponent },
     { path: 'User/Settings', component: UserSettingsComponent },
     { path: 'User/Subscriptions', component: UserSubscriptionsComponent },
+
+
+    { path: 'Auth/Login', component: AuthLoginComponent }
 
   ];
 
