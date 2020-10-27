@@ -45,7 +45,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "deployUrl": "../../Content/dist/application.bundle/",
+            "deployUrl": "../Content/dist/application.bundle/",
             "rebaseRootRelativeCssUrls": true,
             "outputHashing": "all",
             "assets": [

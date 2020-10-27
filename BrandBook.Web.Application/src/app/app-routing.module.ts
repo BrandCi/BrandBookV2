@@ -15,21 +15,29 @@ import { UserSubscriptionsComponent } from './components/application/user/subscr
 
 const routes: Routes = [
 
-    { path: '', component: AppLayoutComponent, children: [
-      { path: 'v2', component: DashboardComponent },
-      { path: 'Dashboard', component: DashboardComponent },
+    {
+      path: 'App',
+      component: AppLayoutComponent,
+      children: [
+        { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
+        { path: 'Dashboard', component: DashboardComponent },
+        { path: 'Brands/Overview', component: BrandsOverviewComponent },
+        { path: 'User/Profile', component: UserProfileComponent },
+        { path: 'User/Settings', component: UserSettingsComponent },
+        { path: 'User/Subscriptions', component: UserSubscriptionsComponent }
+      ]
+   },
 
-      { path: 'Brands/Overview', component: BrandsOverviewComponent },
+    {
+      path: 'Auth',
+      component: AuthLayoutComponent,
+      children: [
+        { path: '', redirectTo: 'Login', pathMatch: 'full' },
+        { path: 'Login', component: AuthLoginComponent }
+      ]
+    },
 
-      { path: 'User/Profile', component: UserProfileComponent },
-      { path: 'User/Settings', component: UserSettingsComponent },
-      { path: 'User/Subscriptions', component: UserSubscriptionsComponent }
-    ] },
-
-
-    { path: '', component: AuthLayoutComponent, children: [
-      { path: 'Login', component: AuthLoginComponent }
-    ] }
+    { path: '**', redirectTo: 'App' }
 
   ];
 
