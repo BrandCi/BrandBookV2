@@ -1,31 +1,35 @@
-<app-layout-top-bar></app-layout-top-bar>
+<div id="wrapper">
 
-<app-layout-left-sidebar></app-layout-left-sidebar>
+  <app-layout-top-bar></app-layout-top-bar>
 
-<!-- ============================================================== -->
-<!-- Page Content -->
-<!-- ============================================================== -->
+  <app-layout-left-sidebar></app-layout-left-sidebar>
 
-<div class="content-page">
-  <div class="content">
+  <!-- ============================================================== -->
+  <!-- Page Content -->
+  <!-- ============================================================== -->
 
-      <!-- Start Content-->
-      <div class="container-fluid">
+  <div class="content-page">
+    <div class="content">
 
-          <app-layout-title-and-breadcrumb></app-layout-title-and-breadcrumb>
+        <!-- Start Content-->
+        <div class="container-fluid">
 
-          <div class="row">
-            <div class="col-12">
-                <router-outlet></router-outlet>
-            </div>
+            <app-layout-title-and-breadcrumb></app-layout-title-and-breadcrumb>
+
+            <div class="row">
+              <div class="col-12">
+                  <router-outlet></router-outlet>
+              </div>
+          </div>
+
         </div>
 
-      </div>
+    </div>
 
   </div>
 
-</div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
 
-<!-- ============================================================== -->
-<!-- End Page content -->
-<!-- ============================================================== -->
+</div>
