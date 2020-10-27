@@ -52,6 +52,6 @@ import { UserSubscriptionsComponent } from './components/application/user/subscr
     NgApexchartsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent, AuthLayoutComponent, AppLayoutComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

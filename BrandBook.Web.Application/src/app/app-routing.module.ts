@@ -27,7 +27,7 @@ const routes: Routes = [
     ] },
 
 
-    { path: 'Auth', component: AuthLayoutComponent, children: [
+    { path: '', component: AuthLayoutComponent, children: [
       { path: 'Login', component: AuthLoginComponent }
     ] }
 
