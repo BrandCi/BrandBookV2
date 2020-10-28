@@ -5,12 +5,14 @@ import { AuthLayoutComponent } from './components/authentication/auth-layout.com
 import { AppLayoutComponent } from './components/application/app-layout.component';
 
 import { AuthLoginComponent } from './components/authentication/login/auth-login.component';
-import { BrandsOverviewComponent } from './components/application/brands/overview/brands-overview.component';
+import { AuthRegisterComponent } from './components/authentication/register/auth-register.component';
 
 import { DashboardComponent } from './components/application/dashboard/dashboard.component';
 import { UserProfileComponent } from './components/application/user/profile/user-profile.component';
 import { UserSettingsComponent } from './components/application/user/settings/user-settings.component';
 import { UserSubscriptionsComponent } from './components/application/user/subscriptions/user-subscriptions.component';
+import { BrandsOverviewComponent } from './components/application/brands/overview/brands-overview.component';
+
 
 
 const routes: Routes = [
@@ -33,7 +35,8 @@ const routes: Routes = [
       component: AuthLayoutComponent,
       children: [
         { path: '', redirectTo: 'Login', pathMatch: 'full' },
-        { path: 'Login', component: AuthLoginComponent }
+        { path: 'Login', component: AuthLoginComponent },
+        { path: 'Register', component: AuthRegisterComponent },
       ]
     },
 

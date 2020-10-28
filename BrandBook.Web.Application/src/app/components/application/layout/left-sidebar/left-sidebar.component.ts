@@ -14,104 +14,189 @@ export class LayoutLeftSidebarComponent implements OnInit {
 
   ngOnInit(): void {
 
-        // handling two columns menu if present
-        const twoColSideNav = $('#two-col-sidenav-main');
-        if (twoColSideNav.length) {
-            const twoColSideNavItems = $('#two-col-sidenav-main .nav-link');
-            const sideSubMenus = $('.twocolumn-menu-item');
+    const LeftSidebar = function() {
+        this.body = $('body'),
+        this.window = $(window);
+    };
 
-            const nav = $('.twocolumn-menu-item .nav-second-level');
-            const navCollapse = $('#two-col-menu li .collapse');
+    LeftSidebar.prototype.changeSize = function(size) {
+        this.body.attr('data-sidebar-size', size);
+        this.parent.updateConfig('sidebar', { '{size}': size });
+    },
 
-            // open one menu at a time only
-            navCollapse.on({
-                'show.bs.collapse'() {
-                    const nearestNav = $(this).closest(nav).closest(nav).find(navCollapse);
-                    if (nearestNav.length)
-                    {
-                        nearestNav.not($(this)).collapse('hide');
-                    }
-                    else
-                    {
-                        navCollapse.not($(this)).collapse('hide');
-                    }
+    /**
+     * Initilizes the menu
+     */
+    LeftSidebar.prototype.initMenu = function() {
+        const self = this;
+
+        const layout = $.LayoutThemeApp.getConfig();
+        const sidebar = $.extend({}, layout ? layout.sidebar : {});
+        const defaultSidebarSize = sidebar.size ? sidebar.size : 'default';
+
+        // Left menu collapse
+        $('.button-menu-mobile').on('click', (event) => {
+            event.preventDefault();
+            const sidebarSize = self.body.attr('data-sidebar-size');
+            if (self.window.width() >= 993) {
+                if (sidebarSize === 'condensed') {
+                    self.changeSize(defaultSidebarSize === 'condensed' ? 'default' : defaultSidebarSize);
+                } else {
+                    self.changeSize('condensed');
                 }
-            });
+            } else {
+                self.changeSize(defaultSidebarSize);
+                self.body.toggleClass('sidebar-enable');
+            }
+        });
+    },
 
-            twoColSideNavItems.on('click', function(e) {
-                const target = $($(this).attr('href'));
-
-                if (target.length) {
-                    e.preventDefault();
-
-                    twoColSideNavItems.removeClass('active');
-                    $(this).addClass('active');
-
-                    sideSubMenus.removeClass('d-block');
-                    target.addClass('d-block');
-
-                    // showing full sidebar if menu item is clicked
-                    // $.LayoutThemeApp.leftSidebar.changeSize('default');
-                    return false;
-                }
-                return true;
-            });
-
-            // activate menu with no child
-            const pageUrl = window.location.href.split(/[?#]/)[0];
-            twoColSideNavItems.each(function() {
-                if (this.href === pageUrl) {
-                    $(this).addClass('active');
-                }
-            });
-
-
-            // activate the menu in left side bar (Two column) based on url
-            $('#two-col-menu a').each(function() {
-                if (this.href === pageUrl) {
-                    $(this).addClass('active');
-                    $(this).parent().addClass('menuitem-active');
-                    $(this).parent().parent().parent().addClass('show');
-                    $(this).parent().parent().parent().parent().addClass('menuitem-active'); // add active to li of the current link
-
-                    const firstLevelParent = $(this).parent().parent().parent().parent().parent().parent();
-                    if (firstLevelParent.attr('id') !== 'sidebar-menu') {
-                        firstLevelParent.addClass('show');
-                    }
-
-                    $(this).parent().parent().parent().parent().parent().parent().parent().addClass('menuitem-active');
-
-                    const secondLevelParent = $(this).parent().parent().parent()
-                                                    .parent().parent().parent()
-                                                    .parent().parent().parent();
-                    if (secondLevelParent.attr('id') !== 'wrapper') {
-                        secondLevelParent.addClass('show');
-                    }
-
-                    const upperLevelParent = $(this).parent().parent().parent()
-                                                    .parent().parent().parent()
-                                                    .parent().parent().parent()
-                                                    .parent();
-                    if (!upperLevelParent.is('body')) {
-                        upperLevelParent.addClass('menuitem-active');
-                    }
-
-                    // opening menu
-                    let matchingItem = null;
-                    const targetEl = '#' + $(this).parents('.twocolumn-menu-item').attr('id');
-                    $('#two-col-sidenav-main .nav-link').each(function() {
-                        if ($(this).attr('href') === targetEl) {
-                            matchingItem = $(this);
-                        }
-                    });
-                    if (matchingItem) {
-                        matchingItem.trigger('click');
-                    }
-                }
-            });
+    /**
+     * Initilize the left sidebar size based on screen size
+     */
+    LeftSidebar.prototype.initLayout = function() {
+        const self = this;
+        // in case of small size, activate the small menu
+        if ((this.window.width() >= 768 && this.window.width() <= 1028) || this.body.data('keep-enlarged')) {
+            this.changeSize('condensed');
+        } else {
+            const layout = JSON.parse(this.body.attr('data-layout') ? this.body.attr('data-layout') : '{}');
+            const sidebar = $.extend({}, layout ? layout.sidebar : {});
+            const defaultSidebarSize = sidebar && sidebar.size ? sidebar.size : 'default';
+            const sidebarSize = self.body.attr('data-sidebar-size');
+            this.changeSize(defaultSidebarSize ? defaultSidebarSize : (sidebarSize ? sidebarSize : 'default'));
         }
+    },
+
+    /**
+     * Initilizes the menu
+     */
+    LeftSidebar.prototype.init = function() {
+        const self = this;
+        this.initMenu();
+        this.initLayout();
+
+        // on window resize, make menu flipped automatically
+        this.window.on('resize', (e) => {
+            e.preventDefault();
+            self.initLayout();
+        });
+    },
+
+    $.LeftSidebar = new LeftSidebar(), $.LeftSidebar.Constructor = LeftSidebar;
 
 
+
+
+    const LayoutThemeApp = function() {
+    this.body = $('body'),
+    this.window = $(window),
+    this.config = {};
+    };
+
+    /**
+     * Preserves the config in memory
+     */
+    LayoutThemeApp.prototype._saveConfig = function(newConfig) {
+        this.config = $.extend(this.config, newConfig);
+        // NOTE: You can make ajax call here to save preference on server side or localstorage as well
+    },
+
+    /**
+     * Update the config for given config
+     * @param {*} param
+     * @param {*} config
+     */
+    LayoutThemeApp.prototype.updateConfig = function(param, config) {
+        const newObj = {};
+        if (typeof config === 'object' && config !== null) {
+            const originalParam = this.config[param];
+            newObj[param] = $.extend(originalParam, config);
+        } else {
+            newObj[param] = config;
+        }
+        this._saveConfig(newObj);
+    };
+
+    /**
+     * Apply the config
+     */
+    LayoutThemeApp.prototype.applyConfig = function() {
+        // getting the saved config if available
+        this.config = $.extend({}, {
+            width: 'fluid',
+            sidebar: {
+                size: 'default',
+            },
+        });
+
+        const sidebarConfig = $.extend({}, this.config.sidebar);
+
+        // activate menus
+        this.leftSidebar.init();
+
+        this.leftSidebar.parent = this;
+
+        // width
+        this.changeLayoutWidth(this.config.width);
+        // left sidebar
+        this.leftSidebar.changeSize(sidebarConfig.size);
+
+    },
+
+
+    /**
+     * Changes the width of layout
+     */
+    LayoutThemeApp.prototype.changeLayoutWidth = function(width) {
+        switch (width) {
+            case 'boxed': {
+                this.body.attr('data-layout-width', 'boxed');
+                // automatically activating condensed
+                $.LeftSidebar.changeSize('condensed');
+                this._saveConfig({ '{width}': width });
+                break;
+            }
+            default: {
+                this.body.attr('data-layout-width', 'fluid');
+                // automatically activating provided size
+                const bodyConfig = JSON.parse(this.body.attr('data-layout') ? this.body.attr('data-layout') : '{}');
+                $.LeftSidebar.changeSize(bodyConfig && bodyConfig.sidebar ? bodyConfig.sidebar.size : 'default');
+                this._saveConfig({ '{width}': width });
+                break;
+            }
+        }
+    };
+
+    /**
+     * Gets the config
+     */
+    LayoutThemeApp.prototype.getConfig = function() {
+        return this.config;
+    },
+
+    /**
+     * Reset to default
+     */
+    LayoutThemeApp.prototype.reset = function() {
+        this.applyConfig();
+    },
+
+    /**
+     * Init
+     */
+    LayoutThemeApp.prototype.init = function() {
+        this.leftSidebar = $.LeftSidebar;
+
+        this.leftSidebar.parent = this;
+
+        // initilize the menu
+        this.applyConfig();
+    },
+
+    $.LayoutThemeApp = new LayoutThemeApp(), $.LayoutThemeApp.Constructor = LayoutThemeApp;
+
+    $.LayoutThemeApp.init();
   }
 
 }

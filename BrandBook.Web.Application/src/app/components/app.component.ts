@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-declare var $: any;
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -7,13 +6,8 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   constructor() {}
-
-
-  ngOnInit() {
-
-  }
 
 }
