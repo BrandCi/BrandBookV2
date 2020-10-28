@@ -12,7 +12,7 @@
 
 BrandCi offers the opportunity to create, document and improve a comprehensive company brand in a continuous process.
 
-Get a impression: [https://brandci.philipp-moser.de](https://brandci.philipp-moser.de)
+Get a impression: [https://www.brandci.cloud](https://www.brandci.cloud)
 
 
 **Project information / used technologies**
