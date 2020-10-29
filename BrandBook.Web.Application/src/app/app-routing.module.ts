@@ -23,11 +23,11 @@ const routes: Routes = [
       component: AppLayoutComponent,
       children: [
         { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
-        { path: 'Dashboard', component: DashboardComponent },
-        { path: 'Brands/Overview', component: BrandsOverviewComponent },
-        { path: 'User/Profile', component: UserProfileComponent },
-        { path: 'User/Settings', component: UserSettingsComponent },
-        { path: 'User/Subscriptions', component: UserSubscriptionsComponent }
+        { path: 'Dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
+        { path: 'Brands/Overview', component: BrandsOverviewComponent, data: { title: 'Brands Overview' } },
+        { path: 'User/Profile', component: UserProfileComponent, data: { title: 'My Profile' } },
+        { path: 'User/Settings', component: UserSettingsComponent, data: { title: 'My Settings' } },
+        { path: 'User/Subscriptions', component: UserSubscriptionsComponent, data: { title: 'My Subscriptions' } }
       ]
    },
 
@@ -36,9 +36,9 @@ const routes: Routes = [
       component: AuthLayoutComponent,
       children: [
         { path: '', redirectTo: 'Login', pathMatch: 'full' },
-        { path: 'Login', component: AuthLoginComponent },
-        { path: 'Register', component: AuthRegisterComponent },
-        { path: 'ForgotPassword', component: AuthForgotPasswordComponent }
+        { path: 'Login', component: AuthLoginComponent, data: { title: 'Login' } },
+        { path: 'Register', component: AuthRegisterComponent, data: { title: 'Register' } },
+        { path: 'ForgotPassword', component: AuthForgotPasswordComponent, data: { title: 'Forgot Password' } }
       ]
     },
 
