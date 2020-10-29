@@ -6,6 +6,7 @@ import { AppLayoutComponent } from './components/application/app-layout.componen
 
 import { AuthLoginComponent } from './components/authentication/login/auth-login.component';
 import { AuthRegisterComponent } from './components/authentication/register/auth-register.component';
+import { AuthForgotPasswordComponent } from './components/authentication/forgotPassword/auth-forgot-password.component';
 
 import { DashboardComponent } from './components/application/dashboard/dashboard.component';
 import { UserProfileComponent } from './components/application/user/profile/user-profile.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
         { path: '', redirectTo: 'Login', pathMatch: 'full' },
         { path: 'Login', component: AuthLoginComponent },
         { path: 'Register', component: AuthRegisterComponent },
+        { path: 'ForgotPassword', component: AuthForgotPasswordComponent }
       ]
     },
 

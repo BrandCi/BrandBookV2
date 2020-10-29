@@ -11,6 +11,7 @@ import { AuthLayoutComponent } from './components/authentication/auth-layout.com
 
 import { AuthLoginComponent } from './components/authentication/login/auth-login.component';
 import { AuthRegisterComponent } from './components/authentication/register/auth-register.component';
+import { AuthForgotPasswordComponent } from './components/authentication/forgotPassword/auth-forgot-password.component';
 
 import { LayoutLeftSidebarComponent } from './components/application/layout/left-sidebar/left-sidebar.component';
 import { LayoutTopBarComponent } from './components/application/layout/top-bar/top-bar.component';
@@ -34,6 +35,7 @@ import { UserSubscriptionsComponent } from './components/application/user/subscr
 
     AuthLoginComponent,
     AuthRegisterComponent,
+    AuthForgotPasswordComponent,
 
     LayoutLeftSidebarComponent,
     LayoutTopBarComponent,
