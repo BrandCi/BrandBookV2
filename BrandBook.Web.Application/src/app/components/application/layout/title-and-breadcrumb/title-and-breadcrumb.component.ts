@@ -12,10 +12,10 @@ export class LayoutTitleAndBreadcrumbComponent implements OnInit {
 
   pageTitle: string;
 
-  constructor(titleService: Title) {
-    this.pageTitle = titleService.getTitle();
-   }
+  constructor(private titleService: Title) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.pageTitle = this.titleService.getTitle();
+  }
 
 }

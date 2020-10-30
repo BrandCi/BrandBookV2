@@ -23,14 +23,15 @@ export class AppComponent implements OnInit {
 
           map(() => {
             let child = this.activatedRoute.firstChild;
-            console.log(child.firstChild)
-            console.log(child.snapshot.data['title'])
+
             while (child.firstChild) {
               child = child.firstChild;
             }
             if (child.snapshot.data['title']) {
+
               return child.snapshot.data['title'];
             }
+
             return appTitle;
           })
 
