@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-layout-title-and-breadcrumb',
@@ -8,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class LayoutTitleAndBreadcrumbComponent implements OnInit {
 
-  constructor() { }
+  pageTitle: string;
+
+  constructor(titleService: Title) {
+    this.pageTitle = titleService.getTitle();
+   }
 
   ngOnInit(): void { }
 
