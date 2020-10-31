@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
@@ -24,6 +25,9 @@ import { BrandsOverviewComponent } from './components/application/brands/overvie
 import { UserProfileComponent } from './components/application/user/profile/user-profile.component';
 import { UserSettingsComponent } from './components/application/user/settings/user-settings.component';
 import { UserSubscriptionsComponent } from './components/application/user/subscriptions/user-subscriptions.component';
+
+import { AuthorizeInterceptor } from './authorization/authorize.interceptor';
+import { AuthorizationModule } from './authorization/authorization.module';
 
 
 @NgModule({
@@ -52,8 +56,11 @@ import { UserSubscriptionsComponent } from './components/application/user/subscr
     BrowserModule,
     AppRoutingModule,
     NgApexchartsModule,
+    AuthorizationModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
