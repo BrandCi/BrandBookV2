@@ -1,7 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-
-import { environment } from './../../environments/environment';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -11,12 +8,6 @@ import { environment } from './../../environments/environment';
 })
 export class AppComponent {
 
-  public assetFolderPath = environment.assetFolderPath;
+  constructor() {}
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
-
-  toggleTheme() {
-    this.document.body.classList.toggle("dark-theme");
-  }
-  
 }

@@ -23,7 +23,7 @@ $leftbar-width-sm:                                  160px;
 $boxed-layout-width:                                1300px;
 
 // Logo
-$bg-logo:                                         #ffffff;
+$bg-logo:                                         $bg-leftbar-dark;
 
 // Two column sidebar
 $twocolumn-sidebar-width:               220px;
@@ -93,8 +93,7 @@ $logo-auth-light-display:               block;
 // User authentication Background
 $auth-bg:                             #36404a;
 $auth-bg-alt:                         #3e4852;
-$auth-img-bg:                                     url("/assets/images/bg-auth-dark.jpg");
-// $auth-img-pattern-bg:                             url("/assets/images/bg-auth-dark.jpg");
+$auth-img-bg:                           url("./assets/images/auth_background.png");
 
 // Apex chart
 $apex-grid-color:                     #3e4852;

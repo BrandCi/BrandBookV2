@@ -45,7 +45,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "deployUrl": "../../Content/dist/application.bundle/",
+            "deployUrl": "../Content/dist/application.bundle/",
             "rebaseRootRelativeCssUrls": true,
             "outputHashing": "all",
             "assets": [
@@ -56,9 +56,12 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/apexcharts/dist/apexcharts.min.js",
-              "src/assets/js/vendor.min.js",
-              "src/assets/js/app.min.js"
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "node_modules/simplebar/dist/simplebar.js",
+              "node_modules/node-waves/dist/waves.js",
+              "node_modules/waypoints/lib/jquery.waypoints.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js"
             ]
           },
           "configurations": {

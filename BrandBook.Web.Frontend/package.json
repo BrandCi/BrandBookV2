@@ -1,13 +1,12 @@
 {
   "name": "@brandci/frontend",
   "version": "2.0.0",
-  "description": "",
+  "author": "brandci",
   "main": "index.js",
   "scripts": {
     "build-dev": "webpack --config webpack.development.js",
     "build-prod": "webpack --config webpack.production.js"
   },
-  "author": "brandci",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.3",
