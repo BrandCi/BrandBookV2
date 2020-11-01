@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "BrandBook.Web.Application"
     schedule:
-      interval: "daily"
+      interval: "monthly"
 
     reviewers:
       - "philipp-c-moser"
@@ -16,7 +16,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "BrandBook.Web.Frontend"
     schedule:
-      interval: "daily"
+      interval: "monthly"
 
     reviewers:
       - "philipp-c-moser"
