@@ -12,7 +12,7 @@ namespace BrandBook.Web.Controllers
             ViewBag.MetaKeywords = "";
             ViewBag.MetaDescription = "";
 
-            return View();
+            return RedirectToAction("ClosedBeta", "Product");
         }
     }
 }
