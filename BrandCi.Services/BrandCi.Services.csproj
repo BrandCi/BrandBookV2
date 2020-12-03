@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BrandCi.Core\BrandCi.Core.csproj" />
+    <ProjectReference Include="..\BrandCi.Infrastructure\BrandCi.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

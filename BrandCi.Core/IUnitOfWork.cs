@@ -15,7 +15,7 @@ namespace BrandCi.Core
 
         #region Fileds
 
-        IApplicationUserRepository AppUserRepository { get; }
+        IApplicationUserRepository ApplicationUserRepository { get; }
         ISettingRepository SettingRepository { get; }
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
