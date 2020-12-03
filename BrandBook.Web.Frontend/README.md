@@ -1,3 +1,0 @@
-# BrandBook.Web.Frontend
-
-
