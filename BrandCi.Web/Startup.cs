@@ -1,5 +1,5 @@
 using BrandCi.Core.Domain.User;
-using BrandCi.Web.Data;
+using BrandCi.Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

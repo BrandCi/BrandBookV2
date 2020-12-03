@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BrandCi.Core\BrandCi.Core.csproj" />
+    <ProjectReference Include="..\BrandCi.Infrastructure\BrandCi.Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
