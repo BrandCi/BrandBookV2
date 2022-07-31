@@ -26,9 +26,3 @@ Get a impression: [https://www.brandci.cloud](https://www.brandci.cloud)
  - Azure DevOps for CI / CD Pipelines
  - Azure Web Services for the Application-Hosting
  - Docker-Swarm (Linux) to provide the MS SQL Server
-
-
-**Planned Features**
-- Contextual inspiration when creating brandings
-- Version management for created brandings
-- Automatic improvement suggestions for created brandings based on numerous other brandings.
